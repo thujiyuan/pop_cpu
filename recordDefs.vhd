@@ -71,6 +71,7 @@ constant MEMSrc : MEMSrcRec := (
 					rx => "00",
 					ry => "01",
 					RA => "10");
+								
 
 end recordDefs;
 

@@ -1,10 +1,5 @@
-V3 40
+V3 42
 FL C:/cpu_proj/pop_cpu/ALU.vhd 2016/11/20.17:45:17 P.20131013
-EN work/ALU 0 FL C:/cpu_proj/pop_cpu/ALU.vhd PB ieee/std_logic_1164 1381692176 \
-      PB ieee/STD_LOGIC_UNSIGNED 1381692179 PB ieee/std_logic_arith 1381692177 \
-      PB work/recordDefs 1479644595
-AR work/ALU/Behavioral 0 \
-      FL C:/cpu_proj/pop_cpu/ALU.vhd EN work/ALU 0
 FL C:/cpu_proj/pop_cpu/ALUSrc0MUX.vhd 2016/11/20.17:54:32 P.20131013
 EN work/ALUSrc0MUX 1479635677 FL C:/cpu_proj/pop_cpu/ALUSrc0MUX.vhd \
       PB ieee/std_logic_1164 1381692176 PB work/recordDefs 1479644595
@@ -47,15 +42,16 @@ EN work/ReadWritePauser 1479652632 FL C:/cpu_proj/pop_cpu/ReadWritePauser.vhd \
 AR work/ReadWritePauser/Behavioral 1479652633 \
       FL C:/cpu_proj/pop_cpu/ReadWritePauser.vhd EN work/ReadWritePauser 1479652632
 FL C:/cpu_proj/pop_cpu/recordDefs.vhd 2016/11/20.20:17:01 P.20131013
-PH work/recordDefs 1479644594 FL C:/cpu_proj/pop_cpu/recordDefs.vhd \
-      PB ieee/std_logic_1164 1381692176
-PB work/recordDefs 1479644595 \
-      FL C:/cpu_proj/pop_cpu/recordDefs.vhd PH work/recordDefs 1479644594
 FL C:/cpu_proj/pop_cpu/WBSrcMUX.vhd 2016/11/21.13:32:01 P.20131013
 EN work/WBSrcMUX 1479706341 FL C:/cpu_proj/pop_cpu/WBSrcMUX.vhd \
       PB ieee/std_logic_1164 1381692176
 AR work/WBSrcMUX/Behavioral 1479706342 \
       FL C:/cpu_proj/pop_cpu/WBSrcMUX.vhd EN work/WBSrcMUX 1479706341
+EN work/ALU 0 FL C:/pop_cpu1/ALU.vhd PB ieee/std_logic_1164 1381692176 \
+      PB ieee/STD_LOGIC_UNSIGNED 1381692179 PB ieee/std_logic_arith 1381692177 \
+      PB work/recordDefs 1479644595
+AR work/ALU/Behavioral 0 \
+      FL C:/pop_cpu1/ALU.vhd EN work/ALU 0
 FL C:/pop_cpu1/EXE_MEMRegs.vhd 2016/11/23.18:05:10 P.20131013
 EN work/EXE_MEMRegs 1479895519 FL C:/pop_cpu1/EXE_MEMRegs.vhd \
       PB ieee/std_logic_1164 1381692176
@@ -66,3 +62,6 @@ EN work/FlashAccess 1479903761 FL C:/pop_cpu1/FlashAccess.vhd \
       PB ieee/std_logic_1164 1381692176
 AR work/FlashAccess/Behavioral 1479903762 \
       FL C:/pop_cpu1/FlashAccess.vhd EN work/FlashAccess 1479903761
+PH work/recordDefs 1479644594 FL C:/pop_cpu1/recordDefs.vhd PB ieee/std_logic_1164 1381692176
+PB work/recordDefs 1479644595 \
+      FL C:/pop_cpu1/recordDefs.vhd PH work/recordDefs 1479644594

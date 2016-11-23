@@ -1,0 +1,39 @@
+Release 14.7 - xst P.20131013 (nt)
+Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
+--> Parameter TMPDIR set to C:/pop_cpu1/xst/projnav.tmp
+
+
+Total REAL time to Xst completion: 1.00 secs
+Total CPU time to Xst completion: 0.10 secs
+ 
+--> Parameter xsthdpdir set to C:/pop_cpu1/xst
+
+
+Total REAL time to Xst completion: 1.00 secs
+Total CPU time to Xst completion: 0.10 secs
+ 
+--> WARNING:Xst:3164 - Option "-debug" found multiple times in the command line. Only the first occurence is considered.
+
+=========================================================================
+*                          HDL Compilation                              *
+=========================================================================
+WARNING:HDLParsers:3607 - Unit work/ALU is now defined in a different file.  It was defined in "C:/cpu_proj/pop_cpu/ALU.vhd", and is now defined in "C:/pop_cpu1/ALU.vhd".
+WARNING:HDLParsers:3607 - Unit work/ALU/Behavioral is now defined in a different file.  It was defined in "C:/cpu_proj/pop_cpu/ALU.vhd", and is now defined in "C:/pop_cpu1/ALU.vhd".
+WARNING:HDLParsers:3607 - Unit work/recordDefs is now defined in a different file.  It was defined in "C:/cpu_proj/pop_cpu/recordDefs.vhd", and is now defined in "C:/pop_cpu1/recordDefs.vhd".
+WARNING:HDLParsers:3607 - Unit work/recordDefs is now defined in a different file.  It was defined in "C:/cpu_proj/pop_cpu/recordDefs.vhd", and is now defined in "C:/pop_cpu1/recordDefs.vhd".
+Compiling vhdl file "C:/pop_cpu1/recordDefs.vhd" in Library work.
+ERROR:HDLParsers:164 - "C:/pop_cpu1/recordDefs.vhd" Line 75. parse error, unexpected IDENTIFIER
+Package body <recorddefs> compiled.
+
+
+Total REAL time to Xst completion: 1.00 secs
+Total CPU time to Xst completion: 0.12 secs
+ 
+--> 
+
+Total memory usage is 172724 kilobytes
+
+Number of errors   :    1 (   0 filtered)
+Number of warnings :    5 (   0 filtered)
+Number of infos    :    0 (   0 filtered)
+
