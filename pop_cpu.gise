@@ -43,6 +43,9 @@
     <file xil_pn:fileType="FILE_XST_PROJECT" xil_pn:name="EXE_MEMRegs.prj"/>
     <file xil_pn:fileType="FILE_XST_STX" xil_pn:name="EXE_MEMRegs.stx"/>
     <file xil_pn:fileType="FILE_XST" xil_pn:name="EXE_MEMRegs.xst"/>
+    <file xil_pn:fileType="FILE_XST_PROJECT" xil_pn:name="FlashAccess.prj"/>
+    <file xil_pn:fileType="FILE_XST_STX" xil_pn:name="FlashAccess.stx"/>
+    <file xil_pn:fileType="FILE_XST" xil_pn:name="FlashAccess.xst"/>
     <file xil_pn:fileType="FILE_XST_PROJECT" xil_pn:name="ID_EXERegs.prj"/>
     <file xil_pn:fileType="FILE_XST_STX" xil_pn:name="ID_EXERegs.stx"/>
     <file xil_pn:fileType="FILE_XST" xil_pn:name="ID_EXERegs.xst"/>

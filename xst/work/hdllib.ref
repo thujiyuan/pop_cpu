@@ -1,4 +1,6 @@
+AR flashaccess behavioral C:/pop_cpu1/FlashAccess.vhd sub00/vhpl24 1479903762
 AR wbsrcmux behavioral C:/cpu_proj/pop_cpu/WBSrcMUX.vhd sub00/vhpl22 1479706342
+EN flashaccess NULL C:/pop_cpu1/FlashAccess.vhd sub00/vhpl23 1479903761
 EN if_idregs NULL C:/cpu_proj/pop_cpu/IF_IDRegs.vhd sub00/vhpl19 1479706085
 EN exe_memregs NULL C:/pop_cpu1/EXE_MEMRegs.vhd sub00/vhpl07 1479895519
 PH recorddefs NULL C:/cpu_proj/pop_cpu/recordDefs.vhd sub00/vhpl02 1479644594

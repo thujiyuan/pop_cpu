@@ -54,31 +54,9 @@ variable tempPC : STD_LOGIC_VECTOR (15 downto 0);
 variable tempInst :  STD_LOGIC_VECTOR (15 downto 0);
 variable tempRxNum : STD_LOGIC_VECTOR (2 downto 0);
 variable tempRyNum : STD_LOGIC_VECTOR (2 downto 0);
-variable intPC : STD_LOGIC_VECTOR (15 downto 0);
-variable intInst :  STD_LOGIC_VECTOR (15 downto 0);
-variable intRxNum : STD_LOGIC_VECTOR (2 downto 0);
-variable intRyNum : STD_LOGIC_VECTOR (2 downto 0);
 begin
 	if(clk'event and clk = '1') then
-		if(intSave = '1') then
-			intPC := tempPC;
-			intInst := tempInst;
-			intRxNum := tempRxNum;
-			intRyNum := tempRyNum;
-			outPC <= (others => '0');
-			outInst <= (others => '0');
-			outRxNum <= (others => '0');
-			outRyNum <= (others => '0');
-		elsif(intRecover = '1') then
-			tempPc := intPC;
-			tempInst := intInst;
-			tempRxNum := intRxNum;
-			tempRyNum := intRyNum;
-			outPC <= intPC;
-			outInst <= intInst;
-			outRxNum <= intRxNum;
-			outRyNum <= intRyNum;
-		elsif(clear = '1') then
+		if(clear = '1') then
 			tempPc := (others => '0');
 			tempInst := (others => '0');
 			tempRxNum := (others => '0');

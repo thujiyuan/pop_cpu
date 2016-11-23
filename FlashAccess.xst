@@ -1,0 +1,5 @@
+set -tmpdir "C:/pop_cpu1/xst/projnav.tmp"
+set -xsthdpdir "C:/pop_cpu1/xst"
+elaborate
+-ifn FlashAccess.prj
+-ifmt mixed
