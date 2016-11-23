@@ -65,6 +65,10 @@
     <file xil_pn:fileType="FILE_XST_PROJECT" xil_pn:name="ReadWritePauser.prj"/>
     <file xil_pn:fileType="FILE_XST_STX" xil_pn:name="ReadWritePauser.stx"/>
     <file xil_pn:fileType="FILE_XST" xil_pn:name="ReadWritePauser.xst"/>
+    <file xil_pn:fileType="FILE_XST_PROJECT" xil_pn:name="VGAAccess.prj"/>
+    <file xil_pn:fileType="FILE_XST_STX" xil_pn:name="VGAAccess.stx"/>
+    <file xil_pn:fileType="FILE_VHDL_INSTTEMPLATE" xil_pn:name="VGAAccess.vhi"/>
+    <file xil_pn:fileType="FILE_XST" xil_pn:name="VGAAccess.xst"/>
     <file xil_pn:fileType="FILE_XST_PROJECT" xil_pn:name="WBSrcMUX.prj"/>
     <file xil_pn:fileType="FILE_XST_STX" xil_pn:name="WBSrcMUX.stx"/>
     <file xil_pn:fileType="FILE_XST" xil_pn:name="WBSrcMUX.xst"/>

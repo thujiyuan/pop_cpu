@@ -1,9 +1,11 @@
 AR flashaccess behavioral C:/pop_cpu1/FlashAccess.vhd sub00/vhpl24 1479903762
 AR wbsrcmux behavioral C:/cpu_proj/pop_cpu/WBSrcMUX.vhd sub00/vhpl22 1479706342
+AR vgaaccess behavioral C:/pop_cpu1/VGAAccess.vhd sub00/vhpl26 1479906575
 EN flashaccess NULL C:/pop_cpu1/FlashAccess.vhd sub00/vhpl23 1479903761
 EN if_idregs NULL C:/cpu_proj/pop_cpu/IF_IDRegs.vhd sub00/vhpl19 1479706085
 EN exe_memregs NULL C:/pop_cpu1/EXE_MEMRegs.vhd sub00/vhpl07 1479895519
-PH recorddefs NULL C:/cpu_proj/pop_cpu/recordDefs.vhd sub00/vhpl02 1479644594
+PH recorddefs NULL C:/pop_cpu1/recordDefs.vhd sub00/vhpl02 1479906572
+EN vgaaccess NULL C:/pop_cpu1/VGAAccess.vhd sub00/vhpl25 1479906574
 AR alusrc0mux behavioral C:/cpu_proj/pop_cpu/ALUSrc0MUX.vhd sub00/vhpl05 1479635678
 EN wbsrcmux NULL C:/cpu_proj/pop_cpu/WBSrcMUX.vhd sub00/vhpl21 1479706341
 AR memsrcmux behavioral C:/cpu_proj/pop_cpu/MEMSrcMUX.vhd sub00/vhpl10 1479644597
@@ -18,7 +20,7 @@ EN id_exeregs NULL C:/cpu_proj/pop_cpu/ID_EXERegs.vhd sub00/vhpl17 1479655060
 AR exe_memregs behavioral C:/pop_cpu1/EXE_MEMRegs.vhd sub00/vhpl08 1479895520
 AR id_exeregs behavioral C:/cpu_proj/pop_cpu/ID_EXERegs.vhd sub00/vhpl18 1479655061
 EN alusrc0mux NULL C:/cpu_proj/pop_cpu/ALUSrc0MUX.vhd sub00/vhpl01 1479635677
-PB recorddefs recorddefs C:/pop_cpu1/recordDefs.vhd sub00/vhpl03 1479904481
+PB recorddefs recorddefs C:/pop_cpu1/recordDefs.vhd sub00/vhpl03 1479906573
 AR memaccess behavioral C:/cpu_proj/pop_cpu/MEMAccess.vhd sub00/vhpl12 1479649761
 EN readwritepauser NULL C:/cpu_proj/pop_cpu/ReadWritePauser.vhd sub00/vhpl15 1479652632
 EN alu NULL C:/cpu_proj/pop_cpu/ALU.vhd sub00/vhpl06 1479636138

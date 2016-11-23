@@ -19,6 +19,9 @@
 ----------------------------------------------------------------------------------
 library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
+use IEEE.STD_LOGIC_ARITH.ALL;
+use IEEE.STD_LOGIC_UNSIGNED.ALL;
+use recordDefs.ALL;
 
 -- Uncomment the following library declaration if using
 -- arithmetic functions with Signed or Unsigned values
@@ -49,8 +52,8 @@ architecture Behavioral of VGAAccess is
 begin
 
 process(clk)
-variable xCnt : integer range 0 to 1000 := 0;
-variable yCnt : integer range 0 to 1000 := 0;
+variable xCnt : STD_LOGIC_VECTOR (9 downto 0) := (others => '0');
+variable yCnt : STD_LOGIC_VECTOR (9 downto 0) := (others => '0');
 variable valid : STD_LOGIC := '0';
 begin
 	if(dataReady = '1') then
@@ -78,12 +81,12 @@ begin
 			Bout <= "000";
 		end if;
 		if(xCnt = 799) then
-			xCnt := 0;
+			xCnt := (others => '0');
 		else
 			xCnt := xCnt + 1;
 		end if;
 		if(yCnt = 524) then
-			yCnt := 0;
+			yCnt := (others => '0');
 		else
 			yCnt := yCnt + 1;
 		end if;	
