@@ -86,6 +86,9 @@ constant Vsd : integer range 0 to 1000 := 525;
 
 constant maxCharH : STD_LOGIC_VECTOR(5 downto 0) := "101000"; --一行最多显示40个字符
 constant maxCharV : STD_LOGIC_VECTOR(5 downto 0) := "011110"; --一列最多显示30个字符
+
+type bitMap is array(0 to 15) of STD_LOGIC_VECTOR(15 downto 0);
+
 			
 end recordDefs;
 

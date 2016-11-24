@@ -51,7 +51,7 @@ end VGAControler;
 architecture Behavioral of VGAControler is
 component FlashAccess	Port ( flashWrite : in  STD_LOGIC;
            flashRead : in  STD_LOGIC;
-           inAddr : in  STD_LOGIC_VECTOR (15 downto 0);
+           inAddr : in  STD_LOGIC_VECTOR (21 downto 0);
            addrBus : out  STD_LOGIC_VECTOR (22 downto 0);
            inData : in  STD_LOGIC_VECTOR (15 downto 0);
 			  outData : out  STD_LOGIC_VECTOR (15 downto 0);
@@ -64,7 +64,7 @@ component FlashAccess	Port ( flashWrite : in  STD_LOGIC;
 			  clk : in STD_LOGIC);
 end component;
 signal flashRead : STD_LOGIC := '0';
-signal inAddr : STD_LOGIC_VECTOR (15 downto 0) := (others => '0');
+signal inAddr : STD_LOGIC_VECTOR (21 downto 0) := (others => '0');
 signal outData : STD_LOGIC_VECTOR (15 downto 0);
 signal modifying : STD_LOGIC;
 signal flashDataReady : STD_LOGIC := '0';
@@ -77,9 +77,10 @@ flash : FlashAccess port map('0', flashRead, inAddr, flashAddr, (others => '0'),
 process(clk)
 variable nowBuffer, nextBuffer : STD_LOGIC_VECTOR(15 downto 0);
 variable nextBufferReady : STD_LOGIC := '0';
-variable nextAddr : STD_LOGIC_VECTOR(15 downto 0) := (others => '0');
+variable nextAddr : STD_LOGIC_VECTOR(21 downto 0) := (others => '0');
 variable init : STD_LOGIC := '1';
-variable xindex, yindex : STD_LOGIC_VECTOR(5 downto 0);	--下一段buffer在内存中的地址的（11 downto 6）和（5 downto 0）
+variable xindex : STD_LOGIC_VECTOR(5 downto 0);	--下一段buffer在内存中的地址的（17 downto 7）和（6 downto 0）
+variable yindex : STD_LOGIC_VECTOR(9 downto 0);
 variable bitNum : STD_LOGIC_VECTOR(3 downto 0);	--要求的像素点在buffer中的位置
 begin
 if(clk'event and clk = '1') then
@@ -88,7 +89,7 @@ if(clk'event and clk = '1') then
 			dataReady <= '0';
 			if(flashDataReady = '0') then
 				flashRead <= '1';
-				inAddr <= "0000000000000000";
+				inAddr <= (others => '0');
 			else
 				flashRead <= '0';
 				nowBuffer := outData;
@@ -102,16 +103,16 @@ if(clk'event and clk = '1') then
 					if(flashDataReady = '0') then		--计算下一段帧缓存的地址并向flash读取
 						flashRead <= '1';
 						xindex := xin(9 downto 4);
-						yindex := yin(9 downto 4);
+						yindex := yin;
 						xindex := xindex + "1";
 						if(xindex >= maxCharH) then
 							xindex := (others => '0');
 							yindex := yindex + "1";
 						end if;
-						if(yindex >= maxCharV) then
+						if(yindex >= Vsd) then
 							yindex := (others => '0');
 						end if;
-						nextAddr := "0000" & xindex & yindex;
+						nextAddr := "000000"&xindex&yindex;
 						inAddr<= nextAddr;
 					else		--读取已经准备好的帧
 						nextBuffer := outData;

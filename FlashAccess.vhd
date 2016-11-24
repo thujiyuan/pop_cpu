@@ -34,15 +34,13 @@ use IEEE.STD_LOGIC_UNSIGNED.ALL;
 entity FlashAccess is
     Port ( flashWrite : in  STD_LOGIC;
            flashRead : in  STD_LOGIC;
-           inAddr : in  STD_LOGIC_VECTOR (15 downto 0);
+           inAddr : in  STD_LOGIC_VECTOR (21 downto 0);
            addrBus : out  STD_LOGIC_VECTOR (22 downto 0);
            inData : in  STD_LOGIC_VECTOR (15 downto 0);
 			  outData : out  STD_LOGIC_VECTOR (15 downto 0);
            dataBus : inout  STD_LOGIC_VECTOR (15 downto 0);
 			  dataWrite : out STD_LOGIC;
-			  dataWriteCfm : out STD_LOGIC;
 			  dataReady : out STD_LOGIC;
-			  dataReadyCfm : out STD_LOGIC;
            CE0 : out  STD_LOGIC;
            OE : out  STD_LOGIC;
            WE : out  STD_LOGIC;
@@ -68,7 +66,7 @@ begin
 					state := "00010";
 				when "00010" =>			--do erase
 					WE <= '0';
-					addrBus <= "000000"&inAddr&'0';
+					addrBus <= inAddr&'0';
 					dataBus <= "0000000011010000";
 					state := "00011";
 				when "00011" =>
@@ -100,7 +98,7 @@ begin
 					state := "01010";
 				when "01010" =>		--do write
 					WE <= '0';
-					addrBus <= "000000"&inAddr&'0';
+					addrBus <= inAddr&'0';
 					dataBus <= inData;
 					state := "01011";
 				when "01011" =>
@@ -139,6 +137,7 @@ begin
 					state := "10001";
 				when "10001" =>  --do read
 					OE <= '0';
+					addrBus <= inAddr&'0';
 					dataBus <= (others => 'Z');
 					state := "10010";
 				when "10010" =>
@@ -149,6 +148,8 @@ begin
 			end case;
 		else
 			state := "00000";
+			dataReady <= '0';
+			dataWrite <= '0';
 		end if;
 	end if;
 end process;

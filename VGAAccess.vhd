@@ -56,44 +56,46 @@ variable xCnt : STD_LOGIC_VECTOR (9 downto 0) := (others => '0');
 variable yCnt : STD_LOGIC_VECTOR (9 downto 0) := (others => '0');
 variable valid : STD_LOGIC := '0';
 begin
-	if(dataReady = '1') then
-		valid := '1';
-		if(xCnt > Hsa or yCnt > Vsa) then
-			valid := '0';
-		end if;
-		if(xCnt >= Hsb and xCnt < Hsc) then
-			Hs <= '0';
+	if(clk'evnt and clk = '1') then
+		if(dataReady = '1') then
+			valid := '1';
+			if(xCnt > Hsa or yCnt > Vsa) then
+				valid := '0';
+			end if;
+			if(xCnt >= Hsb and xCnt < Hsc) then
+				Hs <= '0';
+			else
+				Hs <= '1';
+			end if;
+			if(yCnt >= Vsb and yCnt < Vsc) then
+				Vs <= '0';
+			else
+				Vs <= '1';
+			end if;
+			if(valid = '1') then
+				Rout <= Rin;
+				Gout <= Gin;
+				Bout <= Bin;
+			else
+				Rout <= "000";
+				Gout <= "000";
+				Bout <= "000";
+			end if;
+			if(xCnt = 799) then
+				xCnt := (others => '0');
+				yCnt := yCnt + 1;
+			else
+				xCnt := xCnt + 1;
+			end if;
+			if(yCnt = 525) then
+				yCnt := (others => '0');
+			end if;	
+			xOut <= xCnt;
+			yOut <= yCnt;
 		else
-			Hs <= '1';
+			xOut <= xCnt;
+			yOut <= yCnt;
 		end if;
-		if(yCnt >= Vsb and yCnt < Vsc) then
-			Vs <= '0';
-		else
-			Vs <= '1';
-		end if;
-		if(valid = '1') then
-			Rout <= Rin;
-			Gout <= Gin;
-			Bout <= Bin;
-		else
-			Rout <= "000";
-			Gout <= "000";
-			Bout <= "000";
-		end if;
-		if(xCnt = 799) then
-			xCnt := (others => '0');
-			yCnt := yCnt + 1;
-		else
-			xCnt := xCnt + 1;
-		end if;
-		if(yCnt = 525) then
-			yCnt := (others => '0');
-		end if;	
-		xOut <= xCnt;
-		yOut <= yCnt;
-	else
-		xOut <= xCnt;
-		yOut <= yCnt;
 	end if;
 end process;
 
