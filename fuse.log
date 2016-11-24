@@ -1,0 +1,18 @@
+Running: F:\Xilinx\14.7\ISE_DS\ISE\bin\nt64\unwrapped\fuse.exe -intstyle ise -incremental -o F:/thujiyuan/pop_cpu/ALUSrc0MUX_isim_beh.exe -prj F:/thujiyuan/pop_cpu/ALUSrc0MUX_beh.prj work.ALUSrc0MUX 
+ISim P.20131013 (signature 0x7708f090)
+Number of CPUs detected in this system: 4
+Turning on mult-threading, number of parallel sub-compilation jobs: 8 
+Determining compilation order of HDL files
+Parsing VHDL file "F:/thujiyuan/pop_cpu/recordDefs.vhd" into library work
+Parsing VHDL file "F:/thujiyuan/pop_cpu/ALUSrc0MUX.vhd" into library work
+ERROR:HDLCompiler:69 - "F:/thujiyuan/pop_cpu/ALUSrc0MUX.vhd" Line 22: <recorddefs> is not declared.
+ERROR:HDLCompiler:854 - "F:/thujiyuan/pop_cpu/ALUSrc0MUX.vhd" Line 33: Unit <alusrc0mux> ignored due to previous errors.
+ERROR:HDLCompiler:374 - "F:/thujiyuan/pop_cpu/ALUSrc0MUX.vhd" Line 41: Entity <alusrc0mux> is not yet compiled.
+ERROR:HDLCompiler:69 - "F:/thujiyuan/pop_cpu/ALUSrc0MUX.vhd" Line 49: <output> is not declared.
+ERROR:HDLCompiler:69 - "F:/thujiyuan/pop_cpu/ALUSrc0MUX.vhd" Line 51: <output> is not declared.
+ERROR:HDLCompiler:69 - "F:/thujiyuan/pop_cpu/ALUSrc0MUX.vhd" Line 53: <output> is not declared.
+ERROR:HDLCompiler:69 - "F:/thujiyuan/pop_cpu/ALUSrc0MUX.vhd" Line 55: <output> is not declared.
+ERROR:HDLCompiler:69 - "F:/thujiyuan/pop_cpu/ALUSrc0MUX.vhd" Line 57: <output> is not declared.
+ERROR:HDLCompiler:69 - "F:/thujiyuan/pop_cpu/ALUSrc0MUX.vhd" Line 47: <ctrl> is not declared.
+ERROR:HDLCompiler:69 - "F:/thujiyuan/pop_cpu/ALUSrc0MUX.vhd" Line 45: <rx> is not declared.
+VHDL file F:/thujiyuan/pop_cpu/ALUSrc0MUX.vhd ignored due to errors

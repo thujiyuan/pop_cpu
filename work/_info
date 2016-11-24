@@ -1,0 +1,109 @@
+m255
+K4
+z2
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 dF:/thujiyuan/pop_cpu
+T_opt
+!s110 1479992593
+V0L6;lm^bd>]HX:WoQK^_Z3
+04 7 10 work pop_cpu behavioral 1
+=1-183da2326fe4-5836e50f-1d1-c78
+Z1 o-quiet -auto_acc_if_foreign -work work +acc
+n@_opt
+Z2 OL;O;10.4;61
+R0
+T_opt1
+!s110 1479992644
+Vzeck]WJ5I5J>l6GO:KkkV1
+04 2 12 work pc pcbehavioral 1
+=1-183da2326fe4-5836e544-112-480
+R1
+n@_opt1
+R2
+Epc
+Z3 w1479652624
+Z4 DPx4 ieee 18 std_logic_unsigned 0 22 ;eZjO2D4ZDz<]0>8AL<ne1
+Z5 DPx4 ieee 15 std_logic_arith 0 22 [G314=:2zXJ`VORJe1J@Z1
+Z6 DPx3 std 6 textio 0 22 zE1`LPoLg^DX3Oz^4Fj1K3
+Z7 DPx4 ieee 14 std_logic_1164 0 22 eNV`TJ_GofJTzYa?f<@Oe1
+R0
+Z8 8PC.vhd
+Z9 FPC.vhd
+l0
+L16
+V1NcfQXX@Q3LVoe<jY<g6T0
+!s100 OFX=g`EF^_kLMTAZK<EMm1
+Z10 OL;C;10.4;61
+31
+Z11 !s110 1479992643
+!i10b 1
+Z12 !s108 1479992643.304000
+Z13 !s90 -reportprogress|300|-explicit|-93|PC.vhd|
+Z14 !s107 PC.vhd|
+!i113 0
+Z15 o-explicit -93
+Z16 tExplicit 1
+Apcbehavioral
+R4
+R5
+R6
+R7
+DEx4 work 2 pc 0 22 1NcfQXX@Q3LVoe<jY<g6T0
+l28
+L24
+V]_9]R3cYhlnTcZR07bj0M2
+!s100 I[mF9z2mZz52F[i>NlF^U0
+R10
+31
+R11
+!i10b 1
+R12
+R13
+R14
+!i113 0
+R15
+R16
+Epop_cpu
+Z17 w1479992501
+R6
+R7
+R0
+Z18 8pop_cpu.vhd
+Z19 Fpop_cpu.vhd
+l0
+L32
+VC`iVcTSi[8hEhoN6idRJ:2
+!s100 @<NK9aMWlQcU]jO^PLhn23
+R10
+31
+Z20 !s110 1479992587
+!i10b 1
+Z21 !s108 1479992587.395000
+Z22 !s90 -reportprogress|300|-explicit|-93|pop_cpu.vhd|
+Z23 !s107 pop_cpu.vhd|
+!i113 0
+R15
+R16
+Abehavioral
+R6
+R7
+DEx4 work 7 pop_cpu 0 22 C`iVcTSi[8hEhoN6idRJ:2
+l37
+L35
+Vzf7T59g8D94@;U`57ChUe0
+!s100 CJdU=[M>BVYV46SAC1d^22
+R10
+31
+R20
+!i10b 1
+R21
+R22
+R23
+!i113 0
+R15
+R16

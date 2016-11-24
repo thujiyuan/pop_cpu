@@ -1,0 +1,2 @@
+vhdl isim_temp "recordDefs.vhd"
+vhdl isim_temp "ALUSrc0MUX.vhd"
