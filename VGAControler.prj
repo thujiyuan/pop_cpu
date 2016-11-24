@@ -1,0 +1,3 @@
+vhdl work "recordDefs.vhd"
+vhdl work "FlashAccess.vhd"
+vhdl work "VGAControler.vhd"

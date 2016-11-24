@@ -82,14 +82,16 @@ begin
 		end if;
 		if(xCnt = 799) then
 			xCnt := (others => '0');
+			yCnt := yCnt + 1;
 		else
 			xCnt := xCnt + 1;
 		end if;
-		if(yCnt = 524) then
+		if(yCnt = 525) then
 			yCnt := (others => '0');
-		else
-			yCnt := yCnt + 1;
 		end if;	
+		xOut <= xCnt;
+		yOut <= yCnt;
+	else
 		xOut <= xCnt;
 		yOut <= yCnt;
 	end if;

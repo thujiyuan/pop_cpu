@@ -1,0 +1,3 @@
+vhdl work "C:\pop_cpu1\recordDefs.vhd"
+vhdl work "C:\pop_cpu1\FlashAccess.vhd"
+vhdl work "C:\pop_cpu1\VGAControler.vhd"
