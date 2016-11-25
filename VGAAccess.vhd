@@ -21,7 +21,8 @@ library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
 use IEEE.STD_LOGIC_ARITH.ALL;
 use IEEE.STD_LOGIC_UNSIGNED.ALL;
-use recordDefs.ALL;
+library work;
+use work.recordDefs.ALL;
 
 -- Uncomment the following library declaration if using
 -- arithmetic functions with Signed or Unsigned values
@@ -56,7 +57,7 @@ variable xCnt : STD_LOGIC_VECTOR (9 downto 0) := (others => '0');
 variable yCnt : STD_LOGIC_VECTOR (9 downto 0) := (others => '0');
 variable valid : STD_LOGIC := '0';
 begin
-	if(clk'evnt and clk = '1') then
+	if(clk'event and clk = '1') then
 		if(dataReady = '1') then
 			valid := '1';
 			if(xCnt > Hsa or yCnt > Vsa) then

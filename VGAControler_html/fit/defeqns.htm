@@ -1,0 +1,398 @@
+<html><head><link type='text/css' href='style.css' rel='stylesheet'></head><body class='pgBgnd'>
+<h3 align='center'>Equations</h3>
+<table width='90%' align='center' border='1' cellpadding='0' cellspacing='0'>
+<tr><td>
+</td></tr><tr><td>
+********** Mapped Logic **********
+</td></tr><tr><td>
+</td></tr><tr><td>
+Bout(0) <= '0';
+</td></tr><tr><td>
+</td></tr><tr><td>
+Bout(1) <= '0';
+</td></tr><tr><td>
+</td></tr><tr><td>
+Bout(2) <= '0';
+</td></tr><tr><td>
+</td></tr><tr><td>
+Gout(0) <= '0';
+</td></tr><tr><td>
+</td></tr><tr><td>
+Gout(1) <= '0';
+</td></tr><tr><td>
+</td></tr><tr><td>
+Gout(2) <= '0';
+</td></tr><tr><td>
+</td></tr><tr><td>
+N_PZ_257 <= (xin(9) AND xin(8))
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	XOR ((xin(9) AND xin(7) AND NOT xin(8))
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (xin(9) AND xin(7) AND xin(8) AND xin(4) AND xin(5) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	xin(6))
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (xin(9) AND NOT xin(7) AND NOT xin(8) AND xin(4) AND xin(5) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	xin(6)));
+</td></tr><tr><td>
+</td></tr><tr><td>
+N_PZ_260 <= ((flashRead AND flash/state_FSM_FFd2)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (flashRead AND flash/state_FSM_FFd4));
+</td></tr><tr><td>
+</td></tr><tr><td>
+N_PZ_289 <= ((NOT init AND NOT yin(9) AND inAddr_not0001)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (NOT init AND yin(8) AND yin(7) AND yin(6) AND yin(5) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	inAddr_not0001 AND yin(4) AND N_PZ_294)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (NOT init AND NOT yin(8) AND NOT yin(7) AND NOT yin(6) AND NOT yin(5) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	inAddr_not0001 AND NOT yin(4) AND NOT yin(2))
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (NOT init AND NOT yin(8) AND NOT yin(7) AND NOT yin(6) AND NOT yin(5) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	inAddr_not0001 AND NOT yin(4) AND NOT yin(3))
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (NOT init AND NOT yin(8) AND NOT yin(7) AND NOT yin(6) AND NOT yin(5) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	inAddr_not0001 AND NOT yin(4) AND NOT yin(1) AND NOT yin(0) AND NOT N_PZ_257));
+</td></tr><tr><td>
+</td></tr><tr><td>
+N_PZ_294 <= (yin(1) AND yin(0) AND yin(2) AND yin(3) AND N_PZ_257);
+</td></tr><tr><td>
+</td></tr><tr><td>
+N_PZ_359 <= (flashRead AND NOT flash/state_FSM_FFd1);
+</td></tr><tr><td>
+</td></tr><tr><td>
+Rout(0) <= '0';
+</td></tr><tr><td>
+</td></tr><tr><td>
+Rout(1) <= '0';
+</td></tr><tr><td>
+</td></tr><tr><td>
+Rout(2) <= '0';
+</td></tr><tr><td>
+FDCPE_dataReady: FDCPE port map (dataReady,dataReady_D,clk,'0','0','1');
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;dataReady_D <= ((NOT pause AND NOT xin(3) AND NOT init)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (NOT pause AND NOT init AND yin(9))
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (NOT pause AND NOT init AND NOT xin(2))
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (NOT pause AND NOT init AND NOT xin(1))
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (NOT pause AND NOT init AND NOT xin(0))
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (NOT pause AND NOT init AND dataReady)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (NOT pause AND NOT init AND xin(9) AND xin(7))
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (NOT pause AND NOT init AND xin(9) AND xin(8))
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (NOT pause AND NOT init AND yin(8) AND yin(7) AND yin(6) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	yin(5)));
+</td></tr><tr><td>
+FDCPE_flash/dataReady: FDCPE port map (flash/dataReady,flashRead,clk,'0','0',NOT N_PZ_359);
+</td></tr><tr><td>
+FDCPE_flash/state_FSM_FFd1: FDCPE port map (flash/state_FSM_FFd1,flash/state_FSM_FFd1_D,clk,'0','0','1');
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;flash/state_FSM_FFd1_D <= (flashRead AND flash/state_FSM_FFd2);
+</td></tr><tr><td>
+FDCPE_flash/state_FSM_FFd2: FDCPE port map (flash/state_FSM_FFd2,flash/state_FSM_FFd2_D,clk,'0','0','1');
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;flash/state_FSM_FFd2_D <= (flashRead AND flash/state_FSM_FFd3);
+</td></tr><tr><td>
+FDCPE_flash/state_FSM_FFd3: FDCPE port map (flash/state_FSM_FFd3,flash/state_FSM_FFd3_D,clk,'0','0','1');
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;flash/state_FSM_FFd3_D <= (flashRead AND flash/state_FSM_FFd4);
+</td></tr><tr><td>
+FDCPE_flash/state_FSM_FFd4: FDCPE port map (flash/state_FSM_FFd4,flash/state_FSM_FFd4_D,clk,'0','0','1');
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;flash/state_FSM_FFd4_D <= NOT ((flashRead AND NOT flash/state_FSM_FFd1));
+</td></tr><tr><td>
+</td></tr><tr><td>
+flashAddr(0) <= '0';
+</td></tr><tr><td>
+FDCPE_flashAddr1: FDCPE port map (flashAddr(1),inAddr(0),clk,'0','0',flashAddr_CE(1));
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;flashAddr_CE(1) <= (flashRead AND flash/state_FSM_FFd2);
+</td></tr><tr><td>
+FDCPE_flashAddr2: FDCPE port map (flashAddr(2),inAddr(1),clk,'0','0',flashAddr_CE(2));
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;flashAddr_CE(2) <= (flashRead AND flash/state_FSM_FFd2);
+</td></tr><tr><td>
+FDCPE_flashAddr3: FDCPE port map (flashAddr(3),inAddr(2),clk,'0','0',flashAddr_CE(3));
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;flashAddr_CE(3) <= (flashRead AND flash/state_FSM_FFd2);
+</td></tr><tr><td>
+FDCPE_flashAddr4: FDCPE port map (flashAddr(4),inAddr(3),clk,'0','0',flashAddr_CE(4));
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;flashAddr_CE(4) <= (flashRead AND flash/state_FSM_FFd2);
+</td></tr><tr><td>
+FDCPE_flashAddr5: FDCPE port map (flashAddr(5),inAddr(4),clk,'0','0',flashAddr_CE(5));
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;flashAddr_CE(5) <= (flashRead AND flash/state_FSM_FFd2);
+</td></tr><tr><td>
+FDCPE_flashAddr6: FDCPE port map (flashAddr(6),inAddr(5),clk,'0','0',flashAddr_CE(6));
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;flashAddr_CE(6) <= (flashRead AND flash/state_FSM_FFd2);
+</td></tr><tr><td>
+FDCPE_flashAddr7: FDCPE port map (flashAddr(7),inAddr(6),clk,'0','0',flashAddr_CE(7));
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;flashAddr_CE(7) <= (flashRead AND flash/state_FSM_FFd2);
+</td></tr><tr><td>
+FDCPE_flashAddr8: FDCPE port map (flashAddr(8),inAddr(7),clk,'0','0',flashAddr_CE(8));
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;flashAddr_CE(8) <= (flashRead AND flash/state_FSM_FFd2);
+</td></tr><tr><td>
+FDCPE_flashAddr9: FDCPE port map (flashAddr(9),inAddr(8),clk,'0','0',flashAddr_CE(9));
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;flashAddr_CE(9) <= (flashRead AND flash/state_FSM_FFd2);
+</td></tr><tr><td>
+FDCPE_flashAddr10: FDCPE port map (flashAddr(10),inAddr(9),clk,'0','0',flashAddr_CE(10));
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;flashAddr_CE(10) <= (flashRead AND flash/state_FSM_FFd2);
+</td></tr><tr><td>
+FDCPE_flashAddr11: FDCPE port map (flashAddr(11),inAddr(10),clk,'0','0',flashAddr_CE(11));
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;flashAddr_CE(11) <= (flashRead AND flash/state_FSM_FFd2);
+</td></tr><tr><td>
+FDCPE_flashAddr12: FDCPE port map (flashAddr(12),inAddr(11),clk,'0','0',flashAddr_CE(12));
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;flashAddr_CE(12) <= (flashRead AND flash/state_FSM_FFd2);
+</td></tr><tr><td>
+FDCPE_flashAddr13: FDCPE port map (flashAddr(13),inAddr(12),clk,'0','0',flashAddr_CE(13));
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;flashAddr_CE(13) <= (flashRead AND flash/state_FSM_FFd2);
+</td></tr><tr><td>
+FDCPE_flashAddr14: FDCPE port map (flashAddr(14),inAddr(13),clk,'0','0',flashAddr_CE(14));
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;flashAddr_CE(14) <= (flashRead AND flash/state_FSM_FFd2);
+</td></tr><tr><td>
+FDCPE_flashAddr15: FDCPE port map (flashAddr(15),inAddr(14),clk,'0','0',flashAddr_CE(15));
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;flashAddr_CE(15) <= (flashRead AND flash/state_FSM_FFd2);
+</td></tr><tr><td>
+FDCPE_flashAddr16: FDCPE port map (flashAddr(16),inAddr(15),clk,'0','0',flashAddr_CE(16));
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;flashAddr_CE(16) <= (flashRead AND flash/state_FSM_FFd2);
+</td></tr><tr><td>
+</td></tr><tr><td>
+flashAddr(17) <= '0';
+</td></tr><tr><td>
+</td></tr><tr><td>
+flashAddr(18) <= '0';
+</td></tr><tr><td>
+</td></tr><tr><td>
+flashAddr(19) <= '0';
+</td></tr><tr><td>
+</td></tr><tr><td>
+flashAddr(20) <= '0';
+</td></tr><tr><td>
+</td></tr><tr><td>
+flashAddr(21) <= '0';
+</td></tr><tr><td>
+</td></tr><tr><td>
+flashAddr(22) <= '0';
+</td></tr><tr><td>
+</td></tr><tr><td>
+flashCE0 <= '0';
+</td></tr><tr><td>
+</td></tr><tr><td>
+flashData_I(0) <= flashData(7);
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;flashData(0) <= flashData_I(0) when flashData_OE(0) = '1' else 'Z';
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;flashData_OE(0) <= NOT flashData(9);
+</td></tr><tr><td>
+</td></tr><tr><td>
+flashData_I(1) <= flashData(7);
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;flashData(1) <= flashData_I(1) when flashData_OE(1) = '1' else 'Z';
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;flashData_OE(1) <= NOT flashData(9);
+</td></tr><tr><td>
+</td></tr><tr><td>
+flashData_I(2) <= flashData(7);
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;flashData(2) <= flashData_I(2) when flashData_OE(2) = '1' else 'Z';
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;flashData_OE(2) <= NOT flashData(9);
+</td></tr><tr><td>
+</td></tr><tr><td>
+flashData_I(3) <= flashData(7);
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;flashData(3) <= flashData_I(3) when flashData_OE(3) = '1' else 'Z';
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;flashData_OE(3) <= NOT flashData(9);
+</td></tr><tr><td>
+</td></tr><tr><td>
+flashData_I(4) <= flashData(7);
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;flashData(4) <= flashData_I(4) when flashData_OE(4) = '1' else 'Z';
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;flashData_OE(4) <= NOT flashData(9);
+</td></tr><tr><td>
+</td></tr><tr><td>
+flashData_I(5) <= flashData(7);
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;flashData(5) <= flashData_I(5) when flashData_OE(5) = '1' else 'Z';
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;flashData_OE(5) <= NOT flashData(9);
+</td></tr><tr><td>
+</td></tr><tr><td>
+flashData_I(6) <= flashData(7);
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;flashData(6) <= flashData_I(6) when flashData_OE(6) = '1' else 'Z';
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;flashData_OE(6) <= NOT flashData(9);
+</td></tr><tr><td>
+FDCPE_flashData7: FDCPE port map (flashData_I(7),flashData(7),clk,'0','0','1');
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;flashData(7) <= NOT ((NOT flashData(7) AND NOT N_PZ_260));
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;flashData(7) <= flashData_I(7) when flashData_OE(7) = '1' else 'Z';
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;flashData_OE(7) <= NOT flashData(9);
+</td></tr><tr><td>
+FDCPE_flashData8: FDCPE port map (flashData(8),NOT flash/state_FSM_FFd4,clk,'0','0',N_PZ_260); -- Open Drain
+</td></tr><tr><td>
+FDCPE_flashData9: FDCPE port map (flashData(9),NOT flash/state_FSM_FFd4,clk,'0','0',N_PZ_260); -- Open Drain
+</td></tr><tr><td>
+FDCPE_flashData10: FDCPE port map (flashData(10),NOT flash/state_FSM_FFd4,clk,'0','0',N_PZ_260); -- Open Drain
+</td></tr><tr><td>
+FDCPE_flashData11: FDCPE port map (flashData(11),NOT flash/state_FSM_FFd4,clk,'0','0',N_PZ_260); -- Open Drain
+</td></tr><tr><td>
+FDCPE_flashData12: FDCPE port map (flashData(12),NOT flash/state_FSM_FFd4,clk,'0','0',N_PZ_260); -- Open Drain
+</td></tr><tr><td>
+FDCPE_flashData13: FDCPE port map (flashData(13),NOT flash/state_FSM_FFd4,clk,'0','0',N_PZ_260); -- Open Drain
+</td></tr><tr><td>
+FDCPE_flashData14: FDCPE port map (flashData(14),NOT flash/state_FSM_FFd4,clk,'0','0',N_PZ_260); -- Open Drain
+</td></tr><tr><td>
+FDCPE_flashData15: FDCPE port map (flashData(15),NOT flash/state_FSM_FFd4,clk,'0','0',N_PZ_260); -- Open Drain
+</td></tr><tr><td>
+FTCPE_flashOE: FTCPE port map (flashOE,flashOE_T,clk,'0','0','1');
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;flashOE_T <= ((flashRead AND flash/state_FSM_FFd1 AND NOT flashOE)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (flashRead AND NOT flash/state_FSM_FFd1 AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	flash/state_FSM_FFd2 AND flashOE));
+</td></tr><tr><td>
+FDCPE_flashRead: FDCPE port map (flashRead,NOT flash/dataReady,clk,'0','0',flashRead_CE);
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;flashRead_CE <= (NOT pause AND NOT flashRead_not00016);
+</td></tr><tr><td>
+</td></tr><tr><td>
+flashRead_not00016 <= ((NOT init AND yin(9))
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (NOT init AND nextBufferReady)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (NOT init AND xin(9) AND xin(7))
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (NOT init AND xin(9) AND xin(8))
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (NOT init AND yin(8) AND yin(7) AND yin(6) AND yin(5)));
+</td></tr><tr><td>
+FTCPE_flashWE: FTCPE port map (flashWE,flashWE_T,clk,'0','0','1');
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;flashWE_T <= ((flashRead AND flash/state_FSM_FFd3 AND NOT flashWE)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (flashRead AND NOT flash/state_FSM_FFd3 AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	flash/state_FSM_FFd4 AND flashWE));
+</td></tr><tr><td>
+FDCPE_inAddr0: FDCPE port map (inAddr(0),inAddr_D(0),clk,'0','0','1');
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;inAddr_D(0) <= ((NOT inAddr_not0001 AND inAddr(0))
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (yin(0) AND NOT N_PZ_257 AND N_PZ_289)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (NOT yin(0) AND N_PZ_257 AND N_PZ_289));
+</td></tr><tr><td>
+FDCPE_inAddr1: FDCPE port map (inAddr(1),inAddr_D(1),clk,'0','0','1');
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;inAddr_D(1) <= ((NOT inAddr_not0001 AND inAddr(1))
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (yin(1) AND NOT yin(0) AND N_PZ_289)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (yin(1) AND NOT N_PZ_257 AND N_PZ_289)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (NOT yin(1) AND yin(0) AND N_PZ_257 AND N_PZ_289));
+</td></tr><tr><td>
+FDCPE_inAddr2: FDCPE port map (inAddr(2),inAddr_D(2),clk,'0','0','1');
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;inAddr_D(2) <= ((NOT inAddr_not0001 AND inAddr(2))
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (NOT yin(1) AND yin(2) AND N_PZ_289)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (NOT yin(0) AND yin(2) AND N_PZ_289)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (yin(2) AND NOT N_PZ_257 AND N_PZ_289)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (yin(1) AND yin(0) AND NOT yin(2) AND N_PZ_257 AND N_PZ_289));
+</td></tr><tr><td>
+FDCPE_inAddr3: FDCPE port map (inAddr(3),inAddr_D(3),clk,'0','0','1');
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;inAddr_D(3) <= ((NOT inAddr_not0001 AND inAddr(3))
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (NOT N_PZ_294 AND yin(3) AND N_PZ_289)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (NOT N_PZ_294 AND yin(1) AND yin(0) AND yin(2) AND N_PZ_257 AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	N_PZ_289));
+</td></tr><tr><td>
+FDCPE_inAddr4: FDCPE port map (inAddr(4),inAddr_D(4),clk,'0','0','1');
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;inAddr_D(4) <= ((NOT inAddr_not0001 AND inAddr(4))
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (NOT init AND NOT yin(9) AND inAddr_not0001 AND yin(4) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT N_PZ_294)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (NOT init AND NOT yin(9) AND inAddr_not0001 AND NOT yin(4) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	N_PZ_294));
+</td></tr><tr><td>
+FDCPE_inAddr5: FDCPE port map (inAddr(5),inAddr_D(5),clk,'0','0','1');
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;inAddr_D(5) <= ((NOT inAddr_not0001 AND inAddr(5))
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (NOT init AND yin(5) AND NOT yin(9) AND inAddr_not0001 AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT yin(4))
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (NOT init AND yin(5) AND NOT yin(9) AND inAddr_not0001 AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT N_PZ_294)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (NOT init AND NOT yin(5) AND NOT yin(9) AND inAddr_not0001 AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	yin(4) AND N_PZ_294));
+</td></tr><tr><td>
+FDCPE_inAddr6: FDCPE port map (inAddr(6),inAddr_D(6),clk,'0','0','1');
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;inAddr_D(6) <= ((NOT inAddr_not0001 AND inAddr(6))
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (NOT init AND yin(6) AND NOT yin(5) AND NOT yin(9) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	inAddr_not0001)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (NOT init AND yin(6) AND NOT yin(9) AND inAddr_not0001 AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT yin(4))
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (NOT init AND yin(6) AND NOT yin(9) AND inAddr_not0001 AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT N_PZ_294)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (NOT init AND NOT yin(6) AND yin(5) AND NOT yin(9) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	inAddr_not0001 AND yin(4) AND N_PZ_294));
+</td></tr><tr><td>
+FDCPE_inAddr7: FDCPE port map (inAddr(7),inAddr_D(7),clk,'0','0','1');
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;inAddr_D(7) <= ((NOT inAddr_not0001 AND inAddr(7))
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (NOT init AND yin(7) AND NOT yin(6) AND NOT yin(9) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	inAddr_not0001)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (NOT init AND yin(7) AND NOT yin(5) AND NOT yin(9) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	inAddr_not0001)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (NOT init AND yin(7) AND NOT yin(9) AND inAddr_not0001 AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT yin(4))
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (NOT init AND yin(7) AND NOT yin(9) AND inAddr_not0001 AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT N_PZ_294)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (NOT init AND NOT yin(7) AND yin(6) AND yin(5) AND NOT yin(9) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	inAddr_not0001 AND yin(4) AND N_PZ_294));
+</td></tr><tr><td>
+FDCPE_inAddr8: FDCPE port map (inAddr(8),inAddr_D(8),clk,'0','0','1');
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;inAddr_D(8) <= yin(8)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	XOR ((init AND yin(8) AND inAddr_not0001)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (yin(8) AND yin(9) AND inAddr_not0001)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (yin(8) AND NOT inAddr_not0001 AND NOT inAddr(8))
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (NOT yin(8) AND NOT inAddr_not0001 AND inAddr(8))
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (NOT init AND yin(7) AND yin(6) AND yin(5) AND NOT yin(9) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	inAddr_not0001 AND yin(4) AND N_PZ_294));
+</td></tr><tr><td>
+FDCPE_inAddr9: FDCPE port map (inAddr(9),inAddr_D(9),clk,'0','0','1');
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;inAddr_D(9) <= ((inAddr(9) AND NOT inAddr_not0001)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (yin(9) AND NOT N_PZ_294 AND N_PZ_289)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (NOT init AND yin(8) AND yin(7) AND yin(6) AND yin(5) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT yin(9) AND inAddr_not0001 AND yin(4) AND N_PZ_294));
+</td></tr><tr><td>
+FDCPE_inAddr10: FDCPE port map (inAddr(10),inAddr_D(10),clk,'0','0','1');
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;inAddr_D(10) <= ((NOT inAddr_not0001 AND inAddr(10))
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (NOT init AND NOT xin(9) AND inAddr_not0001 AND NOT xin(4))
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (NOT init AND NOT xin(7) AND NOT xin(8) AND inAddr_not0001 AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT xin(4)));
+</td></tr><tr><td>
+FDCPE_inAddr11: FDCPE port map (inAddr(11),inAddr_D(11),clk,'0','0','1');
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;inAddr_D(11) <= ((NOT inAddr_not0001 AND inAddr(11))
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (NOT init AND NOT xin(9) AND inAddr_not0001 AND xin(4) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT xin(5))
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (NOT init AND NOT xin(9) AND inAddr_not0001 AND NOT xin(4) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	xin(5))
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (NOT init AND NOT xin(7) AND NOT xin(8) AND inAddr_not0001 AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	xin(4) AND NOT xin(5))
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (NOT init AND NOT xin(7) AND NOT xin(8) AND inAddr_not0001 AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT xin(4) AND xin(5)));
+</td></tr><tr><td>
+FDCPE_inAddr12: FDCPE port map (inAddr(12),inAddr_D(12),clk,'0','0','1');
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;inAddr_D(12) <= ((NOT inAddr_not0001 AND inAddr(12))
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (NOT init AND inAddr_not0001 AND NOT N_PZ_257 AND NOT xin(4) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	xin(6))
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (NOT init AND inAddr_not0001 AND NOT N_PZ_257 AND NOT xin(5) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	xin(6))
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (NOT init AND inAddr_not0001 AND NOT N_PZ_257 AND xin(4) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	xin(5) AND NOT xin(6)));
+</td></tr><tr><td>
+FDCPE_inAddr13: FDCPE port map (inAddr(13),inAddr_D(13),clk,'0','0','1');
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;inAddr_D(13) <= ((NOT inAddr_not0001 AND inAddr(13))
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (NOT init AND NOT xin(9) AND xin(7) AND inAddr_not0001 AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT xin(4))
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (NOT init AND NOT xin(9) AND xin(7) AND inAddr_not0001 AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT xin(5))
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (NOT init AND NOT xin(9) AND xin(7) AND inAddr_not0001 AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT xin(6))
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (NOT init AND NOT xin(9) AND NOT xin(7) AND inAddr_not0001 AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	xin(4) AND xin(5) AND xin(6)));
+</td></tr><tr><td>
+FDCPE_inAddr14: FDCPE port map (inAddr(14),inAddr_D(14),clk,'0','0','1');
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;inAddr_D(14) <= ((NOT inAddr_not0001 AND inAddr(14))
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (NOT init AND NOT xin(9) AND NOT xin(7) AND xin(8) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	inAddr_not0001)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (NOT init AND NOT xin(9) AND xin(7) AND xin(8) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	inAddr_not0001 AND NOT xin(4))
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (NOT init AND NOT xin(9) AND xin(7) AND xin(8) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	inAddr_not0001 AND NOT xin(5))
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (NOT init AND NOT xin(9) AND xin(7) AND xin(8) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	inAddr_not0001 AND NOT xin(6))
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (NOT init AND NOT xin(9) AND xin(7) AND NOT xin(8) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	inAddr_not0001 AND xin(4) AND xin(5) AND xin(6)));
+</td></tr><tr><td>
+FDCPE_inAddr15: FDCPE port map (inAddr(15),inAddr_D(15),clk,'0','0','1');
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;inAddr_D(15) <= ((NOT inAddr_not0001 AND inAddr(15))
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (NOT init AND xin(9) AND NOT xin(8) AND inAddr_not0001 AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT N_PZ_257)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (NOT init AND NOT xin(9) AND xin(7) AND xin(8) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	inAddr_not0001 AND xin(4) AND xin(5) AND xin(6)));
+</td></tr><tr><td>
+</td></tr><tr><td>
+inAddr_not0001 <= (NOT pause AND NOT flash/dataReady AND NOT flashRead_not00016);
+</td></tr><tr><td>
+FTCPE_init: FTCPE port map (init,init_T,clk,'0','0','1');
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;init_T <= (NOT pause AND init AND flash/dataReady);
+</td></tr><tr><td>
+FTCPE_nextBufferReady: FTCPE port map (nextBufferReady,nextBufferReady_T,clk,'0','0','1');
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;nextBufferReady_T <= (NOT pause AND NOT init AND flash/dataReady AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT flashRead_not00016);
+</td></tr><tr><td>
+</td></tr><tr><td>
+Register Legend:
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; FDCPE (Q,D,C,CLR,PRE,CE); 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; FDDCPE (Q,D,C,CLR,PRE,CE); 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; FTCPE (Q,D,C,CLR,PRE,CE); 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; FTDCPE (Q,D,C,CLR,PRE,CE); 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; LDCP  (Q,D,G,CLR,PRE); 
+</td></tr><tr><td>
+</td></tr>
+</table>
+<form><span class="pgRef"><table width="90%" align="center"><tr>
+<td align="left"><input type="button" onclick="javascript:parent.leftnav.showTop()" onmouseover="window.status='goto top of page'; return true;" onmouseout="window.status=''" value="back to top"></td>
+<td align="right"><input type="button" onclick="window.print()" onmouseover="window.status='print page'; return true;" onmouseout="window.status=''" value="print page"></td>
+</tr></table></span></form>
+</body></html>

@@ -1,0 +1,180 @@
+
+----------------------------------------
+|  P a r t i t i o n    S u c c e e d  |
+----------------------------------------
+0 Group(s)
+
+GCLK0: 1=clk.p
+----------------- B l o c k 0 ------------------
+PLApt(56/56), Fanin(37/38), Clk(1/3), Bct(0/4), Pin(10/10), Mcell(16/16)
+PLApts[56/56] 31 32 33 34 36 38 40 42 53 35 37 39 41 43 58 59 109 110 123 111 124 135 63 65 84 30 107 126 131 
+              60 87 88 93 122 103 136 137 0 66 85 54 106 127 132 86 105 128 133 102 114 115 118 121 79 89 100
+Fanins[37] dataReady.n N_PZ_257.n N_PZ_289.n N_PZ_294.n flash/dataReady.n inAddr<15>.n inAddr<2>.n 
+           inAddr<3>.n inAddr<5>.n inAddr<6>.n inAddr<7>.n inAddr<8>.n inAddr<9>.n inAddr_not0001.n init.n 
+           nextBufferReady.n pause.p xin<0>.p xin<1>.p xin<2>.p xin<3>.p xin<4>.p xin<5>.p xin<6>.p xin<7>.p 
+           xin<8>.p xin<9>.p yin<0>.p yin<1>.p yin<2>.p yin<3>.p yin<4>.p yin<5>.p yin<6>.p yin<7>.p yin<8>.p 
+           yin<9>.p
+clk[1] clk 
+CTC: 
+CTR: 
+CTS: 
+CTE: 
+vref: [0]
+Signal[22] [dataReady(101),dataReady(13)] [Bout<0>(103),Bout<0>(12)] [Bout<1>(104),Bout<1>(11)]  
+           [Bout<2>(105),Bout<2>(10)] [pause(9)] [xin<0>(8)] [xin<1>(7)] [xin<2>(6)] [xin<3>(4)] [xin<8>(3)]  
+           [flashRead_not00016(114)] [inAddr<8>(110)] [inAddr<9>(109)] [inAddr<7>(108)] [N_PZ_289(107)]  
+           [inAddr<3>(102)] [inAddr<6>(116)] [inAddr<5>(115)] [inAddr<2>(113)] [inAddr<15>(112)]  
+           [N_PZ_294(111)] [init(106)] 
+Signal[22] [ 0: dataReady(101) dataReady(13)  ][ 1: inAddr<3>(102)  ][ 2: Bout<0>(103) Bout<0>(12)  ][ 3:  
+           Bout<1>(104) Bout<1>(11)  ][ 4: Bout<2>(105) Bout<2>(10)  ][ 5: init(106) pause(9)  ][ 6:  
+           N_PZ_289(107)  ][ 7: inAddr<7>(108)  ][ 8: inAddr<9>(109)  ][ 9: inAddr<8>(110)  ][ 10:  
+           N_PZ_294(111) xin<0>(8)  ][ 11: inAddr<15>(112) xin<1>(7)  ][ 12: inAddr<2>(113) xin<2>(6)  ] 
+           [ 13: flashRead_not00016(114)  ][ 14: inAddr<5>(115) xin<3>(4)  ][ 15: inAddr<6>(116) xin<8>(3)  ]
+----------------- B l o c k 1 ------------------
+PLApt(25/56), Fanin(15/38), Clk(1/3), Bct(0/4), Pin(10/10), Mcell(16/16)
+PLApts[25/56] 29 15 16 17 18 19 20 14 21 12 48 () () 46 () () 46 () () 46 () () 46 () () 46 () () 48 () () 50 
+              () () 44 () () () () () 46 () () 46 () () 112 () () 46 () () 46 () () 46
+Fanins[15] N_PZ_359.n flash/state_FSM_FFd1.n flash/state_FSM_FFd2.n flash/state_FSM_FFd3.n 
+           flash/state_FSM_FFd4.n flashRead.n inAddr<0>.n inAddr<10>.n inAddr<11>.n inAddr<12>.n inAddr<13>.n 
+           inAddr<14>.n inAddr<15>.n inAddr<1>.n inAddr<9>.n
+clk[1] clk 
+CTC: 
+CTR: 
+CTS: 
+CTE: 
+vref: [0]
+Signal[17] [flashAddr<10>(118),flashAddr<10>(14)] [flashAddr<11>(119),flashAddr<11>(15)]  
+           [flashAddr<12>(120),flashAddr<12>(16)] [flashAddr<13>(121),flashAddr<13>(17)]  
+           [flashAddr<14>(122),flashAddr<14>(18)] [flashAddr<15>(127),flashAddr<15>(19)]  
+           [flashAddr<16>(130),flashAddr<16>(23)] [flashAddr<1>(131),flashAddr<1>(24)]  
+           [flashAddr<2>(132),flashAddr<2>(27)] [clk(22)] [flash/state_FSM_FFd1(128)] [N_PZ_260(126)]  
+           [flash/state_FSM_FFd3(125)] [flash/state_FSM_FFd2(124)] [flash/state_FSM_FFd4(123)]  
+           [N_PZ_359(117)] [flash/dataReady(129)] 
+Signal[17] [ 0: N_PZ_359(117)  ][ 1: flashAddr<10>(118) flashAddr<10>(14)  ][ 2: flashAddr<11>(119)  
+           flashAddr<11>(15)  ][ 3: flashAddr<12>(120) flashAddr<12>(16)  ][ 4: flashAddr<13>(121)  
+           flashAddr<13>(17)  ][ 5: flashAddr<14>(122) flashAddr<14>(18)  ][ 6: flash/state_FSM_FFd4(123)  ] 
+           [ 7: flash/state_FSM_FFd2(124)  ][ 8: flash/state_FSM_FFd3(125)  ][ 9: N_PZ_260(126)  ][ 10:  
+           flashAddr<15>(127) flashAddr<15>(19)  ][ 11: flash/state_FSM_FFd1(128)  ][ 12:  
+           flash/dataReady(129) clk(22)  ][ 13: flashAddr<16>(130) flashAddr<16>(23)  ][ 14:  
+           flashAddr<1>(131) flashAddr<1>(24)  ][ 15: flashAddr<2>(132) flashAddr<2>(27)  ]
+----------------- B l o c k 2 ------------------
+PLApt(51/56), Fanin(31/38), Clk(1/3), Bct(0/4), Pin(11/11), Mcell(16/16)
+PLApts[51/56] 22 23 24 25 26 27 28 104 129 134 67 71 95 46 72 73 46 74 77 46 96 69 46 70 76 46 80 82 46 99 68 
+              75 78 81 98 7 9 10 90 91 46 92 97 94 117 120 101 113 116 119 () () () () () 4
+Fanins[31] N_PZ_257.n N_PZ_289.n N_PZ_294.n flash/state_FSM_FFd2.n flashRead.n inAddr<0>.n inAddr<10>.n 
+           inAddr<11>.n inAddr<12>.n inAddr<13>.n inAddr<14>.n inAddr<1>.n inAddr<2>.n inAddr<3>.n 
+           inAddr<4>.n inAddr<5>.n inAddr<6>.n inAddr<7>.n inAddr<8>.n inAddr_not0001.n init.n xin<4>.p 
+           xin<5>.p xin<6>.p xin<7>.p xin<8>.p xin<9>.p yin<0>.p yin<1>.p yin<4>.p yin<9>.p
+clk[1] clk 
+CTC: 
+CTR: 
+CTS: 
+CTE: 
+vref: [0]
+Signal[20] [flashAddr<3>(135),flashAddr<3>(1)] [flashAddr<4>(136),flashAddr<4>(99)]  
+           [flashAddr<5>(134),flashAddr<5>(2)] [flashAddr<6>(137),flashAddr<6>(97)]  
+           [flashAddr<7>(138),flashAddr<7>(96)] [flashAddr<8>(139),flashAddr<8>(95)]  
+           [flashAddr<9>(143),flashAddr<9>(94)] [xin<4>(93)] [xin<5>(92)] [xin<6>(91)] [xin<7>(90)]  
+           [inAddr<4>(144)] [inAddr<10>(142)] [inAddr<11>(141)] [inAddr<14>(140)] [inAddr<13>(133)]  
+           [N_PZ_257(148)] [inAddr<12>(147)] [inAddr<0>(146)] [inAddr<1>(145)] 
+Signal[20] [ 0: inAddr<13>(133)  ][ 1: flashAddr<5>(134) flashAddr<5>(2)  ][ 2: flashAddr<3>(135)  
+           flashAddr<3>(1)  ][ 3: flashAddr<4>(136) flashAddr<4>(99)  ][ 4: flashAddr<6>(137)  
+           flashAddr<6>(97)  ][ 5: flashAddr<7>(138) flashAddr<7>(96)  ][ 6: flashAddr<8>(139)  
+           flashAddr<8>(95)  ][ 7: inAddr<14>(140)  ][ 8: inAddr<11>(141)  ][ 9: inAddr<10>(142)  ][ 10:  
+           flashAddr<9>(143) flashAddr<9>(94)  ][ 11: inAddr<4>(144)  ][ 12: inAddr<1>(145) xin<4>(93)  ] 
+           [ 13: inAddr<0>(146) xin<5>(92)  ][ 14: inAddr<12>(147) xin<6>(91)  ][ 15: N_PZ_257(148)  
+           xin<7>(90)  ]
+----------------- B l o c k 3 ------------------
+PLApt(19/56), Fanin(14/38), Clk(1/3), Bct(1/4), Pin(11/11), Mcell(14/16)
+PLApts[19/56] 45 47 49 51 52 13 () 2 () () () () () () () () () () () () () () 138 () () 138 () () 138 () () 
+              56 () () 57 () () 55 () () 138 () () 138 () () 138 () () 138 () () 138 () () 139
+Fanins[14] flashData<7>.n flashData<9>.n flashOE.n flashWE.n N_PZ_260.n flash/dataReady.n 
+           flash/state_FSM_FFd1.n flash/state_FSM_FFd2.n flash/state_FSM_FFd3.n flash/state_FSM_FFd4.n 
+           flashRead.n flashRead_not00016.n init.n pause.p
+clk[1] clk 
+CTC: 
+CTR: 
+CTS: 
+CTE: (pt=2) flashData<9>' ;
+vref: [0]
+Signal[14] [flashData<10>(153),flashData<10>(30)] [flashData<11>(154),flashData<11>(32)]  
+           [flashData<12>(155),flashData<12>(33)] [flashData<13>(159),flashData<13>(34)]  
+           [flashData<14>(160),flashData<14>(35)] [flashData<15>(161),flashData<15>(36)]  
+           [flashData<7>(164),flashData<7>(40)] [flashData<8>(162),flashData<8>(37)]  
+           [flashData<9>(163),flashData<9>(39)] [flashOE(149),flashOE(28)] [flashWE(152),flashWE(29)]  
+           [flashRead(158)] [nextBufferReady(157)] [inAddr_not0001(156)] 
+Signal[14] [ 0: flashOE(149) flashOE(28)  ][ 1:  ][ 2:  ][ 3: flashWE(152) flashWE(29)  ][ 4:  
+           flashData<10>(153) flashData<10>(30)  ][ 5: flashData<11>(154) flashData<11>(32)  ][ 6:  
+           flashData<12>(155) flashData<12>(33)  ][ 7: inAddr_not0001(156)  ][ 8: nextBufferReady(157)  ] 
+           [ 9: flashRead(158)  ][ 10: flashData<13>(159) flashData<13>(34)  ][ 11: flashData<14>(160)  
+           flashData<14>(35)  ][ 12: flashData<15>(161) flashData<15>(36)  ][ 13: flashData<8>(162)  
+           flashData<8>(37)  ][ 14: flashData<9>(163) flashData<9>(39)  ][ 15: flashData<7>(164)  
+           flashData<7>(40)  ]
+----------------- B l o c k 4 ------------------
+PLApt(8/56), Fanin(2/38), Clk(0/3), Bct(1/4), Pin(10/10), Mcell(10/16)
+PLApts[8/44] () () () () () () () 2 () () 3 () () 3 () () 3 () () () () () 3 () () () () () 3 () () () () () 
+             () () () () () () 3 () () 3
+Fanins[ 2] flashData<7>.n flashData<9>.n
+clk[0] 
+CTC: 
+CTR: 
+CTS: 
+CTE: (pt=2) flashData<9>' ;
+vref: [0]
+Signal[10] [Gout<0>(177),Gout<0>(73)] [Gout<1>(178),Gout<1>(74)] [Gout<2>(179),Gout<2>(76)]  
+           [flashData<0>(165),flashData<0>(65)] [flashData<1>(166),flashData<1>(66)]  
+           [flashData<2>(167),flashData<2>(67)] [flashData<3>(169),flashData<3>(68)]  
+           [flashData<4>(171),flashData<4>(70)] [flashData<5>(175),flashData<5>(71)]  
+           [flashData<6>(176),flashData<6>(72)] 
+Signal[10] [ 0: flashData<0>(165) flashData<0>(65)  ][ 1: flashData<1>(166) flashData<1>(66)  ][ 2:  
+           flashData<2>(167) flashData<2>(67)  ][ 3:  ][ 4: flashData<3>(169) flashData<3>(68)  ][ 5:  ][ 6:  
+           flashData<4>(171) flashData<4>(70)  ][ 7:  ][ 8:  ][ 9:  ][ 10: flashData<5>(175)  
+           flashData<5>(71)  ][ 11: flashData<6>(176) flashData<6>(72)  ][ 12: Gout<0>(177) Gout<0>(73)  ] 
+           [ 13: Gout<1>(178) Gout<1>(74)  ][ 14: Gout<2>(179) Gout<2>(76)  ][ 15:  ]
+----------------- B l o c k 5 ------------------
+PLApt(0/56), Fanin(0/38), Clk(0/3), Bct(0/4), Pin(9/9), Mcell(9/16)
+PLApts[0/0]
+Fanins[ 0]
+clk[0] 
+CTC: 
+CTR: 
+CTS: 
+CTE: 
+vref: [0]
+Signal[ 9] [Rout<0>(181),Rout<0>(64)] [Rout<1>(182),Rout<1>(63)] [Rout<2>(183),Rout<2>(61)]  
+           [flashAddr<0>(184),flashAddr<0>(60)] [flashAddr<17>(185),flashAddr<17>(59)]  
+           [flashAddr<18>(186),flashAddr<18>(58)] [flashAddr<19>(192),flashAddr<19>(56)]  
+           [flashAddr<20>(194),flashAddr<20>(55)] [flashAddr<21>(196),flashAddr<21>(54)] 
+Signal[ 9] [ 0: Rout<0>(181) Rout<0>(64)  ][ 1: Rout<1>(182) Rout<1>(63)  ][ 2: Rout<2>(183) Rout<2>(61)  ] 
+           [ 3: flashAddr<0>(184) flashAddr<0>(60)  ][ 4: flashAddr<17>(185) flashAddr<17>(59)  ][ 5:  
+           flashAddr<18>(186) flashAddr<18>(58)  ][ 6:  ][ 7:  ][ 8:  ][ 9:  ][ 10:  ][ 11:  
+           flashAddr<19>(192) flashAddr<19>(56)  ][ 12:  ][ 13: flashAddr<20>(194) flashAddr<20>(55)  ][ 14:  
+            ][ 15: flashAddr<21>(196) flashAddr<21>(54)  ]
+----------------- B l o c k 6 ------------------
+PLApt(0/56), Fanin(0/38), Clk(0/3), Bct(0/4), Pin(10/10), Mcell(2/16)
+PLApts[0/0]
+Fanins[ 0]
+clk[0] 
+CTC: 
+CTR: 
+CTS: 
+CTE: 
+vref: [0]
+Signal[10] [flashAddr<22>(197),flashAddr<22>(77)] [flashCE0(198),flashCE0(78)] [xin<9>(79)] [yin<0>(80)]  
+           [yin<1>(81)] [yin<2>(82)] [yin<3>(85)] [yin<4>(86)] [yin<5>(87)] [yin<6>(89)] 
+Signal[10] [ 0: flashAddr<22>(197) flashAddr<22>(77)  ][ 1: flashCE0(198) flashCE0(78)  ][ 2:  ][ 3:  
+           xin<9>(79)  ][ 4: yin<0>(80)  ][ 5: yin<1>(81)  ][ 6:  ][ 7:  ][ 8:  ][ 9:  ][ 10: yin<2>(82)  ] 
+           [ 11:  ][ 12: yin<3>(85)  ][ 13: yin<4>(86)  ][ 14: yin<5>(87)  ][ 15: yin<6>(89)  ]
+----------------- B l o c k 7 ------------------
+PLApt(0/56), Fanin(0/38), Clk(0/3), Bct(0/4), Pin(3/9), Mcell(0/16)
+PLApts[0/0]
+Fanins[ 0]
+clk[0] 
+CTC: 
+CTR: 
+CTS: 
+CTE: 
+vref: [0]
+Signal[ 3] [yin<7>(53)] [yin<8>(52)] [yin<9>(50)] 
+Signal[ 3] [ 0:  ][ 1: yin<7>(53)  ][ 2: yin<8>(52)  ][ 3: yin<9>(50)  ][ 4:  ][ 5: (49)  ][ 6:  ][ 7:  ] 
+           [ 8:  ][ 9:  ][ 10:  ][ 11: (46)  ][ 12: (44)  ][ 13: (43)  ][ 14: (42)  ][ 15: (41)  ]

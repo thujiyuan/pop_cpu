@@ -21,7 +21,7 @@ Compiling vhdl file "C:/pop_cpu1/recordDefs.vhd" in Library work.
 Architecture recorddefs of Entity recorddefs is up to date.
 Compiling vhdl file "C:/pop_cpu1/VGAAccess.vhd" in Library work.
 Entity <vgaaccess> compiled.
-Entity <VGAAccess> (Architecture <Behavioral>) compiled.
+Entity <vgaaccess> (Architecture <behavioral>) compiled.
 
 
 Total REAL time to Xst completion: 0.00 secs
@@ -29,7 +29,7 @@ Total CPU time to Xst completion: 0.14 secs
  
 --> 
 
-Total memory usage is 173236 kilobytes
+Total memory usage is 169176 kilobytes
 
 Number of errors   :    0 (   0 filtered)
 Number of warnings :    1 (   0 filtered)

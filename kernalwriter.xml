@@ -1,0 +1,24 @@
+<interfaceDefinition version='1.2' language='vhdl' kind='component' name='kernalWriter'>
+  <useClause path='ieee.STD_LOGIC_UNSIGNED.all' />
+  <useClause path='ieee.std_logic_arith.all' />
+  <useClause path='ieee.std_logic_1164.all' />
+    <portList>
+
+      <port name='RAM1Data' direction='inout' type='std_logic_vector (7 downto 0)' kind='array' library='work' package='kernalWriter' packedDimension='(7 downto 0)' />
+      <port name='RAM1OE' direction='out' type='STD_LOGIC' kind='' />
+      <port name='RAM1WE' direction='out' type='STD_LOGIC' kind='' />
+      <port name='RAM1EN' direction='out' type='STD_LOGIC' kind='' />
+      <port name='rdn' direction='out' type='STD_LOGIC' kind='' />
+      <port name='wrn' direction='out' type='STD_LOGIC' kind='' />
+      <port name='serialDataReady' direction='in' type='STD_LOGIC' kind='' />
+      <port name='tbre' direction='in' type='STD_LOGIC' kind='' />
+      <port name='tsre' direction='in' type='STD_LOGIC' kind='' />
+      <port name='clk' direction='in' type='STD_LOGIC' kind='' />
+      <port name='flashAddr' direction='out' type='std_logic_vector (22 downto 0)' kind='array' library='work' package='kernalWriter' packedDimension='(22 downto 0)' />
+      <port name='flashData' direction='inout' type='std_logic_vector (15 downto 0)' kind='array' library='work' package='kernalWriter' packedDimension='(15 downto 0)' />
+      <port name='flashCE0' direction='out' type='STD_LOGIC' kind='' />
+      <port name='flashOE' direction='out' type='STD_LOGIC' kind='' />
+      <port name='flashWE' direction='out' type='STD_LOGIC' kind='' />
+
+    </portList>
+</interfaceDefinition>

@@ -21,8 +21,8 @@ library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
 use IEEE.STD_LOGIC_ARITH.ALL;
 use IEEE.STD_LOGIC_UNSIGNED.ALL;
-use recordDefs.ALL;
-
+library work;
+use work.recordDefs.ALL;
 -- Uncomment the following library declaration if using
 -- arithmetic functions with Signed or Unsigned values
 --use IEEE.NUMERIC_STD.ALL;
@@ -66,7 +66,6 @@ end component;
 signal flashRead : STD_LOGIC := '0';
 signal inAddr : STD_LOGIC_VECTOR (21 downto 0) := (others => '0');
 signal outData : STD_LOGIC_VECTOR (15 downto 0);
-signal modifying : STD_LOGIC;
 signal flashDataReady : STD_LOGIC := '0';
 signal flashDataWrite : STD_LOGIC := '0';
 signal flashDataReadyCfm : STD_LOGIC := '0';

@@ -26,3 +26,10 @@ xst -intstyle ise -ifn "C:/pop_cpu1/VGAControler.xst" -ofn "C:/pop_cpu1/VGAContr
 xst -intstyle ise -ifn "C:/pop_cpu1/VGAControler.xst" -ofn "C:/pop_cpu1/VGAControler.syr" 
 xst -intstyle ise -ifn "C:/pop_cpu1/VGAControler.xst" -ofn "C:/pop_cpu1/VGAControler.syr" 
 xst -intstyle ise -ifn "C:/pop_cpu1/VGAControler.xst" -ofn "C:/pop_cpu1/VGAControler.syr" 
+xst -intstyle ise -ifn "C:/pop_cpu1/VGAControler.xst" -ofn "C:/pop_cpu1/VGAControler.syr" 
+xst -intstyle ise -ifn "C:/pop_cpu1/VGAControler.xst" -ofn "C:/pop_cpu1/VGAControler.syr" 
+ngdbuild -intstyle ise -dd _ngo -i -p acr2 VGAControler.ngc VGAControler.ngd  
+cpldfit -intstyle ise -p xa2c*-*-* -ofmt vhdl -optimize density -htmlrpt -loc on -slew fast -init low -inputs 32 -pterms 28 -unused keeper -terminate keeper -iostd LVCMOS18 VGAControler.ngd 
+XSLTProcess VGAControler_build.xml 
+tsim -intstyle ise VGAControler VGAControler.nga 
+hprep6 -s IEEE1149 -i VGAControler 

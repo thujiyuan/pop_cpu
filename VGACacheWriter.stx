@@ -20,7 +20,8 @@ Total CPU time to Xst completion: 0.10 secs
 Compiling vhdl file "C:/pop_cpu1/recordDefs.vhd" in Library work.
 Architecture recorddefs of Entity recorddefs is up to date.
 Compiling vhdl file "C:/pop_cpu1/FlashAccess.vhd" in Library work.
-Architecture behavioral of Entity flashaccess is up to date.
+Entity <flashaccess> compiled.
+Entity <flashaccess> (Architecture <behavioral>) compiled.
 Compiling vhdl file "C:/pop_cpu1/VGACacheWriter.vhd" in Library work.
 Entity <vgacachewriter> compiled.
 Entity <vgacachewriter> (Architecture <behavioral>) compiled.
@@ -31,7 +32,7 @@ Total CPU time to Xst completion: 0.14 secs
  
 --> 
 
-Total memory usage is 173428 kilobytes
+Total memory usage is 169496 kilobytes
 
 Number of errors   :    0 (   0 filtered)
 Number of warnings :    1 (   0 filtered)

@@ -1,0 +1,13 @@
+<interfaceDefinition version='1.2' language='vhdl' kind='component' name='ALUSrc0MUX'>
+  <useClause path='work.recordDefs.all' />
+  <useClause path='ieee.std_logic_1164.all' />
+    <portList>
+
+      <port name='rx' direction='in' type='std_logic_vector (15 downto 0)' kind='array' library='work' package='ALUSrc0MUX' packedDimension='(15 downto 0)' />
+      <port name='ry' direction='in' type='std_logic_vector (15 downto 0)' kind='array' library='work' package='ALUSrc0MUX' packedDimension='(15 downto 0)' />
+      <port name='SP' direction='in' type='std_logic_vector (15 downto 0)' kind='array' library='work' package='ALUSrc0MUX' packedDimension='(15 downto 0)' />
+      <port name='ctrl' direction='in' type='std_logic_vector (1 downto 0)' kind='array' library='work' package='ALUSrc0MUX' packedDimension='(1 downto 0)' />
+      <port name='output' direction='out' type='std_logic_vector (15 downto 0)' kind='array' library='work' package='ALUSrc0MUX' packedDimension='(15 downto 0)' />
+
+    </portList>
+</interfaceDefinition>

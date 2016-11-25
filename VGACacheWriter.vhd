@@ -64,7 +64,6 @@ end component;
 signal flashWrite : STD_LOGIC := '0';
 signal inAddr : STD_LOGIC_VECTOR (21 downto 0) := (others => '0');
 signal outData, inFlashData : STD_LOGIC_VECTOR (15 downto 0);
-signal modifying : STD_LOGIC;
 signal flashDataReady : STD_LOGIC := '0';
 signal flashDataWrite : STD_LOGIC := '0';
 signal flashDataReadyCfm : STD_LOGIC := '0';
@@ -88,7 +87,8 @@ begin
 			posX := inPos(13 downto 8);
 			posY := inPos(5 downto 0);
 			case inChar(7 downto 0) is --确定要显示的字符
-			
+				when others =>
+			end case;
 		end if;
 		if(writing = '1') then
 				--写一个字到flash中

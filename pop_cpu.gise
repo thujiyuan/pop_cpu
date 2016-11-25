@@ -29,10 +29,12 @@
     <file xil_pn:fileType="FILE_XST_STX" xil_pn:name="ALU.stx"/>
     <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_XST_REPORT" xil_pn:name="ALU.syr"/>
     <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_XST" xil_pn:name="ALU.xst"/>
+    <file xil_pn:branch="BehavioralSim" xil_pn:fileType="FILE_MODELSIM_CMD" xil_pn:name="ALUSrc0MUX.fdo"/>
     <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_XST_PROJECT" xil_pn:name="ALUSrc0MUX.prj"/>
     <file xil_pn:fileType="FILE_XST_STX" xil_pn:name="ALUSrc0MUX.stx"/>
     <file xil_pn:fileType="FILE_XST" xil_pn:name="ALUSrc0MUX.xst"/>
     <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_XST_PROJECT" xil_pn:name="ALUSrc0MUX_vhdl.prj"/>
+    <file xil_pn:branch="BehavioralSim" xil_pn:fileType="FILE_MODELSIM_CMD" xil_pn:name="ALUSrc1MUX.fdo"/>
     <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_XST_PROJECT" xil_pn:name="ALUSrc1MUX.prj"/>
     <file xil_pn:fileType="FILE_XST_STX" xil_pn:name="ALUSrc1MUX.stx"/>
     <file xil_pn:fileType="FILE_XST" xil_pn:name="ALUSrc1MUX.xst"/>
@@ -72,56 +74,118 @@
     <file xil_pn:fileType="FILE_XST_PROJECT" xil_pn:name="VGACacheWriter.prj"/>
     <file xil_pn:fileType="FILE_XST_STX" xil_pn:name="VGACacheWriter.stx"/>
     <file xil_pn:fileType="FILE_XST" xil_pn:name="VGACacheWriter.xst"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_NGDBUILD_LOG" xil_pn:name="VGAControler.bld"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_CHK" xil_pn:name="VGAControler.chk"/>
     <file xil_pn:fileType="FILE_CMD_LOG" xil_pn:name="VGAControler.cmd_log"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_CXT" xil_pn:name="VGAControler.cxt"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_GYD" xil_pn:name="VGAControler.gyd"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_JEDEC" xil_pn:name="VGAControler.jed"/>
+    <file xil_pn:fileType="FILE_LOG" xil_pn:name="VGAControler.log"/>
     <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_LSO" xil_pn:name="VGAControler.lso"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_MFD" xil_pn:name="VGAControler.mfd"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_NGA" xil_pn:name="VGAControler.nga"/>
     <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_NGC" xil_pn:name="VGAControler.ngc"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_NGD" xil_pn:name="VGAControler.ngd"/>
     <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_NGR" xil_pn:name="VGAControler.ngr"/>
+    <file xil_pn:fileType="FILE_PAD_MISC" xil_pn:name="VGAControler.pad"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_PNX" xil_pn:name="VGAControler.pnx"/>
     <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_XST_PROJECT" xil_pn:name="VGAControler.prj"/>
+    <file xil_pn:fileType="FILE_FITTER_REPORT" xil_pn:name="VGAControler.rpt"/>
     <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_XST_STX" xil_pn:name="VGAControler.stx"/>
     <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_XST_REPORT" xil_pn:name="VGAControler.syr"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_VM6" xil_pn:name="VGAControler.vm6"/>
+    <file xil_pn:fileType="FILE_FITTER_REPORT" xil_pn:name="VGAControler.xml"/>
     <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_XST" xil_pn:name="VGAControler.xst"/>
+    <file xil_pn:fileType="FILE_FITTER_REPORT" xil_pn:name="VGAControler_build.xml"/>
     <file xil_pn:fileType="FILE_HTML" xil_pn:name="VGAControler_envsettings.html"/>
+    <file xil_pn:fileType="FILE_DIRECTORY" xil_pn:name="VGAControler_html"/>
+    <file xil_pn:fileType="FILE_XRPT" xil_pn:name="VGAControler_ngdbuild.xrpt"/>
+    <file xil_pn:fileType="FILE_PAD_EXCEL_REPORT" xil_pn:name="VGAControler_pad.csv"/>
     <file xil_pn:fileType="FILE_HTML" xil_pn:name="VGAControler_summary.html"/>
     <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_XST_PROJECT" xil_pn:name="VGAControler_vhdl.prj"/>
     <file xil_pn:fileType="FILE_XRPT" xil_pn:name="VGAControler_xst.xrpt"/>
     <file xil_pn:fileType="FILE_XST_PROJECT" xil_pn:name="WBSrcMUX.prj"/>
     <file xil_pn:fileType="FILE_XST_STX" xil_pn:name="WBSrcMUX.stx"/>
     <file xil_pn:fileType="FILE_XST" xil_pn:name="WBSrcMUX.xst"/>
+    <file xil_pn:fileType="FILE_DIRECTORY" xil_pn:name="_ngo"/>
+    <file xil_pn:fileType="FILE_XMSGS" xil_pn:name="_xmsgs/ngdbuild.xmsgs"/>
     <file xil_pn:fileType="FILE_XMSGS" xil_pn:name="_xmsgs/xst.xmsgs"/>
+    <file xil_pn:branch="BehavioralSim" xil_pn:fileType="FILE_MODELSIM_CMD" xil_pn:name="kernalWriter.fdo"/>
+    <file xil_pn:fileType="FILE_XST_PROJECT" xil_pn:name="kernalWriter.prj"/>
+    <file xil_pn:fileType="FILE_XST_STX" xil_pn:name="kernalWriter.stx"/>
+    <file xil_pn:fileType="FILE_XST" xil_pn:name="kernalWriter.xst"/>
+    <file xil_pn:branch="BehavioralSim" xil_pn:fileType="FILE_MODELSIM_LOG" xil_pn:name="vsim.wlf"/>
     <file xil_pn:fileType="FILE_FITTER_REPORT" xil_pn:name="webtalk_pn.xml"/>
+    <file xil_pn:fileType="FILE_DIRECTORY" xil_pn:name="work"/>
+    <file xil_pn:fileType="FILE_DIRECTORY" xil_pn:name="xlnx_auto_0_xdb"/>
     <file xil_pn:fileType="FILE_DIRECTORY" xil_pn:name="xst"/>
   </files>
 
   <transforms xmlns="http://www.xilinx.com/XMLSchema">
-    <transform xil_pn:end_ts="1479635081" xil_pn:name="TRAN_copyInitialToXSTAbstractSynthesis" xil_pn:start_ts="1479635081">
+    <transform xil_pn:end_ts="1480059775" xil_pn:name="TRAN_copyInitialToAbstractSimulation" xil_pn:start_ts="1480059775">
+      <status xil_pn:value="SuccessfullyRun"/>
+    </transform>
+    <transform xil_pn:end_ts="1480065390" xil_pn:in_ck="5445577849081147827" xil_pn:name="TRAN_copyAbstractToPostAbstractSimulation" xil_pn:start_ts="1480065390">
+      <status xil_pn:value="SuccessfullyRun"/>
+      <status xil_pn:value="ReadyToRun"/>
+      <outfile xil_pn:name="ALU.vhd"/>
+      <outfile xil_pn:name="ALUSrc0MUX.vhd"/>
+      <outfile xil_pn:name="ALUSrc1MUX.vhd"/>
+      <outfile xil_pn:name="EXE_MEMRegs.vhd"/>
+      <outfile xil_pn:name="FlashAccess.vhd"/>
+      <outfile xil_pn:name="ID_EXERegs.vhd"/>
+      <outfile xil_pn:name="IF_IDRegs.vhd"/>
+      <outfile xil_pn:name="MEMAccess.vhd"/>
+      <outfile xil_pn:name="MEMSrcMUX.vhd"/>
+      <outfile xil_pn:name="MEM_WBRegs.vhd"/>
+      <outfile xil_pn:name="ReadWritePauser.vhd"/>
+      <outfile xil_pn:name="VGAAccess.vhd"/>
+      <outfile xil_pn:name="VGACacheWriter.vhd"/>
+      <outfile xil_pn:name="VGAControler.vhd"/>
+      <outfile xil_pn:name="WBSrcMUX.vhd"/>
+      <outfile xil_pn:name="kernalWriter.vhd"/>
+      <outfile xil_pn:name="recordDefs.vhd"/>
+    </transform>
+    <transform xil_pn:end_ts="1480065390" xil_pn:name="TRAN_schematicsToHdlSim" xil_pn:prop_ck="153845023270275627" xil_pn:start_ts="1480065390">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
     </transform>
-    <transform xil_pn:end_ts="1479910500" xil_pn:name="TRAN_schematicsToHdl" xil_pn:prop_ck="7534957882412210587" xil_pn:start_ts="1479910500">
+    <transform xil_pn:end_ts="1480065390" xil_pn:in_ck="5445577849081147827" xil_pn:name="TRAN_copyPostAbstractToPreSimulation" xil_pn:start_ts="1480065390">
+      <status xil_pn:value="SuccessfullyRun"/>
+      <status xil_pn:value="ReadyToRun"/>
+      <outfile xil_pn:name="ALU.vhd"/>
+      <outfile xil_pn:name="ALUSrc0MUX.vhd"/>
+      <outfile xil_pn:name="ALUSrc1MUX.vhd"/>
+      <outfile xil_pn:name="EXE_MEMRegs.vhd"/>
+      <outfile xil_pn:name="FlashAccess.vhd"/>
+      <outfile xil_pn:name="ID_EXERegs.vhd"/>
+      <outfile xil_pn:name="IF_IDRegs.vhd"/>
+      <outfile xil_pn:name="MEMAccess.vhd"/>
+      <outfile xil_pn:name="MEMSrcMUX.vhd"/>
+      <outfile xil_pn:name="MEM_WBRegs.vhd"/>
+      <outfile xil_pn:name="ReadWritePauser.vhd"/>
+      <outfile xil_pn:name="VGAAccess.vhd"/>
+      <outfile xil_pn:name="VGACacheWriter.vhd"/>
+      <outfile xil_pn:name="VGAControler.vhd"/>
+      <outfile xil_pn:name="WBSrcMUX.vhd"/>
+      <outfile xil_pn:name="kernalWriter.vhd"/>
+      <outfile xil_pn:name="recordDefs.vhd"/>
+    </transform>
+    <transform xil_pn:end_ts="1480065929" xil_pn:in_ck="5445577849081147827" xil_pn:name="TRAN_MSimulateBehavioralModel" xil_pn:prop_ck="5482158924801128834" xil_pn:start_ts="1480065928">
+      <status xil_pn:value="SuccessfullyRun"/>
+      <status xil_pn:value="ReadyToRun"/>
+      <outfile xil_pn:name="kernalWriter.fdo"/>
+      <outfile xil_pn:name="vsim.wlf"/>
+      <outfile xil_pn:name="work"/>
+    </transform>
+    <transform xil_pn:end_ts="1480064226" xil_pn:name="TRAN_copyInitialToXSTAbstractSynthesis" xil_pn:start_ts="1480064226">
+      <status xil_pn:value="SuccessfullyRun"/>
+    </transform>
+    <transform xil_pn:end_ts="1480064226" xil_pn:name="TRAN_schematicsToHdl" xil_pn:prop_ck="-2489126932860132377" xil_pn:start_ts="1480064226">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
     </transform>
-    <transform xil_pn:end_ts="1479910500" xil_pn:name="TRAN_regenerateCores" xil_pn:prop_ck="8375715736480421038" xil_pn:start_ts="1479910500">
-      <status xil_pn:value="SuccessfullyRun"/>
-      <status xil_pn:value="ReadyToRun"/>
-    </transform>
-    <transform xil_pn:end_ts="1479635081" xil_pn:name="TRAN_SubProjectAbstractToPreProxy" xil_pn:start_ts="1479635081">
-      <status xil_pn:value="SuccessfullyRun"/>
-      <status xil_pn:value="ReadyToRun"/>
-    </transform>
-    <transform xil_pn:end_ts="1479910500" xil_pn:name="TRAN_xawsTohdl" xil_pn:prop_ck="8649987084702885337" xil_pn:start_ts="1479910500">
-      <status xil_pn:value="SuccessfullyRun"/>
-      <status xil_pn:value="ReadyToRun"/>
-    </transform>
-    <transform xil_pn:end_ts="1479635081" xil_pn:name="TRAN_SubProjectPreToStructuralProxy" xil_pn:prop_ck="-5485052969259074085" xil_pn:start_ts="1479635081">
-      <status xil_pn:value="SuccessfullyRun"/>
-      <status xil_pn:value="ReadyToRun"/>
-    </transform>
-    <transform xil_pn:end_ts="1479910500" xil_pn:name="TRAN_platgen" xil_pn:prop_ck="969986976606019960" xil_pn:start_ts="1479910500">
-      <status xil_pn:value="SuccessfullyRun"/>
-      <status xil_pn:value="ReadyToRun"/>
-    </transform>
-    <transform xil_pn:end_ts="1479989726" xil_pn:in_ck="-7953543648818752727" xil_pn:name="TRANEXT_xstsynthesize_spartan3e" xil_pn:prop_ck="7992926618152434923" xil_pn:start_ts="1479989720">
+    <transform xil_pn:end_ts="1480064244" xil_pn:in_ck="5445577849081147827" xil_pn:name="TRANEXT_xstsynthesize_xbr" xil_pn:prop_ck="2376940460718322516" xil_pn:start_ts="1480064226">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="WarningsGenerated"/>
       <status xil_pn:value="ReadyToRun"/>
@@ -143,18 +207,52 @@
       <outfile xil_pn:name="webtalk_pn.xml"/>
       <outfile xil_pn:name="xst"/>
     </transform>
-    <transform xil_pn:end_ts="1479910734" xil_pn:name="TRAN_compileBCD2" xil_pn:prop_ck="7292513321620407278" xil_pn:start_ts="1479910734">
+    <transform xil_pn:end_ts="1480064244" xil_pn:name="TRAN_compileBCD2" xil_pn:prop_ck="7292513321620407278" xil_pn:start_ts="1480064244">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
     </transform>
-    <transform xil_pn:name="TRAN_postSynthesisSimModel">
+    <transform xil_pn:end_ts="1480064251" xil_pn:in_ck="-4682478842084345828" xil_pn:name="TRAN_ngdbuild" xil_pn:prop_ck="5159946043596668989" xil_pn:start_ts="1480064244">
+      <status xil_pn:value="SuccessfullyRun"/>
+      <status xil_pn:value="ReadyToRun"/>
+      <status xil_pn:value="OutOfDateForPredecessor"/>
+      <outfile xil_pn:name="VGAControler.bld"/>
+      <outfile xil_pn:name="VGAControler.ngd"/>
+      <outfile xil_pn:name="VGAControler_ngdbuild.xrpt"/>
+      <outfile xil_pn:name="_ngo"/>
+      <outfile xil_pn:name="_xmsgs/ngdbuild.xmsgs"/>
+    </transform>
+    <transform xil_pn:end_ts="1480064271" xil_pn:in_ck="-4682478842084345827" xil_pn:name="TRANEXT_vm6File_xbr" xil_pn:prop_ck="-2475062959490896596" xil_pn:start_ts="1480064251">
+      <status xil_pn:value="SuccessfullyRun"/>
+      <status xil_pn:value="WarningsGenerated"/>
+      <status xil_pn:value="ReadyToRun"/>
+      <status xil_pn:value="OutOfDateForPredecessor"/>
+      <outfile xil_pn:name="VGAControler.chk"/>
+      <outfile xil_pn:name="VGAControler.cxt"/>
+      <outfile xil_pn:name="VGAControler.gyd"/>
+      <outfile xil_pn:name="VGAControler.log"/>
+      <outfile xil_pn:name="VGAControler.mfd"/>
+      <outfile xil_pn:name="VGAControler.nga"/>
+      <outfile xil_pn:name="VGAControler.pad"/>
+      <outfile xil_pn:name="VGAControler.pnx"/>
+      <outfile xil_pn:name="VGAControler.rpt"/>
+      <outfile xil_pn:name="VGAControler.vm6"/>
+      <outfile xil_pn:name="VGAControler.xml"/>
+      <outfile xil_pn:name="VGAControler_build.xml"/>
+      <outfile xil_pn:name="VGAControler_html"/>
+      <outfile xil_pn:name="VGAControler_pad.csv"/>
+    </transform>
+    <transform xil_pn:end_ts="1480064272" xil_pn:in_ck="-4682478842084336963" xil_pn:name="TRANEXT_crtProg_xbr" xil_pn:prop_ck="140790170513555" xil_pn:start_ts="1480064271">
+      <status xil_pn:value="SuccessfullyRun"/>
+      <status xil_pn:value="ReadyToRun"/>
+      <status xil_pn:value="OutOfDateForPredecessor"/>
+      <outfile xil_pn:name="VGAControler.jed"/>
+    </transform>
+    <transform xil_pn:name="TRAN_timRpt">
       <status xil_pn:value="AbortedRun"/>
       <status xil_pn:value="ReadyToRun"/>
       <status xil_pn:value="OutOfDateForInputs"/>
-      <status xil_pn:value="OutOfDateForProperties"/>
       <status xil_pn:value="OutOfDateForPredecessor"/>
       <status xil_pn:value="InputAdded"/>
-      <status xil_pn:value="InputChanged"/>
     </transform>
   </transforms>
 
