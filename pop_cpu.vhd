@@ -41,8 +41,9 @@ entity pop_cpu is
 			 Ram2OE : out  STD_LOGIC;
 			 Ram2WE : out  STD_LOGIC;
 			 Ram2EN : out  STD_LOGIC;
-			 Ram2Addr : inout STD_LOGIC_VECTOR(15 downto 0);
-			 Ram2Data : in STD_LOGIC_VECTOR(15 downto 0);
+			 Ram2Addr : out STD_LOGIC_VECTOR(17 downto 0);
+			 Ram2Data : inout STD_LOGIC_VECTOR(15 downto 0);
+			 dataReady : in STD_LOGIC;
 			 tsre : in STD_LOGIC;
 			 rdn : out STD_LOGIC;
 			 wrn : out STD_LOGIC);
@@ -74,7 +75,7 @@ architecture Behavioral of pop_cpu is
 		Port(	PC_1: in STD_LOGIC_VECTOR(15 downto 0);
 				branchResult: in STD_LOGIC_VECTOR(15 downto 0);
 				regResult: in STD_LOGIC_VECTOR(15 downto 0);
-				ctrl: in STD_LOGIC_VECTOR(2 downto 0);
+				ctrl: in STD_LOGIC_VECTOR(1 downto 0);
 				PCout: out STD_LOGIC_VECTOR(15 downto 0));
 	end component;
 	
@@ -276,7 +277,8 @@ architecture Behavioral of pop_cpu is
 				  RAM1WE : out  STD_LOGIC;
 				  RAM1EN : out  STD_LOGIC;
 				  RAM2addr : out  STD_LOGIC_VECTOR (17 downto 0);
-				  RAM2data : inout  STD_LOGIC_VECTOR (15 downto 0);
+				  RAM2DataOut : out  STD_LOGIC_VECTOR (15 downto 0);
+				  RAM2DataIn : In  STD_LOGIC_VECTOR (15 downto 0);
 				  RAM2OE : out  STD_LOGIC;
 				  RAM2WE : out  STD_LOGIC;
 				  RAM2EN : out  STD_LOGIC;
@@ -307,6 +309,43 @@ architecture Behavioral of pop_cpu is
 				  output : out  STD_LOGIC_VECTOR (15 downto 0));
 	end component;
 	
+	component Ram2Access
+			port ( pause : in std_logic;
+	
+					 insRam2OE : in  STD_LOGIC;
+					 insRam2WE : in  STD_LOGIC;
+					 insRam2EN : in  STD_LOGIC;
+					 insRam2Addr : in STD_LOGIC_VECTOR(17 downto 0);
+					 insRam2Data : inout STD_LOGIC_VECTOR(15 downto 0);
+					 
+					 memRead	: in std_logic;
+					 memRam2OE : in  STD_LOGIC;
+					 memRam2WE : in  STD_LOGIC;
+					 memRam2EN : in  STD_LOGIC;
+					 memRam2Addr : in STD_LOGIC_VECTOR(17 downto 0);
+					 memRam2DataOut : in STD_LOGIC_VECTOR(15 downto 0);
+					 memRam2DataIn : out STD_LOGIC_VECTOR(15 downto 0);
+					 
+					 Ram2OE : out  STD_LOGIC;
+					 Ram2WE : out  STD_LOGIC;
+					 Ram2EN : out  STD_LOGIC;
+					 Ram2Addr : out STD_LOGIC_VECTOR(17 downto 0);
+					 Ram2Data : inout STD_LOGIC_VECTOR(15 downto 0));
+	end component;
+	
+	signal insRam2OE : STD_LOGIC := '1';
+	signal insRam2WE : STD_LOGIC := '1';
+	signal insRam2EN : STD_LOGIC := '1';
+	signal insRam2Addr : STD_LOGIC_VECTOR(17 downto 0) := (others=>'0');
+	signal insRam2Data : STD_LOGIC_VECTOR(15 downto 0) := (others=>'0');
+	
+	signal memRam2OE : STD_LOGIC := '1';
+	signal memRam2WE : STD_LOGIC := '1';
+	signal memRam2EN : STD_LOGIC := '1';
+	signal memRam2Addr : STD_LOGIC_VECTOR(17 downto 0) := (others=>'0');
+	signal memRam2Dataout : STD_LOGIC_VECTOR(15 downto 0) := (others=>'0');
+	signal memRam2Datain : STD_LOGIC_VECTOR(15 downto 0) := (others=>'0');
+	
 	signal PC_InsFetcher_PC : STD_LOGIC_VECTOR(15 downto 0) := (others=>'0');
 	
 	signal PC_PCAdder_PC : STD_LOGIC_VECTOR(15 downto 0) := (others=>'0');
@@ -319,11 +358,11 @@ architecture Behavioral of pop_cpu is
 	
 	signal PCSelect_PC_PC : STD_LOGIC_VECTOR(15 downto 0) := (others=>'0');
 	
-	signal IFIDRegs_Registers_rxNum : STD_LOGIC_VECTOR(15 downto 0) := (others=>'0');
-	signal IFIDRegs_Registers_ryNum : STD_LOGIC_VECTOR(15 downto 0) := (others=>'0');
+	signal IFIDRegs_Registers_rxNum : STD_LOGIC_VECTOR(2 downto 0) := (others=>'0');
+	signal IFIDRegs_Registers_ryNum : STD_LOGIC_VECTOR(2 downto 0) := (others=>'0');
 	
-	signal IFIDRegs_bypasser_rxNum : STD_LOGIC_VECTOR(15 downto 0) := (others=>'0');
-	signal IFIDRegs_bypasser_ryNum : STD_LOGIC_VECTOR(15 downto 0) := (others=>'0');
+	signal IFIDRegs_bypasser_rxNum : STD_LOGIC_VECTOR(2 downto 0) := (others=>'0');
+	signal IFIDRegs_bypasser_ryNum : STD_LOGIC_VECTOR(2 downto 0) := (others=>'0');
 	signal IFIDRegs_bypasser_instruction : STD_LOGIC_VECTOR(15 downto 0) := (others=>'0');
 
 	signal IFIDRegs_Extender_instruction : STD_LOGIC_VECTOR(15 downto 0) := (others=>'0');
@@ -424,6 +463,8 @@ architecture Behavioral of pop_cpu is
 
 	signal readWritePause_InsFetcher_pause : STD_LOGIC := '0';
 
+	signal readWritePause_Ram2Access_pause : STD_LOGIC := '0';
+
 	signal EXEMEMRegs_MEMWBRegs_WBDes : STD_LOGIC_VECTOR(3 downto 0) := (others=>'0');
 	signal EXEMEMRegs_MEMWBRegs_WBSrc : STD_LOGIC :='0';
 	signal EXEMEMRegs_MEMWBRegs_RegWrite : STD_LOGIC :='0';
@@ -442,6 +483,8 @@ architecture Behavioral of pop_cpu is
 	signal EXEMEMRegs_bypasser_RegWrite : STD_LOGIC :='0';
 	signal EXEMEMRegs_bypasser_MEMRead : STD_LOGIC :='0';
 	signal EXEMEMRegs_bypasser_rst : STD_LOGIC_VECTOR(15 downto 0) := (others=>'0');
+
+	signal EXEMEMRegs_Ram2Access_MEMRead : STD_LOGIC := '0';
 
 	signal MEMSrcMUX_MEMAccess_writeData : STD_LOGIC_VECTOR(15 downto 0) := (others=>'0');
 
@@ -503,6 +546,7 @@ begin
 	ALU_bypasser_rst <= ALU_EXEMEMRegs_rst;
 
 	readWritePause_InsFetcher_pause <= readWritePause_PC_pause;
+	readWritePause_Ram2Access_pause <= readWritePause_PC_pause;
 
 	EXEMEMRegs_bypasser_WBDes <= EXEMEMRegs_MEMWBRegs_WBDes;
 
@@ -512,6 +556,7 @@ begin
 	EXEMEMRegs_bypasser_rst <= EXEMEMRegs_MEMWBRegs_rst;
 
 	EXEMEMRegs_bypasser_MEMRead <= EXEMEMRegs_MEMAccess_MEMRead;
+	EXEMEMRegs_Ram2Access_MEMRead <= EXEMEMRegs_MEMAccess_MEMRead;
 
 	MEMWBRegs_bypasser_WBDes <= MEMWBRegs_Registers_WBDes;
 
@@ -520,16 +565,16 @@ begin
 	WBSrcMUX_bypasser_writeData <= WBSrcMUX_Registers_writeData;
 
 	p : PC port map(clk, readWritePause_PC_pause, bypasser_PC_dataPause, PCSelect_PC_PC, PC_InsFetcher_PC);
-	insf : InsFetcher port map(Ram2OE, Ram2WE, Ram2EN, Ram2Addr, Ram2Data, PC_InsFetcher_PC, InsFetcher_IFIDRegs_instruction, readWritePause_InsFetcher_pause);
+	insf : InsFetcher port map(insRam2OE, insRam2WE, insRam2EN, insRam2Addr, insRam2Data, PC_InsFetcher_PC, InsFetcher_IFIDRegs_instruction, readWritePause_InsFetcher_pause);
 	pca : PCAdder port map(PC_PCAdder_PC, PCAdder_IFIDRegs_PC);
 	pcs : PCSelector port map(PCAdder_PCSelector_PC, AddressAdder_PCSelector_PC, bypasser_PCSelector_rx, Control_PCSelector_PCSelCtr, PCSelect_PC_PC);
 	ifidr : IF_IDRegs port map(PCAdder_IFIDRegs_PC, InsFetcher_IFIDRegs_instruction, clk, bypasser_IFIDRegs_dataPause, '0', IFIDRegs_bypasser_instruction, IFIDRegs_AddressAdder_PC, IFIDRegs_Registers_rxNum, IFIDRegs_Registers_ryNum);
-	regis : Registers port map(IFIDRegs_Registers_rxNum, IFIDRegs_Registers_ryNum, MEMWBRegs_Registers_WBDes, MEMSrcMUX_Registers_writeData, Registers_bypasser_rx, Registers_bypasser_ry, Registers_bypasser_T, Registers_bypasser_IH, Registers_bypasser_SP);
+	regis : Registers port map(IFIDRegs_Registers_rxNum, IFIDRegs_Registers_ryNum, MEMWBRegs_Registers_WBDes, WBSrcMUX_Registers_writeData, MEMWBRegs_Registers_RegWrite,Registers_bypasser_rx, Registers_bypasser_ry, Registers_bypasser_T, Registers_bypasser_IH, Registers_bypasser_SP);
 	bypas : bypasser port map(Registers_bypasser_rx, Registers_bypasser_ry, Registers_bypasser_T, Registers_bypasser_IH, Registers_bypasser_SP,
 								IFIDRegs_bypasser_rxNum, IFIDRegs_bypasser_ryNum, IFIDRegs_bypasser_instruction,
 								IDEXERegs_bypasser_RegWrite, IDEXERegs_bypasser_WBDes, IDEXERegs_bypasser_MEMRead, ALU_bypasser_rst,
 								EXEMEMRegs_bypasser_RegWrite, EXEMEMRegs_bypasser_WBDes, EXEMEMRegs_bypasser_MEMRead, EXEMEMRegs_bypasser_rst,
-								MEMWBRegs_bypasser_RegWrite, MEMWBRegs_bypasser_WBDes, MEMSrcMUX_bypasser_writeData,
+								MEMWBRegs_bypasser_RegWrite, MEMWBRegs_bypasser_WBDes, WBSrcMUX_bypasser_writeData,
 								bypasser_PCSelector_rx, bypasser_IDEXERegs_ry, bypasser_IDEXERegs_T, bypasser_IDEXERegs_IH, bypasser_IDEXERegs_SP, bypasser_PC_dataPause);
 	conrt : Control port map(IFIDRegs_Control_instruction, bypasser_Control_rx, bypasser_Control_T, Control_Extender_immSel, Control_PCSelector_PCSelCtr,
 								Control_IDEXERegs_ALUFunc, Control_IDEXERegs_ALUSrc0, Control_IDEXERegs_ALUSrc1,
@@ -541,7 +586,7 @@ begin
 									Control_IDEXERegs_WBDes, Control_IDEXERegs_WBSrc,
 									Control_IDEXERegs_MEMRead, Control_IDEXERegs_MEMWrite, Control_IDEXERegs_MEMSrc,
 									Control_IDEXERegs_RegWrite, Extender_IDEXERegs_imm, IFIDRegs_IDEXERegs_PC,
-									bypasser_IDEXERegs_rx, bypasser_IDEXERegs_ry, bypasser_IDEXERegs_T, bypasser_IDEXERegs_IH, bypasser_IDEXERegs_SP, Registers_IDEXERegs_RA,
+									bypasser_IDEXERegs_rx, bypasser_IDEXERegs_ry, bypasser_IDEXERegs_IH, bypasser_IDEXERegs_SP, Registers_IDEXERegs_RA,
 									clk, bypasser_IDEXERegs_dataPause, '0',
 									IDEXERegs_ALU_ALUFunc, IDEXERegs_ALUSrc0MUX_ALUSrc0, IDEXERegs_ALUSrc1MUX_ALUSrc1,
 									IDEXERegs_EXEMEMRegs_WBDes, IDEXERegs_EXEMEMRegs_WBSrc,
@@ -561,16 +606,19 @@ begin
 									EXEMEMRegs_MEMWBRegs_RegWrite, EXEMEMRegs_MEMWBRegs_rst,
 									EXEMEMRegs_MEMSrcMUX_RA, EXEMEMRegs_MEMSrcMUX_rx, EXEMEMRegs_MEMSrcMUX_ry);
 	memsm : MEMSrcMUX port map(EXEMEMRegs_MEMSrcMUX_rx, EXEMEMRegs_MEMSrcMUX_ry, EXEMEMRegs_MEMSrcMUX_RA, EXEMEMRegs_MEMSrcMUX_MEMSrc, MEMSrcMUX_MEMAccess_writeData);
-	memac : MEMAccess port map(EXEMEMRegs_MEMAccess_rst, EXEMEMRegs_MEMAccess_MEMRead, EXEMEMRegs_MEMAccess_MEMWrite,
-								MEMSrcMUX_MEMAccess_writeData, tsre, MEMAccess_MEMWBRegs_buffer,
-								RAM1addr, RAM1data, RAM1OE, RAM1WE, RAM1EN,
-								Ram2Addr, Ram2Data, Ram2OE, Ram2WE, Ram2EN,
-								rdn, wrn);
+	memac : MEMAccess port map(EXEMEMRegs_MEMAccess_rst, EXEMEMRegs_MEMAccess_MEMRead, EXEMEMRegs_MEMAccess_MEMWrite, MEMSrcMUX_MEMAccess_writeData,
+											dataReady, tsre, MEMAccess_MEMWBRegs_buffer,
+											RAM1addr, RAM1data, RAM1OE, RAM1WE, RAM1EN,
+											memRam2Addr, memRam2DataOut, memRam2DataIn, memRam2OE, memRam2WE, memRam2EN,
+											rdn, wrn);
 	memwr : MEM_WBRegs port map(EXEMEMRegs_MEMWBRegs_rst, MEMAccess_MEMWBRegs_buffer,
 									EXEMEMRegs_MEMWBRegs_WBDes, EXEMEMRegs_MEMWBRegs_WBSrc, EXEMEMRegs_MEMWBRegs_RegWrite,
 									clk, '0', '0',
 									MEMWBRegs_WBSrcMUX_rst, MEMWBRegs_WBSrcMUX_buffer,
 									MEMWBRegs_Registers_WBDes, MEMWBRegs_WBSrcMUX_WBSrc, MEMWBRegs_Registers_RegWrite);
 	wbsm : WBSrcMUX port map(MEMWBRegs_WBSrcMUX_rst, MEMWBRegs_WBSrcMUX_buffer, MEMWBRegs_WBSrcMUX_WBSrc, WBSrcMUX_Registers_writeData);
+	ram2a : Ram2Access port map(readWritePause_Ram2Access_pause, insRam2OE, insRam2WE, insRam2EN, insRam2Addr, insRam2Data,
+								EXEMEMRegs_Ram2Access_MEMRead, memRam2OE, memRam2WE, memRam2EN, memRam2Addr, memRam2DataOut, memRam2DataIn,
+								Ram2OE, Ram2WE, Ram2EN, Ram2Addr, Ram2Data);
 end Behavioral;
 

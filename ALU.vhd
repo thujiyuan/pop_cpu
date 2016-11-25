@@ -47,11 +47,11 @@ process(src1, src2, func)
 begin
 	case func is
 		when ALUFunc.sigSLL => 
-				rst <= src1 sll src2;
+				rst <= to_stdlogicvector(to_bitvector(src1) sll conv_integer(src2));
 		when ALUFunc.sigSRL =>
-				rst <= src1 srl src2;
+				rst <= to_stdlogicvector(to_bitvector(src1) srl conv_integer(src2));
 		when ALUFunc.sigSRA =>
-				rst <= src1 sra src2;
+				rst <= to_stdlogicvector(to_bitvector(src1) sra conv_integer(src2));
 		when ALUFunc.sigADD =>
 				rst <= src1 + src2;
 		when ALUFunc.sigSUB =>

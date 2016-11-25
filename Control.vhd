@@ -63,7 +63,7 @@ begin
 				MEMRead <= '0';
 				MEMWrite <= '0';
 				MEMSrc <= "00";
-				WBDes <= '0'&instuction(10 downto 8);
+				WBDes <= '0'&instruction(10 downto 8);
 				WBSrc <= '0';
 				RegWrite <= '1';
 			when "00110" =>
@@ -77,7 +77,7 @@ begin
 						MEMRead <= '0';
 						MEMWrite <= '0';
 						MEMSrc <= "00";
-						WBDes <= '0'&instuction(10 downto 8);
+						WBDes <= '0'&instruction(10 downto 8);
 						WBSrc <= '0';
 						RegWrite <= '1';
 					when "11" =>							--SRA
@@ -89,7 +89,7 @@ begin
 						MEMRead <= '0';
 						MEMWrite <= '0';
 						MEMSrc <= "00";
-						WBDes <= '0'&instuction(10 downto 8);
+						WBDes <= '0'&instruction(10 downto 8);
 						WBSrc <= '0';
 						RegWrite <= '1';
 					when others =>
@@ -101,7 +101,7 @@ begin
 						MEMRead <= '0';
 						MEMWrite <= '0';
 						MEMSrc <= "00";
-						WBDes <= '0'&instuction(10 downto 8);
+						WBDes <= '0'&instruction(10 downto 8);
 						WBSrc <= '0';
 						RegWrite <= '0';
 				end case;
@@ -116,7 +116,7 @@ begin
 						MEMRead <= '0';
 						MEMWrite <= '0';
 						MEMSrc <= "00";
-						WBDes <= '0'&instuction(7 downto 5);
+						WBDes <= '0'&instruction(7 downto 5);
 						WBSrc <= '0';
 						RegWrite <= '1';
 					when "00110" =>						--SRLV
@@ -128,7 +128,7 @@ begin
 						MEMRead <= '0';
 						MEMWrite <= '0';
 						MEMSrc <= "00";
-						WBDes <= '0'&instuction(7 downto 5);
+						WBDes <= '0'&instruction(7 downto 5);
 						WBSrc <= '0';
 						RegWrite <= '1';
 					when "01101" =>						--OR
@@ -140,7 +140,7 @@ begin
 						MEMRead <= '0';
 						MEMWrite <= '0';
 						MEMSrc <= "00";
-						WBDes <= '0'&instuction(10 downto 8);
+						WBDes <= '0'&instruction(10 downto 8);
 						WBSrc <= '0';
 						RegWrite <= '1';
 					when "01100" =>						--AND
@@ -152,11 +152,11 @@ begin
 						MEMRead <= '0';
 						MEMWrite <= '0';
 						MEMSrc <= "00";
-						WBDes <= '0'&instuction(10 downto 8);
+						WBDes <= '0'&instruction(10 downto 8);
 						WBSrc <= '0';
 						RegWrite <= '1';
 					when "00000" =>
-						case instuction(7 downto 5) is
+						case instruction(7 downto 5) is
 							when "010" =>					--MFPC
 								immSel <= "000";
 								PCSelCtr <= "00";
@@ -166,7 +166,7 @@ begin
 								MEMRead <= '0';
 								MEMWrite <= '0';
 								MEMSrc <= "00";
-								WBDes <= '0'&instuction(10 downto 8);
+								WBDes <= '0'&instruction(10 downto 8);
 								WBSrc <= '0';
 								RegWrite <= '1';
 							when "000" =>					--JR
@@ -178,7 +178,7 @@ begin
 								MEMRead <= '0';
 								MEMWrite <= '0';
 								MEMSrc <= "00";
-								WBDes <= '0'&instuction(10 downto 8);
+								WBDes <= '0'&instruction(10 downto 8);
 								WBSrc <= '0';
 								RegWrite <= '0';
 							when others =>
@@ -190,7 +190,7 @@ begin
 								MEMRead <= '0';
 								MEMWrite <= '0';
 								MEMSrc <= "00";
-								WBDes <= '0'&instuction(10 downto 8);
+								WBDes <= '0'&instruction(10 downto 8);
 								WBSrc <= '0';
 								RegWrite <= '0';
 						end case;
@@ -215,7 +215,7 @@ begin
 						MEMRead <= '0';
 						MEMWrite <= '0';
 						MEMSrc <= "00";
-						WBDes <= '0'&instuction(10 downto 8);
+						WBDes <= '0'&instruction(10 downto 8);
 						WBSrc <= '0';
 						RegWrite <= '1';
 					when others =>
@@ -227,11 +227,11 @@ begin
 						MEMRead <= '0';
 						MEMWrite <= '0';
 						MEMSrc <= "00";
-						WBDes <= '0'&instuction(10 downto 8);
+						WBDes <= '0'&instruction(10 downto 8);
 						WBSrc <= '0';
 						RegWrite <= '0';
 				end case;
-			when others => 
+			when "01100" => 
 				case instruction(10 downto 8) is
 					when "011" => 							--ADDSP
 						immSel <= "011";
@@ -254,7 +254,7 @@ begin
 						MEMRead <= '0';
 						MEMWrite <= '1';
 						MEMSrc <= "10";
-						WBDes <= '0'&instuction(10 downto 8);
+						WBDes <= '0'&instruction(10 downto 8);
 						WBSrc <= '0';
 						RegWrite <= '0';
 					when "100" => 							--MTSP
@@ -282,7 +282,7 @@ begin
 						MEMRead <= '0';
 						MEMWrite <= '0';
 						MEMSrc <= "00";
-						WBDes <= '0'&instuction(10 downto 8);
+						WBDes <= '0'&instruction(10 downto 8);
 						WBSrc <= '0';
 						RegWrite <= '0';
 					when "001" => 							--BTNEZ
@@ -298,7 +298,7 @@ begin
 						MEMRead <= '0';
 						MEMWrite <= '0';
 						MEMSrc <= "00";
-						WBDes <= '0'&instuction(10 downto 8);
+						WBDes <= '0'&instruction(10 downto 8);
 						WBSrc <= '0';
 						RegWrite <= '0';
 					when others =>
@@ -310,7 +310,7 @@ begin
 						MEMRead <= '0';
 						MEMWrite <= '0';
 						MEMSrc <= "00";
-						WBDes <= '0'&instuction(10 downto 8);
+						WBDes <= '0'&instruction(10 downto 8);
 						WBSrc <= '0';
 						RegWrite <= '0';
 				end case;
@@ -323,7 +323,7 @@ begin
 				MEMRead <= '0';
 				MEMWrite <= '0';
 				MEMSrc <= "00";
-				WBDes <= '0'&instuction(7 downto 5);
+				WBDes <= '0'&instruction(7 downto 5);
 				WBSrc <= '0';
 				RegWrite <= '1';
 			when "11100" =>
@@ -337,7 +337,7 @@ begin
 						MEMRead <= '0';
 						MEMWrite <= '0';
 						MEMSrc <= "00";
-						WBDes <= '0'&instuction(4 downto 2);
+						WBDes <= '0'&instruction(4 downto 2);
 						WBSrc <= '0';
 						RegWrite <= '1';
 					when "11" =>							--SUBU
@@ -349,7 +349,7 @@ begin
 						MEMRead <= '0';
 						MEMWrite <= '0';
 						MEMSrc <= "00";
-						WBDes <= '0'&instuction(4 downto 2);
+						WBDes <= '0'&instruction(4 downto 2);
 						WBSrc <= '0';
 						RegWrite <= '1';
 					when others => 
@@ -361,7 +361,7 @@ begin
 						MEMRead <= '0';
 						MEMWrite <= '0';
 						MEMSrc <= "00";
-						WBDes <= '0'&instuction(10 downto 8);
+						WBDes <= '0'&instruction(10 downto 8);
 						WBSrc <= '0';
 						RegWrite <= '0';
 				end case;
@@ -374,7 +374,7 @@ begin
 				MEMRead <= '0';
 				MEMWrite <= '1';
 				MEMSrc <= "00";
-				WBDes <= '0'&instuction(10 downto 8);
+				WBDes <= '0'&instruction(10 downto 8);
 				WBSrc <= '0';
 				RegWrite <= '0';
 			when "11011" => 								--SW
@@ -386,7 +386,7 @@ begin
 				MEMRead <= '0';
 				MEMWrite <= '1';
 				MEMSrc <= "01";
-				WBDes <= '0'&instuction(10 downto 8);
+				WBDes <= '0'&instruction(10 downto 8);
 				WBSrc <= '0';
 				RegWrite <= '0';
 			when "10011" =>								--LW 
@@ -398,7 +398,7 @@ begin
 				MEMRead <= '1';
 				MEMWrite <= '0';
 				MEMSrc <= "00";
-				WBDes <= '0'&instuction(7 downto 5);
+				WBDes <= '0'&instruction(7 downto 5);
 				WBSrc <= '1';
 				RegWrite <= '1';
 			when "10010" => 								--LW_SP
@@ -410,7 +410,7 @@ begin
 				MEMRead <= '1';
 				MEMWrite <= '0';
 				MEMSrc <= "00";
-				WBDes <= '0'&instuction(10 downto 8);
+				WBDes <= '0'&instruction(10 downto 8);
 				WBSrc <= '1';
 				RegWrite <= '1';
 			when "11110" =>
@@ -424,7 +424,7 @@ begin
 						MEMRead <= '0';
 						MEMWrite <= '0';
 						MEMSrc <= "00";
-						WBDes <= '0'&instuction(10 downto 8);
+						WBDes <= '0'&instruction(10 downto 8);
 						WBSrc <= '0';
 						RegWrite <= '1';
 					when "00000001" => 					--MTIH
@@ -448,7 +448,7 @@ begin
 						MEMRead <= '0';
 						MEMWrite <= '0';
 						MEMSrc <= "00";
-						WBDes <= '0'&instuction(10 downto 8);
+						WBDes <= '0'&instruction(10 downto 8);
 						WBSrc <= '0';
 						RegWrite <= '0';
 					end case;
@@ -461,7 +461,7 @@ begin
 				MEMRead <= '0';
 				MEMWrite <= '0';
 				MEMSrc <= "00";
-				WBDes <= '0'&instuction(10 downto 8);
+				WBDes <= '0'&instruction(10 downto 8);
 				WBSrc <= '0';
 				RegWrite <= '0';
 			when "00100" => 								--BEQZ
@@ -477,7 +477,7 @@ begin
 				MEMRead <= '0';
 				MEMWrite <= '0';
 				MEMSrc <= "00";
-				WBDes <= '0'&instuction(10 downto 8);
+				WBDes <= '0'&instruction(10 downto 8);
 				WBSrc <= '0';
 				RegWrite <= '0';
 			when "00101" =>								--BNEZ
@@ -493,7 +493,7 @@ begin
 				MEMRead <= '0';
 				MEMWrite <= '0';
 				MEMSrc <= "00";
-				WBDes <= '0'&instuction(10 downto 8);
+				WBDes <= '0'&instruction(10 downto 8);
 				WBSrc <= '0';
 				RegWrite <= '0';
 			when others => 
@@ -505,7 +505,7 @@ begin
 				MEMRead <= '0';
 				MEMWrite <= '0';
 				MEMSrc <= "00";
-				WBDes <= '0'&instuction(10 downto 8);
+				WBDes <= '0'&instruction(10 downto 8);
 				WBSrc <= '0';
 				RegWrite <= '0';
 		end case;

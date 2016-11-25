@@ -4,23 +4,19 @@ Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
 
 
 Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.34 secs
+Total CPU time to Xst completion: 0.11 secs
  
 --> Parameter xsthdpdir set to F:/thujiyuan/pop_cpu/xst
 
 
 Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.34 secs
+Total CPU time to Xst completion: 0.11 secs
  
 --> WARNING:Xst:3164 - Option "-debug" found multiple times in the command line. Only the first occurence is considered.
 
 =========================================================================
 *                          HDL Compilation                              *
 =========================================================================
-WARNING:HDLParsers:3607 - Unit work/ALUSrc0MUX is now defined in a different file.  It was defined in "C:/cpu_proj/pop_cpu/ALUSrc0MUX.vhd", and is now defined in "F:/thujiyuan/pop_cpu/ALUSrc0MUX.vhd".
-WARNING:HDLParsers:3607 - Unit work/ALUSrc0MUX/Behavioral is now defined in a different file.  It was defined in "C:/cpu_proj/pop_cpu/ALUSrc0MUX.vhd", and is now defined in "F:/thujiyuan/pop_cpu/ALUSrc0MUX.vhd".
-WARNING:HDLParsers:3607 - Unit work/recordDefs is now defined in a different file.  It was defined in "C:/cpu_proj/pop_cpu/recordDefs.vhd", and is now defined in "F:/thujiyuan/pop_cpu/recordDefs.vhd".
-WARNING:HDLParsers:3607 - Unit work/recordDefs is now defined in a different file.  It was defined in "C:/cpu_proj/pop_cpu/recordDefs.vhd", and is now defined in "F:/thujiyuan/pop_cpu/recordDefs.vhd".
 Compiling vhdl file "F:/thujiyuan/pop_cpu/recordDefs.vhd" in Library work.
 Architecture recorddefs of Entity recorddefs is up to date.
 Compiling vhdl file "F:/thujiyuan/pop_cpu/ALUSrc0MUX.vhd" in Library work.
@@ -31,14 +27,14 @@ WARNING:HDLParsers:817 - "F:/thujiyuan/pop_cpu/ALUSrc0MUX.vhd" Line 54. Choice .
 Architecture behavioral of Entity alusrc0mux is up to date.
 
 
-Total REAL time to Xst completion: 1.00 secs
-Total CPU time to Xst completion: 0.78 secs
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.16 secs
  
 --> 
 
-Total memory usage is 212320 kilobytes
+Total memory usage is 212768 kilobytes
 
 Number of errors   :    0 (   0 filtered)
-Number of warnings :    9 (   0 filtered)
+Number of warnings :    5 (   0 filtered)
 Number of infos    :    0 (   0 filtered)
 

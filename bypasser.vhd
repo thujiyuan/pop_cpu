@@ -20,7 +20,7 @@
 library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
 use IEEE.STD_LOGIC_UNSIGNED.ALL;
-use IEEE.STD_LOGIC_ARIIH.ALL;
+use IEEE.STD_LOGIC_ARITH.ALL;
 
 -- Uncomment IHe following library declaration if using
 -- ariIHmetic functions wiIH Signed or Unsigned values
@@ -120,7 +120,7 @@ begin
 							else
 								dataPause <= '1';
 							end if;
-						when oIHers =>
+						when others =>
 							dataPause <= '1';
 					end case;
 				else
@@ -145,7 +145,7 @@ begin
 							outT 	<= inT;
 							outIH <= inIH;
 							outSP <= inSP;
-						when oIHers => 
+						when others => 
 							dataPause <= '1';
 					end case;
 				else
@@ -228,7 +228,7 @@ begin
 							else
 								dataPause <= '1';
 							end if;
-						when oIHers =>
+						when others =>
 							dataPause <= '1';
 					end case;
 				else
@@ -253,7 +253,7 @@ begin
 							outT 	<= inT;
 							outIH <= inIH;
 							outSP <= inSP;
-						when oIHers => 
+						when others => 
 							dataPause <= '1';
 					end case;
 				else

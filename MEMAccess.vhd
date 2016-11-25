@@ -43,7 +43,8 @@ entity MEMAccess is
            RAM1WE : out  STD_LOGIC;
            RAM1EN : out  STD_LOGIC;
            RAM2addr : out  STD_LOGIC_VECTOR (17 downto 0);
-           RAM2data : inout  STD_LOGIC_VECTOR (15 downto 0);
+           RAM2DataOut : out  STD_LOGIC_VECTOR (15 downto 0);
+			  RAM2DataIn : In  STD_LOGIC_VECTOR (15 downto 0);
            RAM2OE : out  STD_LOGIC;
            RAM2WE : out  STD_LOGIC;
            RAM2EN : out  STD_LOGIC;
@@ -80,7 +81,6 @@ begin
 			RAM2WE <= '1';
 			RAM2EN <= '0';
 			Ram2Addr <= "00" & inAddress;
-			Ram2Data <= (others => 'Z');
 		else		--read ram1
 			rdn <= '1';
 			wrn <= '0';
@@ -110,7 +110,7 @@ begin
 			RAM2WE <= '0';
 			RAM2EN <= '0';
 			Ram2Addr <= "00" & inAddress;
-			Ram2Data <= inData;
+			Ram2DataOut <= inData;
 		else		--write ram1
 			rdn <= '1';
 			wrn <= '0';
@@ -136,10 +136,10 @@ begin
 	end if;
 end process;
 
-process(RAM1Data, RAM2Data, dataReady, inAddress)
+process(RAM1Data, RAM2DataIn, dataReady, inAddress)
 begin
 	if(inAddress < "1000000000000000") then 
-		RAMBuffer <= RAM2Data;
+		RAMBuffer <= RAM2DataIn;
 	elsif(inAddress = "1011111100000001") then
 		RAMBuffer <= "00000000000000" & dataReady & tsre;
 	else

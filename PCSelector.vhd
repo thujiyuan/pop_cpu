@@ -35,7 +35,7 @@ entity PCSelector is
 	Port(	PC_1: in STD_LOGIC_VECTOR(15 downto 0);
 			branchResult: in STD_LOGIC_VECTOR(15 downto 0);
 			regResult: in STD_LOGIC_VECTOR(15 downto 0);
-			ctrl: in STD_LOGIC_VECTOR(2 downto 0);
+			ctrl: in STD_LOGIC_VECTOR(1 downto 0);
 			PCout: out STD_LOGIC_VECTOR(15 downto 0));
 end PCSelector;
 
