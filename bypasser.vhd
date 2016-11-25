@@ -82,18 +82,21 @@ begin
 							outT 	<= inT;
 							outIH <= inIH;
 							outSP <= inSP;
+							dataPause <= '0';
 						when "00110" =>--SLL SRA
 							outrx <= inrx;
 							outry <= inry;
 							outT 	<= inT;
 							outIH <= inIH;
 							outSP <= inSP;
+							dataPause <= '0';
 						when "10010" =>--LW_SP
 							outrx <= inrx;
 							outry <= inry;
 							outT 	<= inT;
 							outIH <= inIH;
 							outSP <= inSP;
+							dataPause <= '0';
 						when "11110" =>--MFIH
 							if(instruction(0)='0')then
 								outrx <= inrx;
@@ -101,6 +104,7 @@ begin
 								outT 	<= inT;
 								outIH <= inIH;
 								outSP <= inSP;
+								dataPause <= '0';
 							else
 								dataPause <= '1';
 							end if;
@@ -111,12 +115,14 @@ begin
 								outT 	<= inT;
 								outIH <= inIH;
 								outSP <= inSP;
+								dataPause <= '0';
 							elsif(instruction(4 downto 0) = "01011")then
 								outrx <= inrx;
 								outry <= inry;
 								outT 	<= inT;
 								outIH <= inIH;
 								outSP <= inSP;
+								dataPause <= '0';
 							else
 								dataPause <= '1';
 							end if;
@@ -129,6 +135,7 @@ begin
 					outT 	<= inT;
 					outIH <= inIH;
 					outSP <= inSP;
+					dataPause <= '0';
 				end if;
 			elsif(EXEWBDes='0'&ryNum)then
 				if(EXEMemRead='1')then
@@ -139,12 +146,14 @@ begin
 							outT 	<= inT;
 							outIH <= inIH;
 							outSP <= inSP;
+							dataPause <= '0';
 						when "10011" =>--LW
 							outrx <= inrx;
 							outry <= inry;
 							outT 	<= inT;
 							outIH <= inIH;
 							outSP <= inSP;
+							dataPause <= '0';
 						when others => 
 							dataPause <= '1';
 					end case;
@@ -154,6 +163,7 @@ begin
 					outT 	<= inT;
 					outIH <= inIH;
 					outSP <= inSP;
+					dataPause <= '0';
 				end if;
 			elsif(EXEWBDes="1010")then--T
 				outrx <= inrx;
@@ -161,24 +171,28 @@ begin
 				outT 	<= EXErst;
 				outIH <= inIH;
 				outSP <= inSP;
+				dataPause <= '0';
 			elsif(EXEWBDes="1000")then--IH
 				outrx <= inrx;
 				outry <= inry;
 				outT 	<= inT;
 				outIH <= EXErst;
 				outSP <= inSP;
+				dataPause <= '0';
 			elsif(EXEWBDes="1001")then--SP
 				outrx <= inrx;
 				outry <= inry;
 				outT 	<= inT;
 				outIH <= inIH;
 				outSP <= EXErst;
+				dataPause <= '0';
 			else
 				outrx <= inrx;
 				outry <= inry;
 				outT 	<= inT;
 				outIH <= inIH;
 				outSP <= inSP;
+				dataPause <= '0';
 			end if;
 		elsif(MEMRegWrite='1')then
 			if(MEMWBDes='0'&rxNum)then
@@ -190,18 +204,21 @@ begin
 							outT 	<= inT;
 							outIH <= inIH;
 							outSP <= inSP;
+							dataPause <= '0';
 						when "00110" =>--SLL SRA
 							outrx <= inrx;
 							outry <= inry;
 							outT 	<= inT;
 							outIH <= inIH;
 							outSP <= inSP;
+							dataPause <= '0';
 						when "10010" =>--LW_SP
 							outrx <= inrx;
 							outry <= inry;
 							outT 	<= inT;
 							outIH <= inIH;
 							outSP <= inSP;
+							dataPause <= '0';
 						when "11110" =>--MFIH
 							if(instruction(0)='0')then
 								outrx <= inrx;
@@ -209,6 +226,7 @@ begin
 								outT 	<= inT;
 								outIH <= inIH;
 								outSP <= inSP;
+								dataPause <= '0';
 							else
 								dataPause <= '1';
 							end if;
@@ -219,12 +237,14 @@ begin
 								outT 	<= inT;
 								outIH <= inIH;
 								outSP <= inSP;
+								dataPause <= '0';
 							elsif(instruction(4 downto 0) = "01011")then
 								outrx <= inrx;
 								outry <= inry;
 								outT 	<= inT;
 								outIH <= inIH;
 								outSP <= inSP;
+								dataPause <= '0';
 							else
 								dataPause <= '1';
 							end if;
@@ -237,6 +257,7 @@ begin
 					outT 	<= inT;
 					outIH <= inIH;
 					outSP <= inSP;
+					dataPause <= '0';
 				end if;
 			elsif(MEMWBDes='0'&ryNum)then
 				if(MEMMemRead='1')then
@@ -247,12 +268,14 @@ begin
 							outT 	<= inT;
 							outIH <= inIH;
 							outSP <= inSP;
+							dataPause <= '0';
 						when "10011" =>--LW
 							outrx <= inrx;
 							outry <= inry;
 							outT 	<= inT;
 							outIH <= inIH;
 							outSP <= inSP;
+							dataPause <= '0';
 						when others => 
 							dataPause <= '1';
 					end case;
@@ -262,6 +285,7 @@ begin
 					outT 	<= inT;
 					outIH <= inIH;
 					outSP <= inSP;
+					dataPause <= '0';
 				end if;
 			elsif(MEMWBDes="1010")then--T
 				outrx <= inrx;
@@ -269,24 +293,28 @@ begin
 				outT 	<= MEMrst;
 				outIH <= inIH;
 				outSP <= inSP;
+				dataPause <= '0';
 			elsif(MEMWBDes="1000")then--IH
 				outrx <= inrx;
 				outry <= inry;
 				outT 	<= inT;
 				outIH <= MEMrst;
 				outSP <= inSP;
+				dataPause <= '0';
 			elsif(MEMWBDes="1001")then--SP
 				outrx <= inrx;
 				outry <= inry;
 				outT 	<= inT;
 				outIH <= inIH;
 				outSP <= MEMrst;
+				dataPause <= '0';
 			else
 				outrx <= inrx;
 				outry <= inry;
 				outT 	<= inT;
 				outIH <= inIH;
 				outSP <= inSP;
+				dataPause <= '0';
 			end if;
 		elsif(WBRegWrite='1')then
 			if(WBWBDes='0'&rxNum)then
@@ -295,29 +323,34 @@ begin
 				outT 	<= inT;
 				outIH <= inIH;
 				outSP <= inSP;
+				dataPause <= '0';
 			elsif(WBWBDes='0'&ryNum)then
 				outrx <= inrx;
 				outry <= WBwriteData;
 				outT 	<= inT;
 				outIH <= inIH;
 				outSP <= inSP;
+				dataPause <= '0';
 			elsif(WBWBDes="1010")then--T
 				outrx <= inrx;
 				outry <= inry;
 				outT 	<= WBwriteData;
 				outIH <= inIH;
 				outSP <= inSP;
+				dataPause <= '0';
 			elsif(WBWBDes="1000")then--IH
 				outrx <= inrx;
 				outry <= inry;
 				outT 	<= inT;
 				outIH <= WBwriteData;
 				outSP <= inSP;
+				dataPause <= '0';
 			elsif(WBWBDes="1001")then--SP
 				outrx <= inrx;
 				outry <= inry;
 				outT 	<= inT;
 				outIH <= inIH;
+				dataPause <= '0';
 				outSP <= WBwriteData;
 			else
 				outrx <= inrx;
@@ -325,6 +358,7 @@ begin
 				outT 	<= inT;
 				outIH <= inIH;
 				outSP <= inSP;
+				dataPause <= '0';
 			end if;
 		else
 			outrx <= inrx;
@@ -332,6 +366,7 @@ begin
 			outT 	<= inT;
 			outIH <= inIH;
 			outSP <= inSP;
+			dataPause <= '0';
 		end if;
 	end process;
 end Behavioral;
