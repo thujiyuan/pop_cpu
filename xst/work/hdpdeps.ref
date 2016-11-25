@@ -1,4 +1,4 @@
-V3 42
+V3 45
 FL C:/cpu_proj/pop_cpu/ALU.vhd 2016/11/20.17:45:17 P.20131013
 EN work/ALU 0 FL C:/cpu_proj/pop_cpu/ALU.vhd PB ieee/std_logic_1164 1381692176 \
       PB ieee/STD_LOGIC_UNSIGNED 1381692179 PB ieee/std_logic_arith 1381692177 \
@@ -69,3 +69,9 @@ PH work/recordDefs 1479992110 FL F:/thujiyuan/pop_cpu/recordDefs.vhd \
       PB ieee/std_logic_1164 1381692176
 PB work/recordDefs 1479992111 \
       FL F:/thujiyuan/pop_cpu/recordDefs.vhd PH work/recordDefs 1479992110
+FL F:/thujiyuan/pop_cpu/Registers.vhd 2016/11/25.12:53:55 P.20131013
+EN work/Registers 1480049752 FL F:/thujiyuan/pop_cpu/Registers.vhd \
+      PB ieee/std_logic_1164 1381692176 PB ieee/STD_LOGIC_UNSIGNED 1381692179 \
+      PB ieee/std_logic_arith 1381692177
+AR work/Registers/Behavioral 1480049753 \
+      FL F:/thujiyuan/pop_cpu/Registers.vhd EN work/Registers 1480049752

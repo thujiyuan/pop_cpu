@@ -3,6 +3,7 @@ AR wbsrcmux behavioral C:/cpu_proj/pop_cpu/WBSrcMUX.vhd sub00/vhpl22 1479706342
 EN readwritepauser NULL C:/cpu_proj/pop_cpu/ReadWritePauser.vhd sub00/vhpl15 1479652632
 EN if_idregs NULL C:/cpu_proj/pop_cpu/IF_IDRegs.vhd sub00/vhpl19 1479706085
 EN exe_memregs NULL C:/pop_cpu1/EXE_MEMRegs.vhd sub00/vhpl07 1479895519
+AR registers behavioral F:/thujiyuan/pop_cpu/Registers.vhd sub00/vhpl26 1480049753
 PH recorddefs NULL F:/thujiyuan/pop_cpu/recordDefs.vhd sub00/vhpl02 1479992110
 EN wbsrcmux NULL C:/cpu_proj/pop_cpu/WBSrcMUX.vhd sub00/vhpl21 1479706341
 EN mem_wbregs NULL C:/cpu_proj/pop_cpu/MEM_WBRegs.vhd sub00/vhpl13 1479652223
@@ -21,5 +22,6 @@ EN alusrc0mux NULL F:/thujiyuan/pop_cpu/ALUSrc0MUX.vhd sub00/vhpl01 1479992112
 AR if_idregs behavioral C:/cpu_proj/pop_cpu/IF_IDRegs.vhd sub00/vhpl20 1479706086
 AR id_exeregs behavioral C:/cpu_proj/pop_cpu/ID_EXERegs.vhd sub00/vhpl18 1479655061
 AR insfetcher behavioral F:/thujiyuan/pop_cpu/InsFetcher.vhd sub00/vhpl24 1479997291
+EN registers NULL F:/thujiyuan/pop_cpu/Registers.vhd sub00/vhpl25 1480049752
 EN alu NULL C:/cpu_proj/pop_cpu/ALU.vhd sub00/vhpl06 1479636138
 AR memsrcmux behavioral C:/cpu_proj/pop_cpu/MEMSrcMUX.vhd sub00/vhpl10 1479644597

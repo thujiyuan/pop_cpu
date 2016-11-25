@@ -20,14 +20,14 @@
 library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
 use IEEE.STD_LOGIC_UNSIGNED.ALL;
-use IEEE.STD_LOGIC_ARITH.ALL;
+use IEEE.STD_LOGIC_ARIIH.ALL;
 
--- Uncomment the following library declaration if using
--- arithmetic functions with Signed or Unsigned values
+-- Uncomment IHe following library declaration if using
+-- ariIHmetic functions wiIH Signed or Unsigned values
 --use IEEE.NUMERIC_STD.ALL;
 
--- Uncomment the following library declaration if instantiating
--- any Xilinx primitives in this code.
+-- Uncomment IHe following library declaration if instantiating
+-- any Xilinx primitives in IHis code.
 --library UNISIM;
 --use UNISIM.VComponents.all;
 
@@ -35,7 +35,7 @@ entity bypasser is
     Port ( inrx : in  STD_LOGIC_VECTOR (15 downto 0);
            inry : in  STD_LOGIC_VECTOR (15 downto 0);
            inT : in  STD_LOGIC_VECTOR (15 downto 0);
-           inTH : in  STD_LOGIC_VECTOR (15 downto 0);
+           inIH : in  STD_LOGIC_VECTOR (15 downto 0);
            inSP : in  STD_LOGIC_VECTOR (15 downto 0);
 			  
 			  rxNum : in  STD_LOGIC_VECTOR (2 downto 0);
@@ -59,7 +59,7 @@ entity bypasser is
            outrx : out  STD_LOGIC_VECTOR (15 downto 0);
            outry : out  STD_LOGIC_VECTOR (15 downto 0);
            outT : out  STD_LOGIC_VECTOR (15 downto 0);
-           outTH : out  STD_LOGIC_VECTOR (15 downto 0);
+           outIH : out  STD_LOGIC_VECTOR (15 downto 0);
            outSP : out  STD_LOGIC_VECTOR (15 downto 0);
            dataPause : out  STD_LOGIC);
 end bypasser;
@@ -67,7 +67,7 @@ end bypasser;
 architecture Behavioral of bypasser is
 
 begin
-	process(inrx,inry,inT,inTH,inSP,rxNum,ryNum,instruction,
+	process(inrx,inry,inT,inIH,inSP,rxNum,ryNum,instruction,
 				EXERegWrite,EXEWBDes,EXEMemRead,EXErst,
 				MEMRegWrite,MEMWBDes,MEMMemRead,MEMrst,
 				WBRegWrite,WBWBDes,WBwriteData)
@@ -80,26 +80,26 @@ begin
 							outrx <= inrx;
 							outry <= inry;
 							outT 	<= inT;
-							outTH <= inTH;
+							outIH <= inIH;
 							outSP <= inSP;
 						when "00110" =>--SLL SRA
 							outrx <= inrx;
 							outry <= inry;
 							outT 	<= inT;
-							outTH <= inTH;
+							outIH <= inIH;
 							outSP <= inSP;
 						when "10010" =>--LW_SP
 							outrx <= inrx;
 							outry <= inry;
 							outT 	<= inT;
-							outTH <= inTH;
+							outIH <= inIH;
 							outSP <= inSP;
 						when "11110" =>--MFIH
 							if(instruction(0)='0')then
 								outrx <= inrx;
 								outry <= inry;
 								outT 	<= inT;
-								outTH <= inTH;
+								outIH <= inIH;
 								outSP <= inSP;
 							else
 								dataPause <= '1';
@@ -109,25 +109,25 @@ begin
 								outrx <= inrx;
 								outry <= inry;
 								outT 	<= inT;
-								outTH <= inTH;
+								outIH <= inIH;
 								outSP <= inSP;
 							elsif(instruction(4 downto 0) = "01011")then
 								outrx <= inrx;
 								outry <= inry;
 								outT 	<= inT;
-								outTH <= inTH;
+								outIH <= inIH;
 								outSP <= inSP;
 							else
 								dataPause <= '1';
 							end if;
-						when others =>
+						when oIHers =>
 							dataPause <= '1';
 					end case;
 				else
 					outrx <= EXErst;
 					outry <= inry;
 					outT 	<= inT;
-					outTH <= inTH;
+					outIH <= inIH;
 					outSP <= inSP;
 				end if;
 			elsif(EXEWBDes='0'&ryNum)then
@@ -137,47 +137,47 @@ begin
 							outrx <= inrx;
 							outry <= inry;
 							outT 	<= inT;
-							outTH <= inTH;
+							outIH <= inIH;
 							outSP <= inSP;
 						when "10011" =>--LW
 							outrx <= inrx;
 							outry <= inry;
 							outT 	<= inT;
-							outTH <= inTH;
+							outIH <= inIH;
 							outSP <= inSP;
-						when others => 
+						when oIHers => 
 							dataPause <= '1';
 					end case;
 				else
 					outrx <= inrx;
 					outry <= EXErst;
 					outT 	<= inT;
-					outTH <= inTH;
+					outIH <= inIH;
 					outSP <= inSP;
 				end if;
 			elsif(EXEWBDes="1010")then--T
 				outrx <= inrx;
 				outry <= inry;
 				outT 	<= EXErst;
-				outTH <= inTH;
+				outIH <= inIH;
 				outSP <= inSP;
-			elsif(EXEWBDes="1000")then--TH
+			elsif(EXEWBDes="1000")then--IH
 				outrx <= inrx;
 				outry <= inry;
 				outT 	<= inT;
-				outTH <= EXErst;
+				outIH <= EXErst;
 				outSP <= inSP;
 			elsif(EXEWBDes="1001")then--SP
 				outrx <= inrx;
 				outry <= inry;
 				outT 	<= inT;
-				outTH <= inTH;
+				outIH <= inIH;
 				outSP <= EXErst;
 			else
 				outrx <= inrx;
 				outry <= inry;
 				outT 	<= inT;
-				outTH <= inTH;
+				outIH <= inIH;
 				outSP <= inSP;
 			end if;
 		elsif(MEMRegWrite='1')then
@@ -188,26 +188,26 @@ begin
 							outrx <= inrx;
 							outry <= inry;
 							outT 	<= inT;
-							outTH <= inTH;
+							outIH <= inIH;
 							outSP <= inSP;
 						when "00110" =>--SLL SRA
 							outrx <= inrx;
 							outry <= inry;
 							outT 	<= inT;
-							outTH <= inTH;
+							outIH <= inIH;
 							outSP <= inSP;
 						when "10010" =>--LW_SP
 							outrx <= inrx;
 							outry <= inry;
 							outT 	<= inT;
-							outTH <= inTH;
+							outIH <= inIH;
 							outSP <= inSP;
 						when "11110" =>--MFIH
 							if(instruction(0)='0')then
 								outrx <= inrx;
 								outry <= inry;
 								outT 	<= inT;
-								outTH <= inTH;
+								outIH <= inIH;
 								outSP <= inSP;
 							else
 								dataPause <= '1';
@@ -217,25 +217,25 @@ begin
 								outrx <= inrx;
 								outry <= inry;
 								outT 	<= inT;
-								outTH <= inTH;
+								outIH <= inIH;
 								outSP <= inSP;
 							elsif(instruction(4 downto 0) = "01011")then
 								outrx <= inrx;
 								outry <= inry;
 								outT 	<= inT;
-								outTH <= inTH;
+								outIH <= inIH;
 								outSP <= inSP;
 							else
 								dataPause <= '1';
 							end if;
-						when others =>
+						when oIHers =>
 							dataPause <= '1';
 					end case;
 				else
 					outrx <= MEMrst;
 					outry <= inry;
 					outT 	<= inT;
-					outTH <= inTH;
+					outIH <= inIH;
 					outSP <= inSP;
 				end if;
 			elsif(MEMWBDes='0'&ryNum)then
@@ -245,47 +245,47 @@ begin
 							outrx <= inrx;
 							outry <= inry;
 							outT 	<= inT;
-							outTH <= inTH;
+							outIH <= inIH;
 							outSP <= inSP;
 						when "10011" =>--LW
 							outrx <= inrx;
 							outry <= inry;
 							outT 	<= inT;
-							outTH <= inTH;
+							outIH <= inIH;
 							outSP <= inSP;
-						when others => 
+						when oIHers => 
 							dataPause <= '1';
 					end case;
 				else
 					outrx <= inrx;
 					outry <= MEMrst;
 					outT 	<= inT;
-					outTH <= inTH;
+					outIH <= inIH;
 					outSP <= inSP;
 				end if;
 			elsif(MEMWBDes="1010")then--T
 				outrx <= inrx;
 				outry <= inry;
 				outT 	<= MEMrst;
-				outTH <= inTH;
+				outIH <= inIH;
 				outSP <= inSP;
-			elsif(MEMWBDes="1000")then--TH
+			elsif(MEMWBDes="1000")then--IH
 				outrx <= inrx;
 				outry <= inry;
 				outT 	<= inT;
-				outTH <= MEMrst;
+				outIH <= MEMrst;
 				outSP <= inSP;
 			elsif(MEMWBDes="1001")then--SP
 				outrx <= inrx;
 				outry <= inry;
 				outT 	<= inT;
-				outTH <= inTH;
+				outIH <= inIH;
 				outSP <= MEMrst;
 			else
 				outrx <= inrx;
 				outry <= inry;
 				outT 	<= inT;
-				outTH <= inTH;
+				outIH <= inIH;
 				outSP <= inSP;
 			end if;
 		elsif(WBRegWrite='1')then
@@ -293,44 +293,44 @@ begin
 				outrx <= WBwriteData;
 				outry <= inry;
 				outT 	<= inT;
-				outTH <= inTH;
+				outIH <= inIH;
 				outSP <= inSP;
 			elsif(WBWBDes='0'&ryNum)then
 				outrx <= inrx;
 				outry <= WBwriteData;
 				outT 	<= inT;
-				outTH <= inTH;
+				outIH <= inIH;
 				outSP <= inSP;
 			elsif(WBWBDes="1010")then--T
 				outrx <= inrx;
 				outry <= inry;
 				outT 	<= WBwriteData;
-				outTH <= inTH;
+				outIH <= inIH;
 				outSP <= inSP;
-			elsif(WBWBDes="1000")then--TH
+			elsif(WBWBDes="1000")then--IH
 				outrx <= inrx;
 				outry <= inry;
 				outT 	<= inT;
-				outTH <= WBwriteData;
+				outIH <= WBwriteData;
 				outSP <= inSP;
 			elsif(WBWBDes="1001")then--SP
 				outrx <= inrx;
 				outry <= inry;
 				outT 	<= inT;
-				outTH <= inTH;
+				outIH <= inIH;
 				outSP <= WBwriteData;
 			else
 				outrx <= inrx;
 				outry <= inry;
 				outT 	<= inT;
-				outTH <= inTH;
+				outIH <= inIH;
 				outSP <= inSP;
 			end if;
 		else
 			outrx <= inrx;
 			outry <= inry;
 			outT 	<= inT;
-			outTH <= inTH;
+			outIH <= inIH;
 			outSP <= inSP;
 		end if;
 	end process;

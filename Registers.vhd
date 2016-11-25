@@ -41,7 +41,8 @@ entity Registers is
            ry : out  STD_LOGIC_VECTOR (15 downto 0);
            T : out  STD_LOGIC_VECTOR (15 downto 0);
            IH : out  STD_LOGIC_VECTOR (15 downto 0);
-           SP : out  STD_LOGIC_VECTOR (15 downto 0));
+           SP : out  STD_LOGIC_VECTOR (15 downto 0);
+			  RA : out  STD_LOGIC_VECTOR (15 downto 0));
 end Registers;
 
 architecture Behavioral of Registers is
@@ -124,6 +125,7 @@ begin
 			T <= rT;
 			IH <= rIH;
 			SP <= rSP;
+			RA <= rRA;
 		end if;
 	end process;
 end Behavioral;
