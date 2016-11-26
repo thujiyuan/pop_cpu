@@ -42,7 +42,7 @@ end PCSelector;
 architecture PCSELECTORBehavioral of PCSelector is
 
 begin
-	process(ctrl)
+	process(ctrl, PC_1, branchResult, regResult)
 	begin
 		if(ctrl = "00") then
 			PCout <= PC_1;

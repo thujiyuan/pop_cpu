@@ -115,7 +115,8 @@ Architecture pcadderbehavioral of Entity pcadder is up to date.
 Compiling vhdl file "F:/thujiyuan/pop_cpu/PCSelector.vhd" in Library work.
 Architecture pcselectorbehavioral of Entity pcselector is up to date.
 Compiling vhdl file "F:/thujiyuan/pop_cpu/IF_IDRegs.vhd" in Library work.
-Architecture behavioral of Entity if_idregs is up to date.
+Entity <if_idregs> compiled.
+Entity <if_idregs> (Architecture <behavioral>) compiled.
 Compiling vhdl file "F:/thujiyuan/pop_cpu/Registers.vhd" in Library work.
 Architecture behavioral of Entity registers is up to date.
 Compiling vhdl file "F:/thujiyuan/pop_cpu/bypasser.vhd" in Library work.
@@ -123,7 +124,8 @@ Architecture behavioral of Entity bypasser is up to date.
 Compiling vhdl file "F:/thujiyuan/pop_cpu/Control.vhd" in Library work.
 Architecture behavioral of Entity control is up to date.
 Compiling vhdl file "F:/thujiyuan/pop_cpu/extender.vhd" in Library work.
-Architecture extenderbehavioral of Entity extender is up to date.
+Entity <extender> compiled.
+Entity <extender> (Architecture <extenderbehavioral>) compiled.
 Compiling vhdl file "F:/thujiyuan/pop_cpu/AddressAdder.vhd" in Library work.
 Architecture behavioral of Entity addressadder is up to date.
 Compiling vhdl file "F:/thujiyuan/pop_cpu/ID_EXERegs.vhd" in Library work.
@@ -224,8 +226,6 @@ Analyzing hierarchy for entity <Ram2Access> in library <work> (architecture <beh
 *                            HDL Analysis                               *
 =========================================================================
 Analyzing Entity <pop_cpu> in library <work> (Architecture <behavioral>).
-WARNING:Xst:752 - "F:/thujiyuan/pop_cpu/pop_cpu.vhd" line 575: Unconnected input port 'intSave' of component 'IF_IDRegs' is tied to default value.
-WARNING:Xst:752 - "F:/thujiyuan/pop_cpu/pop_cpu.vhd" line 575: Unconnected input port 'intRecover' of component 'IF_IDRegs' is tied to default value.
 WARNING:Xst:753 - "F:/thujiyuan/pop_cpu/pop_cpu.vhd" line 578: Unconnected output port 'RA' of component 'Registers'.
 Entity <pop_cpu> analyzed. Unit <pop_cpu> generated.
 
@@ -256,8 +256,6 @@ Analyzing Entity <Control> in library <work> (Architecture <behavioral>).
 Entity <Control> analyzed. Unit <Control> generated.
 
 Analyzing Entity <Extender> in library <work> (Architecture <extenderbehavioral>).
-WARNING:Xst:819 - "F:/thujiyuan/pop_cpu/extender.vhd" line 43: One or more signals are missing in the process sensitivity list. To enable synthesis of FPGA/CPLD hardware, XST will assume that all necessary signals are present in the sensitivity list. Please note that the result of the synthesis may differ from the initial design specification. The missing signals are:
-   <ins>
 Entity <Extender> analyzed. Unit <Extender> generated.
 
 Analyzing Entity <AddressAdder> in library <work> (Architecture <behavioral>).
@@ -344,8 +342,6 @@ Unit <PCSelector> synthesized.
 
 Synthesizing Unit <IF_IDRegs>.
     Related source file is "F:/thujiyuan/pop_cpu/IF_IDRegs.vhd".
-WARNING:Xst:647 - Input <intSave> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
-WARNING:Xst:647 - Input <intRecover> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
     Found 16-bit register for signal <outInst>.
     Found 3-bit register for signal <outRyNum>.
     Found 16-bit register for signal <outPC>.
@@ -389,12 +385,16 @@ Unit <Registers> synthesized.
 Synthesizing Unit <bypasser>.
     Related source file is "F:/thujiyuan/pop_cpu/bypasser.vhd".
 WARNING:Xst:647 - Input <instruction<10:8>> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
-    Found 4-bit comparator equal for signal <outT$cmp_eq0000> created at line 76.
-    Found 4-bit comparator equal for signal <outT$cmp_eq0001> created at line 138.
-    Found 4-bit comparator equal for signal <outT$cmp_eq0003> created at line 198.
-    Found 4-bit comparator equal for signal <outT$cmp_eq0004> created at line 260.
-    Found 4-bit comparator equal for signal <outT$cmp_eq0006> created at line 320.
-    Found 4-bit comparator equal for signal <outT$cmp_eq0007> created at line 326.
+WARNING:Xst:737 - Found 16-bit latch for signal <outrx>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+INFO:Xst:2371 - HDL ADVISOR - Logic functions respectively driving the data and gate enable inputs of this latch share common terms. This situation will potentially lead to setup/hold violations and, as a result, to simulation problems. This situation may come from an incomplete case statement (all selector values are not covered). You should carefully review if it was in your intentions to describe such a latch.
+WARNING:Xst:737 - Found 16-bit latch for signal <outry>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+INFO:Xst:2371 - HDL ADVISOR - Logic functions respectively driving the data and gate enable inputs of this latch share common terms. This situation will potentially lead to setup/hold violations and, as a result, to simulation problems. This situation may come from an incomplete case statement (all selector values are not covered). You should carefully review if it was in your intentions to describe such a latch.
+    Found 4-bit comparator equal for signal <dataPause$cmp_eq0000> created at line 77.
+    Found 4-bit comparator equal for signal <dataPause$cmp_eq0008> created at line 118.
+    Found 4-bit comparator equal for signal <dataPause$cmp_eq0011> created at line 173.
+    Found 4-bit comparator equal for signal <dataPause$cmp_eq0012> created at line 190.
+    Found 4-bit comparator equal for signal <outrx$cmp_eq0000> created at line 159.
+    Found 4-bit comparator equal for signal <outry$cmp_eq0000> created at line 207.
     Summary:
 	inferred   6 Comparator(s).
 Unit <bypasser> synthesized.
@@ -603,7 +603,6 @@ Unit <Ram2Access> synthesized.
 Synthesizing Unit <pop_cpu>.
     Related source file is "F:/thujiyuan/pop_cpu/pop_cpu.vhd".
 WARNING:Xst:653 - Signal <Registers_IDEXERegs_RA> is used but never assigned. This sourceless signal will be automatically connected to value 0000000000000000.
-WARNING:Xst:646 - Signal <IDEXERegs_EXEMEMRegs_WBSrc> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
 Unit <pop_cpu> synthesized.
 
 INFO:Xst:1767 - HDL ADVISOR - Resource sharing has identified that some arithmetic operations in this design can share the same physical resources for reduced device utilization. For improved clock frequency you may try to disable resource sharing.
@@ -624,9 +623,9 @@ Macro Statistics
  2-bit register                                        : 5
  3-bit register                                        : 8
  4-bit register                                        : 4
-# Latches                                              : 30
+# Latches                                              : 32
  1-bit latch                                           : 4
- 16-bit latch                                          : 24
+ 16-bit latch                                          : 26
  18-bit latch                                          : 2
 # Comparators                                          : 10
  16-bit comparator equal                               : 1
@@ -718,9 +717,9 @@ Macro Statistics
  16-bit addsub                                         : 1
 # Registers                                            : 480
  Flip-Flops                                            : 480
-# Latches                                              : 30
+# Latches                                              : 32
  1-bit latch                                           : 4
- 16-bit latch                                          : 24
+ 16-bit latch                                          : 26
  18-bit latch                                          : 2
 # Comparators                                          : 10
  16-bit comparator equal                               : 1
@@ -772,86 +771,6 @@ WARNING:Xst:1710 - FF/Latch <memac/RAM2addr_17> (without init value) has a const
 WARNING:Xst:1710 - FF/Latch <memac/RAM2addr_16> (without init value) has a constant value of 0 in block <pop_cpu>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1710 - FF/Latch <memac/RAM2addr_15> (without init value) has a constant value of 0 in block <pop_cpu>. This FF/Latch will be trimmed during the optimization process.
 INFO:Xst:2261 - The FF/Latch <immResult_10> in Unit <Extender> is equivalent to the following 5 FFs/Latches, which will be removed : <immResult_11> <immResult_12> <immResult_13> <immResult_14> <immResult_15> 
-WARNING:Xst:2170 - Unit bypasser : the following signal(s) form a combinatorial loop: outIH_mux0001<15>, outIH<15>.
-WARNING:Xst:2170 - Unit bypasser : the following signal(s) form a combinatorial loop: outIH<14>, outIH_mux0001<14>.
-WARNING:Xst:2170 - Unit bypasser : the following signal(s) form a combinatorial loop: outIH<13>, outIH_mux0001<13>.
-WARNING:Xst:2170 - Unit bypasser : the following signal(s) form a combinatorial loop: outIH<12>, outIH_mux0001<12>.
-WARNING:Xst:2170 - Unit bypasser : the following signal(s) form a combinatorial loop: outIH_mux0001<11>, outIH<11>.
-WARNING:Xst:2170 - Unit bypasser : the following signal(s) form a combinatorial loop: outIH<10>, outIH_mux0001<10>.
-WARNING:Xst:2170 - Unit bypasser : the following signal(s) form a combinatorial loop: outIH_mux0001<9>, outIH<9>.
-WARNING:Xst:2170 - Unit bypasser : the following signal(s) form a combinatorial loop: outIH<8>, outIH_mux0001<8>.
-WARNING:Xst:2170 - Unit bypasser : the following signal(s) form a combinatorial loop: outIH<7>, outIH_mux0001<7>.
-WARNING:Xst:2170 - Unit bypasser : the following signal(s) form a combinatorial loop: outIH_mux0001<6>, outIH<6>.
-WARNING:Xst:2170 - Unit bypasser : the following signal(s) form a combinatorial loop: outIH<5>, outIH_mux0001<5>.
-WARNING:Xst:2170 - Unit bypasser : the following signal(s) form a combinatorial loop: outIH_mux0001<4>, outIH<4>.
-WARNING:Xst:2170 - Unit bypasser : the following signal(s) form a combinatorial loop: outIH_mux0001<3>, outIH<3>.
-WARNING:Xst:2170 - Unit bypasser : the following signal(s) form a combinatorial loop: outIH<2>, outIH_mux0001<2>.
-WARNING:Xst:2170 - Unit bypasser : the following signal(s) form a combinatorial loop: outIH<1>, outIH_mux0001<1>.
-WARNING:Xst:2170 - Unit bypasser : the following signal(s) form a combinatorial loop: outIH_mux0001<0>, outIH<0>.
-WARNING:Xst:2170 - Unit bypasser : the following signal(s) form a combinatorial loop: outSP_mux0001<15>, outSP<15>.
-WARNING:Xst:2170 - Unit bypasser : the following signal(s) form a combinatorial loop: outSP_mux0001<14>, outSP<14>.
-WARNING:Xst:2170 - Unit bypasser : the following signal(s) form a combinatorial loop: outSP_mux0001<13>, outSP<13>.
-WARNING:Xst:2170 - Unit bypasser : the following signal(s) form a combinatorial loop: outSP_mux0001<12>, outSP<12>.
-WARNING:Xst:2170 - Unit bypasser : the following signal(s) form a combinatorial loop: outSP_mux0001<11>, outSP<11>.
-WARNING:Xst:2170 - Unit bypasser : the following signal(s) form a combinatorial loop: outSP_mux0001<10>, outSP<10>.
-WARNING:Xst:2170 - Unit bypasser : the following signal(s) form a combinatorial loop: outSP_mux0001<9>, outSP<9>.
-WARNING:Xst:2170 - Unit bypasser : the following signal(s) form a combinatorial loop: outSP_mux0001<8>, outSP<8>.
-WARNING:Xst:2170 - Unit bypasser : the following signal(s) form a combinatorial loop: outSP_mux0001<7>, outSP<7>.
-WARNING:Xst:2170 - Unit bypasser : the following signal(s) form a combinatorial loop: outSP_mux0001<6>, outSP<6>.
-WARNING:Xst:2170 - Unit bypasser : the following signal(s) form a combinatorial loop: outSP_mux0001<5>, outSP<5>.
-WARNING:Xst:2170 - Unit bypasser : the following signal(s) form a combinatorial loop: outSP_mux0001<4>, outSP<4>.
-WARNING:Xst:2170 - Unit bypasser : the following signal(s) form a combinatorial loop: outSP_mux0001<3>, outSP<3>.
-WARNING:Xst:2170 - Unit bypasser : the following signal(s) form a combinatorial loop: outSP_mux0001<2>, outSP<2>.
-WARNING:Xst:2170 - Unit bypasser : the following signal(s) form a combinatorial loop: outSP_mux0001<1>, outSP<1>.
-WARNING:Xst:2170 - Unit bypasser : the following signal(s) form a combinatorial loop: outSP_mux0001<0>, outSP<0>.
-WARNING:Xst:2170 - Unit bypasser : the following signal(s) form a combinatorial loop: outrx_mux0001<15>, outrx<15>.
-WARNING:Xst:2170 - Unit bypasser : the following signal(s) form a combinatorial loop: outrx<14>, outrx_mux0001<14>.
-WARNING:Xst:2170 - Unit bypasser : the following signal(s) form a combinatorial loop: outrx<13>, outrx_mux0001<13>.
-WARNING:Xst:2170 - Unit bypasser : the following signal(s) form a combinatorial loop: outrx<12>, outrx_mux0001<12>.
-WARNING:Xst:2170 - Unit bypasser : the following signal(s) form a combinatorial loop: outrx_mux0001<11>, outrx<11>.
-WARNING:Xst:2170 - Unit bypasser : the following signal(s) form a combinatorial loop: outrx_mux0001<10>, outrx<10>.
-WARNING:Xst:2170 - Unit bypasser : the following signal(s) form a combinatorial loop: outrx<9>, outrx_mux0001<9>.
-WARNING:Xst:2170 - Unit bypasser : the following signal(s) form a combinatorial loop: outrx<8>, outrx_mux0001<8>.
-WARNING:Xst:2170 - Unit bypasser : the following signal(s) form a combinatorial loop: outrx<7>, outrx_mux0001<7>.
-WARNING:Xst:2170 - Unit bypasser : the following signal(s) form a combinatorial loop: outrx<6>, outrx_mux0001<6>.
-WARNING:Xst:2170 - Unit bypasser : the following signal(s) form a combinatorial loop: outrx_mux0001<5>, outrx<5>.
-WARNING:Xst:2170 - Unit bypasser : the following signal(s) form a combinatorial loop: outrx_mux0001<4>, outrx<4>.
-WARNING:Xst:2170 - Unit bypasser : the following signal(s) form a combinatorial loop: outrx<3>, outrx_mux0001<3>.
-WARNING:Xst:2170 - Unit bypasser : the following signal(s) form a combinatorial loop: outrx<2>, outrx_mux0001<2>.
-WARNING:Xst:2170 - Unit bypasser : the following signal(s) form a combinatorial loop: outrx<1>, outrx_mux0001<1>.
-WARNING:Xst:2170 - Unit bypasser : the following signal(s) form a combinatorial loop: outrx<0>, outrx_mux0001<0>.
-WARNING:Xst:2170 - Unit bypasser : the following signal(s) form a combinatorial loop: outry<15>, outry_mux0001<15>.
-WARNING:Xst:2170 - Unit bypasser : the following signal(s) form a combinatorial loop: outry<14>, outry_mux0001<14>.
-WARNING:Xst:2170 - Unit bypasser : the following signal(s) form a combinatorial loop: outry_mux0001<13>, outry<13>.
-WARNING:Xst:2170 - Unit bypasser : the following signal(s) form a combinatorial loop: outry_mux0001<12>, outry<12>.
-WARNING:Xst:2170 - Unit bypasser : the following signal(s) form a combinatorial loop: outry_mux0001<11>, outry<11>.
-WARNING:Xst:2170 - Unit bypasser : the following signal(s) form a combinatorial loop: outry<10>, outry_mux0001<10>.
-WARNING:Xst:2170 - Unit bypasser : the following signal(s) form a combinatorial loop: outry<9>, outry_mux0001<9>.
-WARNING:Xst:2170 - Unit bypasser : the following signal(s) form a combinatorial loop: outry<8>, outry_mux0001<8>.
-WARNING:Xst:2170 - Unit bypasser : the following signal(s) form a combinatorial loop: outry_mux0001<7>, outry<7>.
-WARNING:Xst:2170 - Unit bypasser : the following signal(s) form a combinatorial loop: outry_mux0001<6>, outry<6>.
-WARNING:Xst:2170 - Unit bypasser : the following signal(s) form a combinatorial loop: outry_mux0001<5>, outry<5>.
-WARNING:Xst:2170 - Unit bypasser : the following signal(s) form a combinatorial loop: outry<4>, outry_mux0001<4>.
-WARNING:Xst:2170 - Unit bypasser : the following signal(s) form a combinatorial loop: outry<3>, outry_mux0001<3>.
-WARNING:Xst:2170 - Unit bypasser : the following signal(s) form a combinatorial loop: outry<2>, outry_mux0001<2>.
-WARNING:Xst:2170 - Unit bypasser : the following signal(s) form a combinatorial loop: outry_mux0001<1>, outry<1>.
-WARNING:Xst:2170 - Unit bypasser : the following signal(s) form a combinatorial loop: outry_mux0001<0>, outry<0>.
-WARNING:Xst:2170 - Unit bypasser : the following signal(s) form a combinatorial loop: outT<15>, outT_mux0001<15>.
-WARNING:Xst:2170 - Unit bypasser : the following signal(s) form a combinatorial loop: outT_mux0001<14>, outT<14>.
-WARNING:Xst:2170 - Unit bypasser : the following signal(s) form a combinatorial loop: outT_mux0001<13>, outT<13>.
-WARNING:Xst:2170 - Unit bypasser : the following signal(s) form a combinatorial loop: outT_mux0001<12>, outT<12>.
-WARNING:Xst:2170 - Unit bypasser : the following signal(s) form a combinatorial loop: outT<11>, outT_mux0001<11>.
-WARNING:Xst:2170 - Unit bypasser : the following signal(s) form a combinatorial loop: outT<10>, outT_mux0001<10>.
-WARNING:Xst:2170 - Unit bypasser : the following signal(s) form a combinatorial loop: outT_mux0001<9>, outT<9>.
-WARNING:Xst:2170 - Unit bypasser : the following signal(s) form a combinatorial loop: outT_mux0001<8>, outT<8>.
-WARNING:Xst:2170 - Unit bypasser : the following signal(s) form a combinatorial loop: outT<7>, outT_mux0001<7>.
-WARNING:Xst:2170 - Unit bypasser : the following signal(s) form a combinatorial loop: outT_mux0001<6>, outT<6>.
-WARNING:Xst:2170 - Unit bypasser : the following signal(s) form a combinatorial loop: outT<5>, outT_mux0001<5>.
-WARNING:Xst:2170 - Unit bypasser : the following signal(s) form a combinatorial loop: outT_mux0001<4>, outT<4>.
-WARNING:Xst:2170 - Unit bypasser : the following signal(s) form a combinatorial loop: outT<3>, outT_mux0001<3>.
-WARNING:Xst:2170 - Unit bypasser : the following signal(s) form a combinatorial loop: outT<2>, outT_mux0001<2>.
-WARNING:Xst:2170 - Unit bypasser : the following signal(s) form a combinatorial loop: outT_mux0001<1>, outT<1>.
-WARNING:Xst:2170 - Unit bypasser : the following signal(s) form a combinatorial loop: outT_mux0001<0>, outT<0>.
 WARNING:Xst:2170 - Unit ALU : the following signal(s) form a combinatorial loop: rst_shift0005<15>.
 
 Optimizing unit <pop_cpu> ...
@@ -872,8 +791,6 @@ INFO:Xst:2261 - The FF/Latch <outRxNum_0> in Unit <IF_IDRegs> is equivalent to t
 INFO:Xst:2261 - The FF/Latch <outInst_7> in Unit <IF_IDRegs> is equivalent to the following FF/Latch, which will be removed : <outRyNum_2> 
 INFO:Xst:2261 - The FF/Latch <outInst_6> in Unit <IF_IDRegs> is equivalent to the following FF/Latch, which will be removed : <outRyNum_1> 
 
-Optimizing unit <bypasser> ...
-
 Optimizing unit <Control> ...
 
 Optimizing unit <ID_EXERegs> ...
@@ -886,189 +803,10 @@ Optimizing unit <MEM_WBRegs> ...
 
 Optimizing unit <Registers> ...
 
+Optimizing unit <bypasser> ...
+
 Optimizing unit <Extender> ...
-WARNING:Xst:1293 - FF/Latch <regis/r010_7> has a constant value of 0 in block <pop_cpu>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1293 - FF/Latch <regis/r010_6> has a constant value of 0 in block <pop_cpu>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1293 - FF/Latch <regis/r010_5> has a constant value of 0 in block <pop_cpu>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1293 - FF/Latch <regis/r010_4> has a constant value of 0 in block <pop_cpu>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1293 - FF/Latch <regis/r010_3> has a constant value of 0 in block <pop_cpu>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1293 - FF/Latch <regis/r010_2> has a constant value of 0 in block <pop_cpu>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1293 - FF/Latch <regis/r010_1> has a constant value of 0 in block <pop_cpu>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1293 - FF/Latch <regis/r010_0> has a constant value of 0 in block <pop_cpu>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1293 - FF/Latch <regis/r011_15> has a constant value of 0 in block <pop_cpu>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1293 - FF/Latch <regis/r011_14> has a constant value of 0 in block <pop_cpu>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1293 - FF/Latch <regis/r011_13> has a constant value of 0 in block <pop_cpu>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1293 - FF/Latch <regis/r011_12> has a constant value of 0 in block <pop_cpu>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1293 - FF/Latch <regis/r011_11> has a constant value of 0 in block <pop_cpu>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1293 - FF/Latch <regis/r011_10> has a constant value of 0 in block <pop_cpu>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1293 - FF/Latch <regis/r011_9> has a constant value of 0 in block <pop_cpu>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1293 - FF/Latch <regis/r011_8> has a constant value of 0 in block <pop_cpu>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1293 - FF/Latch <regis/r011_7> has a constant value of 0 in block <pop_cpu>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1293 - FF/Latch <regis/r011_6> has a constant value of 0 in block <pop_cpu>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1293 - FF/Latch <regis/r011_5> has a constant value of 0 in block <pop_cpu>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1293 - FF/Latch <regis/r011_4> has a constant value of 0 in block <pop_cpu>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1293 - FF/Latch <regis/r011_3> has a constant value of 0 in block <pop_cpu>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1293 - FF/Latch <regis/r011_2> has a constant value of 0 in block <pop_cpu>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1293 - FF/Latch <regis/r011_1> has a constant value of 0 in block <pop_cpu>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1293 - FF/Latch <regis/r011_0> has a constant value of 0 in block <pop_cpu>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1293 - FF/Latch <regis/r100_15> has a constant value of 0 in block <pop_cpu>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1293 - FF/Latch <regis/r100_14> has a constant value of 0 in block <pop_cpu>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1293 - FF/Latch <regis/r100_13> has a constant value of 0 in block <pop_cpu>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1293 - FF/Latch <regis/r100_12> has a constant value of 0 in block <pop_cpu>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1293 - FF/Latch <regis/r100_11> has a constant value of 0 in block <pop_cpu>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1293 - FF/Latch <regis/rT_4> has a constant value of 0 in block <pop_cpu>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1293 - FF/Latch <regis/rT_3> has a constant value of 0 in block <pop_cpu>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1293 - FF/Latch <regis/rT_2> has a constant value of 0 in block <pop_cpu>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1293 - FF/Latch <regis/rT_1> has a constant value of 0 in block <pop_cpu>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1293 - FF/Latch <regis/rT_0> has a constant value of 0 in block <pop_cpu>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1293 - FF/Latch <regis/r001_15> has a constant value of 0 in block <pop_cpu>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1293 - FF/Latch <regis/r001_14> has a constant value of 0 in block <pop_cpu>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1293 - FF/Latch <regis/r001_13> has a constant value of 0 in block <pop_cpu>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1293 - FF/Latch <regis/r001_12> has a constant value of 0 in block <pop_cpu>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1293 - FF/Latch <regis/r001_11> has a constant value of 0 in block <pop_cpu>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1293 - FF/Latch <regis/r001_10> has a constant value of 0 in block <pop_cpu>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1293 - FF/Latch <regis/r001_9> has a constant value of 0 in block <pop_cpu>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1293 - FF/Latch <regis/r001_8> has a constant value of 0 in block <pop_cpu>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1293 - FF/Latch <regis/r001_7> has a constant value of 0 in block <pop_cpu>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1293 - FF/Latch <regis/r001_6> has a constant value of 0 in block <pop_cpu>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1293 - FF/Latch <regis/r001_5> has a constant value of 0 in block <pop_cpu>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1293 - FF/Latch <regis/r001_4> has a constant value of 0 in block <pop_cpu>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1293 - FF/Latch <regis/r001_3> has a constant value of 0 in block <pop_cpu>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1293 - FF/Latch <regis/r001_2> has a constant value of 0 in block <pop_cpu>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1293 - FF/Latch <regis/r001_1> has a constant value of 0 in block <pop_cpu>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1293 - FF/Latch <regis/r001_0> has a constant value of 0 in block <pop_cpu>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1293 - FF/Latch <regis/r010_15> has a constant value of 0 in block <pop_cpu>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1293 - FF/Latch <regis/r010_14> has a constant value of 0 in block <pop_cpu>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1293 - FF/Latch <regis/r010_13> has a constant value of 0 in block <pop_cpu>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1293 - FF/Latch <regis/r010_12> has a constant value of 0 in block <pop_cpu>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1293 - FF/Latch <regis/r010_11> has a constant value of 0 in block <pop_cpu>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1293 - FF/Latch <regis/r010_10> has a constant value of 0 in block <pop_cpu>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1293 - FF/Latch <regis/r010_9> has a constant value of 0 in block <pop_cpu>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1293 - FF/Latch <regis/r010_8> has a constant value of 0 in block <pop_cpu>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1293 - FF/Latch <regis/r110_12> has a constant value of 0 in block <pop_cpu>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1293 - FF/Latch <regis/r110_11> has a constant value of 0 in block <pop_cpu>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1293 - FF/Latch <regis/r110_10> has a constant value of 0 in block <pop_cpu>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1293 - FF/Latch <regis/r110_9> has a constant value of 0 in block <pop_cpu>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1293 - FF/Latch <regis/r110_8> has a constant value of 0 in block <pop_cpu>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1293 - FF/Latch <regis/r110_7> has a constant value of 0 in block <pop_cpu>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1293 - FF/Latch <regis/r110_6> has a constant value of 0 in block <pop_cpu>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1293 - FF/Latch <regis/r110_5> has a constant value of 0 in block <pop_cpu>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1293 - FF/Latch <regis/r110_4> has a constant value of 0 in block <pop_cpu>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1293 - FF/Latch <regis/r110_3> has a constant value of 0 in block <pop_cpu>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1293 - FF/Latch <regis/r110_2> has a constant value of 0 in block <pop_cpu>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1293 - FF/Latch <regis/r110_1> has a constant value of 0 in block <pop_cpu>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1293 - FF/Latch <regis/r110_0> has a constant value of 0 in block <pop_cpu>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1293 - FF/Latch <regis/r111_15> has a constant value of 0 in block <pop_cpu>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1293 - FF/Latch <regis/r111_14> has a constant value of 0 in block <pop_cpu>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1293 - FF/Latch <regis/r111_13> has a constant value of 0 in block <pop_cpu>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1293 - FF/Latch <regis/r111_12> has a constant value of 0 in block <pop_cpu>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1293 - FF/Latch <regis/r111_11> has a constant value of 0 in block <pop_cpu>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1293 - FF/Latch <regis/r111_10> has a constant value of 0 in block <pop_cpu>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1293 - FF/Latch <regis/r111_9> has a constant value of 0 in block <pop_cpu>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1293 - FF/Latch <regis/r111_8> has a constant value of 0 in block <pop_cpu>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1293 - FF/Latch <regis/r111_7> has a constant value of 0 in block <pop_cpu>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1293 - FF/Latch <regis/r111_6> has a constant value of 0 in block <pop_cpu>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1293 - FF/Latch <regis/r111_5> has a constant value of 0 in block <pop_cpu>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1293 - FF/Latch <regis/r111_4> has a constant value of 0 in block <pop_cpu>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1293 - FF/Latch <regis/r111_3> has a constant value of 0 in block <pop_cpu>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1293 - FF/Latch <regis/r111_2> has a constant value of 0 in block <pop_cpu>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1293 - FF/Latch <regis/r111_1> has a constant value of 0 in block <pop_cpu>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1293 - FF/Latch <regis/r111_0> has a constant value of 0 in block <pop_cpu>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1293 - FF/Latch <regis/r100_10> has a constant value of 0 in block <pop_cpu>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1293 - FF/Latch <regis/r100_9> has a constant value of 0 in block <pop_cpu>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1293 - FF/Latch <regis/r100_8> has a constant value of 0 in block <pop_cpu>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1293 - FF/Latch <regis/r100_7> has a constant value of 0 in block <pop_cpu>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1293 - FF/Latch <regis/r100_6> has a constant value of 0 in block <pop_cpu>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1293 - FF/Latch <regis/r100_5> has a constant value of 0 in block <pop_cpu>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1293 - FF/Latch <regis/r100_4> has a constant value of 0 in block <pop_cpu>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1293 - FF/Latch <regis/r100_3> has a constant value of 0 in block <pop_cpu>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1293 - FF/Latch <regis/r100_2> has a constant value of 0 in block <pop_cpu>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1293 - FF/Latch <regis/r100_1> has a constant value of 0 in block <pop_cpu>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1293 - FF/Latch <regis/r100_0> has a constant value of 0 in block <pop_cpu>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1293 - FF/Latch <regis/r101_15> has a constant value of 0 in block <pop_cpu>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1293 - FF/Latch <regis/r101_14> has a constant value of 0 in block <pop_cpu>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1293 - FF/Latch <regis/r101_13> has a constant value of 0 in block <pop_cpu>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1293 - FF/Latch <regis/r101_12> has a constant value of 0 in block <pop_cpu>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1293 - FF/Latch <regis/r101_11> has a constant value of 0 in block <pop_cpu>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1293 - FF/Latch <regis/r101_10> has a constant value of 0 in block <pop_cpu>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1293 - FF/Latch <regis/r101_9> has a constant value of 0 in block <pop_cpu>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1293 - FF/Latch <regis/r101_8> has a constant value of 0 in block <pop_cpu>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1293 - FF/Latch <regis/r101_7> has a constant value of 0 in block <pop_cpu>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1293 - FF/Latch <regis/r101_6> has a constant value of 0 in block <pop_cpu>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1293 - FF/Latch <regis/r101_5> has a constant value of 0 in block <pop_cpu>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1293 - FF/Latch <regis/r101_4> has a constant value of 0 in block <pop_cpu>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1293 - FF/Latch <regis/r101_3> has a constant value of 0 in block <pop_cpu>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1293 - FF/Latch <regis/r101_2> has a constant value of 0 in block <pop_cpu>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1293 - FF/Latch <regis/r101_1> has a constant value of 0 in block <pop_cpu>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1293 - FF/Latch <regis/r101_0> has a constant value of 0 in block <pop_cpu>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1293 - FF/Latch <regis/r110_15> has a constant value of 0 in block <pop_cpu>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1293 - FF/Latch <regis/r110_14> has a constant value of 0 in block <pop_cpu>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1293 - FF/Latch <regis/r110_13> has a constant value of 0 in block <pop_cpu>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1293 - FF/Latch <regis/rSP_11> has a constant value of 0 in block <pop_cpu>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1293 - FF/Latch <regis/rSP_12> has a constant value of 0 in block <pop_cpu>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1293 - FF/Latch <regis/rSP_13> has a constant value of 0 in block <pop_cpu>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1293 - FF/Latch <regis/rSP_14> has a constant value of 0 in block <pop_cpu>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1293 - FF/Latch <regis/rSP_15> has a constant value of 0 in block <pop_cpu>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1293 - FF/Latch <regis/rIH_0> has a constant value of 0 in block <pop_cpu>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1293 - FF/Latch <regis/rIH_1> has a constant value of 0 in block <pop_cpu>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1293 - FF/Latch <regis/rIH_2> has a constant value of 0 in block <pop_cpu>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1293 - FF/Latch <regis/rIH_3> has a constant value of 0 in block <pop_cpu>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1293 - FF/Latch <regis/rIH_4> has a constant value of 0 in block <pop_cpu>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1293 - FF/Latch <regis/rIH_5> has a constant value of 0 in block <pop_cpu>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1293 - FF/Latch <regis/rIH_6> has a constant value of 0 in block <pop_cpu>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1293 - FF/Latch <regis/rIH_7> has a constant value of 0 in block <pop_cpu>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1293 - FF/Latch <regis/rIH_8> has a constant value of 0 in block <pop_cpu>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1293 - FF/Latch <regis/rIH_9> has a constant value of 0 in block <pop_cpu>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1293 - FF/Latch <regis/rIH_10> has a constant value of 0 in block <pop_cpu>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1293 - FF/Latch <regis/rIH_11> has a constant value of 0 in block <pop_cpu>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1293 - FF/Latch <regis/rIH_12> has a constant value of 0 in block <pop_cpu>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1293 - FF/Latch <regis/rIH_13> has a constant value of 0 in block <pop_cpu>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1293 - FF/Latch <regis/rIH_14> has a constant value of 0 in block <pop_cpu>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1293 - FF/Latch <regis/rIH_15> has a constant value of 0 in block <pop_cpu>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1293 - FF/Latch <regis/rT_5> has a constant value of 0 in block <pop_cpu>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1293 - FF/Latch <regis/rT_6> has a constant value of 0 in block <pop_cpu>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1293 - FF/Latch <regis/rT_7> has a constant value of 0 in block <pop_cpu>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1293 - FF/Latch <regis/rT_8> has a constant value of 0 in block <pop_cpu>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1293 - FF/Latch <regis/rT_9> has a constant value of 0 in block <pop_cpu>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1293 - FF/Latch <regis/rT_10> has a constant value of 0 in block <pop_cpu>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1293 - FF/Latch <regis/rT_11> has a constant value of 0 in block <pop_cpu>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1293 - FF/Latch <regis/rT_12> has a constant value of 0 in block <pop_cpu>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1293 - FF/Latch <regis/rT_13> has a constant value of 0 in block <pop_cpu>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1293 - FF/Latch <regis/rT_14> has a constant value of 0 in block <pop_cpu>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1293 - FF/Latch <regis/rT_15> has a constant value of 0 in block <pop_cpu>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1293 - FF/Latch <regis/rSP_10> has a constant value of 0 in block <pop_cpu>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1293 - FF/Latch <regis/rSP_9> has a constant value of 0 in block <pop_cpu>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1293 - FF/Latch <regis/rSP_8> has a constant value of 0 in block <pop_cpu>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1293 - FF/Latch <regis/rSP_7> has a constant value of 0 in block <pop_cpu>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1293 - FF/Latch <regis/rSP_6> has a constant value of 0 in block <pop_cpu>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1293 - FF/Latch <regis/rSP_5> has a constant value of 0 in block <pop_cpu>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1293 - FF/Latch <regis/rSP_4> has a constant value of 0 in block <pop_cpu>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1293 - FF/Latch <regis/rSP_3> has a constant value of 0 in block <pop_cpu>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1293 - FF/Latch <regis/rSP_2> has a constant value of 0 in block <pop_cpu>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1293 - FF/Latch <regis/rSP_1> has a constant value of 0 in block <pop_cpu>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1293 - FF/Latch <regis/rSP_0> has a constant value of 0 in block <pop_cpu>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <exemr/outRA_2> (without init value) has a constant value of 0 in block <pop_cpu>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <exemr/outRA_1> (without init value) has a constant value of 0 in block <pop_cpu>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <exemr/outRA_0> (without init value) has a constant value of 0 in block <pop_cpu>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <exemr/outWBSrc> (without init value) has a constant value of 0 in block <pop_cpu>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <regis/IH_15> (without init value) has a constant value of 0 in block <pop_cpu>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <regis/IH_14> (without init value) has a constant value of 0 in block <pop_cpu>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <regis/IH_13> (without init value) has a constant value of 0 in block <pop_cpu>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <regis/IH_12> (without init value) has a constant value of 0 in block <pop_cpu>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <regis/IH_11> (without init value) has a constant value of 0 in block <pop_cpu>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <regis/IH_10> (without init value) has a constant value of 0 in block <pop_cpu>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <regis/IH_9> (without init value) has a constant value of 0 in block <pop_cpu>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <regis/IH_8> (without init value) has a constant value of 0 in block <pop_cpu>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <regis/IH_7> (without init value) has a constant value of 0 in block <pop_cpu>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <regis/IH_6> (without init value) has a constant value of 0 in block <pop_cpu>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <regis/IH_5> (without init value) has a constant value of 0 in block <pop_cpu>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <regis/IH_4> (without init value) has a constant value of 0 in block <pop_cpu>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <regis/IH_3> (without init value) has a constant value of 0 in block <pop_cpu>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <exemr/outWBDes_3> (without init value) has a constant value of 0 in block <pop_cpu>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <exemr/outWBDes_2> (without init value) has a constant value of 0 in block <pop_cpu>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <exemr/outWBDes_1> (without init value) has a constant value of 0 in block <pop_cpu>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <exemr/outWBDes_0> (without init value) has a constant value of 0 in block <pop_cpu>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <exemr/outRA_15> (without init value) has a constant value of 0 in block <pop_cpu>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <exemr/outRA_15> (without init value) has a constant value of 0 in block <pop_cpu>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <exemr/outRA_14> (without init value) has a constant value of 0 in block <pop_cpu>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <exemr/outRA_13> (without init value) has a constant value of 0 in block <pop_cpu>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <exemr/outRA_12> (without init value) has a constant value of 0 in block <pop_cpu>. This FF/Latch will be trimmed during the optimization process.
@@ -1081,48 +819,9 @@ WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <exemr/outRA_6> (wit
 WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <exemr/outRA_5> (without init value) has a constant value of 0 in block <pop_cpu>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <exemr/outRA_4> (without init value) has a constant value of 0 in block <pop_cpu>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <exemr/outRA_3> (without init value) has a constant value of 0 in block <pop_cpu>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <regis/T_3> (without init value) has a constant value of 0 in block <pop_cpu>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <regis/T_2> (without init value) has a constant value of 0 in block <pop_cpu>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <regis/T_1> (without init value) has a constant value of 0 in block <pop_cpu>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <regis/T_0> (without init value) has a constant value of 0 in block <pop_cpu>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <regis/SP_15> (without init value) has a constant value of 0 in block <pop_cpu>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <regis/SP_14> (without init value) has a constant value of 0 in block <pop_cpu>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <regis/SP_13> (without init value) has a constant value of 0 in block <pop_cpu>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <regis/SP_12> (without init value) has a constant value of 0 in block <pop_cpu>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <regis/SP_11> (without init value) has a constant value of 0 in block <pop_cpu>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <regis/SP_10> (without init value) has a constant value of 0 in block <pop_cpu>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <regis/SP_9> (without init value) has a constant value of 0 in block <pop_cpu>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <regis/SP_8> (without init value) has a constant value of 0 in block <pop_cpu>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <regis/SP_7> (without init value) has a constant value of 0 in block <pop_cpu>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <regis/SP_6> (without init value) has a constant value of 0 in block <pop_cpu>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <regis/SP_5> (without init value) has a constant value of 0 in block <pop_cpu>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <regis/SP_4> (without init value) has a constant value of 0 in block <pop_cpu>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <regis/SP_3> (without init value) has a constant value of 0 in block <pop_cpu>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <regis/SP_2> (without init value) has a constant value of 0 in block <pop_cpu>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <regis/SP_1> (without init value) has a constant value of 0 in block <pop_cpu>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <regis/SP_0> (without init value) has a constant value of 0 in block <pop_cpu>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <regis/IH_2> (without init value) has a constant value of 0 in block <pop_cpu>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <regis/IH_1> (without init value) has a constant value of 0 in block <pop_cpu>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <regis/IH_0> (without init value) has a constant value of 0 in block <pop_cpu>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <regis/T_15> (without init value) has a constant value of 0 in block <pop_cpu>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <regis/T_14> (without init value) has a constant value of 0 in block <pop_cpu>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <regis/T_13> (without init value) has a constant value of 0 in block <pop_cpu>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <regis/T_12> (without init value) has a constant value of 0 in block <pop_cpu>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <regis/T_11> (without init value) has a constant value of 0 in block <pop_cpu>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <regis/T_10> (without init value) has a constant value of 0 in block <pop_cpu>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <regis/T_9> (without init value) has a constant value of 0 in block <pop_cpu>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <regis/T_8> (without init value) has a constant value of 0 in block <pop_cpu>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <regis/T_7> (without init value) has a constant value of 0 in block <pop_cpu>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <regis/T_6> (without init value) has a constant value of 0 in block <pop_cpu>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <regis/T_5> (without init value) has a constant value of 0 in block <pop_cpu>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <regis/T_4> (without init value) has a constant value of 0 in block <pop_cpu>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <memwr/outWBSrc> (without init value) has a constant value of 0 in block <pop_cpu>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <memwr/outWBDes_0> (without init value) has a constant value of 0 in block <pop_cpu>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <memwr/outWBDes_1> (without init value) has a constant value of 0 in block <pop_cpu>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <memwr/outWBDes_2> (without init value) has a constant value of 0 in block <pop_cpu>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <memwr/outWBDes_3> (without init value) has a constant value of 0 in block <pop_cpu>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:2677 - Node <idexe/tempWBSrc> of sequential type is unconnected in block <pop_cpu>.
-WARNING:Xst:2677 - Node <idexe/outWBSrc> of sequential type is unconnected in block <pop_cpu>.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <exemr/outRA_2> (without init value) has a constant value of 0 in block <pop_cpu>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <exemr/outRA_1> (without init value) has a constant value of 0 in block <pop_cpu>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <exemr/outRA_0> (without init value) has a constant value of 0 in block <pop_cpu>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:2677 - Node <regis/RA_15> of sequential type is unconnected in block <pop_cpu>.
 WARNING:Xst:2677 - Node <regis/RA_14> of sequential type is unconnected in block <pop_cpu>.
 WARNING:Xst:2677 - Node <regis/RA_13> of sequential type is unconnected in block <pop_cpu>.
@@ -1155,44 +854,15 @@ WARNING:Xst:2677 - Node <regis/rRA_3> of sequential type is unconnected in block
 WARNING:Xst:2677 - Node <regis/rRA_2> of sequential type is unconnected in block <pop_cpu>.
 WARNING:Xst:2677 - Node <regis/rRA_1> of sequential type is unconnected in block <pop_cpu>.
 WARNING:Xst:2677 - Node <regis/rRA_0> of sequential type is unconnected in block <pop_cpu>.
-WARNING:Xst:2677 - Node <ram2a/memRam2DataIn_15> of sequential type is unconnected in block <pop_cpu>.
-WARNING:Xst:2677 - Node <ram2a/memRam2DataIn_14> of sequential type is unconnected in block <pop_cpu>.
-WARNING:Xst:2677 - Node <ram2a/memRam2DataIn_13> of sequential type is unconnected in block <pop_cpu>.
-WARNING:Xst:2677 - Node <ram2a/memRam2DataIn_12> of sequential type is unconnected in block <pop_cpu>.
-WARNING:Xst:2677 - Node <ram2a/memRam2DataIn_11> of sequential type is unconnected in block <pop_cpu>.
-WARNING:Xst:2677 - Node <ram2a/memRam2DataIn_10> of sequential type is unconnected in block <pop_cpu>.
-WARNING:Xst:2677 - Node <ram2a/memRam2DataIn_9> of sequential type is unconnected in block <pop_cpu>.
-WARNING:Xst:2677 - Node <ram2a/memRam2DataIn_8> of sequential type is unconnected in block <pop_cpu>.
-WARNING:Xst:2677 - Node <ram2a/memRam2DataIn_7> of sequential type is unconnected in block <pop_cpu>.
-WARNING:Xst:2677 - Node <ram2a/memRam2DataIn_6> of sequential type is unconnected in block <pop_cpu>.
-WARNING:Xst:2677 - Node <ram2a/memRam2DataIn_5> of sequential type is unconnected in block <pop_cpu>.
-WARNING:Xst:2677 - Node <ram2a/memRam2DataIn_4> of sequential type is unconnected in block <pop_cpu>.
-WARNING:Xst:2677 - Node <ram2a/memRam2DataIn_3> of sequential type is unconnected in block <pop_cpu>.
-WARNING:Xst:2677 - Node <ram2a/memRam2DataIn_2> of sequential type is unconnected in block <pop_cpu>.
-WARNING:Xst:2677 - Node <ram2a/memRam2DataIn_1> of sequential type is unconnected in block <pop_cpu>.
-WARNING:Xst:2677 - Node <ram2a/memRam2DataIn_0> of sequential type is unconnected in block <pop_cpu>.
-WARNING:Xst:2677 - Node <memwr/outBuffer_15> of sequential type is unconnected in block <pop_cpu>.
-WARNING:Xst:2677 - Node <memwr/outBuffer_14> of sequential type is unconnected in block <pop_cpu>.
-WARNING:Xst:2677 - Node <memwr/outBuffer_13> of sequential type is unconnected in block <pop_cpu>.
-WARNING:Xst:2677 - Node <memwr/outBuffer_12> of sequential type is unconnected in block <pop_cpu>.
-WARNING:Xst:2677 - Node <memwr/outBuffer_11> of sequential type is unconnected in block <pop_cpu>.
-WARNING:Xst:2677 - Node <memwr/outBuffer_10> of sequential type is unconnected in block <pop_cpu>.
-WARNING:Xst:2677 - Node <memwr/outBuffer_9> of sequential type is unconnected in block <pop_cpu>.
-WARNING:Xst:2677 - Node <memwr/outBuffer_8> of sequential type is unconnected in block <pop_cpu>.
-WARNING:Xst:2677 - Node <memwr/outBuffer_7> of sequential type is unconnected in block <pop_cpu>.
-WARNING:Xst:2677 - Node <memwr/outBuffer_6> of sequential type is unconnected in block <pop_cpu>.
-WARNING:Xst:2677 - Node <memwr/outBuffer_5> of sequential type is unconnected in block <pop_cpu>.
-WARNING:Xst:2677 - Node <memwr/outBuffer_4> of sequential type is unconnected in block <pop_cpu>.
-WARNING:Xst:2677 - Node <memwr/outBuffer_3> of sequential type is unconnected in block <pop_cpu>.
-WARNING:Xst:2677 - Node <memwr/outBuffer_2> of sequential type is unconnected in block <pop_cpu>.
-WARNING:Xst:2677 - Node <memwr/outBuffer_1> of sequential type is unconnected in block <pop_cpu>.
-WARNING:Xst:2677 - Node <memwr/outBuffer_0> of sequential type is unconnected in block <pop_cpu>.
 
 Mapping all equations...
 Building and optimizing final netlist ...
+INFO:Xst:2261 - The FF/Latch <idexe/tempMEMRead> in Unit <pop_cpu> is equivalent to the following FF/Latch, which will be removed : <idexe/tempWBSrc> 
 INFO:Xst:2261 - The FF/Latch <idexe/tempExtend_15> in Unit <pop_cpu> is equivalent to the following 5 FFs/Latches, which will be removed : <idexe/tempExtend_14> <idexe/tempExtend_13> <idexe/tempExtend_12> <idexe/tempExtend_11> <idexe/tempExtend_10> 
 INFO:Xst:2261 - The FF/Latch <idexe/outExtend_15> in Unit <pop_cpu> is equivalent to the following 5 FFs/Latches, which will be removed : <idexe/outExtend_14> <idexe/outExtend_13> <idexe/outExtend_12> <idexe/outExtend_11> <idexe/outExtend_10> 
-Found area constraint ratio of 100 (+ 5) on block pop_cpu, actual ratio is 8.
+INFO:Xst:2261 - The FF/Latch <idexe/outMEMRead> in Unit <pop_cpu> is equivalent to the following FF/Latch, which will be removed : <idexe/outWBSrc> 
+INFO:Xst:2261 - The FF/Latch <exemr/outMEMRead> in Unit <pop_cpu> is equivalent to the following FF/Latch, which will be removed : <exemr/outWBSrc> 
+Found area constraint ratio of 100 (+ 5) on block pop_cpu, actual ratio is 9.
 FlipFlop idexe/outALUSrc1_1 has been replicated 1 time(s)
 FlipFlop idexe/outALUSrc1_2 has been replicated 1 time(s)
 Latch memac/Mtrien_RAM1data has been replicated 15 time(s) to handle iob=true attribute.
@@ -1203,8 +873,8 @@ Final Macro Processing ...
 Final Register Report
 
 Macro Statistics
-# Registers                                            : 384
- Flip-Flops                                            : 384
+# Registers                                            : 409
+ Flip-Flops                                            : 409
 
 =========================================================================
 
@@ -1233,40 +903,39 @@ Design Statistics
 # IOs                              : 79
 
 Cell Usage :
-# BELS                             : 1390
+# BELS                             : 1699
 #      GND                         : 1
 #      INV                         : 1
 #      LUT1                        : 16
-#      LUT2                        : 40
+#      LUT2                        : 69
 #      LUT2_D                      : 3
-#      LUT2_L                      : 1
-#      LUT3                        : 389
-#      LUT3_D                      : 15
-#      LUT3_L                      : 22
-#      LUT4                        : 540
-#      LUT4_D                      : 32
-#      LUT4_L                      : 57
+#      LUT2_L                      : 2
+#      LUT3                        : 450
+#      LUT3_D                      : 12
+#      LUT3_L                      : 18
+#      LUT4                        : 755
+#      LUT4_D                      : 15
+#      LUT4_L                      : 36
 #      MUXCY                       : 58
-#      MUXF5                       : 118
+#      MUXF5                       : 166
 #      MUXF6                       : 48
 #      VCC                         : 1
 #      XORCY                       : 48
-# FlipFlops/Latches                : 557
-#      FD                          : 165
+# FlipFlops/Latches                : 838
+#      FD                          : 190
 #      FDE                         : 108
 #      FDR                         : 63
 #      FDRE                        : 48
-#      LD                          : 77
-#      LD_1                        : 64
-#      LDE                         : 16
+#      LD                          : 109
+#      LD_1                        : 112
+#      LDE                         : 192
 #      LDE_1                       : 16
-# Clock Buffers                    : 2
-#      BUFG                        : 1
+# Clock Buffers                    : 3
+#      BUFG                        : 2
 #      BUFGP                       : 1
 # IO Buffers                       : 76
-#      IOBUF                       : 16
+#      IOBUF                       : 32
 #      OBUF                        : 44
-#      OBUFT                       : 16
 =========================================================================
 
 Device utilization summary:
@@ -1274,13 +943,13 @@ Device utilization summary:
 
 Selected Device : 3s1200efg320-4 
 
- Number of Slices:                      653  out of   8672     7%  
- Number of Slice Flip Flops:            508  out of  17344     2%  
- Number of 4 input LUTs:               1116  out of  17344     6%  
+ Number of Slices:                      793  out of   8672     9%  
+ Number of Slice Flip Flops:            805  out of  17344     4%  
+ Number of 4 input LUTs:               1377  out of  17344     7%  
  Number of IOs:                          79
  Number of bonded IOBs:                  77  out of    250    30%  
-    IOB Flip Flops:                      49
- Number of GCLKs:                         2  out of     24     8%  
+    IOB Flip Flops:                      33
+ Number of GCLKs:                         3  out of     24    12%  
 
 ---------------------------
 Partition Resource Summary:
@@ -1309,12 +978,14 @@ exemr/outMEMRead                                               | NONE(memac/RAM2
 memac/RAM1addr_not0001(memac/RAM1addr_not00011_f5:O)           | NONE(*)(memac/RAM1addr_15)         | 16    |
 memac/RAM2WE_not0001(memac/RAM2WE_not00011:O)                  | NONE(*)(memac/RAM2addr_14)         | 17    |
 memac/wrn_not0001(memac/wrn_not0001_wg_cy<4>:O)                | NONE(*)(memac/wrn)                 | 1     |
-readWritePause_PC_pause(rwpau/readWritePause_and00001:O)       | NONE(*)(ram2a/insRam2Data_15)      | 16    |
-clk                                                            | BUFGP                              | 384   |
-memwr/outRegWrite1                                             | BUFG                               | 48    |
+readWritePause_PC_pause1(rwpau/readWritePause_and00001:O)      | BUFG(*)(ram2a/insRam2Data_15)      | 32    |
+clk                                                            | BUFGP                              | 409   |
+memwr/outRegWrite1                                             | BUFG                               | 256   |
+bypas/outrx_not0001(bypas/outrx_not0001102_f5:O)               | NONE(*)(bypas/outrx_15)            | 16    |
+bypas/outry_not0001(bypas/outry_not000133_f5:O)                | NONE(*)(bypas/outry_15)            | 16    |
 exten/immResult_not0001(exten/immResult_not00011:O)            | NONE(*)(exten/immResult_10)        | 11    |
 ---------------------------------------------------------------+------------------------------------+-------+
-(*) These 7 clock signal(s) are generated by combinatorial logic,
+(*) These 9 clock signal(s) are generated by combinatorial logic,
 and XST is not able to identify which are the primary clock signals.
 Please use the CLOCK_SIGNAL constraint to specify the clock signal(s) generated by combinatorial logic.
 INFO:Xst:2169 - HDL ADVISOR - Some clock signals were not automatically buffered by XST with BUFG/BUFR resources. Please use the buffer_type constraint in order to insert these buffers to the clock signals to help prevent skew problems.
@@ -1327,9 +998,9 @@ Timing Summary:
 ---------------
 Speed Grade: -4
 
-   Minimum period: 20.157ns (Maximum Frequency: 49.610MHz)
-   Minimum input arrival time before clock: 1.946ns
-   Maximum output required time after clock: 19.558ns
+   Minimum period: 17.788ns (Maximum Frequency: 56.219MHz)
+   Minimum input arrival time before clock: 2.685ns
+   Maximum output required time after clock: 19.480ns
    Maximum combinational path delay: No path found
 
 Timing Detail:
@@ -1404,43 +1075,41 @@ Delay:               2.310ns (Levels of Logic = 1)
 
 =========================================================================
 Timing constraint: Default period analysis for Clock 'clk'
-  Clock period: 20.157ns (frequency: 49.610MHz)
-  Total number of paths / destination ports: 4392511 / 577
+  Clock period: 17.788ns (frequency: 56.219MHz)
+  Total number of paths / destination ports: 2029757 / 570
 -------------------------------------------------------------------------
-Delay:               20.157ns (Levels of Logic = 14)
+Delay:               17.788ns (Levels of Logic = 12)
   Source:            idexe/outALUSrc1_1_1 (FF)
-  Destination:       ifidr/outInst_15 (FF)
+  Destination:       ifidr/tempPC_15 (FF)
   Source Clock:      clk rising
   Destination Clock: clk rising
 
-  Data Path: idexe/outALUSrc1_1_1 to ifidr/outInst_15
+  Data Path: idexe/outALUSrc1_1_1 to ifidr/tempPC_15
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     FD:C->Q              39   0.591   1.343  idexe/outALUSrc1_1_1 (idexe/outALUSrc1_1_1)
+     FD:C->Q              36   0.591   1.342  idexe/outALUSrc1_1_1 (idexe/outALUSrc1_1_1)
      LUT3:I1->O            1   0.704   0.424  alus1m/output<13>2 (alus1m/output<13>2)
      LUT4:I3->O            5   0.704   0.808  alus1m/output<13>59 (ALUSrc1MUX_ALU_ALUSrc1<13>)
-     LUT4:I0->O            4   0.704   0.762  al/rst_or00014 (al/rst_or00014)
-     LUT3_D:I0->O         45   0.704   1.441  al/rst_or000123 (al/rst_or0001)
-     LUT4:I0->O            1   0.704   0.000  al/rst_shift0004<7>_F (N679)
-     MUXF5:I0->O           1   0.321   0.424  al/rst_shift0004<7> (al/rst_shift0004<7>)
-     LUT4:I3->O            1   0.704   0.000  al/Mmux_rst_613 (al/Mmux_rst_613)
-     MUXF5:I0->O           1   0.321   0.000  al/Mmux_rst_4_f5_12 (al/Mmux_rst_4_f513)
-     MUXF6:I0->O           6   0.521   0.748  al/Mmux_rst_2_f6_12 (al/rst<7>1)
-     LUT4_D:I1->O          2   0.704   0.526  bypas/outT<7> (bypasser_IDEXERegs_T<7>)
-     LUT4:I1->O            1   0.704   0.424  conrt/PCSelCtr<0>101_SW0 (N457)
-     LUT4:I3->O            1   0.704   0.455  conrt/PCSelCtr<0>101 (conrt/PCSelCtr<0>101)
-     LUT4:I2->O           21   0.704   1.132  conrt/PCSelCtr<0>127 (conrt/PCSelCtr<0>127)
-     LUT4:I3->O           26   0.704   1.260  Control_IFIDRegs_clear1_2 (Control_IFIDRegs_clear11)
-     FDR:R                     0.911          ifidr/outInst_0
+     LUT4:I0->O            3   0.704   0.706  al/rst_or00014 (al/rst_or00014)
+     LUT3_D:I0->LO         1   0.704   0.275  al/rst_or000123 (N717)
+     LUT2:I0->O           18   0.704   1.243  al/rst_shift0005<0>11 (al/N6)
+     LUT3:I0->O            2   0.704   0.482  al/rst_shift0005<15>1 (al/rst_shift0005<15>)
+     LUT3:I2->O            1   0.704   0.000  al/Mmux_rst_513 (al/Mmux_rst_513)
+     MUXF5:I1->O           1   0.321   0.000  al/Mmux_rst_4_f5_5 (al/Mmux_rst_4_f56)
+     MUXF6:I0->O          28   0.521   1.296  al/Mmux_rst_2_f6_5 (al/rst<15>1)
+     LUT3_L:I2->LO         1   0.704   0.104  conrt/PCSelCtr<0>249_SW0 (N475)
+     LUT4:I3->O            2   0.704   0.451  conrt/PCSelCtr<0>850 (conrt/PCSelCtr<0>850)
+     LUT4:I3->O           64   0.704   1.272  Control_IFIDRegs_clear1 (Control_IFIDRegs_clear)
+     FDR:R                     0.911          ifidr/outRxNum_0
     ----------------------------------------
-    Total                     20.157ns (10.409ns logic, 9.748ns route)
-                                       (51.6% logic, 48.4% route)
+    Total                     17.788ns (9.384ns logic, 8.404ns route)
+                                       (52.8% logic, 47.2% route)
 
 =========================================================================
 Timing constraint: Default period analysis for Clock 'memwr/outRegWrite1'
   Clock period: 6.112ns (frequency: 163.613MHz)
-  Total number of paths / destination ports: 32 / 32
+  Total number of paths / destination ports: 304 / 80
 -------------------------------------------------------------------------
 Delay:               3.056ns (Levels of Logic = 3)
   Source:            regis/r000_15 (LATCH)
@@ -1462,29 +1131,49 @@ Delay:               3.056ns (Levels of Logic = 3)
                                        (82.8% logic, 17.2% route)
 
 =========================================================================
-Timing constraint: Default OFFSET IN BEFORE for Clock 'readWritePause_PC_pause'
-  Total number of paths / destination ports: 16 / 16
+Timing constraint: Default OFFSET IN BEFORE for Clock 'readWritePause_PC_pause1'
+  Total number of paths / destination ports: 32 / 32
 -------------------------------------------------------------------------
-Offset:              1.946ns (Levels of Logic = 1)
+Offset:              1.973ns (Levels of Logic = 1)
   Source:            Ram2Data<15> (PAD)
   Destination:       ram2a/insRam2Data_15 (LATCH)
-  Destination Clock: readWritePause_PC_pause rising
+  Destination Clock: readWritePause_PC_pause1 rising
 
   Data Path: Ram2Data<15> to ram2a/insRam2Data_15
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     IOBUF:IO->O           1   1.218   0.420  Ram2Data_15_IOBUF (N409)
+     IOBUF:IO->O           2   1.218   0.447  Ram2Data_15_IOBUF (N326)
      LD_1:D                    0.308          ram2a/insRam2Data_15
     ----------------------------------------
-    Total                      1.946ns (1.526ns logic, 0.420ns route)
-                                       (78.4% logic, 21.6% route)
+    Total                      1.973ns (1.526ns logic, 0.447ns route)
+                                       (77.3% logic, 22.7% route)
+
+=========================================================================
+Timing constraint: Default OFFSET IN BEFORE for Clock 'clk'
+  Total number of paths / destination ports: 16 / 16
+-------------------------------------------------------------------------
+Offset:              2.685ns (Levels of Logic = 2)
+  Source:            RAM1data<15> (PAD)
+  Destination:       memwr/outBuffer_15 (FF)
+  Destination Clock: clk rising
+
+  Data Path: RAM1data<15> to memwr/outBuffer_15
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     IOBUF:IO->O           1   1.218   0.455  RAM1data_15_IOBUF (N310)
+     LUT4:I2->O            1   0.704   0.000  memac/RAMbuffer<15>1 (MEMAccess_MEMWBRegs_buffer<15>)
+     FD:D                      0.308          memwr/outBuffer_15
+    ----------------------------------------
+    Total                      2.685ns (2.230ns logic, 0.455ns route)
+                                       (83.1% logic, 16.9% route)
 
 =========================================================================
 Timing constraint: Default OFFSET OUT AFTER for Clock 'clk'
   Total number of paths / destination ports: 63995 / 37
 -------------------------------------------------------------------------
-Offset:              19.558ns (Levels of Logic = 12)
+Offset:              19.480ns (Levels of Logic = 12)
   Source:            idexe/outALUSrc1_1_1 (FF)
   Destination:       Ram2Addr<14> (PAD)
   Source Clock:      clk rising
@@ -1493,22 +1182,22 @@ Offset:              19.558ns (Levels of Logic = 12)
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     FD:C->Q              39   0.591   1.343  idexe/outALUSrc1_1_1 (idexe/outALUSrc1_1_1)
+     FD:C->Q              36   0.591   1.342  idexe/outALUSrc1_1_1 (idexe/outALUSrc1_1_1)
      LUT3:I1->O            1   0.704   0.424  alus1m/output<13>2 (alus1m/output<13>2)
      LUT4:I3->O            5   0.704   0.808  alus1m/output<13>59 (ALUSrc1MUX_ALU_ALUSrc1<13>)
-     LUT4:I0->O            4   0.704   0.762  al/rst_or00014 (al/rst_or00014)
-     LUT3_D:I0->LO         1   0.704   0.275  al/rst_or000123 (N739)
-     LUT2:I0->O           19   0.704   1.260  al/rst_shift0005<0>11 (al/N6)
+     LUT4:I0->O            3   0.704   0.706  al/rst_or00014 (al/rst_or00014)
+     LUT3_D:I0->LO         1   0.704   0.275  al/rst_or000123 (N717)
+     LUT2:I0->O           18   0.704   1.243  al/rst_shift0005<0>11 (al/N6)
      LUT3:I0->O            2   0.704   0.482  al/rst_shift0005<15>1 (al/rst_shift0005<15>)
      LUT3:I2->O            1   0.704   0.000  al/Mmux_rst_513 (al/Mmux_rst_513)
      MUXF5:I1->O           1   0.321   0.000  al/Mmux_rst_4_f5_5 (al/Mmux_rst_4_f56)
      MUXF6:I0->O          28   0.521   1.296  al/Mmux_rst_2_f6_5 (al/rst<15>1)
-     LUT3:I2->O           63   0.704   1.447  rwpau/readWritePause_and00001 (readWritePause_PC_pause)
+     LUT3:I2->O           48   0.704   1.442  rwpau/readWritePause_and00001 (readWritePause_PC_pause1)
      LUT3:I0->O            1   0.704   0.420  ram2a/Ram2Addr<9>1 (Ram2Addr_9_OBUF)
      OBUF:I->O                 3.272          Ram2Addr_9_OBUF (Ram2Addr<9>)
     ----------------------------------------
-    Total                     19.558ns (11.041ns logic, 8.517ns route)
-                                       (56.5% logic, 43.5% route)
+    Total                     19.480ns (11.041ns logic, 8.439ns route)
+                                       (56.7% logic, 43.3% route)
 
 =========================================================================
 Timing constraint: Default OFFSET OUT AFTER for Clock 'memac/RAM2WE_not0001'
@@ -1563,7 +1252,7 @@ Offset:              4.368ns (Levels of Logic = 1)
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
      LD:G->Q               1   0.676   0.420  memac/Mtridata_RAM1data_15 (memac/Mtridata_RAM1data<15>)
-     OBUFT:I->O                3.272          RAM1data_15_OBUFT (RAM1data<15>)
+     IOBUF:I->IO               3.272          RAM1data_15_IOBUF (RAM1data<15>)
     ----------------------------------------
     Total                      4.368ns (3.948ns logic, 0.420ns route)
                                        (90.4% logic, 9.6% route)
@@ -1609,14 +1298,14 @@ Offset:              4.395ns (Levels of Logic = 1)
 =========================================================================
 
 
-Total REAL time to Xst completion: 27.00 secs
-Total CPU time to Xst completion: 26.96 secs
+Total REAL time to Xst completion: 24.00 secs
+Total CPU time to Xst completion: 24.24 secs
  
 --> 
 
-Total memory usage is 330892 kilobytes
+Total memory usage is 325196 kilobytes
 
 Number of errors   :    0 (   0 filtered)
-Number of warnings :  516 (   0 filtered)
-Number of infos    :   43 (   0 filtered)
+Number of warnings :  180 (   0 filtered)
+Number of infos    :   48 (   0 filtered)
 

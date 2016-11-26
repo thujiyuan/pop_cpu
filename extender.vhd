@@ -40,10 +40,14 @@ end Extender;
 architecture ExtenderBehavioral of Extender is
 
 begin
-	process(immSel)
+	process(immSel, ins)
 	begin
 		if(immSel = "000") then
-			immResult <= "0000000000000" & ins(4 downto 2);
+			if(ins(4 downto 2) = "000") then
+				immResult <= "0000000000001000";
+			else
+				immResult <= "0000000000000" & ins(4 downto 2);
+			end if;
 			--3 bit zero extend
 		elsif(immSel = "001") then
 			if(ins(3) = '0') then

@@ -72,301 +72,154 @@ begin
 				MEMRegWrite,MEMWBDes,MEMMemRead,MEMrst,
 				WBRegWrite,WBWBDes,WBwriteData)
 	begin
-		if(EXERegWrite='1')then
-			if(EXEWBDes='0'&rxNum)then
-				if(EXEMemRead='1')then
-					case instruction(15 downto 11) is
-						when "01101" =>--LI
-							outrx <= inrx;
-							outry <= inry;
-							outT 	<= inT;
-							outIH <= inIH;
-							outSP <= inSP;
+		--outrx datapause=0 or 1
+		if(EXERegWrite='1' and EXEWBDes='0'&rxNum)then
+			if(EXEMemRead='1')then
+				case instruction(15 downto 11) is
+					when "01101" =>--LI
+						outrx <= EXErst;
+						dataPause <= '0';
+					when "00110" =>--SLL SRA
+						outrx <= EXErst;
+						dataPause <= '0';
+					when "10010" =>--LW_SP
+						outrx <= EXErst;
+						dataPause <= '0';
+					when "11110" =>--MFIH
+						if(instruction(0)='0')then
+							outrx <= EXErst;
 							dataPause <= '0';
-						when "00110" =>--SLL SRA
-							outrx <= inrx;
-							outry <= inry;
-							outT 	<= inT;
-							outIH <= inIH;
-							outSP <= inSP;
-							dataPause <= '0';
-						when "10010" =>--LW_SP
-							outrx <= inrx;
-							outry <= inry;
-							outT 	<= inT;
-							outIH <= inIH;
-							outSP <= inSP;
-							dataPause <= '0';
-						when "11110" =>--MFIH
-							if(instruction(0)='0')then
-								outrx <= inrx;
-								outry <= inry;
-								outT 	<= inT;
-								outIH <= inIH;
-								outSP <= inSP;
-								dataPause <= '0';
-							else
-								dataPause <= '1';
-							end if;
-						when "11101" =>--MFPC NEG
-							if(instruction(7 downto 0) = "01000000")then
-								outrx <= inrx;
-								outry <= inry;
-								outT 	<= inT;
-								outIH <= inIH;
-								outSP <= inSP;
-								dataPause <= '0';
-							elsif(instruction(4 downto 0) = "01011")then
-								outrx <= inrx;
-								outry <= inry;
-								outT 	<= inT;
-								outIH <= inIH;
-								outSP <= inSP;
-								dataPause <= '0';
-							else
-								dataPause <= '1';
-							end if;
-						when others =>
+						else
 							dataPause <= '1';
-					end case;
-				else
-					outrx <= EXErst;
-					outry <= inry;
-					outT 	<= inT;
-					outIH <= inIH;
-					outSP <= inSP;
-					dataPause <= '0';
-				end if;
-			elsif(EXEWBDes='0'&ryNum)then
-				if(EXEMemRead='1')then
-					case instruction(15 downto 11) is
-						when "01000" =>--ADDIU3
-							outrx <= inrx;
-							outry <= inry;
-							outT 	<= inT;
-							outIH <= inIH;
-							outSP <= inSP;
+						end if;
+					when "11101" =>--MFPC NEG
+						if(instruction(7 downto 0) = "01000000")then
+							outrx <= EXErst;
 							dataPause <= '0';
-						when "10011" =>--LW
-							outrx <= inrx;
-							outry <= inry;
-							outT 	<= inT;
-							outIH <= inIH;
-							outSP <= inSP;
+						elsif(instruction(4 downto 0) = "01011")then
+							outrx <= EXErst;
 							dataPause <= '0';
-						when others => 
+						else
 							dataPause <= '1';
-					end case;
-				else
-					outrx <= inrx;
-					outry <= EXErst;
-					outT 	<= inT;
-					outIH <= inIH;
-					outSP <= inSP;
-					dataPause <= '0';
-				end if;
-			elsif(EXEWBDes="1010")then--T
-				outrx <= inrx;
-				outry <= inry;
-				outT 	<= EXErst;
-				outIH <= inIH;
-				outSP <= inSP;
-				dataPause <= '0';
-			elsif(EXEWBDes="1000")then--IH
-				outrx <= inrx;
-				outry <= inry;
-				outT 	<= inT;
-				outIH <= EXErst;
-				outSP <= inSP;
-				dataPause <= '0';
-			elsif(EXEWBDes="1001")then--SP
-				outrx <= inrx;
-				outry <= inry;
-				outT 	<= inT;
-				outIH <= inIH;
-				outSP <= EXErst;
-				dataPause <= '0';
+						end if;
+					when others =>
+						dataPause <= '1';
+				end case;
 			else
-				outrx <= inrx;
-				outry <= inry;
-				outT 	<= inT;
-				outIH <= inIH;
-				outSP <= inSP;
+				outrx <= EXErst;
 				dataPause <= '0';
 			end if;
-		elsif(MEMRegWrite='1')then
-			if(MEMWBDes='0'&rxNum)then
-				if(MEMMemRead='1')then
-					case instruction(15 downto 11) is
-						when "01101" =>--LI
-							outrx <= inrx;
-							outry <= inry;
-							outT 	<= inT;
-							outIH <= inIH;
-							outSP <= inSP;
+		elsif(MEMRegWrite='1' and MEMWBDes='0'&rxNum)then
+			if(MEMMemRead='1')then
+				case instruction(15 downto 11) is
+					when "01101" =>--LI
+						outrx <= MEMrst;
+						dataPause <= '0';
+					when "00110" =>--SLL SRA
+						outrx <= MEMrst;
+						dataPause <= '0';
+					when "10010" =>--LW_SP
+						outrx <= MEMrst;
+						dataPause <= '0';
+					when "11110" =>--MFIH
+						if(instruction(0)='0')then
+							outrx <= MEMrst;
 							dataPause <= '0';
-						when "00110" =>--SLL SRA
-							outrx <= inrx;
-							outry <= inry;
-							outT 	<= inT;
-							outIH <= inIH;
-							outSP <= inSP;
-							dataPause <= '0';
-						when "10010" =>--LW_SP
-							outrx <= inrx;
-							outry <= inry;
-							outT 	<= inT;
-							outIH <= inIH;
-							outSP <= inSP;
-							dataPause <= '0';
-						when "11110" =>--MFIH
-							if(instruction(0)='0')then
-								outrx <= inrx;
-								outry <= inry;
-								outT 	<= inT;
-								outIH <= inIH;
-								outSP <= inSP;
-								dataPause <= '0';
-							else
-								dataPause <= '1';
-							end if;
-						when "11101" =>--MFPC NEG
-							if(instruction(7 downto 0) = "01000000")then
-								outrx <= inrx;
-								outry <= inry;
-								outT 	<= inT;
-								outIH <= inIH;
-								outSP <= inSP;
-								dataPause <= '0';
-							elsif(instruction(4 downto 0) = "01011")then
-								outrx <= inrx;
-								outry <= inry;
-								outT 	<= inT;
-								outIH <= inIH;
-								outSP <= inSP;
-								dataPause <= '0';
-							else
-								dataPause <= '1';
-							end if;
-						when others =>
+						else
 							dataPause <= '1';
-					end case;
-				else
-					outrx <= MEMrst;
-					outry <= inry;
-					outT 	<= inT;
-					outIH <= inIH;
-					outSP <= inSP;
-					dataPause <= '0';
-				end if;
-			elsif(MEMWBDes='0'&ryNum)then
-				if(MEMMemRead='1')then
-					case instruction(15 downto 11) is
-						when "01000" =>--ADDIU3
-							outrx <= inrx;
-							outry <= inry;
-							outT 	<= inT;
-							outIH <= inIH;
-							outSP <= inSP;
+						end if;
+					when "11101" =>--MFPC NEG
+						if(instruction(7 downto 0) = "01000000")then
+							outrx <= MEMrst;
 							dataPause <= '0';
-						when "10011" =>--LW
-							outrx <= inrx;
-							outry <= inry;
-							outT 	<= inT;
-							outIH <= inIH;
-							outSP <= inSP;
+						elsif(instruction(4 downto 0) = "01011")then
+							outrx <= MEMrst;
 							dataPause <= '0';
-						when others => 
+						else
 							dataPause <= '1';
-					end case;
-				else
-					outrx <= inrx;
-					outry <= MEMrst;
-					outT 	<= inT;
-					outIH <= inIH;
-					outSP <= inSP;
-					dataPause <= '0';
-				end if;
-			elsif(MEMWBDes="1010")then--T
-				outrx <= inrx;
-				outry <= inry;
-				outT 	<= MEMrst;
-				outIH <= inIH;
-				outSP <= inSP;
-				dataPause <= '0';
-			elsif(MEMWBDes="1000")then--IH
-				outrx <= inrx;
-				outry <= inry;
-				outT 	<= inT;
-				outIH <= MEMrst;
-				outSP <= inSP;
-				dataPause <= '0';
-			elsif(MEMWBDes="1001")then--SP
-				outrx <= inrx;
-				outry <= inry;
-				outT 	<= inT;
-				outIH <= inIH;
-				outSP <= MEMrst;
-				dataPause <= '0';
+						end if;
+					when others =>
+						dataPause <= '1';
+				end case;
 			else
-				outrx <= inrx;
-				outry <= inry;
-				outT 	<= inT;
-				outIH <= inIH;
-				outSP <= inSP;
+				outrx <= MEMrst;
 				dataPause <= '0';
 			end if;
-		elsif(WBRegWrite='1')then
-			if(WBWBDes='0'&rxNum)then
-				outrx <= WBwriteData;
-				outry <= inry;
-				outT 	<= inT;
-				outIH <= inIH;
-				outSP <= inSP;
-				dataPause <= '0';
-			elsif(WBWBDes='0'&ryNum)then
-				outrx <= inrx;
-				outry <= WBwriteData;
-				outT 	<= inT;
-				outIH <= inIH;
-				outSP <= inSP;
-				dataPause <= '0';
-			elsif(WBWBDes="1010")then--T
-				outrx <= inrx;
-				outry <= inry;
-				outT 	<= WBwriteData;
-				outIH <= inIH;
-				outSP <= inSP;
-				dataPause <= '0';
-			elsif(WBWBDes="1000")then--IH
-				outrx <= inrx;
-				outry <= inry;
-				outT 	<= inT;
-				outIH <= WBwriteData;
-				outSP <= inSP;
-				dataPause <= '0';
-			elsif(WBWBDes="1001")then--SP
-				outrx <= inrx;
-				outry <= inry;
-				outT 	<= inT;
-				outIH <= inIH;
-				dataPause <= '0';
-				outSP <= WBwriteData;
-			else
-				outrx <= inrx;
-				outry <= inry;
-				outT 	<= inT;
-				outIH <= inIH;
-				outSP <= inSP;
-				dataPause <= '0';
-			end if;
+		elsif(WBRegWrite='1' and WBWBDes='0'&rxNum)then
+			outrx <= WBwriteData;
+			dataPause <= '0';
 		else
 			outrx <= inrx;
-			outry <= inry;
-			outT 	<= inT;
-			outIH <= inIH;
-			outSP <= inSP;
 			dataPause <= '0';
 		end if;
+
+		--outry datapause=1
+		if(EXERegWrite='1' and EXEWBDes='0'&ryNum)then
+			if(EXEMemRead='1')then
+				case instruction(15 downto 11) is
+					when "01000" =>--ADDIU3
+						outry <= EXErst;
+					when "10011" =>--LW
+						outry <= EXErst;
+					when others => 
+						dataPause <= '1';
+				end case;
+			else
+				outry <= EXErst;
+			end if;
+		elsif(MEMRegWrite='1' and MEMWBDes='0'&ryNum)then
+			if(MEMMemRead='1')then
+				case instruction(15 downto 11) is
+					when "01000" =>--ADDIU3
+						outry <= MEMrst;
+					when "01001" =>--ADDIU
+						outry <= MEMrst;		
+					when "10011" =>--LW
+						outry <= MEMrst;
+					when others => 
+						dataPause <= '1';
+				end case;
+			else
+				outry <= MEMrst;
+			end if;
+		elsif(WBRegWrite='1' and WBWBDes='0'&ryNum)then
+			outry <= WBwriteData;
+		else
+			outry <= inry;
+		end if;
+
+		--outT datapause=1
+		if(EXERegWrite='1' and EXEWBDes="1010")then
+			outT 	<= EXErst;
+		elsif(MEMRegWrite='1' and MEMWBDes="1010")then
+			outT 	<= MEMrst;
+		elsif(WBRegWrite='1' and WBWBDes="1010")then
+			outT 	<= WBwriteData;
+		else
+			outT 	<= inT;
+		end if;
+
+		--outIH datapause=1
+		if(EXERegWrite='1' and EXEWBDes="1000")then
+			outIH <= EXErst;
+		elsif(MEMRegWrite='1' and MEMWBDes="1000")then
+			outIH <= MEMrst;
+		elsif(WBRegWrite='1' and WBWBDes="1000")then
+			outIH <= WBwriteData;
+		else
+			outIH <= inIH;
+		end if;
+
+		--outSP datapause=1
+		if(EXERegWrite='1' and EXEWBDes="1001")then
+			outSP <= EXErst;
+		elsif(MEMRegWrite='1' and MEMWBDes="1001")then
+			outSP <= MEMrst;
+		elsif(WBRegWrite='1' and WBWBDes="1001")then
+			outSP <= WBwriteData;
+		else
+			outSP <= inSP;
+		end if;
+		
 	end process;
 end Behavioral;

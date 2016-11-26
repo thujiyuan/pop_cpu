@@ -117,9 +117,9 @@ begin
 			RAM1OE <= '0';
 			RAM1WE <= '0';
 			RAM1EN <= '0';
-			RAM1OE <= '1';
-			RAM1WE <= '1';
-			RAM1EN <= '1';
+			RAM2OE <= '1';
+			RAM2WE <= '1';
+			RAM2EN <= '1';
 			Ram1Addr <= "00" & inAddress;
 			Ram1Data <= inData;
 		end if;
@@ -129,9 +129,9 @@ begin
 		RAM1OE <= '1';
 		RAM1WE <= '1';
 		RAM1EN <= '1';
-		RAM1OE <= '1';
-		RAM1WE <= '1';
-		RAM1EN <= '1';
+		RAM2OE <= '1';
+		RAM2WE <= '1';
+		RAM2EN <= '1';
 		Ram1Data <= (others => 'Z');
 	end if;
 end process;

@@ -18,3 +18,5 @@ xst -intstyle ise -ifn "F:/thujiyuan/pop_cpu/pop_cpu.xst" -ofn "F:/thujiyuan/pop
 xst -intstyle ise -ifn "F:/thujiyuan/pop_cpu/pop_cpu.xst" -ofn "F:/thujiyuan/pop_cpu/pop_cpu.syr" 
 xst -intstyle ise -ifn "F:/thujiyuan/pop_cpu/pop_cpu.xst" -ofn "F:/thujiyuan/pop_cpu/pop_cpu.syr" 
 xst -intstyle ise -ifn "F:/thujiyuan/pop_cpu/pop_cpu.xst" -ofn "F:/thujiyuan/pop_cpu/pop_cpu.syr" 
+xst -intstyle ise -ifn "F:/thujiyuan/pop_cpu/pop_cpu.xst" -ofn "F:/thujiyuan/pop_cpu/pop_cpu.syr" 
+xst -intstyle ise -ifn "F:/thujiyuan/pop_cpu/pop_cpu.xst" -ofn "F:/thujiyuan/pop_cpu/pop_cpu.syr" 

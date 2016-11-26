@@ -36,8 +36,6 @@ entity IF_IDRegs is
 			clk : in  STD_LOGIC;
 			pause : in STD_LOGIC;
 			clear : in STD_LOGIC;
-			intSave : in STD_LOGIC;         --ÖÐ¶Ï±£´æ
-			intRecover : in STD_LOGIC;    --ÖÐ¶Ï»Ö¸´
 			outInst : out STD_LOGIC_VECTOR (15 downto 0);
 			outPC : out STD_LOGIC_VECTOR (15 downto 0);
 			outRxNum : out STD_LOGIC_VECTOR (2 downto 0);

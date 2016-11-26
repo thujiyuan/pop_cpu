@@ -29,18 +29,19 @@ begin
 	process(rwPause, passerPause)
 	begin
 		if(rwPause = '0' and passerPause = '0') then
-            paused := true;
-        else 
             paused := false;
+        else 
+            paused := true;
         end if;
 	end process;
 
-    process(clk)
+    process(clk, rwPause, passerPause, PCin)
     begin
         if(clk'event and clk = '1') then
             if(inited = false) then
                 PCout <= "0000000000000000";
                 lastPC := "0000000000000000";
+		inited := true;
             elsif(inited = true and paused = false) then
                 PCout <= PCin;
                 lastPC := PCin;

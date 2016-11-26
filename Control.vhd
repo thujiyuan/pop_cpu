@@ -453,7 +453,7 @@ begin
 						RegWrite <= '0';
 					end case;
 			when "00010" =>								--B 
-				immSel <= "100";
+				immSel <= "111";
 				PCSelCtr <= "01";
 				ALUFunc <= "111";
 				ALUSrc0 <= "00";
@@ -496,6 +496,18 @@ begin
 				WBDes <= '0'&instruction(10 downto 8);
 				WBSrc <= '0';
 				RegWrite <= '0';
+			when "01001" =>						--ADDIU 
+				immSel <= "011";
+				PCSelCtr <= "00";
+				ALUFunc <= "011";
+				ALUSrc0 <= "10";
+				ALUSrc1 <= "000";
+				MEMRead <= '0';
+				MEMWrite <= '0';
+				MEMSrc <= "00";
+				WBDes <= '0'&instruction(10 downto 8);
+				WBSrc <= '0';
+				RegWrite <= '1';	
 			when others => 
 				immSel <= "000";
 				PCSelCtr <= "00";

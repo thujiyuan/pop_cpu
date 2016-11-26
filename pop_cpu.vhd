@@ -603,7 +603,7 @@ begin
 	alus1m : ALUSrc1MUX port map(IDEXERegs_ALUSrc1MUX_imm, IDEXERegs_ALUSrc1MUX_rx, IDEXERegs_ALUSrc1MUX_ry, IDEXERegs_ALUSrc1MUX_IH, IDEXERegs_ALUSrc1MUX_PC, IDEXERegs_ALUSrc1MUX_ALUSrc1, ALUSrc1MUX_ALU_ALUSrc1);
 	al : ALU port map(ALUSrc0MUX_ALU_ALUSrc0, ALUSrc1MUX_ALU_ALUSrc1, IDEXERegs_ALU_ALUFunc, ALU_EXEMEMRegs_rst);
 	rwpau : ReadWritePauser port map(IDEXERegs_readWritePause_MEMWrite, IDEXERegs_readWritePause_MEMRead, ALU_readWritePause_rst, readWritePause_PC_pause);
-	exemr : EXE_MEMRegs port map(EXEMEMRegs_MEMWBRegs_WBDes, EXEMEMRegs_MEMWBRegs_WBSrc,
+	exemr : EXE_MEMRegs port map(IDEXERegs_EXEMEMRegs_WBDes, IDEXERegs_EXEMEMRegs_WBSrc,
 									IDEXERegs_EXEMEMRegs_MEMRead, IDEXERegs_EXEMEMRegs_MEMWrite, IDEXERegs_EXEMEMRegs_MEMSrc,
 									IDEXERegs_EXEMEMRegs_RegWrite, ALU_EXEMEMRegs_rst, IDEXERegs_EXEMEMRegs_RA, IDEXERegs_EXEMEMRegs_rx, IDEXERegs_EXEMEMRegs_ry,
 									clk, '0', '0',

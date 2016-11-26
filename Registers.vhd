@@ -51,6 +51,50 @@ architecture Behavioral of Registers is
 begin
 	process(readRegister1,readRegister2,writeRegister,writeData,regWrite)
 	begin
+		case readRegister1 is
+			when "000" =>
+				rx <= r000;
+			when "001" =>
+				rx <= r001;
+			when "010" =>
+				rx <= r010;
+			when "011" =>
+				rx <= r011;
+				
+			when "100" =>
+				rx <= r100;
+			when "101" =>
+				rx <= r101;
+			when "110" =>
+				rx <= r110;
+			when "111" =>
+				rx <= r111;
+			when others =>null;
+		end case;
+		case readRegister2 is
+			when "000" =>
+				ry <= r000;
+			when "001" =>
+				ry <= r001;
+			when "010" =>
+				ry <= r010;
+			when "011" =>
+				ry <= r011;
+				
+			when "100" =>
+				ry <= r100;
+			when "101" =>
+				ry <= r101;
+			when "110" =>
+				ry <= r110;
+			when "111" =>
+				ry <= r111;
+			when others =>null;
+		end case;
+		T <= rT;
+		IH <= rIH;
+		SP <= rSP;
+		RA <= rRA;
 		if(regWrite='1')then
 			case writeRegister is
 				when "0000" =>
@@ -81,51 +125,6 @@ begin
 					rRA := writeData;
 				when others =>null;
 			end case;
-		else
-			case readRegister1 is
-				when "000" =>
-					rx <= r000;
-				when "001" =>
-					rx <= r001;
-				when "010" =>
-					rx <= r010;
-				when "011" =>
-					rx <= r011;
-					
-				when "100" =>
-					rx <= r100;
-				when "101" =>
-					rx <= r101;
-				when "110" =>
-					rx <= r110;
-				when "111" =>
-					rx <= r111;
-				when others =>null;
-			end case;
-			case readRegister2 is
-				when "000" =>
-					ry <= r000;
-				when "001" =>
-					ry <= r001;
-				when "010" =>
-					ry <= r010;
-				when "011" =>
-					ry <= r011;
-					
-				when "100" =>
-					ry <= r100;
-				when "101" =>
-					ry <= r101;
-				when "110" =>
-					ry <= r110;
-				when "111" =>
-					ry <= r111;
-				when others =>null;
-			end case;
-			T <= rT;
-			IH <= rIH;
-			SP <= rSP;
-			RA <= rRA;
 		end if;
 	end process;
 end Behavioral;
