@@ -1,0 +1,129 @@
+Release 8.1i - Fit P.20131013
+Copyright(c) 1995-2003 Xilinx Inc. All rights reserved
+
+11-25-2016  4:57PM
+
+NOTE: This file is designed to be imported into a spreadsheet program
+such as Microsoft Excel for viewing, printing and sorting. The pipe '|'
+character is used as the data field separator.
+This file is also designed to support parsing.
+
+Input file:  VGAControler.ngd
+output file: VGAControler.pad
+Part type:   xa2c128
+Speed grade: -7
+Package:     vq100
+
+Pinout by Pin Number:
+
+-----|-----|-----|-----|-----|-----|-----|-----|-----|-----|
+Pin Number|Signal Name|Pin Usage|Pin Name|Direction|IO Standard|IO Bank Number|{blank}|Slew Rate|Termination|{blank}|Voltage|Constraint|
+P1|flashAddr<3>|O|I/O/GTS2|OUTPUT|LVCMOS18|2||FAST||||
+P2|flashAddr<5>|O|I/O/GTS3|OUTPUT|LVCMOS18|2||FAST||||
+P3|xin<8>|I|I/O/GTS0|INPUT|LVCMOS18|2||FAST||||
+P4|xin<3>|I|I/O/GTS1|INPUT|LVCMOS18|2||FAST||||
+P5||VCCAUX|VAUX||||||||||
+P6|xin<2>|I|I/O|INPUT|LVCMOS18|2||FAST||||
+P7|xin<1>|I|I/O|INPUT|LVCMOS18|2||FAST||||
+P8|xin<0>|I|I/O|INPUT|LVCMOS18|2||FAST||||
+P9|pause|I|I/O|INPUT|LVCMOS18|2||FAST||||
+P10|Bout<2>|O|I/O|OUTPUT|LVCMOS18|2||FAST||||
+P11|Bout<1>|O|I/O|OUTPUT|LVCMOS18|2||FAST||||
+P12|Bout<0>|O|I/O|OUTPUT|LVCMOS18|2||FAST||||
+P13|dataReady|O|I/O|OUTPUT|LVCMOS18|2||FAST||||
+P14|flashAddr<10>|O|I/O|OUTPUT|LVCMOS18|1||FAST||||
+P15|flashAddr<11>|O|I/O|OUTPUT|LVCMOS18|1||FAST||||
+P16|flashAddr<12>|O|I/O|OUTPUT|LVCMOS18|1||FAST||||
+P17|flashAddr<13>|O|I/O|OUTPUT|LVCMOS18|1||FAST||||
+P18|flashAddr<14>|O|I/O|OUTPUT|LVCMOS18|1||FAST||||
+P19|flashAddr<15>|O|I/O|OUTPUT|LVCMOS18|1||FAST||||
+P20||VCCIO-1.8|VCCIO|||1|||||||
+P21|GND||GND||||||||||
+P22|clk|GCK|I/O/GCK0||LVCMOS18|1||FAST||||
+P23|flashAddr<16>|O|I/O/GCK1|OUTPUT|LVCMOS18|1||FAST||||
+P24|flashAddr<1>|O|I/O/CDR|OUTPUT|LVCMOS18|1||FAST||||
+P25|GND||GND||||||||||
+P26||VCC|VCC||||||||||
+P27|flashAddr<2>|O|I/O/GCK2|OUTPUT|LVCMOS18|1||FAST||||
+P28|flashOE|O|I/O/DGE|OUTPUT|LVCMOS18|1||FAST||||
+P29|flashWE|O|I/O|OUTPUT|LVCMOS18|1||FAST||||
+P30|flashData<10>|O|I/O|OUTPUT|LVCMOS18|1||FAST||||
+P31|GND||GND||||||||||
+P32|flashData<11>|O|I/O|OUTPUT|LVCMOS18|1||FAST||||
+P33|flashData<12>|O|I/O|OUTPUT|LVCMOS18|1||FAST||||
+P34|flashData<13>|O|I/O|OUTPUT|LVCMOS18|1||FAST||||
+P35|flashData<14>|O|I/O|OUTPUT|LVCMOS18|1||FAST||||
+P36|flashData<15>|O|I/O|OUTPUT|LVCMOS18|1||FAST||||
+P37|flashData<8>|O|I/O|OUTPUT|LVCMOS18|1||FAST||||
+P38||VCCIO-1.8|VCCIO|||1|||||||
+P39|flashData<9>|O|I/O|OUTPUT|LVCMOS18|1||FAST||||
+P40|flashData<7>|O|I/O|OUTPUT|LVCMOS18|1||FAST||||
+P41|KPR||I/O|||1|||||||
+P42|KPR||I/O|||1|||||||
+P43|KPR||I/O|||1|||||||
+P44|KPR||I/O|||1|||||||
+P45|TDI||TDI||||||||||
+P46|KPR||I/O|||1|||||||
+P47|TMS||TMS||||||||||
+P48|TCK||TCK||||||||||
+P49|KPR||I/O|||1|||||||
+P50|yin<9>|I|I/O|INPUT|LVCMOS18|1||FAST||||
+P51||VCCIO-1.8|VCCIO|||1|||||||
+P52|yin<8>|I|I/O|INPUT|LVCMOS18|1||FAST||||
+P53|yin<7>|I|I/O|INPUT|LVCMOS18|1||FAST||||
+P54|flashAddr<21>|O|I/O|OUTPUT|LVCMOS18|1||FAST||||
+P55|flashAddr<20>|O|I/O|OUTPUT|LVCMOS18|1||FAST||||
+P56|flashAddr<19>|O|I/O|OUTPUT|LVCMOS18|1||FAST||||
+P57||VCC|VCC||||||||||
+P58|flashAddr<18>|O|I/O|OUTPUT|LVCMOS18|1||FAST||||
+P59|flashAddr<17>|O|I/O|OUTPUT|LVCMOS18|1||FAST||||
+P60|flashAddr<0>|O|I/O|OUTPUT|LVCMOS18|1||FAST||||
+P61|Rout<2>|O|I/O|OUTPUT|LVCMOS18|1||FAST||||
+P62|GND||GND||||||||||
+P63|Rout<1>|O|I/O|OUTPUT|LVCMOS18|1||FAST||||
+P64|Rout<0>|O|I/O|OUTPUT|LVCMOS18|1||FAST||||
+P65|flashData<0>|O|I/O|OUTPUT|LVCMOS18|2||FAST||||
+P66|flashData<1>|O|I/O|OUTPUT|LVCMOS18|2||FAST||||
+P67|flashData<2>|O|I/O|OUTPUT|LVCMOS18|2||FAST||||
+P68|flashData<3>|O|I/O|OUTPUT|LVCMOS18|2||FAST||||
+P69|GND||GND||||||||||
+P70|flashData<4>|O|I/O|OUTPUT|LVCMOS18|2||FAST||||
+P71|flashData<5>|O|I/O|OUTPUT|LVCMOS18|2||FAST||||
+P72|flashData<6>|O|I/O|OUTPUT|LVCMOS18|2||FAST||||
+P73|Gout<0>|O|I/O|OUTPUT|LVCMOS18|2||FAST||||
+P74|Gout<1>|O|I/O|OUTPUT|LVCMOS18|2||FAST||||
+P75|GND||GND||||||||||
+P76|Gout<2>|O|I/O|OUTPUT|LVCMOS18|2||FAST||||
+P77|flashAddr<22>|O|I/O|OUTPUT|LVCMOS18|2||FAST||||
+P78|flashCE0|O|I/O|OUTPUT|LVCMOS18|2||FAST||||
+P79|xin<9>|I|I/O|INPUT|LVCMOS18|2||FAST||||
+P80|yin<0>|I|I/O|INPUT|LVCMOS18|2||FAST||||
+P81|yin<1>|I|I/O|INPUT|LVCMOS18|2||FAST||||
+P82|yin<2>|I|I/O|INPUT|LVCMOS18|2||FAST||||
+P83|TDO||TDO||||||||||
+P84|GND||GND||||||||||
+P85|yin<3>|I|I/O|INPUT|LVCMOS18|2||FAST||||
+P86|yin<4>|I|I/O|INPUT|LVCMOS18|2||FAST||||
+P87|yin<5>|I|I/O|INPUT|LVCMOS18|2||FAST||||
+P88||VCCIO-1.8|VCCIO|||2|||||||
+P89|yin<6>|I|I/O|INPUT|LVCMOS18|2||FAST||||
+P90|xin<7>|I|I/O|INPUT|LVCMOS18|2||FAST||||
+P91|xin<6>|I|I/O|INPUT|LVCMOS18|2||FAST||||
+P92|xin<5>|I|I/O|INPUT|LVCMOS18|2||FAST||||
+P93|xin<4>|I|I/O|INPUT|LVCMOS18|2||FAST||||
+P94|flashAddr<9>|O|I/O|OUTPUT|LVCMOS18|2||FAST||||
+P95|flashAddr<8>|O|I/O|OUTPUT|LVCMOS18|2||FAST||||
+P96|flashAddr<7>|O|I/O|OUTPUT|LVCMOS18|2||FAST||||
+P97|flashAddr<6>|O|I/O|OUTPUT|LVCMOS18|2||FAST||||
+P98||VCCIO-1.8|VCCIO|||2|||||||
+P99|flashAddr<4>|O|I/O/GSR|OUTPUT|LVCMOS18|2||FAST||||
+P100|GND||GND||||||||||
+
+To preserve the pinout above for future design iterations in
+Project Navigator simply execute the (Lock Pins) process
+located under the (Implement Design) process in a toolbox named
+(Optional Implementation Tools) or invoke PIN2UCF from the
+command line. The location constraints will be written into your
+specified UCF file
+
+

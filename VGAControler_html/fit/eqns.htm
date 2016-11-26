@@ -1,0 +1,995 @@
+<html><head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<script src="paths.js"></script><script src="eqns.js"></script><script>
+      var design = "VGAControler";
+      var device = "XA2C128";
+      signals = new Array("Bout0_SPECSIG","Bout1_SPECSIG","Bout2_SPECSIG","Gout0_SPECSIG","Gout1_SPECSIG","Gout2_SPECSIG","N_PZ_257","N_PZ_260","N_PZ_289","N_PZ_294","N_PZ_359","Rout0_SPECSIG","Rout1_SPECSIG","Rout2_SPECSIG","dataReady","flashAddr0_SPECSIG","flashAddr10_SPECSIG","flashAddr11_SPECSIG","flashAddr12_SPECSIG","flashAddr13_SPECSIG","flashAddr14_SPECSIG","flashAddr15_SPECSIG","flashAddr16_SPECSIG","flashAddr17_SPECSIG","flashAddr18_SPECSIG","flashAddr19_SPECSIG","flashAddr1_SPECSIG","flashAddr20_SPECSIG","flashAddr21_SPECSIG","flashAddr22_SPECSIG","flashAddr2_SPECSIG","flashAddr3_SPECSIG","flashAddr4_SPECSIG","flashAddr5_SPECSIG","flashAddr6_SPECSIG","flashAddr7_SPECSIG","flashAddr8_SPECSIG","flashAddr9_SPECSIG","flashCE0","flashData0_SPECSIG","flashData10_SPECSIG","flashData11_SPECSIG","flashData12_SPECSIG","flashData13_SPECSIG","flashData14_SPECSIG","flashData15_SPECSIG","flashData1_SPECSIG","flashData2_SPECSIG","flashData3_SPECSIG","flashData4_SPECSIG","flashData5_SPECSIG","flashData6_SPECSIG","flashData7_SPECSIG","flashData8_SPECSIG","flashData9_SPECSIG","flashOE","flashRead","flashRead_not00016","flashWE","flashdataReady_SPECSIG","flashstate_FSM_FFd1_SPECSIG","flashstate_FSM_FFd2_SPECSIG","flashstate_FSM_FFd3_SPECSIG","flashstate_FSM_FFd4_SPECSIG","inAddr0_SPECSIG","inAddr10_SPECSIG","inAddr11_SPECSIG","inAddr12_SPECSIG","inAddr13_SPECSIG","inAddr14_SPECSIG","inAddr15_SPECSIG","inAddr1_SPECSIG","inAddr2_SPECSIG","inAddr3_SPECSIG","inAddr4_SPECSIG","inAddr5_SPECSIG","inAddr6_SPECSIG","inAddr7_SPECSIG","inAddr8_SPECSIG","inAddr9_SPECSIG","inAddr_not0001","init","nextBufferReady");
+      sigNegs = new Array("OFF","OFF","OFF","OFF","OFF","OFF","OFF","OFF","OFF","OFF","OFF","OFF","OFF","OFF","OFF","OFF","OFF","OFF","OFF","OFF","OFF","OFF","OFF","OFF","OFF","OFF","OFF","OFF","OFF","OFF","OFF","OFF","OFF","OFF","OFF","OFF","OFF","OFF","OFF","OFF","OFF","OFF","OFF","OFF","OFF","OFF","OFF","OFF","OFF","OFF","OFF","OFF","ON","OFF","OFF","OFF","OFF","OFF","OFF","OFF","OFF","OFF","OFF","ON","OFF","OFF","OFF","OFF","OFF","OFF","OFF","OFF","OFF","OFF","OFF","OFF","OFF","OFF","OFF","OFF","OFF","OFF","OFF");
+      sigTypes = new Array("","","","","","","","","","","","","","","DFF","","DEFF","DEFF","DEFF","DEFF","DEFF","DEFF","DEFF","","","","DEFF","","","","DEFF","DEFF","DEFF","DEFF","DEFF","DEFF","DEFF","DEFF","","","DEFF","DEFF","DEFF","DEFF","DEFF","DEFF","","","","","","","DFF","DEFF","DEFF","TFF","DEFF","","TFF","DEFF","DFF","DFF","DFF","DFFS_SPECSIG","DFF","DFF","DFF","DFF","DFF","DFF","DFF","DFF","DFF","DFF","DFF","DFF","DFF","DFF","DFF","DFF","","TFFS_SPECSIG","TFF");
+
+      
+           iostyle["pause"]=new Array("KPR");
+        
+           iostyle["xin0_SPECSIG"]=new Array("KPR");
+        
+           iostyle["xin1_SPECSIG"]=new Array("KPR");
+        
+           iostyle["xin2_SPECSIG"]=new Array("KPR");
+        
+           iostyle["xin3_SPECSIG"]=new Array("KPR");
+        
+           iostyle["xin8_SPECSIG"]=new Array("KPR");
+        
+           iostyle["clk"]=new Array("KPR");
+        
+           iostyle["xin4_SPECSIG"]=new Array("KPR");
+        
+           iostyle["xin5_SPECSIG"]=new Array("KPR");
+        
+           iostyle["xin6_SPECSIG"]=new Array("KPR");
+        
+           iostyle["xin7_SPECSIG"]=new Array("KPR");
+        
+           iostyle["flashData10_SPECSIG"]=new Array("KPROD_SPECSIG");
+        
+           iostyle["flashData11_SPECSIG"]=new Array("KPROD_SPECSIG");
+        
+           iostyle["flashData12_SPECSIG"]=new Array("KPROD_SPECSIG");
+        
+           iostyle["flashData13_SPECSIG"]=new Array("KPROD_SPECSIG");
+        
+           iostyle["flashData14_SPECSIG"]=new Array("KPROD_SPECSIG");
+        
+           iostyle["flashData15_SPECSIG"]=new Array("KPROD_SPECSIG");
+        
+           iostyle["flashData8_SPECSIG"]=new Array("KPROD_SPECSIG");
+        
+           iostyle["flashData9_SPECSIG"]=new Array("KPROD_SPECSIG");
+        
+           iostyle["flashData7_SPECSIG"]=new Array("KPR");
+        
+           iostyle["flashData0_SPECSIG"]=new Array("KPR");
+        
+           iostyle["flashData1_SPECSIG"]=new Array("KPR");
+        
+           iostyle["flashData2_SPECSIG"]=new Array("KPR");
+        
+           iostyle["flashData3_SPECSIG"]=new Array("KPR");
+        
+           iostyle["flashData4_SPECSIG"]=new Array("KPR");
+        
+           iostyle["flashData5_SPECSIG"]=new Array("KPR");
+        
+           iostyle["flashData6_SPECSIG"]=new Array("KPR");
+        
+           iostyle["xin9_SPECSIG"]=new Array("KPR");
+        
+           iostyle["yin0_SPECSIG"]=new Array("KPR");
+        
+           iostyle["yin1_SPECSIG"]=new Array("KPR");
+        
+           iostyle["yin2_SPECSIG"]=new Array("KPR");
+        
+           iostyle["yin3_SPECSIG"]=new Array("KPR");
+        
+           iostyle["yin4_SPECSIG"]=new Array("KPR");
+        
+           iostyle["yin5_SPECSIG"]=new Array("KPR");
+        
+           iostyle["yin6_SPECSIG"]=new Array("KPR");
+        
+           iostyle["yin7_SPECSIG"]=new Array("KPR");
+        
+           iostyle["yin8_SPECSIG"]=new Array("KPR");
+        
+           iostyle["yin9_SPECSIG"]=new Array("KPR");
+        
+        specSig["xin3_SPECSIG"]=new Array("xin<3>");
+      
+        specSig["yin8_SPECSIG"]=new Array("yin<8>");
+      
+        specSig["yin7_SPECSIG"]=new Array("yin<7>");
+      
+        specSig["yin6_SPECSIG"]=new Array("yin<6>");
+      
+        specSig["yin5_SPECSIG"]=new Array("yin<5>");
+      
+        specSig["yin9_SPECSIG"]=new Array("yin<9>");
+      
+        specSig["xin9_SPECSIG"]=new Array("xin<9>");
+      
+        specSig["xin7_SPECSIG"]=new Array("xin<7>");
+      
+        specSig["xin8_SPECSIG"]=new Array("xin<8>");
+      
+        specSig["xin2_SPECSIG"]=new Array("xin<2>");
+      
+        specSig["xin1_SPECSIG"]=new Array("xin<1>");
+      
+        specSig["xin0_SPECSIG"]=new Array("xin<0>");
+      
+        specSig["yin4_SPECSIG"]=new Array("yin<4>");
+      
+        specSig["yin1_SPECSIG"]=new Array("yin<1>");
+      
+        specSig["yin0_SPECSIG"]=new Array("yin<0>");
+      
+        specSig["yin2_SPECSIG"]=new Array("yin<2>");
+      
+        specSig["yin3_SPECSIG"]=new Array("yin<3>");
+      
+        specSig["xin4_SPECSIG"]=new Array("xin<4>");
+      
+        specSig["xin5_SPECSIG"]=new Array("xin<5>");
+      
+        specSig["xin6_SPECSIG"]=new Array("xin<6>");
+      
+        specSig["Bout0_SPECSIG"]=new Array("Bout<0>");
+      
+        specSig["Bout1_SPECSIG"]=new Array("Bout<1>");
+      
+        specSig["Bout2_SPECSIG"]=new Array("Bout<2>");
+      
+        specSig["flashAddr10_SPECSIG"]=new Array("flashAddr<10>");
+      
+        specSig["flashAddr11_SPECSIG"]=new Array("flashAddr<11>");
+      
+        specSig["flashAddr12_SPECSIG"]=new Array("flashAddr<12>");
+      
+        specSig["flashAddr13_SPECSIG"]=new Array("flashAddr<13>");
+      
+        specSig["flashAddr14_SPECSIG"]=new Array("flashAddr<14>");
+      
+        specSig["flashAddr15_SPECSIG"]=new Array("flashAddr<15>");
+      
+        specSig["flashAddr16_SPECSIG"]=new Array("flashAddr<16>");
+      
+        specSig["flashAddr1_SPECSIG"]=new Array("flashAddr<1>");
+      
+        specSig["flashAddr2_SPECSIG"]=new Array("flashAddr<2>");
+      
+        specSig["flashAddr5_SPECSIG"]=new Array("flashAddr<5>");
+      
+        specSig["flashAddr3_SPECSIG"]=new Array("flashAddr<3>");
+      
+        specSig["flashAddr4_SPECSIG"]=new Array("flashAddr<4>");
+      
+        specSig["flashAddr6_SPECSIG"]=new Array("flashAddr<6>");
+      
+        specSig["flashAddr7_SPECSIG"]=new Array("flashAddr<7>");
+      
+        specSig["flashAddr8_SPECSIG"]=new Array("flashAddr<8>");
+      
+        specSig["flashAddr9_SPECSIG"]=new Array("flashAddr<9>");
+      
+        specSig["flashData10_SPECSIG"]=new Array("flashData<10>");
+      
+        specSig["KPROD_SPECSIG"]=new Array("KPR/OD");
+      
+        specSig["flashData11_SPECSIG"]=new Array("flashData<11>");
+      
+        specSig["flashData12_SPECSIG"]=new Array("flashData<12>");
+      
+        specSig["flashData13_SPECSIG"]=new Array("flashData<13>");
+      
+        specSig["flashData14_SPECSIG"]=new Array("flashData<14>");
+      
+        specSig["flashData15_SPECSIG"]=new Array("flashData<15>");
+      
+        specSig["flashData8_SPECSIG"]=new Array("flashData<8>");
+      
+        specSig["flashData9_SPECSIG"]=new Array("flashData<9>");
+      
+        specSig["flashData7_SPECSIG"]=new Array("flashData<7>");
+      
+        specSig["flashData0_SPECSIG"]=new Array("flashData<0>");
+      
+        specSig["flashData1_SPECSIG"]=new Array("flashData<1>");
+      
+        specSig["flashData2_SPECSIG"]=new Array("flashData<2>");
+      
+        specSig["flashData3_SPECSIG"]=new Array("flashData<3>");
+      
+        specSig["flashData4_SPECSIG"]=new Array("flashData<4>");
+      
+        specSig["flashData5_SPECSIG"]=new Array("flashData<5>");
+      
+        specSig["flashData6_SPECSIG"]=new Array("flashData<6>");
+      
+        specSig["Gout0_SPECSIG"]=new Array("Gout<0>");
+      
+        specSig["Gout1_SPECSIG"]=new Array("Gout<1>");
+      
+        specSig["Gout2_SPECSIG"]=new Array("Gout<2>");
+      
+        specSig["Rout0_SPECSIG"]=new Array("Rout<0>");
+      
+        specSig["Rout1_SPECSIG"]=new Array("Rout<1>");
+      
+        specSig["Rout2_SPECSIG"]=new Array("Rout<2>");
+      
+        specSig["flashAddr0_SPECSIG"]=new Array("flashAddr<0>");
+      
+        specSig["flashAddr17_SPECSIG"]=new Array("flashAddr<17>");
+      
+        specSig["flashAddr18_SPECSIG"]=new Array("flashAddr<18>");
+      
+        specSig["flashAddr19_SPECSIG"]=new Array("flashAddr<19>");
+      
+        specSig["flashAddr20_SPECSIG"]=new Array("flashAddr<20>");
+      
+        specSig["flashAddr21_SPECSIG"]=new Array("flashAddr<21>");
+      
+        specSig["flashAddr22_SPECSIG"]=new Array("flashAddr<22>");
+      
+        specSig["inAddr3_SPECSIG"]=new Array("inAddr<3>");
+      
+        specSig["inAddr7_SPECSIG"]=new Array("inAddr<7>");
+      
+        specSig["inAddr9_SPECSIG"]=new Array("inAddr<9>");
+      
+        specSig["inAddr8_SPECSIG"]=new Array("inAddr<8>");
+      
+        specSig["inAddr15_SPECSIG"]=new Array("inAddr<15>");
+      
+        specSig["inAddr2_SPECSIG"]=new Array("inAddr<2>");
+      
+        specSig["inAddr5_SPECSIG"]=new Array("inAddr<5>");
+      
+        specSig["inAddr6_SPECSIG"]=new Array("inAddr<6>");
+      
+        specSig["flashdataReady_SPECSIG"]=new Array("flash/dataReady");
+      
+        specSig["TFFS_SPECSIG"]=new Array("TFF/S");
+      
+        specSig["flashstate_FSM_FFd4_SPECSIG"]=new Array("flash/state_FSM_FFd4");
+      
+        specSig["flashstate_FSM_FFd2_SPECSIG"]=new Array("flash/state_FSM_FFd2");
+      
+        specSig["flashstate_FSM_FFd3_SPECSIG"]=new Array("flash/state_FSM_FFd3");
+      
+        specSig["flashstate_FSM_FFd1_SPECSIG"]=new Array("flash/state_FSM_FFd1");
+      
+        specSig["inAddr0_SPECSIG"]=new Array("inAddr<0>");
+      
+        specSig["inAddr10_SPECSIG"]=new Array("inAddr<10>");
+      
+        specSig["inAddr11_SPECSIG"]=new Array("inAddr<11>");
+      
+        specSig["inAddr12_SPECSIG"]=new Array("inAddr<12>");
+      
+        specSig["inAddr13_SPECSIG"]=new Array("inAddr<13>");
+      
+        specSig["inAddr14_SPECSIG"]=new Array("inAddr<14>");
+      
+        specSig["inAddr1_SPECSIG"]=new Array("inAddr<1>");
+      
+        specSig["DFFS_SPECSIG"]=new Array("DFF/S");
+      
+        specSig["inAddr4_SPECSIG"]=new Array("inAddr<4>");
+      
+            pterms["FB1_0"]=new Array("/pause","/xin3_SPECSIG","/init");
+          
+            pterms["FB1_1"]=new Array("/pause","/init","/xin2_SPECSIG");
+          
+            pterms["FB1_2"]=new Array("/pause","/init","/xin1_SPECSIG");
+          
+            pterms["FB1_3"]=new Array("/pause","/init","/xin0_SPECSIG");
+          
+            pterms["FB1_4"]=new Array("/pause","/init","yin8_SPECSIG","yin7_SPECSIG","yin6_SPECSIG","yin5_SPECSIG");
+          
+            pterms["FB1_5"]=new Array("/pause","/init","yin9_SPECSIG");
+          
+            pterms["FB1_6"]=new Array("/pause","/init","xin9_SPECSIG","xin7_SPECSIG");
+          
+            pterms["FB1_7"]=new Array("/pause","/init","xin9_SPECSIG","xin8_SPECSIG");
+          
+            pterms["FB1_8"]=new Array("/pause","/init","dataReady");
+          
+            pterms["FB1_9"]=new Array("/init","yin8_SPECSIG","yin7_SPECSIG","yin6_SPECSIG","yin5_SPECSIG");
+          
+            pterms["FB1_10"]=new Array("/init","yin9_SPECSIG");
+          
+            pterms["FB1_11"]=new Array("/init","xin9_SPECSIG","xin7_SPECSIG");
+          
+            pterms["FB1_12"]=new Array("/init","xin9_SPECSIG","xin8_SPECSIG");
+          
+            pterms["FB1_13"]=new Array("/init","nextBufferReady");
+          
+            pterms["FB1_14"]=new Array("yin8_SPECSIG","yin9_SPECSIG","inAddr_not0001");
+          
+            pterms["FB1_15"]=new Array("init","yin8_SPECSIG","inAddr_not0001");
+          
+            pterms["FB1_16"]=new Array("/yin8_SPECSIG","/inAddr_not0001","inAddr8_SPECSIG");
+          
+            pterms["FB1_17"]=new Array("yin8_SPECSIG","/inAddr_not0001","/inAddr8_SPECSIG");
+          
+            pterms["FB1_18"]=new Array("/init","yin7_SPECSIG","yin6_SPECSIG","yin5_SPECSIG","/yin9_SPECSIG","inAddr_not0001","yin4_SPECSIG","N_PZ_294");
+          
+            pterms["FB1_19"]=new Array("inAddr9_SPECSIG","/inAddr_not0001");
+          
+            pterms["FB1_20"]=new Array("/init","yin8_SPECSIG","yin7_SPECSIG","yin6_SPECSIG","yin5_SPECSIG","/yin9_SPECSIG","inAddr_not0001","yin4_SPECSIG","N_PZ_294");
+          
+            pterms["FB1_21"]=new Array("yin9_SPECSIG","/N_PZ_294","N_PZ_289");
+          
+            pterms["FB1_22"]=new Array("/init","yin7_SPECSIG","/yin6_SPECSIG","/yin9_SPECSIG","inAddr_not0001");
+          
+            pterms["FB1_23"]=new Array("/init","yin7_SPECSIG","/yin5_SPECSIG","/yin9_SPECSIG","inAddr_not0001");
+          
+            pterms["FB1_24"]=new Array("/init","yin7_SPECSIG","/yin9_SPECSIG","inAddr_not0001","/yin4_SPECSIG");
+          
+            pterms["FB1_25"]=new Array("/pause","init","flashdataReady_SPECSIG");
+          
+            pterms["FB1_26"]=new Array("/inAddr_not0001","inAddr7_SPECSIG");
+          
+            pterms["FB1_27"]=new Array("/init","/yin7_SPECSIG","yin6_SPECSIG","yin5_SPECSIG","/yin9_SPECSIG","inAddr_not0001","yin4_SPECSIG","N_PZ_294");
+          
+            pterms["FB1_28"]=new Array("/init","yin7_SPECSIG","/yin9_SPECSIG","inAddr_not0001","/N_PZ_294");
+          
+            pterms["FB1_29"]=new Array("/init","/yin9_SPECSIG","inAddr_not0001");
+          
+            pterms["FB1_30"]=new Array("/init","/yin8_SPECSIG","/yin7_SPECSIG","/yin6_SPECSIG","/yin5_SPECSIG","inAddr_not0001","/yin4_SPECSIG","/yin2_SPECSIG");
+          
+            pterms["FB1_31"]=new Array("/init","/yin8_SPECSIG","/yin7_SPECSIG","/yin6_SPECSIG","/yin5_SPECSIG","inAddr_not0001","/yin4_SPECSIG","/yin3_SPECSIG");
+          
+            pterms["FB1_32"]=new Array("/init","/yin8_SPECSIG","/yin7_SPECSIG","/yin6_SPECSIG","/yin5_SPECSIG","inAddr_not0001","/yin4_SPECSIG","/yin1_SPECSIG","/yin0_SPECSIG","/N_PZ_257");
+          
+            pterms["FB1_33"]=new Array("/init","yin8_SPECSIG","yin7_SPECSIG","yin6_SPECSIG","yin5_SPECSIG","inAddr_not0001","yin4_SPECSIG","N_PZ_294");
+          
+            pterms["FB1_34"]=new Array("/inAddr_not0001","inAddr3_SPECSIG");
+          
+            pterms["FB1_35"]=new Array("/N_PZ_294","yin3_SPECSIG","N_PZ_289");
+          
+            pterms["FB1_36"]=new Array("/N_PZ_294","yin1_SPECSIG","yin0_SPECSIG","yin2_SPECSIG","N_PZ_257","N_PZ_289");
+          
+            pterms["FB1_37"]=new Array("yin8_SPECSIG");
+          
+            pterms["FB1_38"]=new Array("/init","yin6_SPECSIG","/yin5_SPECSIG","/yin9_SPECSIG","inAddr_not0001");
+          
+            pterms["FB1_39"]=new Array("/init","yin6_SPECSIG","/yin9_SPECSIG","inAddr_not0001","/yin4_SPECSIG");
+          
+            pterms["FB1_40"]=new Array("yin1_SPECSIG","yin0_SPECSIG","yin2_SPECSIG","yin3_SPECSIG","N_PZ_257");
+          
+            pterms["FB1_41"]=new Array("/inAddr_not0001","inAddr6_SPECSIG");
+          
+            pterms["FB1_42"]=new Array("/init","/yin6_SPECSIG","yin5_SPECSIG","/yin9_SPECSIG","inAddr_not0001","yin4_SPECSIG","N_PZ_294");
+          
+            pterms["FB1_43"]=new Array("/init","yin6_SPECSIG","/yin9_SPECSIG","inAddr_not0001","/N_PZ_294");
+          
+            pterms["FB1_44"]=new Array("/init","yin5_SPECSIG","/yin9_SPECSIG","inAddr_not0001","/yin4_SPECSIG");
+          
+            pterms["FB1_45"]=new Array("/inAddr_not0001","inAddr5_SPECSIG");
+          
+            pterms["FB1_46"]=new Array("/init","/yin5_SPECSIG","/yin9_SPECSIG","inAddr_not0001","yin4_SPECSIG","N_PZ_294");
+          
+            pterms["FB1_47"]=new Array("/init","yin5_SPECSIG","/yin9_SPECSIG","inAddr_not0001","/N_PZ_294");
+          
+            pterms["FB1_48"]=new Array("/inAddr_not0001","inAddr2_SPECSIG");
+          
+            pterms["FB1_49"]=new Array("/yin1_SPECSIG","yin2_SPECSIG","N_PZ_289");
+          
+            pterms["FB1_50"]=new Array("/yin0_SPECSIG","yin2_SPECSIG","N_PZ_289");
+          
+            pterms["FB1_51"]=new Array("yin1_SPECSIG","yin0_SPECSIG","/yin2_SPECSIG","N_PZ_257","N_PZ_289");
+          
+            pterms["FB1_52"]=new Array("yin2_SPECSIG","/N_PZ_257","N_PZ_289");
+          
+            pterms["FB1_53"]=new Array("/init","/xin9_SPECSIG","xin7_SPECSIG","xin8_SPECSIG","inAddr_not0001","xin4_SPECSIG","xin5_SPECSIG","xin6_SPECSIG");
+          
+            pterms["FB1_54"]=new Array("/init","xin9_SPECSIG","/xin8_SPECSIG","inAddr_not0001","/N_PZ_257");
+          
+            pterms["FB1_55"]=new Array("/inAddr_not0001","inAddr15_SPECSIG");
+          
+            pterms["FB2_0"]=new Array("inAddr9_SPECSIG");
+          
+            pterms["FB2_1"]=new Array("inAddr10_SPECSIG");
+          
+            pterms["FB2_2"]=new Array("inAddr11_SPECSIG");
+          
+            pterms["FB2_3"]=new Array("inAddr12_SPECSIG");
+          
+            pterms["FB2_4"]=new Array("inAddr13_SPECSIG");
+          
+            pterms["FB2_5"]=new Array("inAddr14_SPECSIG");
+          
+            pterms["FB2_6"]=new Array("inAddr15_SPECSIG");
+          
+            pterms["FB2_7"]=new Array("inAddr0_SPECSIG");
+          
+            pterms["FB2_8"]=new Array("inAddr1_SPECSIG");
+          
+            pterms["FB2_9"]=new Array("flashRead");
+          
+            pterms["FB2_10"]=new Array("flashRead","/flashstate_FSM_FFd1_SPECSIG");
+          
+            pterms["FB2_13"]=new Array("flashRead","flashstate_FSM_FFd2_SPECSIG");
+          
+            pterms["FB2_16"]=new Array("flashRead","flashstate_FSM_FFd2_SPECSIG");
+          
+            pterms["FB2_19"]=new Array("flashRead","flashstate_FSM_FFd2_SPECSIG");
+          
+            pterms["FB2_22"]=new Array("flashRead","flashstate_FSM_FFd2_SPECSIG");
+          
+            pterms["FB2_25"]=new Array("flashRead","flashstate_FSM_FFd2_SPECSIG");
+          
+            pterms["FB2_28"]=new Array("flashRead","/flashstate_FSM_FFd1_SPECSIG");
+          
+            pterms["FB2_31"]=new Array("flashRead","flashstate_FSM_FFd3_SPECSIG");
+          
+            pterms["FB2_34"]=new Array("flashRead","flashstate_FSM_FFd4_SPECSIG");
+          
+            pterms["FB2_40"]=new Array("flashRead","flashstate_FSM_FFd2_SPECSIG");
+          
+            pterms["FB2_43"]=new Array("flashRead","flashstate_FSM_FFd2_SPECSIG");
+          
+            pterms["FB2_46"]=new Array("/N_PZ_359");
+          
+            pterms["FB2_49"]=new Array("flashRead","flashstate_FSM_FFd2_SPECSIG");
+          
+            pterms["FB2_52"]=new Array("flashRead","flashstate_FSM_FFd2_SPECSIG");
+          
+            pterms["FB2_55"]=new Array("flashRead","flashstate_FSM_FFd2_SPECSIG");
+          
+            pterms["FB3_0"]=new Array("inAddr2_SPECSIG");
+          
+            pterms["FB3_1"]=new Array("inAddr3_SPECSIG");
+          
+            pterms["FB3_2"]=new Array("inAddr4_SPECSIG");
+          
+            pterms["FB3_3"]=new Array("inAddr5_SPECSIG");
+          
+            pterms["FB3_4"]=new Array("inAddr6_SPECSIG");
+          
+            pterms["FB3_5"]=new Array("inAddr7_SPECSIG");
+          
+            pterms["FB3_6"]=new Array("inAddr8_SPECSIG");
+          
+            pterms["FB3_7"]=new Array("/inAddr_not0001","inAddr4_SPECSIG");
+          
+            pterms["FB3_8"]=new Array("/init","/yin9_SPECSIG","inAddr_not0001","/yin4_SPECSIG","N_PZ_294");
+          
+            pterms["FB3_9"]=new Array("/init","/yin9_SPECSIG","inAddr_not0001","yin4_SPECSIG","/N_PZ_294");
+          
+            pterms["FB3_10"]=new Array("/init","/xin9_SPECSIG","inAddr_not0001","/xin4_SPECSIG");
+          
+            pterms["FB3_11"]=new Array("/init","/xin7_SPECSIG","/xin8_SPECSIG","inAddr_not0001","/xin4_SPECSIG");
+          
+            pterms["FB3_12"]=new Array("/inAddr_not0001","inAddr10_SPECSIG");
+          
+            pterms["FB3_13"]=new Array("flashRead","flashstate_FSM_FFd2_SPECSIG");
+          
+            pterms["FB3_14"]=new Array("/init","/xin9_SPECSIG","inAddr_not0001","/xin4_SPECSIG","xin5_SPECSIG");
+          
+            pterms["FB3_15"]=new Array("/init","/xin7_SPECSIG","/xin8_SPECSIG","inAddr_not0001","/xin4_SPECSIG","xin5_SPECSIG");
+          
+            pterms["FB3_16"]=new Array("flashRead","flashstate_FSM_FFd2_SPECSIG");
+          
+            pterms["FB3_17"]=new Array("/init","/xin9_SPECSIG","inAddr_not0001","xin4_SPECSIG","/xin5_SPECSIG");
+          
+            pterms["FB3_18"]=new Array("/init","/xin7_SPECSIG","/xin8_SPECSIG","inAddr_not0001","xin4_SPECSIG","/xin5_SPECSIG");
+          
+            pterms["FB3_19"]=new Array("flashRead","flashstate_FSM_FFd2_SPECSIG");
+          
+            pterms["FB3_20"]=new Array("/inAddr_not0001","inAddr11_SPECSIG");
+          
+            pterms["FB3_21"]=new Array("/init","/xin9_SPECSIG","xin7_SPECSIG","xin8_SPECSIG","inAddr_not0001","/xin4_SPECSIG");
+          
+            pterms["FB3_22"]=new Array("flashRead","flashstate_FSM_FFd2_SPECSIG");
+          
+            pterms["FB3_23"]=new Array("/init","/xin9_SPECSIG","/xin7_SPECSIG","xin8_SPECSIG","inAddr_not0001");
+          
+            pterms["FB3_24"]=new Array("/init","/xin9_SPECSIG","xin7_SPECSIG","xin8_SPECSIG","inAddr_not0001","/xin5_SPECSIG");
+          
+            pterms["FB3_25"]=new Array("flashRead","flashstate_FSM_FFd2_SPECSIG");
+          
+            pterms["FB3_26"]=new Array("/init","/xin9_SPECSIG","xin7_SPECSIG","/xin8_SPECSIG","inAddr_not0001","xin4_SPECSIG","xin5_SPECSIG","xin6_SPECSIG");
+          
+            pterms["FB3_27"]=new Array("/init","/xin9_SPECSIG","xin7_SPECSIG","xin8_SPECSIG","inAddr_not0001","/xin6_SPECSIG");
+          
+            pterms["FB3_28"]=new Array("flashRead","flashstate_FSM_FFd2_SPECSIG");
+          
+            pterms["FB3_29"]=new Array("/inAddr_not0001","inAddr14_SPECSIG");
+          
+            pterms["FB3_30"]=new Array("/init","/xin9_SPECSIG","xin7_SPECSIG","inAddr_not0001","/xin4_SPECSIG");
+          
+            pterms["FB3_31"]=new Array("/init","/xin9_SPECSIG","xin7_SPECSIG","inAddr_not0001","/xin5_SPECSIG");
+          
+            pterms["FB3_32"]=new Array("/init","/xin9_SPECSIG","/xin7_SPECSIG","inAddr_not0001","xin4_SPECSIG","xin5_SPECSIG","xin6_SPECSIG");
+          
+            pterms["FB3_33"]=new Array("/init","/xin9_SPECSIG","xin7_SPECSIG","inAddr_not0001","/xin6_SPECSIG");
+          
+            pterms["FB3_34"]=new Array("/inAddr_not0001","inAddr13_SPECSIG");
+          
+            pterms["FB3_35"]=new Array("xin9_SPECSIG","xin7_SPECSIG","/xin8_SPECSIG");
+          
+            pterms["FB3_36"]=new Array("xin9_SPECSIG","xin7_SPECSIG","xin8_SPECSIG","xin4_SPECSIG","xin5_SPECSIG","xin6_SPECSIG");
+          
+            pterms["FB3_37"]=new Array("xin9_SPECSIG","/xin7_SPECSIG","/xin8_SPECSIG","xin4_SPECSIG","xin5_SPECSIG","xin6_SPECSIG");
+          
+            pterms["FB3_38"]=new Array("/init","inAddr_not0001","/N_PZ_257","/xin4_SPECSIG","xin6_SPECSIG");
+          
+            pterms["FB3_39"]=new Array("/init","inAddr_not0001","/N_PZ_257","/xin5_SPECSIG","xin6_SPECSIG");
+          
+            pterms["FB3_40"]=new Array("flashRead","flashstate_FSM_FFd2_SPECSIG");
+          
+            pterms["FB3_41"]=new Array("/init","inAddr_not0001","/N_PZ_257","xin4_SPECSIG","xin5_SPECSIG","/xin6_SPECSIG");
+          
+            pterms["FB3_42"]=new Array("/inAddr_not0001","inAddr12_SPECSIG");
+          
+            pterms["FB3_43"]=new Array("/inAddr_not0001","inAddr0_SPECSIG");
+          
+            pterms["FB3_44"]=new Array("/yin0_SPECSIG","N_PZ_257","N_PZ_289");
+          
+            pterms["FB3_45"]=new Array("yin0_SPECSIG","/N_PZ_257","N_PZ_289");
+          
+            pterms["FB3_46"]=new Array("/inAddr_not0001","inAddr1_SPECSIG");
+          
+            pterms["FB3_47"]=new Array("yin1_SPECSIG","/yin0_SPECSIG","N_PZ_289");
+          
+            pterms["FB3_48"]=new Array("/yin1_SPECSIG","yin0_SPECSIG","N_PZ_257","N_PZ_289");
+          
+            pterms["FB3_49"]=new Array("yin1_SPECSIG","/N_PZ_257","N_PZ_289");
+          
+            pterms["FB3_55"]=new Array("xin9_SPECSIG","xin8_SPECSIG");
+          
+            pterms["FB4_0"]=new Array("/flashstate_FSM_FFd4_SPECSIG");
+          
+            pterms["FB4_1"]=new Array("flashRead","flashstate_FSM_FFd1_SPECSIG","/flashOE");
+          
+            pterms["FB4_2"]=new Array("flashRead","/flashstate_FSM_FFd1_SPECSIG","flashstate_FSM_FFd2_SPECSIG","flashOE");
+          
+            pterms["FB4_3"]=new Array("flashRead","flashstate_FSM_FFd3_SPECSIG","/flashWE");
+          
+            pterms["FB4_4"]=new Array("flashRead","/flashstate_FSM_FFd3_SPECSIG","flashstate_FSM_FFd4_SPECSIG","flashWE");
+          
+            pterms["FB4_5"]=new Array("/flashdataReady_SPECSIG");
+          
+            pterms["FB4_7"]=new Array("/flashData9_SPECSIG");
+          
+            pterms["FB4_22"]=new Array("N_PZ_260");
+          
+            pterms["FB4_25"]=new Array("N_PZ_260");
+          
+            pterms["FB4_28"]=new Array("N_PZ_260");
+          
+            pterms["FB4_31"]=new Array("/pause","/flashdataReady_SPECSIG","/flashRead_not00016");
+          
+            pterms["FB4_34"]=new Array("/pause","/init","flashdataReady_SPECSIG","/flashRead_not00016");
+          
+            pterms["FB4_37"]=new Array("/pause","/flashRead_not00016");
+          
+            pterms["FB4_40"]=new Array("N_PZ_260");
+          
+            pterms["FB4_43"]=new Array("N_PZ_260");
+          
+            pterms["FB4_46"]=new Array("N_PZ_260");
+          
+            pterms["FB4_49"]=new Array("N_PZ_260");
+          
+            pterms["FB4_52"]=new Array("N_PZ_260");
+          
+            pterms["FB4_55"]=new Array("/flashData7_SPECSIG","/N_PZ_260");
+          
+            pterms["FB5_7"]=new Array("/flashData9_SPECSIG");
+          
+            pterms["FB5_10"]=new Array("flashData7_SPECSIG");
+          
+            pterms["FB5_13"]=new Array("flashData7_SPECSIG");
+          
+            pterms["FB5_16"]=new Array("flashData7_SPECSIG");
+          
+            pterms["FB5_22"]=new Array("flashData7_SPECSIG");
+          
+            pterms["FB5_28"]=new Array("flashData7_SPECSIG");
+          
+            pterms["FB5_40"]=new Array("flashData7_SPECSIG");
+          
+            pterms["FB5_43"]=new Array("flashData7_SPECSIG");
+          
+          d2["dataReady"]=new Array("FB1_0","FB1_5","FB1_1","FB1_2","FB1_3","FB1_8","FB1_6","FB1_7","FB1_4");
+          
+              gblclk["dataReady"]=new Array("clk");
+            prld["dataReady"]="GND";
+          d2["inAddr3_SPECSIG"]=new Array("FB1_34","FB1_35","FB1_36");
+          
+              gblclk["inAddr3_SPECSIG"]=new Array("clk");
+            prld["inAddr3_SPECSIG"]="GND";
+          d2["Bout0_SPECSIG"]=new Array("GND");
+          
+          d2["Bout1_SPECSIG"]=new Array("GND");
+          
+          d2["Bout2_SPECSIG"]=new Array("GND");
+          
+          d1["init"]=new Array("FB1_25");
+          
+              gblclk["init"]=new Array("clk");
+            prld["init"]="VCC";
+          d2["N_PZ_289"]=new Array("FB1_29","FB1_33","FB1_30","FB1_31","FB1_32");
+          
+          d2["inAddr7_SPECSIG"]=new Array("FB1_26","FB1_22","FB1_23","FB1_24","FB1_28","FB1_27");
+          
+              gblclk["inAddr7_SPECSIG"]=new Array("clk");
+            prld["inAddr7_SPECSIG"]="GND";
+          d2["inAddr9_SPECSIG"]=new Array("FB1_19","FB1_21","FB1_20");
+          
+              gblclk["inAddr9_SPECSIG"]=new Array("clk");
+            prld["inAddr9_SPECSIG"]="GND";
+          d1["inAddr8_SPECSIG"]=new Array("FB1_37");
+          
+          d2["inAddr8_SPECSIG"]=new Array("FB1_15","FB1_14","FB1_17","FB1_16","FB1_18");
+          
+              gblclk["inAddr8_SPECSIG"]=new Array("clk");
+            prld["inAddr8_SPECSIG"]="GND";
+          d1["N_PZ_294"]=new Array("FB1_40");
+          
+          d2["inAddr15_SPECSIG"]=new Array("FB1_55","FB1_54","FB1_53");
+          
+              gblclk["inAddr15_SPECSIG"]=new Array("clk");
+            prld["inAddr15_SPECSIG"]="GND";
+          d2["inAddr2_SPECSIG"]=new Array("FB1_48","FB1_49","FB1_50","FB1_52","FB1_51");
+          
+              gblclk["inAddr2_SPECSIG"]=new Array("clk");
+            prld["inAddr2_SPECSIG"]="GND";
+          d2["flashRead_not00016"]=new Array("FB1_10","FB1_13","FB1_11","FB1_12","FB1_9");
+          
+          d2["inAddr5_SPECSIG"]=new Array("FB1_45","FB1_44","FB1_47","FB1_46");
+          
+              gblclk["inAddr5_SPECSIG"]=new Array("clk");
+            prld["inAddr5_SPECSIG"]="GND";
+          d2["inAddr6_SPECSIG"]=new Array("FB1_41","FB1_38","FB1_39","FB1_43","FB1_42");
+          
+              gblclk["inAddr6_SPECSIG"]=new Array("clk");
+            prld["inAddr6_SPECSIG"]="GND";
+          d1["N_PZ_359"]=new Array("FB2_10");
+          
+          d2["flashAddr10_SPECSIG"]=new Array("FB2_0");
+          
+              gblclk["flashAddr10_SPECSIG"]=new Array("clk");
+            
+          ce["flashAddr10_SPECSIG"]=new Array("FB2_13");
+          prld["flashAddr10_SPECSIG"]="GND";
+          d2["flashAddr11_SPECSIG"]=new Array("FB2_1");
+          
+              gblclk["flashAddr11_SPECSIG"]=new Array("clk");
+            
+          ce["flashAddr11_SPECSIG"]=new Array("FB2_13");
+          prld["flashAddr11_SPECSIG"]="GND";
+          d2["flashAddr12_SPECSIG"]=new Array("FB2_2");
+          
+              gblclk["flashAddr12_SPECSIG"]=new Array("clk");
+            
+          ce["flashAddr12_SPECSIG"]=new Array("FB2_13");
+          prld["flashAddr12_SPECSIG"]="GND";
+          d2["flashAddr13_SPECSIG"]=new Array("FB2_3");
+          
+              gblclk["flashAddr13_SPECSIG"]=new Array("clk");
+            
+          ce["flashAddr13_SPECSIG"]=new Array("FB2_13");
+          prld["flashAddr13_SPECSIG"]="GND";
+          d2["flashAddr14_SPECSIG"]=new Array("FB2_4");
+          
+              gblclk["flashAddr14_SPECSIG"]=new Array("clk");
+            
+          ce["flashAddr14_SPECSIG"]=new Array("FB2_13");
+          prld["flashAddr14_SPECSIG"]="GND";
+          d1["flashstate_FSM_FFd4_SPECSIG"]=new Array("FB2_10");
+          
+              gblclk["flashstate_FSM_FFd4_SPECSIG"]=new Array("clk");
+            prld["flashstate_FSM_FFd4_SPECSIG"]="VCC";
+          d1["flashstate_FSM_FFd2_SPECSIG"]=new Array("FB2_31");
+          
+              gblclk["flashstate_FSM_FFd2_SPECSIG"]=new Array("clk");
+            prld["flashstate_FSM_FFd2_SPECSIG"]="GND";
+          d1["flashstate_FSM_FFd3_SPECSIG"]=new Array("FB2_34");
+          
+              gblclk["flashstate_FSM_FFd3_SPECSIG"]=new Array("clk");
+            prld["flashstate_FSM_FFd3_SPECSIG"]="GND";
+          d2["N_PZ_260"]=new Array("FB2_13","FB2_34");
+          
+          d2["flashAddr15_SPECSIG"]=new Array("FB2_5");
+          
+              gblclk["flashAddr15_SPECSIG"]=new Array("clk");
+            
+          ce["flashAddr15_SPECSIG"]=new Array("FB2_13");
+          prld["flashAddr15_SPECSIG"]="GND";
+          d1["flashstate_FSM_FFd1_SPECSIG"]=new Array("FB2_13");
+          
+              gblclk["flashstate_FSM_FFd1_SPECSIG"]=new Array("clk");
+            prld["flashstate_FSM_FFd1_SPECSIG"]="GND";
+          d2["flashdataReady_SPECSIG"]=new Array("FB2_9");
+          
+              gblclk["flashdataReady_SPECSIG"]=new Array("clk");
+            
+          ce["flashdataReady_SPECSIG"]=new Array("FB2_46");
+          prld["flashdataReady_SPECSIG"]="GND";
+          d2["flashAddr16_SPECSIG"]=new Array("FB2_6");
+          
+              gblclk["flashAddr16_SPECSIG"]=new Array("clk");
+            
+          ce["flashAddr16_SPECSIG"]=new Array("FB2_13");
+          prld["flashAddr16_SPECSIG"]="GND";
+          d2["flashAddr1_SPECSIG"]=new Array("FB2_7");
+          
+              gblclk["flashAddr1_SPECSIG"]=new Array("clk");
+            
+          ce["flashAddr1_SPECSIG"]=new Array("FB2_13");
+          prld["flashAddr1_SPECSIG"]="GND";
+          d2["flashAddr2_SPECSIG"]=new Array("FB2_8");
+          
+              gblclk["flashAddr2_SPECSIG"]=new Array("clk");
+            
+          ce["flashAddr2_SPECSIG"]=new Array("FB2_13");
+          prld["flashAddr2_SPECSIG"]="GND";
+          d2["inAddr13_SPECSIG"]=new Array("FB3_34","FB3_30","FB3_31","FB3_33","FB3_32");
+          
+              gblclk["inAddr13_SPECSIG"]=new Array("clk");
+            prld["inAddr13_SPECSIG"]="GND";
+          d2["flashAddr5_SPECSIG"]=new Array("FB3_2");
+          
+              gblclk["flashAddr5_SPECSIG"]=new Array("clk");
+            
+          ce["flashAddr5_SPECSIG"]=new Array("FB3_13");
+          prld["flashAddr5_SPECSIG"]="GND";
+          d2["flashAddr3_SPECSIG"]=new Array("FB3_0");
+          
+              gblclk["flashAddr3_SPECSIG"]=new Array("clk");
+            
+          ce["flashAddr3_SPECSIG"]=new Array("FB3_13");
+          prld["flashAddr3_SPECSIG"]="GND";
+          d2["flashAddr4_SPECSIG"]=new Array("FB3_1");
+          
+              gblclk["flashAddr4_SPECSIG"]=new Array("clk");
+            
+          ce["flashAddr4_SPECSIG"]=new Array("FB3_13");
+          prld["flashAddr4_SPECSIG"]="GND";
+          d2["flashAddr6_SPECSIG"]=new Array("FB3_3");
+          
+              gblclk["flashAddr6_SPECSIG"]=new Array("clk");
+            
+          ce["flashAddr6_SPECSIG"]=new Array("FB3_13");
+          prld["flashAddr6_SPECSIG"]="GND";
+          d2["flashAddr7_SPECSIG"]=new Array("FB3_4");
+          
+              gblclk["flashAddr7_SPECSIG"]=new Array("clk");
+            
+          ce["flashAddr7_SPECSIG"]=new Array("FB3_13");
+          prld["flashAddr7_SPECSIG"]="GND";
+          d2["flashAddr8_SPECSIG"]=new Array("FB3_5");
+          
+              gblclk["flashAddr8_SPECSIG"]=new Array("clk");
+            
+          ce["flashAddr8_SPECSIG"]=new Array("FB3_13");
+          prld["flashAddr8_SPECSIG"]="GND";
+          d2["inAddr14_SPECSIG"]=new Array("FB3_29","FB3_23","FB3_21","FB3_24","FB3_27","FB3_26");
+          
+              gblclk["inAddr14_SPECSIG"]=new Array("clk");
+            prld["inAddr14_SPECSIG"]="GND";
+          d2["inAddr11_SPECSIG"]=new Array("FB3_20","FB3_17","FB3_14","FB3_18","FB3_15");
+          
+              gblclk["inAddr11_SPECSIG"]=new Array("clk");
+            prld["inAddr11_SPECSIG"]="GND";
+          d2["inAddr10_SPECSIG"]=new Array("FB3_12","FB3_10","FB3_11");
+          
+              gblclk["inAddr10_SPECSIG"]=new Array("clk");
+            prld["inAddr10_SPECSIG"]="GND";
+          d2["flashAddr9_SPECSIG"]=new Array("FB3_6");
+          
+              gblclk["flashAddr9_SPECSIG"]=new Array("clk");
+            
+          ce["flashAddr9_SPECSIG"]=new Array("FB3_13");
+          prld["flashAddr9_SPECSIG"]="GND";
+          d2["inAddr4_SPECSIG"]=new Array("FB3_7","FB3_9","FB3_8");
+          
+              gblclk["inAddr4_SPECSIG"]=new Array("clk");
+            prld["inAddr4_SPECSIG"]="GND";
+          d2["inAddr1_SPECSIG"]=new Array("FB3_46","FB3_47","FB3_49","FB3_48");
+          
+              gblclk["inAddr1_SPECSIG"]=new Array("clk");
+            prld["inAddr1_SPECSIG"]="GND";
+          d2["inAddr0_SPECSIG"]=new Array("FB3_43","FB3_45","FB3_44");
+          
+              gblclk["inAddr0_SPECSIG"]=new Array("clk");
+            prld["inAddr0_SPECSIG"]="GND";
+          d2["inAddr12_SPECSIG"]=new Array("FB3_42","FB3_38","FB3_39","FB3_41");
+          
+              gblclk["inAddr12_SPECSIG"]=new Array("clk");
+            prld["inAddr12_SPECSIG"]="GND";
+          d1["N_PZ_257"]=new Array("FB3_55");
+          
+          d2["N_PZ_257"]=new Array("FB3_35","FB3_36","FB3_37");
+          
+          d2["flashOE"]=new Array("FB4_1","FB4_2");
+          
+              gblclk["flashOE"]=new Array("clk");
+            prld["flashOE"]="GND";
+          d2["flashWE"]=new Array("FB4_3","FB4_4");
+          
+              gblclk["flashWE"]=new Array("clk");
+            prld["flashWE"]="GND";
+          d2["flashData10_SPECSIG"]=new Array("FB4_0");
+          
+              gblclk["flashData10_SPECSIG"]=new Array("clk");
+            
+          ce["flashData10_SPECSIG"]=new Array("FB4_22");
+          prld["flashData10_SPECSIG"]="GND";
+          d2["flashData11_SPECSIG"]=new Array("FB4_0");
+          
+              gblclk["flashData11_SPECSIG"]=new Array("clk");
+            
+          ce["flashData11_SPECSIG"]=new Array("FB4_22");
+          prld["flashData11_SPECSIG"]="GND";
+          d2["flashData12_SPECSIG"]=new Array("FB4_0");
+          
+              gblclk["flashData12_SPECSIG"]=new Array("clk");
+            
+          ce["flashData12_SPECSIG"]=new Array("FB4_22");
+          prld["flashData12_SPECSIG"]="GND";
+          d1["inAddr_not0001"]=new Array("FB4_31");
+          
+          d1["nextBufferReady"]=new Array("FB4_34");
+          
+              gblclk["nextBufferReady"]=new Array("clk");
+            prld["nextBufferReady"]="GND";
+          d2["flashRead"]=new Array("FB4_5");
+          
+              gblclk["flashRead"]=new Array("clk");
+            
+          ce["flashRead"]=new Array("FB4_37");
+          prld["flashRead"]="GND";
+          d2["flashData13_SPECSIG"]=new Array("FB4_0");
+          
+              gblclk["flashData13_SPECSIG"]=new Array("clk");
+            
+          ce["flashData13_SPECSIG"]=new Array("FB4_22");
+          prld["flashData13_SPECSIG"]="GND";
+          d2["flashData14_SPECSIG"]=new Array("FB4_0");
+          
+              gblclk["flashData14_SPECSIG"]=new Array("clk");
+            
+          ce["flashData14_SPECSIG"]=new Array("FB4_22");
+          prld["flashData14_SPECSIG"]="GND";
+          d2["flashData15_SPECSIG"]=new Array("FB4_0");
+          
+              gblclk["flashData15_SPECSIG"]=new Array("clk");
+            
+          ce["flashData15_SPECSIG"]=new Array("FB4_22");
+          prld["flashData15_SPECSIG"]="GND";
+          d2["flashData8_SPECSIG"]=new Array("FB4_0");
+          
+              gblclk["flashData8_SPECSIG"]=new Array("clk");
+            
+          ce["flashData8_SPECSIG"]=new Array("FB4_22");
+          prld["flashData8_SPECSIG"]="GND";
+          d2["flashData9_SPECSIG"]=new Array("FB4_0");
+          
+              gblclk["flashData9_SPECSIG"]=new Array("clk");
+            
+          ce["flashData9_SPECSIG"]=new Array("FB4_22");
+          prld["flashData9_SPECSIG"]="GND";
+          d1["flashData7_SPECSIG"]=new Array("FB4_55");
+          
+              gblclk["flashData7_SPECSIG"]=new Array("clk");
+            
+              trst["flashData7_SPECSIG"]=new Array("FB4_7");
+              prld["flashData7_SPECSIG"]="GND";
+          d1["flashData0_SPECSIG"]=new Array("FB5_10");
+          
+              trst["flashData0_SPECSIG"]=new Array("FB5_7");
+              
+          d1["flashData1_SPECSIG"]=new Array("FB5_10");
+          
+              trst["flashData1_SPECSIG"]=new Array("FB5_7");
+              
+          d1["flashData2_SPECSIG"]=new Array("FB5_10");
+          
+              trst["flashData2_SPECSIG"]=new Array("FB5_7");
+              
+          d1["flashData3_SPECSIG"]=new Array("FB5_10");
+          
+              trst["flashData3_SPECSIG"]=new Array("FB5_7");
+              
+          d1["flashData4_SPECSIG"]=new Array("FB5_10");
+          
+              trst["flashData4_SPECSIG"]=new Array("FB5_7");
+              
+          d1["flashData5_SPECSIG"]=new Array("FB5_10");
+          
+              trst["flashData5_SPECSIG"]=new Array("FB5_7");
+              
+          d1["flashData6_SPECSIG"]=new Array("FB5_10");
+          
+              trst["flashData6_SPECSIG"]=new Array("FB5_7");
+              
+          d2["Gout0_SPECSIG"]=new Array("GND");
+          
+          d2["Gout1_SPECSIG"]=new Array("GND");
+          
+          d2["Gout2_SPECSIG"]=new Array("GND");
+          
+          d2["Rout0_SPECSIG"]=new Array("GND");
+          
+          d2["Rout1_SPECSIG"]=new Array("GND");
+          
+          d2["Rout2_SPECSIG"]=new Array("GND");
+          
+          d2["flashAddr0_SPECSIG"]=new Array("GND");
+          
+          d2["flashAddr17_SPECSIG"]=new Array("GND");
+          
+          d2["flashAddr18_SPECSIG"]=new Array("GND");
+          
+          d2["flashAddr19_SPECSIG"]=new Array("GND");
+          
+          d2["flashAddr20_SPECSIG"]=new Array("GND");
+          
+          d2["flashAddr21_SPECSIG"]=new Array("GND");
+          
+          d2["flashAddr22_SPECSIG"]=new Array("GND");
+          
+          d2["flashCE0"]=new Array("GND");
+          
+
+      uimSignals = new Array();
+
+      uimSigNegs = new Array();
+
+      uimPterms = new Array();
+      
+
+      
+        function getEqnList() {
+          var str = "<html><head><link type='text/css' href='style.css' rel='stylesheet'></head><body class='pgBgnd'>";
+          str += "<center><h3>Equations</h3></center>";
+          str += "<table width='90%' align='center' border='1' cellpadding='0' cellspacing='0'>";
+          for (s=0; s<uimSignals.length; s++) {
+            str += "<tr><td>";
+            str += retUimEqn(uimSignals[s]);
+            str += "</td></tr>";
+          }
+          for (s=0; s<signals.length; s++) {
+            str += "<tr><td>";
+            str += retEqn(signals[s]);
+            str += "</td></tr>";
+          }
+
+          var legend = retLegend();
+		      if (legend != "") {
+		        str += "<tr><td>" + legend + "</td></tr>";
+		      }
+
+          str += "</table>";
+          str += "<form><span class='pgRef'>";
+
+          if (!parent.leftnav.IsNS()) {
+            str += "<table width='90%' align='center'>";
+            str += "<tr><td align='left'><input type='button' value='back to top' ";
+            str += "onclick='javascript:parent.leftnav.showEqnAll()' ";
+            str += "onmouseover=\"window.status='goto top of page'; return true;\" ";
+            str += "onmouseout=\"window.status=''\">";
+            str += "</td>";
+            str += "<td align='right'>";
+            str += "<input type='button' value='print page' ";
+            str += "onclick='javascript:window.print()' ";
+            str += "onmouseover=\"window.status='print page'; return true;\" ";
+            str += "onmouseout=\"window.status=''\">";
+            str += "</td>";
+            str += "</tr></table>";
+          }
+          else {
+            str += "<table width='90%' align='center'>";
+            str += "<tr><td align='left'><a href='javascript:parent.leftnav.showEqnAll()'>back to top</a>";
+            str += "</td>";
+            str += "<td align='right'>";
+            str += "<a href='javascript:window.print()'>";
+            str += "print page</a>";
+            str += "</td>";
+            str += "</tr></table>";
+          }
+
+          str += "</span></form>";
+          str += "</body></html>";
+          return str;
+        }
+      
+    </script>
+</head></html>

@@ -1,0 +1,1 @@
+vhdtdtfi -prj pop_cpu -o C:/pop_cpu1/VGAAccess.vhi -module VGAAccess -template D:/Xilinx/14.7/ISE_DS/ISE//data/vhdlinst.tft -deleteonerror -lib work recordDefs.vhd -lib work VGAAccess.vhd 

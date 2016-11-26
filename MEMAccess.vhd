@@ -141,6 +141,8 @@ begin
 	if(inAddress < "1000000000000000") then 
 		RAMBuffer <= RAM2DataIn;
 	elsif(inAddress = "1011111100000001") then
+		RAMBuffer <= "00000000" & RAM1Data(7 downto 0);
+	elsif(inAddress = "1011111100000001") then
 		RAMBuffer <= "00000000000000" & dataReady & tsre;
 	else
 		RAMBuffer <= RAM1Data;

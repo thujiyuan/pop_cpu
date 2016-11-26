@@ -1,0 +1,1098 @@
+<html><body>
+<pre>
+ 
+cpldfit:  version P.20131013                        Xilinx Inc.
+                                  Fitter Report
+Design Name: VGAControler                        Date: 11-25-2016,  4:57PM
+Device Used: XA2C128-7-VQ100
+Fitting Status: Successful
+
+*************************  Mapped Resource Summary  **************************
+
+Macrocells     Product Terms    Function Block   Registers      Pins           
+Used/Tot       Used/Tot         Inps Used/Tot    Used/Tot       Used/Tot       
+83 /128 ( 65%) 159 /448  ( 35%) 99  /320  ( 31%) 52 /128 ( 41%) 74 /80  ( 92%)
+
+** Function Block Resources **
+
+Function Mcells   FB Inps  Pterms   IO       CTC      CTR      CTS      CTE     
+Block    Used/Tot Used/Tot Used/Tot Used/Tot Used/Tot Used/Tot Used/Tot Used/Tot
+FB1      16/16*    37/40    56/56*    4/10    0/1      0/1      0/1      0/1
+FB2      16/16*    15/40    25/56     9/10    0/1      0/1      0/1      0/1
+FB3      16/16*    31/40    51/56     7/11    0/1      0/1      0/1      0/1
+FB4      14/16     14/40    19/56    11/11*   0/1      0/1      0/1      1/1*
+FB5      10/16      2/40     8/56    10/10*   0/1      0/1      0/1      1/1*
+FB6       9/16      0/40     0/56     9/ 9*   0/1      0/1      0/1      0/1
+FB7       2/16      0/40     0/56     2/10    0/1      0/1      0/1      0/1
+FB8       0/16      0/40     0/56     0/ 9    0/1      0/1      0/1      0/1
+         -----    -------  -------   -----    ---      ---      ---      ---
+Total    83/128    99/320  159/448   52/80    0/8      0/8      0/8      2/8 
+
+CTC - Control Term Clock
+CTR - Control Term Reset
+CTS - Control Term Set
+CTE - Control Term Output Enable
+
+* - Resource is exhausted
+
+** Global Control Resources **
+
+GCK         GSR         GTS         DGE         
+Used/Tot    Used/Tot    Used/Tot    Used/Tot    
+1/3         0/1         0/4         0/1
+
+Signal 'clk' mapped onto global clock net GCK0.
+
+** Pin Resources **
+
+Signal Type    Required     Mapped  |  Pin Type            Used    Total 
+------------------------------------|------------------------------------
+Input         :   21          21    |  I/O              :    64     70
+Output        :   52          52    |  GCK/IO           :     3      3
+Bidirectional :    0           0    |  GTS/IO           :     4      4
+GCK           :    1           1    |  GSR/IO           :     1      1
+GTS           :    0           0    |  CDR/IO           :     1      1
+GSR           :    0           0    |  DGE/IO           :     1      1
+                 ----        ----
+        Total     74          74
+
+End of Mapped Resource Summary
+**************************  Errors and Warnings  ***************************
+
+WARNING:Cpld - Unable to retrieve the path to the iSE Project Repository. Will
+   use the default filename of 'VGAControler.ise'.
+*************************  Summary of Mapped Logic  ************************
+
+** 52 Outputs **
+
+Signal                Total Total Bank Loc     Pin   Pin       Pin     I/O      I/O       Slew Reg     Reg Init
+Name                  Pts   Inps               No.   Type      Use     STD      Style     Rate Use     State
+dataReady             9     15    2    FB1_1   13    I/O       O       LVCMOS18           FAST DFF     RESET
+Bout<0>               0     0     2    FB1_3   12    I/O       O       LVCMOS18           FAST         
+Bout<1>               0     0     2    FB1_4   11    I/O       O       LVCMOS18           FAST         
+Bout<2>               0     0     2    FB1_5   10    I/O       O       LVCMOS18           FAST         
+flashAddr<10>         2     3     1    FB2_2   14    I/O       O       LVCMOS18           FAST DEFF    RESET
+flashAddr<11>         2     3     1    FB2_3   15    I/O       O       LVCMOS18           FAST DEFF    RESET
+flashAddr<12>         2     3     1    FB2_4   16    I/O       O       LVCMOS18           FAST DEFF    RESET
+flashAddr<13>         2     3     1    FB2_5   17    I/O       O       LVCMOS18           FAST DEFF    RESET
+flashAddr<14>         2     3     1    FB2_6   18    I/O       O       LVCMOS18           FAST DEFF    RESET
+flashAddr<15>         2     3     1    FB2_11  19    I/O       O       LVCMOS18           FAST DEFF    RESET
+flashAddr<16>         2     3     1    FB2_14  23    GCK/I/O   O       LVCMOS18           FAST DEFF    RESET
+flashAddr<1>          2     3     1    FB2_15  24    CDR/I/O   O       LVCMOS18           FAST DEFF    RESET
+flashAddr<2>          2     3     1    FB2_16  27    GCK/I/O   O       LVCMOS18           FAST DEFF    RESET
+flashAddr<5>          2     3     2    FB3_2   2     GTS/I/O   O       LVCMOS18           FAST DEFF    RESET
+flashAddr<3>          2     3     2    FB3_3   1     GTS/I/O   O       LVCMOS18           FAST DEFF    RESET
+flashAddr<4>          2     3     2    FB3_4   99    GSR/I/O   O       LVCMOS18           FAST DEFF    RESET
+flashAddr<6>          2     3     2    FB3_5   97    I/O       O       LVCMOS18           FAST DEFF    RESET
+flashAddr<7>          2     3     2    FB3_6   96    I/O       O       LVCMOS18           FAST DEFF    RESET
+flashAddr<8>          2     3     2    FB3_7   95    I/O       O       LVCMOS18           FAST DEFF    RESET
+flashAddr<9>          2     3     2    FB3_11  94    I/O       O       LVCMOS18           FAST DEFF    RESET
+flashOE               2     4     1    FB4_1   28    DGE/I/O   O       LVCMOS18           FAST TFF     RESET
+flashWE               2     4     1    FB4_4   29    I/O       O       LVCMOS18           FAST TFF     RESET
+flashData<10>         2     2     1    FB4_5   30    I/O       O       LVCMOS18 KPR/OD    FAST DEFF    RESET
+flashData<11>         2     2     1    FB4_6   32    I/O       O       LVCMOS18 KPR/OD    FAST DEFF    RESET
+flashData<12>         2     2     1    FB4_7   33    I/O       O       LVCMOS18 KPR/OD    FAST DEFF    RESET
+flashData<13>         2     2     1    FB4_11  34    I/O       O       LVCMOS18 KPR/OD    FAST DEFF    RESET
+flashData<14>         2     2     1    FB4_12  35    I/O       O       LVCMOS18 KPR/OD    FAST DEFF    RESET
+flashData<15>         2     2     1    FB4_13  36    I/O       O       LVCMOS18 KPR/OD    FAST DEFF    RESET
+flashData<8>          2     2     1    FB4_14  37    I/O       O       LVCMOS18 KPR/OD    FAST DEFF    RESET
+flashData<9>          2     2     1    FB4_15  39    I/O       O       LVCMOS18 KPR/OD    FAST DEFF    RESET
+flashData<7>          2     3     1    FB4_16  40    I/O       O       LVCMOS18 KPR       FAST DFF     RESET
+flashData<0>          2     2     2    FB5_1   65    I/O       O       LVCMOS18 KPR       FAST         
+flashData<1>          2     2     2    FB5_2   66    I/O       O       LVCMOS18 KPR       FAST         
+flashData<2>          2     2     2    FB5_3   67    I/O       O       LVCMOS18 KPR       FAST         
+flashData<3>          2     2     2    FB5_5   68    I/O       O       LVCMOS18 KPR       FAST         
+flashData<4>          2     2     2    FB5_7   70    I/O       O       LVCMOS18 KPR       FAST         
+flashData<5>          2     2     2    FB5_11  71    I/O       O       LVCMOS18 KPR       FAST         
+flashData<6>          2     2     2    FB5_12  72    I/O       O       LVCMOS18 KPR       FAST         
+Gout<0>               0     0     2    FB5_13  73    I/O       O       LVCMOS18           FAST         
+Gout<1>               0     0     2    FB5_14  74    I/O       O       LVCMOS18           FAST         
+
+Signal                Total Total Bank Loc     Pin   Pin       Pin     I/O      I/O       Slew Reg     Reg Init
+Name                  Pts   Inps               No.   Type      Use     STD      Style     Rate Use     State
+Gout<2>               0     0     2    FB5_15  76    I/O       O       LVCMOS18           FAST         
+Rout<0>               0     0     1    FB6_1   64    I/O       O       LVCMOS18           FAST         
+Rout<1>               0     0     1    FB6_2   63    I/O       O       LVCMOS18           FAST         
+Rout<2>               0     0     1    FB6_3   61    I/O       O       LVCMOS18           FAST         
+flashAddr<0>          0     0     1    FB6_4   60    I/O       O       LVCMOS18           FAST         
+flashAddr<17>         0     0     1    FB6_5   59    I/O       O       LVCMOS18           FAST         
+flashAddr<18>         0     0     1    FB6_6   58    I/O       O       LVCMOS18           FAST         
+flashAddr<19>         0     0     1    FB6_12  56    I/O       O       LVCMOS18           FAST         
+flashAddr<20>         0     0     1    FB6_14  55    I/O       O       LVCMOS18           FAST         
+flashAddr<21>         0     0     1    FB6_16  54    I/O       O       LVCMOS18           FAST         
+flashAddr<22>         0     0     2    FB7_1   77    I/O       O       LVCMOS18           FAST         
+flashCE0              0     0     2    FB7_2   78    I/O       O       LVCMOS18           FAST         
+
+** 31 Buried Nodes **
+
+Signal                Total Total Loc     Reg     Reg Init
+Name                  Pts   Inps          Use     State
+inAddr<3>             3     9     FB1_2   DFF     RESET
+init                  1     3     FB1_6   TFF/S   SET
+N_PZ_289              5     14    FB1_7           
+inAddr<7>             6     9     FB1_8   DFF     RESET
+inAddr<9>             3     11    FB1_9   DFF     RESET
+inAddr<8>             6     10    FB1_10  DFF     RESET
+N_PZ_294              1     5     FB1_11          
+inAddr<15>            3     10    FB1_12  DFF     RESET
+inAddr<2>             5     7     FB1_13  DFF     RESET
+flashRead_not00016    5     10    FB1_14          
+inAddr<5>             4     7     FB1_15  DFF     RESET
+inAddr<6>             5     8     FB1_16  DFF     RESET
+N_PZ_359              1     2     FB2_1           
+flash/state_FSM_FFd4  1     2     FB2_7   DFF/S   SET
+flash/state_FSM_FFd2  1     2     FB2_8   DFF     RESET
+flash/state_FSM_FFd3  1     2     FB2_9   DFF     RESET
+N_PZ_260              2     3     FB2_10          
+flash/state_FSM_FFd1  1     2     FB2_12  DFF     RESET
+flash/dataReady       2     2     FB2_13  DEFF    RESET
+inAddr<13>            5     8     FB3_1   DFF     RESET
+inAddr<14>            6     9     FB3_8   DFF     RESET
+inAddr<11>            5     8     FB3_9   DFF     RESET
+inAddr<10>            3     7     FB3_10  DFF     RESET
+inAddr<4>             3     6     FB3_12  DFF     RESET
+inAddr<1>             4     6     FB3_13  DFF     RESET
+inAddr<0>             3     5     FB3_14  DFF     RESET
+inAddr<12>            4     7     FB3_15  DFF     RESET
+N_PZ_257              4     6     FB3_16          
+inAddr_not0001        1     3     FB4_8           
+nextBufferReady       1     4     FB4_9   TFF     RESET
+flashRead             2     3     FB4_10  DEFF    RESET
+
+** 22 Inputs **
+
+Signal                Bank Loc     Pin   Pin       Pin     I/O      I/O
+Name                               No.   Type      Use     STD      Style
+pause                 2    FB1_6   9     I/O       I       LVCMOS18 KPR
+xin<0>                2    FB1_11  8     I/O       I       LVCMOS18 KPR
+xin<1>                2    FB1_12  7     I/O       I       LVCMOS18 KPR
+xin<2>                2    FB1_13  6     I/O       I       LVCMOS18 KPR
+xin<3>                2    FB1_15  4     GTS/I/O   I       LVCMOS18 KPR
+xin<8>                2    FB1_16  3     GTS/I/O   I       LVCMOS18 KPR
+clk                   1    FB2_13  22    GCK/I/O   GCK     LVCMOS18 KPR
+xin<4>                2    FB3_13  93    I/O       I       LVCMOS18 KPR
+xin<5>                2    FB3_14  92    I/O       I       LVCMOS18 KPR
+xin<6>                2    FB3_15  91    I/O       I       LVCMOS18 KPR
+xin<7>                2    FB3_16  90    I/O       I       LVCMOS18 KPR
+xin<9>                2    FB7_4   79    I/O       I       LVCMOS18 KPR
+yin<0>                2    FB7_5   80    I/O       I       LVCMOS18 KPR
+yin<1>                2    FB7_6   81    I/O       I       LVCMOS18 KPR
+yin<2>                2    FB7_11  82    I/O       I       LVCMOS18 KPR
+yin<3>                2    FB7_13  85    I/O       I       LVCMOS18 KPR
+yin<4>                2    FB7_14  86    I/O       I       LVCMOS18 KPR
+yin<5>                2    FB7_15  87    I/O       I       LVCMOS18 KPR
+yin<6>                2    FB7_16  89    I/O       I       LVCMOS18 KPR
+yin<7>                1    FB8_2   53    I/O       I       LVCMOS18 KPR
+yin<8>                1    FB8_3   52    I/O       I       LVCMOS18 KPR
+yin<9>                1    FB8_4   50    I/O       I       LVCMOS18 KPR
+
+Legend:
+Pin No.   - ~     - User Assigned
+I/O Style - OD    - OpenDrain
+          - PU    - Pullup
+          - KPR   - Keeper
+          - S     - SchmittTrigger
+          - DG    - DataGate
+Reg Use   - LATCH - Transparent latch
+          - DFF   - D-flip-flop
+          - DEFF  - D-flip-flop with clock enable
+          - TFF   - T-flip-flop
+          - TDFF  - Dual-edge-triggered T-flip-flop
+          - DDFF  - Dual-edge-triggered flip-flop
+          - DDEFF - Dual-edge-triggered flip-flop with clock enable
+          /S (after any above flop/latch type) indicates initial state is Set
+**************************  Function Block Details  ************************
+Legend:
+Total Pt     - Total product terms used by the macrocell signal
+Loc          - Location where logic was mapped in device
+Pin Type/Use - I  - Input             GCK - Global clock
+               O  - Output            GTS - Global Output Enable
+              (b) - Buried macrocell  GSR - Global Set/Reset
+              VRF - Vref
+Pin No.      - ~  - User Assigned
+*********************************** FB1  ***********************************
+This function block is part of I/O Bank number:               2
+Number of function block inputs used/remaining:               37/3
+Number of function block control terms used/remaining:        0/4
+Number of PLA product terms used/remaining:                   56/0
+Signal                        Total Loc     Pin  Pin     Pin   CTC CTR CTS CTE
+Name                          Pt            No.  Type    Use   
+dataReady                     9     FB1_1   13   I/O     O                 
+inAddr<3>                     3     FB1_2        (b)     (b)               
+Bout<0>                       0     FB1_3   12   I/O     O                 
+Bout<1>                       0     FB1_4   11   I/O     O                 
+Bout<2>                       0     FB1_5   10   I/O     O                 
+init                          1     FB1_6   9    I/O     I                 
+N_PZ_289                      5     FB1_7        (b)     (b)               
+inAddr<7>                     6     FB1_8        (b)     (b)               
+inAddr<9>                     3     FB1_9        (b)     (b)               
+inAddr<8>                     6     FB1_10       (b)     (b)               
+N_PZ_294                      1     FB1_11  8    I/O     I                 
+inAddr<15>                    3     FB1_12  7    I/O     I                 
+inAddr<2>                     5     FB1_13  6    I/O     I                 
+flashRead_not00016            5     FB1_14       (b)     (b)               
+inAddr<5>                     4     FB1_15  4    GTS/I/O I                 
+inAddr<6>                     5     FB1_16  3    GTS/I/O I                 
+
+Signals Used by Logic in Function Block
+  1: N_PZ_257          14: inAddr_not0001    26: xin<8> 
+  2: N_PZ_289          15: init              27: xin<9> 
+  3: N_PZ_294          16: nextBufferReady   28: yin<0> 
+  4: dataReady         17: pause             29: yin<1> 
+  5: flash/dataReady   18: xin<0>            30: yin<2> 
+  6: inAddr<15>        19: xin<1>            31: yin<3> 
+  7: inAddr<2>         20: xin<2>            32: yin<4> 
+  8: inAddr<3>         21: xin<3>            33: yin<5> 
+  9: inAddr<5>         22: xin<4>            34: yin<6> 
+ 10: inAddr<6>         23: xin<5>            35: yin<7> 
+ 11: inAddr<7>         24: xin<6>            36: yin<8> 
+ 12: inAddr<8>         25: xin<7>            37: yin<9> 
+ 13: inAddr<9>        
+
+Signal                     1         2         3         4 FB      
+Name             0----+----0----+----0----+----0----+----0 Inputs  
+dataReady         ...X..........X.XXXXX...XXX.....XXXXX... 15      
+inAddr<3>         XXX....X.....X.............XXXX......... 9       
+Bout<0>           ........................................ 0       
+Bout<1>           ........................................ 0       
+Bout<2>           ........................................ 0       
+init              ....X.........X.X....................... 3       
+N_PZ_289          X.X..........XX............XXXXXXXXXX... 14      
+inAddr<7>         ..X.......X..XX................XXXX.X... 9       
+inAddr<9>         .XX.........XXX................XXXXXX... 11      
+inAddr<8>         ..X........X.XX................XXXXXX... 10      
+N_PZ_294          X..........................XXXX......... 5       
+inAddr<15>        X....X.......XX......XXXXXX............. 10      
+inAddr<2>         XX....X......X.............XXX.......... 7       
+flashRead_not00016 
+                  ..............XX........XXX.....XXXXX... 10      
+inAddr<5>         ..X.....X....XX................XX...X... 7       
+inAddr<6>         ..X......X...XX................XXX..X... 8       
+                 0----+----1----+----2----+----3----+----4
+                           0         0         0         0
+*********************************** FB2  ***********************************
+This function block is part of I/O Bank number:               1
+Number of function block inputs used/remaining:               15/25
+Number of function block control terms used/remaining:        0/4
+Number of PLA product terms used/remaining:                   25/31
+Signal                        Total Loc     Pin  Pin     Pin   CTC CTR CTS CTE
+Name                          Pt            No.  Type    Use   
+N_PZ_359                      1     FB2_1        (b)     (b)               
+flashAddr<10>                 2     FB2_2   14   I/O     O                 
+flashAddr<11>                 2     FB2_3   15   I/O     O                 
+flashAddr<12>                 2     FB2_4   16   I/O     O                 
+flashAddr<13>                 2     FB2_5   17   I/O     O                 
+flashAddr<14>                 2     FB2_6   18   I/O     O                 
+flash/state_FSM_FFd4          1     FB2_7        (b)     (b)               
+flash/state_FSM_FFd2          1     FB2_8        (b)     (b)               
+flash/state_FSM_FFd3          1     FB2_9        (b)     (b)               
+N_PZ_260                      2     FB2_10       (b)     (b)               
+flashAddr<15>                 2     FB2_11  19   I/O     O                 
+flash/state_FSM_FFd1          1     FB2_12       (b)     (b)               
+flash/dataReady               2     FB2_13  22   GCK/I/O GCK               
+flashAddr<16>                 2     FB2_14  23   GCK/I/O O                 
+flashAddr<1>                  2     FB2_15  24   CDR/I/O O                 
+flashAddr<2>                  2     FB2_16  27   GCK/I/O O                 
+
+Signals Used by Logic in Function Block
+  1: N_PZ_359               6: flashRead         11: inAddr<13> 
+  2: flash/state_FSM_FFd1   7: inAddr<0>         12: inAddr<14> 
+  3: flash/state_FSM_FFd2   8: inAddr<10>        13: inAddr<15> 
+  4: flash/state_FSM_FFd3   9: inAddr<11>        14: inAddr<1> 
+  5: flash/state_FSM_FFd4  10: inAddr<12>        15: inAddr<9> 
+
+Signal                     1         2         3         4 FB      
+Name             0----+----0----+----0----+----0----+----0 Inputs  
+N_PZ_359          .X...X.................................. 2       
+flashAddr<10>     ..X..X........X......................... 3       
+flashAddr<11>     ..X..X.X................................ 3       
+flashAddr<12>     ..X..X..X............................... 3       
+flashAddr<13>     ..X..X...X.............................. 3       
+flashAddr<14>     ..X..X....X............................. 3       
+flash/state_FSM_FFd4 
+                  .X...X.................................. 2       
+flash/state_FSM_FFd2 
+                  ...X.X.................................. 2       
+flash/state_FSM_FFd3 
+                  ....XX.................................. 2       
+N_PZ_260          ..X.XX.................................. 3       
+flashAddr<15>     ..X..X.....X............................ 3       
+flash/state_FSM_FFd1 
+                  ..X..X.................................. 2       
+flash/dataReady   X....X.................................. 2       
+flashAddr<16>     ..X..X......X........................... 3       
+flashAddr<1>      ..X..XX................................. 3       
+flashAddr<2>      ..X..X.......X.......................... 3       
+                 0----+----1----+----2----+----3----+----4
+                           0         0         0         0
+*********************************** FB3  ***********************************
+This function block is part of I/O Bank number:               2
+Number of function block inputs used/remaining:               31/9
+Number of function block control terms used/remaining:        0/4
+Number of PLA product terms used/remaining:                   51/5
+Signal                        Total Loc     Pin  Pin     Pin   CTC CTR CTS CTE
+Name                          Pt            No.  Type    Use   
+inAddr<13>                    5     FB3_1        (b)     (b)               
+flashAddr<5>                  2     FB3_2   2    GTS/I/O O                 
+flashAddr<3>                  2     FB3_3   1    GTS/I/O O                 
+flashAddr<4>                  2     FB3_4   99   GSR/I/O O                 
+flashAddr<6>                  2     FB3_5   97   I/O     O                 
+flashAddr<7>                  2     FB3_6   96   I/O     O                 
+flashAddr<8>                  2     FB3_7   95   I/O     O                 
+inAddr<14>                    6     FB3_8        (b)     (b)               
+inAddr<11>                    5     FB3_9        (b)     (b)               
+inAddr<10>                    3     FB3_10       (b)     (b)               
+flashAddr<9>                  2     FB3_11  94   I/O     O                 
+inAddr<4>                     3     FB3_12       (b)     (b)               
+inAddr<1>                     4     FB3_13  93   I/O     I                 
+inAddr<0>                     3     FB3_14  92   I/O     I                 
+inAddr<12>                    4     FB3_15  91   I/O     I                 
+N_PZ_257                      4     FB3_16  90   I/O     I                 
+
+Signals Used by Logic in Function Block
+  1: N_PZ_257              12: inAddr<1>         22: xin<4> 
+  2: N_PZ_289              13: inAddr<2>         23: xin<5> 
+  3: N_PZ_294              14: inAddr<3>         24: xin<6> 
+  4: flash/state_FSM_FFd2  15: inAddr<4>         25: xin<7> 
+  5: flashRead             16: inAddr<5>         26: xin<8> 
+  6: inAddr<0>             17: inAddr<6>         27: xin<9> 
+  7: inAddr<10>            18: inAddr<7>         28: yin<0> 
+  8: inAddr<11>            19: inAddr<8>         29: yin<1> 
+  9: inAddr<12>            20: inAddr_not0001    30: yin<4> 
+ 10: inAddr<13>            21: init              31: yin<9> 
+ 11: inAddr<14>           
+
+Signal                     1         2         3         4 FB      
+Name             0----+----0----+----0----+----0----+----0 Inputs  
+inAddr<13>        .........X.........XXXXXX.X............. 8       
+flashAddr<5>      ...XX.........X......................... 3       
+flashAddr<3>      ...XX.......X........................... 3       
+flashAddr<4>      ...XX........X.......................... 3       
+flashAddr<6>      ...XX..........X........................ 3       
+flashAddr<7>      ...XX...........X....................... 3       
+flashAddr<8>      ...XX............X...................... 3       
+inAddr<14>        ..........X........XXXXXXXX............. 9       
+inAddr<11>        .......X...........XXXX.XXX............. 8       
+inAddr<10>        ......X............XXX..XXX............. 7       
+flashAddr<9>      ...XX.............X..................... 3       
+inAddr<4>         ..X...........X....XX........XX......... 6       
+inAddr<1>         XX.........X.......X.......XX........... 6       
+inAddr<0>         XX...X.............X.......X............ 5       
+inAddr<12>        X.......X..........XXXXX................ 7       
+N_PZ_257          .....................XXXXXX............. 6       
+                 0----+----1----+----2----+----3----+----4
+                           0         0         0         0
+*********************************** FB4  ***********************************
+This function block is part of I/O Bank number:               1
+Number of function block inputs used/remaining:               14/26
+Number of function block control terms used/remaining:        1/3
+Number of PLA product terms used/remaining:                   19/37
+Signal                        Total Loc     Pin  Pin     Pin   CTC CTR CTS CTE
+Name                          Pt            No.  Type    Use   
+flashOE                       2     FB4_1   28   DGE/I/O O                 
+(unused)                      0     FB4_2        (b)           
+(unused)                      0     FB4_3        (b)           
+flashWE                       2     FB4_4   29   I/O     O                 
+flashData<10>                 2     FB4_5   30   I/O     O                 
+flashData<11>                 2     FB4_6   32   I/O     O                 
+flashData<12>                 2     FB4_7   33   I/O     O                 
+inAddr_not0001                1     FB4_8        (b)     (b)               
+nextBufferReady               1     FB4_9        (b)     (b)               
+flashRead                     2     FB4_10       (b)     (b)               
+flashData<13>                 2     FB4_11  34   I/O     O                 
+flashData<14>                 2     FB4_12  35   I/O     O                 
+flashData<15>                 2     FB4_13  36   I/O     O                 
+flashData<8>                  2     FB4_14  37   I/O     O                 
+flashData<9>                  2     FB4_15  39   I/O     O                 
+flashData<7>                  2     FB4_16  40   I/O     O                  +  
+
+Signals Used by Logic in Function Block
+  1: N_PZ_260               6: flash/state_FSM_FFd4  11: flashRead_not00016 
+  2: flash/dataReady        7: flashData<7>          12: flashWE 
+  3: flash/state_FSM_FFd1   8: flashData<9>          13: init 
+  4: flash/state_FSM_FFd2   9: flashOE               14: pause 
+  5: flash/state_FSM_FFd3  10: flashRead            
+
+Signal                     1         2         3         4 FB      
+Name             0----+----0----+----0----+----0----+----0 Inputs  
+flashOE           ..XX....XX.............................. 4       
+flashWE           ....XX...X.X............................ 4       
+flashData<10>     X....X.................................. 2       
+flashData<11>     X....X.................................. 2       
+flashData<12>     X....X.................................. 2       
+inAddr_not0001    .X........X..X.......................... 3       
+nextBufferReady   .X........X.XX.......................... 4       
+flashRead         .X........X..X.......................... 3       
+flashData<13>     X....X.................................. 2       
+flashData<14>     X....X.................................. 2       
+flashData<15>     X....X.................................. 2       
+flashData<8>      X....X.................................. 2       
+flashData<9>      X....X.................................. 2       
+flashData<7>      X.....XX................................ 3       
+                 0----+----1----+----2----+----3----+----4
+                           0         0         0         0
+*********************************** FB5  ***********************************
+This function block is part of I/O Bank number:               2
+Number of function block inputs used/remaining:               2/38
+Number of function block control terms used/remaining:        1/3
+Number of PLA product terms used/remaining:                   8/48
+Signal                        Total Loc     Pin  Pin     Pin   CTC CTR CTS CTE
+Name                          Pt            No.  Type    Use   
+flashData<0>                  2     FB5_1   65   I/O     O                  +  
+flashData<1>                  2     FB5_2   66   I/O     O                  +  
+flashData<2>                  2     FB5_3   67   I/O     O                  +  
+(unused)                      0     FB5_4        (b)           
+flashData<3>                  2     FB5_5   68   I/O     O                  +  
+(unused)                      0     FB5_6        (b)           
+flashData<4>                  2     FB5_7   70   I/O     O                  +  
+(unused)                      0     FB5_8        (b)           
+(unused)                      0     FB5_9        (b)           
+(unused)                      0     FB5_10       (b)           
+flashData<5>                  2     FB5_11  71   I/O     O                  +  
+flashData<6>                  2     FB5_12  72   I/O     O                  +  
+Gout<0>                       0     FB5_13  73   I/O     O                 
+Gout<1>                       0     FB5_14  74   I/O     O                 
+Gout<2>                       0     FB5_15  76   I/O     O                 
+(unused)                      0     FB5_16       (b)           
+
+Signals Used by Logic in Function Block
+  1: flashData<7>       2: flashData<9>     
+
+Signal                     1         2         3         4 FB      
+Name             0----+----0----+----0----+----0----+----0 Inputs  
+flashData<0>      XX...................................... 2       
+flashData<1>      XX...................................... 2       
+flashData<2>      XX...................................... 2       
+flashData<3>      XX...................................... 2       
+flashData<4>      XX...................................... 2       
+flashData<5>      XX...................................... 2       
+flashData<6>      XX...................................... 2       
+Gout<0>           ........................................ 0       
+Gout<1>           ........................................ 0       
+Gout<2>           ........................................ 0       
+                 0----+----1----+----2----+----3----+----4
+                           0         0         0         0
+*********************************** FB6  ***********************************
+This function block is part of I/O Bank number:               1
+Number of function block inputs used/remaining:               0/40
+Number of function block control terms used/remaining:        0/4
+Number of PLA product terms used/remaining:                   0/56
+Signal                        Total Loc     Pin  Pin     Pin   CTC CTR CTS CTE
+Name                          Pt            No.  Type    Use   
+Rout<0>                       0     FB6_1   64   I/O     O                 
+Rout<1>                       0     FB6_2   63   I/O     O                 
+Rout<2>                       0     FB6_3   61   I/O     O                 
+flashAddr<0>                  0     FB6_4   60   I/O     O                 
+flashAddr<17>                 0     FB6_5   59   I/O     O                 
+flashAddr<18>                 0     FB6_6   58   I/O     O                 
+(unused)                      0     FB6_7        (b)           
+(unused)                      0     FB6_8        (b)           
+(unused)                      0     FB6_9        (b)           
+(unused)                      0     FB6_10       (b)           
+(unused)                      0     FB6_11       (b)           
+flashAddr<19>                 0     FB6_12  56   I/O     O                 
+(unused)                      0     FB6_13       (b)           
+flashAddr<20>                 0     FB6_14  55   I/O     O                 
+(unused)                      0     FB6_15       (b)           
+flashAddr<21>                 0     FB6_16  54   I/O     O                 
+
+Signals Used by Logic in Function Block
+
+Signal                     1         2         3         4 FB      
+Name             0----+----0----+----0----+----0----+----0 Inputs  
+Rout<0>           ........................................ 0       
+Rout<1>           ........................................ 0       
+Rout<2>           ........................................ 0       
+flashAddr<0>      ........................................ 0       
+flashAddr<17>     ........................................ 0       
+flashAddr<18>     ........................................ 0       
+flashAddr<19>     ........................................ 0       
+flashAddr<20>     ........................................ 0       
+flashAddr<21>     ........................................ 0       
+                 0----+----1----+----2----+----3----+----4
+                           0         0         0         0
+*********************************** FB7  ***********************************
+This function block is part of I/O Bank number:               2
+Number of function block inputs used/remaining:               0/40
+Number of function block control terms used/remaining:        0/4
+Number of PLA product terms used/remaining:                   0/56
+Signal                        Total Loc     Pin  Pin     Pin   CTC CTR CTS CTE
+Name                          Pt            No.  Type    Use   
+flashAddr<22>                 0     FB7_1   77   I/O     O                 
+flashCE0                      0     FB7_2   78   I/O     O                 
+(unused)                      0     FB7_3        (b)           
+(unused)                      0     FB7_4   79   I/O     I     
+(unused)                      0     FB7_5   80   I/O     I     
+(unused)                      0     FB7_6   81   I/O     I     
+(unused)                      0     FB7_7        (b)           
+(unused)                      0     FB7_8        (b)           
+(unused)                      0     FB7_9        (b)           
+(unused)                      0     FB7_10       (b)           
+(unused)                      0     FB7_11  82   I/O     I     
+(unused)                      0     FB7_12       (b)           
+(unused)                      0     FB7_13  85   I/O     I     
+(unused)                      0     FB7_14  86   I/O     I     
+(unused)                      0     FB7_15  87   I/O     I     
+(unused)                      0     FB7_16  89   I/O     I     
+
+Signals Used by Logic in Function Block
+
+Signal                     1         2         3         4 FB      
+Name             0----+----0----+----0----+----0----+----0 Inputs  
+flashAddr<22>     ........................................ 0       
+flashCE0          ........................................ 0       
+                 0----+----1----+----2----+----3----+----4
+                           0         0         0         0
+*********************************** FB8  ***********************************
+This function block is part of I/O Bank number:               1
+Number of function block inputs used/remaining:               0/40
+Number of function block control terms used/remaining:        0/4
+Number of PLA product terms used/remaining:                   0/56
+Signal                        Total Loc     Pin  Pin     Pin   CTC CTR CTS CTE
+Name                          Pt            No.  Type    Use   
+(unused)                      0     FB8_1        (b)           
+(unused)                      0     FB8_2   53   I/O     I     
+(unused)                      0     FB8_3   52   I/O     I     
+(unused)                      0     FB8_4   50   I/O     I     
+(unused)                      0     FB8_5        (b)           
+(unused)                      0     FB8_6   49   I/O           
+(unused)                      0     FB8_7        (b)           
+(unused)                      0     FB8_8        (b)           
+(unused)                      0     FB8_9        (b)           
+(unused)                      0     FB8_10       (b)           
+(unused)                      0     FB8_11       (b)           
+(unused)                      0     FB8_12  46   I/O           
+(unused)                      0     FB8_13  44   I/O           
+(unused)                      0     FB8_14  43   I/O           
+(unused)                      0     FB8_15  42   I/O           
+(unused)                      0     FB8_16  41   I/O           
+*******************************  Equations  ********************************
+
+********** Mapped Logic **********
+
+
+Bout(0) <= '0';
+
+
+Bout(1) <= '0';
+
+
+Bout(2) <= '0';
+
+
+Gout(0) <= '0';
+
+
+Gout(1) <= '0';
+
+
+Gout(2) <= '0';
+
+
+N_PZ_257 <= (xin(9) AND xin(8))
+	XOR ((xin(9) AND xin(7) AND NOT xin(8))
+	OR (xin(9) AND xin(7) AND xin(8) AND xin(4) AND xin(5) AND 
+	xin(6))
+	OR (xin(9) AND NOT xin(7) AND NOT xin(8) AND xin(4) AND xin(5) AND 
+	xin(6)));
+
+
+N_PZ_260 <= ((flashRead AND flash/state_FSM_FFd2)
+	OR (flashRead AND flash/state_FSM_FFd4));
+
+
+N_PZ_289 <= ((NOT init AND NOT yin(9) AND inAddr_not0001)
+	OR (NOT init AND yin(8) AND yin(7) AND yin(6) AND yin(5) AND 
+	inAddr_not0001 AND yin(4) AND N_PZ_294)
+	OR (NOT init AND NOT yin(8) AND NOT yin(7) AND NOT yin(6) AND NOT yin(5) AND 
+	inAddr_not0001 AND NOT yin(4) AND NOT yin(2))
+	OR (NOT init AND NOT yin(8) AND NOT yin(7) AND NOT yin(6) AND NOT yin(5) AND 
+	inAddr_not0001 AND NOT yin(4) AND NOT yin(3))
+	OR (NOT init AND NOT yin(8) AND NOT yin(7) AND NOT yin(6) AND NOT yin(5) AND 
+	inAddr_not0001 AND NOT yin(4) AND NOT yin(1) AND NOT yin(0) AND NOT N_PZ_257));
+
+
+N_PZ_294 <= (yin(1) AND yin(0) AND yin(2) AND yin(3) AND N_PZ_257);
+
+
+N_PZ_359 <= (flashRead AND NOT flash/state_FSM_FFd1);
+
+
+Rout(0) <= '0';
+
+
+Rout(1) <= '0';
+
+
+Rout(2) <= '0';
+
+FDCPE_dataReady: FDCPE port map (dataReady,dataReady_D,clk,'0','0','1');
+dataReady_D <= ((NOT pause AND NOT xin(3) AND NOT init)
+	OR (NOT pause AND NOT init AND yin(9))
+	OR (NOT pause AND NOT init AND NOT xin(2))
+	OR (NOT pause AND NOT init AND NOT xin(1))
+	OR (NOT pause AND NOT init AND NOT xin(0))
+	OR (NOT pause AND NOT init AND dataReady)
+	OR (NOT pause AND NOT init AND xin(9) AND xin(7))
+	OR (NOT pause AND NOT init AND xin(9) AND xin(8))
+	OR (NOT pause AND NOT init AND yin(8) AND yin(7) AND yin(6) AND 
+	yin(5)));
+
+FDCPE_flash/dataReady: FDCPE port map (flash/dataReady,flashRead,clk,'0','0',NOT N_PZ_359);
+
+FDCPE_flash/state_FSM_FFd1: FDCPE port map (flash/state_FSM_FFd1,flash/state_FSM_FFd1_D,clk,'0','0','1');
+flash/state_FSM_FFd1_D <= (flashRead AND flash/state_FSM_FFd2);
+
+FDCPE_flash/state_FSM_FFd2: FDCPE port map (flash/state_FSM_FFd2,flash/state_FSM_FFd2_D,clk,'0','0','1');
+flash/state_FSM_FFd2_D <= (flashRead AND flash/state_FSM_FFd3);
+
+FDCPE_flash/state_FSM_FFd3: FDCPE port map (flash/state_FSM_FFd3,flash/state_FSM_FFd3_D,clk,'0','0','1');
+flash/state_FSM_FFd3_D <= (flashRead AND flash/state_FSM_FFd4);
+
+FDCPE_flash/state_FSM_FFd4: FDCPE port map (flash/state_FSM_FFd4,flash/state_FSM_FFd4_D,clk,'0','0','1');
+flash/state_FSM_FFd4_D <= NOT ((flashRead AND NOT flash/state_FSM_FFd1));
+
+
+flashAddr(0) <= '0';
+
+FDCPE_flashAddr1: FDCPE port map (flashAddr(1),inAddr(0),clk,'0','0',flashAddr_CE(1));
+flashAddr_CE(1) <= (flashRead AND flash/state_FSM_FFd2);
+
+FDCPE_flashAddr2: FDCPE port map (flashAddr(2),inAddr(1),clk,'0','0',flashAddr_CE(2));
+flashAddr_CE(2) <= (flashRead AND flash/state_FSM_FFd2);
+
+FDCPE_flashAddr3: FDCPE port map (flashAddr(3),inAddr(2),clk,'0','0',flashAddr_CE(3));
+flashAddr_CE(3) <= (flashRead AND flash/state_FSM_FFd2);
+
+FDCPE_flashAddr4: FDCPE port map (flashAddr(4),inAddr(3),clk,'0','0',flashAddr_CE(4));
+flashAddr_CE(4) <= (flashRead AND flash/state_FSM_FFd2);
+
+FDCPE_flashAddr5: FDCPE port map (flashAddr(5),inAddr(4),clk,'0','0',flashAddr_CE(5));
+flashAddr_CE(5) <= (flashRead AND flash/state_FSM_FFd2);
+
+FDCPE_flashAddr6: FDCPE port map (flashAddr(6),inAddr(5),clk,'0','0',flashAddr_CE(6));
+flashAddr_CE(6) <= (flashRead AND flash/state_FSM_FFd2);
+
+FDCPE_flashAddr7: FDCPE port map (flashAddr(7),inAddr(6),clk,'0','0',flashAddr_CE(7));
+flashAddr_CE(7) <= (flashRead AND flash/state_FSM_FFd2);
+
+FDCPE_flashAddr8: FDCPE port map (flashAddr(8),inAddr(7),clk,'0','0',flashAddr_CE(8));
+flashAddr_CE(8) <= (flashRead AND flash/state_FSM_FFd2);
+
+FDCPE_flashAddr9: FDCPE port map (flashAddr(9),inAddr(8),clk,'0','0',flashAddr_CE(9));
+flashAddr_CE(9) <= (flashRead AND flash/state_FSM_FFd2);
+
+FDCPE_flashAddr10: FDCPE port map (flashAddr(10),inAddr(9),clk,'0','0',flashAddr_CE(10));
+flashAddr_CE(10) <= (flashRead AND flash/state_FSM_FFd2);
+
+FDCPE_flashAddr11: FDCPE port map (flashAddr(11),inAddr(10),clk,'0','0',flashAddr_CE(11));
+flashAddr_CE(11) <= (flashRead AND flash/state_FSM_FFd2);
+
+FDCPE_flashAddr12: FDCPE port map (flashAddr(12),inAddr(11),clk,'0','0',flashAddr_CE(12));
+flashAddr_CE(12) <= (flashRead AND flash/state_FSM_FFd2);
+
+FDCPE_flashAddr13: FDCPE port map (flashAddr(13),inAddr(12),clk,'0','0',flashAddr_CE(13));
+flashAddr_CE(13) <= (flashRead AND flash/state_FSM_FFd2);
+
+FDCPE_flashAddr14: FDCPE port map (flashAddr(14),inAddr(13),clk,'0','0',flashAddr_CE(14));
+flashAddr_CE(14) <= (flashRead AND flash/state_FSM_FFd2);
+
+FDCPE_flashAddr15: FDCPE port map (flashAddr(15),inAddr(14),clk,'0','0',flashAddr_CE(15));
+flashAddr_CE(15) <= (flashRead AND flash/state_FSM_FFd2);
+
+FDCPE_flashAddr16: FDCPE port map (flashAddr(16),inAddr(15),clk,'0','0',flashAddr_CE(16));
+flashAddr_CE(16) <= (flashRead AND flash/state_FSM_FFd2);
+
+
+flashAddr(17) <= '0';
+
+
+flashAddr(18) <= '0';
+
+
+flashAddr(19) <= '0';
+
+
+flashAddr(20) <= '0';
+
+
+flashAddr(21) <= '0';
+
+
+flashAddr(22) <= '0';
+
+
+flashCE0 <= '0';
+
+
+flashData_I(0) <= flashData(7);
+flashData(0) <= flashData_I(0) when flashData_OE(0) = '1' else 'Z';
+flashData_OE(0) <= NOT flashData(9);
+
+
+flashData_I(1) <= flashData(7);
+flashData(1) <= flashData_I(1) when flashData_OE(1) = '1' else 'Z';
+flashData_OE(1) <= NOT flashData(9);
+
+
+flashData_I(2) <= flashData(7);
+flashData(2) <= flashData_I(2) when flashData_OE(2) = '1' else 'Z';
+flashData_OE(2) <= NOT flashData(9);
+
+
+flashData_I(3) <= flashData(7);
+flashData(3) <= flashData_I(3) when flashData_OE(3) = '1' else 'Z';
+flashData_OE(3) <= NOT flashData(9);
+
+
+flashData_I(4) <= flashData(7);
+flashData(4) <= flashData_I(4) when flashData_OE(4) = '1' else 'Z';
+flashData_OE(4) <= NOT flashData(9);
+
+
+flashData_I(5) <= flashData(7);
+flashData(5) <= flashData_I(5) when flashData_OE(5) = '1' else 'Z';
+flashData_OE(5) <= NOT flashData(9);
+
+
+flashData_I(6) <= flashData(7);
+flashData(6) <= flashData_I(6) when flashData_OE(6) = '1' else 'Z';
+flashData_OE(6) <= NOT flashData(9);
+
+FDCPE_flashData7: FDCPE port map (flashData_I(7),flashData(7),clk,'0','0','1');
+flashData(7) <= NOT ((NOT flashData(7) AND NOT N_PZ_260));
+flashData(7) <= flashData_I(7) when flashData_OE(7) = '1' else 'Z';
+flashData_OE(7) <= NOT flashData(9);
+
+FDCPE_flashData8: FDCPE port map (flashData(8),NOT flash/state_FSM_FFd4,clk,'0','0',N_PZ_260); -- Open Drain
+
+FDCPE_flashData9: FDCPE port map (flashData(9),NOT flash/state_FSM_FFd4,clk,'0','0',N_PZ_260); -- Open Drain
+
+FDCPE_flashData10: FDCPE port map (flashData(10),NOT flash/state_FSM_FFd4,clk,'0','0',N_PZ_260); -- Open Drain
+
+FDCPE_flashData11: FDCPE port map (flashData(11),NOT flash/state_FSM_FFd4,clk,'0','0',N_PZ_260); -- Open Drain
+
+FDCPE_flashData12: FDCPE port map (flashData(12),NOT flash/state_FSM_FFd4,clk,'0','0',N_PZ_260); -- Open Drain
+
+FDCPE_flashData13: FDCPE port map (flashData(13),NOT flash/state_FSM_FFd4,clk,'0','0',N_PZ_260); -- Open Drain
+
+FDCPE_flashData14: FDCPE port map (flashData(14),NOT flash/state_FSM_FFd4,clk,'0','0',N_PZ_260); -- Open Drain
+
+FDCPE_flashData15: FDCPE port map (flashData(15),NOT flash/state_FSM_FFd4,clk,'0','0',N_PZ_260); -- Open Drain
+
+FTCPE_flashOE: FTCPE port map (flashOE,flashOE_T,clk,'0','0','1');
+flashOE_T <= ((flashRead AND flash/state_FSM_FFd1 AND NOT flashOE)
+	OR (flashRead AND NOT flash/state_FSM_FFd1 AND 
+	flash/state_FSM_FFd2 AND flashOE));
+
+FDCPE_flashRead: FDCPE port map (flashRead,NOT flash/dataReady,clk,'0','0',flashRead_CE);
+flashRead_CE <= (NOT pause AND NOT flashRead_not00016);
+
+
+flashRead_not00016 <= ((NOT init AND yin(9))
+	OR (NOT init AND nextBufferReady)
+	OR (NOT init AND xin(9) AND xin(7))
+	OR (NOT init AND xin(9) AND xin(8))
+	OR (NOT init AND yin(8) AND yin(7) AND yin(6) AND yin(5)));
+
+FTCPE_flashWE: FTCPE port map (flashWE,flashWE_T,clk,'0','0','1');
+flashWE_T <= ((flashRead AND flash/state_FSM_FFd3 AND NOT flashWE)
+	OR (flashRead AND NOT flash/state_FSM_FFd3 AND 
+	flash/state_FSM_FFd4 AND flashWE));
+
+FDCPE_inAddr0: FDCPE port map (inAddr(0),inAddr_D(0),clk,'0','0','1');
+inAddr_D(0) <= ((NOT inAddr_not0001 AND inAddr(0))
+	OR (yin(0) AND NOT N_PZ_257 AND N_PZ_289)
+	OR (NOT yin(0) AND N_PZ_257 AND N_PZ_289));
+
+FDCPE_inAddr1: FDCPE port map (inAddr(1),inAddr_D(1),clk,'0','0','1');
+inAddr_D(1) <= ((NOT inAddr_not0001 AND inAddr(1))
+	OR (yin(1) AND NOT yin(0) AND N_PZ_289)
+	OR (yin(1) AND NOT N_PZ_257 AND N_PZ_289)
+	OR (NOT yin(1) AND yin(0) AND N_PZ_257 AND N_PZ_289));
+
+FDCPE_inAddr2: FDCPE port map (inAddr(2),inAddr_D(2),clk,'0','0','1');
+inAddr_D(2) <= ((NOT inAddr_not0001 AND inAddr(2))
+	OR (NOT yin(1) AND yin(2) AND N_PZ_289)
+	OR (NOT yin(0) AND yin(2) AND N_PZ_289)
+	OR (yin(2) AND NOT N_PZ_257 AND N_PZ_289)
+	OR (yin(1) AND yin(0) AND NOT yin(2) AND N_PZ_257 AND N_PZ_289));
+
+FDCPE_inAddr3: FDCPE port map (inAddr(3),inAddr_D(3),clk,'0','0','1');
+inAddr_D(3) <= ((NOT inAddr_not0001 AND inAddr(3))
+	OR (NOT N_PZ_294 AND yin(3) AND N_PZ_289)
+	OR (NOT N_PZ_294 AND yin(1) AND yin(0) AND yin(2) AND N_PZ_257 AND 
+	N_PZ_289));
+
+FDCPE_inAddr4: FDCPE port map (inAddr(4),inAddr_D(4),clk,'0','0','1');
+inAddr_D(4) <= ((NOT inAddr_not0001 AND inAddr(4))
+	OR (NOT init AND NOT yin(9) AND inAddr_not0001 AND yin(4) AND 
+	NOT N_PZ_294)
+	OR (NOT init AND NOT yin(9) AND inAddr_not0001 AND NOT yin(4) AND 
+	N_PZ_294));
+
+FDCPE_inAddr5: FDCPE port map (inAddr(5),inAddr_D(5),clk,'0','0','1');
+inAddr_D(5) <= ((NOT inAddr_not0001 AND inAddr(5))
+	OR (NOT init AND yin(5) AND NOT yin(9) AND inAddr_not0001 AND 
+	NOT yin(4))
+	OR (NOT init AND yin(5) AND NOT yin(9) AND inAddr_not0001 AND 
+	NOT N_PZ_294)
+	OR (NOT init AND NOT yin(5) AND NOT yin(9) AND inAddr_not0001 AND 
+	yin(4) AND N_PZ_294));
+
+FDCPE_inAddr6: FDCPE port map (inAddr(6),inAddr_D(6),clk,'0','0','1');
+inAddr_D(6) <= ((NOT inAddr_not0001 AND inAddr(6))
+	OR (NOT init AND yin(6) AND NOT yin(5) AND NOT yin(9) AND 
+	inAddr_not0001)
+	OR (NOT init AND yin(6) AND NOT yin(9) AND inAddr_not0001 AND 
+	NOT yin(4))
+	OR (NOT init AND yin(6) AND NOT yin(9) AND inAddr_not0001 AND 
+	NOT N_PZ_294)
+	OR (NOT init AND NOT yin(6) AND yin(5) AND NOT yin(9) AND 
+	inAddr_not0001 AND yin(4) AND N_PZ_294));
+
+FDCPE_inAddr7: FDCPE port map (inAddr(7),inAddr_D(7),clk,'0','0','1');
+inAddr_D(7) <= ((NOT inAddr_not0001 AND inAddr(7))
+	OR (NOT init AND yin(7) AND NOT yin(6) AND NOT yin(9) AND 
+	inAddr_not0001)
+	OR (NOT init AND yin(7) AND NOT yin(5) AND NOT yin(9) AND 
+	inAddr_not0001)
+	OR (NOT init AND yin(7) AND NOT yin(9) AND inAddr_not0001 AND 
+	NOT yin(4))
+	OR (NOT init AND yin(7) AND NOT yin(9) AND inAddr_not0001 AND 
+	NOT N_PZ_294)
+	OR (NOT init AND NOT yin(7) AND yin(6) AND yin(5) AND NOT yin(9) AND 
+	inAddr_not0001 AND yin(4) AND N_PZ_294));
+
+FDCPE_inAddr8: FDCPE port map (inAddr(8),inAddr_D(8),clk,'0','0','1');
+inAddr_D(8) <= yin(8)
+	XOR ((init AND yin(8) AND inAddr_not0001)
+	OR (yin(8) AND yin(9) AND inAddr_not0001)
+	OR (yin(8) AND NOT inAddr_not0001 AND NOT inAddr(8))
+	OR (NOT yin(8) AND NOT inAddr_not0001 AND inAddr(8))
+	OR (NOT init AND yin(7) AND yin(6) AND yin(5) AND NOT yin(9) AND 
+	inAddr_not0001 AND yin(4) AND N_PZ_294));
+
+FDCPE_inAddr9: FDCPE port map (inAddr(9),inAddr_D(9),clk,'0','0','1');
+inAddr_D(9) <= ((inAddr(9) AND NOT inAddr_not0001)
+	OR (yin(9) AND NOT N_PZ_294 AND N_PZ_289)
+	OR (NOT init AND yin(8) AND yin(7) AND yin(6) AND yin(5) AND 
+	NOT yin(9) AND inAddr_not0001 AND yin(4) AND N_PZ_294));
+
+FDCPE_inAddr10: FDCPE port map (inAddr(10),inAddr_D(10),clk,'0','0','1');
+inAddr_D(10) <= ((NOT inAddr_not0001 AND inAddr(10))
+	OR (NOT init AND NOT xin(9) AND inAddr_not0001 AND NOT xin(4))
+	OR (NOT init AND NOT xin(7) AND NOT xin(8) AND inAddr_not0001 AND 
+	NOT xin(4)));
+
+FDCPE_inAddr11: FDCPE port map (inAddr(11),inAddr_D(11),clk,'0','0','1');
+inAddr_D(11) <= ((NOT inAddr_not0001 AND inAddr(11))
+	OR (NOT init AND NOT xin(9) AND inAddr_not0001 AND xin(4) AND 
+	NOT xin(5))
+	OR (NOT init AND NOT xin(9) AND inAddr_not0001 AND NOT xin(4) AND 
+	xin(5))
+	OR (NOT init AND NOT xin(7) AND NOT xin(8) AND inAddr_not0001 AND 
+	xin(4) AND NOT xin(5))
+	OR (NOT init AND NOT xin(7) AND NOT xin(8) AND inAddr_not0001 AND 
+	NOT xin(4) AND xin(5)));
+
+FDCPE_inAddr12: FDCPE port map (inAddr(12),inAddr_D(12),clk,'0','0','1');
+inAddr_D(12) <= ((NOT inAddr_not0001 AND inAddr(12))
+	OR (NOT init AND inAddr_not0001 AND NOT N_PZ_257 AND NOT xin(4) AND 
+	xin(6))
+	OR (NOT init AND inAddr_not0001 AND NOT N_PZ_257 AND NOT xin(5) AND 
+	xin(6))
+	OR (NOT init AND inAddr_not0001 AND NOT N_PZ_257 AND xin(4) AND 
+	xin(5) AND NOT xin(6)));
+
+FDCPE_inAddr13: FDCPE port map (inAddr(13),inAddr_D(13),clk,'0','0','1');
+inAddr_D(13) <= ((NOT inAddr_not0001 AND inAddr(13))
+	OR (NOT init AND NOT xin(9) AND xin(7) AND inAddr_not0001 AND 
+	NOT xin(4))
+	OR (NOT init AND NOT xin(9) AND xin(7) AND inAddr_not0001 AND 
+	NOT xin(5))
+	OR (NOT init AND NOT xin(9) AND xin(7) AND inAddr_not0001 AND 
+	NOT xin(6))
+	OR (NOT init AND NOT xin(9) AND NOT xin(7) AND inAddr_not0001 AND 
+	xin(4) AND xin(5) AND xin(6)));
+
+FDCPE_inAddr14: FDCPE port map (inAddr(14),inAddr_D(14),clk,'0','0','1');
+inAddr_D(14) <= ((NOT inAddr_not0001 AND inAddr(14))
+	OR (NOT init AND NOT xin(9) AND NOT xin(7) AND xin(8) AND 
+	inAddr_not0001)
+	OR (NOT init AND NOT xin(9) AND xin(7) AND xin(8) AND 
+	inAddr_not0001 AND NOT xin(4))
+	OR (NOT init AND NOT xin(9) AND xin(7) AND xin(8) AND 
+	inAddr_not0001 AND NOT xin(5))
+	OR (NOT init AND NOT xin(9) AND xin(7) AND xin(8) AND 
+	inAddr_not0001 AND NOT xin(6))
+	OR (NOT init AND NOT xin(9) AND xin(7) AND NOT xin(8) AND 
+	inAddr_not0001 AND xin(4) AND xin(5) AND xin(6)));
+
+FDCPE_inAddr15: FDCPE port map (inAddr(15),inAddr_D(15),clk,'0','0','1');
+inAddr_D(15) <= ((NOT inAddr_not0001 AND inAddr(15))
+	OR (NOT init AND xin(9) AND NOT xin(8) AND inAddr_not0001 AND 
+	NOT N_PZ_257)
+	OR (NOT init AND NOT xin(9) AND xin(7) AND xin(8) AND 
+	inAddr_not0001 AND xin(4) AND xin(5) AND xin(6)));
+
+
+inAddr_not0001 <= (NOT pause AND NOT flash/dataReady AND NOT flashRead_not00016);
+
+FTCPE_init: FTCPE port map (init,init_T,clk,'0','0','1');
+init_T <= (NOT pause AND init AND flash/dataReady);
+
+FTCPE_nextBufferReady: FTCPE port map (nextBufferReady,nextBufferReady_T,clk,'0','0','1');
+nextBufferReady_T <= (NOT pause AND NOT init AND flash/dataReady AND 
+	NOT flashRead_not00016);
+
+
+Register Legend:
+ FDCPE (Q,D,C,CLR,PRE,CE); 
+ FDDCPE (Q,D,C,CLR,PRE,CE); 
+ FTCPE (Q,D,C,CLR,PRE,CE); 
+ FTDCPE (Q,D,C,CLR,PRE,CE); 
+ LDCP  (Q,D,G,CLR,PRE); 
+
+******************************  Device Pin Out *****************************
+
+Device : XA2C128-7-VQ100
+
+
+   --------------------------------------------------  
+  /100 98  96  94  92  90  88  86  84  82  80  78  76  \
+ |   99  97  95  93  91  89  87  85  83  81  79  77    |
+ | 1                                               75  | 
+ | 2                                               74  | 
+ | 3                                               73  | 
+ | 4                                               72  | 
+ | 5                                               71  | 
+ | 6                                               70  | 
+ | 7                                               69  | 
+ | 8                                               68  | 
+ | 9                                               67  | 
+ | 10                                              66  | 
+ | 11                                              65  | 
+ | 12                                              64  | 
+ | 13                XA2C128-7-VQ100               63  | 
+ | 14                                              62  | 
+ | 15                                              61  | 
+ | 16                                              60  | 
+ | 17                                              59  | 
+ | 18                                              58  | 
+ | 19                                              57  | 
+ | 20                                              56  | 
+ | 21                                              55  | 
+ | 22                                              54  | 
+ | 23                                              53  | 
+ | 24                                              52  | 
+ | 25                                              51  | 
+ |   27  29  31  33  35  37  39  41  43  45  47  49    |
+  \26  28  30  32  34  36  38  40  42  44  46  48  50  /
+   --------------------------------------------------  
+
+
+Pin Signal                         Pin Signal                        
+No. Name                           No. Name                          
+  1 flashAddr<3>                     51 VCCIO-1.8                     
+  2 flashAddr<5>                     52 yin<8>                        
+  3 xin<8>                           53 yin<7>                        
+  4 xin<3>                           54 flashAddr<21>                 
+  5 VCCAUX                           55 flashAddr<20>                 
+  6 xin<2>                           56 flashAddr<19>                 
+  7 xin<1>                           57 VCC                           
+  8 xin<0>                           58 flashAddr<18>                 
+  9 pause                            59 flashAddr<17>                 
+ 10 Bout<2>                          60 flashAddr<0>                  
+ 11 Bout<1>                          61 Rout<2>                       
+ 12 Bout<0>                          62 GND                           
+ 13 dataReady                        63 Rout<1>                       
+ 14 flashAddr<10>                    64 Rout<0>                       
+ 15 flashAddr<11>                    65 flashData<0>                  
+ 16 flashAddr<12>                    66 flashData<1>                  
+ 17 flashAddr<13>                    67 flashData<2>                  
+ 18 flashAddr<14>                    68 flashData<3>                  
+ 19 flashAddr<15>                    69 GND                           
+ 20 VCCIO-1.8                        70 flashData<4>                  
+ 21 GND                              71 flashData<5>                  
+ 22 clk                              72 flashData<6>                  
+ 23 flashAddr<16>                    73 Gout<0>                       
+ 24 flashAddr<1>                     74 Gout<1>                       
+ 25 GND                              75 GND                           
+ 26 VCC                              76 Gout<2>                       
+ 27 flashAddr<2>                     77 flashAddr<22>                 
+ 28 flashOE                          78 flashCE0                      
+ 29 flashWE                          79 xin<9>                        
+ 30 flashData<10>                    80 yin<0>                        
+ 31 GND                              81 yin<1>                        
+ 32 flashData<11>                    82 yin<2>                        
+ 33 flashData<12>                    83 TDO                           
+ 34 flashData<13>                    84 GND                           
+ 35 flashData<14>                    85 yin<3>                        
+ 36 flashData<15>                    86 yin<4>                        
+ 37 flashData<8>                     87 yin<5>                        
+ 38 VCCIO-1.8                        88 VCCIO-1.8                     
+ 39 flashData<9>                     89 yin<6>                        
+ 40 flashData<7>                     90 xin<7>                        
+ 41 KPR                              91 xin<6>                        
+ 42 KPR                              92 xin<5>                        
+ 43 KPR                              93 xin<4>                        
+ 44 KPR                              94 flashAddr<9>                  
+ 45 TDI                              95 flashAddr<8>                  
+ 46 KPR                              96 flashAddr<7>                  
+ 47 TMS                              97 flashAddr<6>                  
+ 48 TCK                              98 VCCIO-1.8                     
+ 49 KPR                              99 flashAddr<4>                  
+ 50 yin<9>                          100 GND                           
+
+
+Legend :  NC  = Not Connected, unbonded pin
+        PGND  = Unused I/O configured as additional Ground pin
+         KPR  = Unused I/O with weak keeper (leave unconnected)
+         WPU  = Unused I/O with weak pull up (leave unconnected)
+         TIE  = Unused I/O floating -- must tie to VCC, GND or other signal
+         VCC  = Dedicated Power Pin
+      VCCAUX  = Power supply for JTAG pins
+   VCCIO-3.3  = I/O supply voltage for LVTTL, LVCMOS33, SSTL3_I
+   VCCIO-2.5  = I/O supply voltage for LVCMOS25, SSTL2_I
+   VCCIO-1.8  = I/O supply voltage for LVCMOS18
+   VCCIO-1.5  = I/O supply voltage for LVCMOS15, HSTL_I
+        VREF  = Reference voltage for indicated input standard
+       *VREF  = Reference voltage pin selected by software
+         GND  = Dedicated Ground Pin
+         TDI  = Test Data In, JTAG pin
+         TDO  = Test Data Out, JTAG pin
+         TCK  = Test Clock, JTAG pin
+         TMS  = Test Mode Select, JTAG pin
+  PROHIBITED  = User reserved pin
+****************************  Compiler Options  ****************************
+
+Following is a list of all global compiler options used by the fitter run.
+
+Device(s) Specified                         : xa2c*-*-*
+Optimization Method                         : DENSITY
+Multi-Level Logic Optimization              : ON
+Ignore Timing Specifications                : OFF
+Default Register Power Up Value             : LOW
+Keep User Location Constraints              : ON
+What-You-See-Is-What-You-Get                : OFF
+Exhaustive Fitting                          : OFF
+Keep Unused Inputs                          : OFF
+Slew Rate                                   : FAST
+Set Unused I/O Pin Termination              : KEEPER
+Global Clock Optimization                   : ON
+Global Set/Reset Optimization               : ON
+Global Ouput Enable Optimization            : ON
+Enable Input Registers                      : ON
+Function Block Fan-in Limit                 : 38
+Use DATA_GATE Attribute                     : ON
+Set Tristate Outputs to Termination Mode    : KEEPER
+Default Voltage Standard for All Outputs    : LVCMOS18
+Input Limit                                 : 32
+Pterm Limit                                 : 28
+</pre>
+<form><span class="pgRef"><table width="90%" align="center"><tr>
+<td align="left"><input type="button" onclick="javascript:parent.leftnav.showTop()" onmouseover="window.status='goto top of page'; return true;" onmouseout="window.status=''" value="back to top"></td>
+<td align="right"><input type="button" onclick="window.print()" onmouseover="window.status='print page'; return true;" onmouseout="window.status=''" value="print page"></td>
+</tr></table></span></form>
+</body></html>

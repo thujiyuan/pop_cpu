@@ -1,0 +1,488 @@
+Release 14.7 - xst P.20131013 (nt)
+Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
+--> Parameter TMPDIR set to xst/projnav.tmp
+
+
+Total REAL time to Xst completion: 4.00 secs
+Total CPU time to Xst completion: 4.17 secs
+ 
+--> Parameter xsthdpdir set to xst
+
+
+Total REAL time to Xst completion: 4.00 secs
+Total CPU time to Xst completion: 4.17 secs
+ 
+--> Reading design: VGAControler.prj
+
+TABLE OF CONTENTS
+  1) Synthesis Options Summary
+  2) HDL Compilation
+  3) Design Hierarchy Analysis
+  4) HDL Analysis
+  5) HDL Synthesis
+     5.1) HDL Synthesis Report
+  6) Advanced HDL Synthesis
+     6.1) Advanced HDL Synthesis Report
+  7) Low Level Synthesis
+  8) Partition Report
+  9) Final Report
+
+=========================================================================
+*                      Synthesis Options Summary                        *
+=========================================================================
+---- Source Parameters
+Input File Name                    : "VGAControler.prj"
+Input Format                       : mixed
+Ignore Synthesis Constraint File   : NO
+
+---- Target Parameters
+Output File Name                   : "VGAControler"
+Output Format                      : NGC
+Target Device                      : Automotive CoolRunner2
+
+---- Source Options
+Top Module Name                    : VGAControler
+Automatic FSM Extraction           : YES
+FSM Encoding Algorithm             : Auto
+Safe Implementation                : No
+Mux Extraction                     : Yes
+Resource Sharing                   : YES
+
+---- Target Options
+Add IO Buffers                     : YES
+MACRO Preserve                     : YES
+XOR Preserve                       : YES
+Equivalent register Removal        : YES
+
+---- General Options
+Optimization Goal                  : Speed
+Optimization Effort                : 1
+Keep Hierarchy                     : Yes
+Netlist Hierarchy                  : As_Optimized
+RTL Output                         : Yes
+Hierarchy Separator                : /
+Bus Delimiter                      : <>
+Case Specifier                     : Maintain
+Verilog 2001                       : YES
+
+---- Other Options
+Clock Enable                       : YES
+wysiwyg                            : NO
+
+=========================================================================
+
+
+=========================================================================
+*                          HDL Compilation                              *
+=========================================================================
+Compiling vhdl file "C:/pop_cpu1/recordDefs.vhd" in Library work.
+Architecture recorddefs of Entity recorddefs is up to date.
+Compiling vhdl file "C:/pop_cpu1/FlashAccess.vhd" in Library work.
+Architecture behavioral of Entity flashaccess is up to date.
+Compiling vhdl file "C:/pop_cpu1/VGAControler.vhd" in Library work.
+Entity <vgacontroler> compiled.
+Entity <vgacontroler> (Architecture <behavioral>) compiled.
+
+=========================================================================
+*                     Design Hierarchy Analysis                         *
+=========================================================================
+Analyzing hierarchy for entity <VGAControler> in library <work> (architecture <behavioral>).
+
+Analyzing hierarchy for entity <FlashAccess> in library <work> (architecture <behavioral>).
+
+
+=========================================================================
+*                            HDL Analysis                               *
+=========================================================================
+Analyzing Entity <VGAControler> in library <work> (Architecture <behavioral>).
+Entity <VGAControler> analyzed. Unit <VGAControler> generated.
+
+Analyzing Entity <FlashAccess> in library <work> (Architecture <behavioral>).
+INFO:Xst:2679 - Register <CE0> in unit <FlashAccess> has a constant value of 0 during circuit operation. The register is replaced by logic.
+Entity <FlashAccess> analyzed. Unit <FlashAccess> generated.
+
+
+=========================================================================
+*                           HDL Synthesis                               *
+=========================================================================
+
+Performing bidirectional port resolution...
+
+Synthesizing Unit <FlashAccess>.
+    Related source file is "C:/pop_cpu1/FlashAccess.vhd".
+WARNING:Xst:1305 - Output <outData> is never assigned. Tied to value 0000000000000000.
+    Found finite state machine <FSM_0> for signal <state>.
+    -----------------------------------------------------------------------
+    | States             | 4                                              |
+    | Transitions        | 4                                              |
+    | Inputs             | 0                                              |
+    | Outputs            | 6                                              |
+    | Clock              | clk                       (rising_edge)        |
+    | Reset              | flashRead                 (negative)           |
+    | Reset type         | synchronous                                    |
+    | Reset State        | 00000                                          |
+    | Power Up State     | 00000                                          |
+    | Encoding           | automatic                                      |
+    | Implementation     | automatic                                      |
+    -----------------------------------------------------------------------
+    Found 1-bit register for signal <OE>.
+    Found 1-bit register for signal <WE>.
+    Found 23-bit register for signal <addrBus>.
+    Found 1-bit register for signal <dataWrite>.
+    Found 1-bit register for signal <dataReady>.
+    Found 16-bit tristate buffer for signal <dataBus>.
+    Found 16-bit register for signal <Mtridata_dataBus> created at line 62.
+    Found 1-bit register for signal <Mtrien_dataBus> created at line 62.
+    Summary:
+	inferred   1 Finite State Machine(s).
+	inferred   4 D-type flip-flop(s).
+	inferred  16 Tristate(s).
+Unit <FlashAccess> synthesized.
+
+
+Synthesizing Unit <VGAControler>.
+    Related source file is "C:/pop_cpu1/VGAControler.vhd".
+WARNING:Xst:1780 - Signal <flashDataWriteCfm> is never used or assigned. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:646 - Signal <flashDataWrite> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:1780 - Signal <flashDataReadyCfm> is never used or assigned. This unconnected signal will be trimmed during the optimization process.
+    Register <Gout> equivalent to <Bout> has been removed
+    Register <Rout> equivalent to <Bout> has been removed
+    Found 3-bit register for signal <Bout>.
+    Found 1-bit register for signal <dataReady>.
+    Found 5-bit comparator less for signal <dataReady$cmp_lt0000> created at line 124.
+    Found 1-bit register for signal <flashRead>.
+    Found 22-bit register for signal <inAddr>.
+    Found 1-bit register for signal <init>.
+    Found 16-bit register for signal <nextBuffer>.
+    Found 1-bit register for signal <nextBufferReady>.
+    Found 16-bit register for signal <nowBuffer>.
+    Found 11-bit comparator greatequal for signal <nowBuffer$cmp_ge0000> created at line 98.
+    Found 11-bit comparator greatequal for signal <nowBuffer$cmp_ge0001> created at line 98.
+    Found 5-bit comparator greatequal for signal <nowBuffer$cmp_ge0002> created at line 124.
+    Found 1-bit 16-to-1 multiplexer for signal <nowBuffer$mux0000> created at line 144.
+    Found 6-bit adder for signal <yindex$add0000> created at line 106.
+    Found 10-bit adder for signal <yindex$addsub0000> created at line 109.
+    Found 6-bit comparator greatequal for signal <yindex$cmp_ge0000> created at line 107.
+    Found 11-bit comparator greatequal for signal <yindex$cmp_ge0001> created at line 111.
+    Summary:
+	inferred   3 D-type flip-flop(s).
+	inferred   2 Adder/Subtractor(s).
+	inferred   6 Comparator(s).
+Unit <VGAControler> synthesized.
+
+
+=========================================================================
+HDL Synthesis Report
+
+Macro Statistics
+# Adders/Subtractors                                   : 2
+ 10-bit adder                                          : 1
+ 6-bit adder                                           : 1
+# Registers                                            : 15
+ 1-bit register                                        : 9
+ 16-bit register                                       : 3
+ 22-bit register                                       : 1
+ 23-bit register                                       : 1
+ 3-bit register                                        : 1
+# Comparators                                          : 6
+ 11-bit comparator greatequal                          : 3
+ 5-bit comparator greatequal                           : 1
+ 5-bit comparator less                                 : 1
+ 6-bit comparator greatequal                           : 1
+# Multiplexers                                         : 1
+ 1-bit 16-to-1 multiplexer                             : 1
+# Tristates                                            : 1
+ 16-bit tristate buffer                                : 1
+
+=========================================================================
+
+=========================================================================
+*                       Advanced HDL Synthesis                          *
+=========================================================================
+
+Analyzing FSM <FSM_0> for best encoding.
+Optimizing FSM <flash/state/FSM> on signal <state[1:4]> with one-hot encoding.
+-------------------
+ State | Encoding
+-------------------
+ 00000 | 0001
+ 10000 | 0010
+ 10001 | 0100
+ 10010 | 1000
+-------------------
+WARNING:Xst:1426 - The value init of the FF/Latch 0 hinder the constant cleaning in the block init.
+   You should achieve better results by setting this init to 0.
+WARNING:Xst:1426 - The value init of the FF/Latch 0 hinder the constant cleaning in the block 7.
+   You should achieve better results by setting this init to 1.
+WARNING:Xst:1426 - The value init of the FF/Latch 0 hinder the constant cleaning in the block 6.
+   You should achieve better results by setting this init to 1.
+WARNING:Xst:1426 - The value init of the FF/Latch 0 hinder the constant cleaning in the block 5.
+   You should achieve better results by setting this init to 1.
+WARNING:Xst:1426 - The value init of the FF/Latch 0 hinder the constant cleaning in the block 4.
+   You should achieve better results by setting this init to 1.
+WARNING:Xst:1426 - The value init of the FF/Latch 0 hinder the constant cleaning in the block 3.
+   You should achieve better results by setting this init to 1.
+WARNING:Xst:1426 - The value init of the FF/Latch 0 hinder the constant cleaning in the block 2.
+   You should achieve better results by setting this init to 1.
+WARNING:Xst:1426 - The value init of the FF/Latch 0 hinder the constant cleaning in the block 1.
+   You should achieve better results by setting this init to 1.
+WARNING:Xst:1426 - The value init of the FF/Latch 0 hinder the constant cleaning in the block 0.
+   You should achieve better results by setting this init to 1.
+WARNING:Xst:1710 - FF/Latch <0> (without init value) has a constant value of 0 in block <13>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <0> (without init value) has a constant value of 0 in block <14>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <0> (without init value) has a constant value of 0 in block <15>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <0> has a constant value of 0 in block <16>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <0> has a constant value of 0 in block <17>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <0> has a constant value of 0 in block <18>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <0> has a constant value of 0 in block <19>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <0> has a constant value of 0 in block <20>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <0> has a constant value of 0 in block <21>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <0> (without init value) has a constant value of 0 in block <0>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <0> (without init value) has a constant value of 0 in block <1>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <0> (without init value) has a constant value of 0 in block <2>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <0> (without init value) has a constant value of 0 in block <3>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <0> (without init value) has a constant value of 0 in block <4>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <0> (without init value) has a constant value of 0 in block <5>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <0> (without init value) has a constant value of 0 in block <6>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <0> (without init value) has a constant value of 0 in block <7>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <0> (without init value) has a constant value of 0 in block <8>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <0> (without init value) has a constant value of 0 in block <9>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <0> (without init value) has a constant value of 0 in block <10>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <0> (without init value) has a constant value of 0 in block <11>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <0> (without init value) has a constant value of 0 in block <12>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <0> (without init value) has a constant value of 0 in block <13>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <0> (without init value) has a constant value of 0 in block <14>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <0> (without init value) has a constant value of 0 in block <15>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <0> (without init value) has a constant value of 0 in block <0>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <0> (without init value) has a constant value of 0 in block <1>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <0> (without init value) has a constant value of 0 in block <2>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <0> (without init value) has a constant value of 0 in block <8>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <0> (without init value) has a constant value of 0 in block <9>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <0> (without init value) has a constant value of 0 in block <10>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <0> (without init value) has a constant value of 0 in block <11>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <0> (without init value) has a constant value of 0 in block <12>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <0> (without init value) has a constant value of 0 in block <13>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <0> (without init value) has a constant value of 0 in block <14>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <0> (without init value) has a constant value of 0 in block <15>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <0> (without init value) has a constant value of 0 in block <0>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <0> (without init value) has a constant value of 0 in block <17>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <0> (without init value) has a constant value of 0 in block <18>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <0> (without init value) has a constant value of 0 in block <19>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <0> (without init value) has a constant value of 0 in block <20>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <0> (without init value) has a constant value of 0 in block <21>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <0> (without init value) has a constant value of 0 in block <22>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <0> (without init value) has a constant value of 0 in block <0>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <0> (without init value) has a constant value of 0 in block <1>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <0> (without init value) has a constant value of 0 in block <2>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <0> (without init value) has a constant value of 0 in block <3>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <0> (without init value) has a constant value of 0 in block <4>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <0> (without init value) has a constant value of 0 in block <5>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <0> (without init value) has a constant value of 0 in block <6>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <0> (without init value) has a constant value of 0 in block <7>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <0> (without init value) has a constant value of 0 in block <8>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <0> (without init value) has a constant value of 0 in block <9>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <0> (without init value) has a constant value of 0 in block <10>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <0> (without init value) has a constant value of 0 in block <11>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <0> (without init value) has a constant value of 0 in block <12>. This FF/Latch will be trimmed during the optimization process.
+
+=========================================================================
+Advanced HDL Synthesis Report
+
+Macro Statistics
+# FSMs                                                 : 1
+# Adders/Subtractors                                   : 2
+ 10-bit adder                                          : 1
+ 6-bit adder                                           : 1
+# Registers                                            : 7
+ Flip-Flops                                            : 7
+# Multiplexers                                         : 1
+ 1-bit 16-to-1 multiplexer                             : 1
+
+=========================================================================
+
+=========================================================================
+*                         Low Level Synthesis                           *
+=========================================================================
+WARNING:Xst:1426 - The value init of the FF/Latch Mtridata_dataBus_7 hinder the constant cleaning in the block FlashAccess.
+   You should achieve better results by setting this init to 1.
+WARNING:Xst:1426 - The value init of the FF/Latch Mtridata_dataBus_6 hinder the constant cleaning in the block FlashAccess.
+   You should achieve better results by setting this init to 1.
+WARNING:Xst:1426 - The value init of the FF/Latch Mtridata_dataBus_5 hinder the constant cleaning in the block FlashAccess.
+   You should achieve better results by setting this init to 1.
+WARNING:Xst:1426 - The value init of the FF/Latch Mtridata_dataBus_4 hinder the constant cleaning in the block FlashAccess.
+   You should achieve better results by setting this init to 1.
+WARNING:Xst:1426 - The value init of the FF/Latch Mtridata_dataBus_3 hinder the constant cleaning in the block FlashAccess.
+   You should achieve better results by setting this init to 1.
+WARNING:Xst:1426 - The value init of the FF/Latch Mtridata_dataBus_2 hinder the constant cleaning in the block FlashAccess.
+   You should achieve better results by setting this init to 1.
+WARNING:Xst:1426 - The value init of the FF/Latch Mtridata_dataBus_1 hinder the constant cleaning in the block FlashAccess.
+   You should achieve better results by setting this init to 1.
+WARNING:Xst:1426 - The value init of the FF/Latch Mtridata_dataBus_0 hinder the constant cleaning in the block FlashAccess.
+   You should achieve better results by setting this init to 1.
+WARNING:Xst:1710 - FF/Latch <Mtridata_dataBus_15> (without init value) has a constant value of 0 in block <FlashAccess>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <Mtridata_dataBus_14> (without init value) has a constant value of 0 in block <FlashAccess>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <Mtridata_dataBus_13> (without init value) has a constant value of 0 in block <FlashAccess>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <Mtridata_dataBus_12> (without init value) has a constant value of 0 in block <FlashAccess>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <Mtridata_dataBus_11> (without init value) has a constant value of 0 in block <FlashAccess>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <Mtridata_dataBus_10> (without init value) has a constant value of 0 in block <FlashAccess>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <Mtridata_dataBus_9> (without init value) has a constant value of 0 in block <FlashAccess>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <Mtridata_dataBus_8> (without init value) has a constant value of 0 in block <FlashAccess>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <addrBus_0> (without init value) has a constant value of 0 in block <FlashAccess>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <dataWrite> (without init value) has a constant value of 0 in block <FlashAccess>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:638 - in unit FlashAccess Conflict on KEEP property on signal Mtridata_dataBus<15> and Mtridata_dataBus<14> Mtridata_dataBus<14> signal will be lost.
+WARNING:Xst:638 - in unit FlashAccess Conflict on KEEP property on signal Mtridata_dataBus<14> and Mtridata_dataBus<13> Mtridata_dataBus<13> signal will be lost.
+WARNING:Xst:638 - in unit FlashAccess Conflict on KEEP property on signal Mtridata_dataBus<13> and Mtridata_dataBus<12> Mtridata_dataBus<12> signal will be lost.
+WARNING:Xst:638 - in unit FlashAccess Conflict on KEEP property on signal Mtridata_dataBus<12> and Mtridata_dataBus<11> Mtridata_dataBus<11> signal will be lost.
+WARNING:Xst:638 - in unit FlashAccess Conflict on KEEP property on signal Mtridata_dataBus<11> and Mtridata_dataBus<10> Mtridata_dataBus<10> signal will be lost.
+WARNING:Xst:638 - in unit FlashAccess Conflict on KEEP property on signal Mtridata_dataBus<10> and Mtridata_dataBus<9> Mtridata_dataBus<9> signal will be lost.
+WARNING:Xst:638 - in unit FlashAccess Conflict on KEEP property on signal Mtridata_dataBus<10> and Mtridata_dataBus<8> Mtridata_dataBus<8> signal will be lost.
+WARNING:Xst:1426 - The value init of the FF/Latch init hinder the constant cleaning in the block VGAControler.
+   You should achieve better results by setting this init to 0.
+WARNING:Xst:1293 - FF/Latch <inAddr_16> has a constant value of 0 in block <VGAControler>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <inAddr_17> has a constant value of 0 in block <VGAControler>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <inAddr_18> has a constant value of 0 in block <VGAControler>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <inAddr_19> has a constant value of 0 in block <VGAControler>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <inAddr_20> has a constant value of 0 in block <VGAControler>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <inAddr_21> has a constant value of 0 in block <VGAControler>. This FF/Latch will be trimmed during the optimization process.
+INFO:Xst:2261 - The FF/Latch <Bout_2> in Unit <VGAControler> is equivalent to the following 2 FFs/Latches, which will be removed : <Bout_1> <Bout_0> 
+INFO:Xst:2261 - The FF/Latch <Mtridata_dataBus_7> in Unit <FlashAccess> is equivalent to the following 7 FFs/Latches, which will be removed : <Mtridata_dataBus_6> <Mtridata_dataBus_5> <Mtridata_dataBus_4> <Mtridata_dataBus_3> <Mtridata_dataBus_2> <Mtridata_dataBus_1> <Mtridata_dataBus_0> 
+WARNING:Xst:638 - in unit FlashAccess Conflict on KEEP property on signal Mtridata_dataBus<7> and Mtridata_dataBus<6> Mtridata_dataBus<6> signal will be lost.
+WARNING:Xst:638 - in unit FlashAccess Conflict on KEEP property on signal Mtridata_dataBus<6> and Mtridata_dataBus<5> Mtridata_dataBus<5> signal will be lost.
+WARNING:Xst:638 - in unit FlashAccess Conflict on KEEP property on signal Mtridata_dataBus<5> and Mtridata_dataBus<4> Mtridata_dataBus<4> signal will be lost.
+WARNING:Xst:638 - in unit FlashAccess Conflict on KEEP property on signal Mtridata_dataBus<4> and Mtridata_dataBus<3> Mtridata_dataBus<3> signal will be lost.
+WARNING:Xst:638 - in unit FlashAccess Conflict on KEEP property on signal Mtridata_dataBus<3> and Mtridata_dataBus<2> Mtridata_dataBus<2> signal will be lost.
+WARNING:Xst:638 - in unit FlashAccess Conflict on KEEP property on signal Mtridata_dataBus<2> and Mtridata_dataBus<1> Mtridata_dataBus<1> signal will be lost.
+WARNING:Xst:638 - in unit FlashAccess Conflict on KEEP property on signal Mtridata_dataBus<1> and Mtridata_dataBus<0> Mtridata_dataBus<0> signal will be lost.
+WARNING:Xst:1348 - Unit FlashAccess is merged (output interface has tristates)
+WARNING:Xst:1710 - FF/Latch <nextBuffer_11> (without init value) has a constant value of 0 in block <VGAControler>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <nextBuffer_10> (without init value) has a constant value of 0 in block <VGAControler>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <nextBuffer_9> (without init value) has a constant value of 0 in block <VGAControler>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <nextBuffer_8> (without init value) has a constant value of 0 in block <VGAControler>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <nextBuffer_7> (without init value) has a constant value of 0 in block <VGAControler>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <nextBuffer_6> (without init value) has a constant value of 0 in block <VGAControler>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <nextBuffer_5> (without init value) has a constant value of 0 in block <VGAControler>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <nextBuffer_4> (without init value) has a constant value of 0 in block <VGAControler>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <nextBuffer_3> (without init value) has a constant value of 0 in block <VGAControler>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <nextBuffer_2> (without init value) has a constant value of 0 in block <VGAControler>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <nextBuffer_1> (without init value) has a constant value of 0 in block <VGAControler>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <nextBuffer_0> (without init value) has a constant value of 0 in block <VGAControler>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <Bout_2> (without init value) has a constant value of 0 in block <VGAControler>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <flash/addrBus_17> (without init value) has a constant value of 0 in block <VGAControler>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <flash/addrBus_18> (without init value) has a constant value of 0 in block <VGAControler>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <flash/addrBus_19> (without init value) has a constant value of 0 in block <VGAControler>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <flash/addrBus_20> (without init value) has a constant value of 0 in block <VGAControler>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <flash/addrBus_21> (without init value) has a constant value of 0 in block <VGAControler>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <flash/addrBus_22> (without init value) has a constant value of 0 in block <VGAControler>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <nowBuffer_15> (without init value) has a constant value of 0 in block <VGAControler>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <nowBuffer_14> (without init value) has a constant value of 0 in block <VGAControler>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <nowBuffer_13> (without init value) has a constant value of 0 in block <VGAControler>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <nowBuffer_12> (without init value) has a constant value of 0 in block <VGAControler>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <nowBuffer_11> (without init value) has a constant value of 0 in block <VGAControler>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <nowBuffer_10> (without init value) has a constant value of 0 in block <VGAControler>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <nowBuffer_9> (without init value) has a constant value of 0 in block <VGAControler>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <nowBuffer_8> (without init value) has a constant value of 0 in block <VGAControler>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <nowBuffer_7> (without init value) has a constant value of 0 in block <VGAControler>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <nowBuffer_6> (without init value) has a constant value of 0 in block <VGAControler>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <nowBuffer_5> (without init value) has a constant value of 0 in block <VGAControler>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <nowBuffer_4> (without init value) has a constant value of 0 in block <VGAControler>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <nowBuffer_3> (without init value) has a constant value of 0 in block <VGAControler>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <nowBuffer_2> (without init value) has a constant value of 0 in block <VGAControler>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <nowBuffer_1> (without init value) has a constant value of 0 in block <VGAControler>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <nowBuffer_0> (without init value) has a constant value of 0 in block <VGAControler>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <nextBuffer_15> (without init value) has a constant value of 0 in block <VGAControler>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <nextBuffer_14> (without init value) has a constant value of 0 in block <VGAControler>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <nextBuffer_13> (without init value) has a constant value of 0 in block <VGAControler>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <nextBuffer_12> (without init value) has a constant value of 0 in block <VGAControler>. This FF/Latch will be trimmed during the optimization process.
+
+Optimizing unit <VGAControler> ...
+  implementation constraint: IOB=auto	 : flashAddr<22>
+  implementation constraint: IOB=auto	 : flash/Mtridata_dataBus<0>
+  implementation constraint: IOB=auto	 : flash/Mtrien_dataBus
+  implementation constraint: INIT=s	 : init
+  implementation constraint: INIT=r	 : nextBufferReady
+  implementation constraint: INIT=r	 : flashRead
+  implementation constraint: INIT=r	 : flash/state_FSM_FFd1
+  implementation constraint: INIT=s	 : flash/state_FSM_FFd4
+  implementation constraint: INIT=r	 : flash/state_FSM_FFd3
+  implementation constraint: INIT=r	 : flash/state_FSM_FFd2
+  implementation constraint: INIT=r	 : inAddr_0
+  implementation constraint: INIT=r	 : inAddr_1
+  implementation constraint: INIT=r	 : inAddr_2
+  implementation constraint: INIT=r	 : inAddr_3
+  implementation constraint: INIT=r	 : inAddr_4
+  implementation constraint: INIT=r	 : inAddr_5
+  implementation constraint: INIT=r	 : inAddr_6
+  implementation constraint: INIT=r	 : inAddr_7
+  implementation constraint: INIT=r	 : inAddr_8
+  implementation constraint: INIT=r	 : inAddr_9
+  implementation constraint: INIT=r	 : inAddr_10
+  implementation constraint: INIT=r	 : inAddr_11
+  implementation constraint: INIT=r	 : inAddr_12
+  implementation constraint: INIT=r	 : inAddr_13
+  implementation constraint: INIT=r	 : inAddr_14
+  implementation constraint: INIT=r	 : inAddr_15
+WARNING:Xst:1426 - The value init of the FF/Latch nextBufferReady hinder the constant cleaning in the block VGAControler.
+   You should achieve better results by setting this init to 1.
+
+=========================================================================
+*                           Partition Report                            *
+=========================================================================
+
+Partition Implementation Status
+-------------------------------
+
+  No Partitions were found in this design.
+
+-------------------------------
+
+=========================================================================
+*                            Final Report                               *
+=========================================================================
+Final Results
+RTL Top Level Output File Name     : VGAControler.ngr
+Top Level Output File Name         : VGAControler
+Output Format                      : NGC
+Optimization Goal                  : Speed
+Keep Hierarchy                     : Yes
+Target Technology                  : Automotive CoolRunner2
+Macro Preserve                     : YES
+XOR Preserve                       : YES
+Clock Enable                       : YES
+wysiwyg                            : NO
+
+Design Statistics
+# IOs                              : 74
+
+Cell Usage :
+# BELS                             : 195
+#      AND2                        : 58
+#      AND3                        : 14
+#      AND4                        : 3
+#      AND6                        : 1
+#      GND                         : 1
+#      INV                         : 78
+#      OR2                         : 22
+#      OR3                         : 2
+#      VCC                         : 1
+#      XOR2                        : 15
+# FlipFlops/Latches                : 45
+#      FD                          : 4
+#      FDCE                        : 41
+# IO Buffers                       : 74
+#      IBUF                        : 22
+#      OBUF                        : 36
+#      OBUFE                       : 16
+=========================================================================
+
+
+Total REAL time to Xst completion: 8.00 secs
+Total CPU time to Xst completion: 8.20 secs
+ 
+--> 
+
+Total memory usage is 203012 kilobytes
+
+Number of errors   :    0 (   0 filtered)
+Number of warnings :  149 (   0 filtered)
+Number of infos    :    3 (   0 filtered)
+

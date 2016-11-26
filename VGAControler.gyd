@@ -1,0 +1,117 @@
+Pin Freeze File:  version P.20131013
+
+A2C128100 XA2C128-7-VQ100
+clk S:PIN22
+pause S:PIN9
+xin<0> S:PIN8
+xin<1> S:PIN7
+xin<2> S:PIN6
+xin<3> S:PIN4
+xin<4> S:PIN93
+xin<5> S:PIN92
+xin<6> S:PIN91
+xin<7> S:PIN90
+xin<8> S:PIN3
+xin<9> S:PIN79
+yin<0> S:PIN80
+yin<1> S:PIN81
+yin<2> S:PIN82
+yin<3> S:PIN85
+yin<4> S:PIN86
+yin<5> S:PIN87
+yin<6> S:PIN89
+yin<7> S:PIN53
+yin<8> S:PIN52
+yin<9> S:PIN50
+Bout<0> S:PIN12
+Bout<1> S:PIN11
+Bout<2> S:PIN10
+Gout<0> S:PIN73
+Gout<1> S:PIN74
+Gout<2> S:PIN76
+Rout<0> S:PIN64
+Rout<1> S:PIN63
+Rout<2> S:PIN61
+dataReady S:PIN13
+flashAddr<0> S:PIN60
+flashAddr<1> S:PIN24
+flashAddr<2> S:PIN27
+flashAddr<3> S:PIN1
+flashAddr<4> S:PIN99
+flashAddr<5> S:PIN2
+flashAddr<6> S:PIN97
+flashAddr<7> S:PIN96
+flashAddr<8> S:PIN95
+flashAddr<9> S:PIN94
+flashAddr<10> S:PIN14
+flashAddr<11> S:PIN15
+flashAddr<12> S:PIN16
+flashAddr<13> S:PIN17
+flashAddr<14> S:PIN18
+flashAddr<15> S:PIN19
+flashAddr<16> S:PIN23
+flashAddr<17> S:PIN59
+flashAddr<18> S:PIN58
+flashAddr<19> S:PIN56
+flashAddr<20> S:PIN55
+flashAddr<21> S:PIN54
+flashAddr<22> S:PIN77
+flashCE0 S:PIN78
+flashData<0> S:PIN65
+flashData<1> S:PIN66
+flashData<2> S:PIN67
+flashData<3> S:PIN68
+flashData<4> S:PIN70
+flashData<5> S:PIN71
+flashData<6> S:PIN72
+flashData<7> S:PIN40
+flashData<8> S:PIN37
+flashData<9> S:PIN39
+flashData<10> S:PIN30
+flashData<11> S:PIN32
+flashData<12> S:PIN33
+flashData<13> S:PIN34
+flashData<14> S:PIN35
+flashData<15> S:PIN36
+flashOE S:PIN28
+flashWE S:PIN29
+
+
+;The remaining section of the .gyd file is for documentation purposes only.
+;It shows where your internal equations were placed in the last successful fit.
+
+PARTITION FB1_1 dataReady inAddr<3> Bout<0> Bout<1>
+		 Bout<2> init N_PZ_289 inAddr<7>
+		 inAddr<9> inAddr<8> N_PZ_294 inAddr<15>
+		 inAddr<2> flashRead_not00016 inAddr<5> inAddr<6>
+		
+PARTITION FB2_1 N_PZ_359 flashAddr<10> flashAddr<11> flashAddr<12>
+		 flashAddr<13> flashAddr<14> flash/state_FSM_FFd4 flash/state_FSM_FFd2
+		 flash/state_FSM_FFd3 N_PZ_260 flashAddr<15> flash/state_FSM_FFd1
+		 flash/dataReady flashAddr<16> flashAddr<1> flashAddr<2>
+		
+PARTITION FB3_1 inAddr<13> flashAddr<5> flashAddr<3> flashAddr<4>
+		 flashAddr<6> flashAddr<7> flashAddr<8> inAddr<14>
+		 inAddr<11> inAddr<10> flashAddr<9> inAddr<4>
+		 inAddr<1> inAddr<0> inAddr<12> N_PZ_257
+		
+PARTITION FB4_1 flashOE
+PARTITION FB4_4 flashWE flashData<10> flashData<11> flashData<12>
+		 inAddr_not0001 nextBufferReady flashRead flashData<13>
+		 flashData<14> flashData<15> flashData<8> flashData<9>
+		 flashData<7>
+PARTITION FB5_1 flashData<0> flashData<1> flashData<2>
+PARTITION FB5_5 flashData<3>
+PARTITION FB5_7 flashData<4>
+PARTITION FB5_11 flashData<5> flashData<6> Gout<0> Gout<1>
+		 Gout<2>
+
+PARTITION FB6_1 Rout<0> Rout<1> Rout<2> flashAddr<0>
+		 flashAddr<17> flashAddr<18>
+PARTITION FB6_12 flashAddr<19>
+PARTITION FB6_14 flashAddr<20>
+PARTITION FB6_16 flashAddr<21>
+PARTITION FB7_1 flashAddr<22> flashCE0
+
+
+
