@@ -4,13 +4,13 @@ Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
 
 
 Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.11 secs
+Total CPU time to Xst completion: 0.10 secs
  
 --> Parameter xsthdpdir set to xst
 
 
 Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.11 secs
+Total CPU time to Xst completion: 0.10 secs
  
 --> Reading design: pop_cpu.prj
 
@@ -129,17 +129,17 @@ Architecture behavioral of Entity addressadder is up to date.
 Compiling vhdl file "F:/thujiyuan/pop_cpu/ID_EXERegs.vhd" in Library work.
 Architecture behavioral of Entity id_exeregs is up to date.
 Compiling vhdl file "F:/thujiyuan/pop_cpu/ALUSrc0MUX.vhd" in Library work.
-WARNING:HDLParsers:817 - "F:/thujiyuan/pop_cpu/ALUSrc0MUX.vhd" Line 48. Choice . is not a locally static expression.
-WARNING:HDLParsers:817 - "F:/thujiyuan/pop_cpu/ALUSrc0MUX.vhd" Line 50. Choice . is not a locally static expression.
-WARNING:HDLParsers:817 - "F:/thujiyuan/pop_cpu/ALUSrc0MUX.vhd" Line 52. Choice . is not a locally static expression.
-WARNING:HDLParsers:817 - "F:/thujiyuan/pop_cpu/ALUSrc0MUX.vhd" Line 54. Choice . is not a locally static expression.
+WARNING:HDLParsers:817 - "F:/thujiyuan/pop_cpu/ALUSrc0MUX.vhd" Line 49. Choice . is not a locally static expression.
+WARNING:HDLParsers:817 - "F:/thujiyuan/pop_cpu/ALUSrc0MUX.vhd" Line 51. Choice . is not a locally static expression.
+WARNING:HDLParsers:817 - "F:/thujiyuan/pop_cpu/ALUSrc0MUX.vhd" Line 53. Choice . is not a locally static expression.
+WARNING:HDLParsers:817 - "F:/thujiyuan/pop_cpu/ALUSrc0MUX.vhd" Line 55. Choice . is not a locally static expression.
 Architecture behavioral of Entity alusrc0mux is up to date.
 Compiling vhdl file "F:/thujiyuan/pop_cpu/ALUSrc1MUX.vhd" in Library work.
-WARNING:HDLParsers:817 - "F:/thujiyuan/pop_cpu/ALUSrc1MUX.vhd" Line 50. Choice . is not a locally static expression.
-WARNING:HDLParsers:817 - "F:/thujiyuan/pop_cpu/ALUSrc1MUX.vhd" Line 52. Choice . is not a locally static expression.
-WARNING:HDLParsers:817 - "F:/thujiyuan/pop_cpu/ALUSrc1MUX.vhd" Line 54. Choice . is not a locally static expression.
-WARNING:HDLParsers:817 - "F:/thujiyuan/pop_cpu/ALUSrc1MUX.vhd" Line 56. Choice . is not a locally static expression.
-WARNING:HDLParsers:817 - "F:/thujiyuan/pop_cpu/ALUSrc1MUX.vhd" Line 58. Choice . is not a locally static expression.
+WARNING:HDLParsers:817 - "F:/thujiyuan/pop_cpu/ALUSrc1MUX.vhd" Line 51. Choice . is not a locally static expression.
+WARNING:HDLParsers:817 - "F:/thujiyuan/pop_cpu/ALUSrc1MUX.vhd" Line 53. Choice . is not a locally static expression.
+WARNING:HDLParsers:817 - "F:/thujiyuan/pop_cpu/ALUSrc1MUX.vhd" Line 55. Choice . is not a locally static expression.
+WARNING:HDLParsers:817 - "F:/thujiyuan/pop_cpu/ALUSrc1MUX.vhd" Line 57. Choice . is not a locally static expression.
+WARNING:HDLParsers:817 - "F:/thujiyuan/pop_cpu/ALUSrc1MUX.vhd" Line 59. Choice . is not a locally static expression.
 Architecture behavioral of Entity alusrc1mux is up to date.
 Compiling vhdl file "F:/thujiyuan/pop_cpu/ALU.vhd" in Library work.
 WARNING:HDLParsers:817 - "F:/thujiyuan/pop_cpu/ALU.vhd" Line 49. Choice . is not a locally static expression.
@@ -224,9 +224,9 @@ Analyzing hierarchy for entity <Ram2Access> in library <work> (architecture <beh
 *                            HDL Analysis                               *
 =========================================================================
 Analyzing Entity <pop_cpu> in library <work> (Architecture <behavioral>).
-WARNING:Xst:752 - "F:/thujiyuan/pop_cpu/pop_cpu.vhd" line 571: Unconnected input port 'intSave' of component 'IF_IDRegs' is tied to default value.
-WARNING:Xst:752 - "F:/thujiyuan/pop_cpu/pop_cpu.vhd" line 571: Unconnected input port 'intRecover' of component 'IF_IDRegs' is tied to default value.
-WARNING:Xst:753 - "F:/thujiyuan/pop_cpu/pop_cpu.vhd" line 572: Unconnected output port 'RA' of component 'Registers'.
+WARNING:Xst:752 - "F:/thujiyuan/pop_cpu/pop_cpu.vhd" line 575: Unconnected input port 'intSave' of component 'IF_IDRegs' is tied to default value.
+WARNING:Xst:752 - "F:/thujiyuan/pop_cpu/pop_cpu.vhd" line 575: Unconnected input port 'intRecover' of component 'IF_IDRegs' is tied to default value.
+WARNING:Xst:753 - "F:/thujiyuan/pop_cpu/pop_cpu.vhd" line 578: Unconnected output port 'RA' of component 'Registers'.
 Entity <pop_cpu> analyzed. Unit <pop_cpu> generated.
 
 Analyzing Entity <PC> in library <work> (Architecture <pcbehavioral>).
@@ -267,7 +267,7 @@ Analyzing Entity <ID_EXERegs> in library <work> (Architecture <behavioral>).
 Entity <ID_EXERegs> analyzed. Unit <ID_EXERegs> generated.
 
 Analyzing Entity <ALUSrc0MUX> in library <work> (Architecture <behavioral>).
-INFO:Xst:1561 - "F:/thujiyuan/pop_cpu/ALUSrc0MUX.vhd" line 55: Mux is complete : default of case is discarded
+INFO:Xst:1561 - "F:/thujiyuan/pop_cpu/ALUSrc0MUX.vhd" line 56: Mux is complete : default of case is discarded
 Entity <ALUSrc0MUX> analyzed. Unit <ALUSrc0MUX> generated.
 
 Analyzing Entity <ALUSrc1MUX> in library <work> (Architecture <behavioral>).
@@ -287,8 +287,6 @@ Analyzing Entity <MEMSrcMUX> in library <work> (Architecture <behavioral>).
 Entity <MEMSrcMUX> analyzed. Unit <MEMSrcMUX> generated.
 
 Analyzing Entity <MEMAccess> in library <work> (Architecture <behavioral>).
-WARNING:Xst:819 - "F:/thujiyuan/pop_cpu/MEMAccess.vhd" line 139: One or more signals are missing in the process sensitivity list. To enable synthesis of FPGA/CPLD hardware, XST will assume that all necessary signals are present in the sensitivity list. Please note that the result of the synthesis may differ from the initial design specification. The missing signals are:
-   <tsre>
 INFO:Xst:2679 - Register <rdn> in unit <MEMAccess> has a constant value of 1 during circuit operation. The register is replaced by logic.
 Entity <MEMAccess> analyzed. Unit <MEMAccess> generated.
 
@@ -346,20 +344,18 @@ Unit <PCSelector> synthesized.
 
 Synthesizing Unit <IF_IDRegs>.
     Related source file is "F:/thujiyuan/pop_cpu/IF_IDRegs.vhd".
-    Register <intPC> equivalent to <intInst> has been removed
-    Register <intRyNum> equivalent to <intRxNum> has been removed
+WARNING:Xst:647 - Input <intSave> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+WARNING:Xst:647 - Input <intRecover> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
     Found 16-bit register for signal <outInst>.
     Found 3-bit register for signal <outRyNum>.
     Found 16-bit register for signal <outPC>.
     Found 3-bit register for signal <outRxNum>.
-    Found 16-bit register for signal <intInst>.
-    Found 3-bit register for signal <intRxNum>.
     Found 16-bit register for signal <tempInst>.
     Found 16-bit register for signal <tempPC>.
     Found 3-bit register for signal <tempRxNum>.
     Found 3-bit register for signal <tempRyNum>.
     Summary:
-	inferred  95 D-type flip-flop(s).
+	inferred  76 D-type flip-flop(s).
 Unit <IF_IDRegs> synthesized.
 
 
@@ -393,20 +389,14 @@ Unit <Registers> synthesized.
 Synthesizing Unit <bypasser>.
     Related source file is "F:/thujiyuan/pop_cpu/bypasser.vhd".
 WARNING:Xst:647 - Input <instruction<10:8>> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
-WARNING:Xst:737 - Found 1-bit latch for signal <dataPause>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
-INFO:Xst:2371 - HDL ADVISOR - Logic functions respectively driving the data and gate enable inputs of this latch share common terms. This situation will potentially lead to setup/hold violations and, as a result, to simulation problems. This situation may come from an incomplete case statement (all selector values are not covered). You should carefully review if it was in your intentions to describe such a latch.
-    Found 4-bit comparator not equal for signal <dataPause$cmp_ne0000> created at line 76.
-    Found 4-bit comparator not equal for signal <dataPause$cmp_ne0001> created at line 131.
-    Found 4-bit comparator not equal for signal <dataPause$cmp_ne0002> created at line 184.
-    Found 4-bit comparator not equal for signal <dataPause$cmp_ne0003> created at line 239.
     Found 4-bit comparator equal for signal <outT$cmp_eq0000> created at line 76.
-    Found 4-bit comparator equal for signal <outT$cmp_eq0001> created at line 131.
-    Found 4-bit comparator equal for signal <outT$cmp_eq0003> created at line 184.
-    Found 4-bit comparator equal for signal <outT$cmp_eq0004> created at line 239.
-    Found 4-bit comparator equal for signal <outT$cmp_eq0006> created at line 292.
-    Found 4-bit comparator equal for signal <outT$cmp_eq0007> created at line 297.
+    Found 4-bit comparator equal for signal <outT$cmp_eq0001> created at line 138.
+    Found 4-bit comparator equal for signal <outT$cmp_eq0003> created at line 198.
+    Found 4-bit comparator equal for signal <outT$cmp_eq0004> created at line 260.
+    Found 4-bit comparator equal for signal <outT$cmp_eq0006> created at line 320.
+    Found 4-bit comparator equal for signal <outT$cmp_eq0007> created at line 326.
     Summary:
-	inferred  10 Comparator(s).
+	inferred   6 Comparator(s).
 Unit <bypasser> synthesized.
 
 
@@ -551,6 +541,8 @@ Unit <MEMSrcMUX> synthesized.
 
 Synthesizing Unit <MEMAccess>.
     Related source file is "F:/thujiyuan/pop_cpu/MEMAccess.vhd".
+WARNING:Xst:647 - Input <tsre> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+WARNING:Xst:647 - Input <dataReady> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
     Register <RAM2OE> equivalent to <RAM2EN> has been removed
 WARNING:Xst:737 - Found 16-bit latch for signal <RAM2DataOut>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
 WARNING:Xst:737 - Found 1-bit latch for signal <wrn>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
@@ -632,16 +624,15 @@ Macro Statistics
  2-bit register                                        : 5
  3-bit register                                        : 8
  4-bit register                                        : 4
-# Latches                                              : 31
- 1-bit latch                                           : 5
+# Latches                                              : 30
+ 1-bit latch                                           : 4
  16-bit latch                                          : 24
  18-bit latch                                          : 2
-# Comparators                                          : 14
+# Comparators                                          : 10
  16-bit comparator equal                               : 1
  16-bit comparator greatequal                          : 1
  16-bit comparator less                                : 2
  4-bit comparator equal                                : 6
- 4-bit comparator not equal                            : 4
 # Multiplexers                                         : 7
  16-bit 3-to-1 multiplexer                             : 1
  16-bit 4-to-1 multiplexer                             : 2
@@ -660,12 +651,12 @@ Macro Statistics
 *                       Advanced HDL Synthesis                          *
 =========================================================================
 
-INFO:Xst:2261 - The FF/Latch <tempInst_10> in Unit <ifidr> is equivalent to the following FF/Latch, which will be removed : <tempRxNum_2> 
-INFO:Xst:2261 - The FF/Latch <tempRyNum_0> in Unit <ifidr> is equivalent to the following FF/Latch, which will be removed : <tempInst_5> 
-INFO:Xst:2261 - The FF/Latch <tempRyNum_1> in Unit <ifidr> is equivalent to the following FF/Latch, which will be removed : <tempInst_6> 
-INFO:Xst:2261 - The FF/Latch <tempRyNum_2> in Unit <ifidr> is equivalent to the following FF/Latch, which will be removed : <tempInst_7> 
-INFO:Xst:2261 - The FF/Latch <tempInst_8> in Unit <ifidr> is equivalent to the following FF/Latch, which will be removed : <tempRxNum_0> 
 INFO:Xst:2261 - The FF/Latch <tempInst_9> in Unit <ifidr> is equivalent to the following FF/Latch, which will be removed : <tempRxNum_1> 
+INFO:Xst:2261 - The FF/Latch <tempInst_8> in Unit <ifidr> is equivalent to the following FF/Latch, which will be removed : <tempRxNum_0> 
+INFO:Xst:2261 - The FF/Latch <tempRyNum_2> in Unit <ifidr> is equivalent to the following FF/Latch, which will be removed : <tempInst_7> 
+INFO:Xst:2261 - The FF/Latch <tempInst_10> in Unit <ifidr> is equivalent to the following FF/Latch, which will be removed : <tempRxNum_2> 
+INFO:Xst:2261 - The FF/Latch <tempRyNum_1> in Unit <ifidr> is equivalent to the following FF/Latch, which will be removed : <tempInst_6> 
+INFO:Xst:2261 - The FF/Latch <tempRyNum_0> in Unit <ifidr> is equivalent to the following FF/Latch, which will be removed : <tempInst_5> 
 WARNING:Xst:1710 - FF/Latch <tempRA_8> (without init value) has a constant value of 0 in block <idexe>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1710 - FF/Latch <tempRA_9> (without init value) has a constant value of 0 in block <idexe>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1710 - FF/Latch <tempRA_10> (without init value) has a constant value of 0 in block <idexe>. This FF/Latch will be trimmed during the optimization process.
@@ -727,16 +718,15 @@ Macro Statistics
  16-bit addsub                                         : 1
 # Registers                                            : 480
  Flip-Flops                                            : 480
-# Latches                                              : 31
- 1-bit latch                                           : 5
+# Latches                                              : 30
+ 1-bit latch                                           : 4
  16-bit latch                                          : 24
  18-bit latch                                          : 2
-# Comparators                                          : 14
+# Comparators                                          : 10
  16-bit comparator equal                               : 1
  16-bit comparator greatequal                          : 1
  16-bit comparator less                                : 2
  4-bit comparator equal                                : 6
- 4-bit comparator not equal                            : 4
 # Multiplexers                                         : 7
  16-bit 3-to-1 multiplexer                             : 1
  16-bit 4-to-1 multiplexer                             : 2
@@ -752,12 +742,12 @@ Macro Statistics
 =========================================================================
 *                         Low Level Synthesis                           *
 =========================================================================
-INFO:Xst:2261 - The FF/Latch <tempInst_10> in Unit <IF_IDRegs> is equivalent to the following FF/Latch, which will be removed : <tempRxNum_2> 
-INFO:Xst:2261 - The FF/Latch <tempRyNum_0> in Unit <IF_IDRegs> is equivalent to the following FF/Latch, which will be removed : <tempInst_5> 
-INFO:Xst:2261 - The FF/Latch <tempRyNum_1> in Unit <IF_IDRegs> is equivalent to the following FF/Latch, which will be removed : <tempInst_6> 
-INFO:Xst:2261 - The FF/Latch <tempRyNum_2> in Unit <IF_IDRegs> is equivalent to the following FF/Latch, which will be removed : <tempInst_7> 
-INFO:Xst:2261 - The FF/Latch <tempInst_8> in Unit <IF_IDRegs> is equivalent to the following FF/Latch, which will be removed : <tempRxNum_0> 
 INFO:Xst:2261 - The FF/Latch <tempInst_9> in Unit <IF_IDRegs> is equivalent to the following FF/Latch, which will be removed : <tempRxNum_1> 
+INFO:Xst:2261 - The FF/Latch <tempInst_8> in Unit <IF_IDRegs> is equivalent to the following FF/Latch, which will be removed : <tempRxNum_0> 
+INFO:Xst:2261 - The FF/Latch <tempRyNum_2> in Unit <IF_IDRegs> is equivalent to the following FF/Latch, which will be removed : <tempInst_7> 
+INFO:Xst:2261 - The FF/Latch <tempInst_10> in Unit <IF_IDRegs> is equivalent to the following FF/Latch, which will be removed : <tempRxNum_2> 
+INFO:Xst:2261 - The FF/Latch <tempRyNum_1> in Unit <IF_IDRegs> is equivalent to the following FF/Latch, which will be removed : <tempInst_6> 
+INFO:Xst:2261 - The FF/Latch <tempRyNum_0> in Unit <IF_IDRegs> is equivalent to the following FF/Latch, which will be removed : <tempInst_5> 
 INFO:Xst:2261 - The FF/Latch <tempRA_0> in Unit <ID_EXERegs> is equivalent to the following 15 FFs/Latches, which will be removed : <tempRA_1> <tempRA_2> <tempRA_3> <tempRA_4> <tempRA_5> <tempRA_6> <tempRA_7> <tempRA_8> <tempRA_9> <tempRA_10> <tempRA_11> <tempRA_12> <tempRA_13> <tempRA_14> <tempRA_15> 
 WARNING:Xst:1710 - FF/Latch <tempRA_0> (without init value) has a constant value of 0 in block <ID_EXERegs>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <outRA_15> (without init value) has a constant value of 0 in block <ID_EXERegs>. This FF/Latch will be trimmed during the optimization process.
@@ -783,85 +773,85 @@ WARNING:Xst:1710 - FF/Latch <memac/RAM2addr_16> (without init value) has a const
 WARNING:Xst:1710 - FF/Latch <memac/RAM2addr_15> (without init value) has a constant value of 0 in block <pop_cpu>. This FF/Latch will be trimmed during the optimization process.
 INFO:Xst:2261 - The FF/Latch <immResult_10> in Unit <Extender> is equivalent to the following 5 FFs/Latches, which will be removed : <immResult_11> <immResult_12> <immResult_13> <immResult_14> <immResult_15> 
 WARNING:Xst:2170 - Unit bypasser : the following signal(s) form a combinatorial loop: outIH_mux0001<15>, outIH<15>.
-WARNING:Xst:2170 - Unit bypasser : the following signal(s) form a combinatorial loop: outIH_mux0001<14>, outIH<14>.
+WARNING:Xst:2170 - Unit bypasser : the following signal(s) form a combinatorial loop: outIH<14>, outIH_mux0001<14>.
 WARNING:Xst:2170 - Unit bypasser : the following signal(s) form a combinatorial loop: outIH<13>, outIH_mux0001<13>.
 WARNING:Xst:2170 - Unit bypasser : the following signal(s) form a combinatorial loop: outIH<12>, outIH_mux0001<12>.
-WARNING:Xst:2170 - Unit bypasser : the following signal(s) form a combinatorial loop: outIH<11>, outIH_mux0001<11>.
+WARNING:Xst:2170 - Unit bypasser : the following signal(s) form a combinatorial loop: outIH_mux0001<11>, outIH<11>.
 WARNING:Xst:2170 - Unit bypasser : the following signal(s) form a combinatorial loop: outIH<10>, outIH_mux0001<10>.
 WARNING:Xst:2170 - Unit bypasser : the following signal(s) form a combinatorial loop: outIH_mux0001<9>, outIH<9>.
-WARNING:Xst:2170 - Unit bypasser : the following signal(s) form a combinatorial loop: outIH_mux0001<8>, outIH<8>.
-WARNING:Xst:2170 - Unit bypasser : the following signal(s) form a combinatorial loop: outIH_mux0001<7>, outIH<7>.
+WARNING:Xst:2170 - Unit bypasser : the following signal(s) form a combinatorial loop: outIH<8>, outIH_mux0001<8>.
+WARNING:Xst:2170 - Unit bypasser : the following signal(s) form a combinatorial loop: outIH<7>, outIH_mux0001<7>.
 WARNING:Xst:2170 - Unit bypasser : the following signal(s) form a combinatorial loop: outIH_mux0001<6>, outIH<6>.
 WARNING:Xst:2170 - Unit bypasser : the following signal(s) form a combinatorial loop: outIH<5>, outIH_mux0001<5>.
-WARNING:Xst:2170 - Unit bypasser : the following signal(s) form a combinatorial loop: outIH<4>, outIH_mux0001<4>.
+WARNING:Xst:2170 - Unit bypasser : the following signal(s) form a combinatorial loop: outIH_mux0001<4>, outIH<4>.
 WARNING:Xst:2170 - Unit bypasser : the following signal(s) form a combinatorial loop: outIH_mux0001<3>, outIH<3>.
-WARNING:Xst:2170 - Unit bypasser : the following signal(s) form a combinatorial loop: outIH_mux0001<2>, outIH<2>.
-WARNING:Xst:2170 - Unit bypasser : the following signal(s) form a combinatorial loop: outIH_mux0001<1>, outIH<1>.
+WARNING:Xst:2170 - Unit bypasser : the following signal(s) form a combinatorial loop: outIH<2>, outIH_mux0001<2>.
+WARNING:Xst:2170 - Unit bypasser : the following signal(s) form a combinatorial loop: outIH<1>, outIH_mux0001<1>.
 WARNING:Xst:2170 - Unit bypasser : the following signal(s) form a combinatorial loop: outIH_mux0001<0>, outIH<0>.
-WARNING:Xst:2170 - Unit bypasser : the following signal(s) form a combinatorial loop: outSP<15>, outSP_mux0001<15>.
-WARNING:Xst:2170 - Unit bypasser : the following signal(s) form a combinatorial loop: outSP<14>, outSP_mux0001<14>.
-WARNING:Xst:2170 - Unit bypasser : the following signal(s) form a combinatorial loop: outSP<13>, outSP_mux0001<13>.
-WARNING:Xst:2170 - Unit bypasser : the following signal(s) form a combinatorial loop: outSP<12>, outSP_mux0001<12>.
+WARNING:Xst:2170 - Unit bypasser : the following signal(s) form a combinatorial loop: outSP_mux0001<15>, outSP<15>.
+WARNING:Xst:2170 - Unit bypasser : the following signal(s) form a combinatorial loop: outSP_mux0001<14>, outSP<14>.
+WARNING:Xst:2170 - Unit bypasser : the following signal(s) form a combinatorial loop: outSP_mux0001<13>, outSP<13>.
+WARNING:Xst:2170 - Unit bypasser : the following signal(s) form a combinatorial loop: outSP_mux0001<12>, outSP<12>.
 WARNING:Xst:2170 - Unit bypasser : the following signal(s) form a combinatorial loop: outSP_mux0001<11>, outSP<11>.
-WARNING:Xst:2170 - Unit bypasser : the following signal(s) form a combinatorial loop: outSP<10>, outSP_mux0001<10>.
-WARNING:Xst:2170 - Unit bypasser : the following signal(s) form a combinatorial loop: outSP<9>, outSP_mux0001<9>.
-WARNING:Xst:2170 - Unit bypasser : the following signal(s) form a combinatorial loop: outSP<8>, outSP_mux0001<8>.
-WARNING:Xst:2170 - Unit bypasser : the following signal(s) form a combinatorial loop: outSP<7>, outSP_mux0001<7>.
-WARNING:Xst:2170 - Unit bypasser : the following signal(s) form a combinatorial loop: outSP<6>, outSP_mux0001<6>.
+WARNING:Xst:2170 - Unit bypasser : the following signal(s) form a combinatorial loop: outSP_mux0001<10>, outSP<10>.
+WARNING:Xst:2170 - Unit bypasser : the following signal(s) form a combinatorial loop: outSP_mux0001<9>, outSP<9>.
+WARNING:Xst:2170 - Unit bypasser : the following signal(s) form a combinatorial loop: outSP_mux0001<8>, outSP<8>.
+WARNING:Xst:2170 - Unit bypasser : the following signal(s) form a combinatorial loop: outSP_mux0001<7>, outSP<7>.
+WARNING:Xst:2170 - Unit bypasser : the following signal(s) form a combinatorial loop: outSP_mux0001<6>, outSP<6>.
 WARNING:Xst:2170 - Unit bypasser : the following signal(s) form a combinatorial loop: outSP_mux0001<5>, outSP<5>.
-WARNING:Xst:2170 - Unit bypasser : the following signal(s) form a combinatorial loop: outSP<4>, outSP_mux0001<4>.
-WARNING:Xst:2170 - Unit bypasser : the following signal(s) form a combinatorial loop: outSP<3>, outSP_mux0001<3>.
-WARNING:Xst:2170 - Unit bypasser : the following signal(s) form a combinatorial loop: outSP<2>, outSP_mux0001<2>.
-WARNING:Xst:2170 - Unit bypasser : the following signal(s) form a combinatorial loop: outSP<1>, outSP_mux0001<1>.
-WARNING:Xst:2170 - Unit bypasser : the following signal(s) form a combinatorial loop: outSP<0>, outSP_mux0001<0>.
-WARNING:Xst:2170 - Unit bypasser : the following signal(s) form a combinatorial loop: outrx<15>, outrx_mux0001<15>.
+WARNING:Xst:2170 - Unit bypasser : the following signal(s) form a combinatorial loop: outSP_mux0001<4>, outSP<4>.
+WARNING:Xst:2170 - Unit bypasser : the following signal(s) form a combinatorial loop: outSP_mux0001<3>, outSP<3>.
+WARNING:Xst:2170 - Unit bypasser : the following signal(s) form a combinatorial loop: outSP_mux0001<2>, outSP<2>.
+WARNING:Xst:2170 - Unit bypasser : the following signal(s) form a combinatorial loop: outSP_mux0001<1>, outSP<1>.
+WARNING:Xst:2170 - Unit bypasser : the following signal(s) form a combinatorial loop: outSP_mux0001<0>, outSP<0>.
+WARNING:Xst:2170 - Unit bypasser : the following signal(s) form a combinatorial loop: outrx_mux0001<15>, outrx<15>.
 WARNING:Xst:2170 - Unit bypasser : the following signal(s) form a combinatorial loop: outrx<14>, outrx_mux0001<14>.
-WARNING:Xst:2170 - Unit bypasser : the following signal(s) form a combinatorial loop: outrx_mux0001<13>, outrx<13>.
-WARNING:Xst:2170 - Unit bypasser : the following signal(s) form a combinatorial loop: outrx_mux0001<12>, outrx<12>.
-WARNING:Xst:2170 - Unit bypasser : the following signal(s) form a combinatorial loop: outrx<11>, outrx_mux0001<11>.
-WARNING:Xst:2170 - Unit bypasser : the following signal(s) form a combinatorial loop: outrx<10>, outrx_mux0001<10>.
+WARNING:Xst:2170 - Unit bypasser : the following signal(s) form a combinatorial loop: outrx<13>, outrx_mux0001<13>.
+WARNING:Xst:2170 - Unit bypasser : the following signal(s) form a combinatorial loop: outrx<12>, outrx_mux0001<12>.
+WARNING:Xst:2170 - Unit bypasser : the following signal(s) form a combinatorial loop: outrx_mux0001<11>, outrx<11>.
+WARNING:Xst:2170 - Unit bypasser : the following signal(s) form a combinatorial loop: outrx_mux0001<10>, outrx<10>.
 WARNING:Xst:2170 - Unit bypasser : the following signal(s) form a combinatorial loop: outrx<9>, outrx_mux0001<9>.
 WARNING:Xst:2170 - Unit bypasser : the following signal(s) form a combinatorial loop: outrx<8>, outrx_mux0001<8>.
-WARNING:Xst:2170 - Unit bypasser : the following signal(s) form a combinatorial loop: outrx_mux0001<7>, outrx<7>.
-WARNING:Xst:2170 - Unit bypasser : the following signal(s) form a combinatorial loop: outrx_mux0001<6>, outrx<6>.
-WARNING:Xst:2170 - Unit bypasser : the following signal(s) form a combinatorial loop: outrx<5>, outrx_mux0001<5>.
-WARNING:Xst:2170 - Unit bypasser : the following signal(s) form a combinatorial loop: outrx<4>, outrx_mux0001<4>.
+WARNING:Xst:2170 - Unit bypasser : the following signal(s) form a combinatorial loop: outrx<7>, outrx_mux0001<7>.
+WARNING:Xst:2170 - Unit bypasser : the following signal(s) form a combinatorial loop: outrx<6>, outrx_mux0001<6>.
+WARNING:Xst:2170 - Unit bypasser : the following signal(s) form a combinatorial loop: outrx_mux0001<5>, outrx<5>.
+WARNING:Xst:2170 - Unit bypasser : the following signal(s) form a combinatorial loop: outrx_mux0001<4>, outrx<4>.
 WARNING:Xst:2170 - Unit bypasser : the following signal(s) form a combinatorial loop: outrx<3>, outrx_mux0001<3>.
 WARNING:Xst:2170 - Unit bypasser : the following signal(s) form a combinatorial loop: outrx<2>, outrx_mux0001<2>.
-WARNING:Xst:2170 - Unit bypasser : the following signal(s) form a combinatorial loop: outrx_mux0001<1>, outrx<1>.
-WARNING:Xst:2170 - Unit bypasser : the following signal(s) form a combinatorial loop: outrx_mux0001<0>, outrx<0>.
-WARNING:Xst:2170 - Unit bypasser : the following signal(s) form a combinatorial loop: outry_mux0001<15>, outry<15>.
-WARNING:Xst:2170 - Unit bypasser : the following signal(s) form a combinatorial loop: outry_mux0001<14>, outry<14>.
+WARNING:Xst:2170 - Unit bypasser : the following signal(s) form a combinatorial loop: outrx<1>, outrx_mux0001<1>.
+WARNING:Xst:2170 - Unit bypasser : the following signal(s) form a combinatorial loop: outrx<0>, outrx_mux0001<0>.
+WARNING:Xst:2170 - Unit bypasser : the following signal(s) form a combinatorial loop: outry<15>, outry_mux0001<15>.
+WARNING:Xst:2170 - Unit bypasser : the following signal(s) form a combinatorial loop: outry<14>, outry_mux0001<14>.
 WARNING:Xst:2170 - Unit bypasser : the following signal(s) form a combinatorial loop: outry_mux0001<13>, outry<13>.
-WARNING:Xst:2170 - Unit bypasser : the following signal(s) form a combinatorial loop: outry<12>, outry_mux0001<12>.
-WARNING:Xst:2170 - Unit bypasser : the following signal(s) form a combinatorial loop: outry<11>, outry_mux0001<11>.
-WARNING:Xst:2170 - Unit bypasser : the following signal(s) form a combinatorial loop: outry_mux0001<10>, outry<10>.
-WARNING:Xst:2170 - Unit bypasser : the following signal(s) form a combinatorial loop: outry_mux0001<9>, outry<9>.
-WARNING:Xst:2170 - Unit bypasser : the following signal(s) form a combinatorial loop: outry_mux0001<8>, outry<8>.
+WARNING:Xst:2170 - Unit bypasser : the following signal(s) form a combinatorial loop: outry_mux0001<12>, outry<12>.
+WARNING:Xst:2170 - Unit bypasser : the following signal(s) form a combinatorial loop: outry_mux0001<11>, outry<11>.
+WARNING:Xst:2170 - Unit bypasser : the following signal(s) form a combinatorial loop: outry<10>, outry_mux0001<10>.
+WARNING:Xst:2170 - Unit bypasser : the following signal(s) form a combinatorial loop: outry<9>, outry_mux0001<9>.
+WARNING:Xst:2170 - Unit bypasser : the following signal(s) form a combinatorial loop: outry<8>, outry_mux0001<8>.
 WARNING:Xst:2170 - Unit bypasser : the following signal(s) form a combinatorial loop: outry_mux0001<7>, outry<7>.
-WARNING:Xst:2170 - Unit bypasser : the following signal(s) form a combinatorial loop: outry<6>, outry_mux0001<6>.
-WARNING:Xst:2170 - Unit bypasser : the following signal(s) form a combinatorial loop: outry<5>, outry_mux0001<5>.
+WARNING:Xst:2170 - Unit bypasser : the following signal(s) form a combinatorial loop: outry_mux0001<6>, outry<6>.
+WARNING:Xst:2170 - Unit bypasser : the following signal(s) form a combinatorial loop: outry_mux0001<5>, outry<5>.
 WARNING:Xst:2170 - Unit bypasser : the following signal(s) form a combinatorial loop: outry<4>, outry_mux0001<4>.
-WARNING:Xst:2170 - Unit bypasser : the following signal(s) form a combinatorial loop: outry_mux0001<3>, outry<3>.
-WARNING:Xst:2170 - Unit bypasser : the following signal(s) form a combinatorial loop: outry_mux0001<2>, outry<2>.
+WARNING:Xst:2170 - Unit bypasser : the following signal(s) form a combinatorial loop: outry<3>, outry_mux0001<3>.
+WARNING:Xst:2170 - Unit bypasser : the following signal(s) form a combinatorial loop: outry<2>, outry_mux0001<2>.
 WARNING:Xst:2170 - Unit bypasser : the following signal(s) form a combinatorial loop: outry_mux0001<1>, outry<1>.
-WARNING:Xst:2170 - Unit bypasser : the following signal(s) form a combinatorial loop: outry<0>, outry_mux0001<0>.
+WARNING:Xst:2170 - Unit bypasser : the following signal(s) form a combinatorial loop: outry_mux0001<0>, outry<0>.
 WARNING:Xst:2170 - Unit bypasser : the following signal(s) form a combinatorial loop: outT<15>, outT_mux0001<15>.
 WARNING:Xst:2170 - Unit bypasser : the following signal(s) form a combinatorial loop: outT_mux0001<14>, outT<14>.
-WARNING:Xst:2170 - Unit bypasser : the following signal(s) form a combinatorial loop: outT<13>, outT_mux0001<13>.
-WARNING:Xst:2170 - Unit bypasser : the following signal(s) form a combinatorial loop: outT<12>, outT_mux0001<12>.
-WARNING:Xst:2170 - Unit bypasser : the following signal(s) form a combinatorial loop: outT_mux0001<11>, outT<11>.
-WARNING:Xst:2170 - Unit bypasser : the following signal(s) form a combinatorial loop: outT_mux0001<10>, outT<10>.
+WARNING:Xst:2170 - Unit bypasser : the following signal(s) form a combinatorial loop: outT_mux0001<13>, outT<13>.
+WARNING:Xst:2170 - Unit bypasser : the following signal(s) form a combinatorial loop: outT_mux0001<12>, outT<12>.
+WARNING:Xst:2170 - Unit bypasser : the following signal(s) form a combinatorial loop: outT<11>, outT_mux0001<11>.
+WARNING:Xst:2170 - Unit bypasser : the following signal(s) form a combinatorial loop: outT<10>, outT_mux0001<10>.
 WARNING:Xst:2170 - Unit bypasser : the following signal(s) form a combinatorial loop: outT_mux0001<9>, outT<9>.
 WARNING:Xst:2170 - Unit bypasser : the following signal(s) form a combinatorial loop: outT_mux0001<8>, outT<8>.
 WARNING:Xst:2170 - Unit bypasser : the following signal(s) form a combinatorial loop: outT<7>, outT_mux0001<7>.
 WARNING:Xst:2170 - Unit bypasser : the following signal(s) form a combinatorial loop: outT_mux0001<6>, outT<6>.
-WARNING:Xst:2170 - Unit bypasser : the following signal(s) form a combinatorial loop: outT_mux0001<5>, outT<5>.
-WARNING:Xst:2170 - Unit bypasser : the following signal(s) form a combinatorial loop: outT<4>, outT_mux0001<4>.
-WARNING:Xst:2170 - Unit bypasser : the following signal(s) form a combinatorial loop: outT_mux0001<3>, outT<3>.
-WARNING:Xst:2170 - Unit bypasser : the following signal(s) form a combinatorial loop: outT_mux0001<2>, outT<2>.
-WARNING:Xst:2170 - Unit bypasser : the following signal(s) form a combinatorial loop: outT<1>, outT_mux0001<1>.
-WARNING:Xst:2170 - Unit bypasser : the following signal(s) form a combinatorial loop: outT<0>, outT_mux0001<0>.
+WARNING:Xst:2170 - Unit bypasser : the following signal(s) form a combinatorial loop: outT<5>, outT_mux0001<5>.
+WARNING:Xst:2170 - Unit bypasser : the following signal(s) form a combinatorial loop: outT_mux0001<4>, outT<4>.
+WARNING:Xst:2170 - Unit bypasser : the following signal(s) form a combinatorial loop: outT<3>, outT_mux0001<3>.
+WARNING:Xst:2170 - Unit bypasser : the following signal(s) form a combinatorial loop: outT<2>, outT_mux0001<2>.
+WARNING:Xst:2170 - Unit bypasser : the following signal(s) form a combinatorial loop: outT_mux0001<1>, outT<1>.
+WARNING:Xst:2170 - Unit bypasser : the following signal(s) form a combinatorial loop: outT_mux0001<0>, outT<0>.
 WARNING:Xst:2170 - Unit ALU : the following signal(s) form a combinatorial loop: rst_shift0005<15>.
 
 Optimizing unit <pop_cpu> ...
@@ -869,18 +859,18 @@ Optimizing unit <pop_cpu> ...
 Optimizing unit <PC> ...
 
 Optimizing unit <IF_IDRegs> ...
-INFO:Xst:2261 - The FF/Latch <outInst_5> in Unit <IF_IDRegs> is equivalent to the following FF/Latch, which will be removed : <outRyNum_0> 
-INFO:Xst:2261 - The FF/Latch <outInst_6> in Unit <IF_IDRegs> is equivalent to the following FF/Latch, which will be removed : <outRyNum_1> 
-INFO:Xst:2261 - The FF/Latch <outInst_7> in Unit <IF_IDRegs> is equivalent to the following FF/Latch, which will be removed : <outRyNum_2> 
-INFO:Xst:2261 - The FF/Latch <outRxNum_2> in Unit <IF_IDRegs> is equivalent to the following FF/Latch, which will be removed : <outInst_10> 
-INFO:Xst:2261 - The FF/Latch <outRxNum_0> in Unit <IF_IDRegs> is equivalent to the following FF/Latch, which will be removed : <outInst_8> 
 INFO:Xst:2261 - The FF/Latch <outRxNum_1> in Unit <IF_IDRegs> is equivalent to the following FF/Latch, which will be removed : <outInst_9> 
 INFO:Xst:2261 - The FF/Latch <outInst_5> in Unit <IF_IDRegs> is equivalent to the following FF/Latch, which will be removed : <outRyNum_0> 
-INFO:Xst:2261 - The FF/Latch <outInst_6> in Unit <IF_IDRegs> is equivalent to the following FF/Latch, which will be removed : <outRyNum_1> 
-INFO:Xst:2261 - The FF/Latch <outInst_7> in Unit <IF_IDRegs> is equivalent to the following FF/Latch, which will be removed : <outRyNum_2> 
 INFO:Xst:2261 - The FF/Latch <outRxNum_2> in Unit <IF_IDRegs> is equivalent to the following FF/Latch, which will be removed : <outInst_10> 
 INFO:Xst:2261 - The FF/Latch <outRxNum_0> in Unit <IF_IDRegs> is equivalent to the following FF/Latch, which will be removed : <outInst_8> 
+INFO:Xst:2261 - The FF/Latch <outInst_7> in Unit <IF_IDRegs> is equivalent to the following FF/Latch, which will be removed : <outRyNum_2> 
+INFO:Xst:2261 - The FF/Latch <outInst_6> in Unit <IF_IDRegs> is equivalent to the following FF/Latch, which will be removed : <outRyNum_1> 
 INFO:Xst:2261 - The FF/Latch <outRxNum_1> in Unit <IF_IDRegs> is equivalent to the following FF/Latch, which will be removed : <outInst_9> 
+INFO:Xst:2261 - The FF/Latch <outInst_5> in Unit <IF_IDRegs> is equivalent to the following FF/Latch, which will be removed : <outRyNum_0> 
+INFO:Xst:2261 - The FF/Latch <outRxNum_2> in Unit <IF_IDRegs> is equivalent to the following FF/Latch, which will be removed : <outInst_10> 
+INFO:Xst:2261 - The FF/Latch <outRxNum_0> in Unit <IF_IDRegs> is equivalent to the following FF/Latch, which will be removed : <outInst_8> 
+INFO:Xst:2261 - The FF/Latch <outInst_7> in Unit <IF_IDRegs> is equivalent to the following FF/Latch, which will be removed : <outRyNum_2> 
+INFO:Xst:2261 - The FF/Latch <outInst_6> in Unit <IF_IDRegs> is equivalent to the following FF/Latch, which will be removed : <outRyNum_1> 
 
 Optimizing unit <bypasser> ...
 
@@ -1203,8 +1193,8 @@ Building and optimizing final netlist ...
 INFO:Xst:2261 - The FF/Latch <idexe/tempExtend_15> in Unit <pop_cpu> is equivalent to the following 5 FFs/Latches, which will be removed : <idexe/tempExtend_14> <idexe/tempExtend_13> <idexe/tempExtend_12> <idexe/tempExtend_11> <idexe/tempExtend_10> 
 INFO:Xst:2261 - The FF/Latch <idexe/outExtend_15> in Unit <pop_cpu> is equivalent to the following 5 FFs/Latches, which will be removed : <idexe/outExtend_14> <idexe/outExtend_13> <idexe/outExtend_12> <idexe/outExtend_11> <idexe/outExtend_10> 
 Found area constraint ratio of 100 (+ 5) on block pop_cpu, actual ratio is 8.
-FlipFlop idexe/outALUSrc1_1 has been replicated 2 time(s)
-FlipFlop idexe/outALUSrc1_2 has been replicated 2 time(s)
+FlipFlop idexe/outALUSrc1_1 has been replicated 1 time(s)
+FlipFlop idexe/outALUSrc1_2 has been replicated 1 time(s)
 Latch memac/Mtrien_RAM1data has been replicated 15 time(s) to handle iob=true attribute.
 
 Final Macro Processing ...
@@ -1213,8 +1203,8 @@ Final Macro Processing ...
 Final Register Report
 
 Macro Statistics
-# Registers                                            : 386
- Flip-Flops                                            : 386
+# Registers                                            : 384
+ Flip-Flops                                            : 384
 
 =========================================================================
 
@@ -1243,30 +1233,30 @@ Design Statistics
 # IOs                              : 79
 
 Cell Usage :
-# BELS                             : 1428
+# BELS                             : 1390
 #      GND                         : 1
-#      INV                         : 2
+#      INV                         : 1
 #      LUT1                        : 16
-#      LUT2                        : 33
-#      LUT2_D                      : 5
-#      LUT2_L                      : 5
-#      LUT3                        : 400
-#      LUT3_D                      : 16
-#      LUT3_L                      : 33
-#      LUT4                        : 563
-#      LUT4_D                      : 27
-#      LUT4_L                      : 51
+#      LUT2                        : 40
+#      LUT2_D                      : 3
+#      LUT2_L                      : 1
+#      LUT3                        : 389
+#      LUT3_D                      : 15
+#      LUT3_L                      : 22
+#      LUT4                        : 540
+#      LUT4_D                      : 32
+#      LUT4_L                      : 57
 #      MUXCY                       : 58
-#      MUXF5                       : 121
+#      MUXF5                       : 118
 #      MUXF6                       : 48
 #      VCC                         : 1
 #      XORCY                       : 48
-# FlipFlops/Latches                : 560
-#      FD                          : 199
-#      FDE                         : 140
-#      FDR                         : 31
-#      FDRE                        : 16
-#      LD                          : 78
+# FlipFlops/Latches                : 557
+#      FD                          : 165
+#      FDE                         : 108
+#      FDR                         : 63
+#      FDRE                        : 48
+#      LD                          : 77
 #      LD_1                        : 64
 #      LDE                         : 16
 #      LDE_1                       : 16
@@ -1284,9 +1274,9 @@ Device utilization summary:
 
 Selected Device : 3s1200efg320-4 
 
- Number of Slices:                      679  out of   8672     7%  
- Number of Slice Flip Flops:            511  out of  17344     2%  
- Number of 4 input LUTs:               1151  out of  17344     6%  
+ Number of Slices:                      653  out of   8672     7%  
+ Number of Slice Flip Flops:            508  out of  17344     2%  
+ Number of 4 input LUTs:               1116  out of  17344     6%  
  Number of IOs:                          79
  Number of bonded IOBs:                  77  out of    250    30%  
     IOB Flip Flops:                      49
@@ -1320,12 +1310,11 @@ memac/RAM1addr_not0001(memac/RAM1addr_not00011_f5:O)           | NONE(*)(memac/R
 memac/RAM2WE_not0001(memac/RAM2WE_not00011:O)                  | NONE(*)(memac/RAM2addr_14)         | 17    |
 memac/wrn_not0001(memac/wrn_not0001_wg_cy<4>:O)                | NONE(*)(memac/wrn)                 | 1     |
 readWritePause_PC_pause(rwpau/readWritePause_and00001:O)       | NONE(*)(ram2a/insRam2Data_15)      | 16    |
-clk                                                            | BUFGP                              | 386   |
-bypas/dataPause_not0001(bypas/dataPause_not0001:O)             | NONE(*)(bypas/dataPause)           | 1     |
+clk                                                            | BUFGP                              | 384   |
 memwr/outRegWrite1                                             | BUFG                               | 48    |
 exten/immResult_not0001(exten/immResult_not00011:O)            | NONE(*)(exten/immResult_10)        | 11    |
 ---------------------------------------------------------------+------------------------------------+-------+
-(*) These 8 clock signal(s) are generated by combinatorial logic,
+(*) These 7 clock signal(s) are generated by combinatorial logic,
 and XST is not able to identify which are the primary clock signals.
 Please use the CLOCK_SIGNAL constraint to specify the clock signal(s) generated by combinatorial logic.
 INFO:Xst:2169 - HDL ADVISOR - Some clock signals were not automatically buffered by XST with BUFG/BUFR resources. Please use the buffer_type constraint in order to insert these buffers to the clock signals to help prevent skew problems.
@@ -1338,9 +1327,9 @@ Timing Summary:
 ---------------
 Speed Grade: -4
 
-   Minimum period: 15.480ns (Maximum Frequency: 64.601MHz)
+   Minimum period: 20.157ns (Maximum Frequency: 49.610MHz)
    Minimum input arrival time before clock: 1.946ns
-   Maximum output required time after clock: 19.279ns
+   Maximum output required time after clock: 19.558ns
    Maximum combinational path delay: No path found
 
 Timing Detail:
@@ -1415,58 +1404,38 @@ Delay:               2.310ns (Levels of Logic = 1)
 
 =========================================================================
 Timing constraint: Default period analysis for Clock 'clk'
-  Clock period: 15.480ns (frequency: 64.601MHz)
-  Total number of paths / destination ports: 380388 / 375
+  Clock period: 20.157ns (frequency: 49.610MHz)
+  Total number of paths / destination ports: 4392511 / 577
 -------------------------------------------------------------------------
-Delay:               15.480ns (Levels of Logic = 11)
+Delay:               20.157ns (Levels of Logic = 14)
   Source:            idexe/outALUSrc1_1_1 (FF)
-  Destination:       p/PCout_15 (FF)
+  Destination:       ifidr/outInst_15 (FF)
   Source Clock:      clk rising
   Destination Clock: clk rising
 
-  Data Path: idexe/outALUSrc1_1_1 to p/PCout_15
+  Data Path: idexe/outALUSrc1_1_1 to ifidr/outInst_15
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     FD:C->Q              18   0.591   1.147  idexe/outALUSrc1_1_1 (idexe/outALUSrc1_1_1)
+     FD:C->Q              39   0.591   1.343  idexe/outALUSrc1_1_1 (idexe/outALUSrc1_1_1)
      LUT3:I1->O            1   0.704   0.424  alus1m/output<13>2 (alus1m/output<13>2)
      LUT4:I3->O            5   0.704   0.808  alus1m/output<13>59 (ALUSrc1MUX_ALU_ALUSrc1<13>)
-     LUT4_D:I0->O          3   0.704   0.706  al/rst_or00014 (al/rst_or00014)
-     LUT3_L:I0->LO         1   0.704   0.275  al/rst_or000123_1 (al/rst_or000123)
-     LUT2:I0->O           18   0.704   1.243  al/rst_shift0005<0>11 (al/N6)
-     LUT3:I0->O            2   0.704   0.482  al/rst_shift0005<15>1 (al/rst_shift0005<15>)
-     LUT3:I2->O            1   0.704   0.000  al/Mmux_rst_513 (al/Mmux_rst_513)
-     MUXF5:I1->O           1   0.321   0.000  al/Mmux_rst_4_f5_5 (al/Mmux_rst_4_f56)
-     MUXF6:I0->O          30   0.521   1.297  al/Mmux_rst_2_f6_5 (al/rst<15>1)
-     LUT3_D:I2->O         15   0.704   1.021  rwpau/readWritePause_and00001_1 (rwpau/readWritePause_and00001)
-     LUT4:I3->O            1   0.704   0.000  p/PCout_mux0002<9>1 (p/PCout_mux0002<9>)
-     FDR:D                     0.308          p/PCout_9
+     LUT4:I0->O            4   0.704   0.762  al/rst_or00014 (al/rst_or00014)
+     LUT3_D:I0->O         45   0.704   1.441  al/rst_or000123 (al/rst_or0001)
+     LUT4:I0->O            1   0.704   0.000  al/rst_shift0004<7>_F (N679)
+     MUXF5:I0->O           1   0.321   0.424  al/rst_shift0004<7> (al/rst_shift0004<7>)
+     LUT4:I3->O            1   0.704   0.000  al/Mmux_rst_613 (al/Mmux_rst_613)
+     MUXF5:I0->O           1   0.321   0.000  al/Mmux_rst_4_f5_12 (al/Mmux_rst_4_f513)
+     MUXF6:I0->O           6   0.521   0.748  al/Mmux_rst_2_f6_12 (al/rst<7>1)
+     LUT4_D:I1->O          2   0.704   0.526  bypas/outT<7> (bypasser_IDEXERegs_T<7>)
+     LUT4:I1->O            1   0.704   0.424  conrt/PCSelCtr<0>101_SW0 (N457)
+     LUT4:I3->O            1   0.704   0.455  conrt/PCSelCtr<0>101 (conrt/PCSelCtr<0>101)
+     LUT4:I2->O           21   0.704   1.132  conrt/PCSelCtr<0>127 (conrt/PCSelCtr<0>127)
+     LUT4:I3->O           26   0.704   1.260  Control_IFIDRegs_clear1_2 (Control_IFIDRegs_clear11)
+     FDR:R                     0.911          ifidr/outInst_0
     ----------------------------------------
-    Total                     15.480ns (8.077ns logic, 7.403ns route)
-                                       (52.2% logic, 47.8% route)
-
-=========================================================================
-Timing constraint: Default period analysis for Clock 'bypas/dataPause_not0001'
-  Clock period: 4.294ns (frequency: 232.903MHz)
-  Total number of paths / destination ports: 2 / 1
--------------------------------------------------------------------------
-Delay:               4.294ns (Levels of Logic = 2)
-  Source:            bypas/dataPause (LATCH)
-  Destination:       bypas/dataPause (LATCH)
-  Source Clock:      bypas/dataPause_not0001 falling
-  Destination Clock: bypas/dataPause_not0001 falling
-
-  Data Path: bypas/dataPause to bypas/dataPause
-                                Gate     Net
-    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
-    ----------------------------------------  ------------
-     LD:G->Q             160   0.676   1.307  bypas/dataPause (bypas/dataPause)
-     LUT4:I3->O            1   0.704   0.595  bypas/dataPause_mux00129 (bypas/dataPause_mux00129)
-     LUT2:I0->O            1   0.704   0.000  bypas/dataPause_mux001230 (bypas/dataPause_mux0012)
-     LD:D                      0.308          bypas/dataPause
-    ----------------------------------------
-    Total                      4.294ns (2.392ns logic, 1.902ns route)
-                                       (55.7% logic, 44.3% route)
+    Total                     20.157ns (10.409ns logic, 9.748ns route)
+                                       (51.6% logic, 48.4% route)
 
 =========================================================================
 Timing constraint: Default period analysis for Clock 'memwr/outRegWrite1'
@@ -1505,7 +1474,7 @@ Offset:              1.946ns (Levels of Logic = 1)
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     IOBUF:IO->O           1   1.218   0.420  Ram2Data_15_IOBUF (N393)
+     IOBUF:IO->O           1   1.218   0.420  Ram2Data_15_IOBUF (N409)
      LD_1:D                    0.308          ram2a/insRam2Data_15
     ----------------------------------------
     Total                      1.946ns (1.526ns logic, 0.420ns route)
@@ -1515,7 +1484,7 @@ Offset:              1.946ns (Levels of Logic = 1)
 Timing constraint: Default OFFSET OUT AFTER for Clock 'clk'
   Total number of paths / destination ports: 63995 / 37
 -------------------------------------------------------------------------
-Offset:              19.279ns (Levels of Logic = 12)
+Offset:              19.558ns (Levels of Logic = 12)
   Source:            idexe/outALUSrc1_1_1 (FF)
   Destination:       Ram2Addr<14> (PAD)
   Source Clock:      clk rising
@@ -1524,22 +1493,22 @@ Offset:              19.279ns (Levels of Logic = 12)
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     FD:C->Q              18   0.591   1.147  idexe/outALUSrc1_1_1 (idexe/outALUSrc1_1_1)
+     FD:C->Q              39   0.591   1.343  idexe/outALUSrc1_1_1 (idexe/outALUSrc1_1_1)
      LUT3:I1->O            1   0.704   0.424  alus1m/output<13>2 (alus1m/output<13>2)
      LUT4:I3->O            5   0.704   0.808  alus1m/output<13>59 (ALUSrc1MUX_ALU_ALUSrc1<13>)
-     LUT4_D:I0->O          3   0.704   0.706  al/rst_or00014 (al/rst_or00014)
-     LUT3_L:I0->LO         1   0.704   0.275  al/rst_or000123_1 (al/rst_or000123)
-     LUT2:I0->O           18   0.704   1.243  al/rst_shift0005<0>11 (al/N6)
+     LUT4:I0->O            4   0.704   0.762  al/rst_or00014 (al/rst_or00014)
+     LUT3_D:I0->LO         1   0.704   0.275  al/rst_or000123 (N739)
+     LUT2:I0->O           19   0.704   1.260  al/rst_shift0005<0>11 (al/N6)
      LUT3:I0->O            2   0.704   0.482  al/rst_shift0005<15>1 (al/rst_shift0005<15>)
      LUT3:I2->O            1   0.704   0.000  al/Mmux_rst_513 (al/Mmux_rst_513)
      MUXF5:I1->O           1   0.321   0.000  al/Mmux_rst_4_f5_5 (al/Mmux_rst_4_f56)
-     MUXF6:I0->O          30   0.521   1.297  al/Mmux_rst_2_f6_5 (al/rst<15>1)
-     LUT3:I2->O           31   0.704   1.437  rwpau/readWritePause_and00001 (readWritePause_PC_pause)
+     MUXF6:I0->O          28   0.521   1.296  al/Mmux_rst_2_f6_5 (al/rst<15>1)
+     LUT3:I2->O           63   0.704   1.447  rwpau/readWritePause_and00001 (readWritePause_PC_pause)
      LUT3:I0->O            1   0.704   0.420  ram2a/Ram2Addr<9>1 (Ram2Addr_9_OBUF)
      OBUF:I->O                 3.272          Ram2Addr_9_OBUF (Ram2Addr<9>)
     ----------------------------------------
-    Total                     19.279ns (11.041ns logic, 8.238ns route)
-                                       (57.3% logic, 42.7% route)
+    Total                     19.558ns (11.041ns logic, 8.517ns route)
+                                       (56.5% logic, 43.5% route)
 
 =========================================================================
 Timing constraint: Default OFFSET OUT AFTER for Clock 'memac/RAM2WE_not0001'
@@ -1640,14 +1609,14 @@ Offset:              4.395ns (Levels of Logic = 1)
 =========================================================================
 
 
-Total REAL time to Xst completion: 26.00 secs
-Total CPU time to Xst completion: 25.77 secs
+Total REAL time to Xst completion: 27.00 secs
+Total CPU time to Xst completion: 26.96 secs
  
 --> 
 
 Total memory usage is 330892 kilobytes
 
 Number of errors   :    0 (   0 filtered)
-Number of warnings :  514 (   0 filtered)
-Number of infos    :   44 (   0 filtered)
+Number of warnings :  516 (   0 filtered)
+Number of infos    :   43 (   0 filtered)
 

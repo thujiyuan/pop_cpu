@@ -417,6 +417,8 @@ architecture Behavioral of pop_cpu is
 	signal Control_IDEXERegs_WBSrc : STD_LOGIC :='0';
 	signal Control_IDEXERegs_RegWrite : STD_LOGIC :='0';
 	
+	signal Control_IFIDRegs_clear : STD_LOGIC := '0';
+	
 	signal IDEXERegs_ALUSrc0MUX_ALUSrc0 : STD_LOGIC_VECTOR(1 downto 0) := (others=>'0');
 	signal IDEXERegs_ALUSrc0MUX_rx: STD_LOGIC_VECTOR(15 downto 0) := (others=>'0');
 	signal IDEXERegs_ALUSrc0MUX_ry: STD_LOGIC_VECTOR(15 downto 0) := (others=>'0');
@@ -526,6 +528,8 @@ begin
 	bypasser_Control_T <= bypasser_IDEXERegs_T;
 
 	Extender_IDEXERegs_imm <= Extender_AddressAdder_imm;
+	
+	Control_IFIDRegs_clear <= Control_PCSelector_PCSelCtr(1) or Control_PCSelector_PCSelCtr(0);
 
 	IDEXERegs_ALUSrc1MUX_rx <= IDEXERegs_ALUSrc0MUX_rx;
 	IDEXERegs_EXEMEMRegs_rx <= IDEXERegs_ALUSrc0MUX_rx;
@@ -568,7 +572,9 @@ begin
 	insf : InsFetcher port map(insRam2OE, insRam2WE, insRam2EN, insRam2Addr, insRam2Data, PC_InsFetcher_PC, InsFetcher_IFIDRegs_instruction, readWritePause_InsFetcher_pause);
 	pca : PCAdder port map(PC_PCAdder_PC, PCAdder_IFIDRegs_PC);
 	pcs : PCSelector port map(PCAdder_PCSelector_PC, AddressAdder_PCSelector_PC, bypasser_PCSelector_rx, Control_PCSelector_PCSelCtr, PCSelect_PC_PC);
-	ifidr : IF_IDRegs port map(PCAdder_IFIDRegs_PC, InsFetcher_IFIDRegs_instruction, clk, bypasser_IFIDRegs_dataPause, '0', IFIDRegs_bypasser_instruction, IFIDRegs_AddressAdder_PC, IFIDRegs_Registers_rxNum, IFIDRegs_Registers_ryNum);
+	ifidr : IF_IDRegs port map(PCAdder_IFIDRegs_PC, InsFetcher_IFIDRegs_instruction,
+										clk, bypasser_IFIDRegs_dataPause, Control_IFIDRegs_clear,
+										IFIDRegs_bypasser_instruction, IFIDRegs_AddressAdder_PC, IFIDRegs_Registers_rxNum, IFIDRegs_Registers_ryNum);
 	regis : Registers port map(IFIDRegs_Registers_rxNum, IFIDRegs_Registers_ryNum, MEMWBRegs_Registers_WBDes, WBSrcMUX_Registers_writeData, MEMWBRegs_Registers_RegWrite,Registers_bypasser_rx, Registers_bypasser_ry, Registers_bypasser_T, Registers_bypasser_IH, Registers_bypasser_SP);
 	bypas : bypasser port map(Registers_bypasser_rx, Registers_bypasser_ry, Registers_bypasser_T, Registers_bypasser_IH, Registers_bypasser_SP,
 								IFIDRegs_bypasser_rxNum, IFIDRegs_bypasser_ryNum, IFIDRegs_bypasser_instruction,
