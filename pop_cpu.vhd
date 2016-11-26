@@ -62,7 +62,7 @@ architecture Behavioral of pop_cpu is
 				Ram2WE : out  STD_LOGIC;
 				Ram2EN : out  STD_LOGIC;
 				Ram2Addr : out STD_LOGIC_VECTOR(17 downto 0);
-				Ram2Data : inout STD_LOGIC_VECTOR(15 downto 0);
+				Ram2Data : in STD_LOGIC_VECTOR(15 downto 0);
 				addr : in STD_LOGIC_VECTOR(15 downto 0);
 				ins : out STD_LOGIC_VECTOR(15 downto 0);
 				rwPause : in STD_LOGIC);

@@ -36,7 +36,7 @@ entity InsFetcher is
 			Ram2WE : out  STD_LOGIC;
 			Ram2EN : out  STD_LOGIC;
 			Ram2Addr : out STD_LOGIC_VECTOR(17 downto 0);
-			Ram2Data : inout STD_LOGIC_VECTOR(15 downto 0);
+			Ram2Data : in STD_LOGIC_VECTOR(15 downto 0);
 			ins : out STD_LOGIC_VECTOR(15 downto 0);
 			addr : in STD_LOGIC_VECTOR(15 downto 0);
 			rwPause : in STD_LOGIC);
@@ -52,7 +52,6 @@ begin
 		Ram2WE <= '1';
 		Ram2EN <= '0';
 		Ram2Addr <= "00"&addr;
-		Ram2Data <= (others => 'Z');
 	end process;
 	
 	process(Ram2Data, rwPause)
