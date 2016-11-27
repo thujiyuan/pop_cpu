@@ -9,30 +9,30 @@ z2
 cModel Technology
 Z0 dF:/thujiyuan/pop_cpu
 T_opt
-!s110 1480179975
-V?`E4dBM<DfaXAi]j[5JeN0
+!s110 1480260028
+V38n_FNSLCa4<llVfPl9FG2
 Z1 04 3 10 work cpu behavioral 1
-=1-183da2326fe4-5839c107-1da-1d60
-Z2 o-quiet -auto_acc_if_foreign -work work
+=6-183da2326fe4-583af9bc-8d-adc
+o-quiet -auto_acc_if_foreign -work work
 n@_opt
-Z3 OL;O;10.4;61
-R0
+Z2 OL;O;10.4;61
 T_opt1
-!s110 1480180692
-VDiITN[0;=;U9Y@l5@hD:K0
+!s110 1480258112
+Ve116`PX_@<YJz55h`F?@_0
 R1
-=1-183da2326fe4-5839c3d4-2df-958
-o-quiet -auto_acc_if_foreign -work work +acc
+=1-183da2326fe4-583af240-22b-6f8
+Z3 o-quiet -auto_acc_if_foreign -work work +acc
 n@_opt1
-R3
-T_opt2
-!s110 1480175434
-VZ]d8kW6_[LE^EgQHJV`on1
-04 8 18 work extender extenderbehavioral 1
-=1-183da2326fe4-5839af49-39c-ff0
 R2
-n@_opt2
+R0
+T_opt2
+!s110 1480251339
+Vi6nRjgJQ0fIijQB9AE9RX3
+04 8 10 work bypasser behavioral 1
+=1-183da2326fe4-583ad7ca-315-1204
 R3
+n@_opt2
+R2
 R0
 Eaddressadder
 Z4 w1480138685
@@ -221,19 +221,19 @@ R5
 R7
 R8
 R0
-Z38 8F:/thujiyuan/pop_cpu/bypasser.vhd
-Z39 FF:/thujiyuan/pop_cpu/bypasser.vhd
+Z38 8bypasser.vhd
+Z39 Fbypasser.vhd
 l0
 L34
 ViREgIW;d`MYf=gPc<c>il3
 !s100 z;FVfzNbj^;zRX[kzzi^H3
 R11
 31
-Z40 !s110 1480180682
+Z40 !s110 1480251337
 !i10b 1
-Z41 !s108 1480180682.043000
-Z42 !s90 -reportprogress|300|-explicit|-93|F:/thujiyuan/pop_cpu/bypasser.vhd|
-Z43 !s107 F:/thujiyuan/pop_cpu/bypasser.vhd|
+Z41 !s108 1480251337.551000
+Z42 !s90 -reportprogress|300|-explicit|-93|bypasser.vhd|
+Z43 !s107 bypasser.vhd|
 !i113 0
 R16
 R17
@@ -301,7 +301,7 @@ R50
 R16
 R17
 Ecpu
-Z51 w1480178753
+Z51 w1480259421
 R6
 R5
 R7
@@ -315,9 +315,9 @@ VTJVWQYa3>;ohK=PkJSVXW1
 !s100 ^;h^@3_^WAE3c4G:>P3<U0
 R11
 32
-Z54 !s110 1480180687
+Z54 !s110 1480260012
 !i10b 1
-Z55 !s108 1480180687.670000
+Z55 !s108 1480260012.008000
 Z56 !s90 -reportprogress|300|-work|work|F:/thujiyuan/pop_cpu/cpu.vhd|
 Z57 !s107 F:/thujiyuan/pop_cpu/cpu.vhd|
 !i113 0
@@ -331,8 +331,8 @@ R8
 DEx4 work 3 cpu 0 22 TJVWQYa3>;ohK=PkJSVXW1
 l43
 L9
-VGZ;zCnYnZ;cD]<GazN<0R0
-!s100 Mb@5EX:US[LMm>SW358>:2
+V15]gd1agz:U?]4G_Mb?773
+!s100 5ed=[o]LVJSYEgoWNL6`P1
 R11
 32
 R54
@@ -586,7 +586,7 @@ R95
 R16
 R17
 Ememaccess
-Z96 w1480174736
+Z96 w1480259982
 R7
 R8
 R0
@@ -598,9 +598,9 @@ V@KII@?HDQMPP=[UG?FYeV1
 !s100 `c[2b^lOBaBU]CBQDNgQE0
 R11
 31
-Z99 !s110 1480175576
+Z99 !s110 1480260000
 !i10b 1
-Z100 !s108 1480175576.050000
+Z100 !s108 1480260000.469000
 Z101 !s90 -reportprogress|300|-explicit|-93|F:/thujiyuan/pop_cpu/MEMAccess.vhd|
 Z102 !s107 F:/thujiyuan/pop_cpu/MEMAccess.vhd|
 !i113 0
@@ -612,8 +612,8 @@ R8
 DEx4 work 9 memaccess 0 22 @KII@?HDQMPP=[UG?FYeV1
 l57
 L55
-VLXdaY7b]=_J5T_m?[BH`]2
-!s100 nd;D7J^>:;G@3hTC?Ui0;1
+Ve6YO6gSXHh]O4cYRbLajM2
+!s100 CGNKJMV;RPT3KeMUg3[gm2
 R11
 31
 R99
@@ -670,7 +670,7 @@ R107
 R16
 R17
 Epc
-Z108 w1480179923
+Z108 w1480255721
 R5
 R6
 R7
@@ -684,9 +684,9 @@ VemMC[jEH4b0VO]`lE5Ndo2
 !s100 OGz7Y]Vl`W:e6G4eB=2lC3
 R11
 31
-Z111 !s110 1480179956
+Z111 !s110 1480255727
 !i10b 1
-Z112 !s108 1480179956.828000
+Z112 !s108 1480255727.591000
 Z113 !s90 -reportprogress|300|-explicit|-93|F:/thujiyuan/pop_cpu/PC.vhd|
 Z114 !s107 F:/thujiyuan/pop_cpu/PC.vhd|
 !i113 0
@@ -698,10 +698,10 @@ R6
 R7
 R8
 DEx4 work 2 pc 0 22 emMC[jEH4b0VO]`lE5Ndo2
-l28
+l27
 L24
-V@ilMaA[=c4LG^3C6ibXZ?1
-!s100 U9<0>mVX0zBk]mL?GGkBW0
+Vlj^9ZJO<U`bZCACkjZ4CH3
+!s100 <_IdW]g1Q`9MdhCV]EH821
 R11
 31
 R111
@@ -756,7 +756,7 @@ R120
 R16
 R17
 Epcselector
-Z121 w1480179016
+Z121 w1480255557
 R5
 R6
 R7
@@ -770,9 +770,9 @@ VDGTj6<B6[7M^F0UO?L8Rb0
 !s100 :c=@jMIIFDIVl?72hEfP?1
 R11
 31
-Z124 !s110 1480179117
+Z124 !s110 1480255731
 !i10b 1
-Z125 !s108 1480179117.446000
+Z125 !s108 1480255731.468000
 Z126 !s90 -reportprogress|300|-explicit|-93|F:/thujiyuan/pop_cpu/PCSelector.vhd|
 Z127 !s107 F:/thujiyuan/pop_cpu/PCSelector.vhd|
 !i113 0
@@ -786,8 +786,8 @@ R8
 DEx4 work 10 pcselector 0 22 DGTj6<B6[7M^F0UO?L8Rb0
 l44
 L42
-V`=9^4`d<^`lIUYNGa=3bS1
-!s100 UT`XgFC]X6;_4_9Ofa<ZQ3
+VM_MNFazZAOJQFcoihhon41
+!s100 9fc]a[mmXgfomz98O3W391
 R11
 31
 R124
@@ -813,9 +813,9 @@ Vih4i3KNk0kTYN?dNFHb4<1
 !s100 18G4U^WI??cIQDePJYl_g3
 R11
 31
-Z131 !s110 1480180685
+Z131 !s110 1480260008
 !i10b 1
-Z132 !s108 1480180685.372000
+Z132 !s108 1480260008.443000
 Z133 !s90 -reportprogress|300|-explicit|-93|F:/thujiyuan/pop_cpu/pop_cpu.vhd|
 Z134 !s107 F:/thujiyuan/pop_cpu/pop_cpu.vhd|
 !i113 0

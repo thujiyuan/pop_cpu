@@ -50,33 +50,50 @@ begin
 	begin
 	case Ram2Addr is
 		when "000000000000000000" =>
-			Ram2Data <= X"6901"; 
+			Ram2Data <= "0110100010111111";   --li 000 BF
 		when "000000000000000001" =>
-			Ram2Data <= X"6a01";
+			Ram2Data <= "0011000000000000";   --sll 000 8
 		when "000000000000000010" =>
-			Ram2Data <= X"6b85"; 
+			Ram2Data <= "0100100000000001";   --addiu 000 1
 		when "000000000000000011" =>
-			Ram2Data <= X"3360";
-		when "000000000000000100" =>
-			Ram2Data <= X"6c05"; 
-		when "000000000000000101" =>
-			Ram2Data <= X"db20";
-		when "000000000000000110" =>
-			Ram2Data <= X"db41"; 
-		when "000000000000000111" =>
-			Ram2Data <= X"e145";
+			Ram2Data <= "1001100000100000";   --lw 000 001 0
+		--when "000000000000000100" =>
+			--Ram2Data <= "0110100000100000"; 
+		--when "000000000000000101" =>
+			--Ram2Data <= X"db20";
+		--when "000000000000000110" =>
+			--Ram2Data <= X"db41"; 
+		--when "000000000000000111" =>
+			--Ram2Data <= X"e145";
 
-		when "000000000000001000" =>
-			Ram2Data <= X"e149";	 
-		when "000000000000001001" =>
-			Ram2Data <= X"4b02";
-		when "000000000000001010" =>
-			Ram2Data <= X"4cff";
-		when "000000000000001011" =>
-			Ram2Data <= X"2cf9"; 
+		--when "000000000000001000" =>
+			--Ram2Data <= X"e149";	 
+		--when "000000000000001001" =>
+			--Ram2Data <= X"4b02";
+		--when "000000000000001010" =>
+			--Ram2Data <= X"4cff";
+		--when "000000000000001011" =>
+			--Ram2Data <= X"2cf9"; 
 
 		when others => 
 			Ram2Data <= "0000100000000000"; --nop
 	end case;
+	end process;
+	process(RAM1addr,rdn)
+	begin
+		if(RAM1EN='0')then
+			case RAM1addr is
+				when "00"&X"BF00" =>
+					RAM1data <= X"1001";
+				when others =>
+					RAM1data <= X"0000";
+			end case;
+		else
+			if(rdn='0')then
+				RAM1data <= X"1001";
+			end if;
+			dataReady <= '1';
+			tsre <= '1';
+		end if;
 	end process;
 end Behavioral;

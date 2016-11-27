@@ -22,7 +22,6 @@ entity PC is
 end PC;
 
 architecture PCBehavioral of PC is
-    shared variable inited: boolean := false;
 	shared variable paused: boolean := false;
     shared variable lastPC: STD_LOGIC_VECTOR(15 downto 0) := "0000000000000000";
 begin
@@ -35,17 +34,19 @@ begin
         end if;
 	end process;
 
-    process(clk, rwPause, passerPause, PCin)
+    process(clk)
+		variable init : std_logic := '0';
     begin
         if(clk'event and clk = '1') then
-            if(inited = false) then
-                PCout <= "0000000000000000";
-                lastPC := "0000000000000000";
-		inited := true;
-            elsif(inited = true and paused = false) then
-                PCout <= PCin;
-                lastPC := PCin;
-            elsif(inited = true and paused = true) then
+            if(paused = false) then
+					if(init = '0')then
+						PCout <= (others => '0');
+						init := '1';
+					else
+						PCout <= PCin;
+						lastPC := PCin;
+					end if;
+            elsif(paused = true) then
                 PCout <= lastPC;
             end if;
         end if;

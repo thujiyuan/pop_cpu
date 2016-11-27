@@ -40,9 +40,10 @@ entity PCSelector is
 end PCSelector;
 
 architecture PCSELECTORBehavioral of PCSelector is
-
+	
 begin
 	process(ctrl, PC_1, branchResult, regResult)
+	 variable init : std_logic := '0';
 	begin
 		if(ctrl = "00") then
 			PCout <= PC_1;

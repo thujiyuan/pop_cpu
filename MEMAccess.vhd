@@ -62,7 +62,7 @@ begin
 			RAM1OE <= '1';
 			RAM1WE <= '1';
 			RAM1EN <= '1';
-			rdn <= '1';
+			rdn <= '0';
 			RAM1Data <= (others => 'Z');
 		elsif(inAddress = "1011111100000001") then -- read serial status
 			RAM1OE <= '1';
@@ -136,11 +136,11 @@ begin
 	end if;
 end process;
 
-process(RAM1Data, RAM2DataIn, dataReady, inAddress)
+process(RAM1Data, RAM2DataIn, dataReady, inAddress, tsre)
 begin
 	if(inAddress < "1000000000000000") then 
 		RAMBuffer <= RAM2DataIn;
-	elsif(inAddress = "1011111100000001") then
+	elsif(inAddress = "1011111100000000") then
 		RAMBuffer <= "00000000" & RAM1Data(7 downto 0);
 	elsif(inAddress = "1011111100000001") then
 		RAMBuffer <= "00000000000000" & dataReady & tsre;
