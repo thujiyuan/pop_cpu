@@ -46,10 +46,10 @@ entity Registers is
 end Registers;
 
 architecture Behavioral of Registers is
-	shared variable r000,r001,r010,r011,r100,r101,r110,r111,rIH,rSP,rT,rRA 
-					: std_logic_vector(15 downto 0) := "0000000000000000";
 begin
 	process(readRegister1,readRegister2,writeRegister,writeData,regWrite)
+		variable r000,r001,r010,r011,r100,r101,r110,r111,rIH,rSP,rT,rRA 
+					: std_logic_vector(15 downto 0) := "0000000000000000";
 	begin
 		case readRegister1 is
 			when "000" =>

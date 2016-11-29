@@ -72,33 +72,40 @@ begin
 				MEMRegWrite,MEMWBDes,MEMMemRead,MEMrst,
 				WBRegWrite,WBWBDes,WBwriteData)
 	begin
-		--outrx datapause=0 or 1
+		dataPause <= '0';
+		--outrx datapause= 1
 		if(EXERegWrite='1' and EXEWBDes='0'&rxNum)then
 			if(EXEMemRead='1')then
 				case instruction(15 downto 11) is
+					when "01100" =>
+						if(instruction(10 downto 8) = "100")then--ADDSP
+							dataPause <= '1';
+						else--addsp sw_rs btnez bteqz
+							outrx <= EXErst;
+						end if;
+					when "11011" =>--SW
+						outrx <= EXErst;
+					when "00010" =>--B
+						outrx <= EXErst;
+					when "00001" =>--NOP
+						outrx <= EXErst;
 					when "01101" =>--LI
 						outrx <= EXErst;
-						dataPause <= '0';
 					when "00110" =>--SLL SRA
 						outrx <= EXErst;
-						dataPause <= '0';
 					when "10010" =>--LW_SP
 						outrx <= EXErst;
-						dataPause <= '0';
 					when "11110" =>--MFIH
 						if(instruction(0)='0')then
 							outrx <= EXErst;
-							dataPause <= '0';
 						else
 							dataPause <= '1';
 						end if;
 					when "11101" =>--MFPC NEG
 						if(instruction(7 downto 0) = "01000000")then
 							outrx <= EXErst;
-							dataPause <= '0';
 						elsif(instruction(4 downto 0) = "01011")then
 							outrx <= EXErst;
-							dataPause <= '0';
 						else
 							dataPause <= '1';
 						end if;
@@ -107,34 +114,39 @@ begin
 				end case;
 			else
 				outrx <= EXErst;
-				dataPause <= '0';
 			end if;
 		elsif(MEMRegWrite='1' and MEMWBDes='0'&rxNum)then
 			if(MEMMemRead='1')then
 				case instruction(15 downto 11) is
+					when "01100" =>
+						if(instruction(10 downto 8) = "100")then--ADDSP
+							dataPause <= '1';
+						else--addsp sw_rs btnez bteqz
+							outrx <= MEMrst;
+						end if;
+					when "11011" =>--SW
+						outrx <= MEMrst;
+					when "00010" =>--B
+						outrx <= MEMrst;
+					when "00001" =>--NOP
+						outrx <= MEMrst;
 					when "01101" =>--LI
 						outrx <= MEMrst;
-						dataPause <= '0';
 					when "00110" =>--SLL SRA
 						outrx <= MEMrst;
-						dataPause <= '0';
 					when "10010" =>--LW_SP
 						outrx <= MEMrst;
-						dataPause <= '0';
 					when "11110" =>--MFIH
 						if(instruction(0)='0')then
 							outrx <= MEMrst;
-							dataPause <= '0';
 						else
 							dataPause <= '1';
 						end if;
 					when "11101" =>--MFPC NEG
 						if(instruction(7 downto 0) = "01000000")then
 							outrx <= MEMrst;
-							dataPause <= '0';
 						elsif(instruction(4 downto 0) = "01011")then
 							outrx <= MEMrst;
-							dataPause <= '0';
 						else
 							dataPause <= '1';
 						end if;
@@ -143,23 +155,45 @@ begin
 				end case;
 			else
 				outrx <= MEMrst;
-				dataPause <= '0';
 			end if;
 		elsif(WBRegWrite='1' and WBWBDes='0'&rxNum)then
 			outrx <= WBwriteData;
-			dataPause <= '0';
 		else
 			outrx <= inrx;
-			dataPause <= '0';
 		end if;
 
 		--outry datapause=1
 		if(EXERegWrite='1' and EXEWBDes='0'&ryNum)then
 			if(EXEMemRead='1')then
 				case instruction(15 downto 11) is
+					when "01100" =>--addsp sw_rs mtsp bteqz btnez
+						outry <= EXErst;
+					when "01101" =>--LI
+						outry <= EXErst;
 					when "01000" =>--ADDIU3
 						outry <= EXErst;
+					when "01001" =>--ADDIU
+						outry <= EXErst;
+					when "11010" =>--sw_sp
+						outry <= EXErst;
 					when "10011" =>--LW
+						outry <= EXErst;
+					when "00001" =>--NOP
+						outry <= EXErst;
+					when "10010" =>--LW_SP
+						outry <= EXErst;
+					when "11110" =>--mfih mtih
+						outry <= EXErst;
+					when "11101" =>
+						if(instruction(4 downto 0) = "00000")then
+							--mfpc jr
+							outry <= EXErst;
+						else
+							dataPause <= '1';
+						end if;
+					when "00100" =>--beqz
+						outry <= EXErst;
+					when "00101" =>--bnez
 						outry <= EXErst;
 					when others => 
 						dataPause <= '1';
@@ -170,11 +204,34 @@ begin
 		elsif(MEMRegWrite='1' and MEMWBDes='0'&ryNum)then
 			if(MEMMemRead='1')then
 				case instruction(15 downto 11) is
+					when "01100" =>--addsp sw_rs mtsp bteqz btnez
+						outry <= MEMrst;
+					when "01101" =>--LI
+						outry <= MEMrst;
 					when "01000" =>--ADDIU3
 						outry <= MEMrst;
 					when "01001" =>--ADDIU
-						outry <= MEMrst;		
+						outry <= MEMrst;
+					when "11010" =>--sw_sp
+						outry <= MEMrst;
 					when "10011" =>--LW
+						outry <= MEMrst;
+					when "00001" =>--NOP
+						outry <= MEMrst;
+					when "10010" =>--LW_SP
+						outry <= MEMrst;
+					when "11110" =>--mfih mtih
+						outry <= MEMrst;
+					when "11101" =>
+						if(instruction(4 downto 0) = "00000")then
+							--mfpc jr
+							outry <= MEMrst;
+						else
+							dataPause <= '1';
+						end if;
+					when "00100" =>--beqz
+						outry <= MEMrst;
+					when "00101" =>--bnez
 						outry <= MEMrst;
 					when others => 
 						dataPause <= '1';

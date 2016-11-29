@@ -48,10 +48,10 @@ architecture Behavioral of IF_IDRegs is
 begin
 
 process(clk)
-variable tempPC : STD_LOGIC_VECTOR (15 downto 0);
-variable tempInst :  STD_LOGIC_VECTOR (15 downto 0);
-variable tempRxNum : STD_LOGIC_VECTOR (2 downto 0);
-variable tempRyNum : STD_LOGIC_VECTOR (2 downto 0);
+variable tempPC : STD_LOGIC_VECTOR (15 downto 0) := (others=>'0');
+variable tempInst :  STD_LOGIC_VECTOR (15 downto 0) := (others=>'0');
+variable tempRxNum : STD_LOGIC_VECTOR (2 downto 0) := (others=>'0');
+variable tempRyNum : STD_LOGIC_VECTOR (2 downto 0) := (others=>'0');
 begin
 	if(clk'event and clk = '1') then
 		if(clear = '1') then

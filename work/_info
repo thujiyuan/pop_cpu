@@ -9,67 +9,67 @@ z2
 cModel Technology
 Z0 dF:/thujiyuan/pop_cpu
 T_opt
-!s110 1480260028
-V38n_FNSLCa4<llVfPl9FG2
-Z1 04 3 10 work cpu behavioral 1
-=6-183da2326fe4-583af9bc-8d-adc
-o-quiet -auto_acc_if_foreign -work work
+Z1 !s110 1480361341
+VJm2AXki4h6WYz:emlJo`c0
+04 7 10 work pop_cpu behavioral 1
+=1-183da2326fe4-583c857d-20d-b18
+Z2 o-quiet -auto_acc_if_foreign -work work +acc
 n@_opt
-Z2 OL;O;10.4;61
+Z3 OL;O;10.4;61
+R0
 T_opt1
-!s110 1480258112
-Ve116`PX_@<YJz55h`F?@_0
-R1
-=1-183da2326fe4-583af240-22b-6f8
-Z3 o-quiet -auto_acc_if_foreign -work work +acc
+!s110 1480348516
+V7b9N^[Ym7OOnzQgeGLDdI3
+Z4 04 3 10 work cpu behavioral 1
+=1-183da2326fe4-583c5364-15f-136c
+o-quiet -auto_acc_if_foreign -work work
 n@_opt1
-R2
+R3
 R0
 T_opt2
-!s110 1480251339
-Vi6nRjgJQ0fIijQB9AE9RX3
-04 8 10 work bypasser behavioral 1
-=1-183da2326fe4-583ad7ca-315-1204
-R3
-n@_opt2
+!s110 1480361421
+V2^=bn6kO^efD1>OeB_4UT3
+R4
+=1-183da2326fe4-583c85cd-9f-544
 R2
-R0
+n@_opt2
+R3
 Eaddressadder
-Z4 w1480138685
-Z5 DPx4 ieee 18 std_logic_unsigned 0 22 ;eZjO2D4ZDz<]0>8AL<ne1
-Z6 DPx4 ieee 15 std_logic_arith 0 22 [G314=:2zXJ`VORJe1J@Z1
-Z7 DPx3 std 6 textio 0 22 zE1`LPoLg^DX3Oz^4Fj1K3
-Z8 DPx4 ieee 14 std_logic_1164 0 22 eNV`TJ_GofJTzYa?f<@Oe1
+Z5 w1480138685
+Z6 DPx4 ieee 18 std_logic_unsigned 0 22 ;eZjO2D4ZDz<]0>8AL<ne1
+Z7 DPx4 ieee 15 std_logic_arith 0 22 [G314=:2zXJ`VORJe1J@Z1
+Z8 DPx3 std 6 textio 0 22 zE1`LPoLg^DX3Oz^4Fj1K3
+Z9 DPx4 ieee 14 std_logic_1164 0 22 eNV`TJ_GofJTzYa?f<@Oe1
 R0
-Z9 8F:/thujiyuan/pop_cpu/AddressAdder.vhd
-Z10 FF:/thujiyuan/pop_cpu/AddressAdder.vhd
+Z10 8AddressAdder.vhd
+Z11 FAddressAdder.vhd
 l0
 L34
 V:JY7n1A=N97==ZXEnRU=52
 !s100 SfD@ZT<<X>D_1_P@>E:_z3
-Z11 OL;C;10.4;61
+Z12 OL;C;10.4;61
 31
-Z12 !s110 1480179095
+R1
 !i10b 1
-Z13 !s108 1480179095.041000
-Z14 !s90 -reportprogress|300|-explicit|-93|F:/thujiyuan/pop_cpu/AddressAdder.vhd|
-Z15 !s107 F:/thujiyuan/pop_cpu/AddressAdder.vhd|
+Z13 !s108 1480361341.074000
+Z14 !s90 -reportprogress|300|-explicit|-93|AddressAdder.vhd|
+Z15 !s107 AddressAdder.vhd|
 !i113 0
 Z16 o-explicit -93
 Z17 tExplicit 1
 Abehavioral
-R5
 R6
 R7
 R8
+R9
 DEx4 work 12 addressadder 0 22 :JY7n1A=N97==ZXEnRU=52
 l42
 L40
 VE0_aHCR<KWEFVJ]`RW7mE1
 !s100 E7B5;:Yj:JKM?0Xo6>g353
-R11
-31
 R12
+31
+R1
 !i10b 1
 R13
 R14
@@ -81,10 +81,10 @@ Ealu
 Z18 w1480138692
 Z19 DPx4 ieee 16 std_logic_signed 0 22 C<aanc0R`<LWPSe[JYRP^3
 Z20 DPx4 work 10 recorddefs 0 22 d0f6996bf?GBO:]@D^SHL1
-R6
-R5
 R7
+R6
 R8
+R9
 R0
 Z21 8ALU.vhd
 Z22 FALU.vhd
@@ -92,11 +92,11 @@ l0
 L35
 VFFhnRMF6aUDjd_A=fHab=1
 !s100 5FAh;n8KGI7WjAY6lI5_e2
-R11
+R12
 31
-Z23 !s110 1480172652
+Z23 !s110 1480361340
 !i10b 1
-Z24 !s108 1480172652.457000
+Z24 !s108 1480361340.893000
 Z25 !s90 -reportprogress|300|-explicit|-93|ALU.vhd|
 Z26 !s107 ALU.vhd|
 !i113 0
@@ -105,16 +105,16 @@ R17
 Abehavioral
 R19
 R20
-R6
-R5
 R7
+R6
 R8
+R9
 DEx4 work 3 alu 0 22 FFhnRMF6aUDjd_A=fHab=1
 l44
 L42
 VJkB:Az0HQKgKBaU504VAV3
 !s100 TD=PjW>HiM>Yemmb0LL6S1
-R11
+R12
 31
 R23
 !i10b 1
@@ -125,131 +125,131 @@ R26
 R16
 R17
 Ealusrc0mux
-R18
-R6
+Z27 w1480360470
+R7
 R19
 R20
-R7
 R8
+R9
 R0
-Z27 8ALUSrc0MUX.vhd
-Z28 FALUSrc0MUX.vhd
+Z28 8ALUSrc0MUX.vhd
+Z29 FALUSrc0MUX.vhd
 l0
 L34
-Va[ZP1MQAc:1JNI;]SUK>43
-!s100 <LF=WCIiYX@ine0n9eMNZ1
-R11
+VR[ERbEHLbonBfgENQh2OR1
+!s100 AWK40?XaAI6D?lzI9Kz9m3
+R12
 31
 R23
 !i10b 1
-Z29 !s108 1480172652.300000
-Z30 !s90 -reportprogress|300|-explicit|-93|ALUSrc0MUX.vhd|
-Z31 !s107 ALUSrc0MUX.vhd|
+Z30 !s108 1480361340.792000
+Z31 !s90 -reportprogress|300|-explicit|-93|ALUSrc0MUX.vhd|
+Z32 !s107 ALUSrc0MUX.vhd|
 !i113 0
 R16
 R17
 Abehavioral
-R6
+R7
 R19
 R20
-R7
 R8
-DEx4 work 10 alusrc0mux 0 22 a[ZP1MQAc:1JNI;]SUK>43
-l44
-L42
-VUU?GSmbA5i8_ALOL70@SR1
-!s100 HKkkgVi7Wn>;@TnS0H[9m1
-R11
+R9
+DEx4 work 10 alusrc0mux 0 22 R[ERbEHLbonBfgENQh2OR1
+l45
+L43
+VibQ653dhi36MM4bbXeYRj2
+!s100 h;QenNcWhg=c:d7AOjX0?3
+R12
 31
 R23
 !i10b 1
-R29
 R30
 R31
+R32
 !i113 0
 R16
 R17
 Ealusrc1mux
 R18
-R6
+R7
 R19
 R20
-R7
 R8
+R9
 R0
-Z32 8ALUSrc1MUX.vhd
-Z33 FALUSrc1MUX.vhd
+Z33 8ALUSrc1MUX.vhd
+Z34 FALUSrc1MUX.vhd
 l0
 L34
 V88I=NeiARAjcB55BgR@Dz0
 !s100 5EGQmH;:j[nB_;<@KJcC;3
-R11
+R12
 31
 R23
 !i10b 1
-Z34 !s108 1480172652.180000
-Z35 !s90 -reportprogress|300|-explicit|-93|ALUSrc1MUX.vhd|
-Z36 !s107 ALUSrc1MUX.vhd|
+Z35 !s108 1480361340.645000
+Z36 !s90 -reportprogress|300|-explicit|-93|ALUSrc1MUX.vhd|
+Z37 !s107 ALUSrc1MUX.vhd|
 !i113 0
 R16
 R17
 Abehavioral
-R6
+R7
 R19
 R20
-R7
 R8
+R9
 DEx4 work 10 alusrc1mux 0 22 88I=NeiARAjcB55BgR@Dz0
 l46
 L44
 VbClhMHYR[kTJR6BTX]7LE1
 !s100 4=GZ@jH^kZJQCD_;2>Ml63
-R11
+R12
 31
 R23
 !i10b 1
-R34
 R35
 R36
+R37
 !i113 0
 R16
 R17
 Ebypasser
-Z37 w1480180644
-R6
-R5
+Z38 w1480350840
 R7
+R6
 R8
+R9
 R0
-Z38 8bypasser.vhd
-Z39 Fbypasser.vhd
+Z39 8bypasser.vhd
+Z40 Fbypasser.vhd
 l0
 L34
 ViREgIW;d`MYf=gPc<c>il3
 !s100 z;FVfzNbj^;zRX[kzzi^H3
-R11
+R12
 31
-Z40 !s110 1480251337
+R23
 !i10b 1
-Z41 !s108 1480251337.551000
+Z41 !s108 1480361340.453000
 Z42 !s90 -reportprogress|300|-explicit|-93|bypasser.vhd|
 Z43 !s107 bypasser.vhd|
 !i113 0
 R16
 R17
 Abehavioral
-R6
-R5
 R7
+R6
 R8
+R9
 DEx4 work 8 bypasser 0 22 iREgIW;d`MYf=gPc<c>il3
 l69
 L67
-Via=5_nDUMWW2b0aTh<]j[0
-!s100 SCO1EzQC`@ia=HkPmXTS_0
-R11
+VPLQGfH2iX59DSY;m;a@Y43
+!s100 H4KL;B6DFn]RgZN0_d@0f2
+R12
 31
-R40
+R23
 !i10b 1
 R41
 R42
@@ -258,707 +258,755 @@ R43
 R16
 R17
 Econtrol
-Z44 w1480180607
-R6
-R5
+Z44 w1480267509
 R7
+R6
 R8
+R9
 R0
-Z45 8F:/thujiyuan/pop_cpu/Control.vhd
-Z46 FF:/thujiyuan/pop_cpu/Control.vhd
+Z45 8Control.vhd
+Z46 FControl.vhd
 l0
 L34
 V9]I]elzQECICZGU_d5LQA0
 !s100 POW6[E1]R^IhCZTcmYanI0
-R11
+R12
 31
-Z47 !s110 1480180675
+R23
 !i10b 1
-Z48 !s108 1480180675.244000
-Z49 !s90 -reportprogress|300|-explicit|-93|F:/thujiyuan/pop_cpu/Control.vhd|
-Z50 !s107 F:/thujiyuan/pop_cpu/Control.vhd|
+Z47 !s108 1480361340.283000
+Z48 !s90 -reportprogress|300|-explicit|-93|Control.vhd|
+Z49 !s107 Control.vhd|
 !i113 0
 R16
 R17
 Abehavioral
-R6
-R5
 R7
+R6
 R8
+R9
 DEx4 work 7 control 0 22 9]I]elzQECICZGU_d5LQA0
 l53
 L51
-VhOcSUo<OZAjb5jRo3iYSJ2
-!s100 APPj[A7nKF[NPQ@el4NTL2
-R11
+VFQ[iL_9IWK^80[BDh;mk:0
+!s100 ?PT<EAXQcBdcAlLE;YPSK2
+R12
 31
-R47
+R23
 !i10b 1
+R47
 R48
 R49
-R50
 !i113 0
 R16
 R17
 Ecpu
-Z51 w1480259421
-R6
-R5
+Z50 w1480355431
 R7
+R6
 R8
+R9
 R0
-Z52 8F:/thujiyuan/pop_cpu/cpu.vhd
-Z53 FF:/thujiyuan/pop_cpu/cpu.vhd
+Z51 8F:/thujiyuan/pop_cpu/cpu.vhd
+Z52 FF:/thujiyuan/pop_cpu/cpu.vhd
 l0
 L6
 VTJVWQYa3>;ohK=PkJSVXW1
 !s100 ^;h^@3_^WAE3c4G:>P3<U0
-R11
+R12
 32
-Z54 !s110 1480260012
+Z53 !s110 1480361417
 !i10b 1
-Z55 !s108 1480260012.008000
-Z56 !s90 -reportprogress|300|-work|work|F:/thujiyuan/pop_cpu/cpu.vhd|
-Z57 !s107 F:/thujiyuan/pop_cpu/cpu.vhd|
+Z54 !s108 1480361417.397000
+Z55 !s90 -reportprogress|300|-work|work|F:/thujiyuan/pop_cpu/cpu.vhd|
+Z56 !s107 F:/thujiyuan/pop_cpu/cpu.vhd|
 !i113 0
-Z58 o-work work
+Z57 o-work work
 R17
 Abehavioral
-R6
-R5
 R7
+R6
 R8
+R9
 DEx4 work 3 cpu 0 22 TJVWQYa3>;ohK=PkJSVXW1
 l43
 L9
-V15]gd1agz:U?]4G_Mb?773
-!s100 5ed=[o]LVJSYEgoWNL6`P1
-R11
+VJcNdLGh:F0Z2@SlW7Co`C1
+!s100 eN<KIMlR^SkJ6DNKQBi@N1
+R12
 32
-R54
+R53
 !i10b 1
+R54
 R55
 R56
-R57
 !i113 0
-R58
+R57
 R17
 Eexe_memregs
-Z59 w1479989151
-R7
+Z58 w1480335587
 R8
+R9
 R0
-Z60 8EXE_MEMRegs.vhd
-Z61 FEXE_MEMRegs.vhd
+Z59 8EXE_MEMRegs.vhd
+Z60 FEXE_MEMRegs.vhd
 l0
 L32
 VYUE@d1MR^GFofTEWkT:=d3
 !s100 DUGUhk48g`nc;VJm<bO[d1
-R11
+R12
 31
-Z62 !s110 1480172651
+R23
 !i10b 1
-Z63 !s108 1480172651.685000
-Z64 !s90 -reportprogress|300|-explicit|-93|EXE_MEMRegs.vhd|
-Z65 !s107 EXE_MEMRegs.vhd|
+Z61 !s108 1480361340.218000
+Z62 !s90 -reportprogress|300|-explicit|-93|EXE_MEMRegs.vhd|
+Z63 !s107 EXE_MEMRegs.vhd|
 !i113 0
 R16
 R17
 Abehavioral
-R7
 R8
+R9
 DEx4 work 11 exe_memregs 0 22 YUE@d1MR^GFofTEWkT:=d3
 l60
 L58
-V8LP38ekczWGSQBWA;D31j2
-!s100 o;SGX5dRPm;4]GL>9]P[>0
-R11
+V8=hV?i?3FY[11CGO@4[4X1
+!s100 lWJLYLe[aak0>=M?ZYhLX2
+R12
 31
-R62
+R23
 !i10b 1
+R61
+R62
 R63
-R64
-R65
 !i113 0
 R16
 R17
 Eextender
-Z66 w1480175398
-R5
+Z64 w1480175398
 R6
 R7
 R8
+R9
 R0
-Z67 8F:/thujiyuan/pop_cpu/extender.vhd
-Z68 FF:/thujiyuan/pop_cpu/extender.vhd
+Z65 8extender.vhd
+Z66 Fextender.vhd
 l0
 L34
 VX;zMOBWIJDV0ZQD1`Ho7e1
 !s100 X[[>B[Vb1FX`K=O7HG7lR1
-R11
+R12
 31
-Z69 !s110 1480179105
+R23
 !i10b 1
-Z70 !s108 1480179105.188000
-Z71 !s90 -reportprogress|300|-explicit|-93|F:/thujiyuan/pop_cpu/extender.vhd|
-Z72 !s107 F:/thujiyuan/pop_cpu/extender.vhd|
+Z67 !s108 1480361340.145000
+Z68 !s90 -reportprogress|300|-explicit|-93|extender.vhd|
+Z69 !s107 extender.vhd|
 !i113 0
 R16
 R17
 Aextenderbehavioral
-R5
 R6
 R7
 R8
+R9
 DEx4 work 8 extender 0 22 X;zMOBWIJDV0ZQD1`Ho7e1
 l42
 L40
 V?a9djF6E?f2WF`hYm?d@S2
 !s100 ZMSJfXXBeTgV^hlK=85HS1
-R11
+R12
 31
-R69
+R23
 !i10b 1
-R70
-R71
-R72
+R67
+R68
+R69
 !i113 0
 R16
 R17
 Eid_exeregs
-R59
-R7
+Z70 w1480335540
 R8
+R9
 R0
-Z73 8ID_EXERegs.vhd
-Z74 FID_EXERegs.vhd
+Z71 8ID_EXERegs.vhd
+Z72 FID_EXERegs.vhd
 l0
 L32
 VaO2Z:Uk[BhFZQbAVceU[z3
 !s100 YK<Fm5zF2nZAo`o_FFO5;0
-R11
+R12
 31
-R62
+R23
 !i10b 1
-Z75 !s108 1480172651.544000
-Z76 !s90 -reportprogress|300|-explicit|-93|ID_EXERegs.vhd|
-Z77 !s107 ID_EXERegs.vhd|
+Z73 !s108 1480361340.082000
+Z74 !s90 -reportprogress|300|-explicit|-93|ID_EXERegs.vhd|
+Z75 !s107 ID_EXERegs.vhd|
 !i113 0
 R16
 R17
 Abehavioral
-R7
 R8
+R9
 DEx4 work 10 id_exeregs 0 22 aO2Z:Uk[BhFZQbAVceU[z3
 l71
 L70
-VF[^NE?TSMCRS2`abG^U^g2
-!s100 [?1<VA`PCoJKgLbH862LQ0
-R11
+V`Kbl>4=AWDB_f^W3C=I:i2
+!s100 kP5^<>g2fEkHQ^SbN1?VN0
+R12
 31
-R62
+R23
 !i10b 1
+R73
+R74
 R75
-R76
-R77
 !i113 0
 R16
 R17
 Eif_idregs
-Z78 w1480163711
-R7
+Z76 w1480335444
 R8
+R9
 R0
-Z79 8IF_IDRegs.vhd
-Z80 FIF_IDRegs.vhd
+Z77 8IF_IDRegs.vhd
+Z78 FIF_IDRegs.vhd
 l0
 L32
 V9n33n@cgCeYZNgITSDmJ^2
 !s100 DSPi^QcLK_l=3BcRGe9i`3
-R11
+R12
 31
-R62
+R23
 !i10b 1
-Z81 !s108 1480172651.480000
-Z82 !s90 -reportprogress|300|-explicit|-93|IF_IDRegs.vhd|
-Z83 !s107 IF_IDRegs.vhd|
+Z79 !s108 1480361340.019000
+Z80 !s90 -reportprogress|300|-explicit|-93|IF_IDRegs.vhd|
+Z81 !s107 IF_IDRegs.vhd|
 !i113 0
 R16
 R17
 Abehavioral
-R7
 R8
+R9
 DEx4 work 9 if_idregs 0 22 9n33n@cgCeYZNgITSDmJ^2
 l48
 L46
-V7;=DD>ZX8]<>o0PMo?ITE1
-!s100 a`09k0CPkNdF1e;WF4bF23
-R11
+V41_<TP30mK;72<@7HlDVe2
+!s100 9>i?zNB9_5iP7hMlaC4cH0
+R12
 31
-R62
+R23
 !i10b 1
+R79
+R80
 R81
-R82
-R83
 !i113 0
 R16
 R17
 Einsfetcher
-Z84 w1480179060
-R5
+Z82 w1480179060
 R6
 R7
 R8
+R9
 R0
-Z85 8F:/thujiyuan/pop_cpu/InsFetcher.vhd
-Z86 FF:/thujiyuan/pop_cpu/InsFetcher.vhd
+Z83 8InsFetcher.vhd
+Z84 FInsFetcher.vhd
 l0
 L34
 V`0iXg8DlQBI[Z<Am]HZ0F0
 !s100 4[TJObLWNoPPIn`0FNRNF1
-R11
+R12
 31
-Z87 !s110 1480179108
+Z85 !s110 1480361339
 !i10b 1
-Z88 !s108 1480179108.599000
-Z89 !s90 -reportprogress|300|-explicit|-93|F:/thujiyuan/pop_cpu/InsFetcher.vhd|
-Z90 !s107 F:/thujiyuan/pop_cpu/InsFetcher.vhd|
+Z86 !s108 1480361339.946000
+Z87 !s90 -reportprogress|300|-explicit|-93|InsFetcher.vhd|
+Z88 !s107 InsFetcher.vhd|
 !i113 0
 R16
 R17
 Abehavioral
-R5
 R6
 R7
 R8
+R9
 DEx4 work 10 insfetcher 0 22 `0iXg8DlQBI[Z<Am]HZ0F0
 l48
 L46
 VC2K43;R6A>_SK2`nJF[H_0
 !s100 0>`A@Kj=zIVmT<LLd;@GW0
-R11
+R12
 31
-R87
+R85
 !i10b 1
+R86
+R87
 R88
-R89
-R90
 !i113 0
 R16
 R17
 Emem_wbregs
-R59
-R7
+Z89 w1480335633
 R8
+R9
 R0
-Z91 8MEM_WBRegs.vhd
-Z92 FMEM_WBRegs.vhd
+Z90 8MEM_WBRegs.vhd
+Z91 FMEM_WBRegs.vhd
 l0
 L32
 VZNnhY3R26jbBQZY^ff[C82
 !s100 75gU4P?oTnRknj7[9R:^a2
-R11
+R12
 31
-R62
+R85
 !i10b 1
-Z93 !s108 1480172651.156000
-Z94 !s90 -reportprogress|300|-explicit|-93|MEM_WBRegs.vhd|
-Z95 !s107 MEM_WBRegs.vhd|
+Z92 !s108 1480361339.738000
+Z93 !s90 -reportprogress|300|-explicit|-93|MEM_WBRegs.vhd|
+Z94 !s107 MEM_WBRegs.vhd|
 !i113 0
 R16
 R17
 Abehavioral
-R7
 R8
+R9
 DEx4 work 10 mem_wbregs 0 22 ZNnhY3R26jbBQZY^ff[C82
 l50
 L48
-V5dCf2H:[]3TZhG6HNH0Q32
-!s100 X9:8Uj^jV<]MZ31D^nA7h2
-R11
+VgU0<@zY9YFX3L><FC:Q1H1
+!s100 S@O1XfiHZS@V>V[m`e[PL2
+R12
 31
-R62
+R85
 !i10b 1
+R92
 R93
 R94
-R95
 !i113 0
 R16
 R17
 Ememaccess
-Z96 w1480259982
-R7
+Z95 w1480336394
 R8
+R9
 R0
-Z97 8F:/thujiyuan/pop_cpu/MEMAccess.vhd
-Z98 FF:/thujiyuan/pop_cpu/MEMAccess.vhd
+Z96 8MEMAccess.vhd
+Z97 FMEMAccess.vhd
 l0
 L32
 V@KII@?HDQMPP=[UG?FYeV1
 !s100 `c[2b^lOBaBU]CBQDNgQE0
-R11
+R12
 31
-Z99 !s110 1480260000
+R85
 !i10b 1
-Z100 !s108 1480260000.469000
-Z101 !s90 -reportprogress|300|-explicit|-93|F:/thujiyuan/pop_cpu/MEMAccess.vhd|
-Z102 !s107 F:/thujiyuan/pop_cpu/MEMAccess.vhd|
+Z98 !s108 1480361339.881000
+Z99 !s90 -reportprogress|300|-explicit|-93|MEMAccess.vhd|
+Z100 !s107 MEMAccess.vhd|
 !i113 0
 R16
 R17
 Abehavioral
-R7
 R8
+R9
 DEx4 work 9 memaccess 0 22 @KII@?HDQMPP=[UG?FYeV1
 l57
 L55
-Ve6YO6gSXHh]O4cYRbLajM2
-!s100 CGNKJMV;RPT3KeMUg3[gm2
-R11
+VXT_Q04[PiP>2M]VYRe2hM1
+!s100 `PS?NMBZ5]dYPHG<5]?R12
+R12
 31
-R99
+R85
 !i10b 1
+R98
+R99
 R100
-R101
-R102
 !i113 0
 R16
 R17
 Ememsrcmux
 R18
-R6
+R7
 R19
 R20
-R7
 R8
+R9
 R0
-Z103 8MEMSrcMUX.vhd
-Z104 FMEMSrcMUX.vhd
+Z101 8MEMSrcMUX.vhd
+Z102 FMEMSrcMUX.vhd
 l0
 L33
 V[7C`026n9TIHU1bX5RoNP3
 !s100 lcgAPbU?8ZON@d7P^dKO01
-R11
+R12
 31
-R62
+R85
 !i10b 1
-Z105 !s108 1480172651.220000
-Z106 !s90 -reportprogress|300|-explicit|-93|MEMSrcMUX.vhd|
-Z107 !s107 MEMSrcMUX.vhd|
+Z103 !s108 1480361339.799000
+Z104 !s90 -reportprogress|300|-explicit|-93|MEMSrcMUX.vhd|
+Z105 !s107 MEMSrcMUX.vhd|
 !i113 0
 R16
 R17
 Abehavioral
-R6
+R7
 R19
 R20
-R7
 R8
+R9
 DEx4 work 9 memsrcmux 0 22 [7C`026n9TIHU1bX5RoNP3
 l43
 L41
 V?zAF2ZAeM?aaEL_FiUX1T1
 !s100 QV5Hz2n[??TY6M=o:XPeF1
-R11
+R12
 31
-R62
+R85
 !i10b 1
+R103
+R104
 R105
-R106
-R107
 !i113 0
 R16
 R17
 Epc
-Z108 w1480255721
-R5
+Z106 w1480335455
 R6
 R7
 R8
+R9
 R0
-Z109 8F:/thujiyuan/pop_cpu/PC.vhd
-Z110 FF:/thujiyuan/pop_cpu/PC.vhd
+Z107 8PC.vhd
+Z108 FPC.vhd
 l0
 L16
 VemMC[jEH4b0VO]`lE5Ndo2
 !s100 OGz7Y]Vl`W:e6G4eB=2lC3
-R11
+R12
 31
-Z111 !s110 1480255727
+R85
 !i10b 1
-Z112 !s108 1480255727.591000
-Z113 !s90 -reportprogress|300|-explicit|-93|F:/thujiyuan/pop_cpu/PC.vhd|
-Z114 !s107 F:/thujiyuan/pop_cpu/PC.vhd|
+Z109 !s108 1480361339.668000
+Z110 !s90 -reportprogress|300|-explicit|-93|PC.vhd|
+Z111 !s107 PC.vhd|
 !i113 0
 R16
 R17
 Apcbehavioral
-R5
 R6
 R7
 R8
+R9
 DEx4 work 2 pc 0 22 emMC[jEH4b0VO]`lE5Ndo2
 l27
 L24
-Vlj^9ZJO<U`bZCACkjZ4CH3
-!s100 <_IdW]g1Q`9MdhCV]EH821
-R11
+VKW:h4JGmM1EVzhM?iX`gJ3
+!s100 OlA8E1A@iV]HNXE<O3dP:1
+R12
 31
-R111
+R85
 !i10b 1
-R112
-R113
-R114
+R109
+R110
+R111
 !i113 0
 R16
 R17
 Epcadder
-R4
 R5
 R6
 R7
 R8
+R9
 R0
-Z115 8F:/thujiyuan/pop_cpu/PCAdder.vhd
-Z116 FF:/thujiyuan/pop_cpu/PCAdder.vhd
+Z112 8PCAdder.vhd
+Z113 FPCAdder.vhd
 l0
 L24
 VjBLR3dhK4YA5R2KJ1a9lX2
 !s100 KEe3O4LUNCC@lTk9j]LhU0
-R11
+R12
 31
-Z117 !s110 1480179115
+R85
 !i10b 1
-Z118 !s108 1480179115.052000
-Z119 !s90 -reportprogress|300|-explicit|-93|F:/thujiyuan/pop_cpu/PCAdder.vhd|
-Z120 !s107 F:/thujiyuan/pop_cpu/PCAdder.vhd|
+Z114 !s108 1480361339.599000
+Z115 !s90 -reportprogress|300|-explicit|-93|PCAdder.vhd|
+Z116 !s107 PCAdder.vhd|
 !i113 0
 R16
 R17
 Apcadderbehavioral
-R5
 R6
 R7
 R8
+R9
 DEx4 work 7 pcadder 0 22 jBLR3dhK4YA5R2KJ1a9lX2
 l31
 L29
 V0HbDhUTIdL5o59PMQZ=>M3
 !s100 ;26CjO42OWXJ1U45KjP_o3
-R11
+R12
 31
-R117
+R85
 !i10b 1
-R118
-R119
-R120
+R114
+R115
+R116
 !i113 0
 R16
 R17
 Epcselector
-Z121 w1480255557
-R5
+Z117 w1480255557
 R6
 R7
 R8
+R9
 R0
-Z122 8F:/thujiyuan/pop_cpu/PCSelector.vhd
-Z123 FF:/thujiyuan/pop_cpu/PCSelector.vhd
+Z118 8PCSelector.vhd
+Z119 FPCSelector.vhd
 l0
 L34
 VDGTj6<B6[7M^F0UO?L8Rb0
 !s100 :c=@jMIIFDIVl?72hEfP?1
-R11
+R12
 31
-Z124 !s110 1480255731
+R85
 !i10b 1
-Z125 !s108 1480255731.468000
-Z126 !s90 -reportprogress|300|-explicit|-93|F:/thujiyuan/pop_cpu/PCSelector.vhd|
-Z127 !s107 F:/thujiyuan/pop_cpu/PCSelector.vhd|
+Z120 !s108 1480361339.528000
+Z121 !s90 -reportprogress|300|-explicit|-93|PCSelector.vhd|
+Z122 !s107 PCSelector.vhd|
 !i113 0
 R16
 R17
 Apcselectorbehavioral
-R5
 R6
 R7
 R8
+R9
 DEx4 work 10 pcselector 0 22 DGTj6<B6[7M^F0UO?L8Rb0
 l44
 L42
 VM_MNFazZAOJQFcoihhon41
 !s100 9fc]a[mmXgfomz98O3W391
-R11
+R12
 31
-R124
+R85
 !i10b 1
-R125
-R126
-R127
+R120
+R121
+R122
 !i113 0
 R16
 R17
 Epop_cpu
-Z128 w1480167563
-R6
-R5
+Z123 w1480361313
 R7
+R6
 R8
+R9
 R0
-Z129 8F:/thujiyuan/pop_cpu/pop_cpu.vhd
-Z130 FF:/thujiyuan/pop_cpu/pop_cpu.vhd
+Z124 8pop_cpu.vhd
+Z125 Fpop_cpu.vhd
 l0
 L34
-Vih4i3KNk0kTYN?dNFHb4<1
-!s100 18G4U^WI??cIQDePJYl_g3
-R11
+V;i[i8nd9BejXC1^SDmaXa3
+!s100 >m]kA6_25ao2_`L`@JD8h1
+R12
 31
-Z131 !s110 1480260008
+R1
 !i10b 1
-Z132 !s108 1480260008.443000
-Z133 !s90 -reportprogress|300|-explicit|-93|F:/thujiyuan/pop_cpu/pop_cpu.vhd|
-Z134 !s107 F:/thujiyuan/pop_cpu/pop_cpu.vhd|
+Z126 !s108 1480361341.206000
+Z127 !s90 -reportprogress|300|-explicit|-93|pop_cpu.vhd|
+Z128 !s107 pop_cpu.vhd|
 !i113 0
 R16
 R17
 Abehavioral
-R6
-R5
 R7
+R6
 R8
-DEx4 work 7 pop_cpu 0 22 ih4i3KNk0kTYN?dNFHb4<1
-l508
-L52
-VP57oU1A3VAXkIQIA@lFQ80
-!s100 Q0n?B=1[kRBalz5N0S1>;2
-R11
+R9
+DEx4 work 7 pop_cpu 0 22 ;i[i8nd9BejXC1^SDmaXa3
+l513
+L54
+VnEYIghH[oRl^iJVbeX`>B2
+!s100 j91l<Z1Qj4gGm@@jiKXnW3
+R12
 31
-R131
+R1
 !i10b 1
-R132
-R133
-R134
+R126
+R127
+R128
 !i113 0
 R16
 R17
 Eram2access
-R4
-R6
 R5
 R7
+R6
 R8
+R9
 R0
-Z135 8Ram2Access.vhd
-Z136 FRam2Access.vhd
+Z129 8Ram2Access.vhd
+Z130 FRam2Access.vhd
 l0
 L34
 V1OJPB]3bd<^Si:2=62eF<0
 !s100 ggi3cBJ9dkT6iEKA5MS>I1
-R11
+R12
 31
-Z137 !s110 1480172650
+R85
 !i10b 1
-Z138 !s108 1480172650.862000
-Z139 !s90 -reportprogress|300|-explicit|-93|Ram2Access.vhd|
-Z140 !s107 Ram2Access.vhd|
+Z131 !s108 1480361339.458000
+Z132 !s90 -reportprogress|300|-explicit|-93|Ram2Access.vhd|
+Z133 !s107 Ram2Access.vhd|
 !i113 0
 R16
 R17
 Abehavioral
-R6
-R5
 R7
+R6
 R8
+R9
 DEx4 work 10 ram2access 0 22 1OJPB]3bd<^Si:2=62eF<0
 l60
 L58
 Vi3KD9?^Q8UX<iZ4PEgG2E3
 !s100 `k9Y]lDBBgnL9oB:BQ2R?0
-R11
+R12
 31
-R137
+R85
 !i10b 1
-R138
-R139
-R140
+R131
+R132
+R133
 !i113 0
 R16
 R17
 Ereadwritepauser
-R59
+Z134 w1480345589
 R7
+R6
 R8
+R9
 R0
-Z141 8ReadWritePauser.vhd
-Z142 FReadWritePauser.vhd
+Z135 8ReadWritePauser.vhd
+Z136 FReadWritePauser.vhd
 l0
-L32
-VOjjG_21Z=R0dTWP;:?Zi`2
-!s100 _EBDGB65d22<F6H904T3Q0
-R11
+L34
+V1;@70K36F1<mT_ZSK6dB80
+!s100 gNUl0fhn34>4KEWDQS`e31
+R12
 31
-R137
+R85
 !i10b 1
-Z143 !s108 1480172650.796000
-Z144 !s90 -reportprogress|300|-explicit|-93|ReadWritePauser.vhd|
-Z145 !s107 ReadWritePauser.vhd|
+Z137 !s108 1480361339.386000
+Z138 !s90 -reportprogress|300|-explicit|-93|ReadWritePauser.vhd|
+Z139 !s107 ReadWritePauser.vhd|
 !i113 0
 R16
 R17
 Abehavioral
 R7
+R6
 R8
-DEx4 work 15 readwritepauser 0 22 OjjG_21Z=R0dTWP;:?Zi`2
-l41
-L39
-V2ja20YU0>^<c<1F4cNiZ02
-!s100 P?RUc]DikVne>dUNU0;AU3
-R11
+R9
+DEx4 work 15 readwritepauser 0 22 1;@70K36F1<mT_ZSK6dB80
+l43
+L41
+ViEa?QPYRo_QWokJC9e?4z3
+!s100 dKn<T:Yg@QMRDBNJiF3nc3
+R12
 31
-R137
+R85
 !i10b 1
-R143
-R144
-R145
+R137
+R138
+R139
 !i113 0
 R16
 R17
 Precorddefs
-R6
-R19
 R7
+R19
 R8
+R9
 R18
 R0
-Z146 8recordDefs.vhd
-Z147 FrecordDefs.vhd
+Z140 8recordDefs.vhd
+Z141 FrecordDefs.vhd
 l0
 L14
 Vd0f6996bf?GBO:]@D^SHL1
 !s100 S=7fN^94N?WJ<XI4VP@z;1
-R11
+R12
 31
-R137
+R85
 !i10b 1
-Z148 !s108 1480172650.582000
-Z149 !s90 -reportprogress|300|-explicit|-93|recordDefs.vhd|
-Z150 !s107 recordDefs.vhd|
+Z142 !s108 1480361339.175000
+Z143 !s90 -reportprogress|300|-explicit|-93|recordDefs.vhd|
+Z144 !s107 recordDefs.vhd|
 !i113 0
 R16
 R17
 Bbody
 R20
-R6
-R19
 R7
+R19
 R8
+R9
 l0
 L97
 VSEMgiYcf@Q4`>@aI>_j<b1
 !s100 4gjgjgkFQ:N_e3R=HCm`Y2
-R11
+R12
 31
-R137
+R85
+!i10b 1
+R142
+R143
+R144
+!i113 0
+R16
+R17
+nbody
+Eregisters
+Z145 w1480353798
+R7
+R6
+R8
+R9
+R0
+Z146 8Registers.vhd
+Z147 FRegisters.vhd
+l0
+L34
+VW0?^QkJfe2mDfbLA<gZLN3
+!s100 gO?d`ZKC@nS=BGEKnBck;1
+R12
+31
+R85
+!i10b 1
+Z148 !s108 1480361339.315000
+Z149 !s90 -reportprogress|300|-explicit|-93|Registers.vhd|
+Z150 !s107 Registers.vhd|
+!i113 0
+R16
+R17
+Abehavioral
+R7
+R6
+R8
+R9
+DEx4 work 9 registers 0 22 W0?^QkJfe2mDfbLA<gZLN3
+l49
+L48
+Vi0m`d?A83c19iA;nk88`<1
+!s100 h@3=Gz1^4NfF@Dj7QCAX71
+R12
+31
+R85
 !i10b 1
 R148
 R149
@@ -966,86 +1014,42 @@ R150
 !i113 0
 R16
 R17
-nbody
-Eregisters
-Z151 w1480178064
-R6
-R5
-R7
-R8
-R0
-Z152 8F:/thujiyuan/pop_cpu/Registers.vhd
-Z153 FF:/thujiyuan/pop_cpu/Registers.vhd
-l0
-L34
-VW0?^QkJfe2mDfbLA<gZLN3
-!s100 gO?d`ZKC@nS=BGEKnBck;1
-R11
-31
-Z154 !s110 1480178092
-!i10b 1
-Z155 !s108 1480178092.266000
-Z156 !s90 -reportprogress|300|-explicit|-93|F:/thujiyuan/pop_cpu/Registers.vhd|
-Z157 !s107 F:/thujiyuan/pop_cpu/Registers.vhd|
-!i113 0
-R16
-R17
-Abehavioral
-R6
-R5
-R7
-R8
-DEx4 work 9 registers 0 22 W0?^QkJfe2mDfbLA<gZLN3
-l51
-L48
-VHG`zPGGheIF3:TZo:MFKg1
-!s100 gVkbG03H_ZEGZo<F4?[V`1
-R11
-31
-R154
-!i10b 1
-R155
-R156
-R157
-!i113 0
-R16
-R17
 Ewbsrcmux
-R59
-R7
+Z151 w1479989151
 R8
+R9
 R0
-Z158 8WBSrcMUX.vhd
-Z159 FWBSrcMUX.vhd
+Z152 8WBSrcMUX.vhd
+Z153 FWBSrcMUX.vhd
 l0
 L32
 VOF4[0OEh`IJ;KGfBPal>j0
 !s100 @94B`KGRi1jZ:Bef_m>8>3
-R11
+R12
 31
-R137
+R85
 !i10b 1
-Z160 !s108 1480172650.657000
-Z161 !s90 -reportprogress|300|-explicit|-93|WBSrcMUX.vhd|
-Z162 !s107 WBSrcMUX.vhd|
+Z154 !s108 1480361339.248000
+Z155 !s90 -reportprogress|300|-explicit|-93|WBSrcMUX.vhd|
+Z156 !s107 WBSrcMUX.vhd|
 !i113 0
 R16
 R17
 Abehavioral
-R7
 R8
+R9
 DEx4 work 8 wbsrcmux 0 22 OF4[0OEh`IJ;KGfBPal>j0
 l41
 L39
 VZTQjVLmigG54dGUSKi2]P1
 !s100 CUFI:`?n7FDmH>@DQTD_B3
-R11
+R12
 31
-R137
+R85
 !i10b 1
-R160
-R161
-R162
+R154
+R155
+R156
 !i113 0
 R16
 R17

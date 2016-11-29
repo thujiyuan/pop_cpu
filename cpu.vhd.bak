@@ -49,14 +49,36 @@ begin
 	process(Ram2Addr)
 	begin
 	case Ram2Addr is
-		when "000000000000000000" =>
-			Ram2Data <= "0110100010111111"; 
-		when "000000000000000001" =>
-			Ram2Data <= "0011000000000000";
-		when "000000000000000010" =>
-			Ram2Data <= "0110100100001000"; 
-		when "000000000000000011" =>
-			Ram2Data <= "1001100000100000";
+		when "00"&X"0000" =>
+			Ram2Data <= X"6ebf";
+		when "00"&X"0001" =>
+			Ram2Data <= X"36c0";
+		when "00"&X"0002" =>
+			Ram2Data <= X"4e10";
+		when "00"&X"0003" =>
+			Ram2Data <= X"6800";
+
+
+		when "00"&X"0004" =>
+			Ram2Data <= X"de00";
+		when "00"&X"0005" =>
+			Ram2Data <= X"0800";
+		when "00"&X"0006" =>
+			Ram2Data <= X"de01";
+		when "00"&X"0007" =>
+			Ram2Data <= X"0800";
+		
+
+		when "00"&X"0008" =>
+			Ram2Data <= X"de02";
+		when "00"&X"0009" =>
+			Ram2Data <= X"0800";
+		when "00"&X"000a" =>
+			Ram2Data <= X"de03";
+		when "00"&X"000b" =>
+			Ram2Data <= X"0800";
+
+
 		--when "000000000000000100" =>
 			--Ram2Data <= "0110100000100000"; 
 		--when "000000000000000101" =>
@@ -81,7 +103,7 @@ begin
 	end process;
 	process(RAM1addr,rdn)
 	begin
-		if(RAM1EN='0')then
+		if(RAM1EN='0' and RAM1WE='1')then
 			case RAM1addr is
 				when "00"&X"BF00" =>
 					RAM1data <= X"1001";

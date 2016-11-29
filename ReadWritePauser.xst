@@ -1,5 +1,0 @@
-set -tmpdir "F:/thujiyuan/pop_cpu/xst/projnav.tmp"
-set -xsthdpdir "F:/thujiyuan/pop_cpu/xst"
-elaborate
--ifn ReadWritePauser.prj
--ifmt mixed

@@ -23,7 +23,7 @@ end PC;
 
 architecture PCBehavioral of PC is
 	shared variable paused: boolean := false;
-    shared variable lastPC: STD_LOGIC_VECTOR(15 downto 0) := "0000000000000000";
+   shared variable lastPC: STD_LOGIC_VECTOR(15 downto 0) := "0000000000000000";
 begin
 	process(rwPause, passerPause)
 	begin

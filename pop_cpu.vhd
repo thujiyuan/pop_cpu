@@ -46,7 +46,9 @@ entity pop_cpu is
 			 dataReady : in STD_LOGIC;
 			 tsre : in STD_LOGIC;
 			 rdn : out STD_LOGIC;
-			 wrn : out STD_LOGIC);
+			 wrn : out STD_LOGIC;
+			 ins : out std_logic_vector(15 downto 0);
+			 r7 : out std_logic_vector(6 downto 0));
 end pop_cpu;
 
 architecture Behavioral of pop_cpu is
@@ -206,7 +208,8 @@ architecture Behavioral of pop_cpu is
 				 ry : in  STD_LOGIC_VECTOR (15 downto 0);
              SP : in  STD_LOGIC_VECTOR (15 downto 0);
              ctrl : in  STD_LOGIC_VECTOR (1 downto 0);
-             output : out  STD_LOGIC_VECTOR (15 downto 0));
+             output : out  STD_LOGIC_VECTOR (15 downto 0);
+				 clk : in STD_LOGIC);
 	end component;
 	component ALUSrc1MUX
 		Port ( imm : in  STD_LOGIC_VECTOR (15 downto 0);
@@ -504,6 +507,8 @@ architecture Behavioral of pop_cpu is
 
 	signal WBSrcMUX_Registers_writeData : STD_LOGIC_VECTOR(15 downto 0) := (others=>'0');
 	signal WBSrcMUX_bypasser_writeData : STD_LOGIC_VECTOR(15 downto 0) := (others=>'0');
+	
+	--signal IFIDRegs_clear : std_logic :='0';
 
 begin
 	PC_PCAdder_PC <= PC_InsFetcher_PC;
@@ -567,64 +572,251 @@ begin
 	MEMWBRegs_bypasser_RegWrite <= MEMWBRegs_Registers_RegWrite;
 
 	WBSrcMUX_bypasser_writeData <= WBSrcMUX_Registers_writeData;
+	
+	--IFIDRegs_clear <= Control_IFIDRegs_clear or bypasser_IFIDRegs_dataPause;
+	
+	ins(7 downto 0) <= PC_InsFetcher_PC(7 downto 0);
+	ins(15 downto 8) <= WBSrcMUX_Registers_writeData(7 downto 0);
+	r7 <= readWritePause_PC_pause&"00000"&bypasser_PC_dataPause;
+	--ins <= by;
+	
+	--process(IDEXERegs_ALUSrc0MUX_rx, IDEXERegs_ALUSrc0MUX_ry, IDEXERegs_ALUSrc0MUX_SP, IDEXERegs_ALUSrc0MUX_ALUSrc0)
+	--begin
+	--	case IDEXERegs_ALUSrc0MUX_ALUSrc0 is
+			--when "00" => 
+				--ALUSrc0MUX_ALU_ALUSrc0 <= 	IDEXERegs_ALUSrc0MUX_ry;
+			--when "01" => 
+				--ALUSrc0MUX_ALU_ALUSrc0 <= IDEXERegs_ALUSrc0MUX_SP;
+			--when "10" =>
+				--ALUSrc0MUX_ALU_ALUSrc0 <= IDEXERegs_ALUSrc0MUX_rx;
+			--when "11" =>
+				--ALUSrc0MUX_ALU_ALUSrc0 <= (others => '0');
+			--when others =>
+		--end case;
+	--end process;
 
-	p : PC port map(clk, readWritePause_PC_pause, bypasser_PC_dataPause, PCSelect_PC_PC, PC_InsFetcher_PC);
-	insf : InsFetcher port map(insRam2OE, insRam2WE, insRam2EN, insRam2Addr, insRam2Data, PC_InsFetcher_PC, InsFetcher_IFIDRegs_instruction, readWritePause_InsFetcher_pause);
-	pca : PCAdder port map(PC_PCAdder_PC, PCAdder_IFIDRegs_PC);
-	pcs : PCSelector port map(PCAdder_PCSelector_PC, AddressAdder_PCSelector_PC, bypasser_PCSelector_rx, Control_PCSelector_PCSelCtr, PCSelect_PC_PC);
-	ifidr : IF_IDRegs port map(PCAdder_IFIDRegs_PC, InsFetcher_IFIDRegs_instruction,
-										clk, bypasser_IFIDRegs_dataPause, Control_IFIDRegs_clear,
-										IFIDRegs_bypasser_instruction, IFIDRegs_AddressAdder_PC, IFIDRegs_Registers_rxNum, IFIDRegs_Registers_ryNum);
-	regis : Registers port map(IFIDRegs_Registers_rxNum, IFIDRegs_Registers_ryNum, MEMWBRegs_Registers_WBDes, WBSrcMUX_Registers_writeData, MEMWBRegs_Registers_RegWrite,Registers_bypasser_rx, Registers_bypasser_ry, Registers_bypasser_T, Registers_bypasser_IH, Registers_bypasser_SP);
-	bypas : bypasser port map(Registers_bypasser_rx, Registers_bypasser_ry, Registers_bypasser_T, Registers_bypasser_IH, Registers_bypasser_SP,
-								IFIDRegs_bypasser_rxNum, IFIDRegs_bypasser_ryNum, IFIDRegs_bypasser_instruction,
-								IDEXERegs_bypasser_RegWrite, IDEXERegs_bypasser_WBDes, IDEXERegs_bypasser_MEMRead, ALU_bypasser_rst,
-								EXEMEMRegs_bypasser_RegWrite, EXEMEMRegs_bypasser_WBDes, EXEMEMRegs_bypasser_MEMRead, EXEMEMRegs_bypasser_rst,
-								MEMWBRegs_bypasser_RegWrite, MEMWBRegs_bypasser_WBDes, WBSrcMUX_bypasser_writeData,
-								bypasser_PCSelector_rx, bypasser_IDEXERegs_ry, bypasser_IDEXERegs_T, bypasser_IDEXERegs_IH, bypasser_IDEXERegs_SP, bypasser_PC_dataPause);
-	conrt : Control port map(IFIDRegs_Control_instruction, bypasser_Control_rx, bypasser_Control_T, Control_Extender_immSel, Control_PCSelector_PCSelCtr,
-								Control_IDEXERegs_ALUFunc, Control_IDEXERegs_ALUSrc0, Control_IDEXERegs_ALUSrc1,
-								Control_IDEXERegs_MEMRead, Control_IDEXERegs_MEMWrite, Control_IDEXERegs_MEMSrc,
-								Control_IDEXERegs_WBDes, Control_IDEXERegs_WBSrc, Control_IDEXERegs_RegWrite);
-	exten : Extender port map(IFIDRegs_Extender_instruction, Control_Extender_immSel, Extender_AddressAdder_imm);
-	addre : AddressAdder port map(IFIDRegs_AddressAdder_PC, Extender_AddressAdder_imm, AddressAdder_PCSelector_PC);
-	idexe : ID_EXERegs port map(Control_IDEXERegs_ALUFunc, Control_IDEXERegs_ALUSrc0, Control_IDEXERegs_ALUSrc1,
-									Control_IDEXERegs_WBDes, Control_IDEXERegs_WBSrc,
-									Control_IDEXERegs_MEMRead, Control_IDEXERegs_MEMWrite, Control_IDEXERegs_MEMSrc,
-									Control_IDEXERegs_RegWrite, Extender_IDEXERegs_imm, IFIDRegs_IDEXERegs_PC,
-									bypasser_IDEXERegs_rx, bypasser_IDEXERegs_ry, bypasser_IDEXERegs_IH, bypasser_IDEXERegs_SP, Registers_IDEXERegs_RA,
-									clk, bypasser_IDEXERegs_dataPause, '0',
-									IDEXERegs_ALU_ALUFunc, IDEXERegs_ALUSrc0MUX_ALUSrc0, IDEXERegs_ALUSrc1MUX_ALUSrc1,
-									IDEXERegs_EXEMEMRegs_WBDes, IDEXERegs_EXEMEMRegs_WBSrc,
-									IDEXERegs_EXEMEMRegs_MEMRead, IDEXERegs_EXEMEMRegs_MEMWrite, IDEXERegs_EXEMEMRegs_MEMSrc,
-									IDEXERegs_EXEMEMRegs_RegWrite, IDEXERegs_ALUSrc1MUX_imm, IDEXERegs_ALUSrc1MUX_PC,
-									IDEXERegs_ALUSrc0MUX_rx, IDEXERegs_ALUSrc0MUX_ry, IDEXERegs_ALUSrc1MUX_IH, IDEXERegs_ALUSrc0MUX_SP, IDEXERegs_EXEMEMRegs_RA);
-	alus0m : ALUSrc0MUX port map(IDEXERegs_ALUSrc0MUX_rx, IDEXERegs_ALUSrc0MUX_ry, IDEXERegs_ALUSrc0MUX_SP, IDEXERegs_ALUSrc0MUX_ALUSrc0, ALUSrc0MUX_ALU_ALUSrc0);
-	alus1m : ALUSrc1MUX port map(IDEXERegs_ALUSrc1MUX_imm, IDEXERegs_ALUSrc1MUX_rx, IDEXERegs_ALUSrc1MUX_ry, IDEXERegs_ALUSrc1MUX_IH, IDEXERegs_ALUSrc1MUX_PC, IDEXERegs_ALUSrc1MUX_ALUSrc1, ALUSrc1MUX_ALU_ALUSrc1);
-	al : ALU port map(ALUSrc0MUX_ALU_ALUSrc0, ALUSrc1MUX_ALU_ALUSrc1, IDEXERegs_ALU_ALUFunc, ALU_EXEMEMRegs_rst);
-	rwpau : ReadWritePauser port map(IDEXERegs_readWritePause_MEMWrite, IDEXERegs_readWritePause_MEMRead, ALU_readWritePause_rst, readWritePause_PC_pause);
-	exemr : EXE_MEMRegs port map(IDEXERegs_EXEMEMRegs_WBDes, IDEXERegs_EXEMEMRegs_WBSrc,
-									IDEXERegs_EXEMEMRegs_MEMRead, IDEXERegs_EXEMEMRegs_MEMWrite, IDEXERegs_EXEMEMRegs_MEMSrc,
-									IDEXERegs_EXEMEMRegs_RegWrite, ALU_EXEMEMRegs_rst, IDEXERegs_EXEMEMRegs_RA, IDEXERegs_EXEMEMRegs_rx, IDEXERegs_EXEMEMRegs_ry,
-									clk, '0', '0',
-									EXEMEMRegs_MEMWBRegs_WBDes, EXEMEMRegs_MEMWBRegs_WBSrc,
-									EXEMEMRegs_MEMAccess_MEMRead, EXEMEMRegs_MEMAccess_MEMWrite, EXEMEMRegs_MEMSrcMUX_MEMSrc,
-									EXEMEMRegs_MEMWBRegs_RegWrite, EXEMEMRegs_MEMWBRegs_rst,
-									EXEMEMRegs_MEMSrcMUX_RA, EXEMEMRegs_MEMSrcMUX_rx, EXEMEMRegs_MEMSrcMUX_ry);
-	memsm : MEMSrcMUX port map(EXEMEMRegs_MEMSrcMUX_rx, EXEMEMRegs_MEMSrcMUX_ry, EXEMEMRegs_MEMSrcMUX_RA, EXEMEMRegs_MEMSrcMUX_MEMSrc, MEMSrcMUX_MEMAccess_writeData);
-	memac : MEMAccess port map(EXEMEMRegs_MEMAccess_rst, EXEMEMRegs_MEMAccess_MEMRead, EXEMEMRegs_MEMAccess_MEMWrite, MEMSrcMUX_MEMAccess_writeData,
-											dataReady, tsre, MEMAccess_MEMWBRegs_buffer,
-											RAM1addr, RAM1data, RAM1OE, RAM1WE, RAM1EN,
-											memRam2Addr, memRam2DataOut, memRam2DataIn, memRam2OE, memRam2WE, memRam2EN,
-											rdn, wrn);
-	memwr : MEM_WBRegs port map(EXEMEMRegs_MEMWBRegs_rst, MEMAccess_MEMWBRegs_buffer,
-									EXEMEMRegs_MEMWBRegs_WBDes, EXEMEMRegs_MEMWBRegs_WBSrc, EXEMEMRegs_MEMWBRegs_RegWrite,
-									clk, '0', '0',
-									MEMWBRegs_WBSrcMUX_rst, MEMWBRegs_WBSrcMUX_buffer,
-									MEMWBRegs_Registers_WBDes, MEMWBRegs_WBSrcMUX_WBSrc, MEMWBRegs_Registers_RegWrite);
-	wbsm : WBSrcMUX port map(MEMWBRegs_WBSrcMUX_rst, MEMWBRegs_WBSrcMUX_buffer, MEMWBRegs_WBSrcMUX_WBSrc, WBSrcMUX_Registers_writeData);
-	ram2a : Ram2Access port map(readWritePause_Ram2Access_pause, insRam2OE, insRam2WE, insRam2EN, insRam2Addr, insRam2Data,
-								EXEMEMRegs_Ram2Access_MEMRead, memRam2OE, memRam2WE, memRam2EN, memRam2Addr, memRam2DataOut, memRam2DataIn,
-								Ram2OE, Ram2WE, Ram2EN, Ram2Addr, Ram2Data);
+	p : PC port map(				clk, 
+										readWritePause_PC_pause, 
+										bypasser_PC_dataPause, 
+										PCSelect_PC_PC, 
+										PC_InsFetcher_PC);
+										
+	insf : InsFetcher port map(insRam2OE, insRam2WE, insRam2EN, insRam2Addr, insRam2Data, 
+										PC_InsFetcher_PC, 
+										InsFetcher_IFIDRegs_instruction, 
+										readWritePause_InsFetcher_pause);
+										
+	pca : PCAdder port map(		PC_PCAdder_PC, 
+										PCAdder_IFIDRegs_PC);
+										
+	pcs : PCSelector port map(	PCAdder_PCSelector_PC, 
+										AddressAdder_PCSelector_PC,
+										bypasser_PCSelector_rx, 
+										Control_PCSelector_PCSelCtr, 
+										PCSelect_PC_PC);
+										
+	ifidr : IF_IDRegs port map(PCAdder_IFIDRegs_PC, 
+										InsFetcher_IFIDRegs_instruction,
+										clk, 
+										bypasser_IFIDRegs_dataPause, 
+										Control_IFIDRegs_clear,
+										IFIDRegs_bypasser_instruction, 
+										IFIDRegs_AddressAdder_PC, 
+										IFIDRegs_Registers_rxNum,
+										IFIDRegs_Registers_ryNum);
+										
+	regis : Registers port map(IFIDRegs_Registers_rxNum, 
+										IFIDRegs_Registers_ryNum,
+										MEMWBRegs_Registers_WBDes,
+										WBSrcMUX_Registers_writeData,
+										MEMWBRegs_Registers_RegWrite,
+										Registers_bypasser_rx, 
+										Registers_bypasser_ry, 
+										Registers_bypasser_T, 
+										Registers_bypasser_IH,
+										Registers_bypasser_SP);
+										
+	bypas : bypasser port map(
+										Registers_bypasser_rx, 
+										Registers_bypasser_ry, 
+										Registers_bypasser_T, 
+										Registers_bypasser_IH,
+										Registers_bypasser_SP,
+										IFIDRegs_bypasser_rxNum, 
+										IFIDRegs_bypasser_ryNum, 
+										IFIDRegs_bypasser_instruction,
+										IDEXERegs_bypasser_RegWrite,
+										IDEXERegs_bypasser_WBDes, 
+										IDEXERegs_bypasser_MEMRead, 
+										ALU_bypasser_rst,
+										EXEMEMRegs_bypasser_RegWrite,
+										EXEMEMRegs_bypasser_WBDes,
+										EXEMEMRegs_bypasser_MEMRead, 
+										EXEMEMRegs_bypasser_rst,
+										MEMWBRegs_bypasser_RegWrite,
+										MEMWBRegs_bypasser_WBDes, 
+										WBSrcMUX_bypasser_writeData,
+										bypasser_PCSelector_rx,
+										bypasser_IDEXERegs_ry, 
+										bypasser_IDEXERegs_T, 
+										bypasser_IDEXERegs_IH,
+										bypasser_IDEXERegs_SP,
+										bypasser_PC_dataPause);
+										
+	conrt : Control port map(
+										IFIDRegs_Control_instruction, 
+										bypasser_Control_rx, 
+										bypasser_Control_T, 
+										Control_Extender_immSel, 
+										Control_PCSelector_PCSelCtr,
+										Control_IDEXERegs_ALUFunc, 
+										Control_IDEXERegs_ALUSrc0, 
+										Control_IDEXERegs_ALUSrc1,
+										Control_IDEXERegs_MEMRead, 
+										Control_IDEXERegs_MEMWrite, 
+										Control_IDEXERegs_MEMSrc,
+										Control_IDEXERegs_WBDes, 
+										Control_IDEXERegs_WBSrc, 
+										Control_IDEXERegs_RegWrite);
+										
+	exten : Extender port map(
+										IFIDRegs_Extender_instruction, 
+										Control_Extender_immSel, 
+										Extender_AddressAdder_imm);
+										
+	addre : AddressAdder port map(
+										IFIDRegs_AddressAdder_PC,
+										Extender_AddressAdder_imm, 
+										AddressAdder_PCSelector_PC);
+										
+	idexe : ID_EXERegs port map(
+										Control_IDEXERegs_ALUFunc, 
+										Control_IDEXERegs_ALUSrc0, 
+										Control_IDEXERegs_ALUSrc1,
+										Control_IDEXERegs_WBDes, 
+										Control_IDEXERegs_WBSrc,
+										Control_IDEXERegs_MEMRead, 
+										Control_IDEXERegs_MEMWrite, 
+										Control_IDEXERegs_MEMSrc,
+										Control_IDEXERegs_RegWrite, 
+										Extender_IDEXERegs_imm, 
+										IFIDRegs_IDEXERegs_PC,
+										bypasser_IDEXERegs_rx, 
+										bypasser_IDEXERegs_ry, 
+										bypasser_IDEXERegs_IH, 
+										bypasser_IDEXERegs_SP, 
+										Registers_IDEXERegs_RA,
+										clk, 
+										'0',
+										bypasser_IDEXERegs_dataPause, 
+										IDEXERegs_ALU_ALUFunc, 
+										IDEXERegs_ALUSrc0MUX_ALUSrc0, 
+										IDEXERegs_ALUSrc1MUX_ALUSrc1,
+										IDEXERegs_EXEMEMRegs_WBDes, 
+										IDEXERegs_EXEMEMRegs_WBSrc,
+										IDEXERegs_EXEMEMRegs_MEMRead, 
+										IDEXERegs_EXEMEMRegs_MEMWrite, 
+										IDEXERegs_EXEMEMRegs_MEMSrc,
+										IDEXERegs_EXEMEMRegs_RegWrite, 
+										IDEXERegs_ALUSrc1MUX_imm, 
+										IDEXERegs_ALUSrc1MUX_PC,
+										IDEXERegs_ALUSrc0MUX_rx, 
+										IDEXERegs_ALUSrc0MUX_ry, 
+										IDEXERegs_ALUSrc1MUX_IH, 
+										IDEXERegs_ALUSrc0MUX_SP, 
+										IDEXERegs_EXEMEMRegs_RA);
+											
+	alus0m : ALUSrc0MUX port map(
+										IDEXERegs_ALUSrc0MUX_rx, 
+										IDEXERegs_ALUSrc0MUX_ry, 
+										IDEXERegs_ALUSrc0MUX_SP, 
+										IDEXERegs_ALUSrc0MUX_ALUSrc0, 
+										ALUSrc0MUX_ALU_ALUSrc0, 
+										clk);
+										
+	alus1m : ALUSrc1MUX port map(
+										IDEXERegs_ALUSrc1MUX_imm, 
+										IDEXERegs_ALUSrc1MUX_rx, 
+										IDEXERegs_ALUSrc1MUX_ry, 
+										IDEXERegs_ALUSrc1MUX_IH, 
+										IDEXERegs_ALUSrc1MUX_PC, 
+										IDEXERegs_ALUSrc1MUX_ALUSrc1, 
+										ALUSrc1MUX_ALU_ALUSrc1);
+										
+	al : ALU port map(
+										ALUSrc0MUX_ALU_ALUSrc0, 
+										ALUSrc1MUX_ALU_ALUSrc1, 
+										IDEXERegs_ALU_ALUFunc, 
+										ALU_EXEMEMRegs_rst);
+										
+	rwpau : ReadWritePauser port map(
+										IDEXERegs_readWritePause_MEMWrite, 
+										IDEXERegs_readWritePause_MEMRead, 
+										ALU_readWritePause_rst, 
+										readWritePause_PC_pause);
+										
+	exemr : EXE_MEMRegs port map(
+										IDEXERegs_EXEMEMRegs_WBDes, 
+										IDEXERegs_EXEMEMRegs_WBSrc,
+										IDEXERegs_EXEMEMRegs_MEMRead, 
+										IDEXERegs_EXEMEMRegs_MEMWrite, 
+										IDEXERegs_EXEMEMRegs_MEMSrc,
+										IDEXERegs_EXEMEMRegs_RegWrite, 
+										ALU_EXEMEMRegs_rst, 
+										IDEXERegs_EXEMEMRegs_RA, 
+										IDEXERegs_EXEMEMRegs_rx, 
+										IDEXERegs_EXEMEMRegs_ry,
+										clk, '0', '0',
+										EXEMEMRegs_MEMWBRegs_WBDes, 
+										EXEMEMRegs_MEMWBRegs_WBSrc,
+										EXEMEMRegs_MEMAccess_MEMRead, 
+										EXEMEMRegs_MEMAccess_MEMWrite, 
+										EXEMEMRegs_MEMSrcMUX_MEMSrc,
+										EXEMEMRegs_MEMWBRegs_RegWrite, 
+										EXEMEMRegs_MEMWBRegs_rst,
+										EXEMEMRegs_MEMSrcMUX_RA, 
+										EXEMEMRegs_MEMSrcMUX_rx, 
+										EXEMEMRegs_MEMSrcMUX_ry);
+										
+	memsm : MEMSrcMUX port map(EXEMEMRegs_MEMSrcMUX_rx, 
+										EXEMEMRegs_MEMSrcMUX_ry, 
+										EXEMEMRegs_MEMSrcMUX_RA, 
+										EXEMEMRegs_MEMSrcMUX_MEMSrc, 
+										MEMSrcMUX_MEMAccess_writeData);
+										
+	memac : MEMAccess port map(EXEMEMRegs_MEMAccess_rst, 
+										EXEMEMRegs_MEMAccess_MEMRead, 
+										EXEMEMRegs_MEMAccess_MEMWrite, 
+										MEMSrcMUX_MEMAccess_writeData,
+										dataReady, tsre, 
+										MEMAccess_MEMWBRegs_buffer,
+										RAM1addr, RAM1data, RAM1OE, RAM1WE, RAM1EN,
+										memRam2Addr, memRam2DataOut, memRam2DataIn, memRam2OE, memRam2WE, memRam2EN,
+										rdn, wrn);
+										
+	memwr : MEM_WBRegs port map(EXEMEMRegs_MEMWBRegs_rst, 
+										MEMAccess_MEMWBRegs_buffer,
+										EXEMEMRegs_MEMWBRegs_WBDes, 
+										EXEMEMRegs_MEMWBRegs_WBSrc, 
+										EXEMEMRegs_MEMWBRegs_RegWrite,
+										clk, '0', '0',
+										MEMWBRegs_WBSrcMUX_rst, 
+										MEMWBRegs_WBSrcMUX_buffer,
+										MEMWBRegs_Registers_WBDes, 
+										MEMWBRegs_WBSrcMUX_WBSrc, 
+										MEMWBRegs_Registers_RegWrite);
+										
+	wbsm : WBSrcMUX port map(
+										MEMWBRegs_WBSrcMUX_rst, 
+										MEMWBRegs_WBSrcMUX_buffer, 
+										MEMWBRegs_WBSrcMUX_WBSrc, 
+										WBSrcMUX_Registers_writeData);
+										
+	ram2a : Ram2Access port map(
+										readWritePause_Ram2Access_pause, 
+										insRam2OE, insRam2WE, insRam2EN, insRam2Addr, insRam2Data,
+										EXEMEMRegs_Ram2Access_MEMRead, 
+										memRam2OE, memRam2WE, memRam2EN, memRam2Addr, memRam2DataOut, memRam2DataIn,
+										Ram2OE, Ram2WE, Ram2EN, Ram2Addr, Ram2Data);
 end Behavioral;
 

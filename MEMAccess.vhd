@@ -63,6 +63,7 @@ begin
 			RAM1WE <= '1';
 			RAM1EN <= '1';
 			rdn <= '0';
+			wrn <= '1';
 			RAM1Data <= (others => 'Z');
 		elsif(inAddress = "1011111100000001") then -- read serial status
 			RAM1OE <= '1';
@@ -99,10 +100,11 @@ begin
 			RAM1WE <= '1';
 			RAM1EN <= '1';
 			wrn <= '0';
+			rdn <= '1';
 			RAM1Data <= inData;
 		elsif(inAddress < "1000000000000000") then --write ram2
 			rdn <= '1';
-			wrn <= '0';
+			wrn <= '1';
 			RAM1OE <= '1';
 			RAM1WE <= '1';
 			RAM1EN <= '1';
@@ -113,7 +115,7 @@ begin
 			Ram2DataOut <= inData;
 		else		--write ram1
 			rdn <= '1';
-			wrn <= '0';
+			wrn <= '1';
 			RAM1OE <= '0';
 			RAM1WE <= '0';
 			RAM1EN <= '0';

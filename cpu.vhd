@@ -49,14 +49,89 @@ begin
 	process(Ram2Addr)
 	begin
 	case Ram2Addr is
-		when "000000000000000000" =>
-			Ram2Data <= "0110100010111111";   --li 000 BF
-		when "000000000000000001" =>
-			Ram2Data <= "0011000000000000";   --sll 000 8
-		when "000000000000000010" =>
-			Ram2Data <= "0100100000000001";   --addiu 000 1
-		when "000000000000000011" =>
-			Ram2Data <= "1001100000100000";   --lw 000 001 0
+		when "00"&X"0000" =>
+			Ram2Data <= X"0000";
+		when "00"&X"0001" =>
+			Ram2Data <= X"0000";
+		when "00"&X"0002" =>
+			Ram2Data <= X"0800";
+		when "00"&X"0003" =>
+			Ram2Data <= X"1044";
+
+
+		when "00"&X"0048" =>
+			Ram2Data <= X"6807";
+		when "00"&X"0049" =>
+			Ram2Data <= X"F001";
+		when "00"&X"004A" =>
+			Ram2Data <= X"68BF";
+		when "00"&X"004B" =>
+			Ram2Data <= X"3000";
+		when "00"&X"004C" =>
+			Ram2Data <= X"4810";
+		when "00"&X"004D" =>
+			Ram2Data <= X"6400";
+		when "00"&X"004E" =>
+			Ram2Data <= X"0800";
+		when "00"&X"004F" =>
+			Ram2Data <= X"6EBF";
+		when "00"&X"0050" =>
+			Ram2Data <= X"36C0";
+		when "00"&X"0051" =>
+			Ram2Data <= X"4E10";
+		when "00"&X"0052" =>
+			Ram2Data <= X"6800";
+		when "00"&X"0053" =>
+			Ram2Data <= X"DE00";
+		when "00"&X"0054" =>
+			Ram2Data <= X"DE01";
+		when "00"&X"0055" =>
+			Ram2Data <= X"DE02";
+		when "00"&X"0056" =>
+			Ram2Data <= X"DE03";
+		when "00"&X"0057" =>
+			Ram2Data <= X"DE04";
+		when "00"&X"0058" =>
+			Ram2Data <= X"DE05";
+		when "00"&X"0059" =>
+			Ram2Data <= X"EF40";
+		when "00"&X"005A" =>
+			Ram2Data <= X"4F03";
+		when "00"&X"005B" =>
+			Ram2Data <= X"0800";
+		when "00"&X"005C" =>
+			Ram2Data <= X"104A";
+		when "00"&X"005D" =>
+			Ram2Data <= X"6EBF";
+		when "00"&X"005E" =>
+			Ram2Data <= X"36C0";
+		when "00"&X"005F" =>
+			Ram2Data <= X"684F";
+
+
+		when "00"&X"00A7" =>
+			Ram2Data <= X"0800";
+		when "00"&X"00A8" =>
+			Ram2Data <= X"6EBF";
+		when "00"&X"00A9" =>
+			Ram2Data <= X"36C0";
+		when "00"&X"00AA" =>
+			Ram2Data <= X"4E01";
+		when "00"&X"00AB" =>
+			Ram2Data <= X"9E00";
+		when "00"&X"00AC" =>
+			Ram2Data <= X"6E01";
+		when "00"&X"00AD" =>
+			Ram2Data <= X"E8CC";
+		when "00"&X"00AE" =>
+			Ram2Data <= X"20F8";
+		when "00"&X"00AF" =>
+			Ram2Data <= X"0800";
+		when "00"&X"00B0" =>
+			Ram2Data <= X"EF00";
+		when "00"&X"00B1" =>
+			Ram2Data <= X"0800";
+
 		--when "000000000000000100" =>
 			--Ram2Data <= "0110100000100000"; 
 		--when "000000000000000101" =>
@@ -81,7 +156,7 @@ begin
 	end process;
 	process(RAM1addr,rdn)
 	begin
-		if(RAM1EN='0')then
+		if(RAM1EN='0' and RAM1WE='1')then
 			case RAM1addr is
 				when "00"&X"BF00" =>
 					RAM1data <= X"1001";

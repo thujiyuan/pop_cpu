@@ -36,24 +36,25 @@ entity ALUSrc0MUX is
            ry : in  STD_LOGIC_VECTOR (15 downto 0);
            SP : in  STD_LOGIC_VECTOR (15 downto 0);
            ctrl : in  STD_LOGIC_VECTOR (1 downto 0);
-           output : out  STD_LOGIC_VECTOR (15 downto 0));
+           output : out  STD_LOGIC_VECTOR (15 downto 0);
+			  clk : in STD_LOGIC);
 end ALUSrc0MUX;
 
 architecture Behavioral of ALUSrc0MUX is
 
 begin
 
-process(rx, ry, sp, ctrl)
+process(rx, ry, sp, ctrl, clk)
 begin
 	case ctrl is
-		when ALUSrc0.rx =>
+		when "10" =>
 			output <= rx;
-		when ALUSrc0.ry =>
+		when "00" =>
 			output <= ry;
-		when ALUSrc0.SP =>
+		when "01" =>
 			output <= SP;	
-		when ALUSrc0.zero =>
-			output <= (others => '0');	
+		when "11" =>
+			output <= "0000000000000000";	
 		when others =>
 			output <= "1111111111111111";
 	end case;

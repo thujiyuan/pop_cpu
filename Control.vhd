@@ -453,7 +453,7 @@ begin
 						RegWrite <= '0';
 					end case;
 			when "00010" =>								--B 
-				immSel <= "111";
+				immSel <= "101";
 				PCSelCtr <= "01";
 				ALUFunc <= "111";
 				ALUSrc0 <= "00";

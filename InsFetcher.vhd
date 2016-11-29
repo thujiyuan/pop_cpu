@@ -57,7 +57,7 @@ begin
 	process(Ram2Data, rwPause)
 	begin
 		if(rwPause = '1') then
-			ins <= "0000000000000000";
+			ins <= "0000100000000000";
 		else 
 			ins <= Ram2Data;
 		end if;

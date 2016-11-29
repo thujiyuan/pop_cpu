@@ -59,14 +59,14 @@ architecture Behavioral of EXE_MEMRegs is
 
 begin
 process(clk)
-variable tempWBDes : STD_LOGIC_VECTOR (3 downto 0);
-variable tempWBSrc : STD_LOGIC;
-variable tempMEMRead : STD_LOGIC;
-variable tempMEMWrite : STD_LOGIC;
-variable tempMEMSrc : STD_LOGIC_VECTOR (1 downto 0);
-variable tempRegWrite : STD_LOGIC;
-variable tempRst :  STD_LOGIC_VECTOR (15 downto 0);
-variable tempRA,tempRx,tempRy :  STD_LOGIC_VECTOR (15 downto 0);
+variable tempWBDes : STD_LOGIC_VECTOR (3 downto 0) := (others=>'0');
+variable tempWBSrc : STD_LOGIC := '0';
+variable tempMEMRead : STD_LOGIC := '0';
+variable tempMEMWrite : STD_LOGIC := '0';
+variable tempMEMSrc : STD_LOGIC_VECTOR (1 downto 0) := (others=>'0');
+variable tempRegWrite : STD_LOGIC := '0';
+variable tempRst :  STD_LOGIC_VECTOR (15 downto 0) := (others=>'0');
+variable tempRA,tempRx,tempRy :  STD_LOGIC_VECTOR (15 downto 0) := (others=>'0');
 begin
 	if(clk'event and clk = '1') then
 		if(clear = '1') then
