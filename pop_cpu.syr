@@ -3,14 +3,14 @@ Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
 --> Parameter TMPDIR set to xst/projnav.tmp
 
 
-Total REAL time to Xst completion: 1.00 secs
-Total CPU time to Xst completion: 0.14 secs
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.10 secs
  
 --> Parameter xsthdpdir set to xst
 
 
-Total REAL time to Xst completion: 1.00 secs
-Total CPU time to Xst completion: 0.14 secs
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.11 secs
  
 --> Reading design: pop_cpu.prj
 
@@ -106,11 +106,12 @@ Slice Utilization Ratio Delta      : 5
 =========================================================================
 Compiling vhdl file "F:/thujiyuan/pop_cpu/recordDefs.vhd" in Library work.
 Architecture recorddefs of Entity recorddefs is up to date.
+Compiling vhdl file "F:/thujiyuan/pop_cpu/shumaDecoder.vhd" in Library work.
+Architecture behavioral of Entity shumadecoder is up to date.
 Compiling vhdl file "F:/thujiyuan/pop_cpu/PC.vhd" in Library work.
 Architecture pcbehavioral of Entity pc is up to date.
 Compiling vhdl file "F:/thujiyuan/pop_cpu/InsFetcher.vhd" in Library work.
-Entity <insfetcher> compiled.
-Entity <insfetcher> (Architecture <behavioral>) compiled.
+Architecture behavioral of Entity insfetcher is up to date.
 Compiling vhdl file "F:/thujiyuan/pop_cpu/PCAdder.vhd" in Library work.
 Architecture pcadderbehavioral of Entity pcadder is up to date.
 Compiling vhdl file "F:/thujiyuan/pop_cpu/PCSelector.vhd" in Library work.
@@ -163,8 +164,6 @@ Compiling vhdl file "F:/thujiyuan/pop_cpu/MEM_WBRegs.vhd" in Library work.
 Architecture behavioral of Entity mem_wbregs is up to date.
 Compiling vhdl file "F:/thujiyuan/pop_cpu/WBSrcMUX.vhd" in Library work.
 Architecture behavioral of Entity wbsrcmux is up to date.
-Compiling vhdl file "F:/thujiyuan/pop_cpu/Ram2Access.vhd" in Library work.
-Architecture behavioral of Entity ram2access is up to date.
 Compiling vhdl file "F:/thujiyuan/pop_cpu/pop_cpu.vhd" in Library work.
 Entity <pop_cpu> compiled.
 Entity <pop_cpu> (Architecture <behavioral>) compiled.
@@ -173,6 +172,8 @@ Entity <pop_cpu> (Architecture <behavioral>) compiled.
 *                     Design Hierarchy Analysis                         *
 =========================================================================
 Analyzing hierarchy for entity <pop_cpu> in library <work> (architecture <behavioral>).
+
+Analyzing hierarchy for entity <shumaDecoder> in library <work> (architecture <behavioral>).
 
 Analyzing hierarchy for entity <PC> in library <work> (architecture <pcbehavioral>).
 
@@ -214,20 +215,24 @@ Analyzing hierarchy for entity <MEM_WBRegs> in library <work> (architecture <beh
 
 Analyzing hierarchy for entity <WBSrcMUX> in library <work> (architecture <behavioral>).
 
-Analyzing hierarchy for entity <Ram2Access> in library <work> (architecture <behavioral>).
-
 
 =========================================================================
 *                            HDL Analysis                               *
 =========================================================================
 Analyzing Entity <pop_cpu> in library <work> (Architecture <behavioral>).
-WARNING:Xst:753 - "F:/thujiyuan/pop_cpu/pop_cpu.vhd" line 628: Unconnected output port 'RA' of component 'Registers'.
+WARNING:Xst:753 - "F:/thujiyuan/pop_cpu/pop_cpu.vhd" line 621: Unconnected output port 'RA' of component 'Registers'.
 Entity <pop_cpu> analyzed. Unit <pop_cpu> generated.
+
+Analyzing Entity <shumaDecoder> in library <work> (Architecture <behavioral>).
+INFO:Xst:1561 - "F:/thujiyuan/pop_cpu/shumaDecoder.vhd" line 74: Mux is complete : default of case is discarded
+Entity <shumaDecoder> analyzed. Unit <shumaDecoder> generated.
 
 Analyzing Entity <PC> in library <work> (Architecture <pcbehavioral>).
 Entity <PC> analyzed. Unit <PC> generated.
 
 Analyzing Entity <InsFetcher> in library <work> (Architecture <behavioral>).
+WARNING:Xst:819 - "F:/thujiyuan/pop_cpu/InsFetcher.vhd" line 83: One or more signals are missing in the process sensitivity list. To enable synthesis of FPGA/CPLD hardware, XST will assume that all necessary signals are present in the sensitivity list. Please note that the result of the synthesis may differ from the initial design specification. The missing signals are:
+   <MEMRead>, <MEMWrite>, <MEMAddr>
 Entity <InsFetcher> analyzed. Unit <InsFetcher> generated.
 
 Analyzing Entity <PCAdder> in library <work> (Architecture <pcadderbehavioral>).
@@ -287,17 +292,20 @@ Analyzing Entity <WBSrcMUX> in library <work> (Architecture <behavioral>).
 INFO:Xst:1561 - "F:/thujiyuan/pop_cpu/WBSrcMUX.vhd" line 49: Mux is complete : default of case is discarded
 Entity <WBSrcMUX> analyzed. Unit <WBSrcMUX> generated.
 
-Analyzing Entity <Ram2Access> in library <work> (Architecture <behavioral>).
-WARNING:Xst:819 - "F:/thujiyuan/pop_cpu/Ram2Access.vhd" line 78: One or more signals are missing in the process sensitivity list. To enable synthesis of FPGA/CPLD hardware, XST will assume that all necessary signals are present in the sensitivity list. Please note that the result of the synthesis may differ from the initial design specification. The missing signals are:
-   <pause>, <memRead>
-Entity <Ram2Access> analyzed. Unit <Ram2Access> generated.
-
 
 =========================================================================
 *                           HDL Synthesis                               *
 =========================================================================
 
 Performing bidirectional port resolution...
+
+Synthesizing Unit <shumaDecoder>.
+    Related source file is "F:/thujiyuan/pop_cpu/shumaDecoder.vhd".
+    Found 16x7-bit ROM for signal <decode>.
+    Summary:
+	inferred   1 ROM(s).
+Unit <shumaDecoder> synthesized.
+
 
 Synthesizing Unit <PC>.
     Related source file is "F:/thujiyuan/pop_cpu/PC.vhd".
@@ -311,6 +319,13 @@ Unit <PC> synthesized.
 
 Synthesizing Unit <InsFetcher>.
     Related source file is "F:/thujiyuan/pop_cpu/InsFetcher.vhd".
+WARNING:Xst:737 - Found 16-bit latch for signal <MEMReadData>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+    Found 16-bit tristate buffer for signal <Ram2Data>.
+    Found 18-bit comparator less for signal <Ram2Addr$cmp_lt0000> created at line 61.
+    Found 18-bit comparator greatequal for signal <Ram2Data$cmp_ge0000> created at line 67.
+    Summary:
+	inferred   2 Comparator(s).
+	inferred  16 Tristate(s).
 Unit <InsFetcher> synthesized.
 
 
@@ -529,25 +544,21 @@ Unit <MEMSrcMUX> synthesized.
 
 Synthesizing Unit <MEMAccess>.
     Related source file is "F:/thujiyuan/pop_cpu/MEMAccess.vhd".
-    Register <RAM2OE> equivalent to <RAM2EN> has been removed
-WARNING:Xst:737 - Found 16-bit latch for signal <RAM2DataOut>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
-WARNING:Xst:737 - Found 1-bit latch for signal <RAM2WE>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <RAM1WE>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <RAM1EN>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <RAM1OE>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <rdn>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <wrn>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:736 - Found 1-bit latch for signal <Mtrien_RAM1data> created at line 70. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
 INFO:Xst:2371 - HDL ADVISOR - Logic functions respectively driving the data and gate enable inputs of this latch share common terms. This situation will potentially lead to setup/hold violations and, as a result, to simulation problems. This situation may come from an incomplete case statement (all selector values are not covered). You should carefully review if it was in your intentions to describe such a latch.
-WARNING:Xst:736 - Found 1-bit latch for signal <Mtrien_RAM1data> created at line 67. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
-INFO:Xst:2371 - HDL ADVISOR - Logic functions respectively driving the data and gate enable inputs of this latch share common terms. This situation will potentially lead to setup/hold violations and, as a result, to simulation problems. This situation may come from an incomplete case statement (all selector values are not covered). You should carefully review if it was in your intentions to describe such a latch.
-WARNING:Xst:736 - Found 16-bit latch for signal <Mtridata_RAM1data> created at line 67. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:736 - Found 16-bit latch for signal <Mtridata_RAM1data> created at line 70. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
 INFO:Xst:2371 - HDL ADVISOR - Logic functions respectively driving the data and gate enable inputs of this latch share common terms. This situation will potentially lead to setup/hold violations and, as a result, to simulation problems. This situation may come from an incomplete case statement (all selector values are not covered). You should carefully review if it was in your intentions to describe such a latch.
 WARNING:Xst:737 - Found 18-bit latch for signal <RAM1addr>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
 INFO:Xst:2371 - HDL ADVISOR - Logic functions respectively driving the data and gate enable inputs of this latch share common terms. This situation will potentially lead to setup/hold violations and, as a result, to simulation problems. This situation may come from an incomplete case statement (all selector values are not covered). You should carefully review if it was in your intentions to describe such a latch.
-WARNING:Xst:737 - Found 1-bit latch for signal <RAM2EN>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
-INFO:Xst:2371 - HDL ADVISOR - Logic functions respectively driving the data and gate enable inputs of this latch share common terms. This situation will potentially lead to setup/hold violations and, as a result, to simulation problems. This situation may come from an incomplete case statement (all selector values are not covered). You should carefully review if it was in your intentions to describe such a latch.
-WARNING:Xst:737 - Found 18-bit latch for signal <RAM2addr>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
-INFO:Xst:2371 - HDL ADVISOR - Logic functions respectively driving the data and gate enable inputs of this latch share common terms. This situation will potentially lead to setup/hold violations and, as a result, to simulation problems. This situation may come from an incomplete case statement (all selector values are not covered). You should carefully review if it was in your intentions to describe such a latch.
     Found 16-bit tristate buffer for signal <RAM1data>.
-    Found 16-bit comparator greatequal for signal <RAM2addr$cmp_ge0000> created at line 74.
-    Found 16-bit comparator less for signal <RAMbuffer$cmp_lt0000> created at line 143.
+    Found 16-bit comparator less for signal <RAMbuffer$cmp_lt0000> created at line 133.
     Summary:
-	inferred   2 Comparator(s).
+	inferred   1 Comparator(s).
 	inferred  16 Tristate(s).
 Unit <MEMAccess> synthesized.
 
@@ -574,16 +585,6 @@ Synthesizing Unit <WBSrcMUX>.
 Unit <WBSrcMUX> synthesized.
 
 
-Synthesizing Unit <Ram2Access>.
-    Related source file is "F:/thujiyuan/pop_cpu/Ram2Access.vhd".
-WARNING:Xst:737 - Found 16-bit latch for signal <insRam2Data>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
-WARNING:Xst:737 - Found 16-bit latch for signal <memRam2DataIn>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
-    Found 16-bit tristate buffer for signal <Ram2Data>.
-    Summary:
-	inferred  16 Tristate(s).
-Unit <Ram2Access> synthesized.
-
-
 Synthesizing Unit <pop_cpu>.
     Related source file is "F:/thujiyuan/pop_cpu/pop_cpu.vhd".
 WARNING:Xst:653 - Signal <Registers_IDEXERegs_RA> is used but never assigned. This sourceless signal will be automatically connected to value 0000000000000000.
@@ -595,7 +596,8 @@ INFO:Xst:1767 - HDL ADVISOR - Resource sharing has identified that some arithmet
 HDL Synthesis Report
 
 Macro Statistics
-# ROMs                                                 : 2
+# ROMs                                                 : 4
+ 16x7-bit ROM                                          : 2
  4x3-bit ROM                                           : 1
  4x7-bit ROM                                           : 1
 # Adders/Subtractors                                   : 3
@@ -608,13 +610,14 @@ Macro Statistics
  3-bit register                                        : 6
  4-bit register                                        : 3
 # Latches                                              : 25
- 1-bit latch                                           : 3
- 16-bit latch                                          : 20
- 18-bit latch                                          : 2
-# Comparators                                          : 12
+ 1-bit latch                                           : 6
+ 16-bit latch                                          : 18
+ 18-bit latch                                          : 1
+# Comparators                                          : 13
  16-bit comparator equal                               : 1
- 16-bit comparator greatequal                          : 1
  16-bit comparator less                                : 2
+ 18-bit comparator greatequal                          : 1
+ 18-bit comparator less                                : 1
  4-bit comparator equal                                : 6
  4-bit comparator not equal                            : 2
 # Multiplexers                                         : 7
@@ -680,7 +683,8 @@ WARNING:Xst:1710 - FF/Latch <outRA_0> (without init value) has a constant value 
 Advanced HDL Synthesis Report
 
 Macro Statistics
-# ROMs                                                 : 2
+# ROMs                                                 : 4
+ 16x7-bit ROM                                          : 2
  4x3-bit ROM                                           : 1
  4x7-bit ROM                                           : 1
 # Adders/Subtractors                                   : 3
@@ -689,13 +693,14 @@ Macro Statistics
 # Registers                                            : 351
  Flip-Flops                                            : 351
 # Latches                                              : 25
- 1-bit latch                                           : 3
- 16-bit latch                                          : 20
- 18-bit latch                                          : 2
-# Comparators                                          : 12
+ 1-bit latch                                           : 6
+ 16-bit latch                                          : 18
+ 18-bit latch                                          : 1
+# Comparators                                          : 13
  16-bit comparator equal                               : 1
- 16-bit comparator greatequal                          : 1
  16-bit comparator less                                : 2
+ 18-bit comparator greatequal                          : 1
+ 18-bit comparator less                                : 1
  4-bit comparator equal                                : 6
  4-bit comparator not equal                            : 2
 # Multiplexers                                         : 7
@@ -725,9 +730,6 @@ INFO:Xst:2261 - The FF/Latch <outRA_0> in Unit <ID_EXERegs> is equivalent to the
 WARNING:Xst:1710 - FF/Latch <outRA_0> (without init value) has a constant value of 0 in block <ID_EXERegs>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1710 - FF/Latch <memac/RAM1addr_17> (without init value) has a constant value of 0 in block <pop_cpu>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1710 - FF/Latch <memac/RAM1addr_16> (without init value) has a constant value of 0 in block <pop_cpu>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <memac/RAM2addr_17> (without init value) has a constant value of 0 in block <pop_cpu>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <memac/RAM2addr_16> (without init value) has a constant value of 0 in block <pop_cpu>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <memac/RAM2addr_15> (without init value) has a constant value of 0 in block <pop_cpu>. This FF/Latch will be trimmed during the optimization process.
 INFO:Xst:2261 - The FF/Latch <immResult_10> in Unit <Extender> is equivalent to the following 5 FFs/Latches, which will be removed : <immResult_11> <immResult_12> <immResult_13> <immResult_14> <immResult_15> 
 WARNING:Xst:2170 - Unit ALU : the following signal(s) form a combinatorial loop: rst_shift0005<15>.
 
@@ -799,8 +801,8 @@ WARNING:Xst:2677 - Node <regis/rRA_0> of sequential type is unconnected in block
 
 Mapping all equations...
 Building and optimizing final netlist ...
-INFO:Xst:2261 - The FF/Latch <idexe/outMEMRead> in Unit <pop_cpu> is equivalent to the following FF/Latch, which will be removed : <idexe/outWBSrc> 
 INFO:Xst:2261 - The FF/Latch <idexe/outExtend_15> in Unit <pop_cpu> is equivalent to the following 5 FFs/Latches, which will be removed : <idexe/outExtend_14> <idexe/outExtend_13> <idexe/outExtend_12> <idexe/outExtend_11> <idexe/outExtend_10> 
+INFO:Xst:2261 - The FF/Latch <idexe/outMEMRead> in Unit <pop_cpu> is equivalent to the following FF/Latch, which will be removed : <idexe/outWBSrc> 
 INFO:Xst:2261 - The FF/Latch <exemr/outMEMRead> in Unit <pop_cpu> is equivalent to the following FF/Latch, which will be removed : <exemr/outWBSrc> 
 Found area constraint ratio of 100 (+ 5) on block pop_cpu, actual ratio is 8.
 FlipFlop idexe/outALUSrc1_1 has been replicated 1 time(s)
@@ -840,44 +842,45 @@ Optimization Goal                  : Speed
 Keep Hierarchy                     : No
 
 Design Statistics
-# IOs                              : 102
+# IOs                              : 109
 
 Cell Usage :
-# BELS                             : 1570
+# BELS                             : 1578
 #      GND                         : 1
-#      INV                         : 1
+#      INV                         : 16
 #      LUT1                        : 15
-#      LUT2                        : 71
+#      LUT2                        : 75
 #      LUT2_D                      : 1
 #      LUT2_L                      : 4
-#      LUT3                        : 388
+#      LUT3                        : 379
 #      LUT3_D                      : 15
-#      LUT3_L                      : 22
-#      LUT4                        : 676
-#      LUT4_D                      : 16
-#      LUT4_L                      : 42
+#      LUT3_L                      : 24
+#      LUT4                        : 687
+#      LUT4_D                      : 15
+#      LUT4_L                      : 30
 #      MUXCY                       : 53
-#      MUXF5                       : 168
+#      MUXF5                       : 166
 #      MUXF6                       : 48
 #      VCC                         : 1
 #      XORCY                       : 48
-# FlipFlops/Latches                : 650
-#      FD                          : 96
+# FlipFlops/Latches                : 606
+#      FD                          : 111
 #      FDE                         : 17
-#      FDR                         : 144
+#      FDR                         : 129
 #      FDRE                        : 32
 #      FDRS                        : 13
-#      LD                          : 108
-#      LD_1                        : 32
+#      LD                          : 91
+#      LD_1                        : 16
+#      LDCP                        : 4
 #      LDE                         : 192
-#      LDE_1                       : 16
-# Clock Buffers                    : 3
-#      BUFG                        : 2
+#      LDP                         : 1
+# Clock Buffers                    : 2
+#      BUFG                        : 1
 #      BUFGP                       : 1
-# IO Buffers                       : 101
+# IO Buffers                       : 108
 #      IBUF                        : 2
 #      IOBUF                       : 32
-#      OBUF                        : 67
+#      OBUF                        : 74
 =========================================================================
 
 Device utilization summary:
@@ -885,13 +888,13 @@ Device utilization summary:
 
 Selected Device : 3s1200efg320-4 
 
- Number of Slices:                      689  out of   8672     7%  
- Number of Slice Flip Flops:            618  out of  17344     3%  
- Number of 4 input LUTs:               1251  out of  17344     7%  
- Number of IOs:                         102
- Number of bonded IOBs:                 102  out of    250    40%  
-    IOB Flip Flops:                      32
- Number of GCLKs:                         3  out of     24    12%  
+ Number of Slices:                      668  out of   8672     7%  
+ Number of Slice Flip Flops:            569  out of  17344     3%  
+ Number of 4 input LUTs:               1261  out of  17344     7%  
+ Number of IOs:                         109
+ Number of bonded IOBs:                 109  out of    250    43%  
+    IOB Flip Flops:                      37
+ Number of GCLKs:                         2  out of     24     8%  
 
 ---------------------------
 Partition Resource Summary:
@@ -911,65 +914,51 @@ NOTE: THESE TIMING NUMBERS ARE ONLY A SYNTHESIS ESTIMATE.
 
 Clock Information:
 ------------------
----------------------------------------------------------------+------------------------------------+-------+
-Clock Signal                                                   | Clock buffer(FF name)              | Load  |
----------------------------------------------------------------+------------------------------------+-------+
-pcs/PCout_cmp_eq0000(pcs/PCout_cmp_eq00001:O)                  | NONE(*)(pcs/PCout_0)               | 16    |
-memac/Mtrien_RAM1data_not0001(memac/Mtrien_RAM1data_not00011:O)| NONE(*)(memac/Mtridata_RAM1data_15)| 32    |
-exemr/outMEMRead                                               | NONE(memac/RAM2DataOut_15)         | 16    |
-memac/RAM1addr_not0001(memac/RAM1addr_not00011_f5:O)           | NONE(*)(memac/RAM1addr_15)         | 16    |
-memac/RAM2addr_not0001(memac/RAM2addr_not00011:O)              | NONE(*)(memac/RAM2addr_14)         | 15    |
-memac/RAM2WE_not0001(memac/RAM2WE_not00011:O)                  | NONE(*)(memac/RAM2WE)              | 2     |
-r7_6_OBUF1(rwpau/readWritePause_and00001:O)                    | BUFG(*)(ram2a/insRam2Data_15)      | 32    |
-clk                                                            | BUFGP                              | 302   |
-memwr/outRegWrite1                                             | BUFG                               | 176   |
-bypas/outrx_not0001(bypas/outrx_not0001139:O)                  | NONE(*)(bypas/outrx_15)            | 16    |
-bypas/outry_not0001(bypas/outry_not0001_f5:O)                  | NONE(*)(bypas/outry_15)            | 16    |
-exten/immResult_or0000(exten/immResult_or00001:O)              | NONE(*)(exten/immResult_10)        | 11    |
----------------------------------------------------------------+------------------------------------+-------+
-(*) These 9 clock signal(s) are generated by combinatorial logic,
+-------------------------------------------------------------+------------------------------------+-------+
+Clock Signal                                                 | Clock buffer(FF name)              | Load  |
+-------------------------------------------------------------+------------------------------------+-------+
+pcs/PCout_cmp_eq0000(pcs/PCout_cmp_eq00001:O)                | NONE(*)(pcs/PCout_0)               | 16    |
+insf/MEMReadData_not0001(insf/MEMReadData_not00011:O)        | NONE(*)(insf/MEMReadData_15)       | 16    |
+memac/Mtrien_RAM1data_not0001(memac/RAM1addr_mux0006<14>11:O)| NONE(*)(memac/Mtridata_RAM1data_15)| 32    |
+memac/RAM1addr_not0001(memac/RAM1addr_not00011:O)            | NONE(*)(memac/RAM1addr_15)         | 16    |
+exemr/outMEMWrite                                            | NONE(memac/RAM1WE)                 | 5     |
+inclk                                                        | BUFGP                              | 302   |
+memwr/outRegWrite1                                           | BUFG                               | 176   |
+bypas/outrx_not0001(bypas/outrx_not0001139:O)                | NONE(*)(bypas/outrx_15)            | 16    |
+bypas/outry_not0001(bypas/outry_not0001_f5:O)                | NONE(*)(bypas/outry_15)            | 16    |
+exten/immResult_or0000(exten/immResult_or00001:O)            | NONE(*)(exten/immResult_10)        | 11    |
+-------------------------------------------------------------+------------------------------------+-------+
+(*) These 7 clock signal(s) are generated by combinatorial logic,
 and XST is not able to identify which are the primary clock signals.
 Please use the CLOCK_SIGNAL constraint to specify the clock signal(s) generated by combinatorial logic.
 INFO:Xst:2169 - HDL ADVISOR - Some clock signals were not automatically buffered by XST with BUFG/BUFR resources. Please use the buffer_type constraint in order to insert these buffers to the clock signals to help prevent skew problems.
 
 Asynchronous Control Signals Information:
 ----------------------------------------
-No asynchronous control signals found in this design
+-------------------------------------------------+------------------------+-------+
+Control Signal                                   | Buffer(FF name)        | Load  |
+-------------------------------------------------+------------------------+-------+
+memac/RAM1EN__and0000(memac/RAM1EN__and00001:O)  | NONE(memac/RAM1EN)     | 2     |
+memac/RAM1EN__and0001(memac/RAM1EN__and00011:O)  | NONE(memac/RAM1EN)     | 2     |
+exemr/outMEMRead(exemr/outMEMRead:Q)             | NONE(memac/RAM1WE)     | 1     |
+memac/rdn__and0000(memac/rdn__and00001:O)        | NONE(memac/rdn)        | 1     |
+memac/rdn__and0001(memac/rdn__and00011:O)        | NONE(memac/rdn)        | 1     |
+memac/wrn__and0000(memac/RAM1addr_mux0006<0>41:O)| NONE(memac/wrn)        | 1     |
+memac/wrn__and0001(memac/wrn__and00011:O)        | NONE(memac/wrn)        | 1     |
+-------------------------------------------------+------------------------+-------+
 
 Timing Summary:
 ---------------
 Speed Grade: -4
 
-   Minimum period: 17.679ns (Maximum Frequency: 56.565MHz)
-   Minimum input arrival time before clock: 3.050ns
-   Maximum output required time after clock: 19.154ns
+   Minimum period: 17.419ns (Maximum Frequency: 57.409MHz)
+   Minimum input arrival time before clock: 4.082ns
+   Maximum output required time after clock: 16.649ns
    Maximum combinational path delay: No path found
 
 Timing Detail:
 --------------
 All values displayed in nanoseconds (ns)
-
-=========================================================================
-Timing constraint: Default period analysis for Clock 'exemr/outMEMRead'
-  Clock period: 2.170ns (frequency: 460.829MHz)
-  Total number of paths / destination ports: 16 / 16
--------------------------------------------------------------------------
-Delay:               2.170ns (Levels of Logic = 1)
-  Source:            memac/RAM2DataOut_15 (LATCH)
-  Destination:       memac/RAM2DataOut_15 (LATCH)
-  Source Clock:      exemr/outMEMRead rising
-  Destination Clock: exemr/outMEMRead rising
-
-  Data Path: memac/RAM2DataOut_15 to memac/RAM2DataOut_15
-                                Gate     Net
-    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
-    ----------------------------------------  ------------
-     LDE_1:G->Q            2   0.676   0.482  memac/RAM2DataOut_15 (memac/RAM2DataOut_15)
-     LUT3:I2->O            1   0.704   0.000  memac/RAM2DataOut_mux0003<15>1 (memac/RAM2DataOut_mux0003<15>)
-     LDE_1:D                   0.308          memac/RAM2DataOut_15
-    ----------------------------------------
-    Total                      2.170ns (1.688ns logic, 0.482ns route)
-                                       (77.8% logic, 22.2% route)
 
 =========================================================================
 Timing constraint: Default period analysis for Clock 'memac/RAM1addr_not0001'
@@ -987,157 +976,133 @@ Delay:               2.535ns (Levels of Logic = 2)
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
      LD:G->Q               2   0.676   0.526  memac/RAM1addr_0 (memac/RAM1addr_0)
-     LUT4:I1->O            1   0.704   0.000  memac/RAM1addr_mux0006<0>21_G (N610)
-     MUXF5:I1->O           1   0.321   0.000  memac/RAM1addr_mux0006<0>21 (memac/RAM1addr_mux0006<0>)
+     LUT3:I1->O            1   0.704   0.000  memac/RAM1addr_mux0006<0>_F (N688)
+     MUXF5:I0->O           1   0.321   0.000  memac/RAM1addr_mux0006<0> (memac/RAM1addr_mux0006<0>)
      LD:D                      0.308          memac/RAM1addr_0
     ----------------------------------------
     Total                      2.535ns (2.009ns logic, 0.526ns route)
                                        (79.3% logic, 20.7% route)
 
 =========================================================================
-Timing constraint: Default period analysis for Clock 'memac/RAM2addr_not0001'
-  Clock period: 2.310ns (frequency: 432.900MHz)
-  Total number of paths / destination ports: 15 / 15
+Timing constraint: Default period analysis for Clock 'inclk'
+  Clock period: 17.419ns (frequency: 57.409MHz)
+  Total number of paths / destination ports: 1926727 / 478
 -------------------------------------------------------------------------
-Delay:               2.310ns (Levels of Logic = 1)
-  Source:            memac/RAM2addr_14 (LATCH)
-  Destination:       memac/RAM2addr_14 (LATCH)
-  Source Clock:      memac/RAM2addr_not0001 falling
-  Destination Clock: memac/RAM2addr_not0001 falling
-
-  Data Path: memac/RAM2addr_14 to memac/RAM2addr_14
-                                Gate     Net
-    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
-    ----------------------------------------  ------------
-     LD:G->Q               2   0.676   0.622  memac/RAM2addr_14 (memac/RAM2addr_14)
-     LUT4:I0->O            1   0.704   0.000  memac/RAM2addr_mux0006<14>1 (memac/RAM2addr_mux0006<14>)
-     LD:D                      0.308          memac/RAM2addr_14
-    ----------------------------------------
-    Total                      2.310ns (1.688ns logic, 0.622ns route)
-                                       (73.1% logic, 26.9% route)
-
-=========================================================================
-Timing constraint: Default period analysis for Clock 'clk'
-  Clock period: 17.679ns (frequency: 56.565MHz)
-  Total number of paths / destination ports: 2001385 / 478
--------------------------------------------------------------------------
-Delay:               17.679ns (Levels of Logic = 12)
+Delay:               17.419ns (Levels of Logic = 12)
   Source:            idexe/outALUSrc1_1_1 (FF)
   Destination:       ifidr/tempPC_15 (FF)
-  Source Clock:      clk rising
-  Destination Clock: clk rising
+  Source Clock:      inclk rising
+  Destination Clock: inclk rising
 
   Data Path: idexe/outALUSrc1_1_1 to ifidr/tempPC_15
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
      FDRS:C->Q            36   0.591   1.342  idexe/outALUSrc1_1_1 (idexe/outALUSrc1_1_1)
-     LUT3:I1->O            1   0.704   0.455  alus1m/output<13>2 (alus1m/output<13>2)
-     LUT4:I2->O            5   0.704   0.808  alus1m/output<13>59 (ALUSrc1MUX_ALU_ALUSrc1<13>)
+     LUT3:I1->O            1   0.704   0.424  alus1m/output<13>2 (alus1m/output<13>2)
+     LUT4:I3->O            5   0.704   0.808  alus1m/output<13>59 (ALUSrc1MUX_ALU_ALUSrc1<13>)
      LUT4_D:I0->O          3   0.704   0.706  al/rst_or00014 (al/rst_or00014)
-     LUT3_D:I0->LO         1   0.704   0.275  al/rst_or000123 (N639)
-     LUT2:I0->O           17   0.704   1.086  al/rst_shift0005<0>11 (al/N6)
-     LUT3:I2->O            2   0.704   0.482  al/rst_shift0005<15>1 (al/rst_shift0005<15>)
-     LUT3:I2->O            1   0.704   0.000  al/Mmux_rst_513 (al/Mmux_rst_513)
-     MUXF5:I1->O           1   0.321   0.000  al/Mmux_rst_4_f5_5 (al/Mmux_rst_4_f56)
-     MUXF6:I0->O          28   0.521   1.340  al/Mmux_rst_2_f6_5 (al/rst<15>1)
-     LUT2:I1->O            1   0.704   0.424  conrt/PCSelCtr<0>973_SW0 (N314)
-     LUT4_D:I3->LO         1   0.704   0.104  conrt/PCSelCtr<0>1003 (N650)
-     LUT4:I3->O           64   0.704   1.272  Control_IFIDRegs_clear1 (Control_IFIDRegs_clear)
+     LUT3_D:I0->LO         1   0.704   0.275  al/rst_or000123 (N715)
+     LUT2:I0->O           19   0.704   1.120  al/rst_shift0005<0>11 (al/N6)
+     LUT3:I2->O            1   0.704   0.424  al/rst_shift0005<2>_SW1 (N419)
+     LUT4:I3->O            1   0.704   0.000  al/Mmux_rst_517 (al/Mmux_rst_517)
+     MUXF5:I1->O           1   0.321   0.000  al/Mmux_rst_4_f5_7 (al/Mmux_rst_4_f58)
+     MUXF6:I0->O           6   0.521   0.673  al/Mmux_rst_2_f6_7 (al/rst<2>1)
+     LUT4:I3->O            1   0.704   0.424  conrt/PCSelCtr<0>62 (conrt/PCSelCtr<0>62)
+     LUT4:I3->O            3   0.704   0.566  conrt/PCSelCtr<0>85 (conrt/PCSelCtr<0>85)
+     LUT4:I2->O           64   0.704   1.272  Control_IFIDRegs_clear1 (Control_IFIDRegs_clear)
      FDR:R                     0.911          ifidr/outRxNum_0
     ----------------------------------------
-    Total                     17.679ns (9.384ns logic, 8.295ns route)
-                                       (53.1% logic, 46.9% route)
+    Total                     17.419ns (9.384ns logic, 8.035ns route)
+                                       (53.9% logic, 46.1% route)
 
 =========================================================================
-Timing constraint: Default OFFSET IN BEFORE for Clock 'r7_6_OBUF1'
-  Total number of paths / destination ports: 32 / 32
+Timing constraint: Default OFFSET IN BEFORE for Clock 'insf/MEMReadData_not0001'
+  Total number of paths / destination ports: 16 / 16
 -------------------------------------------------------------------------
 Offset:              1.973ns (Levels of Logic = 1)
   Source:            Ram2Data<15> (PAD)
-  Destination:       ram2a/insRam2Data_15 (LATCH)
-  Destination Clock: r7_6_OBUF1 rising
+  Destination:       insf/MEMReadData_15 (LATCH)
+  Destination Clock: insf/MEMReadData_not0001 falling
 
-  Data Path: Ram2Data<15> to ram2a/insRam2Data_15
+  Data Path: Ram2Data<15> to insf/MEMReadData_15
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     IOBUF:IO->O           2   1.218   0.447  Ram2Data_15_IOBUF (N266)
-     LD_1:D                    0.308          ram2a/insRam2Data_15
+     IOBUF:IO->O           2   1.218   0.447  Ram2Data_15_IOBUF (N363)
+     LDE:D                     0.308          insf/MEMReadData_15
     ----------------------------------------
     Total                      1.973ns (1.526ns logic, 0.447ns route)
                                        (77.3% logic, 22.7% route)
 
 =========================================================================
-Timing constraint: Default OFFSET IN BEFORE for Clock 'clk'
-  Total number of paths / destination ports: 18 / 16
+Timing constraint: Default OFFSET IN BEFORE for Clock 'inclk'
+  Total number of paths / destination ports: 50 / 48
 -------------------------------------------------------------------------
-Offset:              3.050ns (Levels of Logic = 3)
-  Source:            RAM1data<1> (PAD)
-  Destination:       memwr/outBuffer_1 (FF)
-  Destination Clock: clk rising
+Offset:              4.082ns (Levels of Logic = 3)
+  Source:            Ram2Data<15> (PAD)
+  Destination:       ifidr/outInst_15 (FF)
+  Destination Clock: inclk rising
 
-  Data Path: RAM1data<1> to memwr/outBuffer_1
+  Data Path: Ram2Data<15> to ifidr/outInst_15
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     IOBUF:IO->O           1   1.218   0.499  RAM1data_1_IOBUF (N264)
-     LUT4:I1->O            1   0.704   0.000  memac/RAMbuffer<1>1 (memac/RAMbuffer<1>)
-     MUXF5:I1->O           1   0.321   0.000  memac/RAMbuffer<1>_f5 (MEMAccess_MEMWBRegs_buffer<1>)
-     FD:D                      0.308          memwr/outBuffer_1
+     IOBUF:IO->O           2   1.218   0.622  Ram2Data_15_IOBUF (N363)
+     LUT4:I0->O            2   0.704   0.526  insf/ins<15>1 (InsFetcher_IFIDRegs_instruction<15>)
+     LUT3:I1->O            1   0.704   0.000  ifidr/outInst_mux0002<15>1 (ifidr/outInst_mux0002<15>)
+     FDR:D                     0.308          ifidr/outInst_15
     ----------------------------------------
-    Total                      3.050ns (2.551ns logic, 0.499ns route)
-                                       (83.6% logic, 16.4% route)
+    Total                      4.082ns (2.934ns logic, 1.148ns route)
+                                       (71.9% logic, 28.1% route)
 
 =========================================================================
-Timing constraint: Default OFFSET OUT AFTER for Clock 'clk'
-  Total number of paths / destination ports: 66040 / 58
+Timing constraint: Default OFFSET OUT AFTER for Clock 'exemr/outMEMWrite'
+  Total number of paths / destination ports: 5 / 5
 -------------------------------------------------------------------------
-Offset:              19.154ns (Levels of Logic = 12)
-  Source:            idexe/outALUSrc1_1_1 (FF)
-  Destination:       Ram2Addr<14> (PAD)
-  Source Clock:      clk rising
+Offset:              4.368ns (Levels of Logic = 1)
+  Source:            memac/RAM1WE (LATCH)
+  Destination:       RAM1WE (PAD)
+  Source Clock:      exemr/outMEMWrite falling
 
-  Data Path: idexe/outALUSrc1_1_1 to Ram2Addr<14>
+  Data Path: memac/RAM1WE to RAM1WE
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     LDP:G->Q              1   0.676   0.420  memac/RAM1WE (memac/RAM1WE)
+     OBUF:I->O                 3.272          RAM1WE_OBUF (RAM1WE)
+    ----------------------------------------
+    Total                      4.368ns (3.948ns logic, 0.420ns route)
+                                       (90.4% logic, 9.6% route)
+
+=========================================================================
+Timing constraint: Default OFFSET OUT AFTER for Clock 'inclk'
+  Total number of paths / destination ports: 27449 / 64
+-------------------------------------------------------------------------
+Offset:              16.649ns (Levels of Logic = 11)
+  Source:            idexe/outALUSrc1_1_1 (FF)
+  Destination:       ins<15> (PAD)
+  Source Clock:      inclk rising
+
+  Data Path: idexe/outALUSrc1_1_1 to ins<15>
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
      FDRS:C->Q            36   0.591   1.342  idexe/outALUSrc1_1_1 (idexe/outALUSrc1_1_1)
-     LUT3:I1->O            1   0.704   0.455  alus1m/output<13>2 (alus1m/output<13>2)
-     LUT4:I2->O            5   0.704   0.808  alus1m/output<13>59 (ALUSrc1MUX_ALU_ALUSrc1<13>)
+     LUT3:I1->O            1   0.704   0.424  alus1m/output<13>2 (alus1m/output<13>2)
+     LUT4:I3->O            5   0.704   0.808  alus1m/output<13>59 (ALUSrc1MUX_ALU_ALUSrc1<13>)
      LUT4_D:I0->O          3   0.704   0.706  al/rst_or00014 (al/rst_or00014)
-     LUT3_D:I0->LO         1   0.704   0.275  al/rst_or000123 (N639)
-     LUT2:I0->O           17   0.704   1.086  al/rst_shift0005<0>11 (al/N6)
+     LUT3_D:I0->LO         1   0.704   0.275  al/rst_or000123 (N715)
+     LUT2:I0->O           19   0.704   1.120  al/rst_shift0005<0>11 (al/N6)
      LUT3:I2->O            2   0.704   0.482  al/rst_shift0005<15>1 (al/rst_shift0005<15>)
      LUT3:I2->O            1   0.704   0.000  al/Mmux_rst_513 (al/Mmux_rst_513)
      MUXF5:I1->O           1   0.321   0.000  al/Mmux_rst_4_f5_5 (al/Mmux_rst_4_f56)
-     MUXF6:I0->O          28   0.521   1.296  al/Mmux_rst_2_f6_5 (al/rst<15>1)
-     LUT3:I2->O           18   0.704   1.243  rwpau/readWritePause_and00001 (r7_6_OBUF1)
-     LUT3:I0->O            1   0.704   0.420  ram2a/Ram2Addr<9>1 (Ram2Addr_9_OBUF)
-     OBUF:I->O                 3.272          Ram2Addr_9_OBUF (Ram2Addr<9>)
+     MUXF6:I0->O           7   0.521   0.708  al/Mmux_rst_2_f6_5 (al/rst<15>1)
+     INV:I->O              2   0.704   0.447  al/rst<15>_inv1_INV_0 (ins_15_OBUF)
+     OBUF:I->O                 3.272          ins_15_OBUF (ins<15>)
     ----------------------------------------
-    Total                     19.154ns (11.041ns logic, 8.113ns route)
-                                       (57.6% logic, 42.4% route)
-
-=========================================================================
-Timing constraint: Default OFFSET OUT AFTER for Clock 'memac/RAM2WE_not0001'
-  Total number of paths / destination ports: 3 / 3
--------------------------------------------------------------------------
-Offset:              5.598ns (Levels of Logic = 2)
-  Source:            memac/RAM2EN (LATCH)
-  Destination:       Ram2EN (PAD)
-  Source Clock:      memac/RAM2WE_not0001 falling
-
-  Data Path: memac/RAM2EN to Ram2EN
-                                Gate     Net
-    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
-    ----------------------------------------  ------------
-     LD:G->Q               1   0.676   0.499  memac/RAM2EN (memac/RAM2EN)
-     LUT4:I1->O            2   0.704   0.447  Ram2OE1 (Ram2OE_OBUF)
-     OBUF:I->O                 3.272          Ram2EN_OBUF (Ram2EN)
-    ----------------------------------------
-    Total                      5.598ns (4.652ns logic, 0.946ns route)
-                                       (83.1% logic, 16.9% route)
+    Total                     16.649ns (10.337ns logic, 6.312ns route)
+                                       (62.1% logic, 37.9% route)
 
 =========================================================================
 Timing constraint: Default OFFSET OUT AFTER for Clock 'memac/Mtrien_RAM1data_not0001'
@@ -1157,45 +1122,6 @@ Offset:              4.368ns (Levels of Logic = 1)
     ----------------------------------------
     Total                      4.368ns (3.948ns logic, 0.420ns route)
                                        (90.4% logic, 9.6% route)
-
-=========================================================================
-Timing constraint: Default OFFSET OUT AFTER for Clock 'exemr/outMEMRead'
-  Total number of paths / destination ports: 16 / 16
--------------------------------------------------------------------------
-Offset:              4.395ns (Levels of Logic = 1)
-  Source:            memac/RAM2DataOut_15 (LATCH)
-  Destination:       Ram2Data<15> (PAD)
-  Source Clock:      exemr/outMEMRead rising
-
-  Data Path: memac/RAM2DataOut_15 to Ram2Data<15>
-                                Gate     Net
-    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
-    ----------------------------------------  ------------
-     LDE_1:G->Q            2   0.676   0.447  memac/RAM2DataOut_15 (memac/RAM2DataOut_15)
-     IOBUF:I->IO               3.272          Ram2Data_15_IOBUF (Ram2Data<15>)
-    ----------------------------------------
-    Total                      4.395ns (3.948ns logic, 0.447ns route)
-                                       (89.8% logic, 10.2% route)
-
-=========================================================================
-Timing constraint: Default OFFSET OUT AFTER for Clock 'memac/RAM2addr_not0001'
-  Total number of paths / destination ports: 15 / 15
--------------------------------------------------------------------------
-Offset:              5.554ns (Levels of Logic = 2)
-  Source:            memac/RAM2addr_14 (LATCH)
-  Destination:       Ram2Addr<14> (PAD)
-  Source Clock:      memac/RAM2addr_not0001 falling
-
-  Data Path: memac/RAM2addr_14 to Ram2Addr<14>
-                                Gate     Net
-    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
-    ----------------------------------------  ------------
-     LD:G->Q               2   0.676   0.482  memac/RAM2addr_14 (memac/RAM2addr_14)
-     LUT3:I2->O            1   0.704   0.420  ram2a/Ram2Addr<14>1 (Ram2Addr_14_OBUF)
-     OBUF:I->O                 3.272          Ram2Addr_14_OBUF (Ram2Addr<14>)
-    ----------------------------------------
-    Total                      5.554ns (4.652ns logic, 0.902ns route)
-                                       (83.8% logic, 16.2% route)
 
 =========================================================================
 Timing constraint: Default OFFSET OUT AFTER for Clock 'memac/RAM1addr_not0001'
@@ -1219,14 +1145,14 @@ Offset:              4.395ns (Levels of Logic = 1)
 =========================================================================
 
 
-Total REAL time to Xst completion: 23.00 secs
-Total CPU time to Xst completion: 22.97 secs
+Total REAL time to Xst completion: 22.00 secs
+Total CPU time to Xst completion: 21.70 secs
  
 --> 
 
-Total memory usage is 318732 kilobytes
+Total memory usage is 318540 kilobytes
 
 Number of errors   :    0 (   0 filtered)
-Number of warnings :  119 (   0 filtered)
-Number of infos    :   44 (   0 filtered)
+Number of warnings :  116 (   0 filtered)
+Number of infos    :   42 (   0 filtered)
 

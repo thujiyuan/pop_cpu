@@ -36,29 +36,60 @@ entity InsFetcher is
 			Ram2WE : out  STD_LOGIC;
 			Ram2EN : out  STD_LOGIC;
 			Ram2Addr : out STD_LOGIC_VECTOR(17 downto 0);
-			Ram2Data : in STD_LOGIC_VECTOR(15 downto 0);
+			Ram2Data : inout STD_LOGIC_VECTOR(15 downto 0);
+			
 			ins : out STD_LOGIC_VECTOR(15 downto 0);
 			addr : in STD_LOGIC_VECTOR(15 downto 0);
-			rwPause : in STD_LOGIC);
+			MEMAddr : in STD_LOGIC_VECTOR(17 downto 0);
+			MEMReadData : out STD_LOGIC_VECTOR(15 downto 0);
+			MEMWriteData : in STD_LOGIC_VECTOR(15 downto 0);
+			MEMRead : in STD_LOGIC;
+			MEMWrite : in STD_LOGIC);
 			
 end InsFetcher;
 
 architecture Behavioral of InsFetcher is
 	
 begin
-	process(addr)
+	process(addr, MEMWrite, MEMAddr, MEMRead, MEMWriteData)
 	begin
-		Ram2OE <= '0';
-		Ram2WE <= '1';
-		Ram2EN <= '0';
-		Ram2Addr <= "00"&addr;
+		if(MEMWrite = '0' and MEMRead = '0') then --insfetch
+			Ram2OE <= '0';
+			Ram2WE <= '1';
+			Ram2EN <= '0';
+			Ram2Addr <= "00" & addr;
+			Ram2Data <= (others => 'Z');
+		elsif(MEMWrite = '0' and MEMRead = '1' and MEMAddr < "00" & X"8000") then --mem read ram2
+			Ram2OE <= '0';
+			Ram2WE <= '1';
+			Ram2EN <= '0';
+			Ram2Addr <= MEMAddr;
+			Ram2Data <= (others => 'Z');
+		elsif(MEMWrite = '1' and MEMRead = '0' and MEMAddr < "00" & X"8000") then --mem write ram2
+			Ram2OE <= '1';
+			Ram2WE <= '0';
+			Ram2EN <= '0';
+			Ram2Addr <= MEMAddr;
+			Ram2Data <= MEMWriteData;
+		else 
+			Ram2OE <= '0';
+			Ram2WE <= '1';
+			Ram2EN <= '0';
+			Ram2Addr <= "00" & addr;
+			Ram2Data <= (others => 'Z');
+		end if;
 	end process;
 	
-	process(Ram2Data, rwPause)
+	process(Ram2Data)
 	begin
-		if(rwPause = '1') then
+		if(MEMRead = '0' and MEMWrite = '0') then --insfetch
+			ins <= Ram2Data;
+		elsif(MEMWrite = '0' and MEMRead = '1' and MEMAddr < "00" & X"8000") then --mem read ram2
+			MEMReadData <= Ram2Data;
 			ins <= "0000100000000000";
-		else 
+		elsif(MEMWrite = '1' and MEMRead = '0' and MEMAddr < "00" & X"8000") then --mem write ram2
+			ins <= "0000100000000000";
+		else
 			ins <= Ram2Data;
 		end if;
 	end process;

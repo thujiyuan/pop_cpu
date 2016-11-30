@@ -45,17 +45,20 @@ entity MEMAccess is
            RAM2addr : out  STD_LOGIC_VECTOR (17 downto 0);
            RAM2DataOut : out  STD_LOGIC_VECTOR (15 downto 0);
 			  RAM2DataIn : In  STD_LOGIC_VECTOR (15 downto 0);
-           RAM2OE : out  STD_LOGIC;
-           RAM2WE : out  STD_LOGIC;
-           RAM2EN : out  STD_LOGIC;
+			  RAM2Read : out STD_LOGIC;
+			  RAM2Write : out STD_LOGIC;
            rdn : out  STD_LOGIC;
            wrn : out  STD_LOGIC);
 end MEMAccess;
 
 architecture Behavioral of MEMAccess is
-
 begin
-process(inAddress, inMEMRead, inMEMWrite, inData)
+	RAM2Read <= inMEMRead;
+	RAM2Write <= inMEMWrite;
+	RAM2Addr <= "00" & inAddress;
+	RAM2DataOut <= inData;
+
+process(inAddress, inMEMRead, inMEMWrite, inData, Ram2DataIn)
 begin
 	if(inMEMRead = '1') then
 		if(inAddress = "1011111100000000") then -- read serial 
@@ -78,19 +81,12 @@ begin
 			RAM1OE <= '1';
 			RAM1WE <= '1';
 			RAM1EN <= '1';
-			RAM2OE <= '0';
-			RAM2WE <= '1';
-			RAM2EN <= '0';
-			Ram2Addr <= "00" & inAddress;
 		else		--read ram1
 			rdn <= '1';
 			wrn <= '0';
 			RAM1OE <= '0';
 			RAM1WE <= '1';
 			RAM1EN <= '0';
-			RAM2OE <= '1';
-			RAM2WE <= '1';
-			RAM2EN <= '1';
 			Ram1Addr <= "00" & inAddress;
 			Ram1Data <= (others => 'Z');
 		end if;
@@ -108,45 +104,39 @@ begin
 			RAM1OE <= '1';
 			RAM1WE <= '1';
 			RAM1EN <= '1';
-			RAM2OE <= '0';
-			RAM2WE <= '0';
-			RAM2EN <= '0';
-			Ram2Addr <= "00" & inAddress;
-			Ram2DataOut <= inData;
 		else		--write ram1
 			rdn <= '1';
 			wrn <= '1';
-			RAM1OE <= '0';
+			RAM1OE <= '1';
 			RAM1WE <= '0';
 			RAM1EN <= '0';
-			RAM2OE <= '1';
-			RAM2WE <= '1';
-			RAM2EN <= '1';
 			Ram1Addr <= "00" & inAddress;
 			Ram1Data <= inData;
 		end if;
 	else
-		rdn <= '1';
-		wrn <= '1';
-		RAM1OE <= '1';
-		RAM1WE <= '1';
-		RAM1EN <= '1';
-		RAM2OE <= '1';
-		RAM2WE <= '1';
-		RAM2EN <= '1';
-		Ram1Data <= (others => 'Z');
+		--rdn <= '1';
+		--wrn <= '1';
+		--RAM1OE <= '1';
+		--RAM1WE <= '1';
+		--RAM1EN <= '1';
+		--RAM2OE <= '1';
+		--RAM2WE <= '1';
+		--RAM2EN <= '1';
+		--Ram1Addr <= (others => '1');
+		--Ram2Addr <= (others => '1');
+		--Ram1Data <= (others => 'Z');
 	end if;
 end process;
 
 process(RAM1Data, RAM2DataIn, dataReady, inAddress, tsre)
 begin
-	if(inAddress < "1000000000000000") then 
+	if(inAddress < "1000000000000000") then --read ram2
 		RAMBuffer <= RAM2DataIn;
-	elsif(inAddress = "1011111100000000") then
+	elsif(inAddress = "1011111100000000") then --read serial
 		RAMBuffer <= "00000000" & RAM1Data(7 downto 0);
-	elsif(inAddress = "1011111100000001") then
+	elsif(inAddress = "1011111100000001") then --read serial state
 		RAMBuffer <= "00000000000000" & dataReady & tsre;
-	else
+	else -- read ram1
 		RAMBuffer <= RAM1Data;
 	end if;
 end process;

@@ -8,7 +8,7 @@ end cpu;
 
 architecture Behavioral of cpu is
 	component pop_cpu
-		port ( clk : in std_logic;
+		port ( inclk : in std_logic;
 			 RAM1OE : out  STD_LOGIC;
 			 RAM1WE : out  STD_LOGIC;
 			 RAM1EN : out  STD_LOGIC;
@@ -22,7 +22,10 @@ architecture Behavioral of cpu is
 			 dataReady : in STD_LOGIC;
 			 tsre : in STD_LOGIC;
 			 rdn : out STD_LOGIC;
-			 wrn : out STD_LOGIC);
+			 wrn : out STD_LOGIC;
+			 ins : out std_logic_vector(15 downto 0);
+			 l7 : out std_logic_vector(6 downto 0);
+			 r7 : out std_logic_vector(6 downto 0));
 	end component;
 	signal clk : std_logic := '1';
 	signal RAM1OE : STD_LOGIC := '0';
@@ -107,6 +110,12 @@ begin
 			Ram2Data <= X"36C0";
 		when "00"&X"005F" =>
 			Ram2Data <= X"684F";
+		when "00"&X"0060" =>
+			Ram2Data <= X"DE00";
+		when "00"&X"0061" =>
+			Ram2Data <= X"0800";
+		when "00"&X"0062" =>
+			Ram2Data <= X"EF40";
 
 
 		when "00"&X"00A7" =>

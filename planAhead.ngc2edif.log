@@ -154,3 +154,24 @@ WARNING:NetListWriters:306 - Signal bus ifidr/tempInst<15 : 0> on block pop_cpu
 Writing EDIF netlist file pop_cpu.edif ...
 ngc2edif: Total memory usage is 85372 kilobytes
 
+Release 14.7 - ngc2edif P.20131013 (nt64)
+Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
+Reading design pop_cpu.ngc ...
+WARNING:NetListWriters:298 - No output is written to pop_cpu.xncf, ignored.
+Processing design ...
+   Preping design's networks ...
+   Preping design's macros ...
+WARNING:NetListWriters:306 - Signal bus al/rst_shift0004<15 : 4> on block
+   pop_cpu is not reconstructed, because there are some missing bus signals.
+WARNING:NetListWriters:306 - Signal bus idexe/outExtend<15 : 0> on block pop_cpu
+   is not reconstructed, because there are some missing bus signals.
+WARNING:NetListWriters:306 - Signal bus ifidr/outInst<15 : 0> on block pop_cpu
+   is not reconstructed, because there are some missing bus signals.
+WARNING:NetListWriters:306 - Signal bus ifidr/outInst_mux0002<15 : 0> on block
+   pop_cpu is not reconstructed, because there are some missing bus signals.
+WARNING:NetListWriters:306 - Signal bus ifidr/tempInst<15 : 0> on block pop_cpu
+   is not reconstructed, because there are some missing bus signals.
+  finished :Prep
+Writing EDIF netlist file pop_cpu.edif ...
+ngc2edif: Total memory usage is 85372 kilobytes
+

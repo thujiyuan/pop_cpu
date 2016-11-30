@@ -68,7 +68,6 @@ NET "Ram2Data[3]" LOC = T14;
 NET "Ram2Data[2]" LOC = T15;
 NET "Ram2Data[1]" LOC = T16;
 NET "Ram2Data[0]" LOC = U13;
-NET "clk" LOC = U9;
 NET "dataReady" LOC = A16;
 NET "RAM1EN" LOC = M15;
 NET "RAM1OE" LOC = M16;
@@ -98,12 +97,23 @@ NET "ins[2]" LOC = A11;
 NET "ins[1]" LOC = E10;
 NET "ins[0]" LOC = D10;
 
+
+NET "l7[6]" LOC = F8;
+NET "l7[5]" LOC = E8;
+NET "l7[4]" LOC = A8;
+NET "l7[3]" LOC = F7;
+NET "l7[2]" LOC = E7;
+NET "l7[1]" LOC = D7;
+NET "l7[0]" LOC = C7;
+
+NET "r7[6]" LOC = B10;
+NET "r7[5]" LOC = A10;
+NET "r7[4]" LOC = G9;
+NET "r7[3]" LOC = F9;
+NET "r7[2]" LOC = E9;
+NET "r7[1]" LOC = D9;
+NET "r7[0]" LOC = C9;
+
 # PlanAhead Generated physical constraints 
 
-NET "r7[6]" LOC = F8;
-NET "r7[5]" LOC = E8;
-NET "r7[4]" LOC = A8;
-NET "r7[3]" LOC = F7;
-NET "r7[2]" LOC = E7;
-NET "r7[1]" LOC = D7;
-NET "r7[0]" LOC = C7;
+NET "inclk" LOC = U9;

@@ -58,7 +58,7 @@ end Ram2Access;
 architecture Behavioral of Ram2Access is
 
 begin
-	process(pause, insRam2OE, insRam2WE, insRam2EN, insRam2Addr,
+	process(insRam2OE, insRam2WE, insRam2EN, insRam2Addr,
 						memRam2OE, memRam2WE, memRam2EN, memRam2Addr, memRam2DataOut)
 	begin
 		if(pause='0')then

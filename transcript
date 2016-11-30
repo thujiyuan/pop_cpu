@@ -17,7 +17,7 @@
 # ** Warning: (vlib-34) Library already exists at "work".
 # 
 # Model Technology ModelSim SE-64 vcom 10.4 Compiler 2014.12 Dec  3 2014
-# Start time: 03:28:59 on Nov 29,2016
+# Start time: 12:03:23 on Nov 30,2016
 # vcom -reportprogress 300 -explicit -93 recordDefs.vhd 
 # -- Loading package STANDARD
 # -- Loading package TEXTIO
@@ -27,20 +27,30 @@
 # -- Compiling package recordDefs
 # -- Compiling package body recordDefs
 # -- Loading package recordDefs
-# End time: 03:28:59 on Nov 29,2016, Elapsed time: 0:00:00
+# End time: 12:03:24 on Nov 30,2016, Elapsed time: 0:00:01
 # Errors: 0, Warnings: 0
 # Model Technology ModelSim SE-64 vcom 10.4 Compiler 2014.12 Dec  3 2014
-# Start time: 03:28:59 on Nov 29,2016
+# Start time: 12:03:24 on Nov 30,2016
 # vcom -reportprogress 300 -explicit -93 WBSrcMUX.vhd 
 # -- Loading package STANDARD
 # -- Loading package TEXTIO
 # -- Loading package std_logic_1164
 # -- Compiling entity WBSrcMUX
 # -- Compiling architecture Behavioral of WBSrcMUX
-# End time: 03:28:59 on Nov 29,2016, Elapsed time: 0:00:00
+# End time: 12:03:24 on Nov 30,2016, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # Model Technology ModelSim SE-64 vcom 10.4 Compiler 2014.12 Dec  3 2014
-# Start time: 03:28:59 on Nov 29,2016
+# Start time: 12:03:24 on Nov 30,2016
+# vcom -reportprogress 300 -explicit -93 shumaDecoder.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity shumaDecoder
+# -- Compiling architecture Behavioral of shumaDecoder
+# End time: 12:03:24 on Nov 30,2016, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim SE-64 vcom 10.4 Compiler 2014.12 Dec  3 2014
+# Start time: 12:03:24 on Nov 30,2016
 # vcom -reportprogress 300 -explicit -93 Registers.vhd 
 # -- Loading package STANDARD
 # -- Loading package TEXTIO
@@ -49,10 +59,10 @@
 # -- Loading package STD_LOGIC_UNSIGNED
 # -- Compiling entity Registers
 # -- Compiling architecture Behavioral of Registers
-# End time: 03:28:59 on Nov 29,2016, Elapsed time: 0:00:00
+# End time: 12:03:24 on Nov 30,2016, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # Model Technology ModelSim SE-64 vcom 10.4 Compiler 2014.12 Dec  3 2014
-# Start time: 03:28:59 on Nov 29,2016
+# Start time: 12:03:24 on Nov 30,2016
 # vcom -reportprogress 300 -explicit -93 ReadWritePauser.vhd 
 # -- Loading package STANDARD
 # -- Loading package TEXTIO
@@ -61,22 +71,10 @@
 # -- Loading package STD_LOGIC_UNSIGNED
 # -- Compiling entity ReadWritePauser
 # -- Compiling architecture Behavioral of ReadWritePauser
-# End time: 03:28:59 on Nov 29,2016, Elapsed time: 0:00:00
+# End time: 12:03:24 on Nov 30,2016, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # Model Technology ModelSim SE-64 vcom 10.4 Compiler 2014.12 Dec  3 2014
-# Start time: 03:28:59 on Nov 29,2016
-# vcom -reportprogress 300 -explicit -93 Ram2Access.vhd 
-# -- Loading package STANDARD
-# -- Loading package TEXTIO
-# -- Loading package std_logic_1164
-# -- Loading package std_logic_arith
-# -- Loading package STD_LOGIC_UNSIGNED
-# -- Compiling entity Ram2Access
-# -- Compiling architecture Behavioral of Ram2Access
-# End time: 03:28:59 on Nov 29,2016, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# Model Technology ModelSim SE-64 vcom 10.4 Compiler 2014.12 Dec  3 2014
-# Start time: 03:28:59 on Nov 29,2016
+# Start time: 12:03:24 on Nov 30,2016
 # vcom -reportprogress 300 -explicit -93 PCSelector.vhd 
 # -- Loading package STANDARD
 # -- Loading package TEXTIO
@@ -85,10 +83,10 @@
 # -- Loading package STD_LOGIC_UNSIGNED
 # -- Compiling entity PCSelector
 # -- Compiling architecture PCSELECTORBehavioral of PCSelector
-# End time: 03:28:59 on Nov 29,2016, Elapsed time: 0:00:00
+# End time: 12:03:24 on Nov 30,2016, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # Model Technology ModelSim SE-64 vcom 10.4 Compiler 2014.12 Dec  3 2014
-# Start time: 03:28:59 on Nov 29,2016
+# Start time: 12:03:24 on Nov 30,2016
 # vcom -reportprogress 300 -explicit -93 PCAdder.vhd 
 # -- Loading package STANDARD
 # -- Loading package TEXTIO
@@ -97,10 +95,10 @@
 # -- Loading package STD_LOGIC_UNSIGNED
 # -- Compiling entity PCAdder
 # -- Compiling architecture PCADDERBehavioral of PCAdder
-# End time: 03:28:59 on Nov 29,2016, Elapsed time: 0:00:00
+# End time: 12:03:24 on Nov 30,2016, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # Model Technology ModelSim SE-64 vcom 10.4 Compiler 2014.12 Dec  3 2014
-# Start time: 03:28:59 on Nov 29,2016
+# Start time: 12:03:24 on Nov 30,2016
 # vcom -reportprogress 300 -explicit -93 PC.vhd 
 # -- Loading package STANDARD
 # -- Loading package TEXTIO
@@ -109,20 +107,20 @@
 # -- Loading package STD_LOGIC_UNSIGNED
 # -- Compiling entity PC
 # -- Compiling architecture PCBehavioral of PC
-# End time: 03:28:59 on Nov 29,2016, Elapsed time: 0:00:00
+# End time: 12:03:24 on Nov 30,2016, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # Model Technology ModelSim SE-64 vcom 10.4 Compiler 2014.12 Dec  3 2014
-# Start time: 03:28:59 on Nov 29,2016
+# Start time: 12:03:24 on Nov 30,2016
 # vcom -reportprogress 300 -explicit -93 MEM_WBRegs.vhd 
 # -- Loading package STANDARD
 # -- Loading package TEXTIO
 # -- Loading package std_logic_1164
 # -- Compiling entity MEM_WBRegs
 # -- Compiling architecture Behavioral of MEM_WBRegs
-# End time: 03:28:59 on Nov 29,2016, Elapsed time: 0:00:00
+# End time: 12:03:24 on Nov 30,2016, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # Model Technology ModelSim SE-64 vcom 10.4 Compiler 2014.12 Dec  3 2014
-# Start time: 03:28:59 on Nov 29,2016
+# Start time: 12:03:24 on Nov 30,2016
 # vcom -reportprogress 300 -explicit -93 MEMSrcMUX.vhd 
 # -- Loading package STANDARD
 # -- Loading package TEXTIO
@@ -138,20 +136,20 @@
 # 
 # ** Warning: MEMSrcMUX.vhd(51): (vcom-1937) Choice in CASE statement alternative must be locally static.
 # 
-# End time: 03:28:59 on Nov 29,2016, Elapsed time: 0:00:00
+# End time: 12:03:24 on Nov 30,2016, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 3
 # Model Technology ModelSim SE-64 vcom 10.4 Compiler 2014.12 Dec  3 2014
-# Start time: 03:28:59 on Nov 29,2016
+# Start time: 12:03:24 on Nov 30,2016
 # vcom -reportprogress 300 -explicit -93 MEMAccess.vhd 
 # -- Loading package STANDARD
 # -- Loading package TEXTIO
 # -- Loading package std_logic_1164
 # -- Compiling entity MEMAccess
 # -- Compiling architecture Behavioral of MEMAccess
-# End time: 03:28:59 on Nov 29,2016, Elapsed time: 0:00:00
+# End time: 12:03:24 on Nov 30,2016, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # Model Technology ModelSim SE-64 vcom 10.4 Compiler 2014.12 Dec  3 2014
-# Start time: 03:28:59 on Nov 29,2016
+# Start time: 12:03:24 on Nov 30,2016
 # vcom -reportprogress 300 -explicit -93 InsFetcher.vhd 
 # -- Loading package STANDARD
 # -- Loading package TEXTIO
@@ -160,30 +158,30 @@
 # -- Loading package STD_LOGIC_UNSIGNED
 # -- Compiling entity InsFetcher
 # -- Compiling architecture Behavioral of InsFetcher
-# End time: 03:28:59 on Nov 29,2016, Elapsed time: 0:00:00
+# End time: 12:03:24 on Nov 30,2016, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # Model Technology ModelSim SE-64 vcom 10.4 Compiler 2014.12 Dec  3 2014
-# Start time: 03:28:59 on Nov 29,2016
+# Start time: 12:03:24 on Nov 30,2016
 # vcom -reportprogress 300 -explicit -93 IF_IDRegs.vhd 
 # -- Loading package STANDARD
 # -- Loading package TEXTIO
 # -- Loading package std_logic_1164
 # -- Compiling entity IF_IDRegs
 # -- Compiling architecture Behavioral of IF_IDRegs
-# End time: 03:29:00 on Nov 29,2016, Elapsed time: 0:00:01
+# End time: 12:03:24 on Nov 30,2016, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # Model Technology ModelSim SE-64 vcom 10.4 Compiler 2014.12 Dec  3 2014
-# Start time: 03:29:00 on Nov 29,2016
+# Start time: 12:03:25 on Nov 30,2016
 # vcom -reportprogress 300 -explicit -93 ID_EXERegs.vhd 
 # -- Loading package STANDARD
 # -- Loading package TEXTIO
 # -- Loading package std_logic_1164
 # -- Compiling entity ID_EXERegs
 # -- Compiling architecture Behavioral of ID_EXERegs
-# End time: 03:29:00 on Nov 29,2016, Elapsed time: 0:00:00
+# End time: 12:03:25 on Nov 30,2016, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # Model Technology ModelSim SE-64 vcom 10.4 Compiler 2014.12 Dec  3 2014
-# Start time: 03:29:00 on Nov 29,2016
+# Start time: 12:03:25 on Nov 30,2016
 # vcom -reportprogress 300 -explicit -93 extender.vhd 
 # -- Loading package STANDARD
 # -- Loading package TEXTIO
@@ -192,20 +190,20 @@
 # -- Loading package STD_LOGIC_UNSIGNED
 # -- Compiling entity Extender
 # -- Compiling architecture ExtenderBehavioral of Extender
-# End time: 03:29:00 on Nov 29,2016, Elapsed time: 0:00:00
+# End time: 12:03:25 on Nov 30,2016, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # Model Technology ModelSim SE-64 vcom 10.4 Compiler 2014.12 Dec  3 2014
-# Start time: 03:29:00 on Nov 29,2016
+# Start time: 12:03:25 on Nov 30,2016
 # vcom -reportprogress 300 -explicit -93 EXE_MEMRegs.vhd 
 # -- Loading package STANDARD
 # -- Loading package TEXTIO
 # -- Loading package std_logic_1164
 # -- Compiling entity EXE_MEMRegs
 # -- Compiling architecture Behavioral of EXE_MEMRegs
-# End time: 03:29:00 on Nov 29,2016, Elapsed time: 0:00:00
+# End time: 12:03:25 on Nov 30,2016, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # Model Technology ModelSim SE-64 vcom 10.4 Compiler 2014.12 Dec  3 2014
-# Start time: 03:29:00 on Nov 29,2016
+# Start time: 12:03:25 on Nov 30,2016
 # vcom -reportprogress 300 -explicit -93 Control.vhd 
 # -- Loading package STANDARD
 # -- Loading package TEXTIO
@@ -214,10 +212,10 @@
 # -- Loading package STD_LOGIC_UNSIGNED
 # -- Compiling entity Control
 # -- Compiling architecture Behavioral of Control
-# End time: 03:29:00 on Nov 29,2016, Elapsed time: 0:00:00
+# End time: 12:03:25 on Nov 30,2016, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # Model Technology ModelSim SE-64 vcom 10.4 Compiler 2014.12 Dec  3 2014
-# Start time: 03:29:00 on Nov 29,2016
+# Start time: 12:03:25 on Nov 30,2016
 # vcom -reportprogress 300 -explicit -93 bypasser.vhd 
 # -- Loading package STANDARD
 # -- Loading package TEXTIO
@@ -226,10 +224,10 @@
 # -- Loading package STD_LOGIC_UNSIGNED
 # -- Compiling entity bypasser
 # -- Compiling architecture Behavioral of bypasser
-# End time: 03:29:00 on Nov 29,2016, Elapsed time: 0:00:00
+# End time: 12:03:25 on Nov 30,2016, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # Model Technology ModelSim SE-64 vcom 10.4 Compiler 2014.12 Dec  3 2014
-# Start time: 03:29:00 on Nov 29,2016
+# Start time: 12:03:25 on Nov 30,2016
 # vcom -reportprogress 300 -explicit -93 ALUSrc1MUX.vhd 
 # -- Loading package STANDARD
 # -- Loading package TEXTIO
@@ -249,10 +247,10 @@
 # 
 # ** Warning: ALUSrc1MUX.vhd(59): (vcom-1937) Choice in CASE statement alternative must be locally static.
 # 
-# End time: 03:29:00 on Nov 29,2016, Elapsed time: 0:00:00
+# End time: 12:03:25 on Nov 30,2016, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 5
 # Model Technology ModelSim SE-64 vcom 10.4 Compiler 2014.12 Dec  3 2014
-# Start time: 03:29:00 on Nov 29,2016
+# Start time: 12:03:25 on Nov 30,2016
 # vcom -reportprogress 300 -explicit -93 ALUSrc0MUX.vhd 
 # -- Loading package STANDARD
 # -- Loading package TEXTIO
@@ -262,10 +260,10 @@
 # -- Loading package recordDefs
 # -- Compiling entity ALUSrc0MUX
 # -- Compiling architecture Behavioral of ALUSrc0MUX
-# End time: 03:29:00 on Nov 29,2016, Elapsed time: 0:00:00
+# End time: 12:03:25 on Nov 30,2016, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # Model Technology ModelSim SE-64 vcom 10.4 Compiler 2014.12 Dec  3 2014
-# Start time: 03:29:00 on Nov 29,2016
+# Start time: 12:03:25 on Nov 30,2016
 # vcom -reportprogress 300 -explicit -93 ALU.vhd 
 # -- Loading package STANDARD
 # -- Loading package TEXTIO
@@ -292,10 +290,10 @@
 # 
 # ** Warning: ALU.vhd(63): (vcom-1937) Choice in CASE statement alternative must be locally static.
 # 
-# End time: 03:29:00 on Nov 29,2016, Elapsed time: 0:00:00
+# End time: 12:03:26 on Nov 30,2016, Elapsed time: 0:00:01
 # Errors: 0, Warnings: 8
 # Model Technology ModelSim SE-64 vcom 10.4 Compiler 2014.12 Dec  3 2014
-# Start time: 03:29:01 on Nov 29,2016
+# Start time: 12:03:26 on Nov 30,2016
 # vcom -reportprogress 300 -explicit -93 AddressAdder.vhd 
 # -- Loading package STANDARD
 # -- Loading package TEXTIO
@@ -304,10 +302,10 @@
 # -- Loading package STD_LOGIC_UNSIGNED
 # -- Compiling entity AddressAdder
 # -- Compiling architecture Behavioral of AddressAdder
-# End time: 03:29:01 on Nov 29,2016, Elapsed time: 0:00:00
+# End time: 12:03:26 on Nov 30,2016, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # Model Technology ModelSim SE-64 vcom 10.4 Compiler 2014.12 Dec  3 2014
-# Start time: 03:29:01 on Nov 29,2016
+# Start time: 12:03:26 on Nov 30,2016
 # vcom -reportprogress 300 -explicit -93 pop_cpu.vhd 
 # -- Loading package STANDARD
 # -- Loading package TEXTIO
@@ -316,10 +314,10 @@
 # -- Loading package STD_LOGIC_UNSIGNED
 # -- Compiling entity pop_cpu
 # -- Compiling architecture Behavioral of pop_cpu
-# End time: 03:29:01 on Nov 29,2016, Elapsed time: 0:00:00
+# End time: 12:03:26 on Nov 30,2016, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vsim -gui -do "do {pop_cpu.fdo}" 
-# Start time: 03:29:01 on Nov 29,2016
+# Start time: 12:03:26 on Nov 30,2016
 # ** Note: (vsim-3813) Design is being optimized due to module recompilation...
 # 
 # Loading std.standard
@@ -328,6 +326,7 @@
 # Loading ieee.std_logic_arith(body)
 # Loading ieee.std_logic_unsigned(body)
 # Loading work.pop_cpu(behavioral)#1
+# Loading work.shumadecoder(behavioral)#1
 # Loading work.pc(pcbehavioral)#1
 # Loading work.insfetcher(behavioral)#1
 # Loading work.pcadder(pcadderbehavioral)#1
@@ -350,7 +349,15 @@
 # Loading work.memaccess(behavioral)#1
 # Loading work.mem_wbregs(behavioral)#1
 # Loading work.wbsrcmux(behavioral)#1
-# Loading work.ram2access(behavioral)#1
+# ** Warning: (vsim-WLF-5000) WLF file currently in use: vsim.wlf
+# 
+#           File in use by: Administrator  Hostname: MS-20150523JZEJ  ProcessID: 4076
+# 
+#           Attempting to use alternate WLF file "./wlftmzignq".
+# ** Warning: (vsim-WLF-5001) Could not open WLF file: vsim.wlf
+# 
+#           Using alternate file: ./wlftmzignq
+# 
 # .main_pane.wave.interior.cs.body.pw.wf
 # .main_pane.structure.interior.cs.body.struct
 # .main_pane.objects.interior.cs.body.tree
@@ -384,237 +391,37 @@
 #    Time: 0 ps  Iteration: 2  Instance: /pop_cpu/addre
 # ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
 #    Time: 0 ps  Iteration: 2  Instance: /pop_cpu/addre
-add wave -position end  sim:/pop_cpu/p/clk
-add wave -position end  sim:/pop_cpu/p/PCout
-run
-run
-restart
-# ** Note: (vsim-8009) Loading existing optimized design _opt
+vsim work.cpu
+# vsim 
+# Start time: 12:03:39 on Nov 30,2016
+# ** Note: (vsim-3812) Design is being optimized...
 # 
-run
-# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 0 ps  Iteration: 0  Instance: /pop_cpu/addre
-# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 0 ps  Iteration: 0  Instance: /pop_cpu/addre
-# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 0 ps  Iteration: 0  Instance: /pop_cpu/exten
-# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 0 ps  Iteration: 0  Instance: /pop_cpu/exten
-# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 0 ps  Iteration: 0  Instance: /pop_cpu/exten
-# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 0 ps  Iteration: 0  Instance: /pop_cpu/exten
-# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 0 ps  Iteration: 0  Instance: /pop_cpu/exten
-# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 0 ps  Iteration: 0  Instance: /pop_cpu/exten
-# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 0 ps  Iteration: 0  Instance: /pop_cpu/pcs
-# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 0 ps  Iteration: 0  Instance: /pop_cpu/pcs
-# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 0 ps  Iteration: 0  Instance: /pop_cpu/pcs
-# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 0 ps  Iteration: 1  Instance: /pop_cpu/exten
-# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 0 ps  Iteration: 1  Instance: /pop_cpu/pca
-# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 0 ps  Iteration: 2  Instance: /pop_cpu/addre
-# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 0 ps  Iteration: 2  Instance: /pop_cpu/addre
-vcom -reportprogress 300 -work work F:/thujiyuan/pop_cpu/cpu.vhd
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.std_logic_arith(body)
+# Loading ieee.std_logic_unsigned(body)
+# Loading work.cpu(behavioral)#1
+# Loading ieee.std_logic_signed(body)
+# Loading work.recorddefs(body)
+# Loading work.pop_cpu(behavioral)#1
+# Loading work.control(behavioral)#1
+vcom -reportprogress 300 -work work F:/thujiyuan/pop_cpu/pop_cpu.vhd
 # Model Technology ModelSim SE-64 vcom 10.4 Compiler 2014.12 Dec  3 2014
-# Start time: 03:30:08 on Nov 29,2016
-# vcom -reportprogress 300 -work work F:/thujiyuan/pop_cpu/cpu.vhd 
+# Start time: 12:04:10 on Nov 30,2016
+# vcom -reportprogress 300 -work work F:/thujiyuan/pop_cpu/pop_cpu.vhd 
 # -- Loading package STANDARD
 # -- Loading package TEXTIO
 # -- Loading package std_logic_1164
 # -- Loading package std_logic_arith
 # -- Loading package STD_LOGIC_UNSIGNED
-# -- Compiling entity cpu
-# -- Compiling architecture Behavioral of cpu
-# ** Warning: F:/thujiyuan/pop_cpu/cpu.vhd(47): (vcom-1207) An abstract literal and an identifier must have a separator between them.
-# ** Warning: F:/thujiyuan/pop_cpu/cpu.vhd(48): (vcom-1207) An abstract literal and an identifier must have a separator between them.
-# ** Warning: F:/thujiyuan/pop_cpu/cpu.vhd(52): (vcom-1937) Choice in CASE statement alternative must be locally static.
-# 
-# ** Warning: F:/thujiyuan/pop_cpu/cpu.vhd(54): (vcom-1937) Choice in CASE statement alternative must be locally static.
-# 
-# ** Warning: F:/thujiyuan/pop_cpu/cpu.vhd(56): (vcom-1937) Choice in CASE statement alternative must be locally static.
-# 
-# ** Warning: F:/thujiyuan/pop_cpu/cpu.vhd(58): (vcom-1937) Choice in CASE statement alternative must be locally static.
-# 
-# ** Warning: F:/thujiyuan/pop_cpu/cpu.vhd(62): (vcom-1937) Choice in CASE statement alternative must be locally static.
-# 
-# ** Warning: F:/thujiyuan/pop_cpu/cpu.vhd(64): (vcom-1937) Choice in CASE statement alternative must be locally static.
-# 
-# ** Warning: F:/thujiyuan/pop_cpu/cpu.vhd(66): (vcom-1937) Choice in CASE statement alternative must be locally static.
-# 
-# ** Warning: F:/thujiyuan/pop_cpu/cpu.vhd(68): (vcom-1937) Choice in CASE statement alternative must be locally static.
-# 
-# ** Warning: F:/thujiyuan/pop_cpu/cpu.vhd(70): (vcom-1937) Choice in CASE statement alternative must be locally static.
-# 
-# ** Warning: F:/thujiyuan/pop_cpu/cpu.vhd(72): (vcom-1937) Choice in CASE statement alternative must be locally static.
-# 
-# ** Warning: F:/thujiyuan/pop_cpu/cpu.vhd(74): (vcom-1937) Choice in CASE statement alternative must be locally static.
-# 
-# ** Warning: F:/thujiyuan/pop_cpu/cpu.vhd(76): (vcom-1937) Choice in CASE statement alternative must be locally static.
-# 
-# ** Warning: F:/thujiyuan/pop_cpu/cpu.vhd(78): (vcom-1937) Choice in CASE statement alternative must be locally static.
-# 
-# ** Warning: F:/thujiyuan/pop_cpu/cpu.vhd(80): (vcom-1937) Choice in CASE statement alternative must be locally static.
-# 
-# ** Warning: F:/thujiyuan/pop_cpu/cpu.vhd(82): (vcom-1937) Choice in CASE statement alternative must be locally static.
-# 
-# ** Warning: F:/thujiyuan/pop_cpu/cpu.vhd(84): (vcom-1937) Choice in CASE statement alternative must be locally static.
-# 
-# ** Warning: F:/thujiyuan/pop_cpu/cpu.vhd(86): (vcom-1937) Choice in CASE statement alternative must be locally static.
-# 
-# ** Warning: F:/thujiyuan/pop_cpu/cpu.vhd(88): (vcom-1937) Choice in CASE statement alternative must be locally static.
-# 
-# ** Warning: F:/thujiyuan/pop_cpu/cpu.vhd(90): (vcom-1937) Choice in CASE statement alternative must be locally static.
-# 
-# ** Warning: F:/thujiyuan/pop_cpu/cpu.vhd(92): (vcom-1937) Choice in CASE statement alternative must be locally static.
-# 
-# ** Warning: F:/thujiyuan/pop_cpu/cpu.vhd(94): (vcom-1937) Choice in CASE statement alternative must be locally static.
-# 
-# ** Warning: F:/thujiyuan/pop_cpu/cpu.vhd(96): (vcom-1937) Choice in CASE statement alternative must be locally static.
-# 
-# ** Warning: F:/thujiyuan/pop_cpu/cpu.vhd(98): (vcom-1937) Choice in CASE statement alternative must be locally static.
-# 
-# ** Warning: F:/thujiyuan/pop_cpu/cpu.vhd(100): (vcom-1937) Choice in CASE statement alternative must be locally static.
-# 
-# ** Warning: F:/thujiyuan/pop_cpu/cpu.vhd(102): (vcom-1937) Choice in CASE statement alternative must be locally static.
-# 
-# ** Warning: F:/thujiyuan/pop_cpu/cpu.vhd(104): (vcom-1937) Choice in CASE statement alternative must be locally static.
-# 
-# ** Warning: F:/thujiyuan/pop_cpu/cpu.vhd(106): (vcom-1937) Choice in CASE statement alternative must be locally static.
-# 
-# ** Warning: F:/thujiyuan/pop_cpu/cpu.vhd(108): (vcom-1937) Choice in CASE statement alternative must be locally static.
-# 
-# ** Warning: F:/thujiyuan/pop_cpu/cpu.vhd(112): (vcom-1937) Choice in CASE statement alternative must be locally static.
-# 
-# ** Warning: F:/thujiyuan/pop_cpu/cpu.vhd(114): (vcom-1937) Choice in CASE statement alternative must be locally static.
-# 
-# ** Warning: F:/thujiyuan/pop_cpu/cpu.vhd(116): (vcom-1937) Choice in CASE statement alternative must be locally static.
-# 
-# ** Warning: F:/thujiyuan/pop_cpu/cpu.vhd(118): (vcom-1937) Choice in CASE statement alternative must be locally static.
-# 
-# ** Warning: F:/thujiyuan/pop_cpu/cpu.vhd(120): (vcom-1937) Choice in CASE statement alternative must be locally static.
-# 
-# ** Warning: F:/thujiyuan/pop_cpu/cpu.vhd(122): (vcom-1937) Choice in CASE statement alternative must be locally static.
-# 
-# ** Warning: F:/thujiyuan/pop_cpu/cpu.vhd(124): (vcom-1937) Choice in CASE statement alternative must be locally static.
-# 
-# ** Warning: F:/thujiyuan/pop_cpu/cpu.vhd(126): (vcom-1937) Choice in CASE statement alternative must be locally static.
-# 
-# ** Warning: F:/thujiyuan/pop_cpu/cpu.vhd(128): (vcom-1937) Choice in CASE statement alternative must be locally static.
-# 
-# ** Warning: F:/thujiyuan/pop_cpu/cpu.vhd(130): (vcom-1937) Choice in CASE statement alternative must be locally static.
-# 
-# ** Warning: F:/thujiyuan/pop_cpu/cpu.vhd(132): (vcom-1937) Choice in CASE statement alternative must be locally static.
-# 
-# ** Warning: F:/thujiyuan/pop_cpu/cpu.vhd(161): (vcom-1937) Choice in CASE statement alternative must be locally static.
-# 
-# End time: 03:30:08 on Nov 29,2016, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 42
-vcom -reportprogress 300 -work work F:/thujiyuan/pop_cpu/cpu.vhd
-# Model Technology ModelSim SE-64 vcom 10.4 Compiler 2014.12 Dec  3 2014
-# Start time: 03:30:09 on Nov 29,2016
-# vcom -reportprogress 300 -work work F:/thujiyuan/pop_cpu/cpu.vhd 
-# -- Loading package STANDARD
-# -- Loading package TEXTIO
-# -- Loading package std_logic_1164
-# -- Loading package std_logic_arith
-# -- Loading package STD_LOGIC_UNSIGNED
-# -- Compiling entity cpu
-# -- Compiling architecture Behavioral of cpu
-# ** Warning: F:/thujiyuan/pop_cpu/cpu.vhd(47): (vcom-1207) An abstract literal and an identifier must have a separator between them.
-# ** Warning: F:/thujiyuan/pop_cpu/cpu.vhd(48): (vcom-1207) An abstract literal and an identifier must have a separator between them.
-# ** Warning: F:/thujiyuan/pop_cpu/cpu.vhd(52): (vcom-1937) Choice in CASE statement alternative must be locally static.
-# 
-# ** Warning: F:/thujiyuan/pop_cpu/cpu.vhd(54): (vcom-1937) Choice in CASE statement alternative must be locally static.
-# 
-# ** Warning: F:/thujiyuan/pop_cpu/cpu.vhd(56): (vcom-1937) Choice in CASE statement alternative must be locally static.
-# 
-# ** Warning: F:/thujiyuan/pop_cpu/cpu.vhd(58): (vcom-1937) Choice in CASE statement alternative must be locally static.
-# 
-# ** Warning: F:/thujiyuan/pop_cpu/cpu.vhd(62): (vcom-1937) Choice in CASE statement alternative must be locally static.
-# 
-# ** Warning: F:/thujiyuan/pop_cpu/cpu.vhd(64): (vcom-1937) Choice in CASE statement alternative must be locally static.
-# 
-# ** Warning: F:/thujiyuan/pop_cpu/cpu.vhd(66): (vcom-1937) Choice in CASE statement alternative must be locally static.
-# 
-# ** Warning: F:/thujiyuan/pop_cpu/cpu.vhd(68): (vcom-1937) Choice in CASE statement alternative must be locally static.
-# 
-# ** Warning: F:/thujiyuan/pop_cpu/cpu.vhd(70): (vcom-1937) Choice in CASE statement alternative must be locally static.
-# 
-# ** Warning: F:/thujiyuan/pop_cpu/cpu.vhd(72): (vcom-1937) Choice in CASE statement alternative must be locally static.
-# 
-# ** Warning: F:/thujiyuan/pop_cpu/cpu.vhd(74): (vcom-1937) Choice in CASE statement alternative must be locally static.
-# 
-# ** Warning: F:/thujiyuan/pop_cpu/cpu.vhd(76): (vcom-1937) Choice in CASE statement alternative must be locally static.
-# 
-# ** Warning: F:/thujiyuan/pop_cpu/cpu.vhd(78): (vcom-1937) Choice in CASE statement alternative must be locally static.
-# 
-# ** Warning: F:/thujiyuan/pop_cpu/cpu.vhd(80): (vcom-1937) Choice in CASE statement alternative must be locally static.
-# 
-# ** Warning: F:/thujiyuan/pop_cpu/cpu.vhd(82): (vcom-1937) Choice in CASE statement alternative must be locally static.
-# 
-# ** Warning: F:/thujiyuan/pop_cpu/cpu.vhd(84): (vcom-1937) Choice in CASE statement alternative must be locally static.
-# 
-# ** Warning: F:/thujiyuan/pop_cpu/cpu.vhd(86): (vcom-1937) Choice in CASE statement alternative must be locally static.
-# 
-# ** Warning: F:/thujiyuan/pop_cpu/cpu.vhd(88): (vcom-1937) Choice in CASE statement alternative must be locally static.
-# 
-# ** Warning: F:/thujiyuan/pop_cpu/cpu.vhd(90): (vcom-1937) Choice in CASE statement alternative must be locally static.
-# 
-# ** Warning: F:/thujiyuan/pop_cpu/cpu.vhd(92): (vcom-1937) Choice in CASE statement alternative must be locally static.
-# 
-# ** Warning: F:/thujiyuan/pop_cpu/cpu.vhd(94): (vcom-1937) Choice in CASE statement alternative must be locally static.
-# 
-# ** Warning: F:/thujiyuan/pop_cpu/cpu.vhd(96): (vcom-1937) Choice in CASE statement alternative must be locally static.
-# 
-# ** Warning: F:/thujiyuan/pop_cpu/cpu.vhd(98): (vcom-1937) Choice in CASE statement alternative must be locally static.
-# 
-# ** Warning: F:/thujiyuan/pop_cpu/cpu.vhd(100): (vcom-1937) Choice in CASE statement alternative must be locally static.
-# 
-# ** Warning: F:/thujiyuan/pop_cpu/cpu.vhd(102): (vcom-1937) Choice in CASE statement alternative must be locally static.
-# 
-# ** Warning: F:/thujiyuan/pop_cpu/cpu.vhd(104): (vcom-1937) Choice in CASE statement alternative must be locally static.
-# 
-# ** Warning: F:/thujiyuan/pop_cpu/cpu.vhd(106): (vcom-1937) Choice in CASE statement alternative must be locally static.
-# 
-# ** Warning: F:/thujiyuan/pop_cpu/cpu.vhd(108): (vcom-1937) Choice in CASE statement alternative must be locally static.
-# 
-# ** Warning: F:/thujiyuan/pop_cpu/cpu.vhd(112): (vcom-1937) Choice in CASE statement alternative must be locally static.
-# 
-# ** Warning: F:/thujiyuan/pop_cpu/cpu.vhd(114): (vcom-1937) Choice in CASE statement alternative must be locally static.
-# 
-# ** Warning: F:/thujiyuan/pop_cpu/cpu.vhd(116): (vcom-1937) Choice in CASE statement alternative must be locally static.
-# 
-# ** Warning: F:/thujiyuan/pop_cpu/cpu.vhd(118): (vcom-1937) Choice in CASE statement alternative must be locally static.
-# 
-# ** Warning: F:/thujiyuan/pop_cpu/cpu.vhd(120): (vcom-1937) Choice in CASE statement alternative must be locally static.
-# 
-# ** Warning: F:/thujiyuan/pop_cpu/cpu.vhd(122): (vcom-1937) Choice in CASE statement alternative must be locally static.
-# 
-# ** Warning: F:/thujiyuan/pop_cpu/cpu.vhd(124): (vcom-1937) Choice in CASE statement alternative must be locally static.
-# 
-# ** Warning: F:/thujiyuan/pop_cpu/cpu.vhd(126): (vcom-1937) Choice in CASE statement alternative must be locally static.
-# 
-# ** Warning: F:/thujiyuan/pop_cpu/cpu.vhd(128): (vcom-1937) Choice in CASE statement alternative must be locally static.
-# 
-# ** Warning: F:/thujiyuan/pop_cpu/cpu.vhd(130): (vcom-1937) Choice in CASE statement alternative must be locally static.
-# 
-# ** Warning: F:/thujiyuan/pop_cpu/cpu.vhd(132): (vcom-1937) Choice in CASE statement alternative must be locally static.
-# 
-# ** Warning: F:/thujiyuan/pop_cpu/cpu.vhd(161): (vcom-1937) Choice in CASE statement alternative must be locally static.
-# 
-# End time: 03:30:09 on Nov 29,2016, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 42
+# -- Compiling entity pop_cpu
+# -- Compiling architecture Behavioral of pop_cpu
+# End time: 12:04:10 on Nov 30,2016, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
 vcom -work work F:/thujiyuan/pop_cpu/cpu.vhd
 # Model Technology ModelSim SE-64 vcom 10.4 Compiler 2014.12 Dec  3 2014
-# Start time: 03:30:17 on Nov 29,2016
+# Start time: 12:04:22 on Nov 30,2016
 # vcom -reportprogress 300 -work work F:/thujiyuan/pop_cpu/cpu.vhd 
 # -- Loading package STANDARD
 # -- Loading package TEXTIO
@@ -623,94 +430,94 @@ vcom -work work F:/thujiyuan/pop_cpu/cpu.vhd
 # -- Loading package STD_LOGIC_UNSIGNED
 # -- Compiling entity cpu
 # -- Compiling architecture Behavioral of cpu
-# ** Warning: F:/thujiyuan/pop_cpu/cpu.vhd(47): (vcom-1207) An abstract literal and an identifier must have a separator between them.
-# ** Warning: F:/thujiyuan/pop_cpu/cpu.vhd(48): (vcom-1207) An abstract literal and an identifier must have a separator between them.
-# ** Warning: F:/thujiyuan/pop_cpu/cpu.vhd(52): (vcom-1937) Choice in CASE statement alternative must be locally static.
+# ** Warning: F:/thujiyuan/pop_cpu/cpu.vhd(50): (vcom-1207) An abstract literal and an identifier must have a separator between them.
+# ** Warning: F:/thujiyuan/pop_cpu/cpu.vhd(51): (vcom-1207) An abstract literal and an identifier must have a separator between them.
+# ** Warning: F:/thujiyuan/pop_cpu/cpu.vhd(55): (vcom-1937) Choice in CASE statement alternative must be locally static.
 # 
-# ** Warning: F:/thujiyuan/pop_cpu/cpu.vhd(54): (vcom-1937) Choice in CASE statement alternative must be locally static.
+# ** Warning: F:/thujiyuan/pop_cpu/cpu.vhd(57): (vcom-1937) Choice in CASE statement alternative must be locally static.
 # 
-# ** Warning: F:/thujiyuan/pop_cpu/cpu.vhd(56): (vcom-1937) Choice in CASE statement alternative must be locally static.
+# ** Warning: F:/thujiyuan/pop_cpu/cpu.vhd(59): (vcom-1937) Choice in CASE statement alternative must be locally static.
 # 
-# ** Warning: F:/thujiyuan/pop_cpu/cpu.vhd(58): (vcom-1937) Choice in CASE statement alternative must be locally static.
+# ** Warning: F:/thujiyuan/pop_cpu/cpu.vhd(61): (vcom-1937) Choice in CASE statement alternative must be locally static.
 # 
-# ** Warning: F:/thujiyuan/pop_cpu/cpu.vhd(62): (vcom-1937) Choice in CASE statement alternative must be locally static.
+# ** Warning: F:/thujiyuan/pop_cpu/cpu.vhd(65): (vcom-1937) Choice in CASE statement alternative must be locally static.
 # 
-# ** Warning: F:/thujiyuan/pop_cpu/cpu.vhd(64): (vcom-1937) Choice in CASE statement alternative must be locally static.
+# ** Warning: F:/thujiyuan/pop_cpu/cpu.vhd(67): (vcom-1937) Choice in CASE statement alternative must be locally static.
 # 
-# ** Warning: F:/thujiyuan/pop_cpu/cpu.vhd(66): (vcom-1937) Choice in CASE statement alternative must be locally static.
+# ** Warning: F:/thujiyuan/pop_cpu/cpu.vhd(69): (vcom-1937) Choice in CASE statement alternative must be locally static.
 # 
-# ** Warning: F:/thujiyuan/pop_cpu/cpu.vhd(68): (vcom-1937) Choice in CASE statement alternative must be locally static.
+# ** Warning: F:/thujiyuan/pop_cpu/cpu.vhd(71): (vcom-1937) Choice in CASE statement alternative must be locally static.
 # 
-# ** Warning: F:/thujiyuan/pop_cpu/cpu.vhd(70): (vcom-1937) Choice in CASE statement alternative must be locally static.
+# ** Warning: F:/thujiyuan/pop_cpu/cpu.vhd(73): (vcom-1937) Choice in CASE statement alternative must be locally static.
 # 
-# ** Warning: F:/thujiyuan/pop_cpu/cpu.vhd(72): (vcom-1937) Choice in CASE statement alternative must be locally static.
+# ** Warning: F:/thujiyuan/pop_cpu/cpu.vhd(75): (vcom-1937) Choice in CASE statement alternative must be locally static.
 # 
-# ** Warning: F:/thujiyuan/pop_cpu/cpu.vhd(74): (vcom-1937) Choice in CASE statement alternative must be locally static.
+# ** Warning: F:/thujiyuan/pop_cpu/cpu.vhd(77): (vcom-1937) Choice in CASE statement alternative must be locally static.
 # 
-# ** Warning: F:/thujiyuan/pop_cpu/cpu.vhd(76): (vcom-1937) Choice in CASE statement alternative must be locally static.
+# ** Warning: F:/thujiyuan/pop_cpu/cpu.vhd(79): (vcom-1937) Choice in CASE statement alternative must be locally static.
 # 
-# ** Warning: F:/thujiyuan/pop_cpu/cpu.vhd(78): (vcom-1937) Choice in CASE statement alternative must be locally static.
+# ** Warning: F:/thujiyuan/pop_cpu/cpu.vhd(81): (vcom-1937) Choice in CASE statement alternative must be locally static.
 # 
-# ** Warning: F:/thujiyuan/pop_cpu/cpu.vhd(80): (vcom-1937) Choice in CASE statement alternative must be locally static.
+# ** Warning: F:/thujiyuan/pop_cpu/cpu.vhd(83): (vcom-1937) Choice in CASE statement alternative must be locally static.
 # 
-# ** Warning: F:/thujiyuan/pop_cpu/cpu.vhd(82): (vcom-1937) Choice in CASE statement alternative must be locally static.
+# ** Warning: F:/thujiyuan/pop_cpu/cpu.vhd(85): (vcom-1937) Choice in CASE statement alternative must be locally static.
 # 
-# ** Warning: F:/thujiyuan/pop_cpu/cpu.vhd(84): (vcom-1937) Choice in CASE statement alternative must be locally static.
+# ** Warning: F:/thujiyuan/pop_cpu/cpu.vhd(87): (vcom-1937) Choice in CASE statement alternative must be locally static.
 # 
-# ** Warning: F:/thujiyuan/pop_cpu/cpu.vhd(86): (vcom-1937) Choice in CASE statement alternative must be locally static.
+# ** Warning: F:/thujiyuan/pop_cpu/cpu.vhd(89): (vcom-1937) Choice in CASE statement alternative must be locally static.
 # 
-# ** Warning: F:/thujiyuan/pop_cpu/cpu.vhd(88): (vcom-1937) Choice in CASE statement alternative must be locally static.
+# ** Warning: F:/thujiyuan/pop_cpu/cpu.vhd(91): (vcom-1937) Choice in CASE statement alternative must be locally static.
 # 
-# ** Warning: F:/thujiyuan/pop_cpu/cpu.vhd(90): (vcom-1937) Choice in CASE statement alternative must be locally static.
+# ** Warning: F:/thujiyuan/pop_cpu/cpu.vhd(93): (vcom-1937) Choice in CASE statement alternative must be locally static.
 # 
-# ** Warning: F:/thujiyuan/pop_cpu/cpu.vhd(92): (vcom-1937) Choice in CASE statement alternative must be locally static.
+# ** Warning: F:/thujiyuan/pop_cpu/cpu.vhd(95): (vcom-1937) Choice in CASE statement alternative must be locally static.
 # 
-# ** Warning: F:/thujiyuan/pop_cpu/cpu.vhd(94): (vcom-1937) Choice in CASE statement alternative must be locally static.
+# ** Warning: F:/thujiyuan/pop_cpu/cpu.vhd(97): (vcom-1937) Choice in CASE statement alternative must be locally static.
 # 
-# ** Warning: F:/thujiyuan/pop_cpu/cpu.vhd(96): (vcom-1937) Choice in CASE statement alternative must be locally static.
+# ** Warning: F:/thujiyuan/pop_cpu/cpu.vhd(99): (vcom-1937) Choice in CASE statement alternative must be locally static.
 # 
-# ** Warning: F:/thujiyuan/pop_cpu/cpu.vhd(98): (vcom-1937) Choice in CASE statement alternative must be locally static.
+# ** Warning: F:/thujiyuan/pop_cpu/cpu.vhd(101): (vcom-1937) Choice in CASE statement alternative must be locally static.
 # 
-# ** Warning: F:/thujiyuan/pop_cpu/cpu.vhd(100): (vcom-1937) Choice in CASE statement alternative must be locally static.
+# ** Warning: F:/thujiyuan/pop_cpu/cpu.vhd(103): (vcom-1937) Choice in CASE statement alternative must be locally static.
 # 
-# ** Warning: F:/thujiyuan/pop_cpu/cpu.vhd(102): (vcom-1937) Choice in CASE statement alternative must be locally static.
+# ** Warning: F:/thujiyuan/pop_cpu/cpu.vhd(105): (vcom-1937) Choice in CASE statement alternative must be locally static.
 # 
-# ** Warning: F:/thujiyuan/pop_cpu/cpu.vhd(104): (vcom-1937) Choice in CASE statement alternative must be locally static.
+# ** Warning: F:/thujiyuan/pop_cpu/cpu.vhd(107): (vcom-1937) Choice in CASE statement alternative must be locally static.
 # 
-# ** Warning: F:/thujiyuan/pop_cpu/cpu.vhd(106): (vcom-1937) Choice in CASE statement alternative must be locally static.
+# ** Warning: F:/thujiyuan/pop_cpu/cpu.vhd(109): (vcom-1937) Choice in CASE statement alternative must be locally static.
 # 
-# ** Warning: F:/thujiyuan/pop_cpu/cpu.vhd(108): (vcom-1937) Choice in CASE statement alternative must be locally static.
+# ** Warning: F:/thujiyuan/pop_cpu/cpu.vhd(111): (vcom-1937) Choice in CASE statement alternative must be locally static.
 # 
-# ** Warning: F:/thujiyuan/pop_cpu/cpu.vhd(112): (vcom-1937) Choice in CASE statement alternative must be locally static.
+# ** Warning: F:/thujiyuan/pop_cpu/cpu.vhd(115): (vcom-1937) Choice in CASE statement alternative must be locally static.
 # 
-# ** Warning: F:/thujiyuan/pop_cpu/cpu.vhd(114): (vcom-1937) Choice in CASE statement alternative must be locally static.
+# ** Warning: F:/thujiyuan/pop_cpu/cpu.vhd(117): (vcom-1937) Choice in CASE statement alternative must be locally static.
 # 
-# ** Warning: F:/thujiyuan/pop_cpu/cpu.vhd(116): (vcom-1937) Choice in CASE statement alternative must be locally static.
+# ** Warning: F:/thujiyuan/pop_cpu/cpu.vhd(119): (vcom-1937) Choice in CASE statement alternative must be locally static.
 # 
-# ** Warning: F:/thujiyuan/pop_cpu/cpu.vhd(118): (vcom-1937) Choice in CASE statement alternative must be locally static.
+# ** Warning: F:/thujiyuan/pop_cpu/cpu.vhd(121): (vcom-1937) Choice in CASE statement alternative must be locally static.
 # 
-# ** Warning: F:/thujiyuan/pop_cpu/cpu.vhd(120): (vcom-1937) Choice in CASE statement alternative must be locally static.
+# ** Warning: F:/thujiyuan/pop_cpu/cpu.vhd(123): (vcom-1937) Choice in CASE statement alternative must be locally static.
 # 
-# ** Warning: F:/thujiyuan/pop_cpu/cpu.vhd(122): (vcom-1937) Choice in CASE statement alternative must be locally static.
+# ** Warning: F:/thujiyuan/pop_cpu/cpu.vhd(125): (vcom-1937) Choice in CASE statement alternative must be locally static.
 # 
-# ** Warning: F:/thujiyuan/pop_cpu/cpu.vhd(124): (vcom-1937) Choice in CASE statement alternative must be locally static.
+# ** Warning: F:/thujiyuan/pop_cpu/cpu.vhd(127): (vcom-1937) Choice in CASE statement alternative must be locally static.
 # 
-# ** Warning: F:/thujiyuan/pop_cpu/cpu.vhd(126): (vcom-1937) Choice in CASE statement alternative must be locally static.
+# ** Warning: F:/thujiyuan/pop_cpu/cpu.vhd(129): (vcom-1937) Choice in CASE statement alternative must be locally static.
 # 
-# ** Warning: F:/thujiyuan/pop_cpu/cpu.vhd(128): (vcom-1937) Choice in CASE statement alternative must be locally static.
+# ** Warning: F:/thujiyuan/pop_cpu/cpu.vhd(131): (vcom-1937) Choice in CASE statement alternative must be locally static.
 # 
-# ** Warning: F:/thujiyuan/pop_cpu/cpu.vhd(130): (vcom-1937) Choice in CASE statement alternative must be locally static.
+# ** Warning: F:/thujiyuan/pop_cpu/cpu.vhd(133): (vcom-1937) Choice in CASE statement alternative must be locally static.
 # 
-# ** Warning: F:/thujiyuan/pop_cpu/cpu.vhd(132): (vcom-1937) Choice in CASE statement alternative must be locally static.
+# ** Warning: F:/thujiyuan/pop_cpu/cpu.vhd(135): (vcom-1937) Choice in CASE statement alternative must be locally static.
 # 
-# ** Warning: F:/thujiyuan/pop_cpu/cpu.vhd(161): (vcom-1937) Choice in CASE statement alternative must be locally static.
+# ** Warning: F:/thujiyuan/pop_cpu/cpu.vhd(164): (vcom-1937) Choice in CASE statement alternative must be locally static.
 # 
-# End time: 03:30:17 on Nov 29,2016, Elapsed time: 0:00:00
+# End time: 12:04:22 on Nov 30,2016, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 42
 vsim -voptargs=+acc work.cpu
 # vsim 
-# Start time: 03:30:20 on Nov 29,2016
-# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
+# Start time: 12:04:26 on Nov 30,2016
+# ** Note: (vsim-3812) Design is being optimized...
 # 
 # Loading std.standard
 # Loading std.textio(body)
@@ -719,6 +526,7 @@ vsim -voptargs=+acc work.cpu
 # Loading ieee.std_logic_unsigned(body)
 # Loading work.cpu(behavioral)#1
 # Loading work.pop_cpu(behavioral)#1
+# Loading work.shumadecoder(behavioral)#1
 # Loading work.pc(pcbehavioral)#1
 # Loading work.insfetcher(behavioral)#1
 # Loading work.pcadder(pcadderbehavioral)#1
@@ -741,9 +549,19 @@ vsim -voptargs=+acc work.cpu
 # Loading work.memaccess(behavioral)#1
 # Loading work.mem_wbregs(behavioral)#1
 # Loading work.wbsrcmux(behavioral)#1
-# Loading work.ram2access(behavioral)#1
+add wave -position end  sim:/cpu/clk
+# ** Warning: (vsim-WLF-5000) WLF file currently in use: vsim.wlf
+# 
+#           File in use by: Administrator  Hostname: MS-20150523JZEJ  ProcessID: 4076
+# 
+#           Attempting to use alternate WLF file "./wlft5g6xiv".
+# ** Warning: (vsim-WLF-5001) Could not open WLF file: vsim.wlf
+# 
+#           Using alternate file: ./wlft5g6xiv
+# 
+add wave -position end  sim:/cpu/Ram2Data
 add wave -position end  sim:/cpu/c/p/PCout
-add wave -position end  sim:/cpu/c/p/clk
+add wave -position end  sim:/cpu/c/insf/ins
 run
 # ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
 #    Time: 0 ns  Iteration: 0  Instance: /cpu/c/addre
@@ -776,45 +594,17 @@ run
 # ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
 #    Time: 0 ns  Iteration: 2  Instance: /cpu/c/addre
 # ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 200 ns  Iteration: 1  Instance: /cpu/c/addre
+#    Time: 0 ns  Iteration: 3  Instance: /cpu/c/al
 # ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 200 ns  Iteration: 1  Instance: /cpu/c/addre
+#    Time: 0 ns  Iteration: 3  Instance: /cpu/c/al
 # ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 200 ns  Iteration: 2  Instance: /cpu/c/al
+#    Time: 200 ns  Iteration: 2  Instance: /cpu/c/addre
 # ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 200 ns  Iteration: 2  Instance: /cpu/c/al
-# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 200 ns  Iteration: 3  Instance: /cpu/c/addre
-# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 400 ns  Iteration: 2  Instance: /cpu/c/al
-add wave -position end  sim:/cpu/c/p/passerPause
-add wave -position end  sim:/cpu/c/p/rwPause
-add wave -position end  sim:/cpu/c/insf/ins
-add wave -position 4  sim:/cpu/c/insf/rwPause
-add wave -position end  sim:/cpu/c/ifidr/outInst
-add wave -position end  sim:/cpu/c/bypas/outIH
-add wave -position end  sim:/cpu/c/bypas/outSP
-add wave -position end  sim:/cpu/c/bypas/outT
-add wave -position end  sim:/cpu/c/bypas/outrx
-add wave -position end  sim:/cpu/c/bypas/outry
-add wave -position end  sim:/cpu/c/idexe/outALUFunc
-add wave -position end  sim:/cpu/c/idexe/outALUSrc0
-add wave -position end  sim:/cpu/c/idexe/outALUSrc1
-add wave -position end  sim:/cpu/c/idexe/outExtend
-add wave -position end  sim:/cpu/c/idexe/outIH
-add wave -position end  sim:/cpu/c/idexe/outMEMRead
-add wave -position end  sim:/cpu/c/idexe/outMEMSrc
-add wave -position end  sim:/cpu/c/idexe/outMEMWrite
-add wave -position end  sim:/cpu/c/idexe/outPC
-add wave -position end  sim:/cpu/c/idexe/outRA
-add wave -position end  sim:/cpu/c/idexe/outRegWrite
-add wave -position end  sim:/cpu/c/idexe/outRx
-add wave -position end  sim:/cpu/c/idexe/outRy
-add wave -position end  sim:/cpu/c/idexe/outWBDes
-add wave -position end  sim:/cpu/c/idexe/outWBSrc
-run
+#    Time: 400 ns  Iteration: 3  Instance: /cpu/c/al
+add wave -position end  sim:/cpu/RAM1addr
+add wave -position end  sim:/cpu/RAM1data
 restart
-# ** Note: (vsim-8009) Loading existing optimized design _opt2
+# ** Note: (vsim-8009) Loading existing optimized design _opt1
 # 
 run
 # ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
@@ -848,14 +638,648 @@ run
 # ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
 #    Time: 0 ns  Iteration: 2  Instance: /cpu/c/addre
 # ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 200 ns  Iteration: 1  Instance: /cpu/c/addre
+#    Time: 0 ns  Iteration: 3  Instance: /cpu/c/al
 # ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 200 ns  Iteration: 1  Instance: /cpu/c/addre
+#    Time: 0 ns  Iteration: 3  Instance: /cpu/c/al
 # ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 200 ns  Iteration: 2  Instance: /cpu/c/al
+#    Time: 200 ns  Iteration: 2  Instance: /cpu/c/addre
 # ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 200 ns  Iteration: 2  Instance: /cpu/c/al
+#    Time: 400 ns  Iteration: 3  Instance: /cpu/c/al
+add wave -position end sim:/cpu/c/bypas/*
+restart
+# ** Note: (vsim-8009) Loading existing optimized design _opt1
+# 
+run
 # ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 200 ns  Iteration: 3  Instance: /cpu/c/addre
+#    Time: 0 ns  Iteration: 0  Instance: /cpu/c/addre
 # ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 400 ns  Iteration: 2  Instance: /cpu/c/al
+#    Time: 0 ns  Iteration: 0  Instance: /cpu/c/addre
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 0  Instance: /cpu/c/exten
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 0  Instance: /cpu/c/exten
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 0  Instance: /cpu/c/exten
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 0  Instance: /cpu/c/exten
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 0  Instance: /cpu/c/exten
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 0  Instance: /cpu/c/exten
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 0  Instance: /cpu/c/pcs
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 0  Instance: /cpu/c/pcs
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 0  Instance: /cpu/c/pcs
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 1  Instance: /cpu/c/exten
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 1  Instance: /cpu/c/pca
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 2  Instance: /cpu/c/addre
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 2  Instance: /cpu/c/addre
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 3  Instance: /cpu/c/al
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 3  Instance: /cpu/c/al
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 200 ns  Iteration: 2  Instance: /cpu/c/addre
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 400 ns  Iteration: 3  Instance: /cpu/c/al
+add wave -position end sim:/cpu/c/al/*
+restart
+# ** Note: (vsim-8009) Loading existing optimized design _opt1
+# 
+run
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 0  Instance: /cpu/c/addre
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 0  Instance: /cpu/c/addre
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 0  Instance: /cpu/c/exten
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 0  Instance: /cpu/c/exten
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 0  Instance: /cpu/c/exten
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 0  Instance: /cpu/c/exten
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 0  Instance: /cpu/c/exten
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 0  Instance: /cpu/c/exten
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 0  Instance: /cpu/c/pcs
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 0  Instance: /cpu/c/pcs
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 0  Instance: /cpu/c/pcs
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 1  Instance: /cpu/c/exten
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 1  Instance: /cpu/c/pca
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 2  Instance: /cpu/c/addre
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 2  Instance: /cpu/c/addre
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 3  Instance: /cpu/c/al
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 3  Instance: /cpu/c/al
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 200 ns  Iteration: 2  Instance: /cpu/c/addre
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 400 ns  Iteration: 3  Instance: /cpu/c/al
+add wave -position end  sim:/cpu/c/idexe/outALUFunc
+add wave -position end  sim:/cpu/c/idexe/outALUSrc0
+add wave -position end  sim:/cpu/c/idexe/outALUSrc1
+add wave -position end  sim:/cpu/c/idexe/outExtend
+restart
+# ** Note: (vsim-8009) Loading existing optimized design _opt1
+# 
+run
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 0  Instance: /cpu/c/addre
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 0  Instance: /cpu/c/addre
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 0  Instance: /cpu/c/exten
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 0  Instance: /cpu/c/exten
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 0  Instance: /cpu/c/exten
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 0  Instance: /cpu/c/exten
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 0  Instance: /cpu/c/exten
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 0  Instance: /cpu/c/exten
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 0  Instance: /cpu/c/pcs
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 0  Instance: /cpu/c/pcs
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 0  Instance: /cpu/c/pcs
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 1  Instance: /cpu/c/exten
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 1  Instance: /cpu/c/pca
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 2  Instance: /cpu/c/addre
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 2  Instance: /cpu/c/addre
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 3  Instance: /cpu/c/al
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 3  Instance: /cpu/c/al
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 200 ns  Iteration: 2  Instance: /cpu/c/addre
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 400 ns  Iteration: 3  Instance: /cpu/c/al
+add wave -position end  sim:/cpu/c/idexe/inALUFunc
+add wave -position end  sim:/cpu/c/idexe/inALUSrc0
+add wave -position end  sim:/cpu/c/idexe/inALUSrc1
+add wave -position end  sim:/cpu/c/idexe/inExtend
+add wave -position end  sim:/cpu/c/idexe/inIH
+add wave -position end  sim:/cpu/c/idexe/inMEMRead
+add wave -position end  sim:/cpu/c/idexe/inMEMSrc
+add wave -position end  sim:/cpu/c/idexe/inMEMWrite
+add wave -position end  sim:/cpu/c/idexe/inPC
+add wave -position end  sim:/cpu/c/idexe/inRA
+add wave -position end  sim:/cpu/c/idexe/inRegWrite
+add wave -position end  sim:/cpu/c/idexe/inRx
+add wave -position end  sim:/cpu/c/idexe/inRy
+add wave -position end  sim:/cpu/c/idexe/inSP
+add wave -position end  sim:/cpu/c/idexe/inWBDes
+add wave -position end  sim:/cpu/c/idexe/inWBSrc
+restart
+# ** Note: (vsim-8009) Loading existing optimized design _opt1
+# 
+run
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 0  Instance: /cpu/c/addre
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 0  Instance: /cpu/c/addre
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 0  Instance: /cpu/c/exten
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 0  Instance: /cpu/c/exten
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 0  Instance: /cpu/c/exten
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 0  Instance: /cpu/c/exten
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 0  Instance: /cpu/c/exten
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 0  Instance: /cpu/c/exten
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 0  Instance: /cpu/c/pcs
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 0  Instance: /cpu/c/pcs
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 0  Instance: /cpu/c/pcs
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 1  Instance: /cpu/c/exten
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 1  Instance: /cpu/c/pca
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 2  Instance: /cpu/c/addre
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 2  Instance: /cpu/c/addre
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 3  Instance: /cpu/c/al
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 3  Instance: /cpu/c/al
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 200 ns  Iteration: 2  Instance: /cpu/c/addre
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 400 ns  Iteration: 3  Instance: /cpu/c/al
+add wave -position 5  sim:/cpu/c/insf/MEMAddr
+add wave -position 6  sim:/cpu/c/insf/MEMRead
+add wave -position 7  sim:/cpu/c/insf/MEMReadData
+add wave -position 8  sim:/cpu/c/insf/MEMWrite
+add wave -position 9  sim:/cpu/c/insf/MEMWriteData
+add wave -position 10  sim:/cpu/c/insf/Ram2Addr
+add wave -position 11  sim:/cpu/c/insf/Ram2Data
+add wave -position 12  sim:/cpu/c/insf/Ram2EN
+add wave -position 13  sim:/cpu/c/insf/Ram2OE
+add wave -position 14  sim:/cpu/c/insf/Ram2WE
+add wave -position 15  sim:/cpu/c/insf/addr
+add wave -position 16  sim:/cpu/c/insf/ins
+restart
+# ** Note: (vsim-8009) Loading existing optimized design _opt1
+# 
+run
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 0  Instance: /cpu/c/addre
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 0  Instance: /cpu/c/addre
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 0  Instance: /cpu/c/exten
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 0  Instance: /cpu/c/exten
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 0  Instance: /cpu/c/exten
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 0  Instance: /cpu/c/exten
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 0  Instance: /cpu/c/exten
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 0  Instance: /cpu/c/exten
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 0  Instance: /cpu/c/pcs
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 0  Instance: /cpu/c/pcs
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 0  Instance: /cpu/c/pcs
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 1  Instance: /cpu/c/exten
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 1  Instance: /cpu/c/pca
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 2  Instance: /cpu/c/addre
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 2  Instance: /cpu/c/addre
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 3  Instance: /cpu/c/al
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 3  Instance: /cpu/c/al
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 200 ns  Iteration: 2  Instance: /cpu/c/addre
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 400 ns  Iteration: 3  Instance: /cpu/c/al
+vcom -work work F:/thujiyuan/pop_cpu/cpu.vhd
+# Model Technology ModelSim SE-64 vcom 10.4 Compiler 2014.12 Dec  3 2014
+# Start time: 12:23:09 on Nov 30,2016
+# vcom -reportprogress 300 -work work F:/thujiyuan/pop_cpu/cpu.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package std_logic_arith
+# -- Loading package STD_LOGIC_UNSIGNED
+# -- Compiling entity cpu
+# -- Compiling architecture Behavioral of cpu
+# ** Warning: F:/thujiyuan/pop_cpu/cpu.vhd(50): (vcom-1207) An abstract literal and an identifier must have a separator between them.
+# ** Warning: F:/thujiyuan/pop_cpu/cpu.vhd(51): (vcom-1207) An abstract literal and an identifier must have a separator between them.
+# ** Warning: F:/thujiyuan/pop_cpu/cpu.vhd(55): (vcom-1937) Choice in CASE statement alternative must be locally static.
+# 
+# ** Warning: F:/thujiyuan/pop_cpu/cpu.vhd(57): (vcom-1937) Choice in CASE statement alternative must be locally static.
+# 
+# ** Warning: F:/thujiyuan/pop_cpu/cpu.vhd(59): (vcom-1937) Choice in CASE statement alternative must be locally static.
+# 
+# ** Warning: F:/thujiyuan/pop_cpu/cpu.vhd(61): (vcom-1937) Choice in CASE statement alternative must be locally static.
+# 
+# ** Warning: F:/thujiyuan/pop_cpu/cpu.vhd(65): (vcom-1937) Choice in CASE statement alternative must be locally static.
+# 
+# ** Warning: F:/thujiyuan/pop_cpu/cpu.vhd(67): (vcom-1937) Choice in CASE statement alternative must be locally static.
+# 
+# ** Warning: F:/thujiyuan/pop_cpu/cpu.vhd(69): (vcom-1937) Choice in CASE statement alternative must be locally static.
+# 
+# ** Warning: F:/thujiyuan/pop_cpu/cpu.vhd(71): (vcom-1937) Choice in CASE statement alternative must be locally static.
+# 
+# ** Warning: F:/thujiyuan/pop_cpu/cpu.vhd(73): (vcom-1937) Choice in CASE statement alternative must be locally static.
+# 
+# ** Warning: F:/thujiyuan/pop_cpu/cpu.vhd(75): (vcom-1937) Choice in CASE statement alternative must be locally static.
+# 
+# ** Warning: F:/thujiyuan/pop_cpu/cpu.vhd(77): (vcom-1937) Choice in CASE statement alternative must be locally static.
+# 
+# ** Warning: F:/thujiyuan/pop_cpu/cpu.vhd(79): (vcom-1937) Choice in CASE statement alternative must be locally static.
+# 
+# ** Warning: F:/thujiyuan/pop_cpu/cpu.vhd(81): (vcom-1937) Choice in CASE statement alternative must be locally static.
+# 
+# ** Warning: F:/thujiyuan/pop_cpu/cpu.vhd(83): (vcom-1937) Choice in CASE statement alternative must be locally static.
+# 
+# ** Warning: F:/thujiyuan/pop_cpu/cpu.vhd(85): (vcom-1937) Choice in CASE statement alternative must be locally static.
+# 
+# ** Warning: F:/thujiyuan/pop_cpu/cpu.vhd(87): (vcom-1937) Choice in CASE statement alternative must be locally static.
+# 
+# ** Warning: F:/thujiyuan/pop_cpu/cpu.vhd(89): (vcom-1937) Choice in CASE statement alternative must be locally static.
+# 
+# ** Warning: F:/thujiyuan/pop_cpu/cpu.vhd(91): (vcom-1937) Choice in CASE statement alternative must be locally static.
+# 
+# ** Warning: F:/thujiyuan/pop_cpu/cpu.vhd(93): (vcom-1937) Choice in CASE statement alternative must be locally static.
+# 
+# ** Warning: F:/thujiyuan/pop_cpu/cpu.vhd(95): (vcom-1937) Choice in CASE statement alternative must be locally static.
+# 
+# ** Warning: F:/thujiyuan/pop_cpu/cpu.vhd(97): (vcom-1937) Choice in CASE statement alternative must be locally static.
+# 
+# ** Warning: F:/thujiyuan/pop_cpu/cpu.vhd(99): (vcom-1937) Choice in CASE statement alternative must be locally static.
+# 
+# ** Warning: F:/thujiyuan/pop_cpu/cpu.vhd(101): (vcom-1937) Choice in CASE statement alternative must be locally static.
+# 
+# ** Warning: F:/thujiyuan/pop_cpu/cpu.vhd(103): (vcom-1937) Choice in CASE statement alternative must be locally static.
+# 
+# ** Warning: F:/thujiyuan/pop_cpu/cpu.vhd(105): (vcom-1937) Choice in CASE statement alternative must be locally static.
+# 
+# ** Warning: F:/thujiyuan/pop_cpu/cpu.vhd(107): (vcom-1937) Choice in CASE statement alternative must be locally static.
+# 
+# ** Warning: F:/thujiyuan/pop_cpu/cpu.vhd(109): (vcom-1937) Choice in CASE statement alternative must be locally static.
+# 
+# ** Warning: F:/thujiyuan/pop_cpu/cpu.vhd(111): (vcom-1937) Choice in CASE statement alternative must be locally static.
+# 
+# ** Warning: F:/thujiyuan/pop_cpu/cpu.vhd(113): (vcom-1937) Choice in CASE statement alternative must be locally static.
+# 
+# ** Warning: F:/thujiyuan/pop_cpu/cpu.vhd(115): (vcom-1937) Choice in CASE statement alternative must be locally static.
+# 
+# ** Warning: F:/thujiyuan/pop_cpu/cpu.vhd(117): (vcom-1937) Choice in CASE statement alternative must be locally static.
+# 
+# ** Warning: F:/thujiyuan/pop_cpu/cpu.vhd(121): (vcom-1937) Choice in CASE statement alternative must be locally static.
+# 
+# ** Warning: F:/thujiyuan/pop_cpu/cpu.vhd(123): (vcom-1937) Choice in CASE statement alternative must be locally static.
+# 
+# ** Warning: F:/thujiyuan/pop_cpu/cpu.vhd(125): (vcom-1937) Choice in CASE statement alternative must be locally static.
+# 
+# ** Warning: F:/thujiyuan/pop_cpu/cpu.vhd(127): (vcom-1937) Choice in CASE statement alternative must be locally static.
+# 
+# ** Warning: F:/thujiyuan/pop_cpu/cpu.vhd(129): (vcom-1937) Choice in CASE statement alternative must be locally static.
+# 
+# ** Warning: F:/thujiyuan/pop_cpu/cpu.vhd(131): (vcom-1937) Choice in CASE statement alternative must be locally static.
+# 
+# ** Warning: F:/thujiyuan/pop_cpu/cpu.vhd(133): (vcom-1937) Choice in CASE statement alternative must be locally static.
+# 
+# ** Warning: F:/thujiyuan/pop_cpu/cpu.vhd(135): (vcom-1937) Choice in CASE statement alternative must be locally static.
+# 
+# ** Warning: F:/thujiyuan/pop_cpu/cpu.vhd(137): (vcom-1937) Choice in CASE statement alternative must be locally static.
+# 
+# ** Warning: F:/thujiyuan/pop_cpu/cpu.vhd(139): (vcom-1937) Choice in CASE statement alternative must be locally static.
+# 
+# ** Warning: F:/thujiyuan/pop_cpu/cpu.vhd(141): (vcom-1937) Choice in CASE statement alternative must be locally static.
+# 
+# ** Warning: F:/thujiyuan/pop_cpu/cpu.vhd(170): (vcom-1937) Choice in CASE statement alternative must be locally static.
+# 
+# End time: 12:23:09 on Nov 30,2016, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 45
+restart
+# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
+# 
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.std_logic_arith(body)
+# Loading ieee.std_logic_unsigned(body)
+# Loading work.cpu(behavioral)#1
+# Loading work.pop_cpu(behavioral)#1
+# Loading work.shumadecoder(behavioral)#1
+# Loading work.pc(pcbehavioral)#1
+# Loading work.insfetcher(behavioral)#1
+# Loading work.pcadder(pcadderbehavioral)#1
+# Loading work.pcselector(pcselectorbehavioral)#1
+# Loading work.if_idregs(behavioral)#1
+# Loading work.registers(behavioral)#1
+# Loading work.bypasser(behavioral)#1
+# Loading work.control(behavioral)#1
+# Loading work.extender(extenderbehavioral)#1
+# Loading work.addressadder(behavioral)#1
+# Loading work.id_exeregs(behavioral)#1
+# Loading ieee.std_logic_signed(body)
+# Loading work.recorddefs(body)
+# Loading work.alusrc0mux(behavioral)#1
+# Loading work.alusrc1mux(behavioral)#1
+# Loading work.alu(behavioral)#1
+# Loading work.readwritepauser(behavioral)#1
+# Loading work.exe_memregs(behavioral)#1
+# Loading work.memsrcmux(behavioral)#1
+# Loading work.memaccess(behavioral)#1
+# Loading work.mem_wbregs(behavioral)#1
+# Loading work.wbsrcmux(behavioral)#1
+run
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 0  Instance: /cpu/c/addre
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 0  Instance: /cpu/c/addre
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 0  Instance: /cpu/c/exten
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 0  Instance: /cpu/c/exten
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 0  Instance: /cpu/c/exten
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 0  Instance: /cpu/c/exten
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 0  Instance: /cpu/c/exten
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 0  Instance: /cpu/c/exten
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 0  Instance: /cpu/c/pcs
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 0  Instance: /cpu/c/pcs
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 0  Instance: /cpu/c/pcs
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 1  Instance: /cpu/c/exten
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 1  Instance: /cpu/c/pca
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 2  Instance: /cpu/c/addre
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 2  Instance: /cpu/c/addre
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 3  Instance: /cpu/c/al
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 3  Instance: /cpu/c/al
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 200 ns  Iteration: 2  Instance: /cpu/c/addre
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 400 ns  Iteration: 3  Instance: /cpu/c/al
+vcom -work work F:/thujiyuan/pop_cpu/cpu.vhd
+# Model Technology ModelSim SE-64 vcom 10.4 Compiler 2014.12 Dec  3 2014
+# Start time: 12:24:25 on Nov 30,2016
+# vcom -reportprogress 300 -work work F:/thujiyuan/pop_cpu/cpu.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package std_logic_arith
+# -- Loading package STD_LOGIC_UNSIGNED
+# -- Compiling entity cpu
+# -- Compiling architecture Behavioral of cpu
+# ** Warning: F:/thujiyuan/pop_cpu/cpu.vhd(50): (vcom-1207) An abstract literal and an identifier must have a separator between them.
+# ** Warning: F:/thujiyuan/pop_cpu/cpu.vhd(51): (vcom-1207) An abstract literal and an identifier must have a separator between them.
+# ** Warning: F:/thujiyuan/pop_cpu/cpu.vhd(55): (vcom-1937) Choice in CASE statement alternative must be locally static.
+# 
+# ** Warning: F:/thujiyuan/pop_cpu/cpu.vhd(57): (vcom-1937) Choice in CASE statement alternative must be locally static.
+# 
+# ** Warning: F:/thujiyuan/pop_cpu/cpu.vhd(59): (vcom-1937) Choice in CASE statement alternative must be locally static.
+# 
+# ** Warning: F:/thujiyuan/pop_cpu/cpu.vhd(61): (vcom-1937) Choice in CASE statement alternative must be locally static.
+# 
+# ** Warning: F:/thujiyuan/pop_cpu/cpu.vhd(65): (vcom-1937) Choice in CASE statement alternative must be locally static.
+# 
+# ** Warning: F:/thujiyuan/pop_cpu/cpu.vhd(67): (vcom-1937) Choice in CASE statement alternative must be locally static.
+# 
+# ** Warning: F:/thujiyuan/pop_cpu/cpu.vhd(69): (vcom-1937) Choice in CASE statement alternative must be locally static.
+# 
+# ** Warning: F:/thujiyuan/pop_cpu/cpu.vhd(71): (vcom-1937) Choice in CASE statement alternative must be locally static.
+# 
+# ** Warning: F:/thujiyuan/pop_cpu/cpu.vhd(73): (vcom-1937) Choice in CASE statement alternative must be locally static.
+# 
+# ** Warning: F:/thujiyuan/pop_cpu/cpu.vhd(75): (vcom-1937) Choice in CASE statement alternative must be locally static.
+# 
+# ** Warning: F:/thujiyuan/pop_cpu/cpu.vhd(77): (vcom-1937) Choice in CASE statement alternative must be locally static.
+# 
+# ** Warning: F:/thujiyuan/pop_cpu/cpu.vhd(79): (vcom-1937) Choice in CASE statement alternative must be locally static.
+# 
+# ** Warning: F:/thujiyuan/pop_cpu/cpu.vhd(81): (vcom-1937) Choice in CASE statement alternative must be locally static.
+# 
+# ** Warning: F:/thujiyuan/pop_cpu/cpu.vhd(83): (vcom-1937) Choice in CASE statement alternative must be locally static.
+# 
+# ** Warning: F:/thujiyuan/pop_cpu/cpu.vhd(85): (vcom-1937) Choice in CASE statement alternative must be locally static.
+# 
+# ** Warning: F:/thujiyuan/pop_cpu/cpu.vhd(87): (vcom-1937) Choice in CASE statement alternative must be locally static.
+# 
+# ** Warning: F:/thujiyuan/pop_cpu/cpu.vhd(89): (vcom-1937) Choice in CASE statement alternative must be locally static.
+# 
+# ** Warning: F:/thujiyuan/pop_cpu/cpu.vhd(91): (vcom-1937) Choice in CASE statement alternative must be locally static.
+# 
+# ** Warning: F:/thujiyuan/pop_cpu/cpu.vhd(93): (vcom-1937) Choice in CASE statement alternative must be locally static.
+# 
+# ** Warning: F:/thujiyuan/pop_cpu/cpu.vhd(95): (vcom-1937) Choice in CASE statement alternative must be locally static.
+# 
+# ** Warning: F:/thujiyuan/pop_cpu/cpu.vhd(97): (vcom-1937) Choice in CASE statement alternative must be locally static.
+# 
+# ** Warning: F:/thujiyuan/pop_cpu/cpu.vhd(99): (vcom-1937) Choice in CASE statement alternative must be locally static.
+# 
+# ** Warning: F:/thujiyuan/pop_cpu/cpu.vhd(101): (vcom-1937) Choice in CASE statement alternative must be locally static.
+# 
+# ** Warning: F:/thujiyuan/pop_cpu/cpu.vhd(103): (vcom-1937) Choice in CASE statement alternative must be locally static.
+# 
+# ** Warning: F:/thujiyuan/pop_cpu/cpu.vhd(105): (vcom-1937) Choice in CASE statement alternative must be locally static.
+# 
+# ** Warning: F:/thujiyuan/pop_cpu/cpu.vhd(107): (vcom-1937) Choice in CASE statement alternative must be locally static.
+# 
+# ** Warning: F:/thujiyuan/pop_cpu/cpu.vhd(109): (vcom-1937) Choice in CASE statement alternative must be locally static.
+# 
+# ** Warning: F:/thujiyuan/pop_cpu/cpu.vhd(111): (vcom-1937) Choice in CASE statement alternative must be locally static.
+# 
+# ** Warning: F:/thujiyuan/pop_cpu/cpu.vhd(113): (vcom-1937) Choice in CASE statement alternative must be locally static.
+# 
+# ** Warning: F:/thujiyuan/pop_cpu/cpu.vhd(115): (vcom-1937) Choice in CASE statement alternative must be locally static.
+# 
+# ** Warning: F:/thujiyuan/pop_cpu/cpu.vhd(117): (vcom-1937) Choice in CASE statement alternative must be locally static.
+# 
+# ** Warning: F:/thujiyuan/pop_cpu/cpu.vhd(121): (vcom-1937) Choice in CASE statement alternative must be locally static.
+# 
+# ** Warning: F:/thujiyuan/pop_cpu/cpu.vhd(123): (vcom-1937) Choice in CASE statement alternative must be locally static.
+# 
+# ** Warning: F:/thujiyuan/pop_cpu/cpu.vhd(125): (vcom-1937) Choice in CASE statement alternative must be locally static.
+# 
+# ** Warning: F:/thujiyuan/pop_cpu/cpu.vhd(127): (vcom-1937) Choice in CASE statement alternative must be locally static.
+# 
+# ** Warning: F:/thujiyuan/pop_cpu/cpu.vhd(129): (vcom-1937) Choice in CASE statement alternative must be locally static.
+# 
+# ** Warning: F:/thujiyuan/pop_cpu/cpu.vhd(131): (vcom-1937) Choice in CASE statement alternative must be locally static.
+# 
+# ** Warning: F:/thujiyuan/pop_cpu/cpu.vhd(133): (vcom-1937) Choice in CASE statement alternative must be locally static.
+# 
+# ** Warning: F:/thujiyuan/pop_cpu/cpu.vhd(135): (vcom-1937) Choice in CASE statement alternative must be locally static.
+# 
+# ** Warning: F:/thujiyuan/pop_cpu/cpu.vhd(137): (vcom-1937) Choice in CASE statement alternative must be locally static.
+# 
+# ** Warning: F:/thujiyuan/pop_cpu/cpu.vhd(139): (vcom-1937) Choice in CASE statement alternative must be locally static.
+# 
+# ** Warning: F:/thujiyuan/pop_cpu/cpu.vhd(141): (vcom-1937) Choice in CASE statement alternative must be locally static.
+# 
+# ** Warning: F:/thujiyuan/pop_cpu/cpu.vhd(170): (vcom-1937) Choice in CASE statement alternative must be locally static.
+# 
+# End time: 12:24:25 on Nov 30,2016, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 45
+restart
+# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
+# 
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.std_logic_arith(body)
+# Loading ieee.std_logic_unsigned(body)
+# Loading work.cpu(behavioral)#1
+# Loading work.pop_cpu(behavioral)#1
+# Loading work.shumadecoder(behavioral)#1
+# Loading work.pc(pcbehavioral)#1
+# Loading work.insfetcher(behavioral)#1
+# Loading work.pcadder(pcadderbehavioral)#1
+# Loading work.pcselector(pcselectorbehavioral)#1
+# Loading work.if_idregs(behavioral)#1
+# Loading work.registers(behavioral)#1
+# Loading work.bypasser(behavioral)#1
+# Loading work.control(behavioral)#1
+# Loading work.extender(extenderbehavioral)#1
+# Loading work.addressadder(behavioral)#1
+# Loading work.id_exeregs(behavioral)#1
+# Loading ieee.std_logic_signed(body)
+# Loading work.recorddefs(body)
+# Loading work.alusrc0mux(behavioral)#1
+# Loading work.alusrc1mux(behavioral)#1
+# Loading work.alu(behavioral)#1
+# Loading work.readwritepauser(behavioral)#1
+# Loading work.exe_memregs(behavioral)#1
+# Loading work.memsrcmux(behavioral)#1
+# Loading work.memaccess(behavioral)#1
+# Loading work.mem_wbregs(behavioral)#1
+# Loading work.wbsrcmux(behavioral)#1
+run
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 0  Instance: /cpu/c/addre
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 0  Instance: /cpu/c/addre
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 0  Instance: /cpu/c/exten
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 0  Instance: /cpu/c/exten
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 0  Instance: /cpu/c/exten
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 0  Instance: /cpu/c/exten
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 0  Instance: /cpu/c/exten
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 0  Instance: /cpu/c/exten
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 0  Instance: /cpu/c/pcs
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 0  Instance: /cpu/c/pcs
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 0  Instance: /cpu/c/pcs
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 1  Instance: /cpu/c/exten
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 1  Instance: /cpu/c/pca
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 2  Instance: /cpu/c/addre
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 2  Instance: /cpu/c/addre
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 3  Instance: /cpu/c/al
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 3  Instance: /cpu/c/al
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 200 ns  Iteration: 2  Instance: /cpu/c/addre
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 400 ns  Iteration: 3  Instance: /cpu/c/al
+add wave -position end  sim:/cpu/c/memac/inAddress
+add wave -position end  sim:/cpu/c/memac/inData
+add wave -position end  sim:/cpu/c/memac/inMEMRead
+add wave -position end  sim:/cpu/c/memac/inMEMWrite
+restart
+# ** Note: (vsim-8009) Loading existing optimized design _opt1
+# 
+run
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 0  Instance: /cpu/c/addre
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 0  Instance: /cpu/c/addre
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 0  Instance: /cpu/c/exten
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 0  Instance: /cpu/c/exten
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 0  Instance: /cpu/c/exten
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 0  Instance: /cpu/c/exten
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 0  Instance: /cpu/c/exten
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 0  Instance: /cpu/c/exten
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 0  Instance: /cpu/c/pcs
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 0  Instance: /cpu/c/pcs
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 0  Instance: /cpu/c/pcs
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 1  Instance: /cpu/c/exten
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 1  Instance: /cpu/c/pca
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 2  Instance: /cpu/c/addre
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 2  Instance: /cpu/c/addre
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 3  Instance: /cpu/c/al
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 3  Instance: /cpu/c/al
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 200 ns  Iteration: 2  Instance: /cpu/c/addre
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 400 ns  Iteration: 3  Instance: /cpu/c/al
+# End time: 12:37:14 on Nov 30,2016, Elapsed time: 0:32:48
+# Errors: 0, Warnings: 282

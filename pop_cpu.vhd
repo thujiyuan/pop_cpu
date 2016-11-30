@@ -32,7 +32,7 @@ use IEEE.STD_LOGIC_ARITH.ALL;
 --use UNISIM.VComponents.all;
 
 entity pop_cpu is
-	port ( clk : in std_logic;
+	port ( inclk : in std_logic;
 			 RAM1OE : out  STD_LOGIC;
 			 RAM1WE : out  STD_LOGIC;
 			 RAM1EN : out  STD_LOGIC;
@@ -48,6 +48,7 @@ entity pop_cpu is
 			 rdn : out STD_LOGIC;
 			 wrn : out STD_LOGIC;
 			 ins : out std_logic_vector(15 downto 0);
+			 l7 : out std_logic_vector(6 downto 0);
 			 r7 : out std_logic_vector(6 downto 0));
 end pop_cpu;
 
@@ -64,10 +65,15 @@ architecture Behavioral of pop_cpu is
 				Ram2WE : out  STD_LOGIC;
 				Ram2EN : out  STD_LOGIC;
 				Ram2Addr : out STD_LOGIC_VECTOR(17 downto 0);
-				Ram2Data : in STD_LOGIC_VECTOR(15 downto 0);
-				addr : in STD_LOGIC_VECTOR(15 downto 0);
+				Ram2Data : inout STD_LOGIC_VECTOR(15 downto 0);
+			
 				ins : out STD_LOGIC_VECTOR(15 downto 0);
-				rwPause : in STD_LOGIC);
+				addr : in STD_LOGIC_VECTOR(15 downto 0);
+				MEMAddr : in STD_LOGIC_VECTOR(17 downto 0);
+				MEMReadData : out STD_LOGIC_VECTOR(15 downto 0);
+				MEMWriteData : in STD_LOGIC_VECTOR(15 downto 0);
+				MEMRead : in STD_LOGIC;
+				MEMWrite : in STD_LOGIC);
 	end component;
 	component PCAdder
 		Port(	PCin: in STD_LOGIC_VECTOR(15 downto 0);
@@ -267,26 +273,25 @@ architecture Behavioral of pop_cpu is
 				  output : out  STD_LOGIC_VECTOR (15 downto 0));
 	end component;
 	component MEMAccess
-		 Port ( inAddress : in  STD_LOGIC_VECTOR (15 downto 0);
-				  inMEMRead : in  STD_LOGIC;
-				  inMEMWrite : in  STD_LOGIC;
-				  inData : in  STD_LOGIC_VECTOR (15 downto 0);
-				  dataReady : in STD_LOGIC;
-				  tsre : in STD_LOGIC;
-				  RAMbuffer : out STD_LOGIC_VECTOR (15 downto 0);
-				  RAM1addr : out  STD_LOGIC_VECTOR (17 downto 0);
-				  RAM1data : inout  STD_LOGIC_VECTOR (15 downto 0);
-				  RAM1OE : out  STD_LOGIC;
-				  RAM1WE : out  STD_LOGIC;
-				  RAM1EN : out  STD_LOGIC;
-				  RAM2addr : out  STD_LOGIC_VECTOR (17 downto 0);
-				  RAM2DataOut : out  STD_LOGIC_VECTOR (15 downto 0);
-				  RAM2DataIn : In  STD_LOGIC_VECTOR (15 downto 0);
-				  RAM2OE : out  STD_LOGIC;
-				  RAM2WE : out  STD_LOGIC;
-				  RAM2EN : out  STD_LOGIC;
-				  rdn : out  STD_LOGIC;
-				  wrn : out  STD_LOGIC);
+		 Port ( 	inAddress : in  STD_LOGIC_VECTOR (15 downto 0);
+					inMEMRead : in  STD_LOGIC;
+					inMEMWrite : in  STD_LOGIC;
+					inData : in  STD_LOGIC_VECTOR (15 downto 0);
+					dataReady : in STD_LOGIC;
+					tsre : in STD_LOGIC;
+					RAMbuffer : out STD_LOGIC_VECTOR (15 downto 0);
+					RAM1addr : out  STD_LOGIC_VECTOR (17 downto 0);
+					RAM1data : inout  STD_LOGIC_VECTOR (15 downto 0);
+					RAM1OE : out  STD_LOGIC;
+					RAM1WE : out  STD_LOGIC;
+					RAM1EN : out  STD_LOGIC;
+					RAM2addr : out  STD_LOGIC_VECTOR (17 downto 0);
+					RAM2DataOut : out  STD_LOGIC_VECTOR (15 downto 0);
+					RAM2DataIn : In  STD_LOGIC_VECTOR (15 downto 0);
+					RAM2Read : out STD_LOGIC;
+					RAM2Write : out STD_LOGIC;
+					rdn : out  STD_LOGIC;
+					wrn : out  STD_LOGIC);
 	end component;
 	
 	component MEM_WBRegs
@@ -312,42 +317,27 @@ architecture Behavioral of pop_cpu is
 				  output : out  STD_LOGIC_VECTOR (15 downto 0));
 	end component;
 	
-	component Ram2Access
-			port ( pause : in std_logic;
-	
-					 insRam2OE : in  STD_LOGIC;
-					 insRam2WE : in  STD_LOGIC;
-					 insRam2EN : in  STD_LOGIC;
-					 insRam2Addr : in STD_LOGIC_VECTOR(17 downto 0);
-					 insRam2Data : inout STD_LOGIC_VECTOR(15 downto 0);
-					 
-					 memRead	: in std_logic;
-					 memRam2OE : in  STD_LOGIC;
-					 memRam2WE : in  STD_LOGIC;
-					 memRam2EN : in  STD_LOGIC;
-					 memRam2Addr : in STD_LOGIC_VECTOR(17 downto 0);
-					 memRam2DataOut : in STD_LOGIC_VECTOR(15 downto 0);
-					 memRam2DataIn : out STD_LOGIC_VECTOR(15 downto 0);
-					 
-					 Ram2OE : out  STD_LOGIC;
-					 Ram2WE : out  STD_LOGIC;
-					 Ram2EN : out  STD_LOGIC;
-					 Ram2Addr : out STD_LOGIC_VECTOR(17 downto 0);
-					 Ram2Data : inout STD_LOGIC_VECTOR(15 downto 0));
+	component clockDivider
+    Port ( inclk : in  STD_LOGIC;
+           outclk : out  STD_LOGIC);
 	end component;
 	
-	signal insRam2OE : STD_LOGIC := '1';
-	signal insRam2WE : STD_LOGIC := '1';
-	signal insRam2EN : STD_LOGIC := '1';
-	signal insRam2Addr : STD_LOGIC_VECTOR(17 downto 0) := (others=>'0');
-	signal insRam2Data : STD_LOGIC_VECTOR(15 downto 0) := (others=>'0');
+	component shumaDecoder
+    Port ( wei : in  STD_LOGIC_VECTOR (3 downto 0);
+           decode : out  STD_LOGIC_VECTOR (6 downto 0));
+	end component;
 	
-	signal memRam2OE : STD_LOGIC := '1';
-	signal memRam2WE : STD_LOGIC := '1';
-	signal memRam2EN : STD_LOGIC := '1';
+	--signal insRam2OE : STD_LOGIC := '1';
+	--signal insRam2WE : STD_LOGIC := '1';
+	--signal insRam2EN : STD_LOGIC := '1';
+	--signal insRam2Addr : STD_LOGIC_VECTOR(17 downto 0) := (others=>'0');
+	--signal insRam2Data : STD_LOGIC_VECTOR(15 downto 0) := (others=>'0');
+	
 	signal memRam2Addr : STD_LOGIC_VECTOR(17 downto 0) := (others=>'0');
 	signal memRam2Dataout : STD_LOGIC_VECTOR(15 downto 0) := (others=>'0');
 	signal memRam2Datain : STD_LOGIC_VECTOR(15 downto 0) := (others=>'0');
+	signal memRam2Read : STD_LOGIC := '0';
+	signal memRam2Write : STD_LOGIC := '0';
 	
 	signal PC_InsFetcher_PC : STD_LOGIC_VECTOR(15 downto 0) := (others=>'0');
 	
@@ -466,10 +456,6 @@ architecture Behavioral of pop_cpu is
 
 	signal readWritePause_PC_pause : STD_LOGIC := '0';
 
-	signal readWritePause_InsFetcher_pause : STD_LOGIC := '0';
-
-	signal readWritePause_Ram2Access_pause : STD_LOGIC := '0';
-
 	signal EXEMEMRegs_MEMWBRegs_WBDes : STD_LOGIC_VECTOR(3 downto 0) := (others=>'0');
 	signal EXEMEMRegs_MEMWBRegs_WBSrc : STD_LOGIC :='0';
 	signal EXEMEMRegs_MEMWBRegs_RegWrite : STD_LOGIC :='0';
@@ -489,8 +475,6 @@ architecture Behavioral of pop_cpu is
 	signal EXEMEMRegs_bypasser_MEMRead : STD_LOGIC :='0';
 	signal EXEMEMRegs_bypasser_rst : STD_LOGIC_VECTOR(15 downto 0) := (others=>'0');
 
-	signal EXEMEMRegs_Ram2Access_MEMRead : STD_LOGIC := '0';
-
 	signal MEMSrcMUX_MEMAccess_writeData : STD_LOGIC_VECTOR(15 downto 0) := (others=>'0');
 
 	signal MEMAccess_MEMWBRegs_buffer : STD_LOGIC_VECTOR(15 downto 0) := (others=>'0');
@@ -509,6 +493,8 @@ architecture Behavioral of pop_cpu is
 	signal WBSrcMUX_bypasser_writeData : STD_LOGIC_VECTOR(15 downto 0) := (others=>'0');
 	
 	--signal IFIDRegs_clear : std_logic :='0';
+	
+	signal clk : std_logic := '0';
 
 begin
 	PC_PCAdder_PC <= PC_InsFetcher_PC;
@@ -554,9 +540,6 @@ begin
 	ALU_readWritePause_rst <= ALU_EXEMEMRegs_rst;
 	ALU_bypasser_rst <= ALU_EXEMEMRegs_rst;
 
-	readWritePause_InsFetcher_pause <= readWritePause_PC_pause;
-	readWritePause_Ram2Access_pause <= readWritePause_PC_pause;
-
 	EXEMEMRegs_bypasser_WBDes <= EXEMEMRegs_MEMWBRegs_WBDes;
 
 	EXEMEMRegs_bypasser_RegWrite <= EXEMEMRegs_MEMWBRegs_RegWrite;
@@ -565,7 +548,6 @@ begin
 	EXEMEMRegs_bypasser_rst <= EXEMEMRegs_MEMWBRegs_rst;
 
 	EXEMEMRegs_bypasser_MEMRead <= EXEMEMRegs_MEMAccess_MEMRead;
-	EXEMEMRegs_Ram2Access_MEMRead <= EXEMEMRegs_MEMAccess_MEMRead;
 
 	MEMWBRegs_bypasser_WBDes <= MEMWBRegs_Registers_WBDes;
 
@@ -575,10 +557,17 @@ begin
 	
 	--IFIDRegs_clear <= Control_IFIDRegs_clear or bypasser_IFIDRegs_dataPause;
 	
-	ins(7 downto 0) <= PC_InsFetcher_PC(7 downto 0);
-	ins(15 downto 8) <= WBSrcMUX_Registers_writeData(7 downto 0);
-	r7 <= readWritePause_PC_pause&"00000"&bypasser_PC_dataPause;
+	--ins(7 downto 0) <= PC_InsFetcher_PC(7 downto 0);
+	--ins(15 downto 8) <= WBSrcMUX_Registers_writeData(7 downto 0);
+	--r7 <= readWritePause_PC_pause&"00000"&bypasser_PC_dataPause;
 	--ins <= by;
+	
+	sml : shumaDecoder port map( PC_InsFetcher_PC(7 downto 4), l7);
+	smr : shumaDecoder port map( PC_InsFetcher_PC(3 downto 0), r7);
+	--ins(15) <= bypasser_PC_dataPause;
+	--ins(14) <= readWritePause_PC_pause;
+	--ins(13 downto 0) <= (others=>'0');--RAM1data(13 downto 0);
+	ins <= ALU_EXEMEMRegs_rst;
 	
 	--process(IDEXERegs_ALUSrc0MUX_rx, IDEXERegs_ALUSrc0MUX_ry, IDEXERegs_ALUSrc0MUX_SP, IDEXERegs_ALUSrc0MUX_ALUSrc0)
 	--begin
@@ -601,11 +590,15 @@ begin
 										PCSelect_PC_PC, 
 										PC_InsFetcher_PC);
 										
-	insf : InsFetcher port map(insRam2OE, insRam2WE, insRam2EN, insRam2Addr, insRam2Data, 
-										PC_InsFetcher_PC, 
+	insf : InsFetcher port map(Ram2OE, Ram2WE, Ram2EN, Ram2Addr, Ram2Data, 
 										InsFetcher_IFIDRegs_instruction, 
-										readWritePause_InsFetcher_pause);
-										
+										PC_InsFetcher_PC, 
+										memRam2Addr,
+										memRam2DataIn,
+										memRam2DataOut,
+										memRam2Read,
+										memRam2Write);
+								
 	pca : PCAdder port map(		PC_PCAdder_PC, 
 										PCAdder_IFIDRegs_PC);
 										
@@ -791,7 +784,7 @@ begin
 										dataReady, tsre, 
 										MEMAccess_MEMWBRegs_buffer,
 										RAM1addr, RAM1data, RAM1OE, RAM1WE, RAM1EN,
-										memRam2Addr, memRam2DataOut, memRam2DataIn, memRam2OE, memRam2WE, memRam2EN,
+										memRam2Addr, memRam2DataOut, memRam2DataIn, memRam2Read, memRam2Write,
 										rdn, wrn);
 										
 	memwr : MEM_WBRegs port map(EXEMEMRegs_MEMWBRegs_rst, 
@@ -812,11 +805,7 @@ begin
 										MEMWBRegs_WBSrcMUX_WBSrc, 
 										WBSrcMUX_Registers_writeData);
 										
-	ram2a : Ram2Access port map(
-										readWritePause_Ram2Access_pause, 
-										insRam2OE, insRam2WE, insRam2EN, insRam2Addr, insRam2Data,
-										EXEMEMRegs_Ram2Access_MEMRead, 
-										memRam2OE, memRam2WE, memRam2EN, memRam2Addr, memRam2DataOut, memRam2DataIn,
-										Ram2OE, Ram2WE, Ram2EN, Ram2Addr, Ram2Data);
+	--clockd : clockDivider port map(inclk,clk);
+	clk <= inclk;
 end Behavioral;
 
