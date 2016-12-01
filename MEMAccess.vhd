@@ -87,15 +87,15 @@ begin
 		end if;
 	elsif(inMEMWrite = '1') then
 		if(inAddress = "1011111100000000") then -- write serial
-			RAM1Data <= inData;
+			
 		elsif(inAddress < "1000000000000000") then --write ram2
 			
 		else		--write ram1
-			Ram1Addr <= "00" & inAddress;
-			Ram1Data <= inData;
+			Ram1Addr <= "00" & inAddress;		
 		end if;
 		if(clk'event and clk = '0')then
 			if(inAddress = "1011111100000000") then -- write serial
+				RAM1Data <= inData;
 				RAM1OE <= '1';
 				RAM1WE <= '1';
 				RAM1EN <= '1';
@@ -104,6 +104,7 @@ begin
 			elsif(inAddress < "1000000000000000") then --write ram2
 				
 			else		--write ram1
+				Ram1Data <= inData;
 				rdn <= '1';
 				wrn <= '1';
 				RAM1OE <= '1';

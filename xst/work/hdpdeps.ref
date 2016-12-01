@@ -1,109 +1,109 @@
 V3 97
 FL F:/thujiyuan/pop_cpu/AddressAdder.vhd 2016/11/26.13:38:05 P.20131013
-EN work/AddressAdder 1480576761 FL F:/thujiyuan/pop_cpu/AddressAdder.vhd \
+EN work/AddressAdder 1480580185 FL F:/thujiyuan/pop_cpu/AddressAdder.vhd \
       PB ieee/std_logic_1164 1381692176 PB ieee/std_logic_arith 1381692177 \
       PB ieee/STD_LOGIC_UNSIGNED 1381692179
-AR work/AddressAdder/Behavioral 1480576762 \
-      FL F:/thujiyuan/pop_cpu/AddressAdder.vhd EN work/AddressAdder 1480576761
+AR work/AddressAdder/Behavioral 1480580186 \
+      FL F:/thujiyuan/pop_cpu/AddressAdder.vhd EN work/AddressAdder 1480580185
 FL F:/thujiyuan/pop_cpu/ALU.vhd 2016/11/26.13:38:12 P.20131013
-EN work/ALU 1480576769 FL F:/thujiyuan/pop_cpu/ALU.vhd PB ieee/std_logic_1164 1381692176 \
+EN work/ALU 1480580193 FL F:/thujiyuan/pop_cpu/ALU.vhd PB ieee/std_logic_1164 1381692176 \
       PB ieee/STD_LOGIC_UNSIGNED 1381692179 PB ieee/std_logic_arith 1381692177 \
-      PB work/recordDefs 1480576740
-AR work/ALU/Behavioral 1480576770 \
-      FL F:/thujiyuan/pop_cpu/ALU.vhd EN work/ALU 1480576769
+      PB work/recordDefs 1480580164
+AR work/ALU/Behavioral 1480580194 \
+      FL F:/thujiyuan/pop_cpu/ALU.vhd EN work/ALU 1480580193
 FL F:/thujiyuan/pop_cpu/ALUSrc0MUX.vhd 2016/11/30.18:54:49 P.20131013
-EN work/ALUSrc0MUX 1480576765 FL F:/thujiyuan/pop_cpu/ALUSrc0MUX.vhd \
-      PB ieee/std_logic_1164 1381692176 PB work/recordDefs 1480576740
-AR work/ALUSrc0MUX/Behavioral 1480576766 \
-      FL F:/thujiyuan/pop_cpu/ALUSrc0MUX.vhd EN work/ALUSrc0MUX 1480576765
+EN work/ALUSrc0MUX 1480580189 FL F:/thujiyuan/pop_cpu/ALUSrc0MUX.vhd \
+      PB ieee/std_logic_1164 1381692176 PB work/recordDefs 1480580164
+AR work/ALUSrc0MUX/Behavioral 1480580190 \
+      FL F:/thujiyuan/pop_cpu/ALUSrc0MUX.vhd EN work/ALUSrc0MUX 1480580189
 FL F:/thujiyuan/pop_cpu/ALUSrc1MUX.vhd 2016/11/26.13:38:12 P.20131013
-EN work/ALUSrc1MUX 1480576767 FL F:/thujiyuan/pop_cpu/ALUSrc1MUX.vhd \
-      PB ieee/std_logic_1164 1381692176 PB work/recordDefs 1480576740
-AR work/ALUSrc1MUX/Behavioral 1480576768 \
-      FL F:/thujiyuan/pop_cpu/ALUSrc1MUX.vhd EN work/ALUSrc1MUX 1480576767
+EN work/ALUSrc1MUX 1480580191 FL F:/thujiyuan/pop_cpu/ALUSrc1MUX.vhd \
+      PB ieee/std_logic_1164 1381692176 PB work/recordDefs 1480580164
+AR work/ALUSrc1MUX/Behavioral 1480580192 \
+      FL F:/thujiyuan/pop_cpu/ALUSrc1MUX.vhd EN work/ALUSrc1MUX 1480580191
 FL F:/thujiyuan/pop_cpu/bypasser.vhd 2016/11/29.00:34:00 P.20131013
-EN work/bypasser 1480576755 FL F:/thujiyuan/pop_cpu/bypasser.vhd \
+EN work/bypasser 1480580179 FL F:/thujiyuan/pop_cpu/bypasser.vhd \
       PB ieee/std_logic_1164 1381692176 PB ieee/STD_LOGIC_UNSIGNED 1381692179 \
       PB ieee/std_logic_arith 1381692177
-AR work/bypasser/Behavioral 1480576756 \
-      FL F:/thujiyuan/pop_cpu/bypasser.vhd EN work/bypasser 1480576755
+AR work/bypasser/Behavioral 1480580180 \
+      FL F:/thujiyuan/pop_cpu/bypasser.vhd EN work/bypasser 1480580179
 FL F:/thujiyuan/pop_cpu/clockDivider.vhd 2016/12/01.04:15:03 P.20131013
-EN work/clockDivider 1480576783 FL F:/thujiyuan/pop_cpu/clockDivider.vhd \
+EN work/clockDivider 1480580207 FL F:/thujiyuan/pop_cpu/clockDivider.vhd \
       PB ieee/std_logic_1164 1381692176 PB ieee/STD_LOGIC_UNSIGNED 1381692179 \
       PB ieee/std_logic_arith 1381692177
-AR work/clockDivider/Behavioral 1480576784 \
-      FL F:/thujiyuan/pop_cpu/clockDivider.vhd EN work/clockDivider 1480576783
+AR work/clockDivider/Behavioral 1480580208 \
+      FL F:/thujiyuan/pop_cpu/clockDivider.vhd EN work/clockDivider 1480580207
 FL F:/thujiyuan/pop_cpu/Control.vhd 2016/11/28.01:25:09 P.20131013
-EN work/Control 1480576757 FL F:/thujiyuan/pop_cpu/Control.vhd \
+EN work/Control 1480580181 FL F:/thujiyuan/pop_cpu/Control.vhd \
       PB ieee/std_logic_1164 1381692176 PB ieee/STD_LOGIC_UNSIGNED 1381692179 \
       PB ieee/std_logic_arith 1381692177
-AR work/Control/Behavioral 1480576758 \
-      FL F:/thujiyuan/pop_cpu/Control.vhd EN work/Control 1480576757
+AR work/Control/Behavioral 1480580182 \
+      FL F:/thujiyuan/pop_cpu/Control.vhd EN work/Control 1480580181
 FL F:/thujiyuan/pop_cpu/EXE_MEMRegs.vhd 2016/11/28.20:19:47 P.20131013
-EN work/EXE_MEMRegs 1480576773 FL F:/thujiyuan/pop_cpu/EXE_MEMRegs.vhd \
+EN work/EXE_MEMRegs 1480580197 FL F:/thujiyuan/pop_cpu/EXE_MEMRegs.vhd \
       PB ieee/std_logic_1164 1381692176
-AR work/EXE_MEMRegs/Behavioral 1480576774 \
-      FL F:/thujiyuan/pop_cpu/EXE_MEMRegs.vhd EN work/EXE_MEMRegs 1480576773
+AR work/EXE_MEMRegs/Behavioral 1480580198 \
+      FL F:/thujiyuan/pop_cpu/EXE_MEMRegs.vhd EN work/EXE_MEMRegs 1480580197
 FL F:/thujiyuan/pop_cpu/extender.vhd 2016/11/26.23:49:58 P.20131013
-EN work/Extender 1480576759 FL F:/thujiyuan/pop_cpu/extender.vhd \
+EN work/Extender 1480580183 FL F:/thujiyuan/pop_cpu/extender.vhd \
       PB ieee/std_logic_1164 1381692176 PB ieee/std_logic_arith 1381692177 \
       PB ieee/STD_LOGIC_UNSIGNED 1381692179
-AR work/Extender/ExtenderBehavioral 1480576760 \
-      FL F:/thujiyuan/pop_cpu/extender.vhd EN work/Extender 1480576759
+AR work/Extender/ExtenderBehavioral 1480580184 \
+      FL F:/thujiyuan/pop_cpu/extender.vhd EN work/Extender 1480580183
 FL F:/thujiyuan/pop_cpu/ID_EXERegs.vhd 2016/11/28.20:19:00 P.20131013
-EN work/ID_EXERegs 1480576763 FL F:/thujiyuan/pop_cpu/ID_EXERegs.vhd \
+EN work/ID_EXERegs 1480580187 FL F:/thujiyuan/pop_cpu/ID_EXERegs.vhd \
       PB ieee/std_logic_1164 1381692176
-AR work/ID_EXERegs/Behavioral 1480576764 \
-      FL F:/thujiyuan/pop_cpu/ID_EXERegs.vhd EN work/ID_EXERegs 1480576763
+AR work/ID_EXERegs/Behavioral 1480580188 \
+      FL F:/thujiyuan/pop_cpu/ID_EXERegs.vhd EN work/ID_EXERegs 1480580187
 FL F:/thujiyuan/pop_cpu/IF_IDRegs.vhd 2016/11/30.18:46:23 P.20131013
-EN work/IF_IDRegs 1480576751 FL F:/thujiyuan/pop_cpu/IF_IDRegs.vhd \
+EN work/IF_IDRegs 1480580175 FL F:/thujiyuan/pop_cpu/IF_IDRegs.vhd \
       PB ieee/std_logic_1164 1381692176
-AR work/IF_IDRegs/Behavioral 1480576752 \
-      FL F:/thujiyuan/pop_cpu/IF_IDRegs.vhd EN work/IF_IDRegs 1480576751
+AR work/IF_IDRegs/Behavioral 1480580176 \
+      FL F:/thujiyuan/pop_cpu/IF_IDRegs.vhd EN work/IF_IDRegs 1480580175
 FL F:/thujiyuan/pop_cpu/InsFetcher.vhd 2016/12/01.00:01:36 P.20131013
-EN work/InsFetcher 1480576745 FL F:/thujiyuan/pop_cpu/InsFetcher.vhd \
+EN work/InsFetcher 1480580169 FL F:/thujiyuan/pop_cpu/InsFetcher.vhd \
       PB ieee/std_logic_1164 1381692176 PB ieee/std_logic_arith 1381692177 \
       PB ieee/STD_LOGIC_UNSIGNED 1381692179
-AR work/InsFetcher/Behavioral 1480576746 \
-      FL F:/thujiyuan/pop_cpu/InsFetcher.vhd EN work/InsFetcher 1480576745
-FL F:/thujiyuan/pop_cpu/MEMAccess.vhd 2016/12/01.10:09:40 P.20131013
-EN work/MEMAccess 1480576777 FL F:/thujiyuan/pop_cpu/MEMAccess.vhd \
+AR work/InsFetcher/Behavioral 1480580170 \
+      FL F:/thujiyuan/pop_cpu/InsFetcher.vhd EN work/InsFetcher 1480580169
+FL F:/thujiyuan/pop_cpu/MEMAccess.vhd 2016/12/01.16:15:58 P.20131013
+EN work/MEMAccess 1480580201 FL F:/thujiyuan/pop_cpu/MEMAccess.vhd \
       PB ieee/std_logic_1164 1381692176
-AR work/MEMAccess/Behavioral 1480576778 \
-      FL F:/thujiyuan/pop_cpu/MEMAccess.vhd EN work/MEMAccess 1480576777
+AR work/MEMAccess/Behavioral 1480580202 \
+      FL F:/thujiyuan/pop_cpu/MEMAccess.vhd EN work/MEMAccess 1480580201
 FL F:/thujiyuan/pop_cpu/MEMSrcMUX.vhd 2016/11/26.13:38:12 P.20131013
-EN work/MEMSrcMUX 1480576775 FL F:/thujiyuan/pop_cpu/MEMSrcMUX.vhd \
-      PB ieee/std_logic_1164 1381692176 PB work/recordDefs 1480576740
-AR work/MEMSrcMUX/Behavioral 1480576776 \
-      FL F:/thujiyuan/pop_cpu/MEMSrcMUX.vhd EN work/MEMSrcMUX 1480576775
+EN work/MEMSrcMUX 1480580199 FL F:/thujiyuan/pop_cpu/MEMSrcMUX.vhd \
+      PB ieee/std_logic_1164 1381692176 PB work/recordDefs 1480580164
+AR work/MEMSrcMUX/Behavioral 1480580200 \
+      FL F:/thujiyuan/pop_cpu/MEMSrcMUX.vhd EN work/MEMSrcMUX 1480580199
 FL F:/thujiyuan/pop_cpu/MEM_WBRegs.vhd 2016/11/28.20:20:33 P.20131013
-EN work/MEM_WBRegs 1480576779 FL F:/thujiyuan/pop_cpu/MEM_WBRegs.vhd \
+EN work/MEM_WBRegs 1480580203 FL F:/thujiyuan/pop_cpu/MEM_WBRegs.vhd \
       PB ieee/std_logic_1164 1381692176
-AR work/MEM_WBRegs/Behavioral 1480576780 \
-      FL F:/thujiyuan/pop_cpu/MEM_WBRegs.vhd EN work/MEM_WBRegs 1480576779
+AR work/MEM_WBRegs/Behavioral 1480580204 \
+      FL F:/thujiyuan/pop_cpu/MEM_WBRegs.vhd EN work/MEM_WBRegs 1480580203
 FL F:/thujiyuan/pop_cpu/PC.vhd 2016/11/28.20:17:35 P.20131013
-EN work/PC 1480576743 FL F:/thujiyuan/pop_cpu/PC.vhd PB ieee/std_logic_1164 1381692176 \
+EN work/PC 1480580167 FL F:/thujiyuan/pop_cpu/PC.vhd PB ieee/std_logic_1164 1381692176 \
       PB ieee/std_logic_arith 1381692177 PB ieee/STD_LOGIC_UNSIGNED 1381692179
-AR work/PC/PCBehavioral 1480576744 \
-      FL F:/thujiyuan/pop_cpu/PC.vhd EN work/PC 1480576743
+AR work/PC/PCBehavioral 1480580168 \
+      FL F:/thujiyuan/pop_cpu/PC.vhd EN work/PC 1480580167
 FL F:/thujiyuan/pop_cpu/PCAdder.vhd 2016/11/26.13:38:05 P.20131013
-EN work/PCAdder 1480576747 FL F:/thujiyuan/pop_cpu/PCAdder.vhd \
+EN work/PCAdder 1480580171 FL F:/thujiyuan/pop_cpu/PCAdder.vhd \
       PB ieee/std_logic_1164 1381692176 PB ieee/std_logic_arith 1381692177 \
       PB ieee/STD_LOGIC_UNSIGNED 1381692179
-AR work/PCAdder/PCADDERBehavioral 1480576748 \
-      FL F:/thujiyuan/pop_cpu/PCAdder.vhd EN work/PCAdder 1480576747
+AR work/PCAdder/PCADDERBehavioral 1480580172 \
+      FL F:/thujiyuan/pop_cpu/PCAdder.vhd EN work/PCAdder 1480580171
 FL F:/thujiyuan/pop_cpu/PCSelector.vhd 2016/11/27.22:05:57 P.20131013
-EN work/PCSelector 1480576749 FL F:/thujiyuan/pop_cpu/PCSelector.vhd \
+EN work/PCSelector 1480580173 FL F:/thujiyuan/pop_cpu/PCSelector.vhd \
       PB ieee/std_logic_1164 1381692176 PB ieee/std_logic_arith 1381692177 \
       PB ieee/STD_LOGIC_UNSIGNED 1381692179
-AR work/PCSelector/PCSELECTORBehavioral 1480576750 \
-      FL F:/thujiyuan/pop_cpu/PCSelector.vhd EN work/PCSelector 1480576749
+AR work/PCSelector/PCSELECTORBehavioral 1480580174 \
+      FL F:/thujiyuan/pop_cpu/PCSelector.vhd EN work/PCSelector 1480580173
 FL F:/thujiyuan/pop_cpu/pop_cpu.vhd 2016/12/01.15:18:48 P.20131013
-EN work/pop_cpu 1480576785 FL F:/thujiyuan/pop_cpu/pop_cpu.vhd \
+EN work/pop_cpu 1480580209 FL F:/thujiyuan/pop_cpu/pop_cpu.vhd \
       PB ieee/std_logic_1164 1381692176 PB ieee/STD_LOGIC_UNSIGNED 1381692179 \
       PB ieee/std_logic_arith 1381692177
-AR work/pop_cpu/Behavioral 1480576786 \
-      FL F:/thujiyuan/pop_cpu/pop_cpu.vhd EN work/pop_cpu 1480576785 \
+AR work/pop_cpu/Behavioral 1480580210 \
+      FL F:/thujiyuan/pop_cpu/pop_cpu.vhd EN work/pop_cpu 1480580209 \
       CP shumaDecoder CP PC CP InsFetcher CP PCAdder CP PCSelector CP IF_IDRegs \
       CP Registers CP bypasser CP Control CP Extender CP AddressAdder CP ID_EXERegs \
       CP ALUSrc0MUX CP ALUSrc1MUX CP ALU CP ReadWritePauser CP EXE_MEMRegs \
@@ -115,29 +115,29 @@ EN work/Ram2Access 1480440972 FL F:/thujiyuan/pop_cpu/Ram2Access.vhd \
 AR work/Ram2Access/Behavioral 1480440973 \
       FL F:/thujiyuan/pop_cpu/Ram2Access.vhd EN work/Ram2Access 1480440972
 FL F:/thujiyuan/pop_cpu/ReadWritePauser.vhd 2016/11/28.23:06:29 P.20131013
-EN work/ReadWritePauser 1480576771 FL F:/thujiyuan/pop_cpu/ReadWritePauser.vhd \
+EN work/ReadWritePauser 1480580195 FL F:/thujiyuan/pop_cpu/ReadWritePauser.vhd \
       PB ieee/std_logic_1164 1381692176 PB ieee/STD_LOGIC_UNSIGNED 1381692179 \
       PB ieee/std_logic_arith 1381692177
-AR work/ReadWritePauser/Behavioral 1480576772 \
-      FL F:/thujiyuan/pop_cpu/ReadWritePauser.vhd EN work/ReadWritePauser 1480576771
+AR work/ReadWritePauser/Behavioral 1480580196 \
+      FL F:/thujiyuan/pop_cpu/ReadWritePauser.vhd EN work/ReadWritePauser 1480580195
 FL F:/thujiyuan/pop_cpu/recordDefs.vhd 2016/11/26.13:38:12 P.20131013
-PH work/recordDefs 1480576739 FL F:/thujiyuan/pop_cpu/recordDefs.vhd \
+PH work/recordDefs 1480580163 FL F:/thujiyuan/pop_cpu/recordDefs.vhd \
       PB ieee/std_logic_1164 1381692176 PB ieee/STD_LOGIC_SIGNED 1381692178
-PB work/recordDefs 1480576740 \
-      FL F:/thujiyuan/pop_cpu/recordDefs.vhd PH work/recordDefs 1480576739
+PB work/recordDefs 1480580164 \
+      FL F:/thujiyuan/pop_cpu/recordDefs.vhd PH work/recordDefs 1480580163
 FL F:/thujiyuan/pop_cpu/Registers.vhd 2016/11/30.20:58:45 P.20131013
-EN work/Registers 1480576753 FL F:/thujiyuan/pop_cpu/Registers.vhd \
+EN work/Registers 1480580177 FL F:/thujiyuan/pop_cpu/Registers.vhd \
       PB ieee/std_logic_1164 1381692176 PB ieee/STD_LOGIC_UNSIGNED 1381692179 \
       PB ieee/std_logic_arith 1381692177
-AR work/Registers/Behavioral 1480576754 \
-      FL F:/thujiyuan/pop_cpu/Registers.vhd EN work/Registers 1480576753
+AR work/Registers/Behavioral 1480580178 \
+      FL F:/thujiyuan/pop_cpu/Registers.vhd EN work/Registers 1480580177
 FL F:/thujiyuan/pop_cpu/shumaDecoder.vhd 2016/11/30.12:54:35 P.20131013
-EN work/shumaDecoder 1480576741 FL F:/thujiyuan/pop_cpu/shumaDecoder.vhd \
+EN work/shumaDecoder 1480580165 FL F:/thujiyuan/pop_cpu/shumaDecoder.vhd \
       PB ieee/std_logic_1164 1381692176
-AR work/shumaDecoder/Behavioral 1480576742 \
-      FL F:/thujiyuan/pop_cpu/shumaDecoder.vhd EN work/shumaDecoder 1480576741
+AR work/shumaDecoder/Behavioral 1480580166 \
+      FL F:/thujiyuan/pop_cpu/shumaDecoder.vhd EN work/shumaDecoder 1480580165
 FL F:/thujiyuan/pop_cpu/WBSrcMUX.vhd 2016/11/24.20:05:51 P.20131013
-EN work/WBSrcMUX 1480576781 FL F:/thujiyuan/pop_cpu/WBSrcMUX.vhd \
+EN work/WBSrcMUX 1480580205 FL F:/thujiyuan/pop_cpu/WBSrcMUX.vhd \
       PB ieee/std_logic_1164 1381692176
-AR work/WBSrcMUX/Behavioral 1480576782 \
-      FL F:/thujiyuan/pop_cpu/WBSrcMUX.vhd EN work/WBSrcMUX 1480576781
+AR work/WBSrcMUX/Behavioral 1480580206 \
+      FL F:/thujiyuan/pop_cpu/WBSrcMUX.vhd EN work/WBSrcMUX 1480580205
