@@ -71,8 +71,13 @@ begin
 		elsif(pause = '0') then
 			tempPC := inPC;
 			tempInst := inInst;
-			tempRxNum := inInst(10 downto 8);
-			tempRyNum := inInst(7 downto 5);
+			if(inInst(15 downto 8)="01100100")then
+				tempRxNum := inInst(7 downto 5);
+				tempRyNum := "000";
+			else
+				tempRxNum := inInst(10 downto 8);
+				tempRyNum := inInst(7 downto 5);
+			end if;
 			outPC <= inPC;
 			outInst <= inInst;
 			outRxNum <= inInst(10 downto 8);

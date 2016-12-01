@@ -44,14 +44,15 @@ entity InsFetcher is
 			MEMReadData : out STD_LOGIC_VECTOR(15 downto 0);
 			MEMWriteData : in STD_LOGIC_VECTOR(15 downto 0);
 			MEMRead : in STD_LOGIC;
-			MEMWrite : in STD_LOGIC);
+			MEMWrite : in STD_LOGIC;
+			clk : in STD_LOGIC);
 			
 end InsFetcher;
 
 architecture Behavioral of InsFetcher is
 	
 begin
-	process(addr, MEMWrite, MEMAddr, MEMRead, MEMWriteData)
+	process(addr, MEMWrite, MEMAddr, MEMRead, MEMWriteData, clk)
 	begin
 		if(MEMWrite = '0' and MEMRead = '0') then --insfetch
 			Ram2OE <= '0';
@@ -66,11 +67,13 @@ begin
 			Ram2Addr <= MEMAddr;
 			Ram2Data <= (others => 'Z');
 		elsif(MEMWrite = '1' and MEMRead = '0' and MEMAddr < "00" & X"8000") then --mem write ram2
+			if(clk'event and clk='0') then
 			Ram2OE <= '1';
 			Ram2WE <= '0';
 			Ram2EN <= '0';
 			Ram2Addr <= MEMAddr;
 			Ram2Data <= MEMWriteData;
+			end if;
 		else 
 			Ram2OE <= '0';
 			Ram2WE <= '1';

@@ -48,7 +48,8 @@ entity MEMAccess is
 			  RAM2Read : out STD_LOGIC;
 			  RAM2Write : out STD_LOGIC;
            rdn : out  STD_LOGIC;
-           wrn : out  STD_LOGIC);
+           wrn : out  STD_LOGIC;
+			  clk : in  STD_LOGIC);
 end MEMAccess;
 
 architecture Behavioral of MEMAccess is
@@ -58,7 +59,7 @@ begin
 	RAM2Addr <= "00" & inAddress;
 	RAM2DataOut <= inData;
 
-process(inAddress, inMEMRead, inMEMWrite, inData, Ram2DataIn)
+process(inAddress, inMEMRead, inMEMWrite, inData)
 begin
 	if(inMEMRead = '1') then
 		if(inAddress = "1011111100000000") then -- read serial 
@@ -75,15 +76,9 @@ begin
 			rdn <= '1';
 			wrn <= '1';
 			RAM1Data <= (others => 'Z');
-		elsif(inAddress < "1000000000000000") then --read ram2
-			rdn <= '1';
-			wrn <= '0';
-			RAM1OE <= '1';
-			RAM1WE <= '1';
-			RAM1EN <= '1';
 		else		--read ram1
 			rdn <= '1';
-			wrn <= '0';
+			wrn <= '1';
 			RAM1OE <= '0';
 			RAM1WE <= '1';
 			RAM1EN <= '0';
@@ -92,30 +87,33 @@ begin
 		end if;
 	elsif(inMEMWrite = '1') then
 		if(inAddress = "1011111100000000") then -- write serial
-			RAM1OE <= '1';
-			RAM1WE <= '1';
-			RAM1EN <= '1';
-			wrn <= '0';
-			rdn <= '1';
 			RAM1Data <= inData;
 		elsif(inAddress < "1000000000000000") then --write ram2
-			rdn <= '1';
-			wrn <= '1';
-			RAM1OE <= '1';
-			RAM1WE <= '1';
-			RAM1EN <= '1';
+			
 		else		--write ram1
-			rdn <= '1';
-			wrn <= '1';
-			RAM1OE <= '1';
-			RAM1WE <= '0';
-			RAM1EN <= '0';
 			Ram1Addr <= "00" & inAddress;
 			Ram1Data <= inData;
 		end if;
+		if(clk'event and clk = '0')then
+			if(inAddress = "1011111100000000") then -- write serial
+				RAM1OE <= '1';
+				RAM1WE <= '1';
+				RAM1EN <= '1';
+				wrn <= '0';
+				rdn <= '1';
+			elsif(inAddress < "1000000000000000") then --write ram2
+				
+			else		--write ram1
+				rdn <= '1';
+				wrn <= '1';
+				RAM1OE <= '1';
+				RAM1WE <= '0';
+				RAM1EN <= '0';
+			end if;
+		end if;
 	else
-		--rdn <= '1';
-		--wrn <= '1';
+		rdn <= '1';
+		wrn <= '1';
 		--RAM1OE <= '1';
 		--RAM1WE <= '1';
 		--RAM1EN <= '1';

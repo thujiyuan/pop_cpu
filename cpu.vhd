@@ -8,24 +8,24 @@ end cpu;
 
 architecture Behavioral of cpu is
 	component pop_cpu
-		port ( inclk : in std_logic;
-			 RAM1OE : out  STD_LOGIC;
-			 RAM1WE : out  STD_LOGIC;
-			 RAM1EN : out  STD_LOGIC;
-			 RAM1addr : out  STD_LOGIC_VECTOR (17 downto 0);
-			 RAM1data : inout  STD_LOGIC_VECTOR (15 downto 0);
-			 Ram2OE : out  STD_LOGIC;
-			 Ram2WE : out  STD_LOGIC;
-			 Ram2EN : out  STD_LOGIC;
-			 Ram2Addr : out STD_LOGIC_VECTOR(17 downto 0);
-			 Ram2Data : inout STD_LOGIC_VECTOR(15 downto 0);
-			 dataReady : in STD_LOGIC;
-			 tsre : in STD_LOGIC;
-			 rdn : out STD_LOGIC;
-			 wrn : out STD_LOGIC;
-			 ins : out std_logic_vector(15 downto 0);
-			 l7 : out std_logic_vector(6 downto 0);
-			 r7 : out std_logic_vector(6 downto 0));
+		port ( outRam2OE : out STD_LOGIC; 
+    RAM1WE : out STD_LOGIC; 
+    outRam2WE : out STD_LOGIC; 
+    outwdn : out STD_LOGIC; 
+    outrdn : out STD_LOGIC; 
+    RAM1EN : out STD_LOGIC; 
+    tsre : in STD_LOGIC := 'X'; 
+    outRam2EN : out STD_LOGIC; 
+    RAM1OE : out STD_LOGIC; 
+    dataReady : in STD_LOGIC := 'X'; 
+    inclk : in STD_LOGIC := 'X'; 
+    RAM1data : inout STD_LOGIC_VECTOR ( 15 downto 0 ); 
+    outRam2Data : inout STD_LOGIC_VECTOR ( 15 downto 0 ); 
+    l7 : out STD_LOGIC_VECTOR ( 6 downto 0 ); 
+    r7 : out STD_LOGIC_VECTOR ( 6 downto 0 ); 
+    RAM1addr : out STD_LOGIC_VECTOR ( 17 downto 0 ); 
+    ins : out STD_LOGIC_VECTOR ( 15 downto 0 ); 
+    outRam2Addr : out STD_LOGIC_VECTOR ( 17 downto 0 ));
 	end component;
 	signal clk : std_logic := '1';
 	signal RAM1OE : STD_LOGIC := '0';
@@ -41,81 +41,81 @@ architecture Behavioral of cpu is
 	signal dataReady : STD_LOGIC := '0';
 	signal tsre : STD_LOGIC := '0';
 	signal rdn : STD_LOGIC := '0';
-	signal wrn : STD_LOGIC := '0';
+	signal wdn : STD_LOGIC := '0';
 	signal cnt : STD_LOGIC_VECTOR(3 downto 0) := "0000";
 begin
-	c : pop_cpu port map(clk, RAM1OE, RAM1WE, RAM1EN, RAM1addr, RAM1data,
-				Ram2OE, Ram2WE, Ram2EN, Ram2Addr, Ram2Data,
-				dataReady, tsre, rdn, wrn);
+	c : pop_cpu port map(inclk => clk, RAM1OE => RAM1OE, RAM1WE => RAM1WE, RAM1EN => RAM1EN, RAM1addr => RAM1addr, RAM1data => RAM1Data,
+				outRam2OE => Ram2OE, outRam2WE => RAM2WE, outRam2EN => RAM2EN, outRam2Addr => Ram2Addr, outRam2Data => RAM2Data,
+				dataReady => dataready, tsre =>tsre, outrdn=>rdn, outwdn=>wdn);
 	clk <= not clk after 100ns;
 	cnt <= cnt + "1" after 200ns;
-	process(Ram2Addr)
+	process(Ram2Addr, RAM2Data)
 	begin
 	case Ram2Addr is
 		when "00"&X"0000" =>
-			Ram2Data <= X"0000";
+			Ram2Data <= X"0000" after 10ns;
 		when "00"&X"0001" =>
-			Ram2Data <= X"0000";
+			Ram2Data <= X"0000"  after 10ns;
 		when "00"&X"0002" =>
-			Ram2Data <= X"0800";
+			Ram2Data <= X"0800" after 10ns;
 		when "00"&X"0003" =>
-			Ram2Data <= X"1044";
+			Ram2Data <= X"1044" after 10ns;
 
 
 		when "00"&X"0048" =>
-			Ram2Data <= X"6807";
+			Ram2Data <= X"6807" after 10ns;
 		when "00"&X"0049" =>
-			Ram2Data <= X"F001";
+			Ram2Data <= X"F001" after 10ns;
 		when "00"&X"004A" =>
-			Ram2Data <= X"68BF";
+			Ram2Data <= X"68BF" after 10ns;
 		when "00"&X"004B" =>
-			Ram2Data <= X"3000";
+			Ram2Data <= X"3000" after 10ns;
 		when "00"&X"004C" =>
-			Ram2Data <= X"4810";
+			Ram2Data <= X"4810" after 10ns;
 		when "00"&X"004D" =>
-			Ram2Data <= X"6400";
+			Ram2Data <= X"6400" after 10ns;
 		when "00"&X"004E" =>
-			Ram2Data <= X"0800";
+			Ram2Data <= X"0800" after 10ns;
 		when "00"&X"004F" =>
-			Ram2Data <= X"6EBF";
+			Ram2Data <= X"6EBF" after 10ns;
 		when "00"&X"0050" =>
-			Ram2Data <= X"36C0";
+			Ram2Data <= X"36C0" after 10ns;
 		when "00"&X"0051" =>
-			Ram2Data <= X"4E10";
+			Ram2Data <= X"4E10" after 10ns;
 		when "00"&X"0052" =>
-			Ram2Data <= X"6800";
+			Ram2Data <= X"6800" after 10ns;
 		when "00"&X"0053" =>
-			Ram2Data <= X"DE00";
+			Ram2Data <= X"DE00" after 10ns;
 		when "00"&X"0054" =>
-			Ram2Data <= X"DE01";
+			Ram2Data <= X"DE01" after 10ns;
 		when "00"&X"0055" =>
-			Ram2Data <= X"DE02";
+			Ram2Data <= X"DE02" after 10ns;
 		when "00"&X"0056" =>
-			Ram2Data <= X"DE03";
+			Ram2Data <= X"DE03" after 10ns;
 		when "00"&X"0057" =>
-			Ram2Data <= X"DE04";
+			Ram2Data <= X"DE04" after 10ns;
 		when "00"&X"0058" =>
-			Ram2Data <= X"DE05";
+			Ram2Data <= X"DE05" after 10ns;
 		when "00"&X"0059" =>
-			Ram2Data <= X"EF40";
+			Ram2Data <= X"EF40" after 10ns;
 		when "00"&X"005A" =>
-			Ram2Data <= X"4F03";
+			Ram2Data <= X"4F03" after 10ns;
 		when "00"&X"005B" =>
-			Ram2Data <= X"0800";
+			Ram2Data <= X"0800" after 10ns;
 		when "00"&X"005C" =>
-			Ram2Data <= X"104A";
+			Ram2Data <= X"104A" after 10ns;
 		when "00"&X"005D" =>
-			Ram2Data <= X"6EBF";
+			Ram2Data <= X"6EBF" after 10ns;
 		when "00"&X"005E" =>
-			Ram2Data <= X"36C0";
+			Ram2Data <= X"36C0" after 10ns;
 		when "00"&X"005F" =>
-			Ram2Data <= X"684F";
+			Ram2Data <= X"684F" after 10ns;
 		when "00"&X"0060" =>
-			Ram2Data <= X"DE00";
+			Ram2Data <= X"DE00" after 10ns;
 		when "00"&X"0061" =>
-			Ram2Data <= X"0800";
+			Ram2Data <= X"0800" after 10ns;
 		when "00"&X"0062" =>
-			Ram2Data <= X"EF40";
+			Ram2Data <= X"EF40" after 10ns;
 
 
 		when "00"&X"00A7" =>

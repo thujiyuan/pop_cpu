@@ -10,7 +10,7 @@ Total CPU time to Xst completion: 0.10 secs
 
 
 Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.11 secs
+Total CPU time to Xst completion: 0.10 secs
  
 --> Reading design: pop_cpu.prj
 
@@ -164,6 +164,8 @@ Compiling vhdl file "F:/thujiyuan/pop_cpu/MEM_WBRegs.vhd" in Library work.
 Architecture behavioral of Entity mem_wbregs is up to date.
 Compiling vhdl file "F:/thujiyuan/pop_cpu/WBSrcMUX.vhd" in Library work.
 Architecture behavioral of Entity wbsrcmux is up to date.
+Compiling vhdl file "F:/thujiyuan/pop_cpu/clockDivider.vhd" in Library work.
+Architecture behavioral of Entity clockdivider is up to date.
 Compiling vhdl file "F:/thujiyuan/pop_cpu/pop_cpu.vhd" in Library work.
 Entity <pop_cpu> compiled.
 Entity <pop_cpu> (Architecture <behavioral>) compiled.
@@ -215,12 +217,14 @@ Analyzing hierarchy for entity <MEM_WBRegs> in library <work> (architecture <beh
 
 Analyzing hierarchy for entity <WBSrcMUX> in library <work> (architecture <behavioral>).
 
+Analyzing hierarchy for entity <clockDivider> in library <work> (architecture <behavioral>).
+
 
 =========================================================================
 *                            HDL Analysis                               *
 =========================================================================
 Analyzing Entity <pop_cpu> in library <work> (Architecture <behavioral>).
-WARNING:Xst:753 - "F:/thujiyuan/pop_cpu/pop_cpu.vhd" line 621: Unconnected output port 'RA' of component 'Registers'.
+WARNING:Xst:753 - "F:/thujiyuan/pop_cpu/pop_cpu.vhd" line 647: Unconnected output port 'RA' of component 'Registers'.
 Entity <pop_cpu> analyzed. Unit <pop_cpu> generated.
 
 Analyzing Entity <shumaDecoder> in library <work> (Architecture <behavioral>).
@@ -231,8 +235,9 @@ Analyzing Entity <PC> in library <work> (Architecture <pcbehavioral>).
 Entity <PC> analyzed. Unit <PC> generated.
 
 Analyzing Entity <InsFetcher> in library <work> (Architecture <behavioral>).
-WARNING:Xst:819 - "F:/thujiyuan/pop_cpu/InsFetcher.vhd" line 83: One or more signals are missing in the process sensitivity list. To enable synthesis of FPGA/CPLD hardware, XST will assume that all necessary signals are present in the sensitivity list. Please note that the result of the synthesis may differ from the initial design specification. The missing signals are:
+WARNING:Xst:819 - "F:/thujiyuan/pop_cpu/InsFetcher.vhd" line 86: One or more signals are missing in the process sensitivity list. To enable synthesis of FPGA/CPLD hardware, XST will assume that all necessary signals are present in the sensitivity list. Please note that the result of the synthesis may differ from the initial design specification. The missing signals are:
    <MEMRead>, <MEMWrite>, <MEMAddr>
+INFO:Xst:2679 - Register <Ram2EN> in unit <InsFetcher> has a constant value of 0 during circuit operation. The register is replaced by logic.
 Entity <InsFetcher> analyzed. Unit <InsFetcher> generated.
 
 Analyzing Entity <PCAdder> in library <work> (Architecture <pcadderbehavioral>).
@@ -245,6 +250,8 @@ Analyzing Entity <IF_IDRegs> in library <work> (Architecture <behavioral>).
 Entity <IF_IDRegs> analyzed. Unit <IF_IDRegs> generated.
 
 Analyzing Entity <Registers> in library <work> (Architecture <behavioral>).
+WARNING:Xst:819 - "F:/thujiyuan/pop_cpu/Registers.vhd" line 53: One or more signals are missing in the process sensitivity list. To enable synthesis of FPGA/CPLD hardware, XST will assume that all necessary signals are present in the sensitivity list. Please note that the result of the synthesis may differ from the initial design specification. The missing signals are:
+   <r000>, <r001>, <r010>, <r011>, <r100>, <r101>, <r110>, <r111>, <rT>, <rIH>, <rSP>, <rRA>
 Entity <Registers> analyzed. Unit <Registers> generated.
 
 Analyzing Entity <bypasser> in library <work> (Architecture <behavioral>).
@@ -283,6 +290,8 @@ Analyzing Entity <MEMSrcMUX> in library <work> (Architecture <behavioral>).
 Entity <MEMSrcMUX> analyzed. Unit <MEMSrcMUX> generated.
 
 Analyzing Entity <MEMAccess> in library <work> (Architecture <behavioral>).
+WARNING:Xst:819 - "F:/thujiyuan/pop_cpu/MEMAccess.vhd" line 97: One or more signals are missing in the process sensitivity list. To enable synthesis of FPGA/CPLD hardware, XST will assume that all necessary signals are present in the sensitivity list. Please note that the result of the synthesis may differ from the initial design specification. The missing signals are:
+   <clk>
 Entity <MEMAccess> analyzed. Unit <MEMAccess> generated.
 
 Analyzing Entity <MEM_WBRegs> in library <work> (Architecture <behavioral>).
@@ -291,6 +300,9 @@ Entity <MEM_WBRegs> analyzed. Unit <MEM_WBRegs> generated.
 Analyzing Entity <WBSrcMUX> in library <work> (Architecture <behavioral>).
 INFO:Xst:1561 - "F:/thujiyuan/pop_cpu/WBSrcMUX.vhd" line 49: Mux is complete : default of case is discarded
 Entity <WBSrcMUX> analyzed. Unit <WBSrcMUX> generated.
+
+Analyzing Entity <clockDivider> in library <work> (Architecture <behavioral>).
+Entity <clockDivider> analyzed. Unit <clockDivider> generated.
 
 
 =========================================================================
@@ -320,10 +332,15 @@ Unit <PC> synthesized.
 Synthesizing Unit <InsFetcher>.
     Related source file is "F:/thujiyuan/pop_cpu/InsFetcher.vhd".
 WARNING:Xst:737 - Found 16-bit latch for signal <MEMReadData>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+    Found 18-bit register for signal <Ram2Addr>.
+    Found 1-bit register for signal <Ram2WE>.
+    Found 1-bit register for signal <Ram2OE>.
     Found 16-bit tristate buffer for signal <Ram2Data>.
-    Found 18-bit comparator less for signal <Ram2Addr$cmp_lt0000> created at line 61.
-    Found 18-bit comparator greatequal for signal <Ram2Data$cmp_ge0000> created at line 67.
+    Found 18-bit comparator less for signal <ins$cmp_lt0000> created at line 89.
+    Found 16-bit register for signal <Mtridata_Ram2Data> created at line 62.
+    Found 18-bit comparator greatequal for signal <Ram2OE$cmp_ge0000> created at line 68.
     Summary:
+	inferred  36 D-type flip-flop(s).
 	inferred   2 Comparator(s).
 	inferred  16 Tristate(s).
 Unit <InsFetcher> synthesized.
@@ -364,21 +381,22 @@ Unit <IF_IDRegs> synthesized.
 
 Synthesizing Unit <Registers>.
     Related source file is "F:/thujiyuan/pop_cpu/Registers.vhd".
-WARNING:Xst:737 - Found 16-bit latch for signal <rIH>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
-WARNING:Xst:737 - Found 16-bit latch for signal <rRA>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
-WARNING:Xst:737 - Found 16-bit latch for signal <rSP>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
-WARNING:Xst:737 - Found 16-bit latch for signal <rT>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
-WARNING:Xst:737 - Found 16-bit latch for signal <r000>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
-WARNING:Xst:737 - Found 16-bit latch for signal <r001>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
-WARNING:Xst:737 - Found 16-bit latch for signal <r010>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
-WARNING:Xst:737 - Found 16-bit latch for signal <r011>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
-WARNING:Xst:737 - Found 16-bit latch for signal <r100>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
-WARNING:Xst:737 - Found 16-bit latch for signal <r101>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
-WARNING:Xst:737 - Found 16-bit latch for signal <r110>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
-WARNING:Xst:737 - Found 16-bit latch for signal <r111>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
     Found 16-bit 8-to-1 multiplexer for signal <rx>.
     Found 16-bit 8-to-1 multiplexer for signal <ry>.
+    Found 16-bit register for signal <r000>.
+    Found 16-bit register for signal <r001>.
+    Found 16-bit register for signal <r010>.
+    Found 16-bit register for signal <r011>.
+    Found 16-bit register for signal <r100>.
+    Found 16-bit register for signal <r101>.
+    Found 16-bit register for signal <r110>.
+    Found 16-bit register for signal <r111>.
+    Found 16-bit register for signal <rIH>.
+    Found 16-bit register for signal <rRA>.
+    Found 16-bit register for signal <rSP>.
+    Found 16-bit register for signal <rT>.
     Summary:
+	inferred 192 D-type flip-flop(s).
 	inferred  32 Multiplexer(s).
 Unit <Registers> synthesized.
 
@@ -471,7 +489,7 @@ Unit <ID_EXERegs> synthesized.
 
 Synthesizing Unit <ALUSrc0MUX>.
     Related source file is "F:/thujiyuan/pop_cpu/ALUSrc0MUX.vhd".
-WARNING:Xst:647 - Input <clk> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+WARNING:Xst:653 - Signal <zero> is used but never assigned. This sourceless signal will be automatically connected to value 0000000000000000.
     Found 16-bit 4-to-1 multiplexer for signal <output>.
     Summary:
 	inferred  16 Multiplexer(s).
@@ -544,20 +562,21 @@ Unit <MEMSrcMUX> synthesized.
 
 Synthesizing Unit <MEMAccess>.
     Related source file is "F:/thujiyuan/pop_cpu/MEMAccess.vhd".
-WARNING:Xst:737 - Found 1-bit latch for signal <RAM1WE>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
-WARNING:Xst:737 - Found 1-bit latch for signal <RAM1EN>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
-WARNING:Xst:737 - Found 1-bit latch for signal <RAM1OE>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
-WARNING:Xst:737 - Found 1-bit latch for signal <rdn>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
-WARNING:Xst:737 - Found 1-bit latch for signal <wrn>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
-WARNING:Xst:736 - Found 1-bit latch for signal <Mtrien_RAM1data> created at line 70. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
-INFO:Xst:2371 - HDL ADVISOR - Logic functions respectively driving the data and gate enable inputs of this latch share common terms. This situation will potentially lead to setup/hold violations and, as a result, to simulation problems. This situation may come from an incomplete case statement (all selector values are not covered). You should carefully review if it was in your intentions to describe such a latch.
-WARNING:Xst:736 - Found 16-bit latch for signal <Mtridata_RAM1data> created at line 70. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+INFO:Xst:1608 - Relative priorities of control signals on register <rdn> differ from those commonly found in the selected device family. This will result in additional logic around the register.
+WARNING:Xst:736 - Found 16-bit latch for signal <Mtridata_RAM1data> created at line 71. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:736 - Found 1-bit latch for signal <Mtrien_RAM1data> created at line 71. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
 INFO:Xst:2371 - HDL ADVISOR - Logic functions respectively driving the data and gate enable inputs of this latch share common terms. This situation will potentially lead to setup/hold violations and, as a result, to simulation problems. This situation may come from an incomplete case statement (all selector values are not covered). You should carefully review if it was in your intentions to describe such a latch.
 WARNING:Xst:737 - Found 18-bit latch for signal <RAM1addr>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
 INFO:Xst:2371 - HDL ADVISOR - Logic functions respectively driving the data and gate enable inputs of this latch share common terms. This situation will potentially lead to setup/hold violations and, as a result, to simulation problems. This situation may come from an incomplete case statement (all selector values are not covered). You should carefully review if it was in your intentions to describe such a latch.
+    Found 1-bit register for signal <RAM1WE>.
+    Found 1-bit register for signal <RAM1EN>.
     Found 16-bit tristate buffer for signal <RAM1data>.
-    Found 16-bit comparator less for signal <RAMbuffer$cmp_lt0000> created at line 133.
+    Found 1-bit register for signal <rdn>.
+    Found 1-bit register for signal <wrn>.
+    Found 1-bit register for signal <RAM1OE>.
+    Found 16-bit comparator less for signal <RAMbuffer$cmp_lt0000> created at line 131.
     Summary:
+	inferred   2 D-type flip-flop(s).
 	inferred   1 Comparator(s).
 	inferred  16 Tristate(s).
 Unit <MEMAccess> synthesized.
@@ -585,6 +604,17 @@ Synthesizing Unit <WBSrcMUX>.
 Unit <WBSrcMUX> synthesized.
 
 
+Synthesizing Unit <clockDivider>.
+    Related source file is "F:/thujiyuan/pop_cpu/clockDivider.vhd".
+    Found 1-bit register for signal <outclk>.
+    Found 1-bit register for signal <clk>.
+    Found 17-bit up counter for signal <state>.
+    Summary:
+	inferred   1 Counter(s).
+	inferred   2 D-type flip-flop(s).
+Unit <clockDivider> synthesized.
+
+
 Synthesizing Unit <pop_cpu>.
     Related source file is "F:/thujiyuan/pop_cpu/pop_cpu.vhd".
 WARNING:Xst:653 - Signal <Registers_IDEXERegs_RA> is used but never assigned. This sourceless signal will be automatically connected to value 0000000000000000.
@@ -603,15 +633,17 @@ Macro Statistics
 # Adders/Subtractors                                   : 3
  16-bit adder                                          : 2
  16-bit addsub                                         : 1
-# Registers                                            : 42
- 1-bit register                                        : 11
- 16-bit register                                       : 19
+# Counters                                             : 1
+ 17-bit up counter                                     : 1
+# Registers                                            : 82
+ 1-bit register                                        : 38
+ 16-bit register                                       : 32
  2-bit register                                        : 3
  3-bit register                                        : 6
  4-bit register                                        : 3
-# Latches                                              : 25
- 1-bit latch                                           : 6
- 16-bit latch                                          : 18
+# Latches                                              : 8
+ 1-bit latch                                           : 1
+ 16-bit latch                                          : 6
  18-bit latch                                          : 1
 # Comparators                                          : 13
  16-bit comparator equal                               : 1
@@ -638,46 +670,44 @@ Macro Statistics
 *                       Advanced HDL Synthesis                          *
 =========================================================================
 
-INFO:Xst:2261 - The FF/Latch <tempInst_9> in Unit <ifidr> is equivalent to the following FF/Latch, which will be removed : <tempRxNum_1> 
-INFO:Xst:2261 - The FF/Latch <tempInst_8> in Unit <ifidr> is equivalent to the following FF/Latch, which will be removed : <tempRxNum_0> 
-INFO:Xst:2261 - The FF/Latch <tempRyNum_2> in Unit <ifidr> is equivalent to the following FF/Latch, which will be removed : <tempInst_7> 
-INFO:Xst:2261 - The FF/Latch <tempInst_10> in Unit <ifidr> is equivalent to the following FF/Latch, which will be removed : <tempRxNum_2> 
-INFO:Xst:2261 - The FF/Latch <tempRyNum_1> in Unit <ifidr> is equivalent to the following FF/Latch, which will be removed : <tempInst_6> 
-INFO:Xst:2261 - The FF/Latch <tempRyNum_0> in Unit <ifidr> is equivalent to the following FF/Latch, which will be removed : <tempInst_5> 
 WARNING:Xst:1426 - The value init of the FF/Latch init hinder the constant cleaning in the block p.
    You should achieve better results by setting this init to 1.
-WARNING:Xst:1710 - FF/Latch <outRA_15> (without init value) has a constant value of 0 in block <exemr>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <outRA_14> (without init value) has a constant value of 0 in block <exemr>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <outRA_13> (without init value) has a constant value of 0 in block <exemr>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <outRA_12> (without init value) has a constant value of 0 in block <exemr>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <outRA_11> (without init value) has a constant value of 0 in block <exemr>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <outRA_10> (without init value) has a constant value of 0 in block <exemr>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <outRA_9> (without init value) has a constant value of 0 in block <exemr>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <outRA_8> (without init value) has a constant value of 0 in block <exemr>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <outRA_7> (without init value) has a constant value of 0 in block <exemr>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <outRA_6> (without init value) has a constant value of 0 in block <exemr>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <outRA_5> (without init value) has a constant value of 0 in block <exemr>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <outRA_4> (without init value) has a constant value of 0 in block <exemr>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <outRA_3> (without init value) has a constant value of 0 in block <exemr>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <outRA_2> (without init value) has a constant value of 0 in block <exemr>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <outRA_1> (without init value) has a constant value of 0 in block <exemr>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1710 - FF/Latch <outRA_0> (without init value) has a constant value of 0 in block <exemr>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <outRA_15> (without init value) has a constant value of 0 in block <idexe>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <outRA_14> (without init value) has a constant value of 0 in block <idexe>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <outRA_13> (without init value) has a constant value of 0 in block <idexe>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <outRA_12> (without init value) has a constant value of 0 in block <idexe>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <outRA_11> (without init value) has a constant value of 0 in block <idexe>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <outRA_10> (without init value) has a constant value of 0 in block <idexe>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <outRA_9> (without init value) has a constant value of 0 in block <idexe>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <outRA_8> (without init value) has a constant value of 0 in block <idexe>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <outRA_7> (without init value) has a constant value of 0 in block <idexe>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <outRA_6> (without init value) has a constant value of 0 in block <idexe>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <outRA_5> (without init value) has a constant value of 0 in block <idexe>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <outRA_4> (without init value) has a constant value of 0 in block <idexe>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <outRA_3> (without init value) has a constant value of 0 in block <idexe>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <outRA_2> (without init value) has a constant value of 0 in block <idexe>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <outRA_1> (without init value) has a constant value of 0 in block <idexe>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <outRA_1> (without init value) has a constant value of 0 in block <exemr>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <outRA_2> (without init value) has a constant value of 0 in block <exemr>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <outRA_3> (without init value) has a constant value of 0 in block <exemr>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <outRA_4> (without init value) has a constant value of 0 in block <exemr>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <outRA_5> (without init value) has a constant value of 0 in block <exemr>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <outRA_6> (without init value) has a constant value of 0 in block <exemr>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <outRA_7> (without init value) has a constant value of 0 in block <exemr>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <outRA_8> (without init value) has a constant value of 0 in block <exemr>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <outRA_9> (without init value) has a constant value of 0 in block <exemr>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <outRA_10> (without init value) has a constant value of 0 in block <exemr>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <outRA_11> (without init value) has a constant value of 0 in block <exemr>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <outRA_12> (without init value) has a constant value of 0 in block <exemr>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <outRA_13> (without init value) has a constant value of 0 in block <exemr>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <outRA_14> (without init value) has a constant value of 0 in block <exemr>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <outRA_15> (without init value) has a constant value of 0 in block <exemr>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <0> (without init value) has a constant value of 0 in block <16>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <0> (without init value) has a constant value of 0 in block <17>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <Ram2Addr_17> (without init value) has a constant value of 0 in block <insf>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <Ram2Addr_16> (without init value) has a constant value of 0 in block <insf>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1710 - FF/Latch <outRA_0> (without init value) has a constant value of 0 in block <idexe>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <outRA_1> (without init value) has a constant value of 0 in block <idexe>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <outRA_2> (without init value) has a constant value of 0 in block <idexe>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <outRA_3> (without init value) has a constant value of 0 in block <idexe>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <outRA_4> (without init value) has a constant value of 0 in block <idexe>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <outRA_5> (without init value) has a constant value of 0 in block <idexe>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <outRA_6> (without init value) has a constant value of 0 in block <idexe>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <outRA_7> (without init value) has a constant value of 0 in block <idexe>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <outRA_8> (without init value) has a constant value of 0 in block <idexe>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <outRA_9> (without init value) has a constant value of 0 in block <idexe>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <outRA_10> (without init value) has a constant value of 0 in block <idexe>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <outRA_11> (without init value) has a constant value of 0 in block <idexe>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <outRA_12> (without init value) has a constant value of 0 in block <idexe>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <outRA_13> (without init value) has a constant value of 0 in block <idexe>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <outRA_14> (without init value) has a constant value of 0 in block <idexe>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <outRA_15> (without init value) has a constant value of 0 in block <idexe>. This FF/Latch will be trimmed during the optimization process.
 
 =========================================================================
 Advanced HDL Synthesis Report
@@ -690,11 +720,13 @@ Macro Statistics
 # Adders/Subtractors                                   : 3
  16-bit adder                                          : 2
  16-bit addsub                                         : 1
-# Registers                                            : 351
- Flip-Flops                                            : 351
-# Latches                                              : 25
- 1-bit latch                                           : 6
- 16-bit latch                                          : 18
+# Counters                                             : 1
+ 17-bit up counter                                     : 1
+# Registers                                            : 586
+ Flip-Flops                                            : 586
+# Latches                                              : 8
+ 1-bit latch                                           : 1
+ 16-bit latch                                          : 6
  18-bit latch                                          : 1
 # Comparators                                          : 13
  16-bit comparator equal                               : 1
@@ -703,11 +735,12 @@ Macro Statistics
  18-bit comparator less                                : 1
  4-bit comparator equal                                : 6
  4-bit comparator not equal                            : 2
-# Multiplexers                                         : 7
+# Multiplexers                                         : 37
+ 1-bit 8-to-1 multiplexer                              : 32
  16-bit 3-to-1 multiplexer                             : 1
  16-bit 4-to-1 multiplexer                             : 2
  16-bit 6-to-1 multiplexer                             : 1
- 16-bit 8-to-1 multiplexer                             : 3
+ 16-bit 8-to-1 multiplexer                             : 1
 # Logic shifters                                       : 3
  16-bit shifter arithmetic right                       : 1
  16-bit shifter logical left                           : 1
@@ -720,16 +753,12 @@ Macro Statistics
 =========================================================================
 WARNING:Xst:1426 - The value init of the FF/Latch init hinder the constant cleaning in the block PC.
    You should achieve better results by setting this init to 1.
-INFO:Xst:2261 - The FF/Latch <tempInst_9> in Unit <IF_IDRegs> is equivalent to the following FF/Latch, which will be removed : <tempRxNum_1> 
-INFO:Xst:2261 - The FF/Latch <tempInst_8> in Unit <IF_IDRegs> is equivalent to the following FF/Latch, which will be removed : <tempRxNum_0> 
-INFO:Xst:2261 - The FF/Latch <tempRyNum_2> in Unit <IF_IDRegs> is equivalent to the following FF/Latch, which will be removed : <tempInst_7> 
-INFO:Xst:2261 - The FF/Latch <tempInst_10> in Unit <IF_IDRegs> is equivalent to the following FF/Latch, which will be removed : <tempRxNum_2> 
-INFO:Xst:2261 - The FF/Latch <tempRyNum_1> in Unit <IF_IDRegs> is equivalent to the following FF/Latch, which will be removed : <tempInst_6> 
-INFO:Xst:2261 - The FF/Latch <tempRyNum_0> in Unit <IF_IDRegs> is equivalent to the following FF/Latch, which will be removed : <tempInst_5> 
+INFO:Xst:2261 - The FF/Latch <17> in Unit <LPM_LATCH_7> is equivalent to the following FF/Latch, which will be removed : <16> 
 INFO:Xst:2261 - The FF/Latch <outRA_0> in Unit <ID_EXERegs> is equivalent to the following 15 FFs/Latches, which will be removed : <outRA_1> <outRA_2> <outRA_3> <outRA_4> <outRA_5> <outRA_6> <outRA_7> <outRA_8> <outRA_9> <outRA_10> <outRA_11> <outRA_12> <outRA_13> <outRA_14> <outRA_15> 
+WARNING:Xst:1710 - FF/Latch <17> (without init value) has a constant value of 0 in block <LPM_LATCH_7>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1710 - FF/Latch <outRA_0> (without init value) has a constant value of 0 in block <ID_EXERegs>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <memac/RAM1addr_17> (without init value) has a constant value of 0 in block <pop_cpu>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <memac/RAM1addr_16> (without init value) has a constant value of 0 in block <pop_cpu>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <insf/Ram2Addr_16> (without init value) has a constant value of 0 in block <pop_cpu>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <insf/Ram2Addr_17> (without init value) has a constant value of 0 in block <pop_cpu>. This FF/Latch will be trimmed during the optimization process.
 INFO:Xst:2261 - The FF/Latch <immResult_10> in Unit <Extender> is equivalent to the following 5 FFs/Latches, which will be removed : <immResult_11> <immResult_12> <immResult_13> <immResult_14> <immResult_15> 
 WARNING:Xst:2170 - Unit ALU : the following signal(s) form a combinatorial loop: rst_shift0005<15>.
 
@@ -738,18 +767,8 @@ Optimizing unit <pop_cpu> ...
 Optimizing unit <PC> ...
 
 Optimizing unit <IF_IDRegs> ...
-INFO:Xst:2261 - The FF/Latch <outRxNum_1> in Unit <IF_IDRegs> is equivalent to the following FF/Latch, which will be removed : <outInst_9> 
-INFO:Xst:2261 - The FF/Latch <outInst_5> in Unit <IF_IDRegs> is equivalent to the following FF/Latch, which will be removed : <outRyNum_0> 
-INFO:Xst:2261 - The FF/Latch <outRxNum_2> in Unit <IF_IDRegs> is equivalent to the following FF/Latch, which will be removed : <outInst_10> 
-INFO:Xst:2261 - The FF/Latch <outRxNum_0> in Unit <IF_IDRegs> is equivalent to the following FF/Latch, which will be removed : <outInst_8> 
-INFO:Xst:2261 - The FF/Latch <outInst_7> in Unit <IF_IDRegs> is equivalent to the following FF/Latch, which will be removed : <outRyNum_2> 
-INFO:Xst:2261 - The FF/Latch <outInst_6> in Unit <IF_IDRegs> is equivalent to the following FF/Latch, which will be removed : <outRyNum_1> 
-INFO:Xst:2261 - The FF/Latch <outRxNum_1> in Unit <IF_IDRegs> is equivalent to the following FF/Latch, which will be removed : <outInst_9> 
-INFO:Xst:2261 - The FF/Latch <outInst_5> in Unit <IF_IDRegs> is equivalent to the following FF/Latch, which will be removed : <outRyNum_0> 
-INFO:Xst:2261 - The FF/Latch <outRxNum_2> in Unit <IF_IDRegs> is equivalent to the following FF/Latch, which will be removed : <outInst_10> 
-INFO:Xst:2261 - The FF/Latch <outRxNum_0> in Unit <IF_IDRegs> is equivalent to the following FF/Latch, which will be removed : <outInst_8> 
-INFO:Xst:2261 - The FF/Latch <outInst_7> in Unit <IF_IDRegs> is equivalent to the following FF/Latch, which will be removed : <outRyNum_2> 
-INFO:Xst:2261 - The FF/Latch <outInst_6> in Unit <IF_IDRegs> is equivalent to the following FF/Latch, which will be removed : <outRyNum_1> 
+
+Optimizing unit <Registers> ...
 
 Optimizing unit <Control> ...
 
@@ -761,27 +780,27 @@ Optimizing unit <EXE_MEMRegs> ...
 
 Optimizing unit <MEM_WBRegs> ...
 
-Optimizing unit <Registers> ...
+Optimizing unit <clockDivider> ...
 
 Optimizing unit <bypasser> ...
 
 Optimizing unit <Extender> ...
 WARNING:Xst:1710 - FF/Latch <exemr/outRA_15> (without init value) has a constant value of 0 in block <pop_cpu>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <exemr/outRA_14> (without init value) has a constant value of 0 in block <pop_cpu>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <exemr/outRA_13> (without init value) has a constant value of 0 in block <pop_cpu>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <exemr/outRA_12> (without init value) has a constant value of 0 in block <pop_cpu>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <exemr/outRA_11> (without init value) has a constant value of 0 in block <pop_cpu>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <exemr/outRA_10> (without init value) has a constant value of 0 in block <pop_cpu>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <exemr/outRA_9> (without init value) has a constant value of 0 in block <pop_cpu>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <exemr/outRA_8> (without init value) has a constant value of 0 in block <pop_cpu>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <exemr/outRA_7> (without init value) has a constant value of 0 in block <pop_cpu>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <exemr/outRA_6> (without init value) has a constant value of 0 in block <pop_cpu>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <exemr/outRA_5> (without init value) has a constant value of 0 in block <pop_cpu>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <exemr/outRA_4> (without init value) has a constant value of 0 in block <pop_cpu>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <exemr/outRA_3> (without init value) has a constant value of 0 in block <pop_cpu>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <exemr/outRA_2> (without init value) has a constant value of 0 in block <pop_cpu>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <exemr/outRA_1> (without init value) has a constant value of 0 in block <pop_cpu>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <exemr/outRA_0> (without init value) has a constant value of 0 in block <pop_cpu>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <exemr/outRA_14> (without init value) has a constant value of 0 in block <pop_cpu>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <exemr/outRA_13> (without init value) has a constant value of 0 in block <pop_cpu>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <exemr/outRA_12> (without init value) has a constant value of 0 in block <pop_cpu>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <exemr/outRA_11> (without init value) has a constant value of 0 in block <pop_cpu>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <exemr/outRA_10> (without init value) has a constant value of 0 in block <pop_cpu>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <exemr/outRA_9> (without init value) has a constant value of 0 in block <pop_cpu>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <exemr/outRA_8> (without init value) has a constant value of 0 in block <pop_cpu>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <exemr/outRA_7> (without init value) has a constant value of 0 in block <pop_cpu>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <exemr/outRA_6> (without init value) has a constant value of 0 in block <pop_cpu>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <exemr/outRA_5> (without init value) has a constant value of 0 in block <pop_cpu>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <exemr/outRA_4> (without init value) has a constant value of 0 in block <pop_cpu>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <exemr/outRA_3> (without init value) has a constant value of 0 in block <pop_cpu>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <exemr/outRA_2> (without init value) has a constant value of 0 in block <pop_cpu>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <exemr/outRA_1> (without init value) has a constant value of 0 in block <pop_cpu>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <exemr/outRA_0> (without init value) has a constant value of 0 in block <pop_cpu>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:2677 - Node <regis/rRA_15> of sequential type is unconnected in block <pop_cpu>.
 WARNING:Xst:2677 - Node <regis/rRA_14> of sequential type is unconnected in block <pop_cpu>.
 WARNING:Xst:2677 - Node <regis/rRA_13> of sequential type is unconnected in block <pop_cpu>.
@@ -801,12 +820,13 @@ WARNING:Xst:2677 - Node <regis/rRA_0> of sequential type is unconnected in block
 
 Mapping all equations...
 Building and optimizing final netlist ...
-INFO:Xst:2261 - The FF/Latch <idexe/outExtend_15> in Unit <pop_cpu> is equivalent to the following 5 FFs/Latches, which will be removed : <idexe/outExtend_14> <idexe/outExtend_13> <idexe/outExtend_12> <idexe/outExtend_11> <idexe/outExtend_10> 
 INFO:Xst:2261 - The FF/Latch <idexe/outMEMRead> in Unit <pop_cpu> is equivalent to the following FF/Latch, which will be removed : <idexe/outWBSrc> 
+INFO:Xst:2261 - The FF/Latch <idexe/outExtend_15> in Unit <pop_cpu> is equivalent to the following 5 FFs/Latches, which will be removed : <idexe/outExtend_14> <idexe/outExtend_13> <idexe/outExtend_12> <idexe/outExtend_11> <idexe/outExtend_10> 
 INFO:Xst:2261 - The FF/Latch <exemr/outMEMRead> in Unit <pop_cpu> is equivalent to the following FF/Latch, which will be removed : <exemr/outWBSrc> 
 Found area constraint ratio of 100 (+ 5) on block pop_cpu, actual ratio is 8.
-FlipFlop idexe/outALUSrc1_1 has been replicated 1 time(s)
-FlipFlop idexe/outALUSrc1_2 has been replicated 1 time(s)
+FlipFlop idexe/outALUSrc0_0 has been replicated 1 time(s)
+FlipFlop idexe/outALUSrc1_1 has been replicated 2 time(s)
+FlipFlop idexe/outALUSrc1_2 has been replicated 2 time(s)
 Latch memac/Mtrien_RAM1data has been replicated 15 time(s) to handle iob=true attribute.
 
 Final Macro Processing ...
@@ -815,8 +835,8 @@ Final Macro Processing ...
 Final Register Report
 
 Macro Statistics
-# Registers                                            : 302
- Flip-Flops                                            : 302
+# Registers                                            : 551
+ Flip-Flops                                            : 551
 
 =========================================================================
 
@@ -845,35 +865,40 @@ Design Statistics
 # IOs                              : 109
 
 Cell Usage :
-# BELS                             : 1578
+# BELS                             : 1670
 #      GND                         : 1
-#      INV                         : 16
-#      LUT1                        : 15
-#      LUT2                        : 75
+#      INV                         : 19
+#      LUT1                        : 31
+#      LUT2                        : 86
 #      LUT2_D                      : 1
 #      LUT2_L                      : 4
-#      LUT3                        : 379
-#      LUT3_D                      : 15
-#      LUT3_L                      : 24
-#      LUT4                        : 687
-#      LUT4_D                      : 15
-#      LUT4_L                      : 30
-#      MUXCY                       : 53
-#      MUXF5                       : 166
+#      LUT3                        : 350
+#      LUT3_D                      : 17
+#      LUT3_L                      : 19
+#      LUT4                        : 708
+#      LUT4_D                      : 18
+#      LUT4_L                      : 28
+#      MUXCY                       : 69
+#      MUXF5                       : 205
 #      MUXF6                       : 48
 #      VCC                         : 1
-#      XORCY                       : 48
-# FlipFlops/Latches                : 606
+#      XORCY                       : 65
+# FlipFlops/Latches                : 674
 #      FD                          : 111
-#      FDE                         : 17
-#      FDR                         : 129
-#      FDRE                        : 32
-#      FDRS                        : 13
-#      LD                          : 91
+#      FD_1                        : 16
+#      FDC_1                       : 1
+#      FDCP_1                      : 16
+#      FDCPE                       : 3
+#      FDE                         : 19
+#      FDE_1                       : 176
+#      FDP_1                       : 1
+#      FDPE_1                      : 2
+#      FDR                         : 120
+#      FDRE                        : 38
+#      FDRS                        : 48
+#      LD                          : 75
 #      LD_1                        : 16
-#      LDCP                        : 4
-#      LDE                         : 192
-#      LDP                         : 1
+#      LDE                         : 32
 # Clock Buffers                    : 2
 #      BUFG                        : 1
 #      BUFGP                       : 1
@@ -888,12 +913,12 @@ Device utilization summary:
 
 Selected Device : 3s1200efg320-4 
 
- Number of Slices:                      668  out of   8672     7%  
- Number of Slice Flip Flops:            569  out of  17344     3%  
- Number of 4 input LUTs:               1261  out of  17344     7%  
+ Number of Slices:                      677  out of   8672     7%  
+ Number of Slice Flip Flops:            592  out of  17344     3%  
+ Number of 4 input LUTs:               1281  out of  17344     7%  
  Number of IOs:                         109
  Number of bonded IOBs:                 109  out of    250    43%  
-    IOB Flip Flops:                      37
+    IOB Flip Flops:                      82
  Number of GCLKs:                         2  out of     24     8%  
 
 ---------------------------
@@ -914,20 +939,20 @@ NOTE: THESE TIMING NUMBERS ARE ONLY A SYNTHESIS ESTIMATE.
 
 Clock Information:
 ------------------
--------------------------------------------------------------+------------------------------------+-------+
-Clock Signal                                                 | Clock buffer(FF name)              | Load  |
--------------------------------------------------------------+------------------------------------+-------+
-pcs/PCout_cmp_eq0000(pcs/PCout_cmp_eq00001:O)                | NONE(*)(pcs/PCout_0)               | 16    |
-insf/MEMReadData_not0001(insf/MEMReadData_not00011:O)        | NONE(*)(insf/MEMReadData_15)       | 16    |
-memac/Mtrien_RAM1data_not0001(memac/RAM1addr_mux0006<14>11:O)| NONE(*)(memac/Mtridata_RAM1data_15)| 32    |
-memac/RAM1addr_not0001(memac/RAM1addr_not00011:O)            | NONE(*)(memac/RAM1addr_15)         | 16    |
-exemr/outMEMWrite                                            | NONE(memac/RAM1WE)                 | 5     |
-inclk                                                        | BUFGP                              | 302   |
-memwr/outRegWrite1                                           | BUFG                               | 176   |
-bypas/outrx_not0001(bypas/outrx_not0001139:O)                | NONE(*)(bypas/outrx_15)            | 16    |
-bypas/outry_not0001(bypas/outry_not0001_f5:O)                | NONE(*)(bypas/outry_15)            | 16    |
-exten/immResult_or0000(exten/immResult_or00001:O)            | NONE(*)(exten/immResult_10)        | 11    |
--------------------------------------------------------------+------------------------------------+-------+
+---------------------------------------------------------------+---------------------------------+-------+
+Clock Signal                                                   | Clock buffer(FF name)           | Load  |
+---------------------------------------------------------------+---------------------------------+-------+
+pcs/PCout_cmp_eq0000(pcs/PCout_cmp_eq00001:O)                  | NONE(*)(pcs/PCout_0)            | 16    |
+insf/MEMReadData_not0001(insf/MEMReadData_not00011:O)          | NONE(*)(insf/MEMReadData_15)    | 16    |
+inclk                                                          | BUFGP                           | 53    |
+memac/RAM1addr_not0001(memac/RAM1addr_not00011:O)              | NONE(*)(memac/RAM1addr_15)      | 16    |
+memac/Mtrien_RAM1data_not0001(memac/Mtrien_RAM1data_not00011:O)| NONE(*)(memac/Mtrien_RAM1data)  | 16    |
+clockd/outclk1                                                 | BUFG                            | 498   |
+bypas/outrx_not0001(bypas/outrx_not0001139:O)                  | NONE(*)(bypas/outrx_15)         | 16    |
+bypas/outry_not0001(bypas/outry_not0001_f5:O)                  | NONE(*)(bypas/outry_15)         | 16    |
+exten/immResult_or0000(exten/immResult_or00001:O)              | NONE(*)(exten/immResult_10)     | 11    |
+exemr/outMEMWrite                                              | NONE(memac/Mtridata_RAM1data_15)| 16    |
+---------------------------------------------------------------+---------------------------------+-------+
 (*) These 7 clock signal(s) are generated by combinatorial logic,
 and XST is not able to identify which are the primary clock signals.
 Please use the CLOCK_SIGNAL constraint to specify the clock signal(s) generated by combinatorial logic.
@@ -935,25 +960,57 @@ INFO:Xst:2169 - HDL ADVISOR - Some clock signals were not automatically buffered
 
 Asynchronous Control Signals Information:
 ----------------------------------------
--------------------------------------------------+------------------------+-------+
-Control Signal                                   | Buffer(FF name)        | Load  |
--------------------------------------------------+------------------------+-------+
-memac/RAM1EN__and0000(memac/RAM1EN__and00001:O)  | NONE(memac/RAM1EN)     | 2     |
-memac/RAM1EN__and0001(memac/RAM1EN__and00011:O)  | NONE(memac/RAM1EN)     | 2     |
-exemr/outMEMRead(exemr/outMEMRead:Q)             | NONE(memac/RAM1WE)     | 1     |
-memac/rdn__and0000(memac/rdn__and00001:O)        | NONE(memac/rdn)        | 1     |
-memac/rdn__and0001(memac/rdn__and00011:O)        | NONE(memac/rdn)        | 1     |
-memac/wrn__and0000(memac/RAM1addr_mux0006<0>41:O)| NONE(memac/wrn)        | 1     |
-memac/wrn__and0001(memac/wrn__and00011:O)        | NONE(memac/wrn)        | 1     |
--------------------------------------------------+------------------------+-------+
+-------------------------------------------------------------------------------------------+------------------------+-------+
+Control Signal                                                                             | Buffer(FF name)        | Load  |
+-------------------------------------------------------------------------------------------+------------------------+-------+
+insf/Ram2Data_Mtridata_Ram2Data_not0000_inv(insf/Ram2Data_Mtridata_Ram2Data_not0000_inv1:O)| NONE(insf/Ram2OE)      | 2     |
+memac/RAM1EN__and0000(memac/RAM1addr_not000111:O)                                          | NONE(memac/RAM1EN)     | 2     |
+memac/RAM1EN__and0001(memac/RAM1EN_mux000211:O)                                            | NONE(memac/RAM1EN)     | 2     |
+exemr/outMEMRead(exemr/outMEMRead:Q)                                                       | NONE(memac/RAM1WE)     | 1     |
+insf/Ram2Addr_0_and0000(insf/Ram2Addr_0_and00001:O)                                        | NONE(insf/Ram2Addr_0)  | 1     |
+insf/Ram2Addr_0_and0001(insf/Ram2Addr_0_and00011:O)                                        | NONE(insf/Ram2Addr_0)  | 1     |
+insf/Ram2Addr_10_and0000(insf/Ram2Addr_10_and00001:O)                                      | NONE(insf/Ram2Addr_10) | 1     |
+insf/Ram2Addr_10_and0001(insf/Ram2Addr_10_and00011:O)                                      | NONE(insf/Ram2Addr_10) | 1     |
+insf/Ram2Addr_11_and0000(insf/Ram2Addr_11_and00001:O)                                      | NONE(insf/Ram2Addr_11) | 1     |
+insf/Ram2Addr_11_and0001(insf/Ram2Addr_11_and00011:O)                                      | NONE(insf/Ram2Addr_11) | 1     |
+insf/Ram2Addr_12_and0000(insf/Ram2Addr_12_and00001:O)                                      | NONE(insf/Ram2Addr_12) | 1     |
+insf/Ram2Addr_12_and0001(insf/Ram2Addr_12_and00011:O)                                      | NONE(insf/Ram2Addr_12) | 1     |
+insf/Ram2Addr_13_and0000(insf/Ram2Addr_13_and00001:O)                                      | NONE(insf/Ram2Addr_13) | 1     |
+insf/Ram2Addr_13_and0001(insf/Ram2Addr_13_and00011:O)                                      | NONE(insf/Ram2Addr_13) | 1     |
+insf/Ram2Addr_14_and0000(insf/Ram2Addr_14_and00001:O)                                      | NONE(insf/Ram2Addr_14) | 1     |
+insf/Ram2Addr_14_and0001(insf/Ram2Addr_14_and00011:O)                                      | NONE(insf/Ram2Addr_14) | 1     |
+insf/Ram2Addr_15_and0000(insf/Ram2Addr_15_and00001:O)                                      | NONE(insf/Ram2Addr_15) | 1     |
+insf/Ram2Addr_15_and0001(insf/Ram2Addr_15_and00011:O)                                      | NONE(insf/Ram2Addr_15) | 1     |
+insf/Ram2Addr_1_and0000(insf/Ram2Addr_1_and00001:O)                                        | NONE(insf/Ram2Addr_1)  | 1     |
+insf/Ram2Addr_1_and0001(insf/Ram2Addr_1_and00011:O)                                        | NONE(insf/Ram2Addr_1)  | 1     |
+insf/Ram2Addr_2_and0000(insf/Ram2Addr_2_and00001:O)                                        | NONE(insf/Ram2Addr_2)  | 1     |
+insf/Ram2Addr_2_and0001(insf/Ram2Addr_2_and00011:O)                                        | NONE(insf/Ram2Addr_2)  | 1     |
+insf/Ram2Addr_3_and0000(insf/Ram2Addr_3_and00001:O)                                        | NONE(insf/Ram2Addr_3)  | 1     |
+insf/Ram2Addr_3_and0001(insf/Ram2Addr_3_and00011:O)                                        | NONE(insf/Ram2Addr_3)  | 1     |
+insf/Ram2Addr_4_and0000(insf/Ram2Addr_4_and00001:O)                                        | NONE(insf/Ram2Addr_4)  | 1     |
+insf/Ram2Addr_4_and0001(insf/Ram2Addr_4_and00011:O)                                        | NONE(insf/Ram2Addr_4)  | 1     |
+insf/Ram2Addr_5_and0000(insf/Ram2Addr_5_and00001:O)                                        | NONE(insf/Ram2Addr_5)  | 1     |
+insf/Ram2Addr_5_and0001(insf/Ram2Addr_5_and00011:O)                                        | NONE(insf/Ram2Addr_5)  | 1     |
+insf/Ram2Addr_6_and0000(insf/Ram2Addr_6_and00001:O)                                        | NONE(insf/Ram2Addr_6)  | 1     |
+insf/Ram2Addr_6_and0001(insf/Ram2Addr_6_and00011:O)                                        | NONE(insf/Ram2Addr_6)  | 1     |
+insf/Ram2Addr_7_and0000(insf/Ram2Addr_7_and00001:O)                                        | NONE(insf/Ram2Addr_7)  | 1     |
+insf/Ram2Addr_7_and0001(insf/Ram2Addr_7_and00011:O)                                        | NONE(insf/Ram2Addr_7)  | 1     |
+insf/Ram2Addr_8_and0000(insf/Ram2Addr_8_and00001:O)                                        | NONE(insf/Ram2Addr_8)  | 1     |
+insf/Ram2Addr_8_and0001(insf/Ram2Addr_8_and00011:O)                                        | NONE(insf/Ram2Addr_8)  | 1     |
+insf/Ram2Addr_9_and0000(insf/Ram2Addr_9_and00001:O)                                        | NONE(insf/Ram2Addr_9)  | 1     |
+insf/Ram2Addr_9_and0001(insf/Ram2Addr_9_and00011:O)                                        | NONE(insf/Ram2Addr_9)  | 1     |
+memac/rdn__and0000(memac/rdn__and00001:O)                                                  | NONE(memac/rdn)        | 1     |
+memac/rdn__or0000(memac/rdn__or00001:O)                                                    | NONE(memac/rdn)        | 1     |
+memac/wrn_or0000(memac/wrn_or00001:O)                                                      | NONE(memac/wrn)        | 1     |
+-------------------------------------------------------------------------------------------+------------------------+-------+
 
 Timing Summary:
 ---------------
 Speed Grade: -4
 
-   Minimum period: 17.419ns (Maximum Frequency: 57.409MHz)
-   Minimum input arrival time before clock: 4.082ns
-   Maximum output required time after clock: 16.649ns
+   Minimum period: 19.135ns (Maximum Frequency: 52.260MHz)
+   Minimum input arrival time before clock: 5.810ns
+   Maximum output required time after clock: 16.510ns
    Maximum combinational path delay: No path found
 
 Timing Detail:
@@ -961,138 +1018,142 @@ Timing Detail:
 All values displayed in nanoseconds (ns)
 
 =========================================================================
-Timing constraint: Default period analysis for Clock 'memac/RAM1addr_not0001'
-  Clock period: 2.535ns (frequency: 394.477MHz)
-  Total number of paths / destination ports: 16 / 16
+Timing constraint: Default period analysis for Clock 'clockd/outclk1'
+  Clock period: 19.135ns (frequency: 52.260MHz)
+  Total number of paths / destination ports: 2627532 / 910
 -------------------------------------------------------------------------
-Delay:               2.535ns (Levels of Logic = 2)
-  Source:            memac/RAM1addr_0 (LATCH)
-  Destination:       memac/RAM1addr_0 (LATCH)
-  Source Clock:      memac/RAM1addr_not0001 falling
-  Destination Clock: memac/RAM1addr_not0001 falling
+Delay:               19.135ns (Levels of Logic = 14)
+  Source:            idexe/outALUSrc1_2_1 (FF)
+  Destination:       ifidr/outRyNum_2 (FF)
+  Source Clock:      clockd/outclk1 rising
+  Destination Clock: clockd/outclk1 rising
 
-  Data Path: memac/RAM1addr_0 to memac/RAM1addr_0
+  Data Path: idexe/outALUSrc1_2_1 to ifidr/outRyNum_2
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     LD:G->Q               2   0.676   0.526  memac/RAM1addr_0 (memac/RAM1addr_0)
-     LUT3:I1->O            1   0.704   0.000  memac/RAM1addr_mux0006<0>_F (N688)
-     MUXF5:I0->O           1   0.321   0.000  memac/RAM1addr_mux0006<0> (memac/RAM1addr_mux0006<0>)
-     LD:D                      0.308          memac/RAM1addr_0
+     FDR:C->Q             18   0.591   1.147  idexe/outALUSrc1_2_1 (idexe/outALUSrc1_2_1)
+     LUT3:I1->O            1   0.704   0.424  alus1m/output<13>2 (alus1m/output<13>2)
+     LUT4:I3->O            5   0.704   0.808  alus1m/output<13>59 (ALUSrc1MUX_ALU_ALUSrc1<13>)
+     LUT4_D:I0->O          4   0.704   0.762  al/rst_or00014 (al/rst_or00014)
+     LUT3_L:I0->LO         1   0.704   0.275  al/rst_or000123_1 (al/rst_or000123)
+     LUT2:I0->O           19   0.704   1.089  al/rst_shift0005<0>11 (al/N6)
+     LUT4:I3->O            1   0.704   0.455  al/rst_shift0005<3>1_SW1 (N331)
+     LUT4:I2->O            1   0.704   0.000  al/Mmux_rst_519 (al/Mmux_rst_519)
+     MUXF5:I1->O           1   0.321   0.000  al/Mmux_rst_4_f5_8 (al/Mmux_rst_4_f59)
+     MUXF6:I0->O           6   0.521   0.673  al/Mmux_rst_2_f6_8 (al/rst<3>1)
+     LUT4_L:I3->LO         1   0.704   0.104  conrt/PCSelCtr<0>215_SW0 (N311)
+     LUT4:I3->O            1   0.704   0.424  conrt/PCSelCtr<0>215 (conrt/PCSelCtr<0>215)
+     LUT4:I3->O            1   0.704   0.420  conrt/PCSelCtr<0>230 (conrt/PCSelCtr<0>230)
+     MUXF5:S->O            2   0.739   0.451  conrt/PCSelCtr<0>1008_SW1 (N314)
+     LUT4:I3->O           76   0.704   1.276  Control_IFIDRegs_clear1 (Control_IFIDRegs_clear)
+     FDR:R                     0.911          ifidr/outRxNum_0
     ----------------------------------------
-    Total                      2.535ns (2.009ns logic, 0.526ns route)
-                                       (79.3% logic, 20.7% route)
+    Total                     19.135ns (10.827ns logic, 8.308ns route)
+                                       (56.6% logic, 43.4% route)
 
 =========================================================================
 Timing constraint: Default period analysis for Clock 'inclk'
-  Clock period: 17.419ns (frequency: 57.409MHz)
-  Total number of paths / destination ports: 1926727 / 478
+  Clock period: 6.571ns (frequency: 152.184MHz)
+  Total number of paths / destination ports: 607 / 39
 -------------------------------------------------------------------------
-Delay:               17.419ns (Levels of Logic = 12)
-  Source:            idexe/outALUSrc1_1_1 (FF)
-  Destination:       ifidr/tempPC_15 (FF)
+Delay:               6.571ns (Levels of Logic = 3)
+  Source:            clockd/state_3 (FF)
+  Destination:       clockd/state_16 (FF)
   Source Clock:      inclk rising
   Destination Clock: inclk rising
 
-  Data Path: idexe/outALUSrc1_1_1 to ifidr/tempPC_15
+  Data Path: clockd/state_3 to clockd/state_16
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     FDRS:C->Q            36   0.591   1.342  idexe/outALUSrc1_1_1 (idexe/outALUSrc1_1_1)
-     LUT3:I1->O            1   0.704   0.424  alus1m/output<13>2 (alus1m/output<13>2)
-     LUT4:I3->O            5   0.704   0.808  alus1m/output<13>59 (ALUSrc1MUX_ALU_ALUSrc1<13>)
-     LUT4_D:I0->O          3   0.704   0.706  al/rst_or00014 (al/rst_or00014)
-     LUT3_D:I0->LO         1   0.704   0.275  al/rst_or000123 (N715)
-     LUT2:I0->O           19   0.704   1.120  al/rst_shift0005<0>11 (al/N6)
-     LUT3:I2->O            1   0.704   0.424  al/rst_shift0005<2>_SW1 (N419)
-     LUT4:I3->O            1   0.704   0.000  al/Mmux_rst_517 (al/Mmux_rst_517)
-     MUXF5:I1->O           1   0.321   0.000  al/Mmux_rst_4_f5_7 (al/Mmux_rst_4_f58)
-     MUXF6:I0->O           6   0.521   0.673  al/Mmux_rst_2_f6_7 (al/rst<2>1)
-     LUT4:I3->O            1   0.704   0.424  conrt/PCSelCtr<0>62 (conrt/PCSelCtr<0>62)
-     LUT4:I3->O            3   0.704   0.566  conrt/PCSelCtr<0>85 (conrt/PCSelCtr<0>85)
-     LUT4:I2->O           64   0.704   1.272  Control_IFIDRegs_clear1 (Control_IFIDRegs_clear)
-     FDR:R                     0.911          ifidr/outRxNum_0
+     FDR:C->Q              2   0.591   0.622  clockd/state_3 (clockd/state_3)
+     LUT4:I0->O            1   0.704   0.595  clockd/clk_cmp_eq0000137 (clockd/clk_cmp_eq0000137)
+     LUT4:I0->O            3   0.704   0.706  clockd/clk_cmp_eq0000139 (clockd/N11)
+     LUT3:I0->O           16   0.704   1.034  clockd/Mcount_state_val1 (clockd/Mcount_state_val)
+     FDR:R                     0.911          clockd/state_1
     ----------------------------------------
-    Total                     17.419ns (9.384ns logic, 8.035ns route)
-                                       (53.9% logic, 46.1% route)
+    Total                      6.571ns (3.614ns logic, 2.957ns route)
+                                       (55.0% logic, 45.0% route)
 
 =========================================================================
 Timing constraint: Default OFFSET IN BEFORE for Clock 'insf/MEMReadData_not0001'
   Total number of paths / destination ports: 16 / 16
 -------------------------------------------------------------------------
-Offset:              1.973ns (Levels of Logic = 1)
-  Source:            Ram2Data<15> (PAD)
-  Destination:       insf/MEMReadData_15 (LATCH)
+Offset:              2.159ns (Levels of Logic = 1)
+  Source:            outRam2Data<7> (PAD)
+  Destination:       insf/MEMReadData_7 (LATCH)
   Destination Clock: insf/MEMReadData_not0001 falling
 
-  Data Path: Ram2Data<15> to insf/MEMReadData_15
+  Data Path: outRam2Data<7> to insf/MEMReadData_7
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     IOBUF:IO->O           2   1.218   0.447  Ram2Data_15_IOBUF (N363)
-     LDE:D                     0.308          insf/MEMReadData_15
+     IOBUF:IO->O           5   1.218   0.633  outRam2Data_7_IOBUF (N271)
+     LDE:D                     0.308          insf/MEMReadData_7
     ----------------------------------------
-    Total                      1.973ns (1.526ns logic, 0.447ns route)
-                                       (77.3% logic, 22.7% route)
+    Total                      2.159ns (1.526ns logic, 0.633ns route)
+                                       (70.7% logic, 29.3% route)
 
 =========================================================================
-Timing constraint: Default OFFSET IN BEFORE for Clock 'inclk'
-  Total number of paths / destination ports: 50 / 48
+Timing constraint: Default OFFSET IN BEFORE for Clock 'clockd/outclk1'
+  Total number of paths / destination ports: 113 / 60
 -------------------------------------------------------------------------
-Offset:              4.082ns (Levels of Logic = 3)
-  Source:            Ram2Data<15> (PAD)
-  Destination:       ifidr/outInst_15 (FF)
-  Destination Clock: inclk rising
+Offset:              5.810ns (Levels of Logic = 4)
+  Source:            outRam2Data<13> (PAD)
+  Destination:       ifidr/tempRxNum_2 (FF)
+  Destination Clock: clockd/outclk1 rising
 
-  Data Path: Ram2Data<15> to ifidr/outInst_15
+  Data Path: outRam2Data<13> to ifidr/tempRxNum_2
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     IOBUF:IO->O           2   1.218   0.622  Ram2Data_15_IOBUF (N363)
-     LUT4:I0->O            2   0.704   0.526  insf/ins<15>1 (InsFetcher_IFIDRegs_instruction<15>)
-     LUT3:I1->O            1   0.704   0.000  ifidr/outInst_mux0002<15>1 (ifidr/outInst_mux0002<15>)
-     FDR:D                     0.308          ifidr/outInst_15
+     IOBUF:IO->O           3   1.218   0.706  outRam2Data_13_IOBUF (N265)
+     LUT4:I0->O            2   0.704   0.622  insf/ins<13>1 (InsFetcher_IFIDRegs_instruction<13>)
+     LUT4:I0->O            6   0.704   0.844  ifidr/tempRyNum_cmp_eq000010 (ifidr/tempRyNum_cmp_eq000010)
+     LUT4:I0->O            1   0.704   0.000  ifidr/tempRxNum_mux0001<7>1 (ifidr/tempRxNum_mux0001<7>)
+     FDRE:D                    0.308          ifidr/tempRxNum_2
     ----------------------------------------
-    Total                      4.082ns (2.934ns logic, 1.148ns route)
-                                       (71.9% logic, 28.1% route)
-
-=========================================================================
-Timing constraint: Default OFFSET OUT AFTER for Clock 'exemr/outMEMWrite'
-  Total number of paths / destination ports: 5 / 5
--------------------------------------------------------------------------
-Offset:              4.368ns (Levels of Logic = 1)
-  Source:            memac/RAM1WE (LATCH)
-  Destination:       RAM1WE (PAD)
-  Source Clock:      exemr/outMEMWrite falling
-
-  Data Path: memac/RAM1WE to RAM1WE
-                                Gate     Net
-    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
-    ----------------------------------------  ------------
-     LDP:G->Q              1   0.676   0.420  memac/RAM1WE (memac/RAM1WE)
-     OBUF:I->O                 3.272          RAM1WE_OBUF (RAM1WE)
-    ----------------------------------------
-    Total                      4.368ns (3.948ns logic, 0.420ns route)
-                                       (90.4% logic, 9.6% route)
+    Total                      5.810ns (3.638ns logic, 2.172ns route)
+                                       (62.6% logic, 37.4% route)
 
 =========================================================================
 Timing constraint: Default OFFSET OUT AFTER for Clock 'inclk'
-  Total number of paths / destination ports: 27449 / 64
+  Total number of paths / destination ports: 34 / 34
 -------------------------------------------------------------------------
-Offset:              16.649ns (Levels of Logic = 11)
-  Source:            idexe/outALUSrc1_1_1 (FF)
-  Destination:       ins<15> (PAD)
-  Source Clock:      inclk rising
+Offset:              4.283ns (Levels of Logic = 1)
+  Source:            insf/Ram2OE (FF)
+  Destination:       outRam2OE (PAD)
+  Source Clock:      inclk falling
 
-  Data Path: idexe/outALUSrc1_1_1 to ins<15>
+  Data Path: insf/Ram2OE to outRam2OE
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     FDRS:C->Q            36   0.591   1.342  idexe/outALUSrc1_1_1 (idexe/outALUSrc1_1_1)
+     FDC_1:C->Q            1   0.591   0.420  insf/Ram2OE (insf/Ram2OE)
+     OBUF:I->O                 3.272          outRam2OE_OBUF (outRam2OE)
+    ----------------------------------------
+    Total                      4.283ns (3.863ns logic, 0.420ns route)
+                                       (90.2% logic, 9.8% route)
+
+=========================================================================
+Timing constraint: Default OFFSET OUT AFTER for Clock 'clockd/outclk1'
+  Total number of paths / destination ports: 28102 / 51
+-------------------------------------------------------------------------
+Offset:              16.510ns (Levels of Logic = 11)
+  Source:            idexe/outALUSrc1_2_1 (FF)
+  Destination:       ins<15> (PAD)
+  Source Clock:      clockd/outclk1 rising
+
+  Data Path: idexe/outALUSrc1_2_1 to ins<15>
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDR:C->Q             18   0.591   1.147  idexe/outALUSrc1_2_1 (idexe/outALUSrc1_2_1)
      LUT3:I1->O            1   0.704   0.424  alus1m/output<13>2 (alus1m/output<13>2)
      LUT4:I3->O            5   0.704   0.808  alus1m/output<13>59 (ALUSrc1MUX_ALU_ALUSrc1<13>)
-     LUT4_D:I0->O          3   0.704   0.706  al/rst_or00014 (al/rst_or00014)
-     LUT3_D:I0->LO         1   0.704   0.275  al/rst_or000123 (N715)
+     LUT4_D:I0->O          4   0.704   0.762  al/rst_or00014 (al/rst_or00014)
+     LUT3_L:I0->LO         1   0.704   0.275  al/rst_or000123_1 (al/rst_or000123)
      LUT2:I0->O           19   0.704   1.120  al/rst_shift0005<0>11 (al/N6)
      LUT3:I2->O            2   0.704   0.482  al/rst_shift0005<15>1 (al/rst_shift0005<15>)
      LUT3:I2->O            1   0.704   0.000  al/Mmux_rst_513 (al/Mmux_rst_513)
@@ -1101,24 +1162,43 @@ Offset:              16.649ns (Levels of Logic = 11)
      INV:I->O              2   0.704   0.447  al/rst<15>_inv1_INV_0 (ins_15_OBUF)
      OBUF:I->O                 3.272          ins_15_OBUF (ins<15>)
     ----------------------------------------
-    Total                     16.649ns (10.337ns logic, 6.312ns route)
-                                       (62.1% logic, 37.9% route)
+    Total                     16.510ns (10.337ns logic, 6.173ns route)
+                                       (62.6% logic, 37.4% route)
 
 =========================================================================
-Timing constraint: Default OFFSET OUT AFTER for Clock 'memac/Mtrien_RAM1data_not0001'
-  Total number of paths / destination ports: 32 / 16
+Timing constraint: Default OFFSET OUT AFTER for Clock 'exemr/outMEMWrite'
+  Total number of paths / destination ports: 16 / 16
 -------------------------------------------------------------------------
 Offset:              4.368ns (Levels of Logic = 1)
   Source:            memac/Mtridata_RAM1data_15 (LATCH)
   Destination:       RAM1data<15> (PAD)
-  Source Clock:      memac/Mtrien_RAM1data_not0001 falling
+  Source Clock:      exemr/outMEMWrite falling
 
   Data Path: memac/Mtridata_RAM1data_15 to RAM1data<15>
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     LD:G->Q               1   0.676   0.420  memac/Mtridata_RAM1data_15 (memac/Mtridata_RAM1data<15>)
+     LDE:G->Q              1   0.676   0.420  memac/Mtridata_RAM1data_15 (memac/Mtridata_RAM1data<15>)
      IOBUF:I->IO               3.272          RAM1data_15_IOBUF (RAM1data<15>)
+    ----------------------------------------
+    Total                      4.368ns (3.948ns logic, 0.420ns route)
+                                       (90.4% logic, 9.6% route)
+
+=========================================================================
+Timing constraint: Default OFFSET OUT AFTER for Clock 'memac/Mtrien_RAM1data_not0001'
+  Total number of paths / destination ports: 16 / 16
+-------------------------------------------------------------------------
+Offset:              4.368ns (Levels of Logic = 1)
+  Source:            memac/Mtrien_RAM1data_1 (LATCH)
+  Destination:       RAM1data<15> (PAD)
+  Source Clock:      memac/Mtrien_RAM1data_not0001 falling
+
+  Data Path: memac/Mtrien_RAM1data_1 to RAM1data<15>
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     LD:G->Q               1   0.676   0.420  memac/Mtrien_RAM1data_1 (memac/Mtrien_RAM1data_1)
+     IOBUF:T->IO               3.272          RAM1data_15_IOBUF (RAM1data<15>)
     ----------------------------------------
     Total                      4.368ns (3.948ns logic, 0.420ns route)
                                        (90.4% logic, 9.6% route)
@@ -1127,7 +1207,7 @@ Offset:              4.368ns (Levels of Logic = 1)
 Timing constraint: Default OFFSET OUT AFTER for Clock 'memac/RAM1addr_not0001'
   Total number of paths / destination ports: 16 / 16
 -------------------------------------------------------------------------
-Offset:              4.395ns (Levels of Logic = 1)
+Offset:              4.368ns (Levels of Logic = 1)
   Source:            memac/RAM1addr_15 (LATCH)
   Destination:       RAM1addr<15> (PAD)
   Source Clock:      memac/RAM1addr_not0001 falling
@@ -1136,23 +1216,23 @@ Offset:              4.395ns (Levels of Logic = 1)
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     LD:G->Q               2   0.676   0.447  memac/RAM1addr_15 (memac/RAM1addr_15)
+     LD:G->Q               1   0.676   0.420  memac/RAM1addr_15 (memac/RAM1addr_15)
      OBUF:I->O                 3.272          RAM1addr_15_OBUF (RAM1addr<15>)
     ----------------------------------------
-    Total                      4.395ns (3.948ns logic, 0.447ns route)
-                                       (89.8% logic, 10.2% route)
+    Total                      4.368ns (3.948ns logic, 0.420ns route)
+                                       (90.4% logic, 9.6% route)
 
 =========================================================================
 
 
 Total REAL time to Xst completion: 22.00 secs
-Total CPU time to Xst completion: 21.70 secs
+Total CPU time to Xst completion: 22.28 secs
  
 --> 
 
-Total memory usage is 318540 kilobytes
+Total memory usage is 305228 kilobytes
 
 Number of errors   :    0 (   0 filtered)
-Number of warnings :  116 (   0 filtered)
-Number of infos    :   42 (   0 filtered)
+Number of warnings :  106 (   0 filtered)
+Number of infos    :   20 (   0 filtered)
 

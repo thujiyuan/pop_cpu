@@ -1,7 +1,7 @@
 Release 14.7 par P.20131013 (nt64)
 Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
 
-MS-20150523JZEJ::  Wed Nov 30 12:33:01 2016
+MS-20150523JZEJ::  Thu Dec 01 15:19:36 2016
 
 par -w -intstyle ise -ol high -t 1 pop_cpu_map.ncd pop_cpu.ncd pop_cpu.pcf 
 
@@ -9,6 +9,12 @@ par -w -intstyle ise -ol high -t 1 pop_cpu_map.ncd pop_cpu.ncd pop_cpu.pcf
 Constraints file: pop_cpu.pcf.
 Loading device for application Rf_Device from file '3s1200e.nph' in environment F:\Xilinx\14.7\ISE_DS\ISE\.
    "pop_cpu" is an NCD, version 3.2, device xc3s1200e, package fg320, speed -4
+vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
+INFO:Security:54 - 'xc3s1200e' is a WebPack part.
+WARNING:Security:42 - Your license support version '2016.12' for ISE expires in 30 days after which you will not qualify
+for Xilinx software updates or new releases.
+
+----------------------------------------------------------------------
 
 Initializing temperature to 85.000 Celsius. (default - Range: -40.000 to 100.000 Celsius)
 Initializing voltage to 1.140 Volts. (default - Range: 1.140 to 1.320 Volts)
@@ -45,7 +51,7 @@ Design Summary Report:
 
 
    Number of BUFGMUXs                        2 out of 24      8%
-   Number of Slices                        806 out of 8672    9%
+   Number of Slices                        819 out of 8672    9%
       Number of SLICEMs                      0 out of 4336    0%
 
 
@@ -64,40 +70,40 @@ Total REAL time at the beginning of Placer: 2 secs
 Total CPU  time at the beginning of Placer: 2 secs 
 
 Phase 1.1  Initial Placement Analysis
-Phase 1.1  Initial Placement Analysis (Checksum:bf602258) REAL time: 2 secs 
+Phase 1.1  Initial Placement Analysis (Checksum:1a91dac6) REAL time: 2 secs 
 
 Phase 2.7  Design Feasibility Check
-Phase 2.7  Design Feasibility Check (Checksum:bf602258) REAL time: 2 secs 
+Phase 2.7  Design Feasibility Check (Checksum:1a91dac6) REAL time: 2 secs 
 
 Phase 3.31  Local Placement Optimization
-Phase 3.31  Local Placement Optimization (Checksum:bf602258) REAL time: 2 secs 
+Phase 3.31  Local Placement Optimization (Checksum:1a91dac6) REAL time: 2 secs 
 
 Phase 4.2  Initial Clock and IO Placement
 
-Phase 4.2  Initial Clock and IO Placement (Checksum:1641b132) REAL time: 4 secs 
+Phase 4.2  Initial Clock and IO Placement (Checksum:33d6d85e) REAL time: 2 secs 
 
 Phase 5.30  Global Clock Region Assignment
-Phase 5.30  Global Clock Region Assignment (Checksum:1641b132) REAL time: 4 secs 
+Phase 5.30  Global Clock Region Assignment (Checksum:33d6d85e) REAL time: 2 secs 
 
 Phase 6.36  Local Placement Optimization
-Phase 6.36  Local Placement Optimization (Checksum:1641b132) REAL time: 4 secs 
+Phase 6.36  Local Placement Optimization (Checksum:33d6d85e) REAL time: 2 secs 
 
 Phase 7.8  Global Placement
-...................................
-..........................
-........................................................
-.....................
-........................................
-Phase 7.8  Global Placement (Checksum:6a448d46) REAL time: 7 secs 
+.......................
+.......................
+...............................................
+..................................
+.......................................
+Phase 7.8  Global Placement (Checksum:d92d22a) REAL time: 7 secs 
 
 Phase 8.5  Local Placement Optimization
-Phase 8.5  Local Placement Optimization (Checksum:6a448d46) REAL time: 7 secs 
+Phase 8.5  Local Placement Optimization (Checksum:d92d22a) REAL time: 7 secs 
 
 Phase 9.18  Placement Optimization
-Phase 9.18  Placement Optimization (Checksum:6852dbb0) REAL time: 9 secs 
+Phase 9.18  Placement Optimization (Checksum:ccabb9a0) REAL time: 9 secs 
 
 Phase 10.5  Local Placement Optimization
-Phase 10.5  Local Placement Optimization (Checksum:6852dbb0) REAL time: 9 secs 
+Phase 10.5  Local Placement Optimization (Checksum:ccabb9a0) REAL time: 9 secs 
 
 Total REAL time to Placer completion: 9 secs 
 Total CPU  time to Placer completion: 9 secs 
@@ -108,40 +114,42 @@ Writing design to file pop_cpu.ncd
 Starting Router
 
 
-Phase  1  : 5702 unrouted;      REAL time: 17 secs 
+Phase  1  : 5978 unrouted;      REAL time: 17 secs 
 
-Phase  2  : 5341 unrouted;      REAL time: 17 secs 
+Phase  2  : 5539 unrouted;      REAL time: 18 secs 
 
-Phase  3  : 1549 unrouted;      REAL time: 18 secs 
+Phase  3  : 1526 unrouted;      REAL time: 19 secs 
 
-Phase  4  : 1601 unrouted; (Par is working to improve performance)     REAL time: 19 secs 
+Phase  4  : 1660 unrouted; (Par is working to improve performance)     REAL time: 20 secs 
 
-Phase  5  : 0 unrouted; (Par is working to improve performance)     REAL time: 21 secs 
+Phase  5  : 0 unrouted; (Par is working to improve performance)     REAL time: 22 secs 
 
 Updating file: pop_cpu.ncd with current fully routed design.
 
-Phase  6  : 0 unrouted; (Par is working to improve performance)     REAL time: 21 secs 
+Phase  6  : 0 unrouted; (Par is working to improve performance)     REAL time: 23 secs 
 
-Phase  7  : 0 unrouted; (Par is working to improve performance)     REAL time: 48 secs 
+Phase  7  : 0 unrouted; (Par is working to improve performance)     REAL time: 36 secs 
 
-Phase  8  : 0 unrouted; (Par is working to improve performance)     REAL time: 49 secs 
+Updating file: pop_cpu.ncd with current fully routed design.
 
-Phase  9  : 0 unrouted; (Par is working to improve performance)     REAL time: 49 secs 
+Phase  8  : 0 unrouted; (Par is working to improve performance)     REAL time: 38 secs 
 
-Phase 10  : 0 unrouted; (Par is working to improve performance)     REAL time: 49 secs 
+Phase  9  : 0 unrouted; (Par is working to improve performance)     REAL time: 38 secs 
 
-Phase 11  : 0 unrouted; (Par is working to improve performance)     REAL time: 49 secs 
-WARNING:Route:455 - CLK Net:bypas/outry_not0001 may have excessive skew because 
-      6 CLK pins and 0 NON_CLK pins failed to route using a CLK template.
+Phase 10  : 0 unrouted; (Par is working to improve performance)     REAL time: 38 secs 
+
+Phase 11  : 0 unrouted; (Par is working to improve performance)     REAL time: 38 secs 
+
+Phase 12  : 0 unrouted; (Par is working to improve performance)     REAL time: 39 secs 
+WARNING:Route:455 - CLK Net:memac/RAM1addr_not0001 may have excessive skew because 
+      0 CLK pins and 6 NON_CLK pins failed to route using a CLK template.
 WARNING:Route:455 - CLK Net:memac/Mtrien_RAM1data_not0001 may have excessive skew because 
-      0 CLK pins and 8 NON_CLK pins failed to route using a CLK template.
-WARNING:Route:455 - CLK Net:insf/MEMReadData_not0001 may have excessive skew because 
-      2 CLK pins and 0 NON_CLK pins failed to route using a CLK template.
+      16 CLK pins and 0 NON_CLK pins failed to route using a CLK template.
 WARNING:Route:455 - CLK Net:exemr/outMEMWrite may have excessive skew because 
-      2 CLK pins and 44 NON_CLK pins failed to route using a CLK template.
+      0 CLK pins and 35 NON_CLK pins failed to route using a CLK template.
 
-Total REAL time to Router completion: 49 secs 
-Total CPU time to Router completion: 49 secs 
+Total REAL time to Router completion: 39 secs 
+Total CPU time to Router completion: 38 secs 
 
 Partition Implementation Status
 -------------------------------
@@ -159,30 +167,30 @@ Generating Clock Report
 +---------------------+--------------+------+------+------------+-------------+
 |        Clock Net    |   Resource   |Locked|Fanout|Net Skew(ns)|Max Delay(ns)|
 +---------------------+--------------+------+------+------------+-------------+
-|   memwr/outRegWrite | BUFGMUX_X1Y10| No   |   88 |  0.119     |  0.303      |
+|       clockd/outclk | BUFGMUX_X1Y10| No   |  287 |  0.131     |  0.300      |
 +---------------------+--------------+------+------+------------+-------------+
-|         inclk_BUFGP |  BUFGMUX_X1Y1| No   |  184 |  0.133     |  0.302      |
+|         inclk_BUFGP | BUFGMUX_X2Y10| No   |   46 |  0.191     |  0.375      |
 +---------------------+--------------+------+------+------------+-------------+
 |memac/RAM1addr_not00 |              |      |      |            |             |
-|                  01 |         Local|      |   10 |  0.127     |  2.491      |
-+---------------------+--------------+------+------+------------+-------------+
-|   exemr/outMEMWrite |         Local|      |   49 |  2.476     |  4.686      |
-+---------------------+--------------+------+------+------------+-------------+
-| bypas/outry_not0001 |         Local|      |   16 |  1.724     |  3.438      |
-+---------------------+--------------+------+------+------------+-------------+
-|pcs/PCout_cmp_eq0000 |              |      |      |            |             |
-|                     |         Local|      |   16 |  0.189     |  1.845      |
-+---------------------+--------------+------+------+------------+-------------+
-|exten/immResult_or00 |              |      |      |            |             |
-|                  00 |         Local|      |    9 |  0.089     |  1.741      |
+|                  01 |         Local|      |   22 |  0.135     |  2.193      |
 +---------------------+--------------+------+------+------------+-------------+
 |memac/Mtrien_RAM1dat |              |      |      |            |             |
-|           a_not0001 |         Local|      |   24 |  0.562     |  2.602      |
+|           a_not0001 |         Local|      |   16 |  1.527     |  4.006      |
++---------------------+--------------+------+------+------------+-------------+
+|   exemr/outMEMWrite |         Local|      |   51 |  0.493     |  2.596      |
++---------------------+--------------+------+------+------------+-------------+
+| bypas/outry_not0001 |         Local|      |   16 |  0.044     |  1.213      |
++---------------------+--------------+------+------+------------+-------------+
+|pcs/PCout_cmp_eq0000 |              |      |      |            |             |
+|                     |         Local|      |   16 |  0.043     |  1.170      |
++---------------------+--------------+------+------+------------+-------------+
+|exten/immResult_or00 |              |      |      |            |             |
+|                  00 |         Local|      |    9 |  0.057     |  1.911      |
++---------------------+--------------+------+------+------------+-------------+
+| bypas/outrx_not0001 |         Local|      |   16 |  0.087     |  1.767      |
 +---------------------+--------------+------+------+------------+-------------+
 |insf/MEMReadData_not |              |      |      |            |             |
-|                0001 |         Local|      |    8 |  0.992     |  2.694      |
-+---------------------+--------------+------+------+------------+-------------+
-| bypas/outrx_not0001 |         Local|      |   16 |  0.386     |  2.098      |
+|                0001 |         Local|      |    8 |  0.386     |  2.105      |
 +---------------------+--------------+------+------+------------+-------------+
 
 * Net Skew is the difference between the minimum and maximum routing
@@ -202,11 +210,11 @@ Asterisk (*) preceding a constraint indicates it was not met.
   Constraint                                |    Check    | Worst Case |  Best Case | Timing |   Timing   
                                             |             |    Slack   | Achievable | Errors |    Score   
 ----------------------------------------------------------------------------------------------------------
-  Autotimespec constraint for clock net inc | SETUP       |         N/A|    17.657ns|     N/A|           0
-  lk_BUFGP                                  | HOLD        |     1.203ns|            |       0|           0
+  Autotimespec constraint for clock net clo | SETUP       |         N/A|    19.984ns|     N/A|           0
+  ckd/outclk                                | HOLD        |     1.265ns|            |       0|           0
 ----------------------------------------------------------------------------------------------------------
-  Autotimespec constraint for clock net mem | SETUP       |         N/A|     2.248ns|     N/A|           0
-  ac/RAM1addr_not0001                       | HOLD        |     1.380ns|            |       0|           0
+  Autotimespec constraint for clock net inc | SETUP       |         N/A|     5.685ns|     N/A|           0
+  lk_BUFGP                                  | HOLD        |     1.102ns|            |       0|           0
 ----------------------------------------------------------------------------------------------------------
 
 
@@ -222,16 +230,16 @@ Generating Pad Report.
 
 All signals are completely routed.
 
-Total REAL time to PAR completion: 50 secs 
-Total CPU time to PAR completion: 50 secs 
+Total REAL time to PAR completion: 39 secs 
+Total CPU time to PAR completion: 39 secs 
 
-Peak Memory Usage:  328 MB
+Peak Memory Usage:  334 MB
 
 Placement: Completed - No errors found.
 Routing: Completed - No errors found.
 
 Number of error messages: 0
-Number of warning messages: 4
+Number of warning messages: 3
 Number of info messages: 1
 
 Writing design to file pop_cpu.ncd
