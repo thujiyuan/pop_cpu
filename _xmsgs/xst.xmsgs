@@ -83,7 +83,7 @@
 <msg type="info" file="Xst" num="1561" delta="old" >&quot;<arg fmt="%s" index="1">C:/pop_cpu1/WBSrcMUX.vhd</arg>&quot; line <arg fmt="%d" index="2">49</arg>: Mux is complete : default of case is discarded
 </msg>
 
-<msg type="warning" file="Xst" num="790" delta="new" >&quot;<arg fmt="%s" index="1">C:/pop_cpu1/cachedVGAControler.vhd</arg>&quot; line <arg fmt="%d" index="2">85</arg>: Index value(s) does not match array range, simulation mismatch.
+<msg type="warning" file="Xst" num="790" delta="old" >&quot;<arg fmt="%s" index="1">C:/pop_cpu1/cachedVGAControler.vhd</arg>&quot; line <arg fmt="%d" index="2">85</arg>: Index value(s) does not match array range, simulation mismatch.
 </msg>
 
 </messages>

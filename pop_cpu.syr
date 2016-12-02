@@ -105,8 +105,7 @@ Slice Utilization Ratio Delta      : 5
 *                          HDL Compilation                              *
 =========================================================================
 Compiling vhdl file "C:/pop_cpu1/recordDefs.vhd" in Library work.
-Package <recorddefs> compiled.
-Package body <recorddefs> compiled.
+Architecture recorddefs of Entity recorddefs is up to date.
 Compiling vhdl file "C:/pop_cpu1/shumaDecoder.vhd" in Library work.
 Architecture behavioral of Entity shumadecoder is up to date.
 Compiling vhdl file "C:/pop_cpu1/PC.vhd" in Library work.

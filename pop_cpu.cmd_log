@@ -936,3 +936,4 @@ par -w -intstyle ise -ol high -t 1 pop_cpu_map.ncd pop_cpu.ncd pop_cpu.pcf
 trce -intstyle ise -v 3 -s 4 -n 3 -fastpaths -xml pop_cpu.twx pop_cpu.ncd -o pop_cpu.twr pop_cpu.pcf -ucf pop_cpu.ucf 
 bitgen -intstyle ise -f pop_cpu.ut pop_cpu.ncd 
 xst -intstyle ise -ifn "C:/pop_cpu1/pop_cpu.xst" -ofn "C:/pop_cpu1/pop_cpu.syr" 
+xst -intstyle ise -ifn "C:/pop_cpu1/pop_cpu.xst" -ofn "C:/pop_cpu1/pop_cpu.syr" 

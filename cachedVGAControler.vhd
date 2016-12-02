@@ -45,7 +45,7 @@ entity cachedVGAControler is
 end cachedVGAControler;
 
 architecture Behavioral of cachedVGAControler is
-	signal cache : bitmap ;
+	signal cache : bitmap := (others => emptyRow);
 begin
 process(inChar, inWriteEnable)
 	variable cursorX : INTEGER range 0 to 80 := 0; --×Ö·û×ø±ê
