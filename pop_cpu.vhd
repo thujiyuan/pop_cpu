@@ -34,6 +34,7 @@ use work.recordDefs.ALL;
 
 entity pop_cpu is
 	port ( inclk : in std_logic;
+			 vgaclk : in std_logic;
 			 inrst : in STD_LOGIC;
 			 RAM1OE : out  STD_LOGIC;
 			 RAM1WE : out  STD_LOGIC;
@@ -371,7 +372,8 @@ architecture Behavioral of pop_cpu is
 			inWriteEnable : in STD_LOGIC;
 			outR : out STD_LOGIC_VECTOR(2 downto 0);
 			outG : out STD_LOGIC_VECTOR(2 downto 0);
-			outB : out STD_LOGIC_VECTOR(2 downto 0));
+			outB : out STD_LOGIC_VECTOR(2 downto 0);
+			VRAMclk : in STD_LOGIC);
 	end component;
 	
 	component vgaInterface
@@ -529,7 +531,7 @@ architecture Behavioral of pop_cpu is
 	signal EXEMEMRegs_MEMAccess_MemType : STD_LOGIC_VECTOR(2 downto 0) := (others=>'0');
 	signal EXEMEMRegs_MEMAccess_rst : STD_LOGIC_VECTOR(15 downto 0) := (others=>'0');
 
-	signal EXEMEMRegs_vgaInterface_rx : STD_LOGIC_VECTOR(15 downto 0) := (others=>'0');
+	signal EXEMEMRegs_vgaInterface_ry : STD_LOGIC_VECTOR(15 downto 0) := (others=>'0');
 	signal EXEMEMRegs_vgaInterface_MemType : STD_LOGIC_VECTOR(2 downto 0) := (others=>'0');
 	
 	signal EXEMEMRegs_bypasser_WBDes : STD_LOGIC_VECTOR(3 downto 0) := (others=>'0');
@@ -627,7 +629,7 @@ begin
 
 	EXEMEMRegs_bypasser_RegWrite <= EXEMEMRegs_MEMWBRegs_RegWrite;
 	
-	EXEMEMRegs_vgaInterface_rx <= EXEMEMRegs_MEMSrcMUX_rx;
+	EXEMEMRegs_vgaInterface_ry <= EXEMEMRegs_MEMSrcMUX_ry;
 	
 	EXEMEMRegs_vgaInterface_MemType <= EXEMEMRegs_MEMAccess_MemType;
 	
@@ -654,29 +656,36 @@ begin
 	--ins(15) <= bypasser_PC_dataPause;
 	--ins(14) <= readWritePause_PC_pause;
 	--ins(13 downto 0) <= (others=>'0');--RAM1data(13 downto 0);
-	--ins <= ALU_bypasser_rst;
+	--ins(7 downto 4) <= ALU_bypasser_rst(15 downto 12);
 	--ins <= bypasser_IDEXERegs_rx;
 	--ins <= Registers_bypasser_ry;
 	--ins <= WBSrcMUX_Registers_writeData;
 	--ins(15) <= IDEXERegs_bypasser_RegWrite;
 	--ins(14) <= EXEMEMRegs_bypasser_RegWrite;
 	--ins(13 downto 10 ) <= IDEXERegs_bypasser_WBDes;
+	--ins(14) <= IDEXERegs_bypasser_MEMRead;
+	--ins(9 downto 8) <= "00";
+	--ins(3) <= '0';
+	--ins(2 downto 0) <= IFIDRegs_bypasser_rxNum;
+	ins(15) <= vgaInterface_cachedVGAControler_writeEnable;
+	ins(14 downto 8) <= (others => '0');
+	ins(7 downto 0) <= vgaInterface_cachedVGAControler_char(7 downto 0);
 	--ins(9 downto 6 ) <= EXEMEMRegs_bypasser_WBDes;
 	--ins(5 downto 0 ) <= (others => '0');
 	--ins <= memRam2DataOut;
-	process(clk, wdn)
-	variable cnt : STD_LOGIC_VECTOR(3 downto 0) := "0000"; 
-	begin
-	ins(15 downto 9) <= wdn & rdn & dataready & tsre & EXEMEMRegs_MEMAccess_MemType;
-	ins(8 downto 4) <= (others => '0');
-	ins(3 downto 0) <= "0000";
-	if(wdn'event and wdn='1') then
-		cnt := cnt + 1;
-	end if;
-	--if(clk'event and clk='1') then
-		--ins(0)<=bm(conv_integer(cnt))(conv_integer(cnt));
-	--end if;
-	end process;
+--	process(clk, wdn)
+--	variable cnt : STD_LOGIC_VECTOR(3 downto 0) := "0000"; 
+--	begin
+--	ins(15 downto 9) <= wdn & rdn & dataready & tsre & EXEMEMRegs_MEMAccess_MemType;
+--	ins(8 downto 4) <= (others => '0');
+--	ins(3 downto 0) <= "0000";
+--	if(wdn'event and wdn='1') then
+--		cnt := cnt + 1;
+--	end if;
+--	--if(clk'event and clk='1') then
+--		--ins(0)<=bm(conv_integer(cnt))(conv_integer(cnt));
+--	--end if;
+--	end process;
 	--process(IDEXERegs_ALUSrc0MUX_rx, IDEXERegs_ALUSrc0MUX_ry, IDEXERegs_ALUSrc0MUX_SP, IDEXERegs_ALUSrc0MUX_ALUSrc0)
 	--begin
 	--	case IDEXERegs_ALUSrc0MUX_ALUSrc0 is
@@ -944,9 +953,10 @@ begin
 														vgaInterface_cachedVGAControler_writeEnable,
 														cachedVGAControler_VGAAccess_R,
 														cachedVGAControler_VGAAccess_G,
-														cachedVGAControler_VGAAccess_B);
+														cachedVGAControler_VGAAccess_B,
+														inclk);
 														
-	vgaif : vgaInterface port map ( EXEMEMRegs_vgaInterface_rx,
+	vgaif : vgaInterface port map ( EXEMEMRegs_vgaInterface_ry,
 												vgaInterface_cachedVGAControler_char,
 												EXEMEMRegs_vgaInterface_MemType,
 												vgaInterface_cachedVGAControler_writeEnable);

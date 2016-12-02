@@ -1,8 +1,8 @@
 INTSTYLE=ise
-INFILE=C:\pop_cpu1\pop_cpu.ncd
-OUTFILE=C:\pop_cpu1\pop_cpu.bit
+INFILE=F:\thujiyuan\pop_cpu\pop_cpu.ncd
+OUTFILE=F:\thujiyuan\pop_cpu\pop_cpu.bit
 FAMILY=Spartan3E
 PART=xc3s1200e-4fg320
-WORKINGDIR=C:\pop_cpu1
+WORKINGDIR=F:\thujiyuan\pop_cpu
 LICENSE=ISE
 USER_INFO=135256_15690819_173552794_661

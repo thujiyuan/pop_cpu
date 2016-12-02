@@ -51,7 +51,7 @@ begin
 				outclk <= clk;
 				clk := not clk;
 				state := state + '1';
-			elsif(state=1)then
+			elsif(state=2)then
 				state := "00000000000000000";
 			else
 				state := state + '1';

@@ -52,15 +52,9 @@ architecture Behavioral of VGAAccess is
 begin
 
 process(inclk)
-	variable state : std_logic := '0';
 begin
 	if(inclk'event and inclk = '1') then
-		if(state = '0') then
-			state := '1';
-		else
-			clk <= not clk;
-			state := '0';
-		end if;
+		clk <= not clk;
 	end if;
 end process;
 
@@ -74,12 +68,12 @@ begin
 			if(xCnt > Hsa or yCnt > Vsa) then
 				valid := '0';
 			end if;
-			if(xCnt >= Hsb and xCnt < Hsc) then
+			if(xCnt >= Hsb and xCnt <= Hsc) then
 				Hs <= '0';
 			else
 				Hs <= '1';
 			end if;
-			if(yCnt >= Vsb and yCnt < Vsc) then
+			if(yCnt >= Vsb and yCnt <= Vsc) then
 				Vs <= '0';
 			else
 				Vs <= '1';

@@ -1,7 +1,7 @@
-Release 14.7 Drc P.20131013 (nt)
+Release 14.7 Drc P.20131013 (nt64)
 Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
 
-Fri Dec 02 13:07:23 2016
+Sat Dec 03 05:28:14 2016
 
 drc -z pop_cpu.ncd pop_cpu.pcf
 
@@ -14,11 +14,16 @@ WARNING:PhysDesignRules:372 - Gated clock. Clock net pcs/PCout_cmp_eq0000 is
 WARNING:PhysDesignRules:372 - Gated clock. Clock net exten/immResult_or0000 is
    sourced by a combinatorial pin. This is not good design practice. Use the CE
    pin to control the loading of data into the flip-flop.
+WARNING:PhysDesignRules:372 - Gated clock. Clock net cachc/inWriteEnable_inv is
+   sourced by a combinatorial pin. This is not good design practice. Use the CE
+   pin to control the loading of data into the flip-flop.
 WARNING:PhysDesignRules:372 - Gated clock. Clock net insf/MEMReadData_not0001 is
    sourced by a combinatorial pin. This is not good design practice. Use the CE
    pin to control the loading of data into the flip-flop.
 WARNING:PhysDesignRules:372 - Gated clock. Clock net bypas/outrx_not0001 is
    sourced by a combinatorial pin. This is not good design practice. Use the CE
    pin to control the loading of data into the flip-flop.
-DRC detected 0 errors and 5 warnings.  Please see the previously displayed
+WARNING:PhysDesignRules:367 - The signal <vgaclk_IBUF> is incomplete. The signal
+   does not drive any load pins in the design.
+DRC detected 0 errors and 7 warnings.  Please see the previously displayed
 individual error or warning messages for more details.

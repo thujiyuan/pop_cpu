@@ -74,15 +74,15 @@ constant MEMSrc : MEMSrcRec := (
 					ry => "01",
 					RA => "10");
 			
-constant Hsa : integer range 0 to 1000 := 640;	--行显示区的开始
-constant Hsb : integer range 0 to 1000 := 656;	--行消隐区的开始
-constant Hsc : integer range 0 to 1000 := 752;	--行消隐区中0段的开始
-constant Hsd : integer range 0 to 1000 := 800;	--行消隐区中0段的结束
+constant Hsa : integer range 0 to 1000 := 639;	--行显示区的开始
+constant Hsb : integer range 0 to 1000 := 655;	--行消隐区的开始
+constant Hsc : integer range 0 to 1000 := 750;	--行消隐区中0段的开始
+constant Hsd : integer range 0 to 1000 := 799;	--行消隐区中0段的结束
 
-constant Vsa : integer range 0 to 1000 := 480;	--同上，对应场区
-constant Vsb : integer range 0 to 1000 := 490;
-constant Vsc : integer range 0 to 1000 := 492;
-constant Vsd : integer range 0 to 1000 := 525;
+constant Vsa : integer range 0 to 1000 := 479;	--同上，对应场区
+constant Vsb : integer range 0 to 1000 := 489;
+constant Vsc : integer range 0 to 1000 := 490;
+constant Vsd : integer range 0 to 1000 := 524;
 
 constant maxCharH : STD_LOGIC_VECTOR(5 downto 0) := "101000"; --一行最多显示40个字符
 constant maxCharV : STD_LOGIC_VECTOR(5 downto 0) := "011110"; --一列最多显示30个字符

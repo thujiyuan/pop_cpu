@@ -37,15 +37,19 @@ entity vgaInterface is
 end vgaInterface;
 
 architecture Behavioral of vgaInterface is
-
 begin
-	outChar <= inData;
 	process(memType)
+	variable tempChar : STD_LOGIC_VECTOR(15 downto 0);
+	variable state : STD_LOGIC_VECTOR(15 downto 0);
 	begin
 		if(memType = "101")then
 			outWriteEnable <= '1';
+			outChar <= inData;
+			--tempChar := inData;
 		else
 			outWriteEnable <= '0';
+			--outChar <= tempChar;
+			outChar <= X"0020";
 		end if;
 	end process;
 end Behavioral;

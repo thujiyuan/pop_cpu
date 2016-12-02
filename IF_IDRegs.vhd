@@ -74,14 +74,17 @@ begin
 			if(inInst(15 downto 8)="01100100")then
 				tempRxNum := inInst(7 downto 5);
 				tempRyNum := "000";
+				outRxNum <= inInst(7 downto 5);
+				outRyNum <= "000";
 			else
 				tempRxNum := inInst(10 downto 8);
 				tempRyNum := inInst(7 downto 5);
+				outRxNum <= inInst(10 downto 8);
+				outRyNum <= inInst(7 downto 5);
 			end if;
 			outPC <= inPC;
 			outInst <= inInst;
-			outRxNum <= inInst(10 downto 8);
-			outRyNum <= inInst(7 downto 5);
+			
 		end if;
 	end if;
 end process;

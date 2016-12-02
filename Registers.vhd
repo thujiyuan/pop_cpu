@@ -47,8 +47,9 @@ entity Registers is
 end Registers;
 
 architecture Behavioral of Registers is
-	signal r000,r001,r010,r011,r100,r101,r110,r111,rIH,rSP,rT,rRA 
+	signal r000,r001,r010,r011,r100,r101,r110,r111,rIH,rT,rRA 
 					: std_logic_vector(15 downto 0) := "0000000000000000";
+	signal rSP : std_logic_vector(15 downto 0) := X"BF20";
 begin
 	process(readRegister1,readRegister2)	
 	begin

@@ -1,9 +1,9 @@
 --------------------------------------------------------------------------------
-Release 14.7 Trace  (nt)
+Release 14.7 Trace  (nt64)
 Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
 
-D:\Xilinx\14.7\ISE_DS\ISE\bin\nt\unwrapped\trce.exe -intstyle ise -v 3 -s 4 -n
-3 -fastpaths -xml pop_cpu.twx pop_cpu.ncd -o pop_cpu.twr pop_cpu.pcf -ucf
+F:\Xilinx\14.7\ISE_DS\ISE\bin\nt64\unwrapped\trce.exe -intstyle ise -v 3 -s 4
+-n 3 -fastpaths -xml pop_cpu.twx pop_cpu.ncd -o pop_cpu.twr pop_cpu.pcf -ucf
 pop_cpu.ucf
 
 Design file:              pop_cpu.ncd
@@ -48,18 +48,18 @@ Destination    |   to PAD   |Internal Clock(s) | Phase  |
 RAM1EN         |    6.280(F)|inclk_BUFGP       |   0.000|
 RAM1OE         |    6.280(F)|inclk_BUFGP       |   0.000|
 RAM1WE         |    6.273(F)|inclk_BUFGP       |   0.000|
-RAM1addr<0>    |    7.901(F)|inclk_BUFGP       |   0.000|
-RAM1addr<1>    |    7.947(F)|inclk_BUFGP       |   0.000|
-RAM1addr<2>    |    7.391(F)|inclk_BUFGP       |   0.000|
-RAM1addr<3>    |    7.377(F)|inclk_BUFGP       |   0.000|
-RAM1addr<4>    |    7.433(F)|inclk_BUFGP       |   0.000|
-RAM1addr<5>    |    7.392(F)|inclk_BUFGP       |   0.000|
+RAM1addr<0>    |    7.987(F)|inclk_BUFGP       |   0.000|
+RAM1addr<1>    |    7.951(F)|inclk_BUFGP       |   0.000|
+RAM1addr<2>    |    7.370(F)|inclk_BUFGP       |   0.000|
+RAM1addr<3>    |    8.233(F)|inclk_BUFGP       |   0.000|
+RAM1addr<4>    |    7.451(F)|inclk_BUFGP       |   0.000|
+RAM1addr<5>    |    7.373(F)|inclk_BUFGP       |   0.000|
 RAM1addr<6>    |    7.381(F)|inclk_BUFGP       |   0.000|
 RAM1addr<7>    |    7.385(F)|inclk_BUFGP       |   0.000|
-RAM1addr<8>    |    8.227(F)|inclk_BUFGP       |   0.000|
-RAM1addr<9>    |    7.310(F)|inclk_BUFGP       |   0.000|
+RAM1addr<8>    |    9.422(F)|inclk_BUFGP       |   0.000|
+RAM1addr<9>    |    8.231(F)|inclk_BUFGP       |   0.000|
 RAM1addr<10>   |    7.374(F)|inclk_BUFGP       |   0.000|
-RAM1addr<11>   |    7.314(F)|inclk_BUFGP       |   0.000|
+RAM1addr<11>   |    7.332(F)|inclk_BUFGP       |   0.000|
 RAM1addr<12>   |    7.301(F)|inclk_BUFGP       |   0.000|
 RAM1addr<13>   |    7.305(F)|inclk_BUFGP       |   0.000|
 RAM1addr<14>   |    7.360(F)|inclk_BUFGP       |   0.000|
@@ -82,8 +82,6 @@ RAM1data<12>   |    6.341(F)|inclk_BUFGP       |   0.000|
 RAM1data<13>   |    6.341(F)|inclk_BUFGP       |   0.000|
 RAM1data<14>   |    6.350(F)|inclk_BUFGP       |   0.000|
 RAM1data<15>   |    6.350(F)|inclk_BUFGP       |   0.000|
-ins<14>        |    6.323(F)|inclk_BUFGP       |   0.000|
-ins<15>        |    6.278(F)|inclk_BUFGP       |   0.000|
 outRam2Addr<0> |    6.354(F)|inclk_BUFGP       |   0.000|
 outRam2Addr<1> |    6.354(F)|inclk_BUFGP       |   0.000|
 outRam2Addr<2> |    6.273(F)|inclk_BUFGP       |   0.000|
@@ -99,7 +97,7 @@ outRam2Addr<11>|    6.354(F)|inclk_BUFGP       |   0.000|
 outRam2Addr<12>|    6.336(F)|inclk_BUFGP       |   0.000|
 outRam2Addr<13>|    6.238(F)|inclk_BUFGP       |   0.000|
 outRam2Addr<14>|    6.238(F)|inclk_BUFGP       |   0.000|
-outRam2Addr<15>|    6.274(F)|inclk_BUFGP       |   0.000|
+outRam2Addr<15>|    6.273(F)|inclk_BUFGP       |   0.000|
 outRam2Data<0> |    6.256(F)|inclk_BUFGP       |   0.000|
 outRam2Data<1> |    6.352(F)|inclk_BUFGP       |   0.000|
 outRam2Data<2> |    6.330(F)|inclk_BUFGP       |   0.000|
@@ -127,8 +125,8 @@ Clock to Setup on destination clock inclk
                | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
 Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
 ---------------+---------+---------+---------+---------+
-inclk          |    5.328|         |         |    2.063|
-inrst          |    4.900|    4.813|         |         |
+inclk          |    5.301|         |         |    2.063|
+inrst          |    7.786|    4.564|         |         |
 ---------------+---------+---------+---------+---------+
 
 Clock to Setup on destination clock inrst
@@ -136,26 +134,18 @@ Clock to Setup on destination clock inrst
                | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
 Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
 ---------------+---------+---------+---------+---------+
-inrst          |    1.504|         |         |         |
+inrst          |    1.553|         |         |         |
 ---------------+---------+---------+---------+---------+
 
-Pad to Pad
----------------+---------------+---------+
-Source Pad     |Destination Pad|  Delay  |
----------------+---------------+---------+
-dataReady      |ins<13>        |    5.567|
-tsre           |ins<12>        |    7.574|
----------------+---------------+---------+
 
-
-Analysis completed Fri Dec 02 13:07:20 2016 
+Analysis completed Sat Dec 03 05:28:09 2016 
 --------------------------------------------------------------------------------
 
 Trace Settings:
 -------------------------
 Trace Settings 
 
-Peak Memory Usage: 146 MB
+Peak Memory Usage: 213 MB
 
 
 

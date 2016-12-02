@@ -1,2 +1,3 @@
+vhdl work "ipcore_dir/VGARam.vhd"
 vhdl work "recordDefs.vhd"
 vhdl work "cachedVGAControler.vhd"

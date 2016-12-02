@@ -1,16 +1,16 @@
-Release 14.7 - xst P.20131013 (nt)
+Release 14.7 - xst P.20131013 (nt64)
 Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
 --> Parameter TMPDIR set to xst/projnav.tmp
 
 
 Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.09 secs
+Total CPU time to Xst completion: 0.13 secs
  
 --> Parameter xsthdpdir set to xst
 
 
 Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.09 secs
+Total CPU time to Xst completion: 0.13 secs
  
 --> Reading design: pop_cpu.prj
 
@@ -98,84 +98,90 @@ Verilog 2001                       : YES
 Auto BRAM Packing                  : NO
 Slice Utilization Ratio Delta      : 5
 
+---- Other Options
+Cores Search Directories           : {"ipcore_dir"  }
+
 =========================================================================
 
 
 =========================================================================
 *                          HDL Compilation                              *
 =========================================================================
-Compiling vhdl file "C:/pop_cpu1/recordDefs.vhd" in Library work.
+Compiling vhdl file "F:/thujiyuan/pop_cpu/recordDefs.vhd" in Library work.
 Architecture recorddefs of Entity recorddefs is up to date.
-Compiling vhdl file "C:/pop_cpu1/shumaDecoder.vhd" in Library work.
+Compiling vhdl file "F:/thujiyuan/pop_cpu/ipcore_dir/VGARam.vhd" in Library work.
+Architecture vgaram_a of Entity vgaram is up to date.
+Compiling vhdl file "F:/thujiyuan/pop_cpu/shumaDecoder.vhd" in Library work.
 Architecture behavioral of Entity shumadecoder is up to date.
-Compiling vhdl file "C:/pop_cpu1/PC.vhd" in Library work.
+Compiling vhdl file "F:/thujiyuan/pop_cpu/PC.vhd" in Library work.
 Architecture pcbehavioral of Entity pc is up to date.
-Compiling vhdl file "C:/pop_cpu1/InsFetcher.vhd" in Library work.
+Compiling vhdl file "F:/thujiyuan/pop_cpu/InsFetcher.vhd" in Library work.
 Architecture behavioral of Entity insfetcher is up to date.
-Compiling vhdl file "C:/pop_cpu1/PCAdder.vhd" in Library work.
+Compiling vhdl file "F:/thujiyuan/pop_cpu/PCAdder.vhd" in Library work.
 Architecture pcadderbehavioral of Entity pcadder is up to date.
-Compiling vhdl file "C:/pop_cpu1/PCSelector.vhd" in Library work.
+Compiling vhdl file "F:/thujiyuan/pop_cpu/PCSelector.vhd" in Library work.
 Architecture pcselectorbehavioral of Entity pcselector is up to date.
-Compiling vhdl file "C:/pop_cpu1/IF_IDRegs.vhd" in Library work.
+Compiling vhdl file "F:/thujiyuan/pop_cpu/IF_IDRegs.vhd" in Library work.
 Architecture behavioral of Entity if_idregs is up to date.
-Compiling vhdl file "C:/pop_cpu1/Registers.vhd" in Library work.
+Compiling vhdl file "F:/thujiyuan/pop_cpu/Registers.vhd" in Library work.
 Architecture behavioral of Entity registers is up to date.
-Compiling vhdl file "C:/pop_cpu1/bypasser.vhd" in Library work.
+Compiling vhdl file "F:/thujiyuan/pop_cpu/bypasser.vhd" in Library work.
 Architecture behavioral of Entity bypasser is up to date.
-Compiling vhdl file "C:/pop_cpu1/Control.vhd" in Library work.
+Compiling vhdl file "F:/thujiyuan/pop_cpu/Control.vhd" in Library work.
 Architecture behavioral of Entity control is up to date.
-Compiling vhdl file "C:/pop_cpu1/extender.vhd" in Library work.
+Compiling vhdl file "F:/thujiyuan/pop_cpu/extender.vhd" in Library work.
 Architecture extenderbehavioral of Entity extender is up to date.
-Compiling vhdl file "C:/pop_cpu1/AddressAdder.vhd" in Library work.
+Compiling vhdl file "F:/thujiyuan/pop_cpu/AddressAdder.vhd" in Library work.
 Architecture behavioral of Entity addressadder is up to date.
-Compiling vhdl file "C:/pop_cpu1/ID_EXERegs.vhd" in Library work.
+Compiling vhdl file "F:/thujiyuan/pop_cpu/ID_EXERegs.vhd" in Library work.
 Architecture behavioral of Entity id_exeregs is up to date.
-Compiling vhdl file "C:/pop_cpu1/ALUSrc0MUX.vhd" in Library work.
+Compiling vhdl file "F:/thujiyuan/pop_cpu/ALUSrc0MUX.vhd" in Library work.
 Architecture behavioral of Entity alusrc0mux is up to date.
-Compiling vhdl file "C:/pop_cpu1/ALUSrc1MUX.vhd" in Library work.
-WARNING:HDLParsers:817 - "C:/pop_cpu1/ALUSrc1MUX.vhd" Line 51. Choice . is not a locally static expression.
-WARNING:HDLParsers:817 - "C:/pop_cpu1/ALUSrc1MUX.vhd" Line 53. Choice . is not a locally static expression.
-WARNING:HDLParsers:817 - "C:/pop_cpu1/ALUSrc1MUX.vhd" Line 55. Choice . is not a locally static expression.
-WARNING:HDLParsers:817 - "C:/pop_cpu1/ALUSrc1MUX.vhd" Line 57. Choice . is not a locally static expression.
-WARNING:HDLParsers:817 - "C:/pop_cpu1/ALUSrc1MUX.vhd" Line 59. Choice . is not a locally static expression.
+Compiling vhdl file "F:/thujiyuan/pop_cpu/ALUSrc1MUX.vhd" in Library work.
+WARNING:HDLParsers:817 - "F:/thujiyuan/pop_cpu/ALUSrc1MUX.vhd" Line 51. Choice . is not a locally static expression.
+WARNING:HDLParsers:817 - "F:/thujiyuan/pop_cpu/ALUSrc1MUX.vhd" Line 53. Choice . is not a locally static expression.
+WARNING:HDLParsers:817 - "F:/thujiyuan/pop_cpu/ALUSrc1MUX.vhd" Line 55. Choice . is not a locally static expression.
+WARNING:HDLParsers:817 - "F:/thujiyuan/pop_cpu/ALUSrc1MUX.vhd" Line 57. Choice . is not a locally static expression.
+WARNING:HDLParsers:817 - "F:/thujiyuan/pop_cpu/ALUSrc1MUX.vhd" Line 59. Choice . is not a locally static expression.
 Architecture behavioral of Entity alusrc1mux is up to date.
-Compiling vhdl file "C:/pop_cpu1/ALU.vhd" in Library work.
-WARNING:HDLParsers:817 - "C:/pop_cpu1/ALU.vhd" Line 49. Choice . is not a locally static expression.
-WARNING:HDLParsers:817 - "C:/pop_cpu1/ALU.vhd" Line 51. Choice . is not a locally static expression.
-WARNING:HDLParsers:817 - "C:/pop_cpu1/ALU.vhd" Line 53. Choice . is not a locally static expression.
-WARNING:HDLParsers:817 - "C:/pop_cpu1/ALU.vhd" Line 55. Choice . is not a locally static expression.
-WARNING:HDLParsers:817 - "C:/pop_cpu1/ALU.vhd" Line 57. Choice . is not a locally static expression.
-WARNING:HDLParsers:817 - "C:/pop_cpu1/ALU.vhd" Line 59. Choice . is not a locally static expression.
-WARNING:HDLParsers:817 - "C:/pop_cpu1/ALU.vhd" Line 61. Choice . is not a locally static expression.
-WARNING:HDLParsers:817 - "C:/pop_cpu1/ALU.vhd" Line 63. Choice . is not a locally static expression.
+Compiling vhdl file "F:/thujiyuan/pop_cpu/ALU.vhd" in Library work.
+WARNING:HDLParsers:817 - "F:/thujiyuan/pop_cpu/ALU.vhd" Line 49. Choice . is not a locally static expression.
+WARNING:HDLParsers:817 - "F:/thujiyuan/pop_cpu/ALU.vhd" Line 51. Choice . is not a locally static expression.
+WARNING:HDLParsers:817 - "F:/thujiyuan/pop_cpu/ALU.vhd" Line 53. Choice . is not a locally static expression.
+WARNING:HDLParsers:817 - "F:/thujiyuan/pop_cpu/ALU.vhd" Line 55. Choice . is not a locally static expression.
+WARNING:HDLParsers:817 - "F:/thujiyuan/pop_cpu/ALU.vhd" Line 57. Choice . is not a locally static expression.
+WARNING:HDLParsers:817 - "F:/thujiyuan/pop_cpu/ALU.vhd" Line 59. Choice . is not a locally static expression.
+WARNING:HDLParsers:817 - "F:/thujiyuan/pop_cpu/ALU.vhd" Line 61. Choice . is not a locally static expression.
+WARNING:HDLParsers:817 - "F:/thujiyuan/pop_cpu/ALU.vhd" Line 63. Choice . is not a locally static expression.
 Architecture behavioral of Entity alu is up to date.
-Compiling vhdl file "C:/pop_cpu1/ReadWritePauser.vhd" in Library work.
+Compiling vhdl file "F:/thujiyuan/pop_cpu/ReadWritePauser.vhd" in Library work.
 Architecture behavioral of Entity readwritepauser is up to date.
-Compiling vhdl file "C:/pop_cpu1/EXE_MEMRegs.vhd" in Library work.
+Compiling vhdl file "F:/thujiyuan/pop_cpu/EXE_MEMRegs.vhd" in Library work.
 Architecture behavioral of Entity exe_memregs is up to date.
-Compiling vhdl file "C:/pop_cpu1/MEMSrcMUX.vhd" in Library work.
-WARNING:HDLParsers:817 - "C:/pop_cpu1/MEMSrcMUX.vhd" Line 47. Choice . is not a locally static expression.
-WARNING:HDLParsers:817 - "C:/pop_cpu1/MEMSrcMUX.vhd" Line 49. Choice . is not a locally static expression.
-WARNING:HDLParsers:817 - "C:/pop_cpu1/MEMSrcMUX.vhd" Line 51. Choice . is not a locally static expression.
+Compiling vhdl file "F:/thujiyuan/pop_cpu/MEMSrcMUX.vhd" in Library work.
+WARNING:HDLParsers:817 - "F:/thujiyuan/pop_cpu/MEMSrcMUX.vhd" Line 47. Choice . is not a locally static expression.
+WARNING:HDLParsers:817 - "F:/thujiyuan/pop_cpu/MEMSrcMUX.vhd" Line 49. Choice . is not a locally static expression.
+WARNING:HDLParsers:817 - "F:/thujiyuan/pop_cpu/MEMSrcMUX.vhd" Line 51. Choice . is not a locally static expression.
 Architecture behavioral of Entity memsrcmux is up to date.
-Compiling vhdl file "C:/pop_cpu1/MEMAccess.vhd" in Library work.
+Compiling vhdl file "F:/thujiyuan/pop_cpu/MEMAccess.vhd" in Library work.
 Architecture behavioral of Entity memaccess is up to date.
-Compiling vhdl file "C:/pop_cpu1/MEM_WBRegs.vhd" in Library work.
+Compiling vhdl file "F:/thujiyuan/pop_cpu/MEM_WBRegs.vhd" in Library work.
 Architecture behavioral of Entity mem_wbregs is up to date.
-Compiling vhdl file "C:/pop_cpu1/WBSrcMUX.vhd" in Library work.
+Compiling vhdl file "F:/thujiyuan/pop_cpu/WBSrcMUX.vhd" in Library work.
 Architecture behavioral of Entity wbsrcmux is up to date.
-Compiling vhdl file "C:/pop_cpu1/MEMTypeMUX.vhd" in Library work.
+Compiling vhdl file "F:/thujiyuan/pop_cpu/MEMTypeMUX.vhd" in Library work.
 Architecture behavioral of Entity memtypemux is up to date.
-Compiling vhdl file "C:/pop_cpu1/VGAAccess.vhd" in Library work.
+Compiling vhdl file "F:/thujiyuan/pop_cpu/VGAAccess.vhd" in Library work.
 Architecture behavioral of Entity vgaaccess is up to date.
-Compiling vhdl file "C:/pop_cpu1/cachedVGAControler.vhd" in Library work.
+Compiling vhdl file "F:/thujiyuan/pop_cpu/cachedVGAControler.vhd" in Library work.
 Entity <cachedvgacontroler> compiled.
 Entity <cachedvgacontroler> (Architecture <behavioral>) compiled.
-Compiling vhdl file "C:/pop_cpu1/vgaInterface.vhd" in Library work.
-Architecture behavioral of Entity vgainterface is up to date.
-Compiling vhdl file "C:/pop_cpu1/clockDivider.vhd" in Library work.
+Compiling vhdl file "F:/thujiyuan/pop_cpu/vgaInterface.vhd" in Library work.
+Entity <vgainterface> compiled.
+Entity <vgainterface> (Architecture <behavioral>) compiled.
+Compiling vhdl file "F:/thujiyuan/pop_cpu/clockDivider.vhd" in Library work.
 Architecture behavioral of Entity clockdivider is up to date.
-Compiling vhdl file "C:/pop_cpu1/pop_cpu.vhd" in Library work.
+Compiling vhdl file "F:/thujiyuan/pop_cpu/pop_cpu.vhd" in Library work.
 Architecture behavioral of Entity pop_cpu is up to date.
 
 =========================================================================
@@ -240,20 +246,18 @@ Analyzing hierarchy for entity <clockDivider> in library <work> (architecture <b
 *                            HDL Analysis                               *
 =========================================================================
 Analyzing Entity <pop_cpu> in library <work> (Architecture <behavioral>).
-WARNING:Xst:819 - "C:/pop_cpu1/pop_cpu.vhd" line 667: One or more signals are missing in the process sensitivity list. To enable synthesis of FPGA/CPLD hardware, XST will assume that all necessary signals are present in the sensitivity list. Please note that the result of the synthesis may differ from the initial design specification. The missing signals are:
-   <rdn>, <dataReady>, <tsre>, <EXEMEMRegs_MEMAccess_MemType>
-WARNING:Xst:753 - "C:/pop_cpu1/pop_cpu.vhd" line 737: Unconnected output port 'RA' of component 'Registers'.
+WARNING:Xst:753 - "F:/thujiyuan/pop_cpu/pop_cpu.vhd" line 746: Unconnected output port 'RA' of component 'Registers'.
 Entity <pop_cpu> analyzed. Unit <pop_cpu> generated.
 
 Analyzing Entity <shumaDecoder> in library <work> (Architecture <behavioral>).
-INFO:Xst:1561 - "C:/pop_cpu1/shumaDecoder.vhd" line 74: Mux is complete : default of case is discarded
+INFO:Xst:1561 - "F:/thujiyuan/pop_cpu/shumaDecoder.vhd" line 74: Mux is complete : default of case is discarded
 Entity <shumaDecoder> analyzed. Unit <shumaDecoder> generated.
 
 Analyzing Entity <PC> in library <work> (Architecture <pcbehavioral>).
 Entity <PC> analyzed. Unit <PC> generated.
 
 Analyzing Entity <InsFetcher> in library <work> (Architecture <behavioral>).
-WARNING:Xst:819 - "C:/pop_cpu1/InsFetcher.vhd" line 86: One or more signals are missing in the process sensitivity list. To enable synthesis of FPGA/CPLD hardware, XST will assume that all necessary signals are present in the sensitivity list. Please note that the result of the synthesis may differ from the initial design specification. The missing signals are:
+WARNING:Xst:819 - "F:/thujiyuan/pop_cpu/InsFetcher.vhd" line 86: One or more signals are missing in the process sensitivity list. To enable synthesis of FPGA/CPLD hardware, XST will assume that all necessary signals are present in the sensitivity list. Please note that the result of the synthesis may differ from the initial design specification. The missing signals are:
    <MEMRead>, <MEMWrite>, <MEMAddr>
 INFO:Xst:2679 - Register <Ram2EN> in unit <InsFetcher> has a constant value of 0 during circuit operation. The register is replaced by logic.
 Entity <InsFetcher> analyzed. Unit <InsFetcher> generated.
@@ -268,7 +272,7 @@ Analyzing Entity <IF_IDRegs> in library <work> (Architecture <behavioral>).
 Entity <IF_IDRegs> analyzed. Unit <IF_IDRegs> generated.
 
 Analyzing Entity <Registers> in library <work> (Architecture <behavioral>).
-WARNING:Xst:819 - "C:/pop_cpu1/Registers.vhd" line 53: One or more signals are missing in the process sensitivity list. To enable synthesis of FPGA/CPLD hardware, XST will assume that all necessary signals are present in the sensitivity list. Please note that the result of the synthesis may differ from the initial design specification. The missing signals are:
+WARNING:Xst:819 - "F:/thujiyuan/pop_cpu/Registers.vhd" line 54: One or more signals are missing in the process sensitivity list. To enable synthesis of FPGA/CPLD hardware, XST will assume that all necessary signals are present in the sensitivity list. Please note that the result of the synthesis may differ from the initial design specification. The missing signals are:
    <r000>, <r001>, <r010>, <r011>, <r100>, <r101>, <r110>, <r111>, <rT>, <rIH>, <rSP>, <rRA>
 Entity <Registers> analyzed. Unit <Registers> generated.
 
@@ -288,14 +292,14 @@ Analyzing Entity <ID_EXERegs> in library <work> (Architecture <behavioral>).
 Entity <ID_EXERegs> analyzed. Unit <ID_EXERegs> generated.
 
 Analyzing Entity <ALUSrc0MUX> in library <work> (Architecture <behavioral>).
-INFO:Xst:1561 - "C:/pop_cpu1/ALUSrc0MUX.vhd" line 57: Mux is complete : default of case is discarded
+INFO:Xst:1561 - "F:/thujiyuan/pop_cpu/ALUSrc0MUX.vhd" line 57: Mux is complete : default of case is discarded
 Entity <ALUSrc0MUX> analyzed. Unit <ALUSrc0MUX> generated.
 
 Analyzing Entity <ALUSrc1MUX> in library <work> (Architecture <behavioral>).
 Entity <ALUSrc1MUX> analyzed. Unit <ALUSrc1MUX> generated.
 
 Analyzing Entity <ALU> in library <work> (Architecture <behavioral>).
-INFO:Xst:1561 - "C:/pop_cpu1/ALU.vhd" line 67: Mux is complete : default of case is discarded
+INFO:Xst:1561 - "F:/thujiyuan/pop_cpu/ALU.vhd" line 67: Mux is complete : default of case is discarded
 Entity <ALU> analyzed. Unit <ALU> generated.
 
 Analyzing Entity <ReadWritePauser> in library <work> (Architecture <behavioral>).
@@ -314,7 +318,7 @@ Analyzing Entity <MEM_WBRegs> in library <work> (Architecture <behavioral>).
 Entity <MEM_WBRegs> analyzed. Unit <MEM_WBRegs> generated.
 
 Analyzing Entity <WBSrcMUX> in library <work> (Architecture <behavioral>).
-INFO:Xst:1561 - "C:/pop_cpu1/WBSrcMUX.vhd" line 49: Mux is complete : default of case is discarded
+INFO:Xst:1561 - "F:/thujiyuan/pop_cpu/WBSrcMUX.vhd" line 49: Mux is complete : default of case is discarded
 Entity <WBSrcMUX> analyzed. Unit <WBSrcMUX> generated.
 
 Analyzing Entity <MEMTypeMUX> in library <work> (Architecture <behavioral>).
@@ -324,4 +328,1121 @@ Analyzing Entity <VGAAccess> in library <work> (Architecture <behavioral>).
 Entity <VGAAccess> analyzed. Unit <VGAAccess> generated.
 
 Analyzing Entity <cachedVGAControler> in library <work> (Architecture <behavioral>).
-WARNING:Xst:790 - "C:/pop_cpu1/cachedVGAControler.vhd" line 85: Index value(s) does not match array range, simulation mismatch.
+WARNING:Xst:2211 - "F:/thujiyuan/pop_cpu/cachedVGAControler.vhd" line 77: Instantiating black box module <VGARam>.
+Entity <cachedVGAControler> analyzed. Unit <cachedVGAControler> generated.
+
+Analyzing Entity <vgaInterface> in library <work> (Architecture <behavioral>).
+WARNING:Xst:819 - "F:/thujiyuan/pop_cpu/vgaInterface.vhd" line 41: One or more signals are missing in the process sensitivity list. To enable synthesis of FPGA/CPLD hardware, XST will assume that all necessary signals are present in the sensitivity list. Please note that the result of the synthesis may differ from the initial design specification. The missing signals are:
+   <inData>
+Entity <vgaInterface> analyzed. Unit <vgaInterface> generated.
+
+Analyzing Entity <clockDivider> in library <work> (Architecture <behavioral>).
+Entity <clockDivider> analyzed. Unit <clockDivider> generated.
+
+
+=========================================================================
+*                           HDL Synthesis                               *
+=========================================================================
+
+Performing bidirectional port resolution...
+
+Synthesizing Unit <shumaDecoder>.
+    Related source file is "F:/thujiyuan/pop_cpu/shumaDecoder.vhd".
+    Found 16x7-bit ROM for signal <decode>.
+    Summary:
+	inferred   1 ROM(s).
+Unit <shumaDecoder> synthesized.
+
+
+Synthesizing Unit <PC>.
+    Related source file is "F:/thujiyuan/pop_cpu/PC.vhd".
+    Found 16-bit register for signal <PCout>.
+    Found 1-bit register for signal <init>.
+    Found 16-bit register for signal <lastPC>.
+    Summary:
+	inferred  33 D-type flip-flop(s).
+Unit <PC> synthesized.
+
+
+Synthesizing Unit <InsFetcher>.
+    Related source file is "F:/thujiyuan/pop_cpu/InsFetcher.vhd".
+WARNING:Xst:737 - Found 16-bit latch for signal <MEMReadData>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+    Found 18-bit register for signal <Ram2Addr>.
+    Found 1-bit register for signal <Ram2WE>.
+    Found 1-bit register for signal <Ram2OE>.
+    Found 16-bit tristate buffer for signal <Ram2Data>.
+    Found 18-bit comparator less for signal <ins$cmp_lt0000> created at line 89.
+    Found 16-bit register for signal <Mtridata_Ram2Data> created at line 62.
+    Found 18-bit comparator greatequal for signal <Ram2OE$cmp_ge0000> created at line 68.
+    Summary:
+	inferred  36 D-type flip-flop(s).
+	inferred   2 Comparator(s).
+	inferred  16 Tristate(s).
+Unit <InsFetcher> synthesized.
+
+
+Synthesizing Unit <PCAdder>.
+    Related source file is "F:/thujiyuan/pop_cpu/PCAdder.vhd".
+    Found 16-bit adder for signal <PCout>.
+    Summary:
+	inferred   1 Adder/Subtractor(s).
+Unit <PCAdder> synthesized.
+
+
+Synthesizing Unit <PCSelector>.
+    Related source file is "F:/thujiyuan/pop_cpu/PCSelector.vhd".
+WARNING:Xst:737 - Found 16-bit latch for signal <PCout>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+INFO:Xst:2371 - HDL ADVISOR - Logic functions respectively driving the data and gate enable inputs of this latch share common terms. This situation will potentially lead to setup/hold violations and, as a result, to simulation problems. This situation may come from an incomplete case statement (all selector values are not covered). You should carefully review if it was in your intentions to describe such a latch.
+    Found 16-bit 3-to-1 multiplexer for signal <PCout$mux0002>.
+    Summary:
+	inferred  16 Multiplexer(s).
+Unit <PCSelector> synthesized.
+
+
+Synthesizing Unit <IF_IDRegs>.
+    Related source file is "F:/thujiyuan/pop_cpu/IF_IDRegs.vhd".
+    Found 16-bit register for signal <outInst>.
+    Found 3-bit register for signal <outRyNum>.
+    Found 16-bit register for signal <outPC>.
+    Found 3-bit register for signal <outRxNum>.
+    Found 16-bit register for signal <tempInst>.
+    Found 16-bit register for signal <tempPC>.
+    Found 3-bit register for signal <tempRxNum>.
+    Found 3-bit register for signal <tempRyNum>.
+    Summary:
+	inferred  76 D-type flip-flop(s).
+Unit <IF_IDRegs> synthesized.
+
+
+Synthesizing Unit <Registers>.
+    Related source file is "F:/thujiyuan/pop_cpu/Registers.vhd".
+    Found 16-bit 8-to-1 multiplexer for signal <rx>.
+    Found 16-bit 8-to-1 multiplexer for signal <ry>.
+    Found 16-bit register for signal <r000>.
+    Found 16-bit register for signal <r001>.
+    Found 16-bit register for signal <r010>.
+    Found 16-bit register for signal <r011>.
+    Found 16-bit register for signal <r100>.
+    Found 16-bit register for signal <r101>.
+    Found 16-bit register for signal <r110>.
+    Found 16-bit register for signal <r111>.
+    Found 16-bit register for signal <rIH>.
+    Found 16-bit register for signal <rRA>.
+    Found 16-bit register for signal <rSP>.
+    Found 16-bit register for signal <rT>.
+    Summary:
+	inferred 192 D-type flip-flop(s).
+	inferred  32 Multiplexer(s).
+Unit <Registers> synthesized.
+
+
+Synthesizing Unit <bypasser>.
+    Related source file is "F:/thujiyuan/pop_cpu/bypasser.vhd".
+WARNING:Xst:737 - Found 16-bit latch for signal <outrx>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+INFO:Xst:2371 - HDL ADVISOR - Logic functions respectively driving the data and gate enable inputs of this latch share common terms. This situation will potentially lead to setup/hold violations and, as a result, to simulation problems. This situation may come from an incomplete case statement (all selector values are not covered). You should carefully review if it was in your intentions to describe such a latch.
+WARNING:Xst:737 - Found 16-bit latch for signal <outry>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+INFO:Xst:2371 - HDL ADVISOR - Logic functions respectively driving the data and gate enable inputs of this latch share common terms. This situation will potentially lead to setup/hold violations and, as a result, to simulation problems. This situation may come from an incomplete case statement (all selector values are not covered). You should carefully review if it was in your intentions to describe such a latch.
+    Found 4-bit comparator equal for signal <dataPause$cmp_eq0012> created at line 116.
+    Found 4-bit comparator equal for signal <dataPause$cmp_eq0013> created at line 77.
+    Found 4-bit comparator equal for signal <dataPause$cmp_eq0021> created at line 166.
+    Found 4-bit comparator equal for signal <dataPause$cmp_eq0022> created at line 202.
+    Found 4-bit comparator equal for signal <outrx$cmp_eq0000> created at line 157.
+    Found 4-bit comparator not equal for signal <outrx$cmp_ne0002> created at line 77.
+    Found 4-bit comparator equal for signal <outry$cmp_eq0000> created at line 240.
+    Found 4-bit comparator not equal for signal <outry$cmp_ne0001> created at line 166.
+    Summary:
+	inferred   8 Comparator(s).
+Unit <bypasser> synthesized.
+
+
+Synthesizing Unit <Control>.
+    Related source file is "F:/thujiyuan/pop_cpu/Control.vhd".
+    Found 4x7-bit ROM for signal <instruction_1_0$rom0000>.
+    Found 4x3-bit ROM for signal <immSel$mux0000> created at line 235.
+    Summary:
+	inferred   2 ROM(s).
+Unit <Control> synthesized.
+
+
+Synthesizing Unit <Extender>.
+    Related source file is "F:/thujiyuan/pop_cpu/extender.vhd".
+WARNING:Xst:647 - Input <ins<15:11>> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+WARNING:Xst:737 - Found 16-bit latch for signal <immResult>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+INFO:Xst:2371 - HDL ADVISOR - Logic functions respectively driving the data and gate enable inputs of this latch share common terms. This situation will potentially lead to setup/hold violations and, as a result, to simulation problems. This situation may come from an incomplete case statement (all selector values are not covered). You should carefully review if it was in your intentions to describe such a latch.
+    Found 16-bit 6-to-1 multiplexer for signal <immResult$mux0010>.
+    Summary:
+	inferred  16 Multiplexer(s).
+Unit <Extender> synthesized.
+
+
+Synthesizing Unit <AddressAdder>.
+    Related source file is "F:/thujiyuan/pop_cpu/AddressAdder.vhd".
+    Found 16-bit adder for signal <result>.
+    Summary:
+	inferred   1 Adder/Subtractor(s).
+Unit <AddressAdder> synthesized.
+
+
+Synthesizing Unit <ID_EXERegs>.
+    Related source file is "F:/thujiyuan/pop_cpu/ID_EXERegs.vhd".
+    Found 16-bit register for signal <outIH>.
+    Found 3-bit register for signal <outALUFunc>.
+    Found 16-bit register for signal <outPC>.
+    Found 16-bit register for signal <outRA>.
+    Found 16-bit register for signal <outSP>.
+    Found 2-bit register for signal <outMEMSrc>.
+    Found 16-bit register for signal <outRx>.
+    Found 16-bit register for signal <outRy>.
+    Found 1-bit register for signal <outRegWrite>.
+    Found 1-bit register for signal <outMEMRead>.
+    Found 2-bit register for signal <outALUSrc0>.
+    Found 1-bit register for signal <outMEMWrite>.
+    Found 3-bit register for signal <outALUSrc1>.
+    Found 4-bit register for signal <outWBDes>.
+    Found 1-bit register for signal <outWBSrc>.
+    Found 16-bit register for signal <outExtend>.
+    Found 3-bit register for signal <tempALUFunc>.
+    Found 2-bit register for signal <tempALUSrc0>.
+    Found 3-bit register for signal <tempALUSrc1>.
+    Found 16-bit register for signal <tempExtend>.
+    Found 16-bit register for signal <tempIH>.
+    Found 1-bit register for signal <tempMEMRead>.
+    Found 2-bit register for signal <tempMEMSrc>.
+    Found 1-bit register for signal <tempMEMWrite>.
+    Found 16-bit register for signal <tempPC>.
+    Found 16-bit register for signal <tempRA>.
+    Found 1-bit register for signal <tempRegWrite>.
+    Found 16-bit register for signal <tempRx>.
+    Found 16-bit register for signal <tempRy>.
+    Found 16-bit register for signal <tempSP>.
+    Found 4-bit register for signal <tempWBDes>.
+    Found 1-bit register for signal <tempWBSrc>.
+    Summary:
+	inferred 260 D-type flip-flop(s).
+Unit <ID_EXERegs> synthesized.
+
+
+Synthesizing Unit <ALUSrc0MUX>.
+    Related source file is "F:/thujiyuan/pop_cpu/ALUSrc0MUX.vhd".
+WARNING:Xst:653 - Signal <zero> is used but never assigned. This sourceless signal will be automatically connected to value 0000000000000000.
+    Found 16-bit 4-to-1 multiplexer for signal <output>.
+    Summary:
+	inferred  16 Multiplexer(s).
+Unit <ALUSrc0MUX> synthesized.
+
+
+Synthesizing Unit <ALUSrc1MUX>.
+    Related source file is "F:/thujiyuan/pop_cpu/ALUSrc1MUX.vhd".
+Unit <ALUSrc1MUX> synthesized.
+
+
+Synthesizing Unit <ALU>.
+    Related source file is "F:/thujiyuan/pop_cpu/ALU.vhd".
+    Found 16-bit 8-to-1 multiplexer for signal <rst>.
+    Found 16-bit addsub for signal <rst$addsub0000>.
+    Found 16-bit comparator equal for signal <rst$cmp_eq0001> created at line 64.
+    Found 16-bit shifter logical left for signal <rst$shift0006> created at line 50.
+    Found 16-bit shifter logical right for signal <rst$shift0007> created at line 52.
+    Found 16-bit shifter arithmetic right for signal <rst$shift0008> created at line 54.
+    Summary:
+	inferred   1 Adder/Subtractor(s).
+	inferred   1 Comparator(s).
+	inferred  16 Multiplexer(s).
+	inferred   3 Combinational logic shifter(s).
+Unit <ALU> synthesized.
+
+
+Synthesizing Unit <ReadWritePauser>.
+    Related source file is "F:/thujiyuan/pop_cpu/ReadWritePauser.vhd".
+    Found 16-bit comparator less for signal <readWritePause$cmp_lt0000> created at line 47.
+    Summary:
+	inferred   1 Comparator(s).
+Unit <ReadWritePauser> synthesized.
+
+
+Synthesizing Unit <EXE_MEMRegs>.
+    Related source file is "F:/thujiyuan/pop_cpu/EXE_MEMRegs.vhd".
+    Found 16-bit register for signal <outRst>.
+    Found 16-bit register for signal <outRA>.
+    Found 2-bit register for signal <outMEMSrc>.
+    Found 16-bit register for signal <outRx>.
+    Found 16-bit register for signal <outRy>.
+    Found 1-bit register for signal <outRegWrite>.
+    Found 1-bit register for signal <outMEMRead>.
+    Found 1-bit register for signal <outMEMWrite>.
+    Found 4-bit register for signal <outWBDes>.
+    Found 1-bit register for signal <outWBSrc>.
+    Found 3-bit register for signal <outMEMType>.
+    Found 1-bit register for signal <tempMEMRead>.
+    Found 2-bit register for signal <tempMEMSrc>.
+    Found 3-bit register for signal <tempMemType>.
+    Found 1-bit register for signal <tempMEMWrite>.
+    Found 16-bit register for signal <tempRA>.
+    Found 1-bit register for signal <tempRegWrite>.
+    Found 16-bit register for signal <tempRst>.
+    Found 16-bit register for signal <tempRx>.
+    Found 16-bit register for signal <tempRy>.
+    Found 4-bit register for signal <tempWBDes>.
+    Found 1-bit register for signal <tempWBSrc>.
+    Summary:
+	inferred 154 D-type flip-flop(s).
+Unit <EXE_MEMRegs> synthesized.
+
+
+Synthesizing Unit <MEMSrcMUX>.
+    Related source file is "F:/thujiyuan/pop_cpu/MEMSrcMUX.vhd".
+    Found 16-bit 4-to-1 multiplexer for signal <output>.
+    Summary:
+	inferred  16 Multiplexer(s).
+Unit <MEMSrcMUX> synthesized.
+
+
+Synthesizing Unit <MEMAccess>.
+    Related source file is "F:/thujiyuan/pop_cpu/MEMAccess.vhd".
+    Found 1-bit register for signal <RAM1WE>.
+    Found 1-bit register for signal <RAM1EN>.
+    Found 16-bit tristate buffer for signal <RAM1data>.
+    Found 1-bit register for signal <rdn>.
+    Found 1-bit register for signal <wrn>.
+    Found 1-bit register for signal <RAM1OE>.
+    Found 18-bit register for signal <RAM1addr>.
+    Found 16-bit register for signal <Mtridata_RAM1data> created at line 136.
+    Found 1-bit register for signal <Mtrien_RAM1data> created at line 136.
+    Summary:
+	inferred  40 D-type flip-flop(s).
+	inferred  16 Tristate(s).
+Unit <MEMAccess> synthesized.
+
+
+Synthesizing Unit <MEM_WBRegs>.
+    Related source file is "F:/thujiyuan/pop_cpu/MEM_WBRegs.vhd".
+    Found 16-bit register for signal <outRst>.
+    Found 1-bit register for signal <outRegWrite>.
+    Found 16-bit register for signal <outBuffer>.
+    Found 4-bit register for signal <outWBDes>.
+    Found 1-bit register for signal <outWBSrc>.
+    Found 16-bit register for signal <tempBuffer>.
+    Found 1-bit register for signal <tempRegWrite>.
+    Found 16-bit register for signal <tempRst>.
+    Found 4-bit register for signal <tempWBDes>.
+    Found 1-bit register for signal <tempWBSrc>.
+    Summary:
+	inferred  76 D-type flip-flop(s).
+Unit <MEM_WBRegs> synthesized.
+
+
+Synthesizing Unit <WBSrcMUX>.
+    Related source file is "F:/thujiyuan/pop_cpu/WBSrcMUX.vhd".
+Unit <WBSrcMUX> synthesized.
+
+
+Synthesizing Unit <MEMTypeMUX>.
+    Related source file is "F:/thujiyuan/pop_cpu/MEMTypeMUX.vhd".
+    Found 16-bit comparator less for signal <OUTMemType$cmp_lt0000> created at line 45.
+    Summary:
+	inferred   1 Comparator(s).
+Unit <MEMTypeMUX> synthesized.
+
+
+Synthesizing Unit <VGAAccess>.
+    Related source file is "F:/thujiyuan/pop_cpu/VGAAccess.vhd".
+    Found 1-bit register for signal <Hs>.
+    Found 3-bit register for signal <Bout>.
+    Found 1-bit register for signal <Vs>.
+    Found 3-bit register for signal <Gout>.
+    Found 3-bit register for signal <Rout>.
+    Found 1-bit register for signal <clk>.
+    Found 11-bit comparator greatequal for signal <Hs$cmp_ge0000> created at line 71.
+    Found 11-bit comparator lessequal for signal <Hs$cmp_le0000> created at line 71.
+    Found 11-bit comparator greater for signal <valid$cmp_gt0000> created at line 68.
+    Found 11-bit comparator greater for signal <valid$cmp_gt0001> created at line 68.
+    Found 11-bit comparator greatequal for signal <Vs$cmp_ge0000> created at line 76.
+    Found 11-bit comparator lessequal for signal <Vs$cmp_le0000> created at line 76.
+    Found 10-bit up counter for signal <xCnt>.
+    Found 10-bit up counter for signal <yCnt>.
+    Found 10-bit adder for signal <yCnt$addsub0000> created at line 92.
+    Summary:
+	inferred   2 Counter(s).
+	inferred  12 D-type flip-flop(s).
+	inferred   1 Adder/Subtractor(s).
+	inferred   6 Comparator(s).
+Unit <VGAAccess> synthesized.
+
+
+Synthesizing Unit <vgaInterface>.
+    Related source file is "F:/thujiyuan/pop_cpu/vgaInterface.vhd".
+Unit <vgaInterface> synthesized.
+
+
+Synthesizing Unit <clockDivider>.
+    Related source file is "F:/thujiyuan/pop_cpu/clockDivider.vhd".
+WARNING:Xst:737 - Found 1-bit latch for signal <paused>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+    Found 1-bit register for signal <outclk>.
+    Found 1-bit register for signal <clk>.
+    Found 17-bit register for signal <state>.
+    Found 17-bit adder for signal <state$addsub0000> created at line 57.
+    Summary:
+	inferred  19 D-type flip-flop(s).
+	inferred   1 Adder/Subtractor(s).
+Unit <clockDivider> synthesized.
+
+
+Synthesizing Unit <cachedVGAControler>.
+    Related source file is "F:/thujiyuan/pop_cpu/cachedVGAControler.vhd".
+WARNING:Xst:647 - Input <inChar<15:8>> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+WARNING:Xst:647 - Input <inY<9>> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+WARNING:Xst:646 - Signal <doutb> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:653 - Signal <dina> is used but never assigned. This sourceless signal will be automatically connected to value 00000000.
+    Found 128x112-bit ROM for signal <$rom0000>.
+    Found 7-bit adder for signal <$add0000> created at line 115.
+    Found 5-bit adder for signal <$add0001> created at line 117.
+    Found 12-bit register for signal <addrb>.
+    Found 8-bit 16-to-1 multiplexer for signal <charData$mux0000> created at line 350.
+    Found 1-bit 8-to-1 multiplexer for signal <charData$mux0001> created at line 350.
+    Found 1-bit register for signal <clka>.
+    Found 1-bit register for signal <clkb>.
+    Found 7-bit up counter for signal <cursorX>.
+    Found 5-bit up counter for signal <cursorY>.
+    Found 8-bit register for signal <dinb>.
+    Found 3-bit adder for signal <indexX$mux0000> created at line 342.
+    Found 4-bit adder for signal <indexY$addsub0000> created at line 343.
+    Found 4-bit comparator greater for signal <indexY$cmp_gt0000> created at line 342.
+    Found 8-bit register for signal <tempchar>.
+    Summary:
+	inferred   1 ROM(s).
+	inferred   2 Counter(s).
+	inferred  30 D-type flip-flop(s).
+	inferred   4 Adder/Subtractor(s).
+	inferred   1 Comparator(s).
+	inferred   9 Multiplexer(s).
+Unit <cachedVGAControler> synthesized.
+
+
+Synthesizing Unit <pop_cpu>.
+    Related source file is "F:/thujiyuan/pop_cpu/pop_cpu.vhd".
+WARNING:Xst:647 - Input <vgaclk> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+WARNING:Xst:653 - Signal <Registers_IDEXERegs_RA> is used but never assigned. This sourceless signal will be automatically connected to value 0000000000000000.
+Unit <pop_cpu> synthesized.
+
+INFO:Xst:1767 - HDL ADVISOR - Resource sharing has identified that some arithmetic operations in this design can share the same physical resources for reduced device utilization. For improved clock frequency you may try to disable resource sharing.
+
+=========================================================================
+HDL Synthesis Report
+
+Macro Statistics
+# ROMs                                                 : 5
+ 128x112-bit ROM                                       : 1
+ 16x7-bit ROM                                          : 2
+ 4x3-bit ROM                                           : 1
+ 4x7-bit ROM                                           : 1
+# Adders/Subtractors                                   : 9
+ 10-bit adder                                          : 1
+ 16-bit adder                                          : 2
+ 16-bit addsub                                         : 1
+ 17-bit adder                                          : 1
+ 3-bit adder                                           : 1
+ 4-bit adder                                           : 1
+ 5-bit adder                                           : 1
+ 7-bit adder                                           : 1
+# Counters                                             : 4
+ 10-bit up counter                                     : 2
+ 5-bit up counter                                      : 1
+ 7-bit up counter                                      : 1
+# Registers                                            : 98
+ 1-bit register                                        : 44
+ 12-bit register                                       : 1
+ 16-bit register                                       : 33
+ 17-bit register                                       : 1
+ 18-bit register                                       : 1
+ 2-bit register                                        : 3
+ 3-bit register                                        : 10
+ 4-bit register                                        : 3
+ 8-bit register                                        : 2
+# Latches                                              : 6
+ 1-bit latch                                           : 1
+ 16-bit latch                                          : 5
+# Comparators                                          : 20
+ 11-bit comparator greatequal                          : 2
+ 11-bit comparator greater                             : 2
+ 11-bit comparator lessequal                           : 2
+ 16-bit comparator equal                               : 1
+ 16-bit comparator less                                : 2
+ 18-bit comparator greatequal                          : 1
+ 18-bit comparator less                                : 1
+ 4-bit comparator equal                                : 6
+ 4-bit comparator greater                              : 1
+ 4-bit comparator not equal                            : 2
+# Multiplexers                                         : 9
+ 1-bit 8-to-1 multiplexer                              : 1
+ 16-bit 3-to-1 multiplexer                             : 1
+ 16-bit 4-to-1 multiplexer                             : 2
+ 16-bit 6-to-1 multiplexer                             : 1
+ 16-bit 8-to-1 multiplexer                             : 3
+ 8-bit 16-to-1 multiplexer                             : 1
+# Logic shifters                                       : 3
+ 16-bit shifter arithmetic right                       : 1
+ 16-bit shifter logical left                           : 1
+ 16-bit shifter logical right                          : 1
+# Tristates                                            : 2
+ 16-bit tristate buffer                                : 2
+
+=========================================================================
+
+=========================================================================
+*                       Advanced HDL Synthesis                          *
+=========================================================================
+
+Reading core <ipcore_dir/VGARam.ngc>.
+Loading core <VGARam> for timing and area information for instance <vram>.
+WARNING:Xst:1426 - The value init of the FF/Latch init hinder the constant cleaning in the block p.
+   You should achieve better results by setting this init to 1.
+WARNING:Xst:1710 - FF/Latch <outRA_15> (without init value) has a constant value of 0 in block <idexe>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <outRA_0> (without init value) has a constant value of 0 in block <exemr>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <outRA_1> (without init value) has a constant value of 0 in block <exemr>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <outRA_2> (without init value) has a constant value of 0 in block <exemr>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <outRA_3> (without init value) has a constant value of 0 in block <exemr>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <outRA_4> (without init value) has a constant value of 0 in block <exemr>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <outRA_5> (without init value) has a constant value of 0 in block <exemr>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <outRA_6> (without init value) has a constant value of 0 in block <exemr>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <outRA_7> (without init value) has a constant value of 0 in block <exemr>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <outRA_8> (without init value) has a constant value of 0 in block <exemr>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <outRA_9> (without init value) has a constant value of 0 in block <exemr>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <outRA_10> (without init value) has a constant value of 0 in block <exemr>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <outRA_11> (without init value) has a constant value of 0 in block <exemr>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <outRA_12> (without init value) has a constant value of 0 in block <exemr>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <outRA_13> (without init value) has a constant value of 0 in block <exemr>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <outRA_14> (without init value) has a constant value of 0 in block <exemr>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <outRA_15> (without init value) has a constant value of 0 in block <exemr>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <Ram2Addr_17> (without init value) has a constant value of 0 in block <insf>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <Ram2Addr_16> (without init value) has a constant value of 0 in block <insf>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <outRA_0> (without init value) has a constant value of 0 in block <idexe>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <outRA_1> (without init value) has a constant value of 0 in block <idexe>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <outRA_2> (without init value) has a constant value of 0 in block <idexe>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <outRA_3> (without init value) has a constant value of 0 in block <idexe>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <outRA_4> (without init value) has a constant value of 0 in block <idexe>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <outRA_5> (without init value) has a constant value of 0 in block <idexe>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <outRA_6> (without init value) has a constant value of 0 in block <idexe>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <outRA_7> (without init value) has a constant value of 0 in block <idexe>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <outRA_8> (without init value) has a constant value of 0 in block <idexe>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <outRA_9> (without init value) has a constant value of 0 in block <idexe>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <outRA_10> (without init value) has a constant value of 0 in block <idexe>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <outRA_11> (without init value) has a constant value of 0 in block <idexe>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <outRA_12> (without init value) has a constant value of 0 in block <idexe>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <outRA_13> (without init value) has a constant value of 0 in block <idexe>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <outRA_14> (without init value) has a constant value of 0 in block <idexe>. This FF/Latch will be trimmed during the optimization process.
+
+=========================================================================
+Advanced HDL Synthesis Report
+
+Macro Statistics
+# ROMs                                                 : 5
+ 128x112-bit ROM                                       : 1
+ 16x7-bit ROM                                          : 2
+ 4x3-bit ROM                                           : 1
+ 4x7-bit ROM                                           : 1
+# Adders/Subtractors                                   : 9
+ 10-bit adder                                          : 1
+ 16-bit adder                                          : 2
+ 16-bit addsub                                         : 1
+ 17-bit adder                                          : 1
+ 3-bit adder                                           : 1
+ 4-bit adder                                           : 1
+ 5-bit adder                                           : 1
+ 7-bit adder                                           : 1
+# Counters                                             : 4
+ 10-bit up counter                                     : 2
+ 5-bit up counter                                      : 1
+ 7-bit up counter                                      : 1
+# Registers                                            : 683
+ Flip-Flops                                            : 683
+# Latches                                              : 6
+ 1-bit latch                                           : 1
+ 16-bit latch                                          : 5
+# Comparators                                          : 20
+ 11-bit comparator greatequal                          : 2
+ 11-bit comparator greater                             : 2
+ 11-bit comparator lessequal                           : 2
+ 16-bit comparator equal                               : 1
+ 16-bit comparator less                                : 2
+ 18-bit comparator greatequal                          : 1
+ 18-bit comparator less                                : 1
+ 4-bit comparator equal                                : 6
+ 4-bit comparator greater                              : 1
+ 4-bit comparator not equal                            : 2
+# Multiplexers                                         : 39
+ 1-bit 8-to-1 multiplexer                              : 33
+ 16-bit 3-to-1 multiplexer                             : 1
+ 16-bit 4-to-1 multiplexer                             : 2
+ 16-bit 6-to-1 multiplexer                             : 1
+ 16-bit 8-to-1 multiplexer                             : 1
+ 8-bit 16-to-1 multiplexer                             : 1
+# Logic shifters                                       : 3
+ 16-bit shifter arithmetic right                       : 1
+ 16-bit shifter logical left                           : 1
+ 16-bit shifter logical right                          : 1
+
+=========================================================================
+
+=========================================================================
+*                         Low Level Synthesis                           *
+=========================================================================
+WARNING:Xst:1426 - The value init of the FF/Latch init hinder the constant cleaning in the block PC.
+   You should achieve better results by setting this init to 1.
+INFO:Xst:2261 - The FF/Latch <outRA_0> in Unit <ID_EXERegs> is equivalent to the following 15 FFs/Latches, which will be removed : <outRA_1> <outRA_2> <outRA_3> <outRA_4> <outRA_5> <outRA_6> <outRA_7> <outRA_8> <outRA_9> <outRA_10> <outRA_11> <outRA_12> <outRA_13> <outRA_14> <outRA_15> 
+WARNING:Xst:1710 - FF/Latch <outRA_0> (without init value) has a constant value of 0 in block <ID_EXERegs>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <insf/Ram2Addr_16> (without init value) has a constant value of 0 in block <pop_cpu>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <insf/Ram2Addr_17> (without init value) has a constant value of 0 in block <pop_cpu>. This FF/Latch will be trimmed during the optimization process.
+INFO:Xst:2261 - The FF/Latch <immResult_10> in Unit <Extender> is equivalent to the following 5 FFs/Latches, which will be removed : <immResult_11> <immResult_12> <immResult_13> <immResult_14> <immResult_15> 
+WARNING:Xst:2170 - Unit ALU : the following signal(s) form a combinatorial loop: rst_shift0005<15>.
+
+Optimizing unit <pop_cpu> ...
+
+Optimizing unit <PC> ...
+
+Optimizing unit <IF_IDRegs> ...
+
+Optimizing unit <Registers> ...
+
+Optimizing unit <Control> ...
+
+Optimizing unit <ID_EXERegs> ...
+
+Optimizing unit <ALU> ...
+
+Optimizing unit <EXE_MEMRegs> ...
+
+Optimizing unit <MEM_WBRegs> ...
+
+Optimizing unit <VGAAccess> ...
+
+Optimizing unit <clockDivider> ...
+
+Optimizing unit <cachedVGAControler> ...
+
+Optimizing unit <bypasser> ...
+
+Optimizing unit <Extender> ...
+WARNING:Xst:1710 - FF/Latch <exemr/outRA_15> (without init value) has a constant value of 0 in block <pop_cpu>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <exemr/outRA_14> (without init value) has a constant value of 0 in block <pop_cpu>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <exemr/outRA_13> (without init value) has a constant value of 0 in block <pop_cpu>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <exemr/outRA_12> (without init value) has a constant value of 0 in block <pop_cpu>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <exemr/outRA_11> (without init value) has a constant value of 0 in block <pop_cpu>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <exemr/outRA_10> (without init value) has a constant value of 0 in block <pop_cpu>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <exemr/outRA_9> (without init value) has a constant value of 0 in block <pop_cpu>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <exemr/outRA_8> (without init value) has a constant value of 0 in block <pop_cpu>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <exemr/outRA_7> (without init value) has a constant value of 0 in block <pop_cpu>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <exemr/outRA_6> (without init value) has a constant value of 0 in block <pop_cpu>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <exemr/outRA_5> (without init value) has a constant value of 0 in block <pop_cpu>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <exemr/outRA_4> (without init value) has a constant value of 0 in block <pop_cpu>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <exemr/outRA_3> (without init value) has a constant value of 0 in block <pop_cpu>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <exemr/outRA_2> (without init value) has a constant value of 0 in block <pop_cpu>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <exemr/outRA_1> (without init value) has a constant value of 0 in block <pop_cpu>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <exemr/outRA_0> (without init value) has a constant value of 0 in block <pop_cpu>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:2677 - Node <regis/rRA_15> of sequential type is unconnected in block <pop_cpu>.
+WARNING:Xst:2677 - Node <regis/rRA_14> of sequential type is unconnected in block <pop_cpu>.
+WARNING:Xst:2677 - Node <regis/rRA_13> of sequential type is unconnected in block <pop_cpu>.
+WARNING:Xst:2677 - Node <regis/rRA_12> of sequential type is unconnected in block <pop_cpu>.
+WARNING:Xst:2677 - Node <regis/rRA_11> of sequential type is unconnected in block <pop_cpu>.
+WARNING:Xst:2677 - Node <regis/rRA_10> of sequential type is unconnected in block <pop_cpu>.
+WARNING:Xst:2677 - Node <regis/rRA_9> of sequential type is unconnected in block <pop_cpu>.
+WARNING:Xst:2677 - Node <regis/rRA_8> of sequential type is unconnected in block <pop_cpu>.
+WARNING:Xst:2677 - Node <regis/rRA_7> of sequential type is unconnected in block <pop_cpu>.
+WARNING:Xst:2677 - Node <regis/rRA_6> of sequential type is unconnected in block <pop_cpu>.
+WARNING:Xst:2677 - Node <regis/rRA_5> of sequential type is unconnected in block <pop_cpu>.
+WARNING:Xst:2677 - Node <regis/rRA_4> of sequential type is unconnected in block <pop_cpu>.
+WARNING:Xst:2677 - Node <regis/rRA_3> of sequential type is unconnected in block <pop_cpu>.
+WARNING:Xst:2677 - Node <regis/rRA_2> of sequential type is unconnected in block <pop_cpu>.
+WARNING:Xst:2677 - Node <regis/rRA_1> of sequential type is unconnected in block <pop_cpu>.
+WARNING:Xst:2677 - Node <regis/rRA_0> of sequential type is unconnected in block <pop_cpu>.
+
+Mapping all equations...
+Building and optimizing final netlist ...
+INFO:Xst:2261 - The FF/Latch <vgaa/Gout_2> in Unit <pop_cpu> is equivalent to the following 8 FFs/Latches, which will be removed : <vgaa/Gout_1> <vgaa/Gout_0> <vgaa/Bout_2> <vgaa/Bout_1> <vgaa/Bout_0> <vgaa/Rout_2> <vgaa/Rout_1> <vgaa/Rout_0> 
+INFO:Xst:2261 - The FF/Latch <idexe/outMEMRead> in Unit <pop_cpu> is equivalent to the following FF/Latch, which will be removed : <idexe/outWBSrc> 
+INFO:Xst:2261 - The FF/Latch <idexe/outExtend_15> in Unit <pop_cpu> is equivalent to the following 5 FFs/Latches, which will be removed : <idexe/outExtend_14> <idexe/outExtend_13> <idexe/outExtend_12> <idexe/outExtend_11> <idexe/outExtend_10> 
+INFO:Xst:2261 - The FF/Latch <exemr/outMEMRead> in Unit <pop_cpu> is equivalent to the following FF/Latch, which will be removed : <exemr/outWBSrc> 
+Found area constraint ratio of 100 (+ 5) on block pop_cpu, actual ratio is 14.
+FlipFlop idexe/outALUSrc1_1 has been replicated 1 time(s)
+FlipFlop idexe/outALUSrc1_2 has been replicated 1 time(s)
+FlipFlop memac/Mtrien_RAM1data has been replicated 15 time(s) to handle iob=true attribute.
+
+Final Macro Processing ...
+
+=========================================================================
+Final Register Report
+
+Macro Statistics
+# Registers                                            : 667
+ Flip-Flops                                            : 667
+
+=========================================================================
+
+=========================================================================
+*                           Partition Report                            *
+=========================================================================
+
+Partition Implementation Status
+-------------------------------
+
+  No Partitions were found in this design.
+
+-------------------------------
+
+=========================================================================
+*                            Final Report                               *
+=========================================================================
+Final Results
+RTL Top Level Output File Name     : pop_cpu.ngr
+Top Level Output File Name         : pop_cpu
+Output Format                      : NGC
+Optimization Goal                  : Speed
+Keep Hierarchy                     : No
+
+Design Statistics
+# IOs                              : 123
+
+Cell Usage :
+# BELS                             : 2698
+#      GND                         : 2
+#      INV                         : 12
+#      LUT1                        : 58
+#      LUT2                        : 133
+#      LUT2_D                      : 3
+#      LUT2_L                      : 4
+#      LUT3                        : 516
+#      LUT3_D                      : 19
+#      LUT3_L                      : 20
+#      LUT4                        : 1253
+#      LUT4_D                      : 17
+#      LUT4_L                      : 25
+#      MUXCY                       : 96
+#      MUXF5                       : 367
+#      MUXF6                       : 64
+#      MUXF7                       : 8
+#      MUXF8                       : 4
+#      VCC                         : 2
+#      XORCY                       : 95
+# FlipFlops/Latches                : 743
+#      FD                          : 105
+#      FD_1                        : 36
+#      FDC_1                       : 1
+#      FDCP_1                      : 16
+#      FDE                         : 36
+#      FDE_1                       : 192
+#      FDP_1                       : 24
+#      FDPE_1                      : 16
+#      FDR                         : 141
+#      FDRE                        : 53
+#      FDRS                        : 45
+#      FDS                         : 2
+#      LD                          : 43
+#      LD_1                        : 17
+#      LDE                         : 16
+# RAMS                             : 2
+#      RAMB16_S4_S4                : 2
+# Clock Buffers                    : 5
+#      BUFG                        : 4
+#      BUFGP                       : 1
+# IO Buffers                       : 121
+#      IBUF                        : 4
+#      IOBUF                       : 32
+#      OBUF                        : 85
+=========================================================================
+
+Device utilization summary:
+---------------------------
+
+Selected Device : 3s1200efg320-4 
+
+ Number of Slices:                     1111  out of   8672    12%  
+ Number of Slice Flip Flops:            672  out of  17344     3%  
+ Number of 4 input LUTs:               2060  out of  17344    11%  
+ Number of IOs:                         123
+ Number of bonded IOBs:                 122  out of    250    48%  
+    IOB Flip Flops:                      71
+ Number of BRAMs:                         2  out of     28     7%  
+ Number of GCLKs:                         5  out of     24    20%  
+
+---------------------------
+Partition Resource Summary:
+---------------------------
+
+  No Partitions were found in this design.
+
+---------------------------
+
+
+=========================================================================
+TIMING REPORT
+
+NOTE: THESE TIMING NUMBERS ARE ONLY A SYNTHESIS ESTIMATE.
+      FOR ACCURATE TIMING INFORMATION PLEASE REFER TO THE TRACE REPORT
+      GENERATED AFTER PLACE-and-ROUTE.
+
+Clock Information:
+------------------
+-----------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------+-------+
+Clock Signal                                         | Clock buffer(FF name)                                                                                                          | Load  |
+-----------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------+-------+
+pcs/PCout_cmp_eq0000(pcs/PCout_cmp_eq00001:O)        | NONE(*)(pcs/PCout_0)                                                                                                           | 16    |
+inclk                                                | BUFGP                                                                                                                          | 111   |
+insf/MEMReadData_not0001(insf/MEMReadData_not00011:O)| NONE(*)(insf/MEMReadData_15)                                                                                                   | 16    |
+clockd/outclk1                                       | BUFG                                                                                                                           | 493   |
+vgaa/clk1                                            | BUFG                                                                                                                           | 23    |
+inrst                                                | IBUF+BUFG                                                                                                                      | 1     |
+cachc/inWriteEnable_inv(cachc/inWriteEnable_inv1:O)  | NONE(*)(cachc/cursorY_4)                                                                                                       | 12    |
+ins_15_OBUF1(vgaif/outChar_cmp_eq00001:O)            | BUFG(*)(cachc/dinb_7)                                                                                                          | 28    |
+cachc/clka                                           | NONE(cachc/vram/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/s3_init.ram/dpram.dp4x4.ram)| 2     |
+cachc/clkb                                           | NONE(cachc/vram/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/s3_init.ram/dpram.dp4x4.ram)| 2     |
+bypas/outrx_not0001(bypas/outrx_not0001135:O)        | NONE(*)(bypas/outrx_15)                                                                                                        | 16    |
+bypas/outry_not0001(bypas/outry_not0001_f5:O)        | NONE(*)(bypas/outry_15)                                                                                                        | 16    |
+exten/immResult_or0000(exten/immResult_or00001:O)    | NONE(*)(exten/immResult_10)                                                                                                    | 11    |
+-----------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------+-------+
+(*) These 7 clock signal(s) are generated by combinatorial logic,
+and XST is not able to identify which are the primary clock signals.
+Please use the CLOCK_SIGNAL constraint to specify the clock signal(s) generated by combinatorial logic.
+INFO:Xst:2169 - HDL ADVISOR - Some clock signals were not automatically buffered by XST with BUFG/BUFR resources. Please use the buffer_type constraint in order to insert these buffers to the clock signals to help prevent skew problems.
+
+Asynchronous Control Signals Information:
+----------------------------------------
+-------------------------------------------------------------------------------------------+----------------------------+-------+
+Control Signal                                                                             | Buffer(FF name)            | Load  |
+-------------------------------------------------------------------------------------------+----------------------------+-------+
+memac/rst_inv(memac/rst_inv1_INV_0:O)                                                      | NONE(memac/Mtrien_RAM1data)| 39    |
+insf/Ram2Data_Mtridata_Ram2Data_not0000_inv(insf/Ram2Data_Mtridata_Ram2Data_not0000_inv1:O)| NONE(insf/Ram2OE)          | 2     |
+insf/Ram2Addr_0_and0000(insf/Ram2Addr_0_and00001:O)                                        | NONE(insf/Ram2Addr_0)      | 1     |
+insf/Ram2Addr_0_and0001(insf/Ram2Addr_0_and00011:O)                                        | NONE(insf/Ram2Addr_0)      | 1     |
+insf/Ram2Addr_10_and0000(insf/Ram2Addr_10_and00001:O)                                      | NONE(insf/Ram2Addr_10)     | 1     |
+insf/Ram2Addr_10_and0001(insf/Ram2Addr_10_and00011:O)                                      | NONE(insf/Ram2Addr_10)     | 1     |
+insf/Ram2Addr_11_and0000(insf/Ram2Addr_11_and00001:O)                                      | NONE(insf/Ram2Addr_11)     | 1     |
+insf/Ram2Addr_11_and0001(insf/Ram2Addr_11_and00011:O)                                      | NONE(insf/Ram2Addr_11)     | 1     |
+insf/Ram2Addr_12_and0000(insf/Ram2Addr_12_and00001:O)                                      | NONE(insf/Ram2Addr_12)     | 1     |
+insf/Ram2Addr_12_and0001(insf/Ram2Addr_12_and00011:O)                                      | NONE(insf/Ram2Addr_12)     | 1     |
+insf/Ram2Addr_13_and0000(insf/Ram2Addr_13_and00001:O)                                      | NONE(insf/Ram2Addr_13)     | 1     |
+insf/Ram2Addr_13_and0001(insf/Ram2Addr_13_and00011:O)                                      | NONE(insf/Ram2Addr_13)     | 1     |
+insf/Ram2Addr_14_and0000(insf/Ram2Addr_14_and00001:O)                                      | NONE(insf/Ram2Addr_14)     | 1     |
+insf/Ram2Addr_14_and0001(insf/Ram2Addr_14_and00011:O)                                      | NONE(insf/Ram2Addr_14)     | 1     |
+insf/Ram2Addr_15_and0000(insf/Ram2Addr_15_and00001:O)                                      | NONE(insf/Ram2Addr_15)     | 1     |
+insf/Ram2Addr_15_and0001(insf/Ram2Addr_15_and00011:O)                                      | NONE(insf/Ram2Addr_15)     | 1     |
+insf/Ram2Addr_1_and0000(insf/Ram2Addr_1_and00001:O)                                        | NONE(insf/Ram2Addr_1)      | 1     |
+insf/Ram2Addr_1_and0001(insf/Ram2Addr_1_and00011:O)                                        | NONE(insf/Ram2Addr_1)      | 1     |
+insf/Ram2Addr_2_and0000(insf/Ram2Addr_2_and00001:O)                                        | NONE(insf/Ram2Addr_2)      | 1     |
+insf/Ram2Addr_2_and0001(insf/Ram2Addr_2_and00011:O)                                        | NONE(insf/Ram2Addr_2)      | 1     |
+insf/Ram2Addr_3_and0000(insf/Ram2Addr_3_and00001:O)                                        | NONE(insf/Ram2Addr_3)      | 1     |
+insf/Ram2Addr_3_and0001(insf/Ram2Addr_3_and00011:O)                                        | NONE(insf/Ram2Addr_3)      | 1     |
+insf/Ram2Addr_4_and0000(insf/Ram2Addr_4_and00001:O)                                        | NONE(insf/Ram2Addr_4)      | 1     |
+insf/Ram2Addr_4_and0001(insf/Ram2Addr_4_and00011:O)                                        | NONE(insf/Ram2Addr_4)      | 1     |
+insf/Ram2Addr_5_and0000(insf/Ram2Addr_5_and00001:O)                                        | NONE(insf/Ram2Addr_5)      | 1     |
+insf/Ram2Addr_5_and0001(insf/Ram2Addr_5_and00011:O)                                        | NONE(insf/Ram2Addr_5)      | 1     |
+insf/Ram2Addr_6_and0000(insf/Ram2Addr_6_and00001:O)                                        | NONE(insf/Ram2Addr_6)      | 1     |
+insf/Ram2Addr_6_and0001(insf/Ram2Addr_6_and00011:O)                                        | NONE(insf/Ram2Addr_6)      | 1     |
+insf/Ram2Addr_7_and0000(insf/Ram2Addr_7_and00001:O)                                        | NONE(insf/Ram2Addr_7)      | 1     |
+insf/Ram2Addr_7_and0001(insf/Ram2Addr_7_and00011:O)                                        | NONE(insf/Ram2Addr_7)      | 1     |
+insf/Ram2Addr_8_and0000(insf/Ram2Addr_8_and00001:O)                                        | NONE(insf/Ram2Addr_8)      | 1     |
+insf/Ram2Addr_8_and0001(insf/Ram2Addr_8_and00011:O)                                        | NONE(insf/Ram2Addr_8)      | 1     |
+insf/Ram2Addr_9_and0000(insf/Ram2Addr_9_and00001:O)                                        | NONE(insf/Ram2Addr_9)      | 1     |
+insf/Ram2Addr_9_and0001(insf/Ram2Addr_9_and00011:O)                                        | NONE(insf/Ram2Addr_9)      | 1     |
+-------------------------------------------------------------------------------------------+----------------------------+-------+
+
+Timing Summary:
+---------------
+Speed Grade: -4
+
+   Minimum period: 20.115ns (Maximum Frequency: 49.714MHz)
+   Minimum input arrival time before clock: 7.040ns
+   Maximum output required time after clock: 7.271ns
+   Maximum combinational path delay: No path found
+
+Timing Detail:
+--------------
+All values displayed in nanoseconds (ns)
+
+=========================================================================
+Timing constraint: Default period analysis for Clock 'inclk'
+  Clock period: 5.994ns (frequency: 166.833MHz)
+  Total number of paths / destination ports: 483 / 42
+-------------------------------------------------------------------------
+Delay:               5.994ns (Levels of Logic = 3)
+  Source:            clockd/state_15 (FF)
+  Destination:       clockd/outclk (FF)
+  Source Clock:      inclk rising
+  Destination Clock: inclk rising
+
+  Data Path: clockd/state_15 to clockd/outclk
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDE:C->Q              2   0.591   0.622  clockd/state_15 (clockd/state_15)
+     LUT4:I0->O            1   0.704   0.595  clockd/state_cmp_eq0000112 (clockd/state_cmp_eq0000112)
+     LUT4:I0->O           18   0.704   1.072  clockd/state_cmp_eq0000176 (clockd/N01)
+     LUT4:I3->O            2   0.704   0.447  clockd/clk_and00001 (clockd/clk_and0000)
+     FDE:CE                    0.555          clockd/clk
+    ----------------------------------------
+    Total                      5.994ns (3.258ns logic, 2.736ns route)
+                                       (54.4% logic, 45.6% route)
+
+=========================================================================
+Timing constraint: Default period analysis for Clock 'clockd/outclk1'
+  Clock period: 20.115ns (frequency: 49.714MHz)
+  Total number of paths / destination ports: 2831660 / 897
+-------------------------------------------------------------------------
+Delay:               20.115ns (Levels of Logic = 14)
+  Source:            idexe/outALUSrc1_1_1 (FF)
+  Destination:       ifidr/outRyNum_2 (FF)
+  Source Clock:      clockd/outclk1 rising
+  Destination Clock: clockd/outclk1 rising
+
+  Data Path: idexe/outALUSrc1_1_1 to ifidr/outRyNum_2
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDRS:C->Q            36   0.591   1.342  idexe/outALUSrc1_1_1 (idexe/outALUSrc1_1_1)
+     LUT3:I1->O            1   0.704   0.424  alus1m/output<9>2 (alus1m/output<9>2)
+     LUT4:I3->O            5   0.704   0.808  alus1m/output<9>59 (ALUSrc1MUX_ALU_ALUSrc1<9>)
+     LUT4_D:I0->O          3   0.704   0.610  al/rst_or00019 (al/rst_or00019)
+     LUT3:I1->O           45   0.704   1.345  al/rst_or000123 (al/rst_or0001)
+     LUT3_D:I1->LO         1   0.704   0.179  al/rst_shift0005<15>1 (N1127)
+     LUT2_D:I1->O         15   0.704   1.021  al/rst_shift0005<0>11 (al/N6)
+     LUT4:I3->O            1   0.704   0.000  al/Mmux_rst_521 (al/Mmux_rst_521)
+     MUXF5:I1->O           1   0.321   0.000  al/Mmux_rst_4_f5_9 (al/Mmux_rst_4_f510)
+     MUXF6:I0->O           7   0.521   0.883  al/Mmux_rst_2_f6_9 (al/rst<4>1)
+     LUT4:I0->O            1   0.704   0.424  conrt/PCSelCtr<0>215_SW0_SW0 (N610)
+     LUT4_L:I3->LO         1   0.704   0.104  conrt/PCSelCtr<0>230_SW0 (N478)
+     LUT4:I3->O            1   0.704   0.420  conrt/PCSelCtr<0>230 (conrt/PCSelCtr<0>230)
+     MUXF5:S->O            2   0.739   0.451  conrt/PCSelCtr<0>1008_SW1 (N470)
+     LUT4:I3->O           76   0.704   1.276  Control_IFIDRegs_clear1 (Control_IFIDRegs_clear)
+     FDR:R                     0.911          ifidr/outRxNum_0
+    ----------------------------------------
+    Total                     20.115ns (10.827ns logic, 9.288ns route)
+                                       (53.8% logic, 46.2% route)
+
+=========================================================================
+Timing constraint: Default period analysis for Clock 'vgaa/clk1'
+  Clock period: 11.315ns (frequency: 88.378MHz)
+  Total number of paths / destination ports: 1312 / 54
+-------------------------------------------------------------------------
+Delay:               11.315ns (Levels of Logic = 6)
+  Source:            vgaa/xCnt_0 (FF)
+  Destination:       vgaa/yCnt_9 (FF)
+  Source Clock:      vgaa/clk1 rising
+  Destination Clock: vgaa/clk1 rising
+
+  Data Path: vgaa/xCnt_0 to vgaa/yCnt_9
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDR:C->Q             63   0.591   1.447  vgaa/xCnt_0 (vgaa/xCnt_0)
+     LUT4:I0->O            3   0.704   0.535  vgaa/Hs_and0000112 (vgaa/N3)
+     LUT4:I3->O            1   0.704   0.499  vgaa/yCnt_cmp_eq00002_SW0 (N232)
+     LUT4:I1->O           21   0.704   1.132  vgaa/yCnt_cmp_eq00002 (vgaa/yCnt_cmp_eq0001)
+     LUT4:I3->O            1   0.704   0.499  vgaa/yCnt_cmp_eq000097_SW0 (N686)
+     LUT4:I1->O            1   0.704   0.595  vgaa/yCnt_cmp_eq000097 (vgaa/yCnt_cmp_eq000097)
+     LUT3:I0->O           10   0.704   0.882  vgaa/yCnt_cmp_eq0000130 (vgaa/yCnt_cmp_eq0000)
+     FDRE:R                    0.911          vgaa/yCnt_0
+    ----------------------------------------
+    Total                     11.315ns (5.726ns logic, 5.589ns route)
+                                       (50.6% logic, 49.4% route)
+
+=========================================================================
+Timing constraint: Default period analysis for Clock 'inrst'
+  Clock period: 2.639ns (frequency: 378.931MHz)
+  Total number of paths / destination ports: 1 / 1
+-------------------------------------------------------------------------
+Delay:               2.639ns (Levels of Logic = 1)
+  Source:            clockd/paused (LATCH)
+  Destination:       clockd/paused (LATCH)
+  Source Clock:      inrst rising
+  Destination Clock: inrst rising
+
+  Data Path: clockd/paused to clockd/paused
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     LD_1:G->Q             3   0.676   0.531  clockd/paused (clockd/paused)
+     INV:I->O              1   0.704   0.420  clockd/paused_not00011_INV_0 (clockd/paused_not0001)
+     LD_1:D                    0.308          clockd/paused
+    ----------------------------------------
+    Total                      2.639ns (1.688ns logic, 0.951ns route)
+                                       (64.0% logic, 36.0% route)
+
+=========================================================================
+Timing constraint: Default period analysis for Clock 'cachc/inWriteEnable_inv'
+  Clock period: 9.020ns (frequency: 110.865MHz)
+  Total number of paths / destination ports: 552 / 29
+-------------------------------------------------------------------------
+Delay:               9.020ns (Levels of Logic = 5)
+  Source:            cachc/cursorX_0 (FF)
+  Destination:       cachc/cursorY_4 (FF)
+  Source Clock:      cachc/inWriteEnable_inv rising
+  Destination Clock: cachc/inWriteEnable_inv rising
+
+  Data Path: cachc/cursorX_0 to cachc/cursorY_4
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDR:C->Q              7   0.591   0.712  cachc/cursorX_0 (cachc/cursorX_0)
+     LUT4:I3->O            3   0.704   0.610  cachc/Madd__add0000_cy<3>1 (cachc/Madd__add0000_cy<3>)
+     LUT3:I1->O            2   0.704   0.526  cachc/Result<5>1 (cachc/Result<5>)
+     LUT4:I1->O            1   0.704   0.499  cachc/cursorX_cmp_eq0000_SW0 (N215)
+     LUT4:I1->O           13   0.704   1.018  cachc/cursorX_cmp_eq0000 (cachc/cursorX_cmp_eq0000)
+     LUT4:I2->O            5   0.704   0.633  cachc/cursorY_and0000 (cachc/cursorY_and0000)
+     FDRE:R                    0.911          cachc/cursorY_0
+    ----------------------------------------
+    Total                      9.020ns (5.022ns logic, 3.998ns route)
+                                       (55.7% logic, 44.3% route)
+
+=========================================================================
+Timing constraint: Default period analysis for Clock 'ins_15_OBUF1'
+  Clock period: 2.638ns (frequency: 379.075MHz)
+  Total number of paths / destination ports: 8 / 8
+-------------------------------------------------------------------------
+Delay:               1.319ns (Levels of Logic = 0)
+  Source:            cachc/tempchar_7 (FF)
+  Destination:       cachc/dinb_7 (FF)
+  Source Clock:      ins_15_OBUF1 rising
+  Destination Clock: ins_15_OBUF1 falling
+
+  Data Path: cachc/tempchar_7 to cachc/dinb_7
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FD:C->Q               1   0.591   0.420  cachc/tempchar_7 (cachc/tempchar_7)
+     FD_1:D                    0.308          cachc/dinb_7
+    ----------------------------------------
+    Total                      1.319ns (0.899ns logic, 0.420ns route)
+                                       (68.2% logic, 31.8% route)
+
+=========================================================================
+Timing constraint: Default OFFSET IN BEFORE for Clock 'insf/MEMReadData_not0001'
+  Total number of paths / destination ports: 16 / 16
+-------------------------------------------------------------------------
+Offset:              1.973ns (Levels of Logic = 1)
+  Source:            outRam2Data<15> (PAD)
+  Destination:       insf/MEMReadData_15 (LATCH)
+  Destination Clock: insf/MEMReadData_not0001 falling
+
+  Data Path: outRam2Data<15> to insf/MEMReadData_15
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     IOBUF:IO->O           2   1.218   0.447  outRam2Data_15_IOBUF (N401)
+     LDE:D                     0.308          insf/MEMReadData_15
+    ----------------------------------------
+    Total                      1.973ns (1.526ns logic, 0.447ns route)
+                                       (77.3% logic, 22.7% route)
+
+=========================================================================
+Timing constraint: Default OFFSET IN BEFORE for Clock 'clockd/outclk1'
+  Total number of paths / destination ports: 165 / 61
+-------------------------------------------------------------------------
+Offset:              7.040ns (Levels of Logic = 5)
+  Source:            outRam2Data<12> (PAD)
+  Destination:       ifidr/outRyNum_2 (FF)
+  Destination Clock: clockd/outclk1 rising
+
+  Data Path: outRam2Data<12> to ifidr/outRyNum_2
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     IOBUF:IO->O           2   1.218   0.622  outRam2Data_12_IOBUF (N404)
+     LUT4:I0->O            3   0.704   0.706  insf/ins<12>1 (InsFetcher_IFIDRegs_instruction<12>)
+     LUT4:I0->O            6   0.704   0.844  ifidr/outRxNum_cmp_eq000010 (ifidr/outRxNum_cmp_eq000010)
+     LUT3:I0->O            2   0.704   0.526  ifidr/tempRyNum_mux0000<2>1 (ifidr/tempRyNum_mux0000<2>)
+     LUT3:I1->O            1   0.704   0.000  ifidr/outRyNum_mux0002<0>1 (ifidr/outRyNum_mux0002<0>)
+     FDR:D                     0.308          ifidr/outRyNum_0
+    ----------------------------------------
+    Total                      7.040ns (4.342ns logic, 2.698ns route)
+                                       (61.7% logic, 38.3% route)
+
+=========================================================================
+Timing constraint: Default OFFSET IN BEFORE for Clock 'inclk'
+  Total number of paths / destination ports: 19 / 19
+-------------------------------------------------------------------------
+Offset:              4.290ns (Levels of Logic = 2)
+  Source:            inrst (PAD)
+  Destination:       clockd/state_16 (FF)
+  Destination Clock: inclk rising
+
+  Data Path: inrst to clockd/state_16
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     IBUF:I->O             4   1.218   0.762  inrst_IBUF (inrst_IBUF1)
+     LUT2:I0->O           17   0.704   1.051  clockd/state_and00011 (clockd/state_and0001)
+     FDE:CE                    0.555          clockd/state_0
+    ----------------------------------------
+    Total                      4.290ns (2.477ns logic, 1.813ns route)
+                                       (57.7% logic, 42.3% route)
+
+=========================================================================
+Timing constraint: Default OFFSET OUT AFTER for Clock 'inclk'
+  Total number of paths / destination ports: 89 / 73
+-------------------------------------------------------------------------
+Offset:              4.310ns (Levels of Logic = 1)
+  Source:            memac/RAM1addr_17 (FF)
+  Destination:       RAM1addr<17> (PAD)
+  Source Clock:      inclk falling
+
+  Data Path: memac/RAM1addr_17 to RAM1addr<17>
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDP_1:C->Q            2   0.591   0.447  memac/RAM1addr_17 (memac/RAM1addr_17)
+     OBUF:I->O                 3.272          RAM1addr_17_OBUF (RAM1addr<17>)
+    ----------------------------------------
+    Total                      4.310ns (3.863ns logic, 0.447ns route)
+                                       (89.6% logic, 10.4% route)
+
+=========================================================================
+Timing constraint: Default OFFSET OUT AFTER for Clock 'vgaa/clk1'
+  Total number of paths / destination ports: 11 / 11
+-------------------------------------------------------------------------
+Offset:              4.683ns (Levels of Logic = 1)
+  Source:            vgaa/Gout_2 (FF)
+  Destination:       Bout<2> (PAD)
+  Source Clock:      vgaa/clk1 rising
+
+  Data Path: vgaa/Gout_2 to Bout<2>
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDR:C->Q              9   0.591   0.820  vgaa/Gout_2 (vgaa/Gout_2)
+     OBUF:I->O                 3.272          Bout_0_OBUF (Bout<0>)
+    ----------------------------------------
+    Total                      4.683ns (3.863ns logic, 0.820ns route)
+                                       (82.5% logic, 17.5% route)
+
+=========================================================================
+Timing constraint: Default OFFSET OUT AFTER for Clock 'clockd/outclk1'
+  Total number of paths / destination ports: 139 / 39
+-------------------------------------------------------------------------
+Offset:              7.271ns (Levels of Logic = 2)
+  Source:            exemr/outRst_15 (FF)
+  Destination:       outRam2Data<15> (PAD)
+  Source Clock:      clockd/outclk1 rising
+
+  Data Path: exemr/outRst_15 to outRam2Data<15>
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDR:C->Q             31   0.591   1.437  exemr/outRst_15 (exemr/outRst_15)
+     LUT3:I0->O           48   0.704   1.267  insf/Ram2Data_Mtridata_Ram2Data_not0000_inv1 (insf/Ram2Data_Mtridata_Ram2Data_not0000_inv)
+     IOBUF:T->IO               3.272          outRam2Data_15_IOBUF (outRam2Data<15>)
+    ----------------------------------------
+    Total                      7.271ns (4.567ns logic, 2.704ns route)
+                                       (62.8% logic, 37.2% route)
+
+=========================================================================
+
+
+Total REAL time to Xst completion: 43.00 secs
+Total CPU time to Xst completion: 43.12 secs
+ 
+--> 
+
+Total memory usage is 361164 kilobytes
+
+Number of errors   :    0 (   0 filtered)
+Number of warnings :  107 (   0 filtered)
+Number of infos    :   17 (   0 filtered)
+

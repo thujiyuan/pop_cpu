@@ -118,6 +118,7 @@ NET "r7[0]" LOC = C9;
 # PlanAhead Generated physical constraints 
 
 NET "inclk" LOC = B9;
+NET "vgaclk" LOC = U9;
 NET "inrst" LOC = U10;
 
 NET "Hs" LOC = D6;

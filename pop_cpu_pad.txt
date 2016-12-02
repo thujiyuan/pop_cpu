@@ -1,7 +1,7 @@
-Release 14.7 - par P.20131013 (nt)
+Release 14.7 - par P.20131013 (nt64)
 Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
 
-Fri Dec 02 13:07:15 2016
+Sat Dec 03 05:28:00 2016
 
 
 INFO: The IO information is provided in three file formats as part of the Place and Route (PAR) process.  These formats are:
@@ -23,17 +23,17 @@ Pinout by Pin Number:
 |A1        |               |         |GND                      |         |           |              |          |         |           |         |         |          |           |                |
 |A2        |               |         |TDI                      |         |           |              |          |         |           |         |         |          |           |                |
 |A3        |               |IBUF     |IP                       |UNUSED   |           |0             |          |         |           |         |         |          |           |                |
-|A4        |Rout<2>        |IOB      |IO_L24P_0                |OUTPUT   |LVCMOS25*  |0             |12        |SLOW     |NONE**     |         |         |UNLOCATED |NO         |NONE            |
+|A4        |Gout<2>        |IOB      |IO_L24P_0                |OUTPUT   |LVCMOS25*  |0             |12        |SLOW     |NONE**     |         |         |UNLOCATED |NO         |NONE            |
 |A5        |               |DIFFMI   |IP_L22P_0                |UNUSED   |           |0             |          |         |           |         |         |          |           |                |
-|A6        |Bout<1>        |IOB      |IO_L20N_0                |OUTPUT   |LVCMOS25*  |0             |12        |SLOW     |NONE**     |         |         |UNLOCATED |NO         |NONE            |
-|A7        |Gout<2>        |IOB      |IO                       |OUTPUT   |LVCMOS25*  |0             |12        |SLOW     |NONE**     |         |         |UNLOCATED |NO         |NONE            |
+|A6        |Rout<1>        |IOB      |IO_L20N_0                |OUTPUT   |LVCMOS25*  |0             |12        |SLOW     |NONE**     |         |         |UNLOCATED |NO         |NONE            |
+|A7        |Bout<2>        |IOB      |IO                       |OUTPUT   |LVCMOS25*  |0             |12        |SLOW     |NONE**     |         |         |UNLOCATED |NO         |NONE            |
 |A8        |l7<4>          |IOB      |IO                       |OUTPUT   |LVCMOS25*  |0             |12        |SLOW     |NONE**     |         |         |LOCATED   |NO         |NONE            |
 |A9        |               |         |VCCO_0                   |         |           |0             |          |         |           |         |2.50     |          |           |                |
 |A10       |r7<5>          |IOB      |IO_L12N_0/GCLK7          |OUTPUT   |LVCMOS25*  |0             |12        |SLOW     |NONE**     |         |         |LOCATED   |NO         |NONE            |
 |A11       |ins<2>         |IOB      |IO                       |OUTPUT   |LVCMOS25*  |0             |12        |SLOW     |NONE**     |         |         |LOCATED   |NO         |NONE            |
 |A12       |ins<8>         |IOB      |IO                       |OUTPUT   |LVCMOS25*  |0             |12        |SLOW     |NONE**     |         |         |LOCATED   |NO         |NONE            |
 |A13       |ins<11>        |IOB      |IO_L05P_0                |OUTPUT   |LVCMOS25*  |0             |12        |SLOW     |NONE**     |         |         |LOCATED   |NO         |NONE            |
-|A14       |ins<15>        |IOB      |IO_L04N_0                |OUTPUT   |LVCMOS25*  |0             |12        |SLOW     |NONE**     |         |         |LOCATED   |YES        |NONE            |
+|A14       |ins<15>        |IOB      |IO_L04N_0                |OUTPUT   |LVCMOS25*  |0             |12        |SLOW     |NONE**     |         |         |LOCATED   |NO         |NONE            |
 |A15       |               |DIFFSI   |IP_L02N_0                |UNUSED   |           |0             |          |         |           |         |         |          |           |                |
 |A16       |dataReady      |IBUF     |IO_L01N_0                |INPUT    |LVCMOS25*  |0             |          |         |           |NONE     |         |LOCATED   |NO         |NONE            |
 |A17       |               |         |TCK                      |         |           |              |          |         |           |         |         |          |           |                |
@@ -43,7 +43,7 @@ Pinout by Pin Number:
 |B3        |               |DIFFS    |IO_L25N_0/HSWAP          |UNUSED   |           |0             |          |         |           |         |         |          |           |                |
 |B4        |               |DIFFS    |IO_L24N_0                |UNUSED   |           |0             |          |         |           |         |         |          |           |                |
 |B5        |               |DIFFSI   |IP_L22N_0                |UNUSED   |           |0             |          |         |           |         |         |          |           |                |
-|B6        |Bout<0>        |IOB      |IO_L20P_0                |OUTPUT   |LVCMOS25*  |0             |12        |SLOW     |NONE**     |         |         |UNLOCATED |NO         |NONE            |
+|B6        |Rout<0>        |IOB      |IO_L20P_0                |OUTPUT   |LVCMOS25*  |0             |12        |SLOW     |NONE**     |         |         |UNLOCATED |NO         |NONE            |
 |B7        |               |         |VCCAUX                   |         |           |              |          |         |           |         |2.5      |          |           |                |
 |B8        |               |DIFFMI   |IP_L13P_0/GCLK8          |UNUSED   |           |0             |          |         |           |         |         |          |           |                |
 |B9        |inclk          |IBUF     |IP_L13N_0/GCLK9          |INPUT    |LVCMOS25*  |0             |          |         |           |NONE     |         |LOCATED   |NO         |NONE            |
@@ -51,16 +51,16 @@ Pinout by Pin Number:
 |B11       |ins<3>         |IOB      |IO/VREF_0                |OUTPUT   |LVCMOS25*  |0             |12        |SLOW     |NONE**     |         |         |LOCATED   |NO         |NONE            |
 |B12       |               |         |VCCAUX                   |         |           |              |          |         |           |         |2.5      |          |           |                |
 |B13       |ins<12>        |IOB      |IO_L05N_0/VREF_0         |OUTPUT   |LVCMOS25*  |0             |12        |SLOW     |NONE**     |         |         |LOCATED   |NO         |NONE            |
-|B14       |Gout<1>        |IOB      |IO_L04P_0                |OUTPUT   |LVCMOS25*  |0             |12        |SLOW     |NONE**     |         |         |UNLOCATED |NO         |NONE            |
+|B14       |Bout<1>        |IOB      |IO_L04P_0                |OUTPUT   |LVCMOS25*  |0             |12        |SLOW     |NONE**     |         |         |UNLOCATED |NO         |NONE            |
 |B15       |               |DIFFMI   |IP_L02P_0                |UNUSED   |           |0             |          |         |           |         |         |          |           |                |
-|B16       |Gout<0>        |IOB      |IO_L01P_0                |OUTPUT   |LVCMOS25*  |0             |12        |SLOW     |NONE**     |         |         |UNLOCATED |NO         |NONE            |
+|B16       |Bout<0>        |IOB      |IO_L01P_0                |OUTPUT   |LVCMOS25*  |0             |12        |SLOW     |NONE**     |         |         |UNLOCATED |NO         |NONE            |
 |B17       |               |         |GND                      |         |           |              |          |         |           |         |         |          |           |                |
 |B18       |               |IBUF     |IP                       |UNUSED   |           |1             |          |         |           |         |         |          |           |                |
 |C1        |               |DIFFM    |IO_L01P_3                |UNUSED   |           |3             |          |         |           |         |         |          |           |                |
 |C2        |               |DIFFS    |IO_L01N_3                |UNUSED   |           |3             |          |         |           |         |         |          |           |                |
 |C3        |               |DIFFM    |IO_L25P_0                |UNUSED   |           |0             |          |         |           |         |         |          |           |                |
-|C4        |Rout<1>        |IOB      |IO                       |OUTPUT   |LVCMOS25*  |0             |12        |SLOW     |NONE**     |         |         |UNLOCATED |NO         |NONE            |
-|C5        |Bout<2>        |IOB      |IO_L23P_0                |OUTPUT   |LVCMOS25*  |0             |12        |SLOW     |NONE**     |         |         |UNLOCATED |NO         |NONE            |
+|C4        |Gout<1>        |IOB      |IO                       |OUTPUT   |LVCMOS25*  |0             |12        |SLOW     |NONE**     |         |         |UNLOCATED |NO         |NONE            |
+|C5        |Rout<2>        |IOB      |IO_L23P_0                |OUTPUT   |LVCMOS25*  |0             |12        |SLOW     |NONE**     |         |         |UNLOCATED |NO         |NONE            |
 |C6        |               |         |VCCO_0                   |         |           |0             |          |         |           |         |2.50     |          |           |                |
 |C7        |l7<0>          |IOB      |IO_L18P_0                |OUTPUT   |LVCMOS25*  |0             |12        |SLOW     |NONE**     |         |         |LOCATED   |NO         |NONE            |
 |C8        |               |DIFFMI   |IP_L16P_0                |UNUSED   |           |0             |          |         |           |         |         |          |           |                |
@@ -78,7 +78,7 @@ Pinout by Pin Number:
 |D2        |               |DIFFS    |IO_L02N_3/VREF_3         |UNUSED   |           |3             |          |         |           |         |         |          |           |                |
 |D3        |               |IBUF     |IP                       |UNUSED   |           |3             |          |         |           |         |         |          |           |                |
 |D4        |               |DIFFS    |IO                       |UNUSED   |           |3             |          |         |           |         |         |          |           |                |
-|D5        |Rout<0>        |IOB      |IO_L23N_0/VREF_0         |OUTPUT   |LVCMOS25*  |0             |12        |SLOW     |NONE**     |         |         |UNLOCATED |NO         |NONE            |
+|D5        |Gout<0>        |IOB      |IO_L23N_0/VREF_0         |OUTPUT   |LVCMOS25*  |0             |12        |SLOW     |NONE**     |         |         |UNLOCATED |NO         |NONE            |
 |D6        |Hs             |IOB      |IO_L21P_0                |OUTPUT   |LVCMOS25*  |0             |12        |SLOW     |NONE**     |         |         |LOCATED   |NO         |NONE            |
 |D7        |l7<1>          |IOB      |IO_L18N_0/VREF_0         |OUTPUT   |LVCMOS25*  |0             |12        |SLOW     |NONE**     |         |         |LOCATED   |NO         |NONE            |
 |D8        |               |DIFFSI   |IP_L16N_0                |UNUSED   |           |0             |          |         |           |         |         |          |           |                |
@@ -104,7 +104,7 @@ Pinout by Pin Number:
 |E10       |ins<1>         |IOB      |IO_L11N_0/GCLK5          |OUTPUT   |LVCMOS25*  |0             |12        |SLOW     |NONE**     |         |         |LOCATED   |NO         |NONE            |
 |E11       |ins<6>         |IOB      |IO_L08P_0                |OUTPUT   |LVCMOS25*  |0             |12        |SLOW     |NONE**     |         |         |LOCATED   |NO         |NONE            |
 |E12       |ins<9>         |IOB      |IO_L06N_0                |OUTPUT   |LVCMOS25*  |0             |12        |SLOW     |NONE**     |         |         |LOCATED   |NO         |NONE            |
-|E13       |ins<14>        |IOB      |IO                       |OUTPUT   |LVCMOS25*  |0             |12        |SLOW     |NONE**     |         |         |LOCATED   |YES        |NONE            |
+|E13       |ins<14>        |IOB      |IO                       |OUTPUT   |LVCMOS25*  |0             |12        |SLOW     |NONE**     |         |         |LOCATED   |NO         |NONE            |
 |E14       |               |         |VCCINT                   |         |           |              |          |         |           |         |1.2      |          |           |                |
 |E15       |RAM1addr<4>    |IOB      |IO_L22P_1                |OUTPUT   |LVCMOS25*  |1             |12        |SLOW     |NONE**     |         |         |LOCATED   |NO         |NONE            |
 |E16       |RAM1addr<5>    |IOB      |IO_L22N_1                |OUTPUT   |LVCMOS25*  |1             |12        |SLOW     |NONE**     |         |         |LOCATED   |NO         |NONE            |
@@ -312,7 +312,7 @@ Pinout by Pin Number:
 |U6        |               |IOB      |IO                       |UNUSED   |           |2             |          |         |           |         |         |          |           |                |
 |U7        |               |         |VCCAUX                   |         |           |              |          |         |           |         |2.5      |          |           |                |
 |U8        |               |DIFFMI   |IP_L11P_2                |UNUSED   |           |2             |          |         |           |         |         |          |           |                |
-|U9        |               |DIFFM    |IO_L13P_2/D4/GCLK14      |UNUSED   |           |2             |          |         |           |         |         |          |           |                |
+|U9        |vgaclk         |IBUF     |IO_L13P_2/D4/GCLK14      |INPUT    |LVCMOS25*  |2             |          |         |           |NONE     |         |LOCATED   |NO         |NONE            |
 |U10       |inrst          |IBUF     |IP_L14P_2/RDWR_B/GCLK0   |INPUT    |LVCMOS25*  |2             |          |         |           |NONE     |         |LOCATED   |NO         |NONE            |
 |U11       |               |DIFFSI   |IP_L17N_2                |UNUSED   |           |2             |          |         |           |         |         |          |           |                |
 |U12       |               |         |VCCAUX                   |         |           |              |          |         |           |         |2.5      |          |           |                |

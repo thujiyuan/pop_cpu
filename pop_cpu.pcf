@@ -1,5 +1,5 @@
 //! **************************************************************************
-// Written by: Map P.20131013 on Fri Dec 02 13:06:46 2016
+// Written by: Map P.20131013 on Sat Dec 03 05:26:44 2016
 //! **************************************************************************
 
 SCHEMATIC START;
@@ -114,6 +114,7 @@ COMP "outRam2Data<12>" LOCATE = SITE "P11" LEVEL 1;
 COMP "outRam2Data<13>" LOCATE = SITE "P10" LEVEL 1;
 COMP "outRam2Data<14>" LOCATE = SITE "N12" LEVEL 1;
 COMP "outRam2Data<15>" LOCATE = SITE "N11" LEVEL 1;
+COMP "vgaclk" LOCATE = SITE "U9" LEVEL 1;
 COMP "outrdn" LOCATE = SITE "C14" LEVEL 1;
 COMP "outwdn" LOCATE = SITE "U5" LEVEL 1;
 NET "inclk_BUFGP/IBUFG" BEL "inclk_BUFGP/BUFG.GCLKMUX" USELOCALCONNECT;
