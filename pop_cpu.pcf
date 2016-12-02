@@ -1,8 +1,10 @@
 //! **************************************************************************
-// Written by: Map P.20131013 on Thu Dec 01 16:16:36 2016
+// Written by: Map P.20131013 on Fri Dec 02 10:39:41 2016
 //! **************************************************************************
 
 SCHEMATIC START;
+COMP "Hs" LOCATE = SITE "D6" LEVEL 1;
+COMP "Vs" LOCATE = SITE "E6" LEVEL 1;
 COMP "RAM1addr<10>" LOCATE = SITE "G13" LEVEL 1;
 COMP "RAM1addr<11>" LOCATE = SITE "G14" LEVEL 1;
 COMP "RAM1addr<12>" LOCATE = SITE "G15" LEVEL 1;
@@ -18,6 +20,7 @@ COMP "RAM1data<12>" LOCATE = SITE "L17" LEVEL 1;
 COMP "RAM1data<13>" LOCATE = SITE "L18" LEVEL 1;
 COMP "RAM1data<14>" LOCATE = SITE "M13" LEVEL 1;
 COMP "RAM1data<15>" LOCATE = SITE "M14" LEVEL 1;
+COMP "tbre" LOCATE = SITE "D14" LEVEL 1;
 COMP "tsre" LOCATE = SITE "N9" LEVEL 1;
 COMP "l7<0>" LOCATE = SITE "C7" LEVEL 1;
 COMP "l7<1>" LOCATE = SITE "D7" LEVEL 1;
@@ -60,6 +63,7 @@ COMP "outRam2Data<6>" LOCATE = SITE "R14" LEVEL 1;
 COMP "outRam2Data<7>" LOCATE = SITE "R12" LEVEL 1;
 COMP "outRam2Data<8>" LOCATE = SITE "R11" LEVEL 1;
 COMP "outRam2Data<9>" LOCATE = SITE "R10" LEVEL 1;
+COMP "inrst" LOCATE = SITE "U10" LEVEL 1;
 COMP "RAM1EN" LOCATE = SITE "M15" LEVEL 1;
 COMP "RAM1OE" LOCATE = SITE "M16" LEVEL 1;
 COMP "RAM1WE" LOCATE = SITE "M18" LEVEL 1;

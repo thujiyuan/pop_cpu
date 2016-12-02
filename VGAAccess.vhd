@@ -34,11 +34,10 @@ use work.recordDefs.ALL;
 --use UNISIM.VComponents.all;
 
 entity VGAAccess is
-    Port ( clk : in  STD_LOGIC;
+    Port ( inclk : in  STD_LOGIC;
            Rin : in  STD_LOGIC_VECTOR (2 downto 0);
            Gin : in  STD_LOGIC_VECTOR (2 downto 0);
            Bin : in  STD_LOGIC_VECTOR (2 downto 0);
-			  dataReady : in STD_LOGIC;
            Hs : out  STD_LOGIC;
            Vs : out  STD_LOGIC;
            Rout : out  STD_LOGIC_VECTOR (2 downto 0);
@@ -49,8 +48,21 @@ entity VGAAccess is
 end VGAAccess;
 
 architecture Behavioral of VGAAccess is
-
+	signal clk : std_logic := '1';
 begin
+
+process(inclk)
+	variable state : std_logic := '0';
+begin
+	if(inclk'event and inclk = '1') then
+		if(state = '0') then
+			state := '1';
+		else
+			clk <= not clk;
+			state := '0';
+		end if;
+	end if;
+end process;
 
 process(clk)
 variable xCnt : STD_LOGIC_VECTOR (9 downto 0) := (others => '0');
@@ -58,7 +70,6 @@ variable yCnt : STD_LOGIC_VECTOR (9 downto 0) := (others => '0');
 variable valid : STD_LOGIC := '0';
 begin
 	if(clk'event and clk = '1') then
-		if(dataReady = '1') then
 			valid := '1';
 			if(xCnt > Hsa or yCnt > Vsa) then
 				valid := '0';
@@ -91,13 +102,9 @@ begin
 			if(yCnt = 525) then
 				yCnt := (others => '0');
 			end if;	
-			xOut <= xCnt;
-			yOut <= yCnt;
-		else
-			xOut <= xCnt;
-			yOut <= yCnt;
-		end if;
 	end if;
+	xOut <= xCnt;
+	yOut <= yCnt;
 end process;
 
 end Behavioral;

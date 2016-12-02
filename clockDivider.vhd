@@ -33,27 +33,33 @@ use IEEE.STD_LOGIC_ARITH.ALL;
 
 entity clockDivider is
     Port ( inclk : in  STD_LOGIC;
+			  rst : in STD_LOGIC;
            outclk : out  STD_LOGIC);
 end clockDivider;
 
 architecture Behavioral of clockDivider is
 
 begin
-	process(inclk)
+	process(inclk, rst)
 		variable state : std_logic_vector(16 downto 0) := (others=>'0');
 		variable clk : std_logic := '0';
+		variable paused : STD_LOGIC := '1';
 	begin
-		if(inclk'event and inclk='1')then
+	if(rst = '1') then
+		if(inclk'event and inclk='1' and paused = '0')then
 			if(state="00000000000000000")then
 				outclk <= clk;
 				clk := not clk;
 				state := state + '1';
-			elsif(state=499)then
+			elsif(state=1)then
 				state := "00000000000000000";
 			else
 				state := state + '1';
 			end if;	
 		end if;
+	else
+		paused := not paused;
+	end if;
 	end process;
 end Behavioral;
 

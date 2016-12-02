@@ -1,0 +1,45 @@
+Release 14.7 - xst P.20131013 (nt64)
+Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
+--> Parameter TMPDIR set to F:/thujiyuan/pop_cpu/xst/projnav.tmp
+
+
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.10 secs
+ 
+--> Parameter xsthdpdir set to F:/thujiyuan/pop_cpu/xst
+
+
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.10 secs
+ 
+--> WARNING:Xst:3164 - Option "-debug" found multiple times in the command line. Only the first occurence is considered.
+
+=========================================================================
+*                          HDL Compilation                              *
+=========================================================================
+Compiling vhdl file "F:/thujiyuan/pop_cpu/recordDefs.vhd" in Library work.
+Package <recorddefs> compiled.
+Package body <recorddefs> compiled.
+Compiling vhdl file "F:/thujiyuan/pop_cpu/ALU.vhd" in Library work.
+WARNING:HDLParsers:817 - "F:/thujiyuan/pop_cpu/ALU.vhd" Line 49. Choice . is not a locally static expression.
+WARNING:HDLParsers:817 - "F:/thujiyuan/pop_cpu/ALU.vhd" Line 51. Choice . is not a locally static expression.
+WARNING:HDLParsers:817 - "F:/thujiyuan/pop_cpu/ALU.vhd" Line 53. Choice . is not a locally static expression.
+WARNING:HDLParsers:817 - "F:/thujiyuan/pop_cpu/ALU.vhd" Line 55. Choice . is not a locally static expression.
+WARNING:HDLParsers:817 - "F:/thujiyuan/pop_cpu/ALU.vhd" Line 57. Choice . is not a locally static expression.
+WARNING:HDLParsers:817 - "F:/thujiyuan/pop_cpu/ALU.vhd" Line 59. Choice . is not a locally static expression.
+WARNING:HDLParsers:817 - "F:/thujiyuan/pop_cpu/ALU.vhd" Line 61. Choice . is not a locally static expression.
+WARNING:HDLParsers:817 - "F:/thujiyuan/pop_cpu/ALU.vhd" Line 63. Choice . is not a locally static expression.
+Architecture behavioral of Entity alu is up to date.
+
+
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.16 secs
+ 
+--> 
+
+Total memory usage is 213344 kilobytes
+
+Number of errors   :    0 (   0 filtered)
+Number of warnings :    9 (   0 filtered)
+Number of infos    :    0 (   0 filtered)
+

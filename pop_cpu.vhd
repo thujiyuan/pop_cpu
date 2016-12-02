@@ -21,7 +21,8 @@ library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
 use IEEE.STD_LOGIC_UNSIGNED.ALL;
 use IEEE.STD_LOGIC_ARITH.ALL;
-
+library work;
+use work.recordDefs.ALL;
 -- Uncomment the following library declaration if using
 -- arithmetic functions with Signed or Unsigned values
 --use IEEE.NUMERIC_STD.ALL;
@@ -33,6 +34,7 @@ use IEEE.STD_LOGIC_ARITH.ALL;
 
 entity pop_cpu is
 	port ( inclk : in std_logic;
+			 inrst : in STD_LOGIC;
 			 RAM1OE : out  STD_LOGIC;
 			 RAM1WE : out  STD_LOGIC;
 			 RAM1EN : out  STD_LOGIC;
@@ -45,11 +47,17 @@ entity pop_cpu is
 			 outRam2Data : inout STD_LOGIC_VECTOR(15 downto 0);
 			 dataReady : in STD_LOGIC;
 			 tsre : in STD_LOGIC;
+			 tbre : in STD_LOGIC;
 			 outrdn : out STD_LOGIC;
 			 outwdn : out STD_LOGIC;
 			 ins : out std_logic_vector(15 downto 0);
 			 l7 : out std_logic_vector(6 downto 0);
-			 r7 : out std_logic_vector(6 downto 0));
+			 r7 : out std_logic_vector(6 downto 0);
+			 Hs : out std_logic;
+			 Vs : out std_logic;
+			 Rout : out std_logic_vector(2 downto 0);
+			 Gout : out std_logic_vector(2 downto 0);
+			 Bout : out std_logic_vector(2 downto 0));
 end pop_cpu;
 
 architecture Behavioral of pop_cpu is
@@ -241,29 +249,31 @@ architecture Behavioral of pop_cpu is
 	end component;
 	
 	component EXE_MEMRegs
-		 Port ( inWBDes : in  STD_LOGIC_VECTOR (3 downto 0);
-				  inWBSrc : in  STD_LOGIC;
-				  inMEMRead : in  STD_LOGIC;
-				  inMEMWrite : in  STD_LOGIC;
-				  inMEMSrc : in  STD_LOGIC_VECTOR (1 downto 0);
-				  inRegWrite : in  STD_LOGIC;
-				  inRst : in  STD_LOGIC_VECTOR (15 downto 0);
-				  inRA : in  STD_LOGIC_VECTOR (15 downto 0);
-				  inRx : in  STD_LOGIC_VECTOR (15 downto 0);
-				  inRy : in  STD_LOGIC_VECTOR (15 downto 0);
-				  clk : in  STD_LOGIC;
-				  pause : in STD_LOGIC;
-				  clear : in STD_LOGIC;
-				  outWBDes : out  STD_LOGIC_VECTOR (3 downto 0);
-				  outWBSrc : out  STD_LOGIC;
-				  outMEMRead : out  STD_LOGIC;
-				  outMEMWrite : out  STD_LOGIC;
-				  outMEMSrc : out  STD_LOGIC_VECTOR (1 downto 0);
-				  outRegWrite : out  STD_LOGIC;
-				  outRst : out  STD_LOGIC_VECTOR (15 downto 0);
-				  outRA : out  STD_LOGIC_VECTOR (15 downto 0);
-				  outRx : out  STD_LOGIC_VECTOR (15 downto 0);
-				  outRy : out  STD_LOGIC_VECTOR (15 downto 0));
+		Port ( inWBDes : in  STD_LOGIC_VECTOR (3 downto 0);
+					inWBSrc : in  STD_LOGIC;
+					inMEMRead : in  STD_LOGIC;
+					inMEMWrite : in  STD_LOGIC;
+					inMEMType : in STD_LOGIC_VECTOR (2 downto 0);
+					inMEMSrc : in  STD_LOGIC_VECTOR (1 downto 0);
+					inRegWrite : in  STD_LOGIC;
+					inRst : in  STD_LOGIC_VECTOR (15 downto 0);
+					inRA : in  STD_LOGIC_VECTOR (15 downto 0);
+					inRx : in  STD_LOGIC_VECTOR (15 downto 0);
+					inRy : in  STD_LOGIC_VECTOR (15 downto 0);
+					clk : in  STD_LOGIC;
+					pause : in STD_LOGIC;
+					clear : in STD_LOGIC;
+					outWBDes : out  STD_LOGIC_VECTOR (3 downto 0);
+					outWBSrc : out  STD_LOGIC;
+					outMEMRead : out  STD_LOGIC;
+					outMEMWrite : out  STD_LOGIC;
+					outMEMType : out STD_LOGIC_VECTOR (2 downto 0);
+					outMEMSrc : out  STD_LOGIC_VECTOR (1 downto 0);
+					outRegWrite : out  STD_LOGIC;
+					outRst : out  STD_LOGIC_VECTOR (15 downto 0);
+					outRA : out  STD_LOGIC_VECTOR (15 downto 0);
+					outRx : out  STD_LOGIC_VECTOR (15 downto 0);
+					outRy : out  STD_LOGIC_VECTOR (15 downto 0));
 	end component;
 	
 	component MEMSrcMUX
@@ -273,27 +283,29 @@ architecture Behavioral of pop_cpu is
 				  ctrl : in  STD_LOGIC_VECTOR (1 downto 0);
 				  output : out  STD_LOGIC_VECTOR (15 downto 0));
 	end component;
+	
 	component MEMAccess
-		 Port ( 	inAddress : in  STD_LOGIC_VECTOR (15 downto 0);
-					inMEMRead : in  STD_LOGIC;
-					inMEMWrite : in  STD_LOGIC;
-					inData : in  STD_LOGIC_VECTOR (15 downto 0);
-					dataReady : in STD_LOGIC;
-					tsre : in STD_LOGIC;
-					RAMbuffer : out STD_LOGIC_VECTOR (15 downto 0);
-					RAM1addr : out  STD_LOGIC_VECTOR (17 downto 0);
-					RAM1data : inout  STD_LOGIC_VECTOR (15 downto 0);
-					RAM1OE : out  STD_LOGIC;
-					RAM1WE : out  STD_LOGIC;
-					RAM1EN : out  STD_LOGIC;
-					RAM2addr : out  STD_LOGIC_VECTOR (17 downto 0);
-					RAM2DataOut : out  STD_LOGIC_VECTOR (15 downto 0);
-					RAM2DataIn : In  STD_LOGIC_VECTOR (15 downto 0);
-					RAM2Read : out STD_LOGIC;
-					RAM2Write : out STD_LOGIC;
-					rdn : out  STD_LOGIC;
-					wrn : out  STD_LOGIC;
-					clk : in STD_LOGIC);
+		Port ( inAddress : in  STD_LOGIC_VECTOR (15 downto 0);
+				  inMemType : in STD_LOGIC_VECTOR (2 downto 0);
+				  inData : in  STD_LOGIC_VECTOR (15 downto 0);
+				  dataReady : in STD_LOGIC;
+				  tsre : in STD_LOGIC;
+				  tbre : in STD_LOGIC;
+				  RAMbuffer : out STD_LOGIC_VECTOR (15 downto 0);
+				  RAM1addr : out  STD_LOGIC_VECTOR (17 downto 0);
+				  RAM1data : inout  STD_LOGIC_VECTOR (15 downto 0);
+				  RAM1OE : out  STD_LOGIC;
+				  RAM1WE : out  STD_LOGIC;
+				  RAM1EN : out  STD_LOGIC;
+				  RAM2addr : out  STD_LOGIC_VECTOR (17 downto 0);
+				  RAM2DataOut : out  STD_LOGIC_VECTOR (15 downto 0);
+				  RAM2DataIn : In  STD_LOGIC_VECTOR (15 downto 0);
+				  --RAM2Read : out STD_LOGIC;
+				  --RAM2Write : out STD_LOGIC;
+				  rdn : out  STD_LOGIC;
+				  wrn : out  STD_LOGIC;
+				  clk : in  STD_LOGIC;
+				  rst : in  STD_LOGIC);
 	end component;
 	
 	component MEM_WBRegs
@@ -321,12 +333,52 @@ architecture Behavioral of pop_cpu is
 	
 	component clockDivider
     Port ( inclk : in  STD_LOGIC;
+			  rst : in STD_LOGIC;
            outclk : out  STD_LOGIC);
 	end component;
 	
 	component shumaDecoder
     Port ( wei : in  STD_LOGIC_VECTOR (3 downto 0);
            decode : out  STD_LOGIC_VECTOR (6 downto 0));
+	end component;
+	
+	component MEMTypeMUX
+    Port ( INALURst : in  STD_LOGIC_VECTOR (15 downto 0);
+           INMemRead : in  STD_LOGIC;
+           INMemWrite : in  STD_LOGIC;
+           OUTMemType : out  STD_LOGIC_VECTOR (2 downto 0));
+	end component;
+	
+	component VGAAccess
+    Port ( inclk : in  STD_LOGIC;
+           Rin : in  STD_LOGIC_VECTOR (2 downto 0);
+           Gin : in  STD_LOGIC_VECTOR (2 downto 0);
+           Bin : in  STD_LOGIC_VECTOR (2 downto 0);
+           Hs : out  STD_LOGIC;
+           Vs : out  STD_LOGIC;
+           Rout : out  STD_LOGIC_VECTOR (2 downto 0);
+           Gout : out  STD_LOGIC_VECTOR (2 downto 0);
+           Bout : out  STD_LOGIC_VECTOR (2 downto 0);
+           xOut : out  STD_LOGIC_VECTOR (9 downto 0);
+           yOut : out  STD_LOGIC_VECTOR (9 downto 0));
+	end component;
+	
+	component cachedVGAControler
+		port(
+			inX : in STD_LOGIC_VECTOR(9 downto 0);
+			inY : in STD_LOGIC_VECTOR(9 downto 0);
+			inChar : in STD_LOGIC_VECTOR(15 downto 0);
+			inWriteEnable : in STD_LOGIC;
+			outR : out STD_LOGIC_VECTOR(2 downto 0);
+			outG : out STD_LOGIC_VECTOR(2 downto 0);
+			outB : out STD_LOGIC_VECTOR(2 downto 0));
+	end component;
+	
+	component vgaInterface
+    Port ( inData : in  STD_LOGIC_VECTOR (15 downto 0);
+           outChar : out  STD_LOGIC_VECTOR (15 downto 0);
+           memType : in  STD_LOGIC_VECTOR(2 downto 0);
+           outWriteEnable : out  STD_LOGIC);
 	end component;
 	
 	--signal insRam2OE : STD_LOGIC := '1';
@@ -445,6 +497,8 @@ architecture Behavioral of pop_cpu is
 	signal IDEXERegs_bypasser_WBDes : STD_LOGIC_VECTOR(3 downto 0) := (others=>'0');
 	signal IDEXERegs_bypasser_RegWrite : STD_LOGIC := '0';
 
+	signal IDEXERegs_MEMTypeMUX_MEMRead : STD_LOGIC := '0';
+	signal IDEXERegs_MEMTypeMUX_MEMWrite : STD_LOGIC := '0';
 
 	signal ALUSrc0MUX_ALU_ALUSrc0 : STD_LOGIC_VECTOR(15 downto 0) := (others=>'0');
 
@@ -455,8 +509,12 @@ architecture Behavioral of pop_cpu is
 	signal ALU_readWritePause_rst : STD_LOGIC_VECTOR(15 downto 0) := (others=>'0');
 
 	signal ALU_bypasser_rst : STD_LOGIC_VECTOR(15 downto 0) := (others=>'0');
+	
+	signal ALU_MEMTypeMUX_rst : STD_LOGIC_VECTOR(15 downto 0) := (others=>'0');
 
 	signal readWritePause_PC_pause : STD_LOGIC := '0';
+	
+	signal MEMTypeMUX_EXEMEMRegs_MemType : STD_LOGIC_VECTOR(2 downto 0) := (others=>'1');
 
 	signal EXEMEMRegs_MEMWBRegs_WBDes : STD_LOGIC_VECTOR(3 downto 0) := (others=>'0');
 	signal EXEMEMRegs_MEMWBRegs_WBSrc : STD_LOGIC :='0';
@@ -468,10 +526,12 @@ architecture Behavioral of pop_cpu is
 	signal EXEMEMRegs_MEMSrcMUX_ry : STD_LOGIC_VECTOR(15 downto 0) := (others=>'0');
 	signal EXEMEMRegs_MEMSrcMUX_RA : STD_LOGIC_VECTOR(15 downto 0) := (others=>'0');
 
-	signal EXEMEMRegs_MEMAccess_MEMRead : STD_LOGIC := '0';
-	signal EXEMEMRegs_MEMAccess_MEMWrite : STD_LOGIC := '0';
+	signal EXEMEMRegs_MEMAccess_MemType : STD_LOGIC_VECTOR(2 downto 0) := (others=>'0');
 	signal EXEMEMRegs_MEMAccess_rst : STD_LOGIC_VECTOR(15 downto 0) := (others=>'0');
 
+	signal EXEMEMRegs_vgaInterface_rx : STD_LOGIC_VECTOR(15 downto 0) := (others=>'0');
+	signal EXEMEMRegs_vgaInterface_MemType : STD_LOGIC_VECTOR(2 downto 0) := (others=>'0');
+	
 	signal EXEMEMRegs_bypasser_WBDes : STD_LOGIC_VECTOR(3 downto 0) := (others=>'0');
 	signal EXEMEMRegs_bypasser_RegWrite : STD_LOGIC :='0';
 	signal EXEMEMRegs_bypasser_MEMRead : STD_LOGIC :='0';
@@ -505,6 +565,16 @@ architecture Behavioral of pop_cpu is
 	signal Ram2Data : std_logic_vector(15 downto 0) := (others=>'Z');
 	signal rdn : std_logic := '1';
 	signal wdn : std_logic := '1';
+	
+	signal cachedVGAControler_VGAAccess_R : std_logic_vector(2 downto 0) := (others=>'0');
+	signal cachedVGAControler_VGAAccess_G : std_logic_vector(2 downto 0) := (others=>'0');
+	signal cachedVGAControler_VGAAccess_B : std_logic_vector(2 downto 0) := (others=>'0');
+
+	signal VGAAccess_cachedVGAControler_x : std_logic_vector(9 downto 0) := (others=>'0');
+	signal VGAAccess_cachedVGAControler_y : std_logic_vector(9 downto 0) := (others=>'0');
+
+	signal vgaInterface_cachedVGAControler_char : std_logic_vector(15 downto 0) := (others=>'0');
+	signal vgaInterface_cachedVGAControler_writeEnable : std_logic := '0';
 
 begin
 	PC_PCAdder_PC <= PC_InsFetcher_PC;
@@ -540,8 +610,10 @@ begin
 
 	IDEXERegs_readWritePause_MEMRead <= IDEXERegs_EXEMEMRegs_MEMRead;
 	IDEXERegs_bypasser_MEMRead <= IDEXERegs_EXEMEMRegs_MEMRead;
+	IDEXERegs_MEMTypeMUX_MEMRead <= IDEXERegs_EXEMEMRegs_MEMRead;
 
 	IDEXERegs_readWritePause_MEMWrite <= IDEXERegs_EXEMEMRegs_MEMWrite;
+	IDEXERegs_MEMTypeMUX_MEMWrite <= IDEXERegs_EXEMEMRegs_MEMWrite;
 
 	IDEXERegs_bypasser_WBDes <= IDEXERegs_EXEMEMRegs_WBDes;
 
@@ -549,15 +621,20 @@ begin
 
 	ALU_readWritePause_rst <= ALU_EXEMEMRegs_rst;
 	ALU_bypasser_rst <= ALU_EXEMEMRegs_rst;
-
+	ALU_MEMTypeMUX_rst <= ALU_EXEMEMRegs_rst;
+	
 	EXEMEMRegs_bypasser_WBDes <= EXEMEMRegs_MEMWBRegs_WBDes;
 
 	EXEMEMRegs_bypasser_RegWrite <= EXEMEMRegs_MEMWBRegs_RegWrite;
+	
+	EXEMEMRegs_vgaInterface_rx <= EXEMEMRegs_MEMSrcMUX_rx;
+	
+	EXEMEMRegs_vgaInterface_MemType <= EXEMEMRegs_MEMAccess_MemType;
+	
+	memRam2Read <= EXEMEMRegs_bypasser_MEMRead;
 
 	EXEMEMRegs_MEMAccess_rst <= EXEMEMRegs_MEMWBRegs_rst;
 	EXEMEMRegs_bypasser_rst <= EXEMEMRegs_MEMWBRegs_rst;
-
-	EXEMEMRegs_bypasser_MEMRead <= EXEMEMRegs_MEMAccess_MEMRead;
 
 	MEMWBRegs_bypasser_WBDes <= MEMWBRegs_Registers_WBDes;
 
@@ -577,7 +654,7 @@ begin
 	--ins(15) <= bypasser_PC_dataPause;
 	--ins(14) <= readWritePause_PC_pause;
 	--ins(13 downto 0) <= (others=>'0');--RAM1data(13 downto 0);
-	ins <= ALU_bypasser_rst;
+	--ins <= ALU_bypasser_rst;
 	--ins <= bypasser_IDEXERegs_rx;
 	--ins <= Registers_bypasser_ry;
 	--ins <= WBSrcMUX_Registers_writeData;
@@ -587,6 +664,19 @@ begin
 	--ins(9 downto 6 ) <= EXEMEMRegs_bypasser_WBDes;
 	--ins(5 downto 0 ) <= (others => '0');
 	--ins <= memRam2DataOut;
+	process(clk, wdn)
+	variable cnt : STD_LOGIC_VECTOR(3 downto 0) := "0000"; 
+	begin
+	ins(15 downto 9) <= wdn & rdn & dataready & tsre & EXEMEMRegs_MEMAccess_MemType;
+	ins(8 downto 4) <= (others => '0');
+	ins(3 downto 0) <= "0000";
+	if(wdn'event and wdn='1') then
+		cnt := cnt + 1;
+	end if;
+	--if(clk'event and clk='1') then
+		--ins(0)<=bm(conv_integer(cnt))(conv_integer(cnt));
+	--end if;
+	end process;
 	--process(IDEXERegs_ALUSrc0MUX_rx, IDEXERegs_ALUSrc0MUX_ry, IDEXERegs_ALUSrc0MUX_SP, IDEXERegs_ALUSrc0MUX_ALUSrc0)
 	--begin
 	--	case IDEXERegs_ALUSrc0MUX_ALUSrc0 is
@@ -778,7 +868,8 @@ begin
 										IDEXERegs_EXEMEMRegs_WBDes, 
 										IDEXERegs_EXEMEMRegs_WBSrc,
 										IDEXERegs_EXEMEMRegs_MEMRead, 
-										IDEXERegs_EXEMEMRegs_MEMWrite, 
+										IDEXERegs_EXEMEMRegs_MEMWrite,
+										MEMTypeMUX_EXEMEMRegs_MemType,
 										IDEXERegs_EXEMEMRegs_MEMSrc,
 										IDEXERegs_EXEMEMRegs_RegWrite, 
 										ALU_EXEMEMRegs_rst, 
@@ -788,8 +879,9 @@ begin
 										clk, '0', '0',
 										EXEMEMRegs_MEMWBRegs_WBDes, 
 										EXEMEMRegs_MEMWBRegs_WBSrc,
-										EXEMEMRegs_MEMAccess_MEMRead, 
-										EXEMEMRegs_MEMAccess_MEMWrite, 
+										EXEMEMRegs_bypasser_MEMRead, 
+										memRam2Write,
+										EXEMEMRegs_MEMAccess_MemType,
 										EXEMEMRegs_MEMSrcMUX_MEMSrc,
 										EXEMEMRegs_MEMWBRegs_RegWrite, 
 										EXEMEMRegs_MEMWBRegs_rst,
@@ -804,14 +896,15 @@ begin
 										MEMSrcMUX_MEMAccess_writeData);
 										
 	memac : MEMAccess port map(EXEMEMRegs_MEMAccess_rst, 
-										EXEMEMRegs_MEMAccess_MEMRead, 
-										EXEMEMRegs_MEMAccess_MEMWrite, 
+										--EXEMEMRegs_MEMAccess_MEMRead, 
+										--EXEMEMRegs_MEMAccess_MEMWrite,
+										EXEMEMRegs_MEMAccess_MemType,
 										MEMSrcMUX_MEMAccess_writeData,
-										dataReady, tsre, 
+										dataReady, tsre, tbre, 
 										MEMAccess_MEMWBRegs_buffer,
 										RAM1addr, RAM1data, RAM1OE, RAM1WE, RAM1EN,
-										memRam2Addr, memRam2DataOut, memRam2DataIn, memRam2Read, memRam2Write,
-										rdn, wdn, clk=>clk);
+										memRam2Addr, memRam2DataOut, memRam2DataIn, --memRam2Read, memRam2Write,
+										rdn, wdn, clk=>inclk, rst=>inrst);
 										
 	memwr : MEM_WBRegs port map(EXEMEMRegs_MEMWBRegs_rst, 
 										MEMAccess_MEMWBRegs_buffer,
@@ -831,7 +924,34 @@ begin
 										MEMWBRegs_WBSrcMUX_WBSrc, 
 										WBSrcMUX_Registers_writeData);
 										
-	clockd : clockDivider port map(inclk,clk);
+	memtm : MEMTypeMUX port map(ALU_MEMTypeMUX_rst,
+											IDEXERegs_MEMTypeMUX_MEMRead,
+											IDEXERegs_MEMTypeMUX_MEMWrite,
+											MEMTypeMUX_EXEMEMRegs_MemType);
+											
+	vgaa : VGAAccess port map( inclk,
+										cachedVGAControler_VGAAccess_R,
+										cachedVGAControler_VGAAccess_G,
+										cachedVGAControler_VGAAccess_B,
+										Hs, Vs,
+										Rout, Gout, Bout,
+										VGAAccess_cachedVGAControler_x,
+										VGAAccess_cachedVGAControler_y);
+										
+	cachc : cachedVGAControler	port map ( VGAAccess_cachedVGAControler_x,
+														VGAAccess_cachedVGAControler_y,					
+														vgaInterface_cachedVGAControler_char,
+														vgaInterface_cachedVGAControler_writeEnable,
+														cachedVGAControler_VGAAccess_R,
+														cachedVGAControler_VGAAccess_G,
+														cachedVGAControler_VGAAccess_B);
+														
+	vgaif : vgaInterface port map ( EXEMEMRegs_vgaInterface_rx,
+												vgaInterface_cachedVGAControler_char,
+												EXEMEMRegs_vgaInterface_MemType,
+												vgaInterface_cachedVGAControler_writeEnable);
+												
+	clockd : clockDivider port map(inclk,inrst,clk);
 	--clk <= inclk;
 end Behavioral;
 

@@ -45,12 +45,51 @@ Clock inclk to Pad
                | clk (edge) |                  | Clock  |
 Destination    |   to PAD   |Internal Clock(s) | Phase  |
 ---------------+------------+------------------+--------+
+RAM1EN         |    6.280(F)|inclk_BUFGP       |   0.000|
+RAM1OE         |    6.280(F)|inclk_BUFGP       |   0.000|
+RAM1WE         |    6.273(F)|inclk_BUFGP       |   0.000|
+RAM1addr<0>    |    7.901(F)|inclk_BUFGP       |   0.000|
+RAM1addr<1>    |    7.947(F)|inclk_BUFGP       |   0.000|
+RAM1addr<2>    |    7.391(F)|inclk_BUFGP       |   0.000|
+RAM1addr<3>    |    7.377(F)|inclk_BUFGP       |   0.000|
+RAM1addr<4>    |    7.433(F)|inclk_BUFGP       |   0.000|
+RAM1addr<5>    |    7.392(F)|inclk_BUFGP       |   0.000|
+RAM1addr<6>    |    7.381(F)|inclk_BUFGP       |   0.000|
+RAM1addr<7>    |    7.385(F)|inclk_BUFGP       |   0.000|
+RAM1addr<8>    |    8.227(F)|inclk_BUFGP       |   0.000|
+RAM1addr<9>    |    7.310(F)|inclk_BUFGP       |   0.000|
+RAM1addr<10>   |    7.374(F)|inclk_BUFGP       |   0.000|
+RAM1addr<11>   |    7.314(F)|inclk_BUFGP       |   0.000|
+RAM1addr<12>   |    7.301(F)|inclk_BUFGP       |   0.000|
+RAM1addr<13>   |    7.305(F)|inclk_BUFGP       |   0.000|
+RAM1addr<14>   |    7.360(F)|inclk_BUFGP       |   0.000|
+RAM1addr<15>   |    7.300(F)|inclk_BUFGP       |   0.000|
+RAM1addr<16>   |    7.380(F)|inclk_BUFGP       |   0.000|
+RAM1addr<17>   |    7.302(F)|inclk_BUFGP       |   0.000|
+RAM1data<0>    |    6.343(F)|inclk_BUFGP       |   0.000|
+RAM1data<1>    |    6.343(F)|inclk_BUFGP       |   0.000|
+RAM1data<2>    |    6.348(F)|inclk_BUFGP       |   0.000|
+RAM1data<3>    |    6.348(F)|inclk_BUFGP       |   0.000|
+RAM1data<4>    |    6.350(F)|inclk_BUFGP       |   0.000|
+RAM1data<5>    |    6.350(F)|inclk_BUFGP       |   0.000|
+RAM1data<6>    |    6.346(F)|inclk_BUFGP       |   0.000|
+RAM1data<7>    |    6.346(F)|inclk_BUFGP       |   0.000|
+RAM1data<8>    |    6.349(F)|inclk_BUFGP       |   0.000|
+RAM1data<9>    |    6.349(F)|inclk_BUFGP       |   0.000|
+RAM1data<10>   |    6.334(F)|inclk_BUFGP       |   0.000|
+RAM1data<11>   |    6.334(F)|inclk_BUFGP       |   0.000|
+RAM1data<12>   |    6.341(F)|inclk_BUFGP       |   0.000|
+RAM1data<13>   |    6.341(F)|inclk_BUFGP       |   0.000|
+RAM1data<14>   |    6.350(F)|inclk_BUFGP       |   0.000|
+RAM1data<15>   |    6.350(F)|inclk_BUFGP       |   0.000|
+ins<14>        |    6.323(F)|inclk_BUFGP       |   0.000|
+ins<15>        |    6.278(F)|inclk_BUFGP       |   0.000|
 outRam2Addr<0> |    6.354(F)|inclk_BUFGP       |   0.000|
 outRam2Addr<1> |    6.354(F)|inclk_BUFGP       |   0.000|
 outRam2Addr<2> |    6.273(F)|inclk_BUFGP       |   0.000|
 outRam2Addr<3> |    6.349(F)|inclk_BUFGP       |   0.000|
-outRam2Addr<4> |    6.283(F)|inclk_BUFGP       |   0.000|
-outRam2Addr<5> |    6.283(F)|inclk_BUFGP       |   0.000|
+outRam2Addr<4> |    6.284(F)|inclk_BUFGP       |   0.000|
+outRam2Addr<5> |    6.284(F)|inclk_BUFGP       |   0.000|
 outRam2Addr<6> |    6.345(F)|inclk_BUFGP       |   0.000|
 outRam2Addr<7> |    6.345(F)|inclk_BUFGP       |   0.000|
 outRam2Addr<8> |    6.351(F)|inclk_BUFGP       |   0.000|
@@ -60,7 +99,7 @@ outRam2Addr<11>|    6.354(F)|inclk_BUFGP       |   0.000|
 outRam2Addr<12>|    6.336(F)|inclk_BUFGP       |   0.000|
 outRam2Addr<13>|    6.238(F)|inclk_BUFGP       |   0.000|
 outRam2Addr<14>|    6.238(F)|inclk_BUFGP       |   0.000|
-outRam2Addr<15>|    6.273(F)|inclk_BUFGP       |   0.000|
+outRam2Addr<15>|    6.274(F)|inclk_BUFGP       |   0.000|
 outRam2Data<0> |    6.256(F)|inclk_BUFGP       |   0.000|
 outRam2Data<1> |    6.352(F)|inclk_BUFGP       |   0.000|
 outRam2Data<2> |    6.330(F)|inclk_BUFGP       |   0.000|
@@ -79,6 +118,8 @@ outRam2Data<14>|    6.266(F)|inclk_BUFGP       |   0.000|
 outRam2Data<15>|    6.253(F)|inclk_BUFGP       |   0.000|
 outRam2OE      |    6.272(F)|inclk_BUFGP       |   0.000|
 outRam2WE      |    6.269(F)|inclk_BUFGP       |   0.000|
+outrdn         |    6.330(F)|inclk_BUFGP       |   0.000|
+outwdn         |    6.323(F)|inclk_BUFGP       |   0.000|
 ---------------+------------+------------------+--------+
 
 Clock to Setup on destination clock inclk
@@ -86,18 +127,35 @@ Clock to Setup on destination clock inclk
                | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
 Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
 ---------------+---------+---------+---------+---------+
-inclk          |    6.220|         |         |         |
+inclk          |    5.328|         |         |    2.063|
+inrst          |    4.900|    4.813|         |         |
 ---------------+---------+---------+---------+---------+
 
+Clock to Setup on destination clock inrst
+---------------+---------+---------+---------+---------+
+               | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+---------------+---------+---------+---------+---------+
+inrst          |    1.504|         |         |         |
+---------------+---------+---------+---------+---------+
 
-Analysis completed Thu Dec 01 16:17:37 2016 
+Pad to Pad
+---------------+---------------+---------+
+Source Pad     |Destination Pad|  Delay  |
+---------------+---------------+---------+
+dataReady      |ins<13>        |    5.567|
+tsre           |ins<12>        |    7.574|
+---------------+---------------+---------+
+
+
+Analysis completed Fri Dec 02 10:40:27 2016 
 --------------------------------------------------------------------------------
 
 Trace Settings:
 -------------------------
 Trace Settings 
 
-Peak Memory Usage: 202 MB
+Peak Memory Usage: 203 MB
 
 
 

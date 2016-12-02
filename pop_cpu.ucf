@@ -77,6 +77,7 @@ NET "outRam2OE" LOC = R9;
 NET "outRam2WE" LOC = M9;
 NET "outrdn" LOC = C14;
 NET "tsre" LOC = N9;
+NET "tbre" LOC = D14;
 NET "outwdn" LOC = U5;
 
 
@@ -117,3 +118,7 @@ NET "r7[0]" LOC = C9;
 # PlanAhead Generated physical constraints 
 
 NET "inclk" LOC = B9;
+NET "inrst" LOC = U10;
+
+NET "Hs" LOC = D6;
+NET "Vs" LOC = E6;

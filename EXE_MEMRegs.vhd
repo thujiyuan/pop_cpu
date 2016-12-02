@@ -34,6 +34,7 @@ entity EXE_MEMRegs is
            inWBSrc : in  STD_LOGIC;
            inMEMRead : in  STD_LOGIC;
            inMEMWrite : in  STD_LOGIC;
+			  inMEMType : in STD_LOGIC_VECTOR (2 downto 0);
            inMEMSrc : in  STD_LOGIC_VECTOR (1 downto 0);
            inRegWrite : in  STD_LOGIC;
            inRst : in  STD_LOGIC_VECTOR (15 downto 0);
@@ -47,6 +48,7 @@ entity EXE_MEMRegs is
            outWBSrc : out  STD_LOGIC;
            outMEMRead : out  STD_LOGIC;
            outMEMWrite : out  STD_LOGIC;
+			  outMEMType : out STD_LOGIC_VECTOR (2 downto 0);
            outMEMSrc : out  STD_LOGIC_VECTOR (1 downto 0);
            outRegWrite : out  STD_LOGIC;
            outRst : out  STD_LOGIC_VECTOR (15 downto 0);
@@ -63,6 +65,7 @@ variable tempWBDes : STD_LOGIC_VECTOR (3 downto 0) := (others=>'0');
 variable tempWBSrc : STD_LOGIC := '0';
 variable tempMEMRead : STD_LOGIC := '0';
 variable tempMEMWrite : STD_LOGIC := '0';
+variable tempMemType : STD_LOGIC_VECTOR (2 downto 0) := (others=>'0');
 variable tempMEMSrc : STD_LOGIC_VECTOR (1 downto 0) := (others=>'0');
 variable tempRegWrite : STD_LOGIC := '0';
 variable tempRst :  STD_LOGIC_VECTOR (15 downto 0) := (others=>'0');
@@ -74,6 +77,7 @@ begin
 			outWBSrc <= '0';
 			outMEMRead <= '0';
 			outMEMWrite <= '0';
+			outMemType <= "111";
 			outMEMSrc <= "00";
 			outRegWrite <= '0';
 			outRst <= (others => '0');
@@ -84,6 +88,7 @@ begin
 			tempWBSrc := '0';
 			tempMEMRead := '0';
 			tempMEMWrite := '0';
+			tempMemType := "111";
 			tempMEMSrc := "00";
 			tempRegWrite := '0';
 			tempRst := (others => '0');
@@ -95,6 +100,7 @@ begin
 			outWBSrc <= tempWBSrc;
 			outMEMRead <= tempMEMRead;
 			outMEMWrite <= tempMEMWrite;
+			outMemType <= tempMemType;
 			outMEMSrc <= tempMEMSrc;
 			outRegWrite <= tempRegWrite;
 			outRst <= tempRst;
@@ -106,6 +112,7 @@ begin
 			tempWBSrc := inWBSrc;
 			tempMEMRead := inMEMRead;
 			tempMEMWrite := inMEMWrite;
+			tempMemType := inMemType;
 			tempMEMSrc := inMEMSrc;
 			tempRegWrite := inRegWrite;
 			tempRst := inRst;
@@ -116,6 +123,7 @@ begin
 			outWBSrc <= inWBSrc;
 			outMEMRead <= inMEMRead;
 			outMEMWrite <= inMEMWrite;
+			outMemType <= inMemType;
 			outMEMSrc <= inMEMSrc;
 			outRegWrite <= inRegWrite;
 			outRst <= inRst;
