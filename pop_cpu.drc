@@ -1,7 +1,7 @@
-Release 14.7 Drc P.20131013 (nt64)
+Release 14.7 Drc P.20131013 (nt)
 Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
 
-Fri Dec 02 10:40:31 2016
+Fri Dec 02 13:07:23 2016
 
 drc -z pop_cpu.ncd pop_cpu.pcf
 

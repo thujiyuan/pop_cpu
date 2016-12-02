@@ -5,85 +5,85 @@
      behavior or data corruption.  It is strongly advised that
      users do not edit the contents of this file. -->
 <messages>
-<msg type="warning" file="HDLParsers" num="817" delta="old" >&quot;<arg fmt="%s" index="1">F:/thujiyuan/pop_cpu/ALUSrc1MUX.vhd</arg>&quot; Line <arg fmt="%d" index="2">51</arg>. Choice <arg fmt="%s" index="3">.</arg> is not a locally static expression.
+<msg type="warning" file="HDLParsers" num="817" delta="old" >&quot;<arg fmt="%s" index="1">C:/pop_cpu1/ALUSrc1MUX.vhd</arg>&quot; Line <arg fmt="%d" index="2">51</arg>. Choice <arg fmt="%s" index="3">.</arg> is not a locally static expression.
 </msg>
 
-<msg type="warning" file="HDLParsers" num="817" delta="old" >&quot;<arg fmt="%s" index="1">F:/thujiyuan/pop_cpu/ALUSrc1MUX.vhd</arg>&quot; Line <arg fmt="%d" index="2">53</arg>. Choice <arg fmt="%s" index="3">.</arg> is not a locally static expression.
+<msg type="warning" file="HDLParsers" num="817" delta="old" >&quot;<arg fmt="%s" index="1">C:/pop_cpu1/ALUSrc1MUX.vhd</arg>&quot; Line <arg fmt="%d" index="2">53</arg>. Choice <arg fmt="%s" index="3">.</arg> is not a locally static expression.
 </msg>
 
-<msg type="warning" file="HDLParsers" num="817" delta="old" >&quot;<arg fmt="%s" index="1">F:/thujiyuan/pop_cpu/ALUSrc1MUX.vhd</arg>&quot; Line <arg fmt="%d" index="2">55</arg>. Choice <arg fmt="%s" index="3">.</arg> is not a locally static expression.
+<msg type="warning" file="HDLParsers" num="817" delta="old" >&quot;<arg fmt="%s" index="1">C:/pop_cpu1/ALUSrc1MUX.vhd</arg>&quot; Line <arg fmt="%d" index="2">55</arg>. Choice <arg fmt="%s" index="3">.</arg> is not a locally static expression.
 </msg>
 
-<msg type="warning" file="HDLParsers" num="817" delta="old" >&quot;<arg fmt="%s" index="1">F:/thujiyuan/pop_cpu/ALUSrc1MUX.vhd</arg>&quot; Line <arg fmt="%d" index="2">57</arg>. Choice <arg fmt="%s" index="3">.</arg> is not a locally static expression.
+<msg type="warning" file="HDLParsers" num="817" delta="old" >&quot;<arg fmt="%s" index="1">C:/pop_cpu1/ALUSrc1MUX.vhd</arg>&quot; Line <arg fmt="%d" index="2">57</arg>. Choice <arg fmt="%s" index="3">.</arg> is not a locally static expression.
 </msg>
 
-<msg type="warning" file="HDLParsers" num="817" delta="old" >&quot;<arg fmt="%s" index="1">F:/thujiyuan/pop_cpu/ALUSrc1MUX.vhd</arg>&quot; Line <arg fmt="%d" index="2">59</arg>. Choice <arg fmt="%s" index="3">.</arg> is not a locally static expression.
+<msg type="warning" file="HDLParsers" num="817" delta="old" >&quot;<arg fmt="%s" index="1">C:/pop_cpu1/ALUSrc1MUX.vhd</arg>&quot; Line <arg fmt="%d" index="2">59</arg>. Choice <arg fmt="%s" index="3">.</arg> is not a locally static expression.
 </msg>
 
-<msg type="warning" file="HDLParsers" num="817" delta="old" >&quot;<arg fmt="%s" index="1">F:/thujiyuan/pop_cpu/ALU.vhd</arg>&quot; Line <arg fmt="%d" index="2">49</arg>. Choice <arg fmt="%s" index="3">.</arg> is not a locally static expression.
+<msg type="warning" file="HDLParsers" num="817" delta="old" >&quot;<arg fmt="%s" index="1">C:/pop_cpu1/ALU.vhd</arg>&quot; Line <arg fmt="%d" index="2">49</arg>. Choice <arg fmt="%s" index="3">.</arg> is not a locally static expression.
 </msg>
 
-<msg type="warning" file="HDLParsers" num="817" delta="old" >&quot;<arg fmt="%s" index="1">F:/thujiyuan/pop_cpu/ALU.vhd</arg>&quot; Line <arg fmt="%d" index="2">51</arg>. Choice <arg fmt="%s" index="3">.</arg> is not a locally static expression.
+<msg type="warning" file="HDLParsers" num="817" delta="old" >&quot;<arg fmt="%s" index="1">C:/pop_cpu1/ALU.vhd</arg>&quot; Line <arg fmt="%d" index="2">51</arg>. Choice <arg fmt="%s" index="3">.</arg> is not a locally static expression.
 </msg>
 
-<msg type="warning" file="HDLParsers" num="817" delta="old" >&quot;<arg fmt="%s" index="1">F:/thujiyuan/pop_cpu/ALU.vhd</arg>&quot; Line <arg fmt="%d" index="2">53</arg>. Choice <arg fmt="%s" index="3">.</arg> is not a locally static expression.
+<msg type="warning" file="HDLParsers" num="817" delta="old" >&quot;<arg fmt="%s" index="1">C:/pop_cpu1/ALU.vhd</arg>&quot; Line <arg fmt="%d" index="2">53</arg>. Choice <arg fmt="%s" index="3">.</arg> is not a locally static expression.
 </msg>
 
-<msg type="warning" file="HDLParsers" num="817" delta="old" >&quot;<arg fmt="%s" index="1">F:/thujiyuan/pop_cpu/ALU.vhd</arg>&quot; Line <arg fmt="%d" index="2">55</arg>. Choice <arg fmt="%s" index="3">.</arg> is not a locally static expression.
+<msg type="warning" file="HDLParsers" num="817" delta="old" >&quot;<arg fmt="%s" index="1">C:/pop_cpu1/ALU.vhd</arg>&quot; Line <arg fmt="%d" index="2">55</arg>. Choice <arg fmt="%s" index="3">.</arg> is not a locally static expression.
 </msg>
 
-<msg type="warning" file="HDLParsers" num="817" delta="old" >&quot;<arg fmt="%s" index="1">F:/thujiyuan/pop_cpu/ALU.vhd</arg>&quot; Line <arg fmt="%d" index="2">57</arg>. Choice <arg fmt="%s" index="3">.</arg> is not a locally static expression.
+<msg type="warning" file="HDLParsers" num="817" delta="old" >&quot;<arg fmt="%s" index="1">C:/pop_cpu1/ALU.vhd</arg>&quot; Line <arg fmt="%d" index="2">57</arg>. Choice <arg fmt="%s" index="3">.</arg> is not a locally static expression.
 </msg>
 
-<msg type="warning" file="HDLParsers" num="817" delta="old" >&quot;<arg fmt="%s" index="1">F:/thujiyuan/pop_cpu/ALU.vhd</arg>&quot; Line <arg fmt="%d" index="2">59</arg>. Choice <arg fmt="%s" index="3">.</arg> is not a locally static expression.
+<msg type="warning" file="HDLParsers" num="817" delta="old" >&quot;<arg fmt="%s" index="1">C:/pop_cpu1/ALU.vhd</arg>&quot; Line <arg fmt="%d" index="2">59</arg>. Choice <arg fmt="%s" index="3">.</arg> is not a locally static expression.
 </msg>
 
-<msg type="warning" file="HDLParsers" num="817" delta="old" >&quot;<arg fmt="%s" index="1">F:/thujiyuan/pop_cpu/ALU.vhd</arg>&quot; Line <arg fmt="%d" index="2">61</arg>. Choice <arg fmt="%s" index="3">.</arg> is not a locally static expression.
+<msg type="warning" file="HDLParsers" num="817" delta="old" >&quot;<arg fmt="%s" index="1">C:/pop_cpu1/ALU.vhd</arg>&quot; Line <arg fmt="%d" index="2">61</arg>. Choice <arg fmt="%s" index="3">.</arg> is not a locally static expression.
 </msg>
 
-<msg type="warning" file="HDLParsers" num="817" delta="old" >&quot;<arg fmt="%s" index="1">F:/thujiyuan/pop_cpu/ALU.vhd</arg>&quot; Line <arg fmt="%d" index="2">63</arg>. Choice <arg fmt="%s" index="3">.</arg> is not a locally static expression.
+<msg type="warning" file="HDLParsers" num="817" delta="old" >&quot;<arg fmt="%s" index="1">C:/pop_cpu1/ALU.vhd</arg>&quot; Line <arg fmt="%d" index="2">63</arg>. Choice <arg fmt="%s" index="3">.</arg> is not a locally static expression.
 </msg>
 
-<msg type="warning" file="HDLParsers" num="817" delta="old" >&quot;<arg fmt="%s" index="1">F:/thujiyuan/pop_cpu/MEMSrcMUX.vhd</arg>&quot; Line <arg fmt="%d" index="2">47</arg>. Choice <arg fmt="%s" index="3">.</arg> is not a locally static expression.
+<msg type="warning" file="HDLParsers" num="817" delta="old" >&quot;<arg fmt="%s" index="1">C:/pop_cpu1/MEMSrcMUX.vhd</arg>&quot; Line <arg fmt="%d" index="2">47</arg>. Choice <arg fmt="%s" index="3">.</arg> is not a locally static expression.
 </msg>
 
-<msg type="warning" file="HDLParsers" num="817" delta="old" >&quot;<arg fmt="%s" index="1">F:/thujiyuan/pop_cpu/MEMSrcMUX.vhd</arg>&quot; Line <arg fmt="%d" index="2">49</arg>. Choice <arg fmt="%s" index="3">.</arg> is not a locally static expression.
+<msg type="warning" file="HDLParsers" num="817" delta="old" >&quot;<arg fmt="%s" index="1">C:/pop_cpu1/MEMSrcMUX.vhd</arg>&quot; Line <arg fmt="%d" index="2">49</arg>. Choice <arg fmt="%s" index="3">.</arg> is not a locally static expression.
 </msg>
 
-<msg type="warning" file="HDLParsers" num="817" delta="old" >&quot;<arg fmt="%s" index="1">F:/thujiyuan/pop_cpu/MEMSrcMUX.vhd</arg>&quot; Line <arg fmt="%d" index="2">51</arg>. Choice <arg fmt="%s" index="3">.</arg> is not a locally static expression.
+<msg type="warning" file="HDLParsers" num="817" delta="old" >&quot;<arg fmt="%s" index="1">C:/pop_cpu1/MEMSrcMUX.vhd</arg>&quot; Line <arg fmt="%d" index="2">51</arg>. Choice <arg fmt="%s" index="3">.</arg> is not a locally static expression.
 </msg>
 
-<msg type="warning" file="Xst" num="819" delta="old" >&quot;<arg fmt="%s" index="1">F:/thujiyuan/pop_cpu/pop_cpu.vhd</arg>&quot; line <arg fmt="%d" index="2">667</arg>: One or more signals are missing in the process sensitivity list. To enable synthesis of FPGA/CPLD hardware, XST will assume that all necessary signals are present in the sensitivity list. Please note that the result of the synthesis may differ from the initial design specification. The missing signals are:
+<msg type="warning" file="Xst" num="819" delta="old" >&quot;<arg fmt="%s" index="1">C:/pop_cpu1/pop_cpu.vhd</arg>&quot; line <arg fmt="%d" index="2">667</arg>: One or more signals are missing in the process sensitivity list. To enable synthesis of FPGA/CPLD hardware, XST will assume that all necessary signals are present in the sensitivity list. Please note that the result of the synthesis may differ from the initial design specification. The missing signals are:
 <arg fmt="%s" index="3">&lt;rdn&gt;, &lt;dataReady&gt;, &lt;tsre&gt;, &lt;EXEMEMRegs_MEMAccess_MemType&gt;</arg>
 </msg>
 
-<msg type="warning" file="Xst" num="753" delta="old" >&quot;<arg fmt="%s" index="1">F:/thujiyuan/pop_cpu/pop_cpu.vhd</arg>&quot; line <arg fmt="%d" index="2">737</arg>: Unconnected output port &apos;<arg fmt="%s" index="3">RA</arg>&apos; of component &apos;<arg fmt="%s" index="4">Registers</arg>&apos;.
+<msg type="warning" file="Xst" num="753" delta="old" >&quot;<arg fmt="%s" index="1">C:/pop_cpu1/pop_cpu.vhd</arg>&quot; line <arg fmt="%d" index="2">737</arg>: Unconnected output port &apos;<arg fmt="%s" index="3">RA</arg>&apos; of component &apos;<arg fmt="%s" index="4">Registers</arg>&apos;.
 </msg>
 
-<msg type="info" file="Xst" num="1561" delta="old" >&quot;<arg fmt="%s" index="1">F:/thujiyuan/pop_cpu/shumaDecoder.vhd</arg>&quot; line <arg fmt="%d" index="2">74</arg>: Mux is complete : default of case is discarded
+<msg type="info" file="Xst" num="1561" delta="old" >&quot;<arg fmt="%s" index="1">C:/pop_cpu1/shumaDecoder.vhd</arg>&quot; line <arg fmt="%d" index="2">74</arg>: Mux is complete : default of case is discarded
 </msg>
 
-<msg type="warning" file="Xst" num="819" delta="old" >&quot;<arg fmt="%s" index="1">F:/thujiyuan/pop_cpu/InsFetcher.vhd</arg>&quot; line <arg fmt="%d" index="2">86</arg>: One or more signals are missing in the process sensitivity list. To enable synthesis of FPGA/CPLD hardware, XST will assume that all necessary signals are present in the sensitivity list. Please note that the result of the synthesis may differ from the initial design specification. The missing signals are:
+<msg type="warning" file="Xst" num="819" delta="old" >&quot;<arg fmt="%s" index="1">C:/pop_cpu1/InsFetcher.vhd</arg>&quot; line <arg fmt="%d" index="2">86</arg>: One or more signals are missing in the process sensitivity list. To enable synthesis of FPGA/CPLD hardware, XST will assume that all necessary signals are present in the sensitivity list. Please note that the result of the synthesis may differ from the initial design specification. The missing signals are:
 <arg fmt="%s" index="3">&lt;MEMRead&gt;, &lt;MEMWrite&gt;, &lt;MEMAddr&gt;</arg>
 </msg>
 
 <msg type="info" file="Xst" num="2679" delta="old" >Register &lt;<arg fmt="%s" index="1">Ram2EN</arg>&gt; in unit &lt;<arg fmt="%s" index="2">InsFetcher</arg>&gt; has a constant value of <arg fmt="%s" index="3">0</arg> during circuit operation. The register is replaced by logic.
 </msg>
 
-<msg type="warning" file="Xst" num="819" delta="old" >&quot;<arg fmt="%s" index="1">F:/thujiyuan/pop_cpu/Registers.vhd</arg>&quot; line <arg fmt="%d" index="2">53</arg>: One or more signals are missing in the process sensitivity list. To enable synthesis of FPGA/CPLD hardware, XST will assume that all necessary signals are present in the sensitivity list. Please note that the result of the synthesis may differ from the initial design specification. The missing signals are:
+<msg type="warning" file="Xst" num="819" delta="old" >&quot;<arg fmt="%s" index="1">C:/pop_cpu1/Registers.vhd</arg>&quot; line <arg fmt="%d" index="2">53</arg>: One or more signals are missing in the process sensitivity list. To enable synthesis of FPGA/CPLD hardware, XST will assume that all necessary signals are present in the sensitivity list. Please note that the result of the synthesis may differ from the initial design specification. The missing signals are:
 <arg fmt="%s" index="3">&lt;r000&gt;, &lt;r001&gt;, &lt;r010&gt;, &lt;r011&gt;, &lt;r100&gt;, &lt;r101&gt;, &lt;r110&gt;, &lt;r111&gt;, &lt;rT&gt;, &lt;rIH&gt;, &lt;rSP&gt;, &lt;rRA&gt;</arg>
 </msg>
 
-<msg type="info" file="Xst" num="1561" delta="old" >&quot;<arg fmt="%s" index="1">F:/thujiyuan/pop_cpu/ALUSrc0MUX.vhd</arg>&quot; line <arg fmt="%d" index="2">57</arg>: Mux is complete : default of case is discarded
+<msg type="info" file="Xst" num="1561" delta="old" >&quot;<arg fmt="%s" index="1">C:/pop_cpu1/ALUSrc0MUX.vhd</arg>&quot; line <arg fmt="%d" index="2">57</arg>: Mux is complete : default of case is discarded
 </msg>
 
-<msg type="info" file="Xst" num="1561" delta="old" >&quot;<arg fmt="%s" index="1">F:/thujiyuan/pop_cpu/ALU.vhd</arg>&quot; line <arg fmt="%d" index="2">67</arg>: Mux is complete : default of case is discarded
+<msg type="info" file="Xst" num="1561" delta="old" >&quot;<arg fmt="%s" index="1">C:/pop_cpu1/ALU.vhd</arg>&quot; line <arg fmt="%d" index="2">67</arg>: Mux is complete : default of case is discarded
 </msg>
 
-<msg type="info" file="Xst" num="1561" delta="old" >&quot;<arg fmt="%s" index="1">F:/thujiyuan/pop_cpu/WBSrcMUX.vhd</arg>&quot; line <arg fmt="%d" index="2">49</arg>: Mux is complete : default of case is discarded
+<msg type="info" file="Xst" num="1561" delta="old" >&quot;<arg fmt="%s" index="1">C:/pop_cpu1/WBSrcMUX.vhd</arg>&quot; line <arg fmt="%d" index="2">49</arg>: Mux is complete : default of case is discarded
 </msg>
 
-<msg type="warning" file="Xst" num="790" delta="new" >&quot;<arg fmt="%s" index="1">F:/thujiyuan/pop_cpu/cachedVGAControler.vhd</arg>&quot; line <arg fmt="%d" index="2">179</arg>: Index value(s) does not match array range, simulation mismatch.
+<msg type="warning" file="Xst" num="790" delta="new" >&quot;<arg fmt="%s" index="1">C:/pop_cpu1/cachedVGAControler.vhd</arg>&quot; line <arg fmt="%d" index="2">85</arg>: Index value(s) does not match array range, simulation mismatch.
 </msg>
 
 </messages>

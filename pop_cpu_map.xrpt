@@ -1,18 +1,18 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
-<document OS="nt64" product="ISE" version="14.7">
+<document OS="nt" product="ISE" version="14.7">
 
   <!--The data in this file is primarily intended for consumption by Xilinx tools.
     The structure and the elements are likely to change over the next few releases.
     This means code written to parse this file will need to be revisited each subsequent release.-->
 
-  <application stringID="Map" timeStamp="Fri Dec 02 10:39:42 2016">
+  <application stringID="Map" timeStamp="Fri Dec 02 13:06:47 2016">
     <section stringID="User_Env">
       <table stringID="User_EnvVar">
         <column stringID="variable"/>
         <column stringID="value"/>
         <row stringID="row" value="0">
           <item stringID="variable" value="Path"/>
-          <item stringID="value" value="F:\Xilinx\14.7\ISE_DS\ISE\\lib\nt64;F:\Xilinx\14.7\ISE_DS\ISE\\bin\nt64;F:\Xilinx\14.7\ISE_DS\ISE\bin\nt64;F:\Xilinx\14.7\ISE_DS\ISE\lib\nt64;F:\Xilinx\14.7\ISE_DS\ISE\..\..\..\DocNav;F:\Xilinx\14.7\ISE_DS\PlanAhead\bin;F:\Xilinx\14.7\ISE_DS\EDK\bin\nt64;F:\Xilinx\14.7\ISE_DS\EDK\lib\nt64;F:\Xilinx\14.7\ISE_DS\EDK\gnu\microblaze\nt\bin;F:\Xilinx\14.7\ISE_DS\EDK\gnu\powerpc-eabi\nt\bin;F:\Xilinx\14.7\ISE_DS\EDK\gnuwin\bin;F:\Xilinx\14.7\ISE_DS\EDK\gnu\arm\nt\bin;F:\Xilinx\14.7\ISE_DS\EDK\gnu\microblaze\linux_toolchain\nt64_be\bin;F:\Xilinx\14.7\ISE_DS\EDK\gnu\microblaze\linux_toolchain\nt64_le\bin;F:\Xilinx\14.7\ISE_DS\common\bin\nt64;F:\Xilinx\14.7\ISE_DS\common\lib\nt64;C:\ProgramData\Oracle\Java\javapath;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;D:\Program Files\Python27;C:\Program Files\Microsoft\Web Platform Installer\;C:\Program Files (x86)\Microsoft ASP.NET\ASP.NET Web Pages\v1.0\;C:\Program Files\Microsoft SQL Server\110\Tools\Binn\;C:\Program Files (x86)\Windows Kits\8.0\Windows Performance Toolkit\;D:\Program Files\opencv\opencv\build\x64\vc11\bin;d:\program files\quartusii9.0\quartus\bin;D:\Program Files\OpenVPN\bin;D:\Program Files\Java\jdk1.8.0_101\bin;D:\Program Files\nodejs\;D:\Program Files\MATLAB\R2016b\runtime\win64;D:\Program Files\MATLAB\R2016b\bin;C:\Users\Administrator\AppData\Roaming\npm;F:\modeltech64_10.4\win64;F:\modeltech_10.1a\win32"/>
+          <item stringID="value" value="D:\Xilinx\14.7\ISE_DS\ISE\\lib\nt;D:\Xilinx\14.7\ISE_DS\ISE\\bin\nt;C:\ProgramData\Oracle\Java\javapath;C:\windows\system32;C:\windows;C:\windows\System32\Wbem;C:\windows\System32\WindowsPowerShell\v1.0\;C:\Program Files\NVIDIA Corporation\PhysX\Common;d:\modeltech_10.1a\win32"/>
         </row>
         <row stringID="row" value="1">
           <item stringID="variable" value="PATHEXT"/>
@@ -20,32 +20,20 @@
         </row>
         <row stringID="row" value="2">
           <item stringID="variable" value="XILINX"/>
-          <item stringID="value" value="F:\Xilinx\14.7\ISE_DS\ISE\"/>
-        </row>
-        <row stringID="row" value="3">
-          <item stringID="variable" value="XILINX_DSP"/>
-          <item stringID="value" value="F:\Xilinx\14.7\ISE_DS\ISE"/>
-        </row>
-        <row stringID="row" value="4">
-          <item stringID="variable" value="XILINX_EDK"/>
-          <item stringID="value" value="F:\Xilinx\14.7\ISE_DS\EDK"/>
-        </row>
-        <row stringID="row" value="5">
-          <item stringID="variable" value="XILINX_PLANAHEAD"/>
-          <item stringID="value" value="F:\Xilinx\14.7\ISE_DS\PlanAhead"/>
+          <item stringID="value" value="D:\Xilinx\14.7\ISE_DS\ISE\"/>
         </row>
       </table>
       <item stringID="User_EnvOs" value="OS Information">
-        <item stringID="User_EnvOsname" value="Microsoft Windows 7 , 64-bit"/>
+        <item stringID="User_EnvOsname" value="Microsoft Windows 7 , 32-bit"/>
         <item stringID="User_EnvOsrelease" value="Service Pack 1  (build 7601)"/>
       </item>
-      <item stringID="User_EnvHost" value="MS-20150523JZEJ"/>
+      <item stringID="User_EnvHost" value="LDMXC8OF9SPMZDV"/>
       <table stringID="User_EnvCpu">
         <column stringID="arch"/>
         <column stringID="speed"/>
         <row stringID="row" value="0">
-          <item stringID="arch" value="Intel(R) Core(TM) i5 CPU       M 520  @ 2.40GHz"/>
-          <item stringID="speed" value="2393 MHz"/>
+          <item stringID="arch" value="Intel(R) Core(TM) i7-4710MQ CPU @ 2.50GHz"/>
+          <item stringID="speed" value="2494 MHz"/>
         </row>
       </table>
     </section>
@@ -69,9 +57,9 @@
         <item dataType="int" stringID="MAP_NUM_ERRORS" value="0"/>
         <item dataType="int" stringID="MAP_FILTERED_WARNINGS" value="0"/>
         <item dataType="int" stringID="MAP_NUM_WARNINGS" value="5"/>
-        <item UNITS="KB" dataType="int" stringID="MAP_PEAK_MEMORY" value="286008"/>
-        <item stringID="MAP_TOTAL_REAL_TIME" value="3 secs "/>
-        <item stringID="MAP_TOTAL_CPU_TIME" value="3 secs "/>
+        <item UNITS="KB" dataType="int" stringID="MAP_PEAK_MEMORY" value="316832"/>
+        <item stringID="MAP_TOTAL_REAL_TIME" value="5 secs "/>
+        <item stringID="MAP_TOTAL_CPU_TIME" value="2 secs "/>
       </section>
       <section stringID="MAP_SLICE_REPORTING">
         <item AVAILABLE="17344" dataType="int" label="Number of Slice Registers" stringID="MAP_SLICE_REGISTERS" value="631">

@@ -87,8 +87,11 @@ constant Vsd : integer range 0 to 1000 := 525;
 constant maxCharH : STD_LOGIC_VECTOR(5 downto 0) := "101000"; --一行最多显示40个字符
 constant maxCharV : STD_LOGIC_VECTOR(5 downto 0) := "011110"; --一列最多显示30个字符
 
-type bitMap is array(0 to 480) of STD_LOGIC_VECTOR(0 to 640);
+type row is array(0 to 80) of STD_LOGIC_VECTOR(7 downto 0);
+type bitMap is array(0 to 30) of row;
 type charNib is array(0 to 15) of STD_LOGIC_VECTOR(0 to 7);
+
+constant emptyRow : row :=( others=> (others=>'0'));
 
 constant char_0 : charNib := (
 										X"00", X"E0", X"10", X"08", 

@@ -1,9 +1,9 @@
 --------------------------------------------------------------------------------
-Release 14.7 Trace  (nt64)
+Release 14.7 Trace  (nt)
 Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
 
-F:\Xilinx\14.7\ISE_DS\ISE\bin\nt64\unwrapped\trce.exe -intstyle ise -v 3 -s 4
--n 3 -fastpaths -xml pop_cpu.twx pop_cpu.ncd -o pop_cpu.twr pop_cpu.pcf -ucf
+D:\Xilinx\14.7\ISE_DS\ISE\bin\nt\unwrapped\trce.exe -intstyle ise -v 3 -s 4 -n
+3 -fastpaths -xml pop_cpu.twx pop_cpu.ncd -o pop_cpu.twr pop_cpu.pcf -ucf
 pop_cpu.ucf
 
 Design file:              pop_cpu.ncd
@@ -148,14 +148,14 @@ tsre           |ins<12>        |    7.574|
 ---------------+---------------+---------+
 
 
-Analysis completed Fri Dec 02 10:40:27 2016 
+Analysis completed Fri Dec 02 13:07:20 2016 
 --------------------------------------------------------------------------------
 
 Trace Settings:
 -------------------------
 Trace Settings 
 
-Peak Memory Usage: 203 MB
+Peak Memory Usage: 146 MB
 
 
 

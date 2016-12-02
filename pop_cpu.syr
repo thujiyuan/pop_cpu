@@ -1,4 +1,4 @@
-Release 14.7 - xst P.20131013 (nt64)
+Release 14.7 - xst P.20131013 (nt)
 Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
 --> Parameter TMPDIR set to xst/projnav.tmp
 
@@ -104,78 +104,79 @@ Slice Utilization Ratio Delta      : 5
 =========================================================================
 *                          HDL Compilation                              *
 =========================================================================
-Compiling vhdl file "F:/thujiyuan/pop_cpu/recordDefs.vhd" in Library work.
-Architecture recorddefs of Entity recorddefs is up to date.
-Compiling vhdl file "F:/thujiyuan/pop_cpu/shumaDecoder.vhd" in Library work.
+Compiling vhdl file "C:/pop_cpu1/recordDefs.vhd" in Library work.
+Package <recorddefs> compiled.
+Package body <recorddefs> compiled.
+Compiling vhdl file "C:/pop_cpu1/shumaDecoder.vhd" in Library work.
 Architecture behavioral of Entity shumadecoder is up to date.
-Compiling vhdl file "F:/thujiyuan/pop_cpu/PC.vhd" in Library work.
+Compiling vhdl file "C:/pop_cpu1/PC.vhd" in Library work.
 Architecture pcbehavioral of Entity pc is up to date.
-Compiling vhdl file "F:/thujiyuan/pop_cpu/InsFetcher.vhd" in Library work.
+Compiling vhdl file "C:/pop_cpu1/InsFetcher.vhd" in Library work.
 Architecture behavioral of Entity insfetcher is up to date.
-Compiling vhdl file "F:/thujiyuan/pop_cpu/PCAdder.vhd" in Library work.
+Compiling vhdl file "C:/pop_cpu1/PCAdder.vhd" in Library work.
 Architecture pcadderbehavioral of Entity pcadder is up to date.
-Compiling vhdl file "F:/thujiyuan/pop_cpu/PCSelector.vhd" in Library work.
+Compiling vhdl file "C:/pop_cpu1/PCSelector.vhd" in Library work.
 Architecture pcselectorbehavioral of Entity pcselector is up to date.
-Compiling vhdl file "F:/thujiyuan/pop_cpu/IF_IDRegs.vhd" in Library work.
+Compiling vhdl file "C:/pop_cpu1/IF_IDRegs.vhd" in Library work.
 Architecture behavioral of Entity if_idregs is up to date.
-Compiling vhdl file "F:/thujiyuan/pop_cpu/Registers.vhd" in Library work.
+Compiling vhdl file "C:/pop_cpu1/Registers.vhd" in Library work.
 Architecture behavioral of Entity registers is up to date.
-Compiling vhdl file "F:/thujiyuan/pop_cpu/bypasser.vhd" in Library work.
+Compiling vhdl file "C:/pop_cpu1/bypasser.vhd" in Library work.
 Architecture behavioral of Entity bypasser is up to date.
-Compiling vhdl file "F:/thujiyuan/pop_cpu/Control.vhd" in Library work.
+Compiling vhdl file "C:/pop_cpu1/Control.vhd" in Library work.
 Architecture behavioral of Entity control is up to date.
-Compiling vhdl file "F:/thujiyuan/pop_cpu/extender.vhd" in Library work.
+Compiling vhdl file "C:/pop_cpu1/extender.vhd" in Library work.
 Architecture extenderbehavioral of Entity extender is up to date.
-Compiling vhdl file "F:/thujiyuan/pop_cpu/AddressAdder.vhd" in Library work.
+Compiling vhdl file "C:/pop_cpu1/AddressAdder.vhd" in Library work.
 Architecture behavioral of Entity addressadder is up to date.
-Compiling vhdl file "F:/thujiyuan/pop_cpu/ID_EXERegs.vhd" in Library work.
+Compiling vhdl file "C:/pop_cpu1/ID_EXERegs.vhd" in Library work.
 Architecture behavioral of Entity id_exeregs is up to date.
-Compiling vhdl file "F:/thujiyuan/pop_cpu/ALUSrc0MUX.vhd" in Library work.
+Compiling vhdl file "C:/pop_cpu1/ALUSrc0MUX.vhd" in Library work.
 Architecture behavioral of Entity alusrc0mux is up to date.
-Compiling vhdl file "F:/thujiyuan/pop_cpu/ALUSrc1MUX.vhd" in Library work.
-WARNING:HDLParsers:817 - "F:/thujiyuan/pop_cpu/ALUSrc1MUX.vhd" Line 51. Choice . is not a locally static expression.
-WARNING:HDLParsers:817 - "F:/thujiyuan/pop_cpu/ALUSrc1MUX.vhd" Line 53. Choice . is not a locally static expression.
-WARNING:HDLParsers:817 - "F:/thujiyuan/pop_cpu/ALUSrc1MUX.vhd" Line 55. Choice . is not a locally static expression.
-WARNING:HDLParsers:817 - "F:/thujiyuan/pop_cpu/ALUSrc1MUX.vhd" Line 57. Choice . is not a locally static expression.
-WARNING:HDLParsers:817 - "F:/thujiyuan/pop_cpu/ALUSrc1MUX.vhd" Line 59. Choice . is not a locally static expression.
+Compiling vhdl file "C:/pop_cpu1/ALUSrc1MUX.vhd" in Library work.
+WARNING:HDLParsers:817 - "C:/pop_cpu1/ALUSrc1MUX.vhd" Line 51. Choice . is not a locally static expression.
+WARNING:HDLParsers:817 - "C:/pop_cpu1/ALUSrc1MUX.vhd" Line 53. Choice . is not a locally static expression.
+WARNING:HDLParsers:817 - "C:/pop_cpu1/ALUSrc1MUX.vhd" Line 55. Choice . is not a locally static expression.
+WARNING:HDLParsers:817 - "C:/pop_cpu1/ALUSrc1MUX.vhd" Line 57. Choice . is not a locally static expression.
+WARNING:HDLParsers:817 - "C:/pop_cpu1/ALUSrc1MUX.vhd" Line 59. Choice . is not a locally static expression.
 Architecture behavioral of Entity alusrc1mux is up to date.
-Compiling vhdl file "F:/thujiyuan/pop_cpu/ALU.vhd" in Library work.
-WARNING:HDLParsers:817 - "F:/thujiyuan/pop_cpu/ALU.vhd" Line 49. Choice . is not a locally static expression.
-WARNING:HDLParsers:817 - "F:/thujiyuan/pop_cpu/ALU.vhd" Line 51. Choice . is not a locally static expression.
-WARNING:HDLParsers:817 - "F:/thujiyuan/pop_cpu/ALU.vhd" Line 53. Choice . is not a locally static expression.
-WARNING:HDLParsers:817 - "F:/thujiyuan/pop_cpu/ALU.vhd" Line 55. Choice . is not a locally static expression.
-WARNING:HDLParsers:817 - "F:/thujiyuan/pop_cpu/ALU.vhd" Line 57. Choice . is not a locally static expression.
-WARNING:HDLParsers:817 - "F:/thujiyuan/pop_cpu/ALU.vhd" Line 59. Choice . is not a locally static expression.
-WARNING:HDLParsers:817 - "F:/thujiyuan/pop_cpu/ALU.vhd" Line 61. Choice . is not a locally static expression.
-WARNING:HDLParsers:817 - "F:/thujiyuan/pop_cpu/ALU.vhd" Line 63. Choice . is not a locally static expression.
+Compiling vhdl file "C:/pop_cpu1/ALU.vhd" in Library work.
+WARNING:HDLParsers:817 - "C:/pop_cpu1/ALU.vhd" Line 49. Choice . is not a locally static expression.
+WARNING:HDLParsers:817 - "C:/pop_cpu1/ALU.vhd" Line 51. Choice . is not a locally static expression.
+WARNING:HDLParsers:817 - "C:/pop_cpu1/ALU.vhd" Line 53. Choice . is not a locally static expression.
+WARNING:HDLParsers:817 - "C:/pop_cpu1/ALU.vhd" Line 55. Choice . is not a locally static expression.
+WARNING:HDLParsers:817 - "C:/pop_cpu1/ALU.vhd" Line 57. Choice . is not a locally static expression.
+WARNING:HDLParsers:817 - "C:/pop_cpu1/ALU.vhd" Line 59. Choice . is not a locally static expression.
+WARNING:HDLParsers:817 - "C:/pop_cpu1/ALU.vhd" Line 61. Choice . is not a locally static expression.
+WARNING:HDLParsers:817 - "C:/pop_cpu1/ALU.vhd" Line 63. Choice . is not a locally static expression.
 Architecture behavioral of Entity alu is up to date.
-Compiling vhdl file "F:/thujiyuan/pop_cpu/ReadWritePauser.vhd" in Library work.
+Compiling vhdl file "C:/pop_cpu1/ReadWritePauser.vhd" in Library work.
 Architecture behavioral of Entity readwritepauser is up to date.
-Compiling vhdl file "F:/thujiyuan/pop_cpu/EXE_MEMRegs.vhd" in Library work.
+Compiling vhdl file "C:/pop_cpu1/EXE_MEMRegs.vhd" in Library work.
 Architecture behavioral of Entity exe_memregs is up to date.
-Compiling vhdl file "F:/thujiyuan/pop_cpu/MEMSrcMUX.vhd" in Library work.
-WARNING:HDLParsers:817 - "F:/thujiyuan/pop_cpu/MEMSrcMUX.vhd" Line 47. Choice . is not a locally static expression.
-WARNING:HDLParsers:817 - "F:/thujiyuan/pop_cpu/MEMSrcMUX.vhd" Line 49. Choice . is not a locally static expression.
-WARNING:HDLParsers:817 - "F:/thujiyuan/pop_cpu/MEMSrcMUX.vhd" Line 51. Choice . is not a locally static expression.
+Compiling vhdl file "C:/pop_cpu1/MEMSrcMUX.vhd" in Library work.
+WARNING:HDLParsers:817 - "C:/pop_cpu1/MEMSrcMUX.vhd" Line 47. Choice . is not a locally static expression.
+WARNING:HDLParsers:817 - "C:/pop_cpu1/MEMSrcMUX.vhd" Line 49. Choice . is not a locally static expression.
+WARNING:HDLParsers:817 - "C:/pop_cpu1/MEMSrcMUX.vhd" Line 51. Choice . is not a locally static expression.
 Architecture behavioral of Entity memsrcmux is up to date.
-Compiling vhdl file "F:/thujiyuan/pop_cpu/MEMAccess.vhd" in Library work.
+Compiling vhdl file "C:/pop_cpu1/MEMAccess.vhd" in Library work.
 Architecture behavioral of Entity memaccess is up to date.
-Compiling vhdl file "F:/thujiyuan/pop_cpu/MEM_WBRegs.vhd" in Library work.
+Compiling vhdl file "C:/pop_cpu1/MEM_WBRegs.vhd" in Library work.
 Architecture behavioral of Entity mem_wbregs is up to date.
-Compiling vhdl file "F:/thujiyuan/pop_cpu/WBSrcMUX.vhd" in Library work.
+Compiling vhdl file "C:/pop_cpu1/WBSrcMUX.vhd" in Library work.
 Architecture behavioral of Entity wbsrcmux is up to date.
-Compiling vhdl file "F:/thujiyuan/pop_cpu/MEMTypeMUX.vhd" in Library work.
+Compiling vhdl file "C:/pop_cpu1/MEMTypeMUX.vhd" in Library work.
 Architecture behavioral of Entity memtypemux is up to date.
-Compiling vhdl file "F:/thujiyuan/pop_cpu/VGAAccess.vhd" in Library work.
+Compiling vhdl file "C:/pop_cpu1/VGAAccess.vhd" in Library work.
 Architecture behavioral of Entity vgaaccess is up to date.
-Compiling vhdl file "F:/thujiyuan/pop_cpu/cachedVGAControler.vhd" in Library work.
+Compiling vhdl file "C:/pop_cpu1/cachedVGAControler.vhd" in Library work.
 Entity <cachedvgacontroler> compiled.
 Entity <cachedvgacontroler> (Architecture <behavioral>) compiled.
-Compiling vhdl file "F:/thujiyuan/pop_cpu/vgaInterface.vhd" in Library work.
+Compiling vhdl file "C:/pop_cpu1/vgaInterface.vhd" in Library work.
 Architecture behavioral of Entity vgainterface is up to date.
-Compiling vhdl file "F:/thujiyuan/pop_cpu/clockDivider.vhd" in Library work.
+Compiling vhdl file "C:/pop_cpu1/clockDivider.vhd" in Library work.
 Architecture behavioral of Entity clockdivider is up to date.
-Compiling vhdl file "F:/thujiyuan/pop_cpu/pop_cpu.vhd" in Library work.
+Compiling vhdl file "C:/pop_cpu1/pop_cpu.vhd" in Library work.
 Architecture behavioral of Entity pop_cpu is up to date.
 
 =========================================================================
@@ -240,20 +241,20 @@ Analyzing hierarchy for entity <clockDivider> in library <work> (architecture <b
 *                            HDL Analysis                               *
 =========================================================================
 Analyzing Entity <pop_cpu> in library <work> (Architecture <behavioral>).
-WARNING:Xst:819 - "F:/thujiyuan/pop_cpu/pop_cpu.vhd" line 667: One or more signals are missing in the process sensitivity list. To enable synthesis of FPGA/CPLD hardware, XST will assume that all necessary signals are present in the sensitivity list. Please note that the result of the synthesis may differ from the initial design specification. The missing signals are:
+WARNING:Xst:819 - "C:/pop_cpu1/pop_cpu.vhd" line 667: One or more signals are missing in the process sensitivity list. To enable synthesis of FPGA/CPLD hardware, XST will assume that all necessary signals are present in the sensitivity list. Please note that the result of the synthesis may differ from the initial design specification. The missing signals are:
    <rdn>, <dataReady>, <tsre>, <EXEMEMRegs_MEMAccess_MemType>
-WARNING:Xst:753 - "F:/thujiyuan/pop_cpu/pop_cpu.vhd" line 737: Unconnected output port 'RA' of component 'Registers'.
+WARNING:Xst:753 - "C:/pop_cpu1/pop_cpu.vhd" line 737: Unconnected output port 'RA' of component 'Registers'.
 Entity <pop_cpu> analyzed. Unit <pop_cpu> generated.
 
 Analyzing Entity <shumaDecoder> in library <work> (Architecture <behavioral>).
-INFO:Xst:1561 - "F:/thujiyuan/pop_cpu/shumaDecoder.vhd" line 74: Mux is complete : default of case is discarded
+INFO:Xst:1561 - "C:/pop_cpu1/shumaDecoder.vhd" line 74: Mux is complete : default of case is discarded
 Entity <shumaDecoder> analyzed. Unit <shumaDecoder> generated.
 
 Analyzing Entity <PC> in library <work> (Architecture <pcbehavioral>).
 Entity <PC> analyzed. Unit <PC> generated.
 
 Analyzing Entity <InsFetcher> in library <work> (Architecture <behavioral>).
-WARNING:Xst:819 - "F:/thujiyuan/pop_cpu/InsFetcher.vhd" line 86: One or more signals are missing in the process sensitivity list. To enable synthesis of FPGA/CPLD hardware, XST will assume that all necessary signals are present in the sensitivity list. Please note that the result of the synthesis may differ from the initial design specification. The missing signals are:
+WARNING:Xst:819 - "C:/pop_cpu1/InsFetcher.vhd" line 86: One or more signals are missing in the process sensitivity list. To enable synthesis of FPGA/CPLD hardware, XST will assume that all necessary signals are present in the sensitivity list. Please note that the result of the synthesis may differ from the initial design specification. The missing signals are:
    <MEMRead>, <MEMWrite>, <MEMAddr>
 INFO:Xst:2679 - Register <Ram2EN> in unit <InsFetcher> has a constant value of 0 during circuit operation. The register is replaced by logic.
 Entity <InsFetcher> analyzed. Unit <InsFetcher> generated.
@@ -268,7 +269,7 @@ Analyzing Entity <IF_IDRegs> in library <work> (Architecture <behavioral>).
 Entity <IF_IDRegs> analyzed. Unit <IF_IDRegs> generated.
 
 Analyzing Entity <Registers> in library <work> (Architecture <behavioral>).
-WARNING:Xst:819 - "F:/thujiyuan/pop_cpu/Registers.vhd" line 53: One or more signals are missing in the process sensitivity list. To enable synthesis of FPGA/CPLD hardware, XST will assume that all necessary signals are present in the sensitivity list. Please note that the result of the synthesis may differ from the initial design specification. The missing signals are:
+WARNING:Xst:819 - "C:/pop_cpu1/Registers.vhd" line 53: One or more signals are missing in the process sensitivity list. To enable synthesis of FPGA/CPLD hardware, XST will assume that all necessary signals are present in the sensitivity list. Please note that the result of the synthesis may differ from the initial design specification. The missing signals are:
    <r000>, <r001>, <r010>, <r011>, <r100>, <r101>, <r110>, <r111>, <rT>, <rIH>, <rSP>, <rRA>
 Entity <Registers> analyzed. Unit <Registers> generated.
 
@@ -288,14 +289,14 @@ Analyzing Entity <ID_EXERegs> in library <work> (Architecture <behavioral>).
 Entity <ID_EXERegs> analyzed. Unit <ID_EXERegs> generated.
 
 Analyzing Entity <ALUSrc0MUX> in library <work> (Architecture <behavioral>).
-INFO:Xst:1561 - "F:/thujiyuan/pop_cpu/ALUSrc0MUX.vhd" line 57: Mux is complete : default of case is discarded
+INFO:Xst:1561 - "C:/pop_cpu1/ALUSrc0MUX.vhd" line 57: Mux is complete : default of case is discarded
 Entity <ALUSrc0MUX> analyzed. Unit <ALUSrc0MUX> generated.
 
 Analyzing Entity <ALUSrc1MUX> in library <work> (Architecture <behavioral>).
 Entity <ALUSrc1MUX> analyzed. Unit <ALUSrc1MUX> generated.
 
 Analyzing Entity <ALU> in library <work> (Architecture <behavioral>).
-INFO:Xst:1561 - "F:/thujiyuan/pop_cpu/ALU.vhd" line 67: Mux is complete : default of case is discarded
+INFO:Xst:1561 - "C:/pop_cpu1/ALU.vhd" line 67: Mux is complete : default of case is discarded
 Entity <ALU> analyzed. Unit <ALU> generated.
 
 Analyzing Entity <ReadWritePauser> in library <work> (Architecture <behavioral>).
@@ -314,7 +315,7 @@ Analyzing Entity <MEM_WBRegs> in library <work> (Architecture <behavioral>).
 Entity <MEM_WBRegs> analyzed. Unit <MEM_WBRegs> generated.
 
 Analyzing Entity <WBSrcMUX> in library <work> (Architecture <behavioral>).
-INFO:Xst:1561 - "F:/thujiyuan/pop_cpu/WBSrcMUX.vhd" line 49: Mux is complete : default of case is discarded
+INFO:Xst:1561 - "C:/pop_cpu1/WBSrcMUX.vhd" line 49: Mux is complete : default of case is discarded
 Entity <WBSrcMUX> analyzed. Unit <WBSrcMUX> generated.
 
 Analyzing Entity <MEMTypeMUX> in library <work> (Architecture <behavioral>).
@@ -324,4 +325,4 @@ Analyzing Entity <VGAAccess> in library <work> (Architecture <behavioral>).
 Entity <VGAAccess> analyzed. Unit <VGAAccess> generated.
 
 Analyzing Entity <cachedVGAControler> in library <work> (Architecture <behavioral>).
-WARNING:Xst:790 - "F:/thujiyuan/pop_cpu/cachedVGAControler.vhd" line 179: Index value(s) does not match array range, simulation mismatch.
+WARNING:Xst:790 - "C:/pop_cpu1/cachedVGAControler.vhd" line 85: Index value(s) does not match array range, simulation mismatch.
