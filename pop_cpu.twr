@@ -48,22 +48,22 @@ Destination    |   to PAD   |Internal Clock(s) | Phase  |
 RAM1EN         |    6.280(F)|inclk_BUFGP       |   0.000|
 RAM1OE         |    6.280(F)|inclk_BUFGP       |   0.000|
 RAM1WE         |    6.273(F)|inclk_BUFGP       |   0.000|
-RAM1addr<0>    |    7.987(F)|inclk_BUFGP       |   0.000|
-RAM1addr<1>    |    7.951(F)|inclk_BUFGP       |   0.000|
-RAM1addr<2>    |    7.370(F)|inclk_BUFGP       |   0.000|
-RAM1addr<3>    |    8.233(F)|inclk_BUFGP       |   0.000|
-RAM1addr<4>    |    7.451(F)|inclk_BUFGP       |   0.000|
-RAM1addr<5>    |    7.373(F)|inclk_BUFGP       |   0.000|
+RAM1addr<0>    |    7.377(F)|inclk_BUFGP       |   0.000|
+RAM1addr<1>    |    7.381(F)|inclk_BUFGP       |   0.000|
+RAM1addr<2>    |    7.438(F)|inclk_BUFGP       |   0.000|
+RAM1addr<3>    |    7.378(F)|inclk_BUFGP       |   0.000|
+RAM1addr<4>    |    7.368(F)|inclk_BUFGP       |   0.000|
+RAM1addr<5>    |    7.372(F)|inclk_BUFGP       |   0.000|
 RAM1addr<6>    |    7.381(F)|inclk_BUFGP       |   0.000|
 RAM1addr<7>    |    7.385(F)|inclk_BUFGP       |   0.000|
-RAM1addr<8>    |    9.422(F)|inclk_BUFGP       |   0.000|
-RAM1addr<9>    |    8.231(F)|inclk_BUFGP       |   0.000|
+RAM1addr<8>    |    9.598(F)|inclk_BUFGP       |   0.000|
+RAM1addr<9>    |    7.906(F)|inclk_BUFGP       |   0.000|
 RAM1addr<10>   |    7.374(F)|inclk_BUFGP       |   0.000|
-RAM1addr<11>   |    7.332(F)|inclk_BUFGP       |   0.000|
-RAM1addr<12>   |    7.301(F)|inclk_BUFGP       |   0.000|
-RAM1addr<13>   |    7.305(F)|inclk_BUFGP       |   0.000|
+RAM1addr<11>   |    7.314(F)|inclk_BUFGP       |   0.000|
+RAM1addr<12>   |    7.366(F)|inclk_BUFGP       |   0.000|
+RAM1addr<13>   |    7.324(F)|inclk_BUFGP       |   0.000|
 RAM1addr<14>   |    7.360(F)|inclk_BUFGP       |   0.000|
-RAM1addr<15>   |    7.300(F)|inclk_BUFGP       |   0.000|
+RAM1addr<15>   |    7.319(F)|inclk_BUFGP       |   0.000|
 RAM1addr<16>   |    7.380(F)|inclk_BUFGP       |   0.000|
 RAM1addr<17>   |    7.302(F)|inclk_BUFGP       |   0.000|
 RAM1data<0>    |    6.343(F)|inclk_BUFGP       |   0.000|
@@ -125,8 +125,8 @@ Clock to Setup on destination clock inclk
                | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
 Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
 ---------------+---------+---------+---------+---------+
-inclk          |    5.301|         |         |    2.063|
-inrst          |    7.786|    4.564|         |         |
+inclk          |    2.753|         |         |    2.063|
+inrst          |    4.896|    4.612|         |         |
 ---------------+---------+---------+---------+---------+
 
 Clock to Setup on destination clock inrst
@@ -134,11 +134,11 @@ Clock to Setup on destination clock inrst
                | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
 Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
 ---------------+---------+---------+---------+---------+
-inrst          |    1.553|         |         |         |
+inrst          |    1.524|         |         |         |
 ---------------+---------+---------+---------+---------+
 
 
-Analysis completed Sat Dec 03 05:28:09 2016 
+Analysis completed Sat Dec 03 16:56:38 2016 
 --------------------------------------------------------------------------------
 
 Trace Settings:

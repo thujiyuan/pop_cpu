@@ -1286,3 +1286,39 @@ map -intstyle ise -p xc3s1200e-fg320-4 -cm area -ir off -pr off -c 100 -o pop_cp
 par -w -intstyle ise -ol high -t 1 pop_cpu_map.ncd pop_cpu.ncd pop_cpu.pcf 
 trce -intstyle ise -v 3 -s 4 -n 3 -fastpaths -xml pop_cpu.twx pop_cpu.ncd -o pop_cpu.twr pop_cpu.pcf -ucf pop_cpu.ucf 
 bitgen -intstyle ise -f pop_cpu.ut pop_cpu.ncd 
+xst -intstyle ise -ifn "F:/thujiyuan/pop_cpu/pop_cpu.xst" -ofn "F:/thujiyuan/pop_cpu/pop_cpu.syr" 
+ngdbuild -intstyle ise -dd _ngo -sd ipcore_dir -nt timestamp -uc pop_cpu.ucf -p xc3s1200e-fg320-4 pop_cpu.ngc pop_cpu.ngd  
+map -intstyle ise -p xc3s1200e-fg320-4 -cm area -ir off -pr off -c 100 -o pop_cpu_map.ncd pop_cpu.ngd pop_cpu.pcf 
+par -w -intstyle ise -ol high -t 1 pop_cpu_map.ncd pop_cpu.ncd pop_cpu.pcf 
+trce -intstyle ise -v 3 -s 4 -n 3 -fastpaths -xml pop_cpu.twx pop_cpu.ncd -o pop_cpu.twr pop_cpu.pcf -ucf pop_cpu.ucf 
+bitgen -intstyle ise -f pop_cpu.ut pop_cpu.ncd 
+xst -intstyle ise -ifn "F:/thujiyuan/pop_cpu/pop_cpu.xst" -ofn "F:/thujiyuan/pop_cpu/pop_cpu.syr" 
+ngdbuild -intstyle ise -dd _ngo -sd ipcore_dir -nt timestamp -uc pop_cpu.ucf -p xc3s1200e-fg320-4 pop_cpu.ngc pop_cpu.ngd  
+map -intstyle ise -p xc3s1200e-fg320-4 -cm area -ir off -pr off -c 100 -o pop_cpu_map.ncd pop_cpu.ngd pop_cpu.pcf 
+par -w -intstyle ise -ol high -t 1 pop_cpu_map.ncd pop_cpu.ncd pop_cpu.pcf 
+trce -intstyle ise -v 3 -s 4 -n 3 -fastpaths -xml pop_cpu.twx pop_cpu.ncd -o pop_cpu.twr pop_cpu.pcf -ucf pop_cpu.ucf 
+bitgen -intstyle ise -f pop_cpu.ut pop_cpu.ncd 
+xst -intstyle ise -ifn "F:/thujiyuan/pop_cpu/pop_cpu.xst" -ofn "F:/thujiyuan/pop_cpu/pop_cpu.syr" 
+ngdbuild -intstyle ise -dd _ngo -sd ipcore_dir -nt timestamp -uc pop_cpu.ucf -p xc3s1200e-fg320-4 pop_cpu.ngc pop_cpu.ngd  
+map -intstyle ise -p xc3s1200e-fg320-4 -cm area -ir off -pr off -c 100 -o pop_cpu_map.ncd pop_cpu.ngd pop_cpu.pcf 
+par -w -intstyle ise -ol high -t 1 pop_cpu_map.ncd pop_cpu.ncd pop_cpu.pcf 
+trce -intstyle ise -v 3 -s 4 -n 3 -fastpaths -xml pop_cpu.twx pop_cpu.ncd -o pop_cpu.twr pop_cpu.pcf -ucf pop_cpu.ucf 
+bitgen -intstyle ise -f pop_cpu.ut pop_cpu.ncd 
+xst -intstyle ise -ifn "F:/thujiyuan/pop_cpu/pop_cpu.xst" -ofn "F:/thujiyuan/pop_cpu/pop_cpu.syr" 
+ngdbuild -intstyle ise -dd _ngo -sd ipcore_dir -nt timestamp -uc pop_cpu.ucf -p xc3s1200e-fg320-4 pop_cpu.ngc pop_cpu.ngd  
+map -intstyle ise -p xc3s1200e-fg320-4 -cm area -ir off -pr off -c 100 -o pop_cpu_map.ncd pop_cpu.ngd pop_cpu.pcf 
+par -w -intstyle ise -ol high -t 1 pop_cpu_map.ncd pop_cpu.ncd pop_cpu.pcf 
+trce -intstyle ise -v 3 -s 4 -n 3 -fastpaths -xml pop_cpu.twx pop_cpu.ncd -o pop_cpu.twr pop_cpu.pcf -ucf pop_cpu.ucf 
+bitgen -intstyle ise -f pop_cpu.ut pop_cpu.ncd 
+xst -intstyle ise -ifn "F:/thujiyuan/pop_cpu/pop_cpu.xst" -ofn "F:/thujiyuan/pop_cpu/pop_cpu.syr" 
+ngdbuild -intstyle ise -dd _ngo -sd ipcore_dir -nt timestamp -uc pop_cpu.ucf -p xc3s1200e-fg320-4 pop_cpu.ngc pop_cpu.ngd  
+map -intstyle ise -p xc3s1200e-fg320-4 -cm area -ir off -pr off -c 100 -o pop_cpu_map.ncd pop_cpu.ngd pop_cpu.pcf 
+par -w -intstyle ise -ol high -t 1 pop_cpu_map.ncd pop_cpu.ncd pop_cpu.pcf 
+trce -intstyle ise -v 3 -s 4 -n 3 -fastpaths -xml pop_cpu.twx pop_cpu.ncd -o pop_cpu.twr pop_cpu.pcf -ucf pop_cpu.ucf 
+bitgen -intstyle ise -f pop_cpu.ut pop_cpu.ncd 
+xst -intstyle ise -ifn "F:/thujiyuan/pop_cpu/pop_cpu.xst" -ofn "F:/thujiyuan/pop_cpu/pop_cpu.syr" 
+ngdbuild -intstyle ise -dd _ngo -sd ipcore_dir -nt timestamp -uc pop_cpu.ucf -p xc3s1200e-fg320-4 pop_cpu.ngc pop_cpu.ngd  
+map -intstyle ise -p xc3s1200e-fg320-4 -cm area -ir off -pr off -c 100 -o pop_cpu_map.ncd pop_cpu.ngd pop_cpu.pcf 
+par -w -intstyle ise -ol high -t 1 pop_cpu_map.ncd pop_cpu.ncd pop_cpu.pcf 
+trce -intstyle ise -v 3 -s 4 -n 3 -fastpaths -xml pop_cpu.twx pop_cpu.ncd -o pop_cpu.twr pop_cpu.pcf -ucf pop_cpu.ucf 
+bitgen -intstyle ise -f pop_cpu.ut pop_cpu.ncd 

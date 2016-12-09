@@ -47,15 +47,17 @@ begin
 	begin
 	if(rst = '1') then
 		if(inclk'event and inclk='1' and paused = '0')then
-			if(state="00000000000000000")then
-				outclk <= clk;
-				clk := not clk;
-				state := state + '1';
-			elsif(state=2)then
-				state := "00000000000000000";
-			else
-				state := state + '1';
-			end if;	
+			outclk <= clk;
+			clk := not clk;
+--			if(state="00000000000000000")then
+--				outclk <= clk;
+--				clk := not clk;
+--				state := state + '1';
+--			elsif(state=1)then
+--				state := "00000000000000000";
+--			else
+--				state := state + '1';
+--			end if;	
 		end if;
 	else
 		paused := not paused;

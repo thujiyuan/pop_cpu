@@ -296,10 +296,10 @@
 <msg type="warning" file="Xst" num="647" delta="old" >Input &lt;<arg fmt="%s" index="1">REGCEB</arg>&gt; is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
 </msg>
 
-<msg type="warning" file="Xst" num="2935" delta="new" >Signal &apos;<arg fmt="%s" index="1">pad_dout_a&lt;31:4&gt;</arg>&apos;, unconnected in block &apos;<arg fmt="%s" index="2">blk_mem_gen_prim_wrapper_s3_init_1</arg>&apos;, is tied to its initial value (<arg fmt="%s" index="3">0000000000000000000000000000</arg>).
+<msg type="warning" file="Xst" num="2935" delta="old" >Signal &apos;<arg fmt="%s" index="1">pad_dout_a&lt;31:4&gt;</arg>&apos;, unconnected in block &apos;<arg fmt="%s" index="2">blk_mem_gen_prim_wrapper_s3_init_1</arg>&apos;, is tied to its initial value (<arg fmt="%s" index="3">0000000000000000000000000000</arg>).
 </msg>
 
-<msg type="warning" file="Xst" num="2935" delta="new" >Signal &apos;<arg fmt="%s" index="1">pad_dout_b&lt;31:4&gt;</arg>&apos;, unconnected in block &apos;<arg fmt="%s" index="2">blk_mem_gen_prim_wrapper_s3_init_1</arg>&apos;, is tied to its initial value (<arg fmt="%s" index="3">0000000000000000000000000000</arg>).
+<msg type="warning" file="Xst" num="2935" delta="old" >Signal &apos;<arg fmt="%s" index="1">pad_dout_b&lt;31:4&gt;</arg>&apos;, unconnected in block &apos;<arg fmt="%s" index="2">blk_mem_gen_prim_wrapper_s3_init_1</arg>&apos;, is tied to its initial value (<arg fmt="%s" index="3">0000000000000000000000000000</arg>).
 </msg>
 
 <msg type="warning" file="Xst" num="647" delta="old" >Input &lt;<arg fmt="%s" index="1">INJECTSBITERR</arg>&gt; is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
@@ -320,10 +320,10 @@
 <msg type="warning" file="Xst" num="647" delta="old" >Input &lt;<arg fmt="%s" index="1">REGCEB</arg>&gt; is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
 </msg>
 
-<msg type="warning" file="Xst" num="2935" delta="new" >Signal &apos;<arg fmt="%s" index="1">pad_dout_a&lt;31:4&gt;</arg>&apos;, unconnected in block &apos;<arg fmt="%s" index="2">blk_mem_gen_prim_wrapper_s3_init_2</arg>&apos;, is tied to its initial value (<arg fmt="%s" index="3">0000000000000000000000000000</arg>).
+<msg type="warning" file="Xst" num="2935" delta="old" >Signal &apos;<arg fmt="%s" index="1">pad_dout_a&lt;31:4&gt;</arg>&apos;, unconnected in block &apos;<arg fmt="%s" index="2">blk_mem_gen_prim_wrapper_s3_init_2</arg>&apos;, is tied to its initial value (<arg fmt="%s" index="3">0000000000000000000000000000</arg>).
 </msg>
 
-<msg type="warning" file="Xst" num="2935" delta="new" >Signal &apos;<arg fmt="%s" index="1">pad_dout_b&lt;31:4&gt;</arg>&apos;, unconnected in block &apos;<arg fmt="%s" index="2">blk_mem_gen_prim_wrapper_s3_init_2</arg>&apos;, is tied to its initial value (<arg fmt="%s" index="3">0000000000000000000000000000</arg>).
+<msg type="warning" file="Xst" num="2935" delta="old" >Signal &apos;<arg fmt="%s" index="1">pad_dout_b&lt;31:4&gt;</arg>&apos;, unconnected in block &apos;<arg fmt="%s" index="2">blk_mem_gen_prim_wrapper_s3_init_2</arg>&apos;, is tied to its initial value (<arg fmt="%s" index="3">0000000000000000000000000000</arg>).
 </msg>
 
 <msg type="warning" file="Xst" num="647" delta="old" >Input &lt;<arg fmt="%s" index="1">RDADDRECC_I</arg>&gt; is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
